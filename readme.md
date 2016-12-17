@@ -1,0 +1,1 @@
+this is some garbage code that i wrote in a day elapsed xd. no invite link yet cause there aren't enough features. hope to add some and put it up. 

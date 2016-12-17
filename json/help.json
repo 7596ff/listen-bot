@@ -1,0 +1,31 @@
+{
+  "quote": {
+    "name": "quote",
+    "usage": "quote <speaker> <game>",
+    "text": [
+      "an interactive command, first half prompts for the ",
+      "quote speaker (an @mention) and the second half prompts for the game or ",
+      "activity currently occuring.\n\n",
+      "the second part will prompt you for the speaker's full quote. note: ",
+      "there is a 60 second timeout on the second part, and there is no prefix required."
+    ]
+  },
+  "ip": {
+    "name": "ip",
+    "usage": "ip",
+    "text": [
+      "returns the current ip address of the minecraft server, and eventually ",
+      "it's online status."
+    ]
+  },
+  "patch": {
+    "name": "patch",
+    "usage": "patch [<version>] <hero>",
+    "text": [
+      "returns the latest changes to a hero in dota from the latest balance patch.\n\n",
+      "using ``patch <hero>`` alone will return the changes from the latest patch, ",
+      "while using ``patch <version> <hero>`` will return the changes from that spec",
+      "ific patch (currently only down to version 7.00)."
+    ]
+  }
+}

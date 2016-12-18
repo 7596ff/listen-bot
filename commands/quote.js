@@ -5,24 +5,24 @@ module.exports = message => {
   var data = {}
   
   if (!options[1]) {
-    message.channel.sendMessage(':octagonal_sign: Please use the proper arguments!')
+    message.client.error('Please use the proper arguments!')
     return
   }
 
   if (guilds_list[message.guild.id].starboard == "none") {
-    message.channel.sendMessage(':octagonal_sign: Please set up a starboard first!')
+    message.client.error('Please set up a starboard first!')
     return
   }
 
-  data.user = message.guild.members.get(options[1].replace(/[^0-9.]/g, ""));
+  data.user = message.guild.members.get(options[1].replace(/[^0-9.]/g, ""))
 
   if (!data.user) {
-    message.channel.sendMessage(':octagonal_sign: Please supply a valid username!')
+    message.client.error('Please supply a valid username!')
     return
   } 
 
   if (data.user.user.id == message.author.id) {
-    message.channel.sendMessage(":octagonal_sign: You can't quote yourself!")
+    message.client.error("You can't quote yourself!")
     return
   } 
   
@@ -30,11 +30,14 @@ module.exports = message => {
   data.game = options.join(' ')
 
   if (data.game.length == 0) {
-    message.channel.sendMessage(":octagonal_sign: Please supply a game!")
+    message.client.error('Please supply a game!')
     return
   }
 
-  message.channel.sendMessage('Please enter the quote below: ')
+  message.channel.sendMessage('Please enter the quote below: ').then(my_message => {
+    my_message.delete(60000)
+  }).catch(err => message.client.log(err))
+
   message.channel.awaitMessages(message2 => message2.member.id == message.member.id, {
     maxMatches: 1, time: 60000, errors: ['time']
   }).then(collected => {

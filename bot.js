@@ -91,6 +91,10 @@ client.on('message', message => {
       require('util').log(`${message.guild.id}/${message.guild.name}: ${text}`)
     }
 
+    message.client.error = text => {
+      message.channel.sendMessage(`:octagonal_sign: ${text}`)
+    }
+
     commands[command](message)
   } else {
     message.channel.sendMessage(`Command not found. try ${_prefix}help.`)

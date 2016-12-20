@@ -203,5 +203,7 @@
   "ranged creep": "drow_ranger",
   "bird": "phoenix",
   "bird person": "skywrath_mage",
-  "loli": "pugna"
+  "loli": "pugna",
+  "bloodlust": "ogre_magi",
+  "aghs machine": "alchemist"
 }

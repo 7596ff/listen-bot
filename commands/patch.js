@@ -14,7 +14,7 @@ const patch_hero_embed = function(hero_name, version) {
         "icon_url": `http://cdn.dota2.com/apps/dota2/images/heroes/${hero_obj['true_name']}_vert.jpg`
       },
       "footer": {
-        "text": "Accurate as of 7.00"
+        "text": "Accurate as of " + version
       },
       "timestamp": (new Date()).toJSON(),
       "fields": [
@@ -38,14 +38,20 @@ module.exports = message => {
         if (options[2]) {
           let hero_name = options.slice(2).join(' ').toLowerCase()
           message.client.log(`${message.client.log_string}got a patch version with my hero`)
-          
-          if (hero_name in short_heroes) {
-            message.channel.sendMessage('', patch_hero_embed(short_heroes[hero_name], 'latest')).then(new_message => {
-              message.client.log('  sent patch message')
-            }).catch(err => message.client.log(err))
+          if (options[1].toString() in patch_list) {
+            if (hero_name in short_heroes) {
+              message.channel.sendMessage('', patch_hero_embed(short_heroes[hero_name], options[1].toString())).then(new_message => {
+                message.client.log('  sent patch message')
+              }).catch(err => message.client.log(err))
+            } else {
+              message.channel.sendMessage('Hero not found.').then(new_message => {
+                message.client.log('  sent hero not found message')
+              }).catch(err => message.client.log(err))
+            }
           } else {
-            message.channel.sendMessage('Hero not found.').then(new_message => {
-              message.client.log('  sent hero not found message')
+            message.client.log(' could\'nt find patch number.')
+            message.channel.sendMessage('Can\'t find that version! Here\'s the latest: ', patch_hero_embed(short_heroes[hero_name], "7.01")).then(new_message => {
+              message.client.log('  sent patch message')
             }).catch(err => message.client.log(err))
           }
         } else {
@@ -57,7 +63,7 @@ module.exports = message => {
       let hero_name = options.slice(1).join(' ').toLowerCase()
       
       if (hero_name in short_heroes) {
-        message.channel.sendMessage('', patch_hero_embed(short_heroes[hero_name], 'latest')).then(new_message => {
+        message.channel.sendMessage('', patch_hero_embed(short_heroes[hero_name], "7.01")).then(new_message => {
           message.client.log('  sent patch message')
         }).catch(err => message.client.log(err))
       } else {

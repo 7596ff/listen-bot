@@ -3,7 +3,7 @@ module.exports = message => {
     "fields": [
       {
         "name": "GitHub",
-        "value": "https://github.com/brendan10211/listen-bot"
+        "value": "https://github.com/bippum/listen-bot"
       }
     ],
     "timestamp": (new Date()).toJSON(),

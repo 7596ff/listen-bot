@@ -826,7 +826,7 @@
       },
       "necrolyte": {
         "changes": [
-          "• **7.01: Added to Captains Mode",
+          "• **7.01: Added to Captains Mode**",
           "• Reaper's Scythe Scepter upgrade no longer disables buyback or deals extra damage.", 
           "• Reaper's Scythe Scepter upgrade reduces cooldown to 55/40/25.", 
           "• Death Pulse now passively provides 1/3/5/7 HP/MP regen for 7 seconds for each unit you kill (10x for heroes).", 
@@ -1503,7 +1503,7 @@
         "true_name": "winter_wyvern",
         "format_name": "Winter Wyvern"
       },
-      "witch doctor": {
+      "witch_doctor": {
         "changes": [
           "• Level 25 Talent increased from +150 Death Ward Attack Range to +175"
         ],
@@ -1513,8 +1513,8 @@
           "20": ["+8 Armor", "+15% Magic Resistance"],
           "25": ["__+175 Death Ward Attack Range__", "+20 Voodoo Restoration Heal"]
         },
-        "true_name": "",
-        "format_name": ""
+        "true_name": "witch_doctor",
+        "format_name": "Witch Doctor"
       },
       "skeleton_king": {
         "changes": [

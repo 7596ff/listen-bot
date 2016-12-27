@@ -1542,6 +1542,19 @@
         },
         "true_name": "zuus",
         "format_name": "Zeus"
+      },
+      "oracle": {
+        "changes": [
+          "No changes."
+        ],
+        "talents": {
+          "10": ["-20s Respawn Time", "+15% XP Gain"],
+          "15": ["+200 Health", "+60 Gold/Min"],
+          "20": ["+25 Movement Speed", "+20 Intelligence"],
+          "25": ["+2s False Promise​ Duration", "+250 Cast Range"]
+        },
+        "true_name": "oracle",
+        "format_name": "Oracle"
       }
     },
     "items": {
@@ -3133,6 +3146,19 @@
         },
         "true_name": "zuus",
         "format_name": "Zeus"
+      },
+      "oracle": {
+        "changes": [
+          "No changes."
+        ],
+        "talents": {
+          "10": ["-20s Respawn Time", "+15% XP Gain"],
+          "15": ["+200 Health", "+60 Gold/Min"],
+          "20": ["+25 Movement Speed", "+20 Intelligence"],
+          "25": ["+2s False Promise​ Duration", "+250 Cast Range"]
+        },
+        "true_name": "oracle",
+        "format_name": "Oracle"
       }
     },
     "items": {

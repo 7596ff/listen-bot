@@ -64,18 +64,6 @@ client.on('guildDelete', guild => {
   })
 })
 
-client.on('messageReactionAdd', (messageReaction, user) => {
-  let message = messageReaction.message;
-  
-  util.log(`message ${message.id} got starred with ${messageReaction.emoji.toString()}`)
-})
-
-client.on('messageReactionRemove', (messageReaction, user) => {
-  let message = messageReaction.message;
-  
-  util.log(`message ${message.id} got unstarred with ${messageReaction.emoji.toString()}`)
-})
-
 client.on('message', message => {
   _prefix = guilds_list[message.guild.id].prefix
 

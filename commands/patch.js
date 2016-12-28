@@ -1,10 +1,10 @@
 const patch_list = require('../json/patch.json')
-var short_heroes = require('../json/short_heroes.json')
+const short_heroes = require('../json/short_heroes.json')
 const util = require('util')
 
 const patch_hero_embed = function(hero_name, version) {
   hero_name = hero_name.toLowerCase()
-  let hero_obj = patch_list[version]['heroes'][hero_name]
+  let hero_obj = patch_list.data[version]['heroes'][hero_name]
   let talent_obj = hero_obj['talents']
 
   return {
@@ -14,7 +14,7 @@ const patch_hero_embed = function(hero_name, version) {
         "icon_url": `http://cdn.dota2.com/apps/dota2/images/heroes/${hero_obj['true_name']}_vert.jpg`
       },
       "footer": {
-        "text": "Accurate as of " + version
+        "text": "Accurate as of " + patch_list.schema[version]
       },
       "timestamp": (new Date()).toJSON(),
       "fields": [
@@ -37,35 +37,50 @@ module.exports = message => {
     if (!isNaN(options[1])) {
         if (options[2]) {
           let hero_name = options.slice(2).join(' ').toLowerCase()
-          message.client.log(`${message.client.log_string}got a patch version with my hero`)
-          if (options[1].toString() in patch_list) {
+          message.client.log(`patch: version (${options[1]}) and hero name (${hero_name})`)
+          if (patch_list.schema.includes(options[1])) {
             if (hero_name in short_heroes) {
-              message.channel.sendMessage('', patch_hero_embed(short_heroes[hero_name], options[1].toString())).then(new_message => {
-                message.client.log('  sent patch message')
-              }).catch(err => message.client.log(err))
+              if (short_heroes[hero_name] in patch_list.data[patch_list.schema.indexOf(options[1])]['heroes']) {
+                message.channel.sendMessage('', patch_hero_embed(short_heroes[hero_name], patch_list.schema.indexOf(options[1]))).then(new_message => {
+                  message.client.log('  sent patch message')
+                }).catch(err => message.client.log(err))
+              } else { 
+                for (hero_list in patch_list.data) {
+                  if (short_heroes[hero_name] in patch_list.data[hero_list]['heroes']) {
+                    message.channel.sendMessage('', patch_hero_embed(short_heroes[hero_name], hero_list)).then(new_message => {
+                      message.client.log('  sent latest patch message')
+                    }).catch(err => message.client.log(err))
+                  }
+                }
+              }
             } else {
               message.channel.sendMessage('Hero not found.').then(new_message => {
                 message.client.log('  sent hero not found message')
               }).catch(err => message.client.log(err))
             }
           } else {
-            message.client.log(' could\'nt find patch number.')
-            message.channel.sendMessage('Can\'t find that version! Here\'s the latest: ', patch_hero_embed(short_heroes[hero_name], "7.01")).then(new_message => {
-              message.client.log('  sent patch message')
+            message.client.log('  could\'nt find patch number.')
+            message.channel.sendMessage('Can\'t find that version! Here\'s the latest: ', patch_hero_embed(short_heroes[hero_name], 0)).then(new_message => {
+              message.client.log('  sent patch message (latest version)')
             }).catch(err => message.client.log(err))
           }
         } else {
-          message.client.log('got no hero with my patch version')
+          message.client.log('patch: version with no hero name')
           message.channel.sendMessage('Please supply a hero!')
         }
     } else {
-      message.client.log('got no patch version with my hero')
       let hero_name = options.slice(1).join(' ').toLowerCase()
+      message.client.log(`patch: hero name (${hero_name})`)
       
       if (hero_name in short_heroes) {
-        message.channel.sendMessage('', patch_hero_embed(short_heroes[hero_name], "7.01")).then(new_message => {
-          message.client.log('  sent patch message')
-        }).catch(err => message.client.log(err))
+        for (hero_list in patch_list.data) {
+          if (short_heroes[hero_name] in patch_list.data[hero_list]['heroes']) {
+            message.channel.sendMessage('', patch_hero_embed(short_heroes[hero_name], hero_list)).then(new_message => {
+              message.client.log('  sent latest patch message')
+            }).catch(err => message.client.log(err))
+            return
+          }
+        }
       } else {
         message.channel.sendMessage('Hero not found.').then(new_message => {
           message.client.log('  sent hero not found message')
@@ -73,7 +88,7 @@ module.exports = message => {
       }
     }
   } else {
-    message.client.log('got no hero')
+    message.client.log('patch: no hero')
     message.channel.sendMessage(`Please supply a hero! Try \`${_prefix}help patch\`.`)
   }
 }

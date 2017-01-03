@@ -85,7 +85,7 @@ client.on('message', message => {
 
     commands[command](message)
   } else {
-    message.channel.sendMessage(`Command not found. try ${_prefix}help.`)
+    util.log(`${message.guild.id}/${message.guild.name}: malformed command used`)
   }
 
   // old

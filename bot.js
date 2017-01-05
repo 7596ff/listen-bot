@@ -53,8 +53,6 @@ client.on('guildCreate', guild => {
 
 client.on('guildUpdate', guild => {
   util.log(`${guild.id}/${guild.name}: guild updated, modifying name`)
-  console.log(guilds_list[guild.id].name)
-  console.log(guild.name)
   guilds_list[guild.id].name = guild.name
   write_obj(guilds_list, () => {
     util.log('  wrote new guild config successfully')

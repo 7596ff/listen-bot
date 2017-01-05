@@ -87,28 +87,6 @@ client.on('message', message => {
   } else {
     util.log(`${message.guild.id}/${message.guild.name}: malformed command used`)
   }
-
-  // old
-  options = message.content.split(' ')
-
-  if (options[0] == _prefix + 'make_starboard') {
-    util.log('creating starboard channel on ${message.guild.id}/${message.guild.name}')
-    message.guild.createChannel('starboard', 'text').then(channel => {
-      channel.overwritePermissions(channel.guild.id, {
-        SEND_MESSAGES: false
-      }).then(() => util.log('  starboard channel: users can not send messages')).catch(err => util.log(err))
-      channel.overwritePermissions(client.user.id, {
-        SEND_MESSAGES: true
-      }).then(() => util.log('  starboard channel: this bot can send messages')).catch(err => util.log(err))
-
-      util.log('  creating guild object')
-      guilds_list[channel.guild.id].starboard = channel.id
-
-      write_obj(guilds_list, () => {
-        util.log('  wrote new guild config successfully')
-      })
-    }).catch(err => util.log(err))
-  }
 })
 
 client.login(token)

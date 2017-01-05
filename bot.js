@@ -18,7 +18,7 @@ function Helper(prefix) {
 }
 
 var write_obj = function(object_to, callback) {
-  fs.writeFile('guilds.json', JSON.stringify(object_to), err => {
+  fs.writeFile('./json/guilds.json', JSON.stringify(object_to), err => {
     if (err) util.log(err)
     callback();
   })
@@ -46,6 +46,16 @@ client.on('guildCreate', guild => {
     "starboard_emoji": "⭐"
   }
 
+  write_obj(guilds_list, () => {
+    util.log('  wrote new guild config successfully')
+  })
+})
+
+client.on('guildUpdate', guild => {
+  util.log(`${guild.id}/${guild.name}: guild updated, modifying name`)
+  console.log(guilds_list[guild.id].name)
+  console.log(guild.name)
+  guilds_list[guild.id].name = guild.name
   write_obj(guilds_list, () => {
     util.log('  wrote new guild config successfully')
   })

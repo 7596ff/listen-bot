@@ -1,71 +1,50 @@
 const guilds_list = require('../json/guilds.json')
 
-module.exports = message => {  
-  let options = message.content.split(' ')
+module.exports = (message, client, helper) => {  
+  var options = message.content.slice(6).split('|')
+  for (option in options) option.trim()
   var data = {}
-  
-  if (!options[1]) {
-    message.client.error('Please use the proper arguments!')
+
+  if (options.length != 3) {
+    client.createMessage(message.channel.id, helper.error(`Please format your quote properly! Try \`${helper.prefix}help quote.\``))
     return
   }
 
   if (guilds_list[message.guild.id].starboard == "none") {
-    message.client.error('Please set up a starboard first!')
+    client.createMessage(message.channel.id, helper.error('Please set up a starboard first!'))
     return
   }
 
-  data.user = message.guild.members.get(options[1].replace(/[^0-9.]/g, ""))
+  data.user = client.users.get(options[0].replace(/[^0-9.]/g, ""))
 
   if (!data.user) {
-    message.client.error('Please supply a valid username!')
-    return
-  } 
-
-  if (data.user.user.id == message.author.id) {
-    message.client.error("You can't quote yourself!")
-    return
-  } 
-  
-  options.splice(0, 2)
-  data.game = options.join(' ')
-
-  if (data.game.length == 0) {
-    message.client.error('Please supply a game!')
+    client.createMessage(message.channel.id, helper.error('User not found!'))
     return
   }
 
-  message.channel.sendMessage('Please enter the quote below: ').then(my_message => {
-    my_message.delete(60000)
-  }).catch(err => message.client.log(err))
+  if (data.user.id == message.author.id) {
+    client.createMessage(message.channel.id, helper.error("You can't quote yourself!"))
+    return
+  }
 
-  message.channel.awaitMessages(message2 => message2.member.id == message.member.id, {
-    maxMatches: 1, time: 60000, errors: ['time']
-  }).then(collected => {
-    let matchedMessage = collected.first()
-    data.quote = matchedMessage.content
-    let embed = {
-      'embed': {
-        "author": {
-          "icon_url": data.user.user.avatarURL,
-          "name": data.user.user.username
-        },
-        "description": data.quote,
-        "footer": {
-          "text": "Playing " + data.game
-        },
-        "timestamp": (new Date()).toJSON()
-      }
+  client.createMessage(guilds_list[message.guild.id].starboard, {
+    'embed': {
+      "author": {
+        "icon_url": data.user.avatarURL,
+        "name": data.user.username
+      },
+      "description": options[2],
+      "footer": {
+        "text": "Playing " + options[1]
+      },
+      "timestamp": new Date().toJSON()
     }
-    message.client.channels.get(guilds_list[message.guild.id].starboard).sendMessage('', embed).then(new_message => {
-      message.client.log(`added a quote`)
-      message.channel.sendMessage(':ok_hand:')
-    }).catch(err => {
-      message.client.log('failed to send the message to the starboard channel')
-      message.channel.sendMessage(':japanese_goblin: I probably don\'t have permission to send to your starboard channel!')
-      message.client.log(err)
-    })
+  }).then(new_message => {
+    helper.log(message, `added a quote`)
+    client.createMessage(message.channel.id, ':ok_hand:')
   }).catch(err => {
-    message.client.log('failed to quote stuff')
-    message.client.log(err)
+    helper.log(message, 'failed to send the message to the starboard channel')
+    client.createMessage(message.channel.id, ':japanese_goblin: I probably don\'t have permission to send to your starboard channel!')
+    helper.log(message, err)
   })
 }

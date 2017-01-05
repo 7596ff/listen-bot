@@ -1,24 +1,21 @@
-const Discord = require('discord.js')
-const token = require('./json/config.json').token
-const client = new Discord.Client({
-  disabledEvents: [
-    'PRESENCE_UPDATE',
-    'TYPING_START',
-    'TYPING_STOP',
-    'VOICE_STATUS_UPDATE',
-    'FRIEND_ADD',
-    'FRIEND_REMOVE'
-  ],
-  disableEveryone: true
-})
+const Eris = require('eris')
+const client = new Eris(require('./json/config.json').token)
 
 const util = require('util')
 const fs = require('fs')
-const path = require('path')
 
-var public_ip = require('public-ip');
 var guilds_list = require('./json/guilds.json')
 var commands = {}
+
+function Helper(prefix) {
+  this.prefix = prefix
+  this.log = (message, text) => {
+    require('util').log(`${message.guild.id}/${message.guild.name}: ${text}`)
+  }
+  this.error = text => {
+    return `:octagonal_sign: ${text}`
+  }
+}
 
 var write_obj = function(object_to, callback) {
   fs.writeFile('guilds.json', JSON.stringify(object_to), err => {
@@ -39,13 +36,12 @@ client.on('ready', () => {
 })
 
 client.on('guildCreate', guild => {
-  util.log(`new guild joined: ${guild.id}/${guild.name}`)
+  util.log(`${guild.id}/${guild.name}: joined guild`)
 
   util.log('  creating guild object')
   guilds_list[guild.id] = {
     "name": guild.name,
     "prefix": "L!",
-    "ip": false,
     "starboard": 'none',
     "starboard_emoji": "⭐"
   }
@@ -56,7 +52,7 @@ client.on('guildCreate', guild => {
 })
 
 client.on('guildDelete', guild => {
-  util.log(`guild left: ${guild.id}/${guild.name}`)
+  util.log(`${guild.id}/${guild.name}: left guild`)
   delete guilds_list[guild.id]
   
   write_obj(guilds_list, () => {
@@ -64,7 +60,7 @@ client.on('guildDelete', guild => {
   })
 })
 
-client.on('message', message => {
+client.on('messageCreate', message => {
   _prefix = guilds_list[message.guild.id].prefix
 
   if (message.author.id == client.user.id) return
@@ -74,19 +70,10 @@ client.on('message', message => {
 
   const command = message.content.split(' ').shift().toLowerCase()
   if (command in commands) {
-    message.client.prefix = _prefix
-    message.client.log = text => {
-      require('util').log(`${message.guild.id}/${message.guild.name}: ${text}`)
-    }
-
-    message.client.error = text => {
-      message.channel.sendMessage(`:octagonal_sign: ${text}`)
-    }
-
-    commands[command](message)
+    commands[command](message, client, new Helper(_prefix))
   } else {
     util.log(`${message.guild.id}/${message.guild.name}: malformed command used`)
   }
 })
 
-client.login(token)
+client.connect()

@@ -1,21 +1,11 @@
 {
   "quote": {
     "name": "quote",
-    "usage": "quote <speaker> <game>",
+    "usage": "quote <speaker> | <game> | <quote>",
     "text": [
-      "an interactive command, first half prompts for the ",
-      "quote speaker (an @mention) and the second half prompts for the game or ",
-      "activity currently occuring.\n\n",
-      "the second part will prompt you for the speaker's full quote. note: ",
-      "there is a 60 second timeout on the second part, and there is no prefix required."
-    ]
-  },
-  "ip": {
-    "name": "ip",
-    "usage": "ip",
-    "text": [
-      "returns the current ip address of the minecraft server, and eventually ",
-      "it's online status."
+      "places a quote of your choosing into this server's quotes channel. ",
+      "please be sure to include `|` when you call this command! \n\nexample: ",
+      "<prefix>quote <@102645408223731712> | dota 2 | we lost"
     ]
   },
   "patch": {
@@ -26,6 +16,13 @@
       "using ``patch <hero>`` alone will return the changes from the latest patch, ",
       "while using ``patch <version> <hero>`` will return the changes from that spec",
       "ific patch (currently only down to version 7.00)."
+    ]
+  },
+  "info": {
+    "name": "info",
+    "usage": "info",
+    "text": [
+      "returns some info about the bot."
     ]
   }
 }

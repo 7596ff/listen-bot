@@ -12,19 +12,18 @@ const help_embed = function(help_obj, prefix) {
       'footer': {
         'text': help_obj.name
       },
-      'timestamp': (new Date()).toJSON()
+      'timestamp': new Date().toJSON()
     }
   }
 }
 
-
-module.exports = message => {
+module.exports = (message, client, helper) => {
   let options = message.content.split(' ')
   let specific_topic = options[1]
   if (specific_topic in help_topics) {
-    message.channel.sendMessage('', help_embed(help_topics[specific_topic], _prefix)).then(message => {
-      message.client.log(`Helped with topic ${specific_topic}`)
-    }).catch(err => util.log(err))
+    client.createMessage(message.channel.id, help_embed(help_topics[specific_topic], helper.prefix)).then(message => {
+      helper.log(message, `Helped with topic ${specific_topic}`)
+    }).catch(err => helper.log(message, err))
   } else {
     let help_list = ''
     for (topic in help_topics) {
@@ -35,9 +34,9 @@ module.exports = message => {
       }
     }
     let conditional = (options[1]) ? 'Help topic not found: `' + options[1] + '`. ' : ''
-    if (conditional != '') util.log('could not help with ' + conditional)
-    message.channel.sendMessage(`${conditional}List of help topics: ${help_list}`).then(message => {
-      message.client.log('helped with all topics')
-    }).catch(err => util.log(err))
+    if (conditional != '') helper.log(message, 'could not help with ' + options[1])
+    client.createMessage(message.channel.id, `${conditional}List of help topics: ${help_list}`).then(message => {
+      helper.log(message, 'helped with all topics')
+    }).catch(err => helper.log(message, err))
   }
 }

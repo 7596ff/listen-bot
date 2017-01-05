@@ -52,11 +52,13 @@ client.on('guildCreate', guild => {
 })
 
 client.on('guildUpdate', guild => {
-  util.log(`${guild.id}/${guild.name}: guild updated, modifying name`)
-  guilds_list[guild.id].name = guild.name
-  write_obj(guilds_list, () => {
-    util.log('  wrote new guild config successfully')
-  })
+  if (guilds_list[guild.id].name != guild.name) {
+    util.log(`${guild.id}/${guild.name}: guild updated, modifying name`)
+    guilds_list[guild.id].name = guild.name
+    write_obj(guilds_list, () => {
+      util.log('  wrote new guild config successfully')
+    })
+  }
 })
 
 client.on('guildDelete', guild => {

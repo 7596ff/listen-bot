@@ -6,8 +6,7 @@ const clean  = (text) => {
   }
 }
 
-module.exports = (message) => {
-  let client = message.client
+module.exports = (message, client, helper) => {
   let params = message.content.split(' ').splice(1)
   
   if (message.member.id == '102645408223731712') {
@@ -17,9 +16,9 @@ module.exports = (message) => {
 
       if (typeof evaled !== "string") evaled = require("util").inspect(evaled)
 
-      message.channel.sendCode("xl", clean(evaled))
+      client.createMessage(message.channel.id, `\`\`\`js\n${clean(evaled)}\n\`\`\``)
     } catch (err) {
-      message.channel.sendMessage(`\`ERROR\` \`\`\`xl\n${clean(err)}\n\`\`\``)
+      client.createMessage(message.channel.id, `\`ERROR\` \`\`\`js\n${clean(err)}\n\`\`\``)
     }
   }
 }

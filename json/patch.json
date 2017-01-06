@@ -10,24 +10,6 @@
           "changes": [
             "• Incapacitating Bite slow increased from 10/20/30/40 to 14/24/34/44%"
           ],
-          "talents": {
-            "10": [
-              "+10 Agility",
-              "+15% XP Gain"
-            ],
-            "15": [
-              "20% Cooldown Reduction",
-              "+7 Armor"
-            ],
-            "20": [
-              "+300 Health",
-              "+50 Attack Speed"
-            ],
-            "25": [
-              "+8 Max Webs",
-              "+200 Spiderlings Health"
-            ]
-          },
           "true_name": "broodmother",
           "format_name": "Broodmother"
         },
@@ -35,24 +17,6 @@
           "changes": [
             "• Agility gain reduced from 2.0 to 1.6"
           ],
-          "talents": {
-            "10": [
-              "+30 Damage",
-              "+2 Mana Regen"
-            ],
-            "15": [
-              "10% Evasion",
-              "+10% Magic Resistance"
-            ],
-            "20": [
-              "+10% Spell Amplification",
-              "+15 Strength"
-            ],
-            "25": [
-              "+1s Hoof Stomp Duration",
-              "Gains Return Aura"
-            ]
-          },
           "true_name": "centaur",
           "format_name": "Centaur Warrunner"
         },
@@ -62,24 +26,6 @@
             "• Fixed Chaos Strike lifesteal ignoring armor reductions",
             "• Chaos Strike lifesteal increased from 50% to 65%"
           ],
-          "talents": {
-            "10": [
-              "+15 Attack Speed",
-              "+7 Intelligence"
-            ],
-            "15": [
-              "+15 Movement Speed",
-              "+10 Strength"
-            ],
-            "20": [
-              "+120 Gold/Min",
-              "+12 All Stats"
-            ],
-            "25": [
-              "Reality Rift Pierces Spell Immunity",
-              "20% Cooldown Reduction"
-            ]
-          },
           "true_name": "chaos_knight",
           "format_name": "Chaos Knight"
         },
@@ -87,24 +33,6 @@
           "changes": [
             "• Level 10 Talent increased from +6 Strength to 7"
           ],
-          "talents": {
-            "10": [
-              "+4% Spell Amplification",
-              "__+7 Strength__"
-            ],
-            "15": [
-              "+8% Magic Resistance",
-              "+75 Cast Range"
-            ],
-            "20": [
-              "10% Cooldown Reduction",
-              "+25 Movement Speed"
-            ],
-            "25": [
-              "+400 Health",
-              "+6 Exorcism Spirits"
-            ]
-          },
           "true_name": "death_prophet",
           "format_name": "Death Prophet"
         },
@@ -113,24 +41,6 @@
             "• Level 20 Talent increased from +50 Damage to +65",
             "• Level 20 Talent increased from +20 Health Regen to +25"
           ],
-          "talents": {
-            "10": [
-              "+150 Health",
-              "+8 Intelligence"
-            ],
-            "15": [
-              "+15 Movement Speed",
-              "+6 Armor"
-            ],
-            "20": [
-              "__+65 Damage__",
-              "+20 Health Regen"
-            ],
-            "25": [
-              "+2% Infernal Blade Damage",
-              "Devour Can Target Ancients"
-            ]
-          },
           "true_name": "doom_bringer",
           "format_name": "Doom"
         },
@@ -140,24 +50,6 @@
             "• Level 10 Talent increased from +15 Movement Speed to +20",
             "• Level 20 Talent increased from -25s Respawn Time to -30s"
           ],
-          "talents": {
-            "10": [
-              "+5 All Stats",
-              "__+20 Movement Speed__"
-            ],
-            "15": [
-              "+8s Nature's Attendants Duration",
-              "+40 Damage"
-            ],
-            "20": [
-              "+12% Magic Resistance",
-              "__-30s Respawn Time__"
-            ],
-            "25": [
-              "+10 Nature's Attendants Wisps",
-              "+25 Intelligence"
-            ]
-          },
           "true_name": "enchantress",
           "format_name": "Enchantress"
         },
@@ -167,24 +59,6 @@
             "• Quas HP regen rescaled from 1.5/3/4.5/6/.. to 1/3/5/7/..",
             "• Strength gain increased from 1.7 to 1.9"
           ],
-          "talents": {
-            "10": [
-              "+15 Damage",
-              "+125 Health"
-            ],
-            "15": [
-              "+1 Forged Spirit Summoned",
-              "__+25% XP Gain__"
-            ],
-            "20": [
-              "+7 All Stats",
-              "+35 Attack Speed"
-            ],
-            "25": [
-              "AoE Deafening Blast",
-              " -15s Tornado Cooldown"
-            ]
-          },
           "true_name": "invoker",
           "format_name": "Invoker"
         },
@@ -194,24 +68,6 @@
             "• Level 15 Talent increased from -25s Respawn to -30s",
             "• Level 20 Talent increased from +5% Spell Amp to 6%"
           ],
-          "talents": {
-            "10": [
-              "+250 Mana",
-              "+20 Damage"
-            ],
-            "15": [
-              "__-30s Respawn Time__",
-              "__+125 Cast Range__"
-            ],
-            "20": [
-              "__+6% Spell Amplification__",
-              "+150 Attack Range"
-            ],
-            "25": [
-              "+1 Fiery Soul Max Stacks",
-              "-4s Dragon Slave Cooldown"
-            ]
-          },
           "true_name": "lina",
           "format_name": "Lina"
         },
@@ -219,24 +75,6 @@
           "changes": [
             "• Base armor reduced by 1"
           ],
-          "talents": {
-            "10": [
-              "+15 Damage",
-              "+4 Armor"
-            ],
-            "15": [
-              "+150 Health",
-              "+40 Lucent Beam Damage"
-            ],
-            "20": [
-              "+25 Attack Speed",
-              "+10% Magic Resistance"
-            ],
-            "25": [
-              "-4s Lucent Beam Cooldown",
-              "+15 All Stats"
-            ]
-          },
           "true_name": "luna",
           "format_name": "Luna"
         },
@@ -247,24 +85,6 @@
             "• Level 10 Talent reduced from +20 Damage to +15 Damage",
             "• Agility gain reduced from 1.9 to 1.5"
           ],
-          "talents": {
-            "10": [
-              "__+15 Damage__",
-              "+150 Health"
-            ],
-            "15": [
-              "-20s Respawn Time",
-              "+12 Strength"
-            ],
-            "20": [
-              "15% Evasion",
-              "15% Cooldown Reduction"
-            ],
-            "25": [
-              "+15s Shapeshift Duration",
-              "+2 Wolves Summoned"
-            ]
-          },
           "true_name": "lycan",
           "format_name": "Lycan"
         },
@@ -272,24 +92,6 @@
           "changes": [
             "• Meepo Clones are now allowed to pickup runes"
           ],
-          "talents": {
-            "10": [
-              "Level 10: +4 Armor",
-              "+15 Damage"
-            ],
-            "15": [
-              "Level 15: 15% Lifesteal",
-              "+20 Movement Speed"
-            ],
-            "20": [
-              "10% Evasion",
-              "+25 Attack Speed"
-            ],
-            "25": [
-              "Level 25: +400 Health",
-              "-3s Poof Cooldown"
-            ]
-          },
           "true_name": "meepo",
           "format_name": "Meepo"
         },
@@ -299,24 +101,6 @@
             "• Jingu Mastery counter duration reduced from 15 to 10 seconds",
             "• Boundless Strike critical strike rescaled from 200% to 140/160/180/200%"
           ],
-          "talents": {
-            "10": [
-              "+5 Armor",
-              "+20 Attack Speed"
-            ],
-            "15": [
-              "+20 Movement Speed",
-              "+275 Health"
-            ],
-            "20": [
-              "+15 Strength",
-              "+40 Damage"
-            ],
-            "25": [
-              "+100% Boundless Strike​ Crit",
-              "+25% Magic Resistance"
-            ]
-          },
           "true_name": "monkey_king",
           "format_name": "Monkey King"
         },
@@ -327,24 +111,6 @@
             "• Level 25 Talent increased from -35s Respawn Time to -40",
             "• Level 25 Talent changed from +6 Treants to 2x Treants HP/Damage"
           ],
-          "talents": {
-            "10": [
-              "+20 Damage",
-              "+175 Health"
-            ],
-            "15": [
-              "__+15 Intelligence__",
-              "__+20 Movement Speed__"
-            ],
-            "20": [
-              "+35 Attack Speed",
-              "+8 Armor"
-            ],
-            "25": [
-              "__2x Treants HP/Damage__",
-              "__-40s Respawn Time__"
-            ]
-          },
           "true_name": "furion",
           "format_name": "Nature's Prophet"
         },
@@ -352,24 +118,6 @@
           "changes": [
             "• Added to Captains Mode"
           ],
-          "talents": {
-            "10": [
-              "+40 Damage",
-              "+6 Strength"
-            ],
-            "15": [
-              "+6 All Stats ",
-              "+15 Movement Speed"
-            ],
-            "20": [
-              "+5% Spell Amplification",
-              "+10% Magic Resistance"
-            ],
-            "25": [
-              "+400 Health",
-              "-1s Death Pulse Cooldown"
-            ]
-          },
           "true_name": "necrolyte",
           "format_name": "Necrophos"
         },
@@ -377,24 +125,6 @@
           "changes": [
             "• Movement speed reduced from 295 to 290"
           ],
-          "talents": {
-            "10": [
-              "+60 Gold/Min",
-              "+100 Cast Range"
-            ],
-            "15": [
-              "+40 Damage",
-              "+8% Magic Resistance"
-            ],
-            "20": [
-              "+250 Health",
-              "+25 Movement Speed"
-            ],
-            "25": [
-              "+15% Spell Amplification",
-              "+40 Bloodlust Attack Speed"
-            ]
-          },
           "true_name": "ogre_magi",
           "format_name": "Ogre Magi"
         },
@@ -403,24 +133,6 @@
             "• Purification manacost rescaled from 70/90/110/130 to 85/100/115/130",
             "• Guardian Angel cooldown increased from 150 to 160"
           ],
-          "talents": {
-            "10": [
-              "+60 Gold/Min",
-              "+15% XP Gain"
-            ],
-            "15": [
-              "+75 Cast Range",
-              "+8 Strength"
-            ],
-            "20": [
-              "+100 Damage",
-              "+6 Mana Regen"
-            ],
-            "25": [
-              "-16% Degen Aura ",
-              "+200 Purification Damage/Heal"
-            ]
-          },
           "true_name": "omniknight",
           "format_name": "Omniknight"
         },
@@ -428,24 +140,6 @@
           "changes": [
             "• Stifling Dagger base damage reduced from 70 to 65"
           ],
-          "talents": {
-            "10": [
-              "+150 Health ",
-              "+15 Damage"
-            ],
-            "15": [
-              "10% Lifesteal ",
-              "+15 Movement Speed"
-            ],
-            "20": [
-              "+35 Attack Speed ",
-              "+10 All Stats"
-            ],
-            "25": [
-              "+25 Agility",
-              "Double Strike Stifling Dagger"
-            ]
-          },
           "true_name": "phantom_assassin",
           "format_name": "Phantom Assassin"
         },
@@ -453,24 +147,6 @@
           "changes": [
             "• Dream Coil cooldown reduced from 75 to 70/65/60"
           ],
-          "talents": {
-            "10": [
-              "+8 Intelligence",
-              "+150 Health"
-            ],
-            "15": [
-              "+40 Damage",
-              "+20 Movement Speed"
-            ],
-            "20": [
-              "+8% Spell Amplification",
-              "+20% Magic Resistance"
-            ],
-            "25": [
-              "+300 Gold/Min",
-              "+75% Illusory Orb Distance/Speed"
-            ]
-          },
           "true_name": "puck",
           "format_name": "Puck"
         },
@@ -478,24 +154,6 @@
           "changes": [
             "• Smokescreen slow from 13/17/21/25% to 10/15/20/25%"
           ],
-          "talents": {
-            "10": [
-              "+15 Movement Speed",
-              "+150 Health"
-            ],
-            "15": [
-              "+10 Agility",
-              "+20% XP Gain"
-            ],
-            "20": [
-              "+250 Cast Range",
-              "+8 All Stats"
-            ],
-            "25": [
-              "+0.4 Backstab Multiplier",
-              "-4s Smokescreen Cooldown"
-            ]
-          },
           "true_name": "riki",
           "format_name": "Riki"
         },
@@ -503,24 +161,6 @@
           "changes": [
             "• Strength reduced from 21 + 1.8 to 20 + 1.6"
           ],
-          "talents": {
-            "10": [
-              "10% Life Steal",
-              "+15 Damage"
-            ],
-            "15": [
-              "+15 Agility",
-              "+10 Strength"
-            ],
-            "20": [
-              "+250 Health",
-              "+25 Attack Speed"
-            ],
-            "25": [
-              "+3s Pounce Leash",
-              "+12 All Stats"
-            ]
-          },
           "true_name": "slark",
           "format_name": "Slark"
         },
@@ -529,24 +169,6 @@
             "• Level 15 Talent increased from +6 all stats to +8",
             "• Level 15 Talent increased from +15 MS to +20"
           ],
-          "talents": {
-            "10": [
-              "+6 Strength",
-              "+200 Mana"
-            ],
-            "15": [
-              "__+20 Movement Speed__",
-              "__+8 All Stats__"
-            ],
-            "20": [
-              "+30 Attack Speed",
-              "15% Evasion"
-            ],
-            "25": [
-              "+65 Damage",
-              "-5s Stormbolt Cooldown"
-            ]
-          },
           "true_name": "sven",
           "format_name": "Sven"
         },
@@ -556,24 +178,6 @@
             "• Level 25 Talent changed from +20% 2s Bash to -50s Respawn Time",
             "• Movement speed reduced from 300 to 295"
           ],
-          "talents": {
-            "10": [
-              "+30 Attack Speed",
-              "+2 Mana Regen"
-            ],
-            "15": [
-              "+90 Gold/Min",
-              "+25 Movement Speed"
-            ],
-            "20": [
-              "15% Cooldown Reduction",
-              "+65 Damage"
-            ],
-            "25": [
-              "+5 Living Armor Block Instances",
-              "__-50s Respawn Time__"
-            ]
-          },
           "true_name": "treant",
           "format_name": "Treant Protector"
         },
@@ -581,24 +185,6 @@
           "changes": [
             "• Turn rate improved from 0.5 to 0.7"
           ],
-          "talents": {
-            "10": [
-              "+20% XP Gain",
-              "+30 Damage"
-            ],
-            "15": [
-              "+15 Strength",
-              "+90 Gold/Min"
-            ],
-            "20": [
-              "+6 Armor ",
-              "+10% Magic Resistance"
-            ],
-            "25": [
-              "+500 Health ",
-              "+150% Walrus Punch Crit"
-            ]
-          },
           "true_name": "tusk",
           "format_name": "Tusk"
         },
@@ -607,24 +193,6 @@
             "• Pit of Malice interval increased from 3.5 to 3.6 seconds",
             "• Pit of Malice cooldown increased from 30/26/22/18 to 32/28/24/20"
           ],
-          "talents": {
-            "10": [
-              "+4 Armor",
-              "+2 Mana Regen"
-            ],
-            "15": [
-              "+200 Health",
-              "+8% Spell Amplification"
-            ],
-            "20": [
-              "+50 Attack Speed",
-              "+100 Cast Range"
-            ],
-            "25": [
-              "+0.4s Pit of Malice Root",
-              "+50 Health Regen"
-            ]
-          },
           "true_name": "abyssal_underlord",
           "format_name": "Underlord"
         },
@@ -633,24 +201,6 @@
             "• Familiars HP reduced from 500/750/1000 to 300/500/700",
             "• Visage base damage reduced by 3"
           ],
-          "talents": {
-            "10": [
-              "+60 Gold/Min",
-              "+15% XP Gain"
-            ],
-            "15": [
-              "+50 Damage",
-              "+100 Cast Range"
-            ],
-            "20": [
-              "+250 Health",
-              "-30s Respawn Time"
-            ],
-            "25": [
-              "+20% Spell Amplification",
-              "+120 Familiars Movement Speed"
-            ]
-          },
           "true_name": "visage",
           "format_name": "Visage"
         },
@@ -658,24 +208,6 @@
           "changes": [
             "• Geminate Attack cooldown from 6/5/4/3 to 7/6/5/3"
           ],
-          "talents": {
-            "10": [
-              "+6 Strength",
-              "+30 Shukuchi Damage"
-            ],
-            "15": [
-              "+25 Damage",
-              "+7 All Stats"
-            ],
-            "20": [
-              "+7 All Stats",
-              "+15 Agility"
-            ],
-            "25": [
-              "+200 Shukuchi Movement Speed",
-              "+20% Magic Resistance"
-            ]
-          },
           "true_name": "weaver",
           "format_name": "Weaver"
         },
@@ -685,24 +217,6 @@
             "• Level 15 Talent increased from +150 Health to +200 Health ",
             "• Windrun cooldown from 14 to 13"
           ],
-          "talents": {
-            "10": [
-              "+15 Damage",
-              "+4 Mana Regen"
-            ],
-            "15": [
-              "__+200 Health__",
-              "__+16 Intelligence__"
-            ],
-            "20": [
-              "+12% Spell Amplification",
-              "+12% Magic Resistance"
-            ],
-            "25": [
-              "+100 Attack Range",
-              " -5s Powershot Cooldown"
-            ]
-          },
           "true_name": "windrunner",
           "format_name": "Windranger"
         },
@@ -710,24 +224,6 @@
           "changes": [
             "• Level 25 Talent increased from +150 Death Ward Attack Range to +175"
           ],
-          "talents": {
-            "10": [
-              "+200 Health",
-              "+20% XP Gain"
-            ],
-            "15": [
-              "+75 Damage",
-              "-35s Respawn Time"
-            ],
-            "20": [
-              "+8 Armor",
-              "+15% Magic Resistance"
-            ],
-            "25": [
-              "__+175 Death Ward Attack Range__",
-              "+20 Voodoo Restoration Heal"
-            ]
-          },
           "true_name": "witch_doctor",
           "format_name": "Witch Doctor"
         },
@@ -736,24 +232,6 @@
             "• Level 20 Talent increased from -35s Respawn Time to -40",
             "• Level 20 Talent increased from +30 Movement Speed to +35"
           ],
-          "talents": {
-            "10": [
-              "+2 Mana Regen",
-              "150 Health"
-            ],
-            "15": [
-              "+5 Armor",
-              "10% Magic Resistance"
-            ],
-            "20": [
-              "__+35 Movement Speed__",
-              "__-40 Respawn Time__"
-            ],
-            "25": [
-              "+1.5% Static Field Damage",
-              "+200 Cast Range"
-            ]
-          },
           "true_name": "zuus",
           "format_name": "Zeus"
         }
@@ -769,24 +247,6 @@
             "• Mist Coil now has a fast projectile (has 2000 speed)",
             "• Aphotic Shield cast point reduced from 0.452 to 0.4"
           ],
-          "talents": {
-            "10": [
-              "+25 Damage",
-              "+15% XP Gain"
-            ],
-            "15": [
-              "+5 Armor",
-              "+200 Mana"
-            ],
-            "20": [
-              "+25 Movement Speed",
-              "15% Cooldown Reduction"
-            ],
-            "25": [
-              "+25 Strength",
-              "+200 Shield HP"
-            ]
-          },
           "true_name": "abaddon",
           "format_name": "Abaddon"
         },
@@ -794,24 +254,6 @@
           "changes": [
             "• Greevil's Greed Bounty Rune multiplier rescaled from 3/4/5/6x to a constant 2x"
           ],
-          "talents": {
-            "10": [
-              "+20 Damage",
-              "+4 Armor"
-            ],
-            "15": [
-              "+15 Movement Speed",
-              "+6 All Stats"
-            ],
-            "20": [
-              "+30 Attack Speed",
-              "+300 Health"
-            ],
-            "25": [
-              "30% Lifesteal",
-              "-4 Acid Spray Armor"
-            ]
-          },
           "true_name": "alchemist",
           "format_name": "Alchemist",
           "familiar_names": [
@@ -823,24 +265,6 @@
           "changes": [
             "• Cold Feet cannot target a unit already affected by Cold Feet."
           ],
-          "talents": {
-            "10": [
-              "+60 Gold/Min",
-              "+8% Spell Amplification"
-            ],
-            "15": [
-              "+15 Intelligence",
-              "+25 Health Regen"
-            ],
-            "20": [
-              "+25 Health Regen",
-              "-30s Respawn Time"
-            ],
-            "25": [
-              "+80 Chilling Touch Damage",
-              "3 Charges of Cold Feet"
-            ]
-          },
           "true_name": "ancient_apparition",
           "format_name": "Ancient Apparition"
         },
@@ -848,24 +272,6 @@
           "changes": [
             "• Added a Scepter for Anti-Mage. Causes Spell Shield to passively block and reflect a targeted spell once every 12 seconds. Disabled with Break."
           ],
-          "talents": {
-            "10": [
-              "+6 Strength",
-              "+20 Damage"
-            ],
-            "15": [
-              "+20 Attack Speed",
-              "+250 HP"
-            ],
-            "20": [
-              "15% Evasion",
-              "+10 All Stats"
-            ],
-            "25": [
-              "-2s Blink Cooldown",
-              "+25 Agility"
-            ]
-          },
           "true_name": "antimage",
           "format_name": "Anti-Mage"
         },
@@ -879,24 +285,6 @@
             "• Tempest Double gold/XP bounty increased from 160 to 180",
             "• Tempest Double now decrements its BKB charges when it uses it"
           ],
-          "talents": {
-            "10": [
-              "+125 Health",
-              "+25 Attack Speed"
-            ],
-            "15": [
-              "+30 Damage",
-              "+8 Strength"
-            ],
-            "20": [
-              "10% Cooldown Reduction",
-              "+100 Attack Range"
-            ],
-            "25": [
-              "30% Lifesteal",
-              "+175 Spark Wraith Damage"
-            ]
-          },
           "true_name": "arc_warden",
           "format_name": "Arc Warden"
         },
@@ -904,24 +292,6 @@
           "changes": [
             "No changes."
           ],
-          "talents": {
-            "10": [
-              "+6 Strength",
-              "+3 Mana Regen"
-            ],
-            "15": [
-              "+75 Damage",
-              "+250 Health"
-            ],
-            "20": [
-              "+25 Health Regen",
-              "+30 Movement Speed"
-            ],
-            "25": [
-              "+100 Battle Hunger DPS",
-              "+15 Armor"
-            ]
-          },
           "true_name": "axe",
           "format_name": "Axe"
         },
@@ -929,24 +299,6 @@
           "changes": [
             "No changes."
           ],
-          "talents": {
-            "10": [
-              "+6 Armor",
-              "+200 Mana"
-            ],
-            "15": [
-              "+25% XP Gain",
-              "+250 Health"
-            ],
-            "20": [
-              "+35 Movement Speed",
-              "+175 Cast Range"
-            ],
-            "25": [
-              "+120 Enfeeble Damage Reduction",
-              "+200 Brain Sap Damage/Heal"
-            ]
-          },
           "true_name": "bane",
           "format_name": "Bane"
         },
@@ -954,24 +306,6 @@
           "changes": [
             "No changes."
           ],
-          "talents": {
-            "10": [
-              "+10 Intelligence",
-              "+4 Armor"
-            ],
-            "15": [
-              "+175 Health",
-              "+5% Spell Amplification"
-            ],
-            "20": [
-              "15% Cooldown Reduction",
-              "+35 Movement Speed"
-            ],
-            "25": [
-              "+8s Firefly Duration",
-              "+200 Flamebreak AoE/Knockback"
-            ]
-          },
           "true_name": "batrider",
           "format_name": "Batrider"
         },
@@ -979,24 +313,6 @@
           "changes": [
             "No changes."
           ],
-          "talents": {
-            "10": [
-              "+15% XP Gain",
-              "+20 Movement Speed"
-            ],
-            "15": [
-              "+12 Strength",
-              "-25s Respawn Time"
-            ],
-            "20": [
-              "12% Cooldown Reduction",
-              "+300 Health"
-            ],
-            "25": [
-              "+175 Wild Axes Damage",
-              "+120 Damage"
-            ]
-          },
           "true_name": "beastmaster",
           "format_name": "Beastmaster"
         },
@@ -1004,24 +320,6 @@
           "changes": [
             "• Thirst now lingers for 2 seconds after a target dies."
           ],
-          "talents": {
-            "10": [
-              "+5 Armor",
-              "+25 Damage"
-            ],
-            "15": [
-              "+30 Attack Speed",
-              "+250 Health"
-            ],
-            "20": [
-              "-30s Respawn Time",
-              "+10 All Stats"
-            ],
-            "25": [
-              "-7s Bloodrite Cooldown",
-              "30% Lifesteal"
-            ]
-          },
           "true_name": "bloodseeker",
           "format_name": "Bloodseeker"
         },
@@ -1029,24 +327,6 @@
           "changes": [
             "• Added Scepter to Bounty Hunter. Allows Shuriken Toss to bounce twice on each hero (bounces on everyone once, then bounces through each one again)"
           ],
-          "talents": {
-            "10": [
-              "+175 Health",
-              "+15% XP Gain"
-            ],
-            "15": [
-              "+40 Attack Speed",
-              "+15 Movement Speed"
-            ],
-            "20": [
-              "+10% Spell Amplification",
-              "+100 Damage"
-            ],
-            "25": [
-              "20% Evasion",
-              "-5s Jinada Cooldown"
-            ]
-          },
           "true_name": "bounty_hunter",
           "format_name": "Bounty Hunter"
         },
@@ -1063,24 +343,6 @@
             "• Drunken Haze duration reduced from 8 to 4",
             "• Drunken Haze mana cost reduced from 50 to 25"
           ],
-          "talents": {
-            "10": [
-              "+25 Attack Speed",
-              "+3 Mana Regen"
-            ],
-            "15": [
-              "+20 Movement Speed",
-              "+10% Magic Resistance"
-            ],
-            "20": [
-              "-30s Respawn Time",
-              "+20 Strength"
-            ],
-            "25": [
-              "+14 Primal Split Unit Armor",
-              "+75 Damage"
-            ]
-          },
           "true_name": "brewmaster",
           "format_name": "Brewmaster"
         },
@@ -1089,24 +351,6 @@
             "• Warpath Max Stacks rescaled from 5/6/7 to 5/7/9",
             "• Quill Spray now deals damage as it quickly expands outwards (at 2400 speed)."
           ],
-          "talents": {
-            "10": [
-              "+7 Strength",
-              "+2 Mana Regen"
-            ],
-            "15": [
-              "+20 Movement Speed",
-              "+200 Health"
-            ],
-            "20": [
-              "+45 Attack Speed",
-              "-30s Respawn Time"
-            ],
-            "25": [
-              "+25 Health Regen",
-              "+4 Max Goo Stacks"
-            ]
-          },
           "true_name": "bristleback",
           "format_name": "Bristleback"
         },
@@ -1115,24 +359,6 @@
             "• Insatiable Hunger lifesteal rescaled from 60/80/100 to 60/90/120",
             "• Insatiable Hunger is no longer dispellable."
           ],
-          "talents": {
-            "10": [
-              "+10 Agility",
-              "+15% XP Gain"
-            ],
-            "15": [
-              "20% Cooldown Reduction",
-              "+7 Armor"
-            ],
-            "20": [
-              "+300 Health",
-              "+50 Attack Speed"
-            ],
-            "25": [
-              "+8 Max Webs",
-              "+200 Spiderlings Health"
-            ]
-          },
           "true_name": "broodmother",
           "format_name": "Broodmother"
         },
@@ -1140,24 +366,6 @@
           "changes": [
             "No changes."
           ],
-          "talents": {
-            "10": [
-              "+30 Damage",
-              "+2 Mana Regen"
-            ],
-            "15": [
-              "10% Evasion",
-              "+10% Magic Resistance"
-            ],
-            "20": [
-              "+10% Spell Amplification",
-              "+15 Strength"
-            ],
-            "25": [
-              "+1s Hoof Stomp Duration",
-              "Gains Return Aura"
-            ]
-          },
           "true_name": "centaur",
           "format_name": "Centaur Warrunner"
         },
@@ -1169,24 +377,6 @@
             "• Chaos Strike now lifesteals for 50% when it crits. Illusions benefit from this as well.",
             "• Added Scepter. Reduces cooldown by 20 seconds and allows Phantoms to be cast on an allied hero. 1200 Cast Range"
           ],
-          "talents": {
-            "10": [
-              "+15 Attack Speed",
-              "+7 Intelligence"
-            ],
-            "15": [
-              "+15 Movement Speed",
-              "+10 Strength"
-            ],
-            "20": [
-              "+120 Gold/Min",
-              "+12 All Stats"
-            ],
-            "25": [
-              "Reality Rift Pierces Spell Immunity",
-              "20% Cooldown Reduction"
-            ]
-          },
           "true_name": "chaos_knight",
           "format_name": "Chaos Knight"
         },
@@ -1195,24 +385,6 @@
             "• Penitence slow and amp increased from 15/20/25/30% to 18/24/30/36%",
             "• Added overhead for the damage dealt with Test of Faith"
           ],
-          "talents": {
-            "10": [
-              "+15 Movement Speed",
-              "+125 Cast Range"
-            ],
-            "15": [
-              "+200 Health",
-              "+25% Spell Amplification"
-            ],
-            "20": [
-              "+90 Gold/Min",
-              "-40s Respawn Time"
-            ],
-            "25": [
-              "+2 Holy Persuasion Max Count",
-              "+200 Hand of God Heal"
-            ]
-          },
           "true_name": "chen",
           "format_name": "Chen"
         },
@@ -1220,24 +392,6 @@
           "changes": [
             "• Death Pact cooldown rescaled from 45/35/25 to 45/30/15"
           ],
-          "talents": {
-            "10": [
-              "+10 Intelligence",
-              "+10% Magic Resistance"
-            ],
-            "15": [
-              "+12 Strength",
-              "+30 Searing Arrows Damage"
-            ],
-            "20": [
-              "20% Evasion",
-              "+10 All Stats"
-            ],
-            "25": [
-              "+70 Strafe Attack Speed",
-              "+125 Attack Range"
-            ]
-          },
           "true_name": "clinkz",
           "format_name": "Clinkz"
         },
@@ -1245,24 +399,6 @@
           "changes": [
             "No changes."
           ],
-          "talents": {
-            "10": [
-              "+4 Armor",
-              "+200 Mana"
-            ],
-            "15": [
-              "+40 Damage",
-              "+15 Movement Speed"
-            ],
-            "20": [
-              "-25s Respawn Time",
-              "+12% Magic Resistance"
-            ],
-            "25": [
-              "+10s Battery Assault Duration",
-              "+400 Health"
-            ]
-          },
           "true_name": "rattletrap",
           "format_name": "Clockwerk"
         },
@@ -1270,24 +406,6 @@
           "changes": [
             "• Reworked Crystal Maiden Scepter. Now applies Frost Bite to any unit that has been standing in the Freezing Field for over 2.5 seconds. An enemy can only be affected once."
           ],
-          "talents": {
-            "10": [
-              "+15% Magic Resistance",
-              "+50 Damage"
-            ],
-            "15": [
-              "+125 Cast Range",
-              "+200 Health"
-            ],
-            "20": [
-              "+120 Gold/Min",
-              "-35s Respawn Time"
-            ],
-            "25": [
-              "+1.5s Frostbite Duration",
-              "+200 Crystal Nova Damage"
-            ]
-          },
           "true_name": "crystal_maiden",
           "format_name": "Crystal Maiden"
         },
@@ -1296,24 +414,6 @@
             "• Wall of Replica no longer deals damage when heroes walk through it.",
             "• Wall of Replica now applies a 1-second 75% slow to units that cross and proc the wall."
           ],
-          "talents": {
-            "10": [
-              "12% Evasion",
-              "+100 Cast Range"
-            ],
-            "15": [
-              "+90 Damage",
-              "+14 Health Regen"
-            ],
-            "20": [
-              "+12 Strength",
-              "+25 Intelligence"
-            ],
-            "25": [
-              "12% Cooldown Reduction",
-              "+70 Ion Shell Damage"
-            ]
-          },
           "true_name": "dark_seer",
           "format_name": "Dark Seer"
         },
@@ -1321,24 +421,6 @@
           "changes": [
             "• Multiple instances of Poison Touch stack."
           ],
-          "talents": {
-            "10": [
-              "+10 Intelligence",
-              "+125 Health"
-            ],
-            "15": [
-              "+100 Cast Range",
-              "+40 Damage"
-            ],
-            "20": [
-              "+25 Movement Speed",
-              "-30s Respawn Time"
-            ],
-            "25": [
-              "-6s Poison Touch Cooldown",
-              "+60 Shadow Wave Heal"
-            ]
-          },
           "true_name": "dazzle",
           "format_name": "Dazzle"
         },
@@ -1346,24 +428,6 @@
           "changes": [
             "No changes."
           ],
-          "talents": {
-            "10": [
-              "+4% Spell Amplification",
-              "+6 Strength"
-            ],
-            "15": [
-              "+8% Magic Resistance",
-              "+75 Cast Range"
-            ],
-            "20": [
-              "10% Cooldown Reduction",
-              "+25 Movement Speed"
-            ],
-            "25": [
-              "+400 Health",
-              "+6 Exorcism Spirits"
-            ]
-          },
           "true_name": "death_prophet",
           "format_name": "Death Prophet"
         },
@@ -1371,24 +435,6 @@
           "changes": [
             "No changes."
           ],
-          "talents": {
-            "10": [
-              "+100 Cast Range",
-              "+60 Gold/Min"
-            ],
-            "15": [
-              "+200 Health",
-              "-30s Respawn Time"
-            ],
-            "20": [
-              "15% Cooldown Reduction",
-              "+10% Spell Amplification"
-            ],
-            "25": [
-              "+30% Magic Resistance",
-              "+4 Thunder Strike Hits"
-            ]
-          },
           "true_name": "disruptor",
           "format_name": "Disruptor"
         },
@@ -1396,24 +442,6 @@
           "changes": [
             "• Infernal Blade mini-stun increased from 0.3 to 0.4 seconds"
           ],
-          "talents": {
-            "10": [
-              "+150 Health",
-              "+8 Intelligence"
-            ],
-            "15": [
-              "+15 Movement Speed",
-              "+6 Armor"
-            ],
-            "20": [
-              "+50 Damage",
-              "+20 Health Regen"
-            ],
-            "25": [
-              "+2% Infernal Blade Damage",
-              "Devour Can Target Ancients"
-            ]
-          },
           "true_name": "doom_bringer",
           "format_name": "Doom"
         },
@@ -1422,24 +450,6 @@
             "• Elder Dragon Form Corrosive Breath now affects the splashed targets.",
             "• Dragon Tail is now a fast projectile while in Dragon Form."
           ],
-          "talents": {
-            "10": [
-              "+6 Strength",
-              "+20 Attack Speed"
-            ],
-            "15": [
-              "+25% XP Gain",
-              "+40 Damage"
-            ],
-            "20": [
-              "+120 Gold/Min",
-              "+300 Health"
-            ],
-            "25": [
-              "2x Dragon Blood Regen/Armor",
-              "+50 Movement Speed"
-            ]
-          },
           "true_name": "dragon_knight",
           "format_name": "Dragon Knight"
         },
@@ -1447,24 +457,6 @@
           "changes": [
             "• Movement Speed reduced by 10"
           ],
-          "talents": {
-            "10": [
-              "+15 Movement Speed",
-              "+5 All Stats"
-            ],
-            "15": [
-              "+175 Health",
-              "+20 Attack Speed"
-            ],
-            "20": [
-              "+6% Precision Aura Damage",
-              "+14 Strength"
-            ],
-            "25": [
-              "+350 Gust Distance/Knockback",
-              "+25 Marksmanship Agility"
-            ]
-          },
           "true_name": "drow_ranger",
           "format_name": "Drow Ranger"
         },
@@ -1472,24 +464,6 @@
           "changes": [
             "• Magnetize debuff now has an overhead counter (similar to Replicate)."
           ],
-          "talents": {
-            "10": [
-              "+10 Intelligence",
-              "+4 Armor"
-            ],
-            "15": [
-              "+15% Magic Resistance",
-              "+90 Gold/Min"
-            ],
-            "20": [
-              "+15% Spell Amplification",
-              "+300 Health"
-            ],
-            "25": [
-              "+300 Rolling Boulder Damage",
-              "-35s Respawn Time"
-            ]
-          },
           "true_name": "earth_spirit",
           "format_name": "Earth Spirit"
         },
@@ -1497,24 +471,6 @@
           "changes": [
             "No changes."
           ],
-          "talents": {
-            "10": [
-              "+250 Mana",
-              "+8 Strength"
-            ],
-            "15": [
-              "+20 Movement Speed",
-              "+50 Damage"
-            ],
-            "20": [
-              "+10% Spell Amplification",
-              "-35s Respawn Time"
-            ],
-            "25": [
-              "+500 Health",
-              "-2s Enchant Totem Cooldown"
-            ]
-          },
           "true_name": "earthshaker",
           "format_name": "Earthshaker"
         },
@@ -1526,24 +482,6 @@
             "• Natural Order now removes 40/60/80/100% of the base magic resistance, rather than a fixed amount.",
             "• Natural Order aura increased from 275 to 325"
           ],
-          "talents": {
-            "10": [
-              "-20s Respawn Time",
-              "+10 Strength"
-            ],
-            "15": [
-              "+275 Health",
-              "+25% XP Gain"
-            ],
-            "20": [
-              "+12% Magic Resistance",
-              "+50 Attack Speed"
-            ],
-            "25": [
-              "+15 Armor",
-              "+80 Astral Spirit Hero Attack"
-            ]
-          },
           "true_name": "elder_titan",
           "format_name": "Elder Titan"
         },
@@ -1552,24 +490,6 @@
             "• Activate Fire Remnant damage rescaled from 100/150/200 to 100/200/300",
             "• Sleight of Fist now places Ember Spirit in front of the target (from the direction of his casting location), rather than randomly around the hero."
           ],
-          "talents": {
-            "10": [
-              "+15% Spell Amplification",
-              "+20 Damage"
-            ],
-            "15": [
-              "+20 Movement Speed",
-              "+6 All Stats"
-            ],
-            "20": [
-              "+8 Armor",
-              "15% Cooldown Reduction [Note: Affects remnant charges]"
-            ],
-            "25": [
-              "+500 Flame Guard Absorption",
-              "+2s Searing Chains"
-            ]
-          },
           "true_name": "ember_spirit",
           "format_name": "Ember Spirit"
         },
@@ -1577,24 +497,6 @@
           "changes": [
             "No changes."
           ],
-          "talents": {
-            "10": [
-              "+5 All Stats",
-              "+15 Movement Speed"
-            ],
-            "15": [
-              "+8s Nature's Attendants Duration",
-              "+40 Damage"
-            ],
-            "20": [
-              "+12% Magic Resistance",
-              "-25s Respawn Time"
-            ],
-            "25": [
-              "+10 Nature's Attendants Wisps",
-              "+25 Intelligence"
-            ]
-          },
           "true_name": "enchantress",
           "format_name": "Enchantress"
         },
@@ -1603,24 +505,6 @@
             "• Eidolon movement speed increased from 260/280/300/320 to 280/300/320/340",
             "• Black Hole now slowly rotates enemy units as it pulls them into the center."
           ],
-          "talents": {
-            "10": [
-              "+20 Movement Speed",
-              "+12% Magic Resistance"
-            ],
-            "15": [
-              "15% Cooldown Reduction",
-              "+120 Gold/Min"
-            ],
-            "20": [
-              "+300 Health",
-              "-30s Respawn Time"
-            ],
-            "25": [
-              "+8 Demonic Conversion Eidolons",
-              "+12 Armor"
-            ]
-          },
           "true_name": "enigma",
           "format_name": "Enigma"
         },
@@ -1628,24 +512,6 @@
           "changes": [
             "No changes."
           ],
-          "talents": {
-            "10": [
-              "+15 Attack Speed",
-              "+5 Strength"
-            ],
-            "15": [
-              "+7 Armor ",
-              "+25 Damage"
-            ],
-            "20": [
-              "+300 Health",
-              "+120 Gold/Min"
-            ],
-            "25": [
-              "+600 Timewalk Cast Range",
-              "20% Evasion"
-            ]
-          },
           "true_name": "faceless_void",
           "format_name": "Faceless Void"
         },
@@ -1654,24 +520,6 @@
             "• Scepter attack interval from 1.2 to 1.1",
             "• Homing Missile now has low attack priority. Creeps already do 0 damage to it."
           ],
-          "talents": {
-            "10": [
-              "+6% Spell Amplification",
-              "+150 Health"
-            ],
-            "15": [
-              "+10% Magic Resistance",
-              "+30 Damage"
-            ],
-            "20": [
-              "+25 Movement Speed",
-              "20% Cooldown Reduction"
-            ],
-            "25": [
-              "+3 Homing Missile Charges",
-              "+4 Flak Cannon Attacks"
-            ]
-          },
           "true_name": "gyrocopter",
           "format_name": "Gyrocopter"
         },
@@ -1679,24 +527,6 @@
           "changes": [
             "No changes."
           ],
-          "talents": {
-            "10": [
-              "+150 Health",
-              "+15 Movement Speed"
-            ],
-            "15": [
-              "+30 Damage",
-              "15% Lifesteal"
-            ],
-            "20": [
-              "+15 Strength",
-              "+40 Attack Speed"
-            ],
-            "25": [
-              "+100 Attack Range",
-              "+400 Life Break Cast Range"
-            ]
-          },
           "true_name": "huskar",
           "format_name": "Huskar"
         },
@@ -1716,24 +546,6 @@
             "• Active Exort instances damage bonus increased from 3/6/9/12/.. to 4/8/12/16/..",
             "• Active Quas instances HP regen increased from 1/2/3/4/.. to 1.5/3/4.5/6/.."
           ],
-          "talents": {
-            "10": [
-              "+15 Damage",
-              "+125 Health"
-            ],
-            "15": [
-              "+1 Forged Spirit Summoned",
-              "+20% XP Gain"
-            ],
-            "20": [
-              "+7 All Stats",
-              "+35 Attack Speed"
-            ],
-            "25": [
-              "AoE Deafening Blast",
-              " -15s Tornado Cooldown"
-            ]
-          },
           "true_name": "invoker",
           "format_name": "Invoker"
         },
@@ -1741,24 +553,6 @@
           "changes": [
             "No changes."
           ],
-          "talents": {
-            "10": [
-              "+10% Magic Resistance",
-              "+6 Armor"
-            ],
-            "15": [
-              "+10 Mana Regen",
-              " +10 Strength"
-            ],
-            "20": [
-              "+20 Health Regen",
-              "+120 Gold/Min"
-            ],
-            "25": [
-              "+150 Spirits Damage",
-              "-40s Respawn Time"
-            ]
-          },
           "true_name": "wisp",
           "format_name": "io"
         },
@@ -1768,24 +562,6 @@
             "• Liquid Fire is no longer a Unique Attack Modifier.",
             "• Macropyre radius increased from 240 to 260"
           ],
-          "talents": {
-            "10": [
-              "+15% XP Gain",
-              "+8% Spell Amplification"
-            ],
-            "15": [
-              "+125 Cast Range",
-              "+250 Health"
-            ],
-            "20": [
-              "+400 Attack Range",
-              "+150 Gold/Min"
-            ],
-            "25": [
-              "+1.25s Ice Path Duration",
-              "-50s Respawn Time"
-            ]
-          },
           "true_name": "jakiro",
           "format_name": "Jakiro"
         },
@@ -1793,24 +569,6 @@
           "changes": [
             "No changes."
           ],
-          "talents": {
-            "10": [
-              "+150 Health",
-              "+20 Damage"
-            ],
-            "15": [
-              "+20 Attack Speed",
-              "+6 Armor"
-            ],
-            "20": [
-              "+20 Movement Speed",
-              "+8 All Stats"
-            ],
-            "25": [
-              "+175 Blade Fury DPS",
-              "+20 Agility"
-            ]
-          },
           "true_name": "juggernaut",
           "format_name": "Juggernaut"
         },
@@ -1818,24 +576,6 @@
           "changes": [
             "No changes."
           ],
-          "talents": {
-            "10": [
-              "+6 Strength",
-              "+20 Movement Speed"
-            ],
-            "15": [
-              "+20% XP Gain ",
-              " -25s Respawn Time"
-            ],
-            "20": [
-              "+10% Magic Resistance",
-              "+7 Armor"
-            ],
-            "25": [
-              "+300 Cast Range",
-              "+200 Illuminate Damage/Heal"
-            ]
-          },
           "true_name": "keeper_of_the_light",
           "format_name": "Keeper of the Light"
         },
@@ -1843,24 +583,6 @@
           "changes": [
             "No changes."
           ],
-          "talents": {
-            "10": [
-              "+20 Damage",
-              "+150 Mana"
-            ],
-            "15": [
-              "+15 Health Regen",
-              "+15 Movement Speed"
-            ],
-            "20": [
-              "+300 Health",
-              "+120 Gold/Min"
-            ],
-            "25": [
-              "+200 Torrent AoE",
-              "+25% Magic Resistance"
-            ]
-          },
           "true_name": "kunkka",
           "format_name": "Kunkka"
         },
@@ -1869,24 +591,6 @@
             "• Overwhelming Odds damage per Hero increased from 20/40/60/80 to 30/60/90/120",
             "• Overwhelming Odds base damage rescaled from 40/80/120/160 to 40/60/80/100"
           ],
-          "talents": {
-            "10": [
-              "+7 Strength",
-              "+15% XP Gain"
-            ],
-            "15": [
-              "+30 Damage",
-              "+20 Movement Speed"
-            ],
-            "20": [
-              "+7 Armor",
-              "-20s Respawn Time"
-            ],
-            "25": [
-              "25% Cooldown Reduction",
-              "+40 Duel Damage Bonus"
-            ]
-          },
           "true_name": "legion_commander",
           "format_name": "Legion Commander"
         },
@@ -1895,24 +599,6 @@
             "• Lightning Storm jumps rescaled from 4/5/6/7 to 4/6/8/10",
             "• Lightning Storm cast point reduced from 0.6 to 0.45"
           ],
-          "talents": {
-            "10": [
-              "+125 Health",
-              "+15 Movement Speed"
-            ],
-            "15": [
-              "+400 Mana",
-              "+8% Magic Resistance"
-            ],
-            "20": [
-              "+5% Spell Amplification",
-              "+12 Strength"
-            ],
-            "25": [
-              "+50 Diabolic Edict Explosions",
-              "+2s Lightning Storm Slow Duration"
-            ]
-          },
           "true_name": "leshrac",
           "format_name": "Leshrac"
         },
@@ -1920,24 +606,6 @@
           "changes": [
             "• Frost Armor can now target invulnerable structures."
           ],
-          "talents": {
-            "10": [
-              "+125 Health",
-              " +15 Movement Speed"
-            ],
-            "15": [
-              "+100 Cast Range",
-              "+5 All Stats"
-            ],
-            "20": [
-              "+150 Damage",
-              "+120 Gold/Min"
-            ],
-            "25": [
-              "+25 Frost Armor Structure Armor",
-              "Attacks Apply 30% MS and AS slow"
-            ]
-          },
           "true_name": "lich",
           "format_name": "Lich"
         },
@@ -1945,24 +613,6 @@
           "changes": [
             "No changes."
           ],
-          "talents": {
-            "10": [
-              "+5 All Stats",
-              "+15 Attack Speed"
-            ],
-            "15": [
-              "+200 Health",
-              "+25 Damage"
-            ],
-            "20": [
-              "15% Evasion",
-              "+25 Movement Speed"
-            ],
-            "25": [
-              "+1s Rage Duration",
-              "+15 Armor"
-            ]
-          },
           "true_name": "life_stealer",
           "format_name": "Lifestealer"
         },
@@ -1970,24 +620,6 @@
           "changes": [
             "No changes."
           ],
-          "talents": {
-            "10": [
-              "+250 Mana",
-              "+20 Damage"
-            ],
-            "15": [
-              "-25s Respawn Time",
-              "+100 Cast Range"
-            ],
-            "20": [
-              "+5% Spell Amplification",
-              "+150 Attack Range"
-            ],
-            "25": [
-              "+1 Fiery Soul Max Stacks",
-              "-4s Dragon Slave Cooldown"
-            ]
-          },
           "true_name": "lina",
           "format_name": "Lina"
         },
@@ -1995,24 +627,6 @@
           "changes": [
             "• Finger of Death Scepter AoE increased from 300 to 325"
           ],
-          "talents": {
-            "10": [
-              "+175 Health",
-              "+45 Damage"
-            ],
-            "15": [
-              "+90 Gold/Min",
-              "-30s Respawn Time"
-            ],
-            "20": [
-              "20% Magic Resistance",
-              "+8% Spell Amplification"
-            ],
-            "25": [
-              "+3 Mana Drain Multi Target",
-              "+20 All Stats"
-            ]
-          },
           "true_name": "lion",
           "format_name": "Lion"
         },
@@ -2021,24 +635,6 @@
             "• Returning from True Form to Druid Form reduced from 1.9 to 0.8. Transforming to bear form still takes 1.9 seconds.",
             "• Spirit Bear now has 0.5 Mana regen."
           ],
-          "talents": {
-            "10": [
-              "+250 Health",
-              "+200 Attack Range"
-            ],
-            "15": [
-              "+65 Damage",
-              "+30 Spirit Bear Damage"
-            ],
-            "20": [
-              "+7 Spirit Bear Armor",
-              "-50s Respawn Time"
-            ],
-            "25": [
-              "+1.5s Entangle Duration",
-              "-10s Savage Roar Cooldown"
-            ]
-          },
           "true_name": "lone_druid",
           "format_name": "Lone Druid"
         },
@@ -2046,24 +642,6 @@
           "changes": [
             "No changes."
           ],
-          "talents": {
-            "10": [
-              "+15 Damage",
-              "+4 Armor"
-            ],
-            "15": [
-              "+150 Health",
-              "+40 Lucent Beam Damage"
-            ],
-            "20": [
-              "+25 Attack Speed",
-              "+10% Magic Resistance"
-            ],
-            "25": [
-              "-4s Lucent Beam Cooldown",
-              "+15 All Stats"
-            ]
-          },
           "true_name": "luna",
           "format_name": "Luna"
         },
@@ -2084,24 +662,6 @@
             "• Summoned Wolves now gain cripple at level 3.",
             "• Cripple attack speed slow increased from 40 to 60"
           ],
-          "talents": {
-            "10": [
-              "+20 Damage",
-              "+150 Health"
-            ],
-            "15": [
-              "-20s Respawn Time",
-              "+12 Strength"
-            ],
-            "20": [
-              "15% Evasion",
-              "15% Cooldown Reduction"
-            ],
-            "25": [
-              "+15s Shapeshift Duration",
-              "+2 Wolves Summoned"
-            ]
-          },
           "true_name": "lycan",
           "format_name": "Lycan"
         },
@@ -2109,24 +669,6 @@
           "changes": [
             "• Skewer cooldown reduced from 30 to 25"
           ],
-          "talents": {
-            "10": [
-              "+25 Attack Speed",
-              "+15% Spell Amplification"
-            ],
-            "15": [
-              "+90 Gold/Min",
-              "+50 Damage"
-            ],
-            "20": [
-              "+15 Strength",
-              "+20 Movement Speed"
-            ],
-            "25": [
-              "-4s Shockwave Cooldown",
-              "-35 Respawn Time"
-            ]
-          },
           "true_name": "magnataur",
           "format_name": "Magnus"
         },
@@ -2134,24 +676,6 @@
           "changes": [
             "No changes."
           ],
-          "talents": {
-            "10": [
-              "+10 Intelligence",
-              "+15 Damage"
-            ],
-            "15": [
-              "+20 Attack Speed",
-              "10% Evasion"
-            ],
-            "20": [
-              "+15 Agility",
-              "+500 Mana"
-            ],
-            "25": [
-              "+1s Stone Gaze Stun",
-              "25% Lifesteal"
-            ]
-          },
           "true_name": "medusa",
           "format_name": "Medusa"
         },
@@ -2161,24 +685,6 @@
             "• Earthbind no longer interrupts channeling spells (it previously did on initial cast but not refresh).",
             "• Meepo strength gain reduced from 1.6 to 1.3"
           ],
-          "talents": {
-            "10": [
-              "Level 10: +4 Armor",
-              "+15 Damage"
-            ],
-            "15": [
-              "Level 15: 15% Lifesteal",
-              "+20 Movement Speed"
-            ],
-            "20": [
-              "10% Evasion",
-              "+25 Attack Speed"
-            ],
-            "25": [
-              "Level 25: +400 Health",
-              "-3s Poof Cooldown"
-            ]
-          },
           "true_name": "meepo",
           "format_name": "Meepo"
         },
@@ -2186,24 +692,6 @@
           "changes": [
             "• Added a charge indicator for Mirana's ultimate scepter Starstorm"
           ],
-          "talents": {
-            "10": [
-              "+8 Agility",
-              "+150 Health"
-            ],
-            "15": [
-              "+5% Spell Amplification",
-              "+30 Attack Speed"
-            ],
-            "20": [
-              "+40 Damage",
-              "+8 Armor"
-            ],
-            "25": [
-              "+100 Leap Attack Speed",
-              "+2 Multishot Sacred Arrows"
-            ]
-          },
           "true_name": "mirana",
           "format_name": "Mirana"
         },
@@ -2211,24 +699,6 @@
           "changes": [
             "No changes."
           ],
-          "talents": {
-            "10": [
-              "+8 Agility",
-              "+200 Mana"
-            ],
-            "15": [
-              "+25 Attack Speed",
-              "12% Cooldown Reduction"
-            ],
-            "20": [
-              "+25 Movement Speed",
-              "+40 Damage"
-            ],
-            "25": [
-              "+400 Waveform Range",
-              "+30% Replicate Damage"
-            ]
-          },
           "true_name": "morphling",
           "format_name": "Morphling"
         },
@@ -2236,24 +706,6 @@
           "changes": [
             "Added to the game."
           ],
-          "talents": {
-            "10": [
-              "+5 Armor",
-              "+20 Attack Speed"
-            ],
-            "15": [
-              "+20 Movement Speed",
-              "+275 Health"
-            ],
-            "20": [
-              "+15 Strength",
-              "+40 Damage"
-            ],
-            "25": [
-              "+100% Boundless Strike​ Crit",
-              "+25% Magic Resistance"
-            ]
-          },
           "true_name": "monkey_king",
           "format_name": "Monkey King"
         },
@@ -2261,24 +713,6 @@
           "changes": [
             "• ixed Rip Tide treating Naga as the damage source rather than her illusions when the illusions apply Rip Tide. Fixes interactions with things like Spiked Carapace."
           ],
-          "talents": {
-            "10": [
-              "+250 Mana",
-              "+125 Health"
-            ],
-            "15": [
-              "+30 Attack Speed",
-              "15% Evasion"
-            ],
-            "20": [
-              "+15 Agility",
-              "+20 Strength"
-            ],
-            "25": [
-              "+1 Mirror Image Illusion",
-              "+40 Movement Speed"
-            ]
-          },
           "true_name": "naga_siren",
           "format_name": "Naga Siren"
         },
@@ -2289,24 +723,6 @@
             "• Scepter Wrath of Nature bounce count no longer increases from 16 to 18.",
             "• Scepter Wrath of Nature base damage reduced from 155/210/275 to 135/170/205. Has same +22% base damage increase from base."
           ],
-          "talents": {
-            "10": [
-              "+20 Damage",
-              "+175 Health"
-            ],
-            "15": [
-              "+10 Intelligence",
-              "+15 Movement Speed"
-            ],
-            "20": [
-              "+35 Attack Speed",
-              "+8 Armor"
-            ],
-            "25": [
-              "+6 Treants Summoned",
-              "-35s Respawn Time"
-            ]
-          },
           "true_name": "furion",
           "format_name": "Nature's Prophet"
         },
@@ -2319,24 +735,6 @@
             "• Death Pulse heal reduced from 70/90/110/130 to 60/80/100/120",
             "• Replaced Sadist with a new ability, Ghost Shroud. Turns you Ethereal for 3/3.5/4/4.5 seconds and grants you a 600 AoE slow aura that reduces enemy movement speed by 12/20/28/36%. While you are in this form you take 20% more magic damage but any HP/MP you heal is amplified by 50%. Cooldown: 28/24/20/16"
           ],
-          "talents": {
-            "10": [
-              "+40 Damage",
-              "+6 Strength"
-            ],
-            "15": [
-              "+6 All Stats ",
-              "+15 Movement Speed"
-            ],
-            "20": [
-              "+5% Spell Amplification",
-              "+10% Magic Resistance"
-            ],
-            "25": [
-              "+400 Health",
-              "-1s Death Pulse Cooldown"
-            ]
-          },
           "true_name": "necrolyte",
           "format_name": "Necrophos"
         },
@@ -2344,24 +742,6 @@
           "changes": [
             "No changes."
           ],
-          "talents": {
-            "10": [
-              "+7 Strength",
-              "+100 Cast Range"
-            ],
-            "15": [
-              "+300 Mana",
-              "+25 Attack Speed"
-            ],
-            "20": [
-              "+30 Movement Speed",
-              "+50 Damage"
-            ],
-            "25": [
-              "+12 Armor",
-              "-6s Crippling Fear Cooldown"
-            ]
-          },
           "true_name": "night_stalker",
           "format_name": "Night Stalker"
         },
@@ -2369,24 +749,6 @@
           "changes": [
             "No changes."
           ],
-          "talents": {
-            "10": [
-              "+5% Spell Amplification",
-              "+175 Health"
-            ],
-            "15": [
-              "+25 Agility",
-              "+10 Strength"
-            ],
-            "20": [
-              "+120 Gold/Min",
-              "+15% Magic Resistance"
-            ],
-            "25": [
-              "+40 Movement Speed",
-              "+200% Spiked Carapace Damage"
-            ]
-          },
           "true_name": "nyx_assassin",
           "format_name": "Nyx Assassin"
         },
@@ -2394,24 +756,6 @@
           "changes": [
             "No changes."
           ],
-          "talents": {
-            "10": [
-              "+60 Gold/Min",
-              "+100 Cast Range"
-            ],
-            "15": [
-              "+40 Damage",
-              "+8% Magic Resistance"
-            ],
-            "20": [
-              "+250 Health",
-              "+25 Movement Speed"
-            ],
-            "25": [
-              "+15% Spell Amplification",
-              "+40 Bloodlust Attack Speed"
-            ]
-          },
           "true_name": "ogre_magi",
           "format_name": "Ogre Magi"
         },
@@ -2425,24 +769,6 @@
             "• Purification cooldown rescaled from 9 to 11/10/9/8",
             "• Purification mana cost reduced from 100/120/140/160 to 70/90/110/130"
           ],
-          "talents": {
-            "10": [
-              "+60 Gold/Min",
-              "+15% XP Gain"
-            ],
-            "15": [
-              "+75 Cast Range",
-              "+8 Strength"
-            ],
-            "20": [
-              "+100 Damage",
-              "+6 Mana Regen"
-            ],
-            "25": [
-              "-16% Degen Aura ",
-              "+200 Purification Damage/Heal"
-            ]
-          },
           "true_name": "omniknight",
           "format_name": "Omniknight"
         },
@@ -2450,24 +776,6 @@
           "changes": [
             "• Astral Imprisonment cast range rescaled from 225/350/475/600 to 225/300/375/450"
           ],
-          "talents": {
-            "10": [
-              "+250 Mana",
-              "+10 Movement Speed"
-            ],
-            "15": [
-              "+5 Armor",
-              "+20 Attack Speed"
-            ],
-            "20": [
-              "+15 Intelligence",
-              "+250 Health"
-            ],
-            "25": [
-              "+60s Arcane Orb Intelligence Steal",
-              "+8% Spell Amplification"
-            ]
-          },
           "true_name": "obsidian_destroyer",
           "format_name": "Outworld Devourer"
         },
@@ -2475,24 +783,6 @@
           "changes": [
             "• Stifling Dagger base damage reduced from 75 to 70"
           ],
-          "talents": {
-            "10": [
-              "+150 Health ",
-              "+15 Damage"
-            ],
-            "15": [
-              "10% Lifesteal ",
-              "+15 Movement Speed"
-            ],
-            "20": [
-              "+35 Attack Speed ",
-              "+10 All Stats"
-            ],
-            "25": [
-              "+25 Agility",
-              "Double Strike Stifling Dagger"
-            ]
-          },
           "true_name": "phantom_assassin",
           "format_name": "Phantom Assassin"
         },
@@ -2502,24 +792,6 @@
             "• Phantom Rush minimum proc range reduced from 300 to 250",
             "• Added Scepter to Phantom Lancer. Causes Spirit Lance to bounce on nearby enemies. Bounce Range: 400. Bounce cap: 5"
           ],
-          "talents": {
-            "10": [
-              "+150 Health",
-              "+20 Attack Speed"
-            ],
-            "15": [
-              "+8 All Stats",
-              "15% Cooldown Reduction"
-            ],
-            "20": [
-              "+15% Magic Resistance",
-              "15% Evasion"
-            ],
-            "25": [
-              "+600 Phantom Rush Range",
-              "+20 Strength"
-            ]
-          },
           "true_name": "phantom_lancer",
           "format_name": "Phantom Lancer"
         },
@@ -2530,24 +802,6 @@
             "• Sun Ray base damage increased from 10/15/20/25 to 14/20/26/32",
             "• Icarus Dive slow increased from 25% to 28%"
           ],
-          "talents": {
-            "10": [
-              "-20s Respawn Time",
-              "+175 Health"
-            ],
-            "15": [
-              "+90 Gold/Min",
-              "+12 Strength"
-            ],
-            "20": [
-              "+10 Armor",
-              "+8% Spell Amplification"
-            ],
-            "25": [
-              "+2 Supernova Hit Count",
-              "+1s Supernova Stun Duration"
-            ]
-          },
           "true_name": "phoenix",
           "format_name": "Phoenix"
         },
@@ -2555,24 +809,6 @@
           "changes": [
             "No changes."
           ],
-          "talents": {
-            "10": [
-              "+8 Intelligence",
-              "+150 Health"
-            ],
-            "15": [
-              "+40 Damage",
-              "+20 Movement Speed"
-            ],
-            "20": [
-              "+8% Spell Amplification",
-              "+20% Magic Resistance"
-            ],
-            "25": [
-              "+300 Gold/Min",
-              "+75% Illusory Orb Distance/Speed"
-            ]
-          },
           "true_name": "puck",
           "format_name": "Puck"
         },
@@ -2580,24 +816,6 @@
           "changes": [
             "No changes."
           ],
-          "talents": {
-            "10": [
-              "+8 Strength",
-              "+2 Mana Regen"
-            ],
-            "15": [
-              "+5 Armor",
-              "+15 Movement Speed"
-            ],
-            "20": [
-              "+150 Gold/Min",
-              "-35s Respawn Time"
-            ],
-            "25": [
-              "+1.75 Flesh Heap Stack Strength",
-              "+120 Rot Damage"
-            ]
-          },
           "true_name": "pudge",
           "format_name": "Pudge"
         },
@@ -2605,24 +823,6 @@
           "changes": [
             "• Nether Ward mana regen reduction per second rescaled from 1.5/3/4.5/6 to 0.25/0.5/0.75/1%"
           ],
-          "talents": {
-            "10": [
-              "+3 Mana Regen",
-              "+150 Health"
-            ],
-            "15": [
-              "-25s Respawn Time",
-              "+10 Strength"
-            ],
-            "20": [
-              "+10 All Stats",
-              "+100 Cast Range"
-            ],
-            "25": [
-              "+50% Life Drain Heal",
-              "+100 Nether Blast Damage"
-            ]
-          },
           "true_name": "pugna",
           "format_name": "Pugna"
         },
@@ -2630,24 +830,6 @@
           "changes": [
             "• Base attack time reduced from 1.6 to 1.5"
           ],
-          "talents": {
-            "10": [
-              "+20 Damage",
-              "+5 Strength"
-            ],
-            "15": [
-              "+12% Cooldown Reduction",
-              "+90 Gold/Min"
-            ],
-            "20": [
-              "+100 Attack Range",
-              "+200 Health"
-            ],
-            "25": [
-              "70% Spell Lifesteal (1/5 for non-heroes)",
-              "+35 Intelligence"
-            ]
-          },
           "true_name": "queenofpain",
           "format_name": "Queen of Pain"
         },
@@ -2655,24 +837,6 @@
           "changes": [
             "No changes."
           ],
-          "talents": {
-            "10": [
-              "+15 Movement Speed ",
-              "+10 Agility"
-            ],
-            "15": [
-              "+5 Armor",
-              "+150 Cast Range"
-            ],
-            "20": [
-              "+250 Health",
-              "+30 Attack Speed"
-            ],
-            "25": [
-              "+175 Attack Range",
-              "+14 Static Link Damage Steal"
-            ]
-          },
           "true_name": "razor",
           "format_name": "Razor"
         },
@@ -2680,24 +844,6 @@
           "changes": [
             "• Added a Scepter for Riki. Increases ultimate duration by 4 seconds. Allows you to target an allied hero, hiding inside them for the duration. The radius that you attack in follows the allied hero. 1000 Cast Range."
           ],
-          "talents": {
-            "10": [
-              "+15 Movement Speed",
-              "+150 Health"
-            ],
-            "15": [
-              "+10 Agility",
-              "+20% XP Gain"
-            ],
-            "20": [
-              "+250 Cast Range",
-              "+8 All Stats"
-            ],
-            "25": [
-              "+0.4 Backstab Multiplier",
-              "-4s Smokescreen Cooldown"
-            ]
-          },
           "true_name": "riki",
           "format_name": "Riki"
         },
@@ -2706,24 +852,6 @@
             "• Fade Bolt damage increased from 75/150/225/300 to 80/160/240/320",
             "• Fade Bolt damage reduction per bounce increased from 4% to 8%"
           ],
-          "talents": {
-            "10": [
-              "+60 Gold/Min",
-              "+50 Damage"
-            ],
-            "15": [
-              "+150 Health",
-              "+15 Intelligence"
-            ],
-            "20": [
-              "+75 Cast Range",
-              "+8% Spell Amplification"
-            ],
-            "25": [
-              "20% Cooldown Reduction",
-              "+400 Telekinesis Land Distance"
-            ]
-          },
           "true_name": "rubick",
           "format_name": "Rubick"
         },
@@ -2731,24 +859,6 @@
           "changes": [
             "• Burrow Strike Scepter upgrade no longer applies Caustic Finale on illusions, only real heroes."
           ],
-          "talents": {
-            "10": [
-              "+200 Mana",
-              "+5 Armor"
-            ],
-            "15": [
-              "+12% Magic Resistance",
-              "+15 Movement Speed"
-            ],
-            "20": [
-              "+350 Health",
-              "+120 Gold/Min"
-            ],
-            "25": [
-              "+4 Epicenter Pulses",
-              "+50 Health Regen"
-            ]
-          },
           "true_name": "sand_king",
           "format_name": "Sand King"
         },
@@ -2756,24 +866,6 @@
           "changes": [
             "No changes."
           ],
-          "talents": {
-            "10": [
-              "+6 Strength",
-              "+10 Movement Speed"
-            ],
-            "15": [
-              "+75 Cast Range",
-              "+6% Spell Amplification"
-            ],
-            "20": [
-              "+10% Magic Resistance",
-              "-25s Respawn Time"
-            ],
-            "25": [
-              "+400 Demonic Purge Damage",
-              "-1s Shadow Poison Cooldown"
-            ]
-          },
           "true_name": "shadow_demon",
           "format_name": "Shadow Demon"
         },
@@ -2781,24 +873,6 @@
           "changes": [
             "• Shadow Raze cast point reduced from 0.67 to 0.55"
           ],
-          "talents": {
-            "10": [
-              "+15 Movement Speed",
-              "+20 Attack Speed"
-            ],
-            "15": [
-              "+6% Spell Amplification ",
-              "+175 Health"
-            ],
-            "20": [
-              "15% Evasion",
-              "+2 Damage Per Soul"
-            ],
-            "25": [
-              "+150 Attack Range",
-              "-7s Shadow Raze Cooldown"
-            ]
-          },
           "true_name": "nevermore",
           "format_name": "Shadow Fiend"
         },
@@ -2809,24 +883,6 @@
             "• Reworked Mass Serpent Wards Scepter. Now causes Serpent Wards to have a split shot, attacking two units each for full damage.",
             "• Scepter Mass Serpent Wards attack range increases by 225."
           ],
-          "talents": {
-            "10": [
-              "+150 Health",
-              "+15 Movement Speed"
-            ],
-            "15": [
-              "+100 Cast Range",
-              "+20% XP Gain"
-            ],
-            "20": [
-              "-30s Respawn Time",
-              "+20% Magic Resistance"
-            ],
-            "25": [
-              "+1 Serpent Wards Attacks Health",
-              "+3s Shackles Duration"
-            ]
-          },
           "true_name": "shadow_shaman",
           "format_name": "Shadow Shaman"
         },
@@ -2834,24 +890,6 @@
           "changes": [
             "No changes."
           ],
-          "talents": {
-            "10": [
-              "+4 Armor",
-              "+7 Intelligence"
-            ],
-            "15": [
-              "+200 Health",
-              "+60 Gold/Min"
-            ],
-            "20": [
-              "+30 Attack Speed",
-              "+12% Magic Resistance"
-            ],
-            "25": [
-              "+200 Attack Range",
-              "+20% Curse Slow"
-            ]
-          },
           "true_name": "silencer",
           "format_name": "Silencer"
         },
@@ -2859,24 +897,6 @@
           "changes": [
             "• Reworked Skywrath Mage's Scepter. Anytime you cast an ability, a different random nearby target (heroes prioritized) will be targeted within 700 AoE of the target. For example, if you Ancient Seal a target, you will also Ancient Seal another target. If you Mystic Flare an area, a random nearby target (heroes prioritized) that isn't in the existing target area (but is within 700 range from the location) will also be hit."
           ],
-          "talents": {
-            "10": [
-              "+125 Health",
-              "+7 Intelligence"
-            ],
-            "15": [
-              "+50 Damage",
-              "+60 Gold/Min"
-            ],
-            "20": [
-              "+20 Movement Speed",
-              "+15% Magic Resistance"
-            ],
-            "25": [
-              "-4s Ancient Seal Cooldown",
-              "+14 Mana Regen"
-            ]
-          },
           "true_name": "skywrath_mage",
           "format_name": "Skywrath Mage"
         },
@@ -2884,24 +904,6 @@
           "changes": [
             "No changes."
           ],
-          "talents": {
-            "10": [
-              "+6 Health Regen",
-              "+175 Mana"
-            ],
-            "15": [
-              "+200 Health",
-              "+25 Attack Speed"
-            ],
-            "20": [
-              "+35 Damage",
-              "+7 Armor"
-            ],
-            "25": [
-              "+20 Strength",
-              "+10% Bash Chance"
-            ]
-          },
           "true_name": "slardar",
           "format_name": "Slardar"
         },
@@ -2909,24 +911,6 @@
           "changes": [
             "• Added Scepter to Slark. Reduces ultimate cooldown from 60 to 30 and causes Shadow Dance active to be a 325 AoE, hiding allied heroes underneath it."
           ],
-          "talents": {
-            "10": [
-              "10% Life Steal",
-              "+15 Damage"
-            ],
-            "15": [
-              "+15 Agility",
-              "+10 Strength"
-            ],
-            "20": [
-              "+250 Health",
-              "+25 Attack Speed"
-            ],
-            "25": [
-              "+3s Pounce Leash",
-              "+12 All Stats"
-            ]
-          },
           "true_name": "slark",
           "format_name": "Slark"
         },
@@ -2934,24 +918,6 @@
           "changes": [
             "• Added Scepter to Sniper. Assassinate is now a ground targeted spell with 400 AoE. Upon cast, it locks onto the targets in the area, and after the channel period launches a 2.8x critical strike and procs headshot on the player-controlled units in the AoE. (only affects visible heroes/illusions)"
           ],
-          "talents": {
-            "10": [
-              "+4 Mana Regen",
-              "+15 Attack Speed"
-            ],
-            "15": [
-              "+20 Shrapnel DPS",
-              "+200 Health"
-            ],
-            "20": [
-              "+8 Armor",
-              "25% Cooldown Reduction"
-            ],
-            "25": [
-              "+100 Attack Range",
-              "+4 Shrapnel Charges"
-            ]
-          },
           "true_name": "sniper",
           "format_name": "Sniper"
         },
@@ -2959,24 +925,6 @@
           "changes": [
             "No changes."
           ],
-          "talents": {
-            "10": [
-              "+20 Damage",
-              "+5 Armor"
-            ],
-            "15": [
-              "+6 All Stats",
-              "+15 Movement Speed"
-            ],
-            "20": [
-              "+25 Attack Speed",
-              "+12 Strength"
-            ],
-            "25": [
-              "-10s Spectral Dagger Cooldown",
-              "400 Health"
-            ]
-          },
           "true_name": "spectre",
           "format_name": "Spectre"
         },
@@ -2984,24 +932,6 @@
           "changes": [
             "No changes."
           ],
-          "talents": {
-            "10": [
-              "+5 All Stats",
-              "+15 Movement Speed"
-            ],
-            "15": [
-              "+20 Damage",
-              "+5 Armor"
-            ],
-            "20": [
-              "+120 Gold/Min",
-              "-40s Respawn Time"
-            ],
-            "25": [
-              "+17% Greater Bash Chance ",
-              "+500 Charge Speed"
-            ]
-          },
           "true_name": "spirit_breaker",
           "format_name": "Spirit Breaker"
         },
@@ -3009,24 +939,6 @@
           "changes": [
             "No changes."
           ],
-          "talents": {
-            "10": [
-              "+20 Damage",
-              "+3 Mana Regen"
-            ],
-            "15": [
-              "+175 Health",
-              "+10 Intelligence"
-            ],
-            "20": [
-              "+40 Attack Speed",
-              "+7 Armor"
-            ],
-            "25": [
-              "+0.75s Electric Vortex ",
-              "+10% Spell Amplification"
-            ]
-          },
           "true_name": "storm_spirit",
           "format_name": "Storm Spirit"
         },
@@ -3034,24 +946,6 @@
           "changes": [
             "No changes."
           ],
-          "talents": {
-            "10": [
-              "+6 Strength",
-              "+200 Mana"
-            ],
-            "15": [
-              "+15 Movement Speed",
-              "+6 All Stats"
-            ],
-            "20": [
-              "+30 Attack Speed",
-              "15% Evasion"
-            ],
-            "25": [
-              "+65 Damage",
-              "-5s Stormbolt Cooldown"
-            ]
-          },
           "true_name": "sven",
           "format_name": "Sven"
         },
@@ -3059,24 +953,6 @@
           "changes": [
             "http://www.dota2.com/700/gameplay ctrl+f techies lol"
           ],
-          "talents": {
-            "10": [
-              "+20 Movement Speed",
-              "+2 Mana Regen"
-            ],
-            "15": [
-              "+25% XP Gain",
-              "+200 Cast Range"
-            ],
-            "20": [
-              "+120 Gold/Min",
-              "-60s Respawn Time"
-            ],
-            "25": [
-              "+400 Blast Off Damage",
-              "25% Cooldown Reduction"
-            ]
-          },
           "true_name": "techies",
           "format_name": "Techies"
         },
@@ -3084,24 +960,6 @@
           "changes": [
             "• Psi Blades now work when illusions of Templar Assassin attack"
           ],
-          "talents": {
-            "10": [
-              "+25 Attack Speed",
-              "+15 Movement Speed"
-            ],
-            "15": [
-              "+6 All Stats",
-              "12% Evasion"
-            ],
-            "20": [
-              "+250 Health",
-              "+40 Damage"
-            ],
-            "25": [
-              "+3 Refraction Instances",
-              "-30s Respawn Time"
-            ]
-          },
           "true_name": "templar_assassin",
           "format_name": "Templar Assassin"
         },
@@ -3109,24 +967,6 @@
           "changes": [
             "No changes."
           ],
-          "talents": {
-            "10": [
-              "+6 Health Regen",
-              "+15 Attack Speed"
-            ],
-            "15": [
-              "+25 Damage",
-              "+175 Health"
-            ],
-            "20": [
-              "+15 Agility ",
-              "+15 Movement Speed"
-            ],
-            "25": [
-              "+15 All Stats ",
-              "-30s Sunder Cooldown"
-            ]
-          },
           "true_name": "terrorblade",
           "format_name": "Terrorblade"
         },
@@ -3134,24 +974,6 @@
           "changes": [
             "• Gush projectile speed reduced from 4000 to 2500"
           ],
-          "talents": {
-            "10": [
-              "+50 Damage",
-              "+150 Health"
-            ],
-            "15": [
-              "+7 Armor",
-              "+30% XP Gain"
-            ],
-            "20": [
-              "+6 Mana Regen",
-              "+15 Strength"
-            ],
-            "25": [
-              "-5 Gush Armor",
-              "20% Cooldown Reduction"
-            ]
-          },
           "true_name": "tidehunter",
           "format_name": "Tidehunter"
         },
@@ -3159,24 +981,6 @@
           "changes": [
             "No changes."
           ],
-          "talents": {
-            "10": [
-              "+150 Health",
-              "+10% XP Gain"
-            ],
-            "15": [
-              "+14 Health Regen",
-              "+15 Intelligence"
-            ],
-            "20": [
-              "+5% Spell Amplification",
-              "+125 Cast Range"
-            ],
-            "25": [
-              "+6% Whirling Death Attribute Reduction",
-              "+20 Strength"
-            ]
-          },
           "true_name": "shredder",
           "format_name": "Timbersaw"
         },
@@ -3184,24 +988,6 @@
           "changes": [
             "No changes."
           ],
-          "talents": {
-            "10": [
-              "+8 Intelligence",
-              "+5 Armor"
-            ],
-            "15": [
-              "+200 Health",
-              "4% Spell Amplification"
-            ],
-            "20": [
-              "+75 Cast Range ",
-              "15% Magic Resistance"
-            ],
-            "25": [
-              " 20% Spell Lifesteal (1/5 for non-heroes) ",
-              "+100 Laser Damage"
-            ]
-          },
           "true_name": "tinker",
           "format_name": "Tinker"
         },
@@ -3213,24 +999,6 @@
             "• Craggy Exterior chance rescaled from 10/15/20/25% to 25%",
             "• Craggy Exterior stun duration rescaled from 1/1.25/1.5/1.75 to 0.5/1.0/1.5/2"
           ],
-          "talents": {
-            "10": [
-              "+6 Strength",
-              "+10 Intelligence"
-            ],
-            "15": [
-              "+45 Damage ",
-              "+15 Movement Speed"
-            ],
-            "20": [
-              "+25 Attack Speed ",
-              "+14 Mana Regen"
-            ],
-            "25": [
-              "20% Cooldown Reduction",
-              "+200 Avalanche Damage"
-            ]
-          },
           "true_name": "tiny",
           "format_name": "Tiny"
         },
@@ -3238,24 +1006,6 @@
           "changes": [
             "• Nature's Guise is now a passive ability. Whenever you are within 265 range of a tree for 6/5/4/3 seconds (without attacking), you gain invisibility and 16/22/28/34% movement speed bonus. When you attack out of invisibility, you bash the target for 1/1.4/1.8/2.2 seconds. Distance-to-tree check still has a 0.75 grace period before invisibility is removed. Your attack out of invisibility cannot miss. You can cast while invisible."
           ],
-          "talents": {
-            "10": [
-              "+30 Attack Speed",
-              "+2 Mana Regen"
-            ],
-            "15": [
-              "+90 Gold/Min",
-              "+25 Movement Speed"
-            ],
-            "20": [
-              "15% Cooldown Reduction",
-              "+65 Damage"
-            ],
-            "25": [
-              "+5 Living Armor Block Instances",
-              "+20% 2s Bash"
-            ]
-          },
           "true_name": "treant",
           "format_name": "Treant Protector"
         },
@@ -3263,24 +1013,6 @@
           "changes": [
             "No changes."
           ],
-          "talents": {
-            "10": [
-              "+6 Strength",
-              "10 Agility"
-            ],
-            "15": [
-              "+15 Movement Speed",
-              "+6 Armor"
-            ],
-            "20": [
-              "+300 Health",
-              "+40 Damage"
-            ],
-            "25": [
-              "-7s Whirling Axes Cooldown",
-              "+20% Magic Resistance"
-            ]
-          },
           "true_name": "troll_warlord",
           "format_name": "Troll Warlord"
         },
@@ -3291,24 +1023,6 @@
             "• Walrus Kick attack range increased from 128 to 150",
             "• Fixed Walrus Punch having old cooldown values on level 1 and 2 when Scepter is equipped (it went from 36/24/12 to 20/16/12)"
           ],
-          "talents": {
-            "10": [
-              "+20% XP Gain",
-              "+30 Damage"
-            ],
-            "15": [
-              "+15 Strength",
-              "+90 Gold/Min"
-            ],
-            "20": [
-              "+6 Armor ",
-              "+10% Magic Resistance"
-            ],
-            "25": [
-              "+500 Health ",
-              "+150% Walrus Punch Crit"
-            ]
-          },
           "true_name": "tusk",
           "format_name": "Tusk"
         },
@@ -3327,24 +1041,6 @@
             "• Dark Rift radius increased from 450 to 600",
             "• Dark Rift delay increased from 5/4/3 to 6/5/4"
           ],
-          "talents": {
-            "10": [
-              "+4 Armor",
-              "+2 Mana Regen"
-            ],
-            "15": [
-              "+200 Health",
-              "+8% Spell Amplification"
-            ],
-            "20": [
-              "+50 Attack Speed",
-              "+100 Cast Range"
-            ],
-            "25": [
-              "+0.4s Pit of Malice Root",
-              "+50 Health Regen"
-            ]
-          },
           "true_name": "abyssal_underlord",
           "format_name": "Underlord"
         },
@@ -3352,24 +1048,6 @@
           "changes": [
             "• Flesh Golem Heal increased from 6% per hero to 10%"
           ],
-          "talents": {
-            "10": [
-              "-30s Respawn Time",
-              "+90 Gold/Min"
-            ],
-            "15": [
-              "+30% XP Gain",
-              "+300 Health"
-            ],
-            "20": [
-              "+10 All Stats ",
-              "+20 Movement Speed"
-            ],
-            "25": [
-              "+40 Tombstone Zombie Damage",
-              "+12 Armor"
-            ]
-          },
           "true_name": "undying",
           "format_name": "Undying"
         },
@@ -3377,24 +1055,6 @@
           "changes": [
             "No changes."
           ],
-          "talents": {
-            "10": [
-              "+25 Damage",
-              "+8% Magic Resistance"
-            ],
-            "15": [
-              "+5 Armor ",
-              "+20 Attack Speed"
-            ],
-            "20": [
-              "+15 Movement Speed ",
-              "+250 Health"
-            ],
-            "25": [
-              "+10 Fury Swipes Damage",
-              "+14 All Stats"
-            ]
-          },
           "true_name": "ursa",
           "format_name": "Ursa"
         },
@@ -3403,24 +1063,6 @@
             "• Wave of Terror damage type changed from Pure to Magic",
             "• Wave of Terror damage increased from 30/50/70/90 to 45/70/95/120"
           ],
-          "talents": {
-            "10": [
-              "+8% Magic Resistance",
-              "+25 Attack Speed"
-            ],
-            "15": [
-              "+100 Magic Missile Damage",
-              "+8 All Stats"
-            ],
-            "20": [
-              "+50 Damage",
-              "+20 Movement Speed"
-            ],
-            "25": [
-              "+20% Vengeance Aura Damage",
-              "Magic Missile Pierces Spell Immunity"
-            ]
-          },
           "true_name": "vengefulspirit",
           "format_name": "Vengeful Spirit"
         },
@@ -3428,24 +1070,6 @@
           "changes": [
             "No changes."
           ],
-          "talents": {
-            "10": [
-              "+20% XP Gain",
-              "+20 Movement Speed"
-            ],
-            "15": [
-              "+175 Health",
-              "+150 Cast Range"
-            ],
-            "20": [
-              "+15% Magic Resistance",
-              "+75 Damage"
-            ],
-            "25": [
-              "3x Plague Ward HP/Damage",
-              "-60s Respawn Time"
-            ]
-          },
           "true_name": "venomancer",
           "format_name": "Venomancer"
         },
@@ -3453,24 +1077,6 @@
           "changes": [
             "• Nether Toxin base damage increased from 2.5/5/7.5/10 to 3/6/9/12 (Maximum damage increased from 40/80/120/160 to 48/96/144/192)"
           ],
-          "talents": {
-            "10": [
-              "+15 Damage",
-              "+125 Health"
-            ],
-            "15": [
-              "+7 Strength",
-              "+14 Agility"
-            ],
-            "20": [
-              "+7 Armor",
-              "+75 Attack Range"
-            ],
-            "25": [
-              "Poison Attack Affects Buildings",
-              "+80 Viper Strike DPS"
-            ]
-          },
           "true_name": "viper",
           "format_name": "Viper"
         },
@@ -3492,24 +1098,6 @@
             "• Stone Form duration reduced from 8 to 6 seconds",
             "• Stone Form cooldown reduced from 20 to 14"
           ],
-          "talents": {
-            "10": [
-              "+60 Gold/Min",
-              "+15% XP Gain"
-            ],
-            "15": [
-              "+50 Damage",
-              "+100 Cast Range"
-            ],
-            "20": [
-              "+250 Health",
-              "-30s Respawn Time"
-            ],
-            "25": [
-              "+20% Spell Amplification",
-              "+120 Familiars Movement Speed"
-            ]
-          },
           "true_name": "visage",
           "format_name": "Visage"
         },
@@ -3518,24 +1106,6 @@
             "• Fatal Bonds mana cost increased from 120 to 140",
             "• Fixed Fatal Bonds continuing to do damage to you after the buff was dispelled"
           ],
-          "talents": {
-            "10": [
-              "+6 All Stats",
-              "+15% XP Gain"
-            ],
-            "15": [
-              "+125 Cast Range",
-              "+20 Movement Speed"
-            ],
-            "20": [
-              "+350 Health",
-              "-30s Respawn Time"
-            ],
-            "25": [
-              "Spell Immunity for Chaotic Offering Golems",
-              "+15 Chaotic Offering Golems Armor"
-            ]
-          },
           "true_name": "warlock",
           "format_name": "Warlock"
         },
@@ -3543,24 +1113,6 @@
           "changes": [
             "• Agility gain from 2.5 to 2.8"
           ],
-          "talents": {
-            "10": [
-              "+6 Strength",
-              "+30 Shukuchi Damage"
-            ],
-            "15": [
-              "+25 Damage",
-              "+7 All Stats"
-            ],
-            "20": [
-              "+7 All Stats",
-              "+15 Agility"
-            ],
-            "25": [
-              "+200 Shukuchi Movement Speed",
-              "+20% Magic Resistance"
-            ]
-          },
           "true_name": "weaver",
           "format_name": "Weaver"
         },
@@ -3569,24 +1121,6 @@
             "• Powershot damage reduction per unit hit increased from 10% to 20%",
             "• Powershot damage rescaled from 120/200/280/360 to 120/220/320/420"
           ],
-          "talents": {
-            "10": [
-              "+15 Damage",
-              "+4 Mana Regen"
-            ],
-            "15": [
-              "+150 Health",
-              "+13 Intelligence"
-            ],
-            "20": [
-              "+12% Spell Amplification",
-              "+12% Magic Resistance"
-            ],
-            "25": [
-              "+100 Attack Range",
-              " -5s Powershot Cooldown"
-            ]
-          },
           "true_name": "windrunner",
           "format_name": "Windranger"
         },
@@ -3594,24 +1128,6 @@
           "changes": [
             "No changes."
           ],
-          "talents": {
-            "10": [
-              "+8 Intelligence",
-              "+5 Strength"
-            ],
-            "15": [
-              "+15 Movement Speed",
-              "+40 Damage"
-            ],
-            "20": [
-              "+120 Gold/Min",
-              "-35s Respawn Time"
-            ],
-            "25": [
-              "-3s Splinter Blast Cooldown",
-              "+15% Arctic Burn Slow"
-            ]
-          },
           "true_name": "winter_wyvern",
           "format_name": "Winter Wyvern"
         },
@@ -3619,24 +1135,6 @@
           "changes": [
             "• Maledict DPS increased from 5/10/15/20 to 7/14/21/28"
           ],
-          "talents": {
-            "10": [
-              "+200 Health",
-              "+20% XP Gain"
-            ],
-            "15": [
-              "+75 Damage",
-              "-35s Respawn Time"
-            ],
-            "20": [
-              "+8 Armor",
-              "+15% Magic Resistance"
-            ],
-            "25": [
-              "+150 Death Ward Attack Range",
-              "+20 Voodoo Restoration Heal"
-            ]
-          },
           "true_name": "witch_doctor",
           "format_name": "Witch Doctor"
         },
@@ -3644,24 +1142,6 @@
           "changes": [
             "• Reincarnation cooldown reduced from 260/160/60 to 240/140/40"
           ],
-          "talents": {
-            "10": [
-              "+15 Damage ",
-              "+8 Intelligence"
-            ],
-            "15": [
-              "+15 Movement Speed",
-              "+200 Health"
-            ],
-            "20": [
-              "+40 Attack Speed",
-              "+20 Strength"
-            ],
-            "25": [
-              "No Reincarnation mana cost",
-              "+20% Vampiric Aura Lifesteal"
-            ]
-          },
           "true_name": "skeleton_king",
           "format_name": "Wraith King"
         },
@@ -3669,24 +1149,6 @@
           "changes": [
             "• Reworked Zeus Scepter. Grants you a new ability, Nimbus, that creates a storm cloud anywhere on the map. The cloud casts Lightning Bolt automatically on the closest enemy within 500 AoE once every 2.5 seconds (scales with cooldown reduction). Clouds last 50 seconds. Cooldown: 50, Mana cost: 275. Requires 8 hits from ranged heroes to kill (4 from melee heroes, 16 from non-heroes), and has a 100 gold bounty. Nimbus summon is a global cast range."
           ],
-          "talents": {
-            "10": [
-              "+2 Mana Regen",
-              "150 Health"
-            ],
-            "15": [
-              "+5 Armor",
-              "10% Magic Resistance"
-            ],
-            "20": [
-              "+30 Movement Speed",
-              "-35 Respawn Time"
-            ],
-            "25": [
-              "+1.5% Static Field Damage",
-              "+200 Cast Range"
-            ]
-          },
           "true_name": "zuus",
           "format_name": "Zeus"
         },
@@ -3694,24 +1156,6 @@
           "changes": [
             "No changes."
           ],
-          "talents": {
-            "10": [
-              "-20s Respawn Time",
-              "+15% XP Gain"
-            ],
-            "15": [
-              "+200 Health",
-              "+60 Gold/Min"
-            ],
-            "20": [
-              "+25 Movement Speed",
-              "+20 Intelligence"
-            ],
-            "25": [
-              "+2s False Promise​ Duration",
-              "+250 Cast Range"
-            ]
-          },
           "true_name": "oracle",
           "format_name": "Oracle"
         }

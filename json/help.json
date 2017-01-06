@@ -18,6 +18,13 @@
       "ific patch (currently only down to version 7.00)."
     ]
   },
+  "talents": {
+    "name": "talents",
+    "usage": "talents <hero>",
+    "text": [
+      "returns the current talents of a requested hero. "
+    ]
+  },
   "info": {
     "name": "info",
     "usage": "info",

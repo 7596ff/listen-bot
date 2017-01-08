@@ -21,7 +21,7 @@ const talent_hero_embed = function(hero_name) {
 module.exports = (message, client, helper) => {
   let options = message.content.split(' ')
   if (options[1]) {
-    let hero_name = options.slice(1).join(' ')
+    let hero_name = options.slice(1).join(' ').toLowerCase()
     helper.log(message, `talents: hero name ${hero_name}`)
 
     if (hero_name in short_heroes) {

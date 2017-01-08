@@ -26,7 +26,7 @@ const patch_hero_embed = function(hero_name, version, prefix) {
 module.exports = (message, client, helper) => {
   let options = message.content.split(' ')
   if (options[1]) {
-    if (patch_list.schema.indexOf(options[1])) {
+    if (patch_list.schema.indexOf(options[1]) != -1) {
         if (options[2]) {
           let hero_name = options.slice(2).join(' ').toLowerCase()
           helper.log(message, `patch: version (${options[1]}) and hero name (${hero_name})`)
@@ -54,7 +54,7 @@ module.exports = (message, client, helper) => {
             helper.log(message, '  could\'nt find patch number.')
             client.createMessage(message.channel.id, {
               "content": 'Can\'t find that version! Here\'s the latest: ', 
-              "embed": patch_hero_embed(short_heroes[hero_name], 0)
+              "embed": patch_hero_embed(short_heroes[hero_name], 0, helper.prefix)
             }).then(new_message => {
               helper.log(message, '  sent patch message (latest version)')
             }).catch(err => helper.log(message, err))

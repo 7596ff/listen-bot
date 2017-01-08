@@ -19,7 +19,7 @@ const patch_hero_embed = function(hero_name, version, prefix) {
         "value": hero_obj['changes'].join('\n')
       }
     ],
-    "description": `Looking for talents? Try \`${prefix}talents <hero name>\`.`
+    "description": `Looking for talents? Try \`${prefix}talents ${hero_obj['format_name'].toLowerCase()}\`.`
   }
 }
 

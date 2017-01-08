@@ -39,10 +39,14 @@ module.exports = (message, client, helper) => {
               } else { 
                 for (hero_list in patch_list.data) {
                   if (short_heroes[hero_name] in patch_list.data[hero_list]['heroes']) {
-                    client.createMessage(message.channel.id, {"embed": patch_hero_embed(short_heroes[hero_name], hero_list, helper.prefix)}).then(new_message => {
+                    client.createMessage(message.channel.id, {
+                      "content": 'Can\'t find that version! Here\'s the latest: ',
+                      "embed": patch_hero_embed(short_heroes[hero_name], hero_list, helper.prefix)
+                    }).then(new_message => {
                       helper.log(message, '  sent latest patch message')
                     }).catch(err => helper.log(message, err))
                   }
+                  return
                 }
               }
             } else {

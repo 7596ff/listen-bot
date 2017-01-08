@@ -26,7 +26,7 @@ const patch_hero_embed = function(hero_name, version, prefix) {
 module.exports = (message, client, helper) => {
   let options = message.content.split(' ')
   if (options[1]) {
-    if (!isNaN(options[1])) {
+    if (patch_list.schema.indexOf(options[1])) {
         if (options[2]) {
           let hero_name = options.slice(2).join(' ').toLowerCase()
           helper.log(message, `patch: version (${options[1]}) and hero name (${hero_name})`)

@@ -8,7 +8,6 @@ const talent_hero_embed = function(hero_name) {
       "name": talents[hero_name]['format_name'],
       "icon_url": `http://cdn.dota2.com/apps/dota2/images/heroes/${talents[hero_name]['true_name']}_vert.jpg`
     },
-    "timestamp": new Date().toJSON(),
     "fields": [
       {
         "name": "Talents",

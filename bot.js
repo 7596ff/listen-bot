@@ -5,7 +5,14 @@ const util = require('util')
 const fs = require('fs')
 
 var guilds_list = require('./json/guilds.json')
-var commands = {}
+var commands = {
+  "eval": require('./commands/eval'),
+  "help": require('./commands/help'),
+  "info": require('./commands/info'),
+  "patch": require('./commands/patch'),
+  "quote": require('./commands/quote'),
+  "talents": require('./commands/talents')
+}
 
 function Helper(prefix) {
   this.prefix = prefix
@@ -25,13 +32,6 @@ var write_obj = function(object_to, callback) {
 }
 
 client.on('ready', () => {
-  fs.readdir('./commands/', (err, files) => {
-    if (err) util.log(err)
-    for (file of files) {
-      commands[file.slice(0, -3)] = require(`./commands/${file}`)
-    }
-    util.log('commands loaded.')
-  })
   util.log('listen-bot ready.')
 })
 

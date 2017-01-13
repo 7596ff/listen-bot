@@ -41,7 +41,7 @@ client.on('guildCreate', guild => {
   util.log('  creating guild object')
   guilds_list[guild.id] = {
     "name": guild.name,
-    "prefix": "L!",
+    "prefix": "--",
     "starboard": 'none',
     "starboard_emoji": "⭐"
   }

@@ -15,7 +15,7 @@
       "returns the latest changes to a hero in dota from the latest balance patch.\n\n",
       "using ``patch <hero>`` alone will return the changes from the latest patch, ",
       "while using ``patch <version> <hero>`` will return the changes from that spec",
-      "ific patch (currently only down to version 7.00)."
+      "ific patch (currently only down to version 6.79)."
     ]
   },
   "talents": {

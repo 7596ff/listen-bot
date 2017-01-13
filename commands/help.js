@@ -6,13 +6,21 @@ const help_embed = function(help_obj, prefix) {
   return {
     'embed': {
       'author': {
-        'name': 'Usage: ' + prefix + help_obj.usage
+        'name': help_obj.name
       },
-      'description': help_obj.text.join(''),
-      'footer': {
-        'text': help_obj.name
-      },
-      'timestamp': new Date().toJSON()
+      'fields': [
+        {
+          "name": "Usage",
+          "value": `${prefix}${help_obj.usage}`,
+          "inline": true
+        },
+        {
+          "name": "Example",
+          "value": `${prefix}${help_obj.example}`,
+          "inline": true
+        }
+      ],
+      'description': help_obj.text.join('')
     }
   }
 }

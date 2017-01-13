@@ -4,9 +4,9 @@
     "usage": "quote <speaker> | <game> | <quote>",
     "text": [
       "places a quote of your choosing into this server's quotes channel. ",
-      "please be sure to include `|` when you call this command! \n\nexample: ",
-      "<prefix>quote <@102645408223731712> | dota 2 | we lost"
-    ]
+      "please be sure to include `|` when you call this command!"
+    ],
+    "example": "quote <@102645408223731712> | dota 2 | we lost"
   },
   "patch": {
     "name": "patch",
@@ -16,20 +16,23 @@
       "using ``patch <hero>`` alone will return the changes from the latest patch, ",
       "while using ``patch <version> <hero>`` will return the changes from that spec",
       "ific patch (currently only down to version 6.79)."
-    ]
+    ],
+    "example": "patch 7.01 monkey king"
   },
   "talents": {
     "name": "talents",
     "usage": "talents <hero>",
     "text": [
       "returns the current talents of a requested hero. "
-    ]
+    ],
+    "example": "talents spirit breaker"
   },
   "info": {
     "name": "info",
     "usage": "info",
     "text": [
       "returns some info about the bot."
-    ]
+    ],
+    "example": "info"
   }
 }

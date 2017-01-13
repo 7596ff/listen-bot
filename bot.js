@@ -4,6 +4,8 @@ const client = new Eris(require('./json/config.json').token)
 const util = require('util')
 const fs = require('fs')
 
+const default_prefix = "--"
+
 var guilds_list = require('./json/guilds.json')
 var commands = {
   "eval": require('./commands/eval'),
@@ -41,7 +43,7 @@ client.on('guildCreate', guild => {
   util.log('  creating guild object')
   guilds_list[guild.id] = {
     "name": guild.name,
-    "prefix": "--",
+    "prefix": default_prefix,
     "starboard": 'none',
     "starboard_emoji": "⭐"
   }
@@ -74,15 +76,15 @@ client.on('messageCreate', message => {
   _prefix = guilds_list[message.guild.id].prefix
 
   if (message.author.id == client.user.id) return
-  if (!message.content.startsWith(_prefix)) return
+  if (message.content.startsWith(_prefix) || message.content.startsWith(default_prefix)) {
+    message.content = message.content.replace(_prefix, "").replace(default_prefix, "").trim();
 
-  message.content = message.content.replace(_prefix, "").trim();
-
-  const command = message.content.split(' ').shift().toLowerCase()
-  if (command in commands) {
-    commands[command](message, client, new Helper(_prefix))
-  } else {
-    util.log(`${message.guild.id}/${message.guild.name}: malformed command used`)
+    const command = message.content.split(' ').shift().toLowerCase()
+    if (command in commands) {
+      commands[command](message, client, new Helper(_prefix))
+    } else {
+      util.log(`${message.guild.id}/${message.guild.name}: malformed command used`)
+    }
   }
 })
 

@@ -10,7 +10,7 @@ function patch_hero_embed(hero_name, version, prefix) {
       "icon_url": `http://cdn.dota2.com/apps/dota2/images/heroes/${hero_obj['true_name']}_vert.jpg`
     },
     "footer": {
-      "text": "Accurate as of " + patch_list.schema[version]
+      "text": "Changes from " + patch_list.schema[version]
     },
     "fields": [
       {

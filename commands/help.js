@@ -27,9 +27,7 @@ module.exports = (message, client, helper) => {
   } else {
     let help_list = ''
     for (topic in help_topics) {
-      if (topic == 'ip') {
-        if (guilds_list[message.guild.id].ip) help_list += `\`${topic}\` `
-      } else {
+      if (topic != 'quote') {
         help_list += `\`${topic}\` `;
       }
     }

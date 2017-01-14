@@ -35,6 +35,7 @@ var write_obj = function(object_to, callback) {
 
 client.on('ready', () => {
   util.log('listen-bot ready.')
+  client.editStatus("online", {"name": `try ${default_prefix}help`})
 })
 
 client.on('guildCreate', guild => {
@@ -45,7 +46,8 @@ client.on('guildCreate', guild => {
     "name": guild.name,
     "prefix": default_prefix,
     "starboard": 'none',
-    "starboard_emoji": "⭐"
+    "starboard_emoji": "⭐",
+    "disabled": {}
   }
 
   write_obj(guilds_list, () => {

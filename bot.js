@@ -79,9 +79,9 @@ client.on('messageCreate', message => {
 
   if (message.author.id == client.user.id) return
   if (message.content.startsWith(_prefix) || message.content.startsWith(default_prefix)) {
-    message.content = message.content.replace(_prefix, "").replace(default_prefix, "").trim();
+    message.content = message.content.replace(_prefix, "").replace(default_prefix, "").trim().toLowerCase();
 
-    const command = message.content.split(' ').shift().toLowerCase()
+    const command = message.content.split(' ').shift()
     if (command in commands) {
       commands[command](message, client, new Helper(_prefix))
     } else {

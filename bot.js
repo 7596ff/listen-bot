@@ -77,7 +77,7 @@ client.on('messageCreate', message => {
 
   if (message.author.id == client.user.id) return
   if (message.content.startsWith(_prefix) || message.content.startsWith(default_prefix)) {
-    message.content = message.content.replace(_prefix, "").replace(default_prefix, "").trim().toLowerCase();
+    message.content = message.content.replace(_prefix, "").replace(default_prefix, "").trim()
 
     const command = message.content.split(' ').shift()
     let disabled_list = client.guilds_list[message.guild.id].disabled[message.channel.id]

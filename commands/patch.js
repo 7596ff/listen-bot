@@ -7,7 +7,7 @@ const version_hero = require('./patch/version_hero')
 const patch_hero_embed = require('./patch/patch_hero_embed')
 
 module.exports = (message, client, helper) => {
-  let options = message.content.split(' ')
+  let options = message.content.toLowerCase().split(' ')
   options.shift()
   
   for (arg in options) {

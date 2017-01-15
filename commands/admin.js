@@ -1,6 +1,7 @@
 const admin_commands = {
     "disable": require('./admin/disable'),
-    "enable": require('./admin/enable')
+    "enable": require('./admin/enable'),
+    "prefix": require('./admin/prefix')
 }
 
 module.exports = (message, client, helper) => {

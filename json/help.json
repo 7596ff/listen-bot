@@ -47,9 +47,10 @@
     "name": "admin",
     "usage": "admin <subcommand> [<arguments>]",
     "text": [
-      "`admin disable`: show list of disabled commands\n",
-      "`admin disable <arguments>`: disable one or more commands (`admin disable quote patch`)\n",
-      "`admin enable <arguments>`: enable one or more commands (`admin enable patch quote`)\n"
+      "`admin disable`: \n  show list of disabled commands\n\n",
+      "`admin disable <arguments>`: \n  disable one or more commands\n  (`admin disable quote patch`)\n\n",
+      "`admin enable <arguments>`: \n  enable one or more commands\n  (`admin enable patch quote`)\n\n",
+      "`admin prefix <new prefix>`: \n  change the server specific prefix (will still respond to `--`)\n  (`admin prefix heck`)\n\n"
     ],
     "example": "admin disable quote"
   }

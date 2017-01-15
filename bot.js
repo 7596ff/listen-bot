@@ -7,13 +7,9 @@ const fs = require('fs')
 const default_prefix = "--"
 
 var guilds_list = require('./json/guilds.json')
-var commands = {
-  "eval": require('./commands/eval'),
-  "help": require('./commands/help'),
-  "info": require('./commands/info'),
-  "patch": require('./commands/patch'),
-  "quote": require('./commands/quote'),
-  "talents": require('./commands/talents')
+var commands = {}
+for (cmd of require('./consts').cmdlist) {
+  commands[cmd] = require(`./commands/${cmd}`)
 }
 
 function Helper(prefix) {
@@ -75,17 +71,24 @@ client.on('guildDelete', guild => {
 })
 
 client.on('messageCreate', message => {
+  client.guilds_list = guilds_list
   _prefix = guilds_list[message.guild.id].prefix
+  _helper = new Helper(_prefix)
 
   if (message.author.id == client.user.id) return
   if (message.content.startsWith(_prefix) || message.content.startsWith(default_prefix)) {
     message.content = message.content.replace(_prefix, "").replace(default_prefix, "").trim().toLowerCase();
 
     const command = message.content.split(' ').shift()
-    if (command in commands) {
-      commands[command](message, client, new Helper(_prefix))
+    let disabled_list = client.guilds_list[message.guild.id].disabled[message.channel.id]
+    if (disabled_list && disabled_list.indexOf(command) != -1) {
+      _helper.log(message, `permissions error in command ${command}`)
     } else {
-      util.log(`${message.guild.id}/${message.guild.name}: malformed command used`)
+      if (command in commands) {
+        commands[command](message, client, _helper)
+      } else {
+        _helper.log(message, `malformed command used`)
+      }
     }
   }
 })

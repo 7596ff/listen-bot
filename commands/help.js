@@ -1,4 +1,5 @@
 const help_topics = require('../json/help.json')
+const cmdlist = require('../consts').cmdlist
 var guilds_list = require('../json/guilds.json')
 const util = require('util')
 
@@ -35,7 +36,9 @@ module.exports = (message, client, helper) => {
   } else {
     let help_list = ''
     for (topic in help_topics) {
-      if (topic != 'quote') {
+      let disabled_list = client.guilds_list[message.guild.id].disabled[message.channel.id]
+      disabled_list = disabled_list ? disabled_list : []  // lol
+      if (disabled_list && disabled_list.indexOf(topic) == -1 && topic != "eval") {
         help_list += `\`${topic}\` `;
       }
     }

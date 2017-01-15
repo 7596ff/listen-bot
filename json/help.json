@@ -34,5 +34,23 @@
       "returns some info about the bot."
     ],
     "example": "info"
+  },
+  "help": {
+    "name": "help",
+    "usage": "help [<topic>]",
+    "text": [
+      "return list of help topics, or specific help about a topic."
+    ],
+    "example": "help patch"
+  },
+  "admin": {
+    "name": "admin",
+    "usage": "admin <subcommand> [<arguments>]",
+    "text": [
+      "`admin disable`: show list of disabled commands\n",
+      "`admin disable <arguments>`: disable one or more commands (`admin disable quote patch`)\n",
+      "`admin enable <arguments>`: enable one or more commands (`admin enable patch quote`)\n"
+    ],
+    "example": "admin disable quote"
   }
 }

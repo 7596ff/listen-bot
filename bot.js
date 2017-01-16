@@ -71,6 +71,8 @@ client.on('guildDelete', guild => {
 })
 
 client.on('messageCreate', message => {
+  if (!message.channel.guild) return
+
   client.guilds_list = guilds_list
   _prefix = guilds_list[message.channel.guild.id].prefix
   _helper = new Helper(_prefix)

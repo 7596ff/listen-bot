@@ -36,7 +36,7 @@ module.exports = (message, client, helper) => {
   } else {
     let help_list = ''
     for (topic in help_topics) {
-      let disabled_list = client.guilds_list[message.guild.id].disabled[message.channel.id]
+      let disabled_list = client.guilds_list[message.channel.guild.id].disabled[message.channel.id]
       disabled_list = disabled_list ? disabled_list : []  // lol
       if (disabled_list && disabled_list.indexOf(topic) == -1 && topic != "eval") {
         help_list += `\`${topic}\` `;

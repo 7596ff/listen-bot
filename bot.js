@@ -15,7 +15,7 @@ for (cmd of require('./consts').cmdlist) {
 function Helper(prefix) {
   this.prefix = prefix
   this.log = (message, text) => {
-    require('util').log(`${message.guild.id}/${message.guild.name}: ${text}`)
+    require('util').log(`${message.channel.guild.id}/${message.channel.guild.name}: ${text}`)
   }
   this.error = text => {
     return `:octagonal_sign: ${text}`
@@ -72,7 +72,7 @@ client.on('guildDelete', guild => {
 
 client.on('messageCreate', message => {
   client.guilds_list = guilds_list
-  _prefix = guilds_list[message.guild.id].prefix
+  _prefix = guilds_list[message.channel.guild.id].prefix
   _helper = new Helper(_prefix)
 
   if (message.author.id == client.user.id) return
@@ -80,7 +80,7 @@ client.on('messageCreate', message => {
     message.content = message.content.replace(_prefix, "").replace(default_prefix, "").trim()
 
     const command = message.content.split(' ').shift()
-    let disabled_list = client.guilds_list[message.guild.id].disabled[message.channel.id]
+    let disabled_list = client.guilds_list[message.channel.guild.id].disabled[message.channel.id]
     if (disabled_list && disabled_list.indexOf(command) != -1) {
       _helper.log(message, `permissions error in command ${command}`)
     } else {

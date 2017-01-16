@@ -10,7 +10,7 @@ module.exports = (message, client, helper) => {
     return
   }
 
-  if (guilds_list[message.guild.id].starboard == "none") {
+  if (guilds_list[message.channel.guild.id].starboard == "none") {
     client.createMessage(message.channel.id, helper.error('Please set up a starboard first!'))
     return
   }
@@ -27,7 +27,7 @@ module.exports = (message, client, helper) => {
     return
   }
 
-  client.createMessage(guilds_list[message.guild.id].starboard, {
+  client.createMessage(guilds_list[message.channel.guild.id].starboard, {
     'embed': {
       "author": {
         "icon_url": data.user.avatarURL,

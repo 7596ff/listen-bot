@@ -11,7 +11,7 @@ const talent_hero_embed = function(hero_name) {
     "fields": [
       {
         "name": "Talents",
-        "value": `**10:** ${talent_obj["10"][0]} *or* ${talent_obj["10"][1]}\n**15:** ${talent_obj["15"][0]} *or* ${talent_obj["15"][1]}\n**20:** ${talent_obj["20"][0]} *or* ${talent_obj["20"][1]}\n**25:** ${talent_obj["25"][0]} *or* ${talent_obj["25"][1]}`
+        "value": `**25:** ${talent_obj["25"][0]} *or* ${talent_obj["25"][1]}\n**20:** ${talent_obj["20"][0]} *or* ${talent_obj["20"][1]}\n**15:** ${talent_obj["15"][0]} *or* ${talent_obj["15"][1]}\n**10:** ${talent_obj["10"][0]} *or* ${talent_obj["10"][1]}`
       }
     ]
   }

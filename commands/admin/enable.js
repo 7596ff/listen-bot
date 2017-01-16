@@ -12,11 +12,11 @@ module.exports = (message, client, helper) => {
         let to_disable = message.content.split(' ')
         let _enabled = []
         for (cmd of to_disable) {
-            if (client.guilds_list[message.guild.id].disabled[message.channel.id]
-                && client.guilds_list[message.guild.id].disabled[message.channel.id].indexOf(cmd) != -1) {
+            if (client.guilds_list[message.channel.guild.id].disabled[message.channel.id]
+                && client.guilds_list[message.channel.guild.id].disabled[message.channel.id].indexOf(cmd) != -1) {
                 if (require('../../consts').cmdlist.indexOf(cmd) != -1) {
-                    let index = client.guilds_list[message.guild.id].disabled[message.channel.id].indexOf(cmd)
-                    client.guilds_list[message.guild.id].disabled[message.channel.id].splice(index, 1)
+                    let index = client.guilds_list[message.channel.guild.id].disabled[message.channel.id].indexOf(cmd)
+                    client.guilds_list[message.channel.guild.id].disabled[message.channel.id].splice(index, 1)
                     _enabled.push(cmd)
                 }
             }

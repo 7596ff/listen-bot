@@ -12,5 +12,6 @@ module.exports = (message, client, helper) => {
         client.guilds_list[message.channel.guild.id].prefix = message.content.split(' ')[0]
         write_obj(client.guilds_list, message, helper)
         client.createMessage(message.channel.id, `:ok_hand: prefix set to \`${client.guilds_list[message.channel.guild.id].prefix}\``)
+        helper.log(message, 'changed guild prefix')
     }
 }

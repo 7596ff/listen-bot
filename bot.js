@@ -1,5 +1,10 @@
 const Eris = require('eris')
-const client = new Eris(require('./json/config.json').token)
+const client = new Eris(require('./json/config.json').token, {
+  "maxShards": 2, 
+  "disableEvents": {
+    "TYPING_START": true
+  }
+})
 const schedule = require('node-schedule')
 
 const util = require('util')
@@ -50,11 +55,13 @@ process.on('exit', (code) => {
 
 client.on('ready', () => {
   util.log('listen-bot ready.')
-  client.editStatus("online", {"name": `try ${default_prefix}help`})
+  client.shards.forEach(shard => {
+    shard.editStatus("online", {"name": `try ${default_prefix}help [shard ${shard.id + 1}/${client.shards.size}]`})
+  })
 })
 
 client.on('guildCreate', guild => {
-  util.log(`${guild.id}/${guild.name}: joined guild`)
+  util.log(`${guild.id}/${guild.name}: joined guild on shard ${guild.shard.id}`)
 
   util.log('  creating guild object')
   guilds_list[guild.id] = {

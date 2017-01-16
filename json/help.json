@@ -35,6 +35,14 @@
     ],
     "example": "info"
   },
+  "stats": {
+    "name": "stats",
+    "usage": "stats",
+    "text": [
+      "returns some stats about the bot."
+    ],
+    "example": "stats"
+  },
   "help": {
     "name": "help",
     "usage": "help [<topic>]",

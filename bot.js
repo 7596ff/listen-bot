@@ -1,5 +1,6 @@
 const Eris = require('eris')
 const client = new Eris(require('./json/config.json').token)
+const schedule = require('node-schedule')
 
 const util = require('util')
 const fs = require('fs')
@@ -8,8 +9,15 @@ const default_prefix = "--"
 
 var guilds_list = require('./json/guilds.json')
 var commands = {}
+client.all_usage = require('./json/usage.json')
+client.usage = {
+  "all": 0
+}
+
 for (cmd of require('./consts').cmdlist) {
   commands[cmd] = require(`./commands/${cmd}`)
+  client.usage[cmd] = 0
+  client.all_usage[cmd] = isNaN(client.all_usage[cmd]) ? 0 : client.all_usage[cmd]
 }
 
 function Helper(prefix) {
@@ -22,12 +30,23 @@ function Helper(prefix) {
   }
 }
 
-var write_obj = function(object_to, callback) {
+function write_obj(object_to, callback) {
   fs.writeFile('./json/guilds.json', JSON.stringify(object_to), err => {
     if (err) util.log(err)
     callback();
   })
 }
+
+var sched = schedule.scheduleJob('*/10 * * * *', () => {
+  fs.writeFileSync('./json/usage.json', JSON.stringify(client.all_usage), (err) => {
+    if (err) util.log(err)
+  })
+})
+
+process.on('exit', (code) => {
+  util.log(`Exiting with code ${code}`)
+  fs.writeFileSync('./json/usage.json', JSON.stringify(client.all_usage))
+})
 
 client.on('ready', () => {
   util.log('listen-bot ready.')
@@ -88,6 +107,11 @@ client.on('messageCreate', message => {
     } else {
       if (command in commands) {
         commands[command](message, client, _helper)
+        client.usage['all'] += 1
+        client.usage[command] += 1
+        client.all_usage['all'] += 1
+        client.all_usage[command] += 1
+        
       } else {
         _helper.log(message, `malformed command used`)
       }

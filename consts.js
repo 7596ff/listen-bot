@@ -5,5 +5,6 @@ module.exports.cmdlist = [
     "patch",
     "quote",
     "talents",
-    "admin"
+    "admin",
+    "stats"
 ]

@@ -1,12 +1,11 @@
 module.exports = (message, client, helper) => {
-    let shardinfolist = [`\`\`\`Shards: ${client.shards.size}`]
-    let shardmap = new Array(client.shards.size).fill(0)
+    let shard_info_list = [`\`\`\`groovy\nShards: ${client.shards.size}`]
+    let users = new Array(client.shards.size).fill(0)
     client.guilds.forEach(guild => {
-        shardmap[guild.shard.id] += guild.members.size
+        users[guild.shard.id] += guild.members.size
     })
     client.shards.forEach(shard => {
-        shardinfolist.push(`Shard ${shard.id}: ${shard.guildCount} guilds, ${shardmap[shard.id]} users`)
+        shard_info_list.push(`Shard ${shard.id}: ${shard.guildCount} guilds, ${users[shard.id]} users, ${shard.latency} ms`)
     })
-    
-    client.createMessage(message.channel.id, shardinfolist.join('\n') + "```")
+    client.createMessage(message.channel.id, `I am shard ${message.channel.guild.shard.id + 1} of ${client.shards.size}.${shard_info_list.join('\n')}${"```"}`)
 }

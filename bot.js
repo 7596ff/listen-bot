@@ -15,7 +15,7 @@ for (cmd of require('./consts').cmdlist) {
 function Helper(prefix) {
   this.prefix = prefix
   this.log = (message, text) => {
-    require('util').log(`${message.channel.guild.id}/${message.channel.guild.name}: ${text}`)
+    require('util').log(`${message.channel.guild.name}/${message.channel.name}: ${text}`)
   }
   this.error = text => {
     return `:octagonal_sign: ${text}`

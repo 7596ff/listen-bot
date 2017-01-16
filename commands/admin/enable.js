@@ -25,6 +25,7 @@ module.exports = (message, client, helper) => {
         if (_enabled.length > 0) {
             write_obj(client.guilds_list, message, helper)
             client.createMessage(message.channel.id, `:ok_hand: enabled ${_enabled.join(', ')}`)
+            helper.log(message, 'enabled some commands')
         }
     }
 }

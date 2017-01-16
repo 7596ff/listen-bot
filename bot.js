@@ -1,6 +1,7 @@
 const Eris = require('eris')
-const client = new Eris(require('./json/config.json').token, {
-  "maxShards": 2, 
+const config = require('./json/config.json')
+const client = new Eris(config.token, {
+  "maxShards": config.shard_count, 
   "disableEvents": {
     "TYPING_START": true
   }

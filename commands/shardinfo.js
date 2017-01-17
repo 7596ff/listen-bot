@@ -11,4 +11,5 @@ module.exports = (message, client, helper) => {
         "content": `I am shard ${message.channel.guild.shard.id + 1} of ${client.shards.size}.`, 
         "embed": {"description": `${shard_info_list.join('\n')}${"```"}`}
     })
+    helper.log(message, "sent shard info")
 }

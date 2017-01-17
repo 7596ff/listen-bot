@@ -20,11 +20,11 @@ const talent_hero_embed = function(hero_name) {
 module.exports = (message, client, helper) => {
   let options = message.content.split(' ')
   if (options[1]) {
-    let hero_name = options.slice(1).join(' ').toLowerCase()
-    helper.log(message, `talents: hero name ${hero_name}`)
+    let hero = options.slice(1).join(' ').toLowerCase()
+    helper.log(message, `talents: hero name (${short_heroes[hero]})`)
 
-    if (hero_name in short_heroes) {
-      client.createMessage(message.channel.id, {"embed": talent_hero_embed(short_heroes[hero_name])}).then(new_message => {
+    if (hero in short_heroes) {
+      client.createMessage(message.channel.id, {"embed": talent_hero_embed(short_heroes[hero])}).then(new_message => {
         helper.log(message, '  sent talents message')
       }).catch(err => helper.log(message, err))
     }

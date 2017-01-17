@@ -8,5 +8,6 @@ module.exports.cmdlist = [
     "admin",
     "stats",
     "shardinfo",
-    "wiki"
+    "wiki",
+    "list"
 ]

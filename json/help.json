@@ -35,6 +35,14 @@
     ],
     "example": "wiki techies"
   },
+  "list": {
+    "name": "list",
+    "usage": "list <hero name>",
+    "text": [
+      "returns a list of all the patches in the database that a hero recieved changes in."
+    ],
+    "example": "list beastmaster"
+  },
   "info": {
     "name": "info",
     "usage": "info",

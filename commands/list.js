@@ -9,16 +9,15 @@ module.exports = (message, client, helper) => {
 
     if (hero in short_heroes) {
         let patches = []
-        let found = 0
+        let found = false
         let patch_seq_num = 0
-        while (found < 10) {
+        while (!found) {
             if (patch_list.data[patch_seq_num]) {
                 if (patch_list.data[patch_seq_num].heroes[short_heroes[hero]]) {
                     patches.push(patch_list.data[patch_seq_num].version)
-                    found++
                 }
             } else {
-                found = 10
+                found = true
             }
             patch_seq_num++
         }

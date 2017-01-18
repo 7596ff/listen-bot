@@ -12,12 +12,12 @@ const help_embed = function(help_obj, prefix) {
       'fields': [
         {
           "name": "Usage",
-          "value": `${prefix}${help_obj.usage}`,
+          "value": `\`${prefix}${help_obj.usage}\``,
           "inline": true
         },
         {
           "name": "Example",
-          "value": `${prefix}${help_obj.example}`,
+          "value": `\`${prefix}${help_obj.example}\``,
           "inline": true
         }
       ],

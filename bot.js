@@ -13,6 +13,8 @@ const fs = require('fs')
 
 const default_prefix = "--"
 
+var stats_messages
+
 var guilds_list = require('./json/guilds.json')
 var commands = {}
 client.all_usage = require('./json/usage.json')
@@ -56,7 +58,7 @@ function write_obj(object_to, callback) {
   })
 }
 
-var sched = schedule.scheduleJob('*/10 * * * *', () => {
+var write_usage_stats = schedule.scheduleJob('*/10 * * * *', () => {
   fs.writeFileSync('./json/usage.json', JSON.stringify(client.all_usage), (err) => {
     if (err) util.log(err)
   })
@@ -71,6 +73,21 @@ client.on('ready', () => {
   util.log('listen-bot ready.')
   client.shards.forEach(shard => {
     shard.editStatus("online", {"name": `try ${default_prefix}help [shard ${shard.id + 1}/${client.shards.size}]`})
+  })
+
+  stats_messages = schedule.scheduleJob('*/15 * * * *', () => {
+    client.editMessage(config.edit_channel, config.shard_edit_message, {
+      "embed": {
+        "description": require('./shardinfo_helper')(client)
+      }
+    }).then(new_message => {
+      util.log('edited shard message')
+    }).catch(err => util.log(err))
+    client.editMessage(config.edit_channel, config.stats_edit_message, {
+      "embed": require('./stats_helper')(client)
+    }).then(new_message => {
+      util.log('edited stats message')
+    }).catch(err => util.log(err))
   })
 })
 

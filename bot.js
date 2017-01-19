@@ -28,11 +28,24 @@ for (cmd of require('./consts').cmdlist) {
 
 function Helper(prefix) {
   this.prefix = prefix
+
   this.log = (message, text) => {
     require('util').log(`${message.channel.guild.name}/${message.channel.name}: ${text}`)
   }
-  this.error = text => {
+  
+  this.error = (text) => {
     return `:octagonal_sign: ${text}`
+  }
+
+  this.handle = (message, err) => {
+    let result = err.toString().split(' ')[1]
+    if (result == '400') {
+      this.log(message, "probably don't have permissions to embed here")
+    } else if (result == '403') {
+      this.log(message, "probably don't have permissions to send messages here")
+    } else {
+      this.log(message, err.toString())
+    }
   }
 }
 

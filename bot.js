@@ -80,13 +80,9 @@ client.on('ready', () => {
       "embed": {
         "description": require('./shardinfo_helper')(client)
       }
-    }).then(new_message => {
-      util.log('edited shard message')
     }).catch(err => util.log(err))
     client.editMessage(config.edit_channel, config.stats_edit_message, {
       "embed": require('./stats_helper')(client)
-    }).then(new_message => {
-      util.log('edited stats message')
     }).catch(err => util.log(err))
   })
 })

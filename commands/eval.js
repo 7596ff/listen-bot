@@ -16,9 +16,9 @@ module.exports = (message, client, helper) => {
 
       if (typeof evaled !== "string") evaled = require("util").inspect(evaled)
 
-      client.createMessage(message.channel.id, `\`\`\`js\n${clean(evaled)}\n\`\`\``)
+      client.createMessage(message.channel.id, `${"```js\n"}${clean(evaled)}${"\n```"}`)
     } catch (err) {
-      client.createMessage(message.channel.id, `\`ERROR\` \`\`\`js\n${clean(err)}\n\`\`\``)
+      client.createMessage(message.channel.id, `${"`ERROR`\n```js\n"}${clean(err)}${"\n```"}`)
     }
   }
 }

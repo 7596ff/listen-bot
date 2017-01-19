@@ -32,6 +32,7 @@ module.exports = (message, client, helper) => {
             ],
             "timestamp": new Date().toJSON()
         }
-    })
-    helper.log(message, "sent stats")
+    }).then(new_message => {
+        helper.log(message, "sent stats")
+    }).catch(err => helper.handle(message, err))
 }

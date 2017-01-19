@@ -11,7 +11,7 @@ module.exports = (message, client, helper, hero) => {
                 "embed": patch_hero_embed(short_heroes[hero], hero_list, helper.prefix)
             }).then(new_message => {
                 helper.log(message, "  sent latest patch message")
-            }).catch(err => helper.log(message, err))
+            }).catch(err => helper.handle(message, err))
             return
         }
     }

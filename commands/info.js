@@ -14,5 +14,5 @@ module.exports = (message, client, helper) => {
     "description": "A Dota 2 related bot. Features include current talents and patch notes for 6.79+ heroes. Contact <@102645408223731712> for support and questions!"
   }}).then(new_message => {
     helper.log(message, 'sent info message')
-  }).catch(err => helper.log(message, err))
+  }).catch(err => helper.handle(message, err))
 }

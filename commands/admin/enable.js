@@ -4,7 +4,7 @@ function write_obj(guilds_list, message, helper) {
     fs.writeFile('./json/guilds.json', JSON.stringify(guilds_list), (err) => {
         if (err) console.log(err)
         helper.log(message, '  wrote guilds list object successfully')
-    }) 
+    })
 }
 
 module.exports = (message, client, helper) => {
@@ -21,11 +21,12 @@ module.exports = (message, client, helper) => {
                 }
             }
         }
-        
+
         if (_enabled.length > 0) {
             write_obj(client.guilds_list, message, helper)
-            client.createMessage(message.channel.id, `:ok_hand: enabled ${_enabled.join(', ')}`)
-            helper.log(message, 'enabled some commands')
+            client.createMessage(message.channel.id, `:ok_hand: enabled ${_enabled.join(', ')}`).then(new_message => {
+                helper.log(message, 'enabled some commands')
+            }).catch(err => helper.handle(message, err))
         }
     }
 }

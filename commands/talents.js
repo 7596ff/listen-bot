@@ -3,6 +3,12 @@ const short_heroes = require('../json/short_heroes.json')
 
 const talent_hero_embed = function(hero_name) {
   let talent_obj = talents[hero_name].talents
+  let talent_arr = [
+    `**25:** ${talent_obj["25"][0]} *or* ${talent_obj["25"][1]}`,
+    `**20:** ${talent_obj["20"][0]} *or* ${talent_obj["20"][1]}`,
+    `**15:** ${talent_obj["15"][0]} *or* ${talent_obj["15"][1]}`,
+    `**10:** ${talent_obj["10"][0]} *or* ${talent_obj["10"][1]}`
+  ]
   return {
     "author": {
       "name": talents[hero_name]['format_name'],
@@ -11,7 +17,7 @@ const talent_hero_embed = function(hero_name) {
     "fields": [
       {
         "name": "Talents",
-        "value": `**25:** ${talent_obj["25"][0]} *or* ${talent_obj["25"][1]}\n**20:** ${talent_obj["20"][0]} *or* ${talent_obj["20"][1]}\n**15:** ${talent_obj["15"][0]} *or* ${talent_obj["15"][1]}\n**10:** ${talent_obj["10"][0]} *or* ${talent_obj["10"][1]}`
+        "value": talent_arr.join('\n')
       }
     ]
   }
@@ -24,9 +30,11 @@ module.exports = (message, client, helper) => {
     helper.log(message, `talents: hero name (${short_heroes[hero]})`)
 
     if (hero in short_heroes) {
-      client.createMessage(message.channel.id, {"embed": talent_hero_embed(short_heroes[hero])}).then(new_message => {
+      client.createMessage(message.channel.id, {
+        "embed": talent_hero_embed(short_heroes[hero])
+      }).then(new_message => {
         helper.log(message, '  sent talents message')
-      }).catch(err => helper.log(message, err))
+      }).catch(err => helper.handle(message, err))
     }
   }
 }

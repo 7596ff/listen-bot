@@ -10,7 +10,7 @@ module.exports = (message, client, helper, version, hero) => {
             "embed": patch_hero_embed(short_heroes[hero], patch_list.schema.indexOf(version), helper.prefix)
         }).then(new_message => {
             helper.log(message, "  sent patch message")
-        }).catch(err => helper.log(message, err))
+        }).catch(err => helper.handle(message, err))
     } else {
         for (hero_list in patch_list.data) {
             if (short_heroes[hero] in patch_list.data[hero_list]['heroes']) {
@@ -19,7 +19,7 @@ module.exports = (message, client, helper, version, hero) => {
                     "embed": patch_hero_embed(short_heroes[hero], hero_list, helper.prefix)
                 }).then(new_message => {
                     helper.log(message, "  can't find that version, sent latest patch message")
-                }).catch(err => helper.log(message, err))
+                }).catch(err => helper.handle(message, err))
                 return
             }
         }

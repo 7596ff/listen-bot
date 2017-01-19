@@ -32,8 +32,9 @@ module.exports = (message, client, helper) => {
         if (client.guilds_list[message.channel.guild.id].disabled[message.channel.id] 
                 && client.guilds_list[message.channel.guild.id].disabled[message.channel.id].length > 0) {
             let send = `List of disabled commands: \`${client.guilds_list[message.channel.guild.id].disabled[message.channel.id].join('\`, \`')}\``
-            client.createMessage(message.channel.id, send)
-            helper.log(message, 'listed disabled commands')
+            client.createMessage(message.channel.id, send).then(new_message => {
+                helper.log(message, 'listed disabled commands')
+            }).catch(err => helper.handle(message, err))
         } else {
             client.createMessage(message.channel.id, "No disabled commands for this channel.")
         }

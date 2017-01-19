@@ -8,6 +8,10 @@ module.exports = (message, client, helper) => {
       {
         "name": "Invite to your server", 
         "value": "https://discordapp.com/oauth2/authorize?permissions=19456&scope=bot&client_id=240209888771309568"
+      },
+      {
+        "name": "Join our help server",
+        "value": require('../json/config.json').discord_invite
       }
     ],
     "timestamp": new Date().toJSON(),

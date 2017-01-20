@@ -3,6 +3,7 @@ const short_heroes = require('../../json/short_heroes.json')
 
 function patch_hero_embed(hero_name, version, prefix) {
   let hero_obj = patch_list.data[version]['heroes'][hero_name]
+  let desc = Math.floor(Math.random() * 5) == 0 ? `Looking for talents? Try \`${prefix}talents ${hero_obj['format_name'].toLowerCase()}\``: ""
 
   return {
     "author": {
@@ -18,7 +19,7 @@ function patch_hero_embed(hero_name, version, prefix) {
         "value": hero_obj['changes'].join('\n')
       }
     ],
-    "description": `Looking for talents? Try \`${prefix}talents ${hero_obj['format_name'].toLowerCase()}\`.`
+    "description": desc
   }
 }
 

@@ -72,7 +72,7 @@ process.on('exit', (code) => {
 client.on('ready', () => {
   util.log('listen-bot ready.')
   client.shards.forEach(shard => {
-    shard.editStatus("online", {"name": `try ${default_prefix}help [shard ${shard.id + 1}/${client.shards.size}]`})
+    shard.editStatus("online", {"name": `${default_prefix}info | ${default_prefix}help [${shard.id + 1}/${client.shards.size}]`})
   })
 
   stats_messages = schedule.scheduleJob('*/15 * * * *', () => {

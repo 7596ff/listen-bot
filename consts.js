@@ -9,5 +9,6 @@ module.exports.cmdlist = [
     "stats",
     "shardinfo",
     "wiki",
-    "list"
+    "list",
+    "ability"
 ]

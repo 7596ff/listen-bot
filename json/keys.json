@@ -36,14 +36,13 @@
         "r": "Call Down"
     },
     "nyx_assassin": {
-        "f": "Unburrow",
         "r": "Vendetta",
         "d": "Burrow",
         "q": "Impale",
         "e": "Spiked Carapace",
         "w": "Mana Burn"
     },
-    "clockwerk": {
+    "rattletrap": {
         "q": "Battery Assault",
         "e": "Rocket Flare",
         "w": "Power Cogs",
@@ -92,7 +91,6 @@
         "r": "Mass Serpent Ward"
     },
     "elder_titan": {
-        "d": "Return Astral Spirit",
         "q": "Echo Stomp",
         "e": "Natural Order",
         "w": "Astral Spirit",
@@ -131,25 +129,22 @@
         "w": "Shadowraze"
     },
     "kunkka": {
-        "d": "Ghostship",
+        "r": "Ghostship",
         "q": "Torrent",
         "e": "X Marks the Spot",
-        "w": "Tidebringer",
-        "r": "Return"
+        "w": "Tidebringer"
     },
     "templar_assassin": {
-        "d": "Trap",
         "q": "Refraction",
         "e": "Psi Blades",
         "w": "Meld",
         "r": "Psionic Trap"
     },
     "bane": {
-        "d": "Fiend's Grip",
+        "r": "Fiend's Grip",
         "q": "Enfeeble",
         "e": "Nightmare",
-        "w": "Brain Sap",
-        "r": "Nightmare End"
+        "w": "Brain Sap"
     },
     "disruptor": {
         "q": "Thunder Strike",
@@ -218,10 +213,9 @@
         "r": "Doom"
     },
     "rubick": {
-        "d": "Null Field",
+        "e": "Null Field",
         "q": "Telekinesis",
-        "e": "Fade Bolt",
-        "w": "Telekinesis Land",
+        "w": "Fade Bolt",
         "r": "Spell Steal"
     },
     "legion_commander": {
@@ -268,7 +262,7 @@
         "w": "Burning Spear",
         "r": "Life Break"
     },
-    "zeus": {
+    "zuus": {
         "d": "Nimbus",
         "q": "Arc Lightning",
         "e": "Static Field",
@@ -284,7 +278,6 @@
         "w": "Rolling Boulder"
     },
     "puck": {
-        "d": "Ethereal Jaunt",
         "q": "Illusory Orb",
         "e": "Phase Shift",
         "w": "Waning Rift",
@@ -369,11 +362,10 @@
         "w": "Rabid"
     },
     "abyssal_underlord": {
-        "d": "Dark Rift",
+        "r": "Dark Rift",
         "q": "Firestorm",
         "e": "Atrophy Aura",
-        "w": "Pit of Malice",
-        "r": "Cancel Dark Rift"
+        "w": "Pit of Malice"
     },
     "visage": {
         "q": "Grave Chill",
@@ -425,11 +417,10 @@
         "r": "Warpath"
     },
     "alchemist": {
-        "d": "Chemical Rage",
+        "r": "Chemical Rage",
         "q": "Acid Spray",
         "e": "Greevil's Greed",
-        "w": "Unstable Concoction",
-        "r": "Unstable Concoction Throw"
+        "w": "Unstable Concoction"
     },
     "necrolyte": {
         "q": "Death Pulse",
@@ -444,7 +435,6 @@
         "r": "Tempest Double"
     },
     "shadow_demon": {
-        "d": "Shadow Poison Release",
         "q": "Disruption",
         "e": "Shadow Poison",
         "w": "Soul Catcher",
@@ -500,7 +490,6 @@
         "r": "Global Silence"
     },
     "spectre": {
-        "d": "Reality",
         "q": "Spectral Dagger",
         "e": "Dispersion",
         "w": "Desolate",
@@ -519,11 +508,10 @@
         "r": "Death Ward"
     },
     "naga_siren": {
-        "d": "Song of the Siren",
+        "r": "Song of the Siren",
         "q": "Mirror Image",
         "e": "Rip Tide",
-        "w": "Ensnare",
-        "r": "Song of the Siren End"
+        "w": "Ensnare"
     },
     "death_prophet": {
         "q": "Crypt Swarm",
@@ -538,11 +526,10 @@
         "r": "Guardian Angel"
     },
     "ancient_apparition": {
-        "d": "Ice Blast",
+        "r": "Ice Blast",
         "q": "Cold Feet",
         "e": "Chilling Touch",
-        "w": "Ice Vortex",
-        "r": "Release"
+        "w": "Ice Vortex"
     },
     "slardar": {
         "q": "Guardian Sprint",
@@ -657,7 +644,7 @@
         "d": "Holy Persuasion",
         "q": "Penitence",
         "e": "Test of Faith",
-        "w": "Test of Faith",
+        "w": "Test of Faith (damage)",
         "r": "Hand of God"
     },
     "shredder": {
@@ -674,7 +661,7 @@
         "f": "Mischief",
         "r": "Wukong's Command"
     },
-    "lifestealer": {
+    "life_stealer": {
         "q": "Rage",
         "w": "Feast",
         "e": "Open Wounds",

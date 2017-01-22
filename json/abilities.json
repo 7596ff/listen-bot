@@ -170,15 +170,6 @@
                 "Creates three images of Naga Siren under her control.",
                 "DISPEL TYPE: Basic Dispel"
             ]
-        },
-        "Song of the Siren End": {
-            "cooldown": "1",
-            "effects": [
-                "Behavior: No Target"
-            ],
-            "description": [
-                "Release enemy units from your song so they can be targeted again."
-            ]
         }
     },
     "kunkka": {
@@ -211,17 +202,6 @@
                 "Summons a ghostly ship that sails through the battle before smashing apart, damaging and stunning all enemies caught near the wreckage. Allied heroes touched by the Ghostship are given a swig of The Admiral's Rum, receiving bonus movement speed and a delayed reaction to incoming damage.",
                 "Upgradeable by Aghanim's Scepter."
             ]
-        },
-        "Return": {
-            "cooldown": "1",
-            "effects": [
-                "Behavior: No Target",
-                "Pierces Spell Immunity: No"
-            ],
-            "description": [
-                "Returns the marked hero to the X."
-            ],
-            "manacost": "0"
         },
         "Torrent": {
             "stats": [
@@ -331,14 +311,6 @@
                 "Rubick's mastery of the arcane protects nearby allies against weaker magics, granting them magic resistance."
             ]
         },
-        "Telekinesis Land": {
-            "effects": [
-                "Behavior: Point Target"
-            ],
-            "description": [
-                "Chooses the location the target will land when Telekinesis finishes."
-            ]
-        },
         "Spell Steal": {
             "manacost": "25",
             "stats": [
@@ -422,15 +394,6 @@
             ],
             "description": [
                 "Deals bonus damage whenever Spectre attacks an enemy who is alone."
-            ]
-        },
-        "Reality": {
-            "cooldown": "0",
-            "effects": [
-                "Behavior: Point Target"
-            ],
-            "description": [
-                "Spectre exchanges places with a chosen Haunt."
             ]
         },
         "Dispersion": {
@@ -661,14 +624,6 @@
             ],
             "description": [
                 "Nearby enemy units are weakened, losing a portion of their base damage. If a unit dies while under this effect, Underlord gains bonus damage."
-            ]
-        },
-        "Cancel Dark Rift": {
-            "effects": [
-                "Behavior: No Target"
-            ],
-            "description": [
-                "Stop the teleport."
             ]
         },
         "Firestorm": {
@@ -1059,15 +1014,6 @@
                 "Places a frozen hex on an enemy unit that deals damage over time, but can be dispelled by moving away from the initial cast point.  If the enemy unit doesn't move outside of the given range, it will be stunned and frozen in place after 4 seconds."
             ]
         },
-        "Release": {
-            "cooldown": "1",
-            "effects": [
-                "Behavior: No Target"
-            ],
-            "description": [
-                "Releases the ice blast to explode at the tracer's current location."
-            ]
-        },
         "Ice Blast": {
             "manacost": "100 125 150",
             "stats": [
@@ -1172,22 +1118,6 @@
                 "Phoenix dives forward in an arc with a fixed distance in the targeted direction, dealing damage over time and slowing the movement speed of any units it comes into contact with, and then orbiting back to its original position. If Phoenix casts Supernova, the dive ends."
             ]
         },
-        "Stop Icarus Div": {
-            "effects": [
-                "Behavior: No Target"
-            ],
-            "description": [
-                "Immediately cancels the dive."
-            ]
-        },
-        "Stop Sun Ra": {
-            "effects": [
-                "Behavior: No Target"
-            ],
-            "description": [
-                "Immediately stops the Sun Ray."
-            ]
-        },
         "Sun Ray": {
             "stats": [
                 "HEALTH COST PER SECOND: 6%",
@@ -1210,14 +1140,6 @@
             ],
             "description": [
                 "Phoenix expels a beam of light at the cost of its own health. The beam damages enemies and heals allies for a base amount plus a percentage of their health. The percentage increases as the beam continues to fire."
-            ]
-        },
-        "Toggle Movemen": {
-            "effects": [
-                "Behavior: No Target"
-            ],
-            "description": [
-                "Toggles slow forward movement during Sun Ray firing."
             ]
         }
     },
@@ -3142,16 +3064,6 @@
         }
     },
     "nyx_assassin": {
-        "Unburrow": {
-            "cooldown": "0",
-            "effects": [
-                "Behavior: No Target"
-            ],
-            "description": [
-                "Emerge from the burrow."
-            ],
-            "manacost": "0"
-        },
         "Spiked Carapace": {
             "stats": [
                 "REFLECT DURATION: 2.25",
@@ -3385,6 +3297,20 @@
                 "Upgradable by Aghanim's Scepter, allowing Chen to persuade Ancient Creeps. The number of Ancient Creeps that can be persuaded is based on the level of Hand of God."
             ]
         },
+        "Test of Faith (damage)": {
+            "cooldown": "16",
+            "stats": [
+                "DAMAGE MIN: 50 / 100 / 150 / 200",
+                "DAMAGE MAX: 100 / 200 / 300 / 400",
+                "CAST POINT: 0.3s"
+            ],
+            "effects": [
+                "Behavior: Unit Target",
+                "Affects: Enemy Units",
+                "Damage Type: Pure",
+                "Pierces Spell Immunity: No"
+            ]
+        },
         "Test of Faith": {
             "cooldown": "24",
             "stats": [
@@ -3397,7 +3323,8 @@
                 "Pierces Spell Immunity: No"
             ],
             "description": [
-                "Teleports an allied unit back to the base.  Creeps are teleported instantly, while Heroes have a delay before teleporting. If cast on Chen, all units controlled by Chen through Holy Persuasion will be teleported to him after a delay."
+                "Teleports an allied unit back to the base.  Creeps are teleported instantly, while Heroes have a delay before teleporting. If cast on Chen, all units controlled by Chen through Holy Persuasion will be teleported to him after a delay.",
+                "For the other spell, try `chen w` or `chen test of faith (damage)`"
             ],
             "manacost": "200"
         },
@@ -4935,15 +4862,6 @@
                 "Upgradable by Aghanim's Scepter."
             ]
         },
-        "Return Astral Spirit": {
-            "cooldown": "0",
-            "effects": [
-                "Behavior: No Target"
-            ],
-            "description": [
-                "Returns the Astral Spirit to Elder Titan."
-            ]
-        },
         "Echo Stomp": {
             "cooldown": "14 13 12 11",
             "stats": [
@@ -5666,15 +5584,6 @@
         }
     },
     "shadow_demon": {
-        "Shadow Poison Release": {
-            "cooldown": "1",
-            "effects": [
-                "Behavior: No Target"
-            ],
-            "description": [
-                "Releases the poison to do damage on all affected enemies. Units under the effect of Disruption can still be affected by Shadow Poison."
-            ]
-        },
         "Disruption": {
             "cooldown": "27 24 21 18",
             "stats": [
@@ -7708,7 +7617,7 @@
             ]
         }
     },
-    "clockwerk": {
+    "rattletrap": {
         "Rocket Flare": {
             "cooldown": "20 18 16 14",
             "stats": [
@@ -8558,16 +8467,6 @@
                 "Alchemist synthesizes additional gold from his enemies and bounty runes. With each kill, Alchemist earns base bonus gold and extra bonus gold. If Alchemist kills another unit which yields gold within the next 30 seconds, an additional instance of Extra Bonus Gold is added to the total. Additionally, causes bounty runes to yield 2 times their normal gold."
             ]
         },
-        "Unstable Concoction Throw": {
-            "effects": [
-                "Behavior: Unit Target",
-                "Affects: Enemy Heroes",
-                "Pierces Spell Immunity: No"
-            ],
-            "description": [
-                "Throw it before it blows up!"
-            ]
-        },
         "Chemical Rage": {
             "manacost": "50 100 150",
             "stats": [
@@ -8845,14 +8744,6 @@
         }
     },
     "bane": {
-        "Nightmare End": {
-            "effects": [
-                "Behavior: No Target, Toggle"
-            ],
-            "description": [
-                "Ends all ongoing Nightmares."
-            ]
-        },
         "Nightmare": {
             "stats": [
                 "DAMAGE: 20",
@@ -10048,17 +9939,6 @@
                 "Templar Assassin becomes highly elusive, avoiding damage and gaining a bonus to her damage.  The damage and avoidance effects are separate, and have a limited number of instances."
             ]
         },
-        "Trap": {
-            "cooldown": "0.5",
-            "effects": [
-                "Behavior: No Target",
-                "Pierces Spell Immunity: No"
-            ],
-            "description": [
-                "Springs the nearest trap, slowing nearby enemies."
-            ],
-            "manacost": "0"
-        },
         "Psionic Trap": {
             "stats": [
                 "MAX TRAPS: 5 / 8 / 11",
@@ -10408,14 +10288,6 @@
         }
     },
     "puck": {
-        "Ethereal Jaunt": {
-            "effects": [
-                "Behavior: No Target"
-            ],
-            "description": [
-                "Teleports Puck to a flying Illusory Orb."
-            ]
-        },
         "Illusory Orb": {
             "stats": [
                 "DAMAGE: 70 / 140 / 210 / 280",

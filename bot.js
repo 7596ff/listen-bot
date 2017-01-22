@@ -14,6 +14,7 @@ const fs = require('fs')
 const default_prefix = "--"
 
 var stats_messages
+var log_message
 
 var guilds_list = require('./json/guilds.json')
 var commands = {}
@@ -51,7 +52,7 @@ function Helper(prefix) {
   }
 }
 
-function write_obj(object_to, callback) {
+function write_guilds_list(object_to, callback) {
   fs.writeFile('./json/guilds.json', JSON.stringify(object_to), err => {
     if (err) util.log(err)
     callback();
@@ -59,7 +60,7 @@ function write_obj(object_to, callback) {
 }
 
 var write_usage_stats = schedule.scheduleJob('*/10 * * * *', () => {
-  fs.writeFileSync('./json/usage.json', JSON.stringify(client.all_usage), (err) => {
+  fs.writeFile('./json/usage.json', JSON.stringify(client.all_usage), (err) => {
     if (err) util.log(err)
   })
 })
@@ -67,6 +68,10 @@ var write_usage_stats = schedule.scheduleJob('*/10 * * * *', () => {
 process.on('exit', (code) => {
   util.log(`Exiting with code ${code}`)
   fs.writeFileSync('./json/usage.json', JSON.stringify(client.all_usage))
+  if (code == 1) {
+    fs.writeFileSync('./json/last_error.json', JSON.stringify(log_message))
+    util.log('wrote last error')
+  }
 })
 
 client.on('ready', () => {
@@ -99,7 +104,7 @@ client.on('guildCreate', guild => {
     "disabled": {}
   }
 
-  write_obj(guilds_list, () => {
+  write_guilds_list(guilds_list, () => {
     util.log('  wrote new guild config successfully')
   })
 })
@@ -108,7 +113,7 @@ client.on('guildUpdate', guild => {
   if (guilds_list[guild.id].name != guild.name) {
     util.log(`${guild.id}/${guild.name}: guild updated, modifying name`)
     guilds_list[guild.id].name = guild.name
-    write_obj(guilds_list, () => {
+    write_guilds_list(guilds_list, () => {
       util.log('  wrote new guild config successfully')
     })
   }
@@ -118,13 +123,15 @@ client.on('guildDelete', guild => {
   util.log(`${guild.id}/${guild.name}: left guild`)
   delete guilds_list[guild.id]
   
-  write_obj(guilds_list, () => {
+  write_guilds_list(guilds_list, () => {
     util.log('  removed guild successfully')
   })
 })
 
 client.on('messageCreate', message => {
   if (!message.channel.guild) return
+
+  log_message = message
 
   client.guilds_list = guilds_list
   _prefix = guilds_list[message.channel.guild.id].prefix

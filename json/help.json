@@ -26,7 +26,16 @@
       "returns the current talents of a requested hero. "
     ],
     "example": "talents spirit breaker"
-  }, 
+  },
+  "ability": {
+    "name": "ability",
+    "usage": "ability <hero> <default key>",
+    "text": [
+      "returns info about a hero's ability. you are required to provide ",
+      "the default key the ability is set to. i'll add aliases later."
+    ],
+    "example": "ability ck r"
+  },
   "wiki": {
     "name": "wiki",
     "usage": "wiki <hero name>",

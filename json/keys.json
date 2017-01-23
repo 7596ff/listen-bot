@@ -9,7 +9,8 @@
         "q": "Charge of Darkness",
         "e": "Greater Bash",
         "w": "Empowering Haste",
-        "r": "Nether Strike"
+        "r": "Nether Strike",
+        "charge": "Charge of Darkness"
     },
     "luna": {
         "q": "Lucent Beam",
@@ -21,7 +22,8 @@
         "q": "Avalanche",
         "e": "Craggy Exterior",
         "w": "Toss",
-        "r": "Grow"
+        "r": "Grow",
+        "craggy": "Craggy Exterior"
     },
     "drow_ranger": {
         "q": "Frost Arrows",
@@ -243,9 +245,8 @@
         "r": "Insatiable Hunger"
     },
     "tusk": {
-        "f": "Walrus Kick",
+        "d": "Walrus Kick",
         "r": "Walrus PUNCH!",
-        "d": "Launch Snowball",
         "q": "Ice Shards",
         "e": "Frozen Sigil",
         "w": "Snowball"

@@ -4,18 +4,22 @@ const abilities = require('../json/abilities.json')
 
 function ability_embed(hero, ability) {
     let ability_obj = abilities[hero][ability]
+    let temp = {
+        "stats": new Array(ability_obj.stats.length, ""),
+        "effects": new Array(ability_obj.effects.length, "")
+    }
 
     if (ability_obj.stats) {
         for (stat in ability_obj.stats) {
-            temp_arr = ability_obj.stats[stat].split(": ")
-            ability_obj.stats[stat] = `**${temp_arr[0]}** ${temp_arr[1]}`
+            let temp_arr = ability_obj.stats[stat].split(": ")
+            temp.stats[stat] = `**${temp_arr[0]}** ${temp_arr[1]}`
         }
     }
 
     if (ability_obj.effects) {
         for (eff in ability_obj.effects) {
-            temp = ability_obj.effects[eff].split(": ")
-            ability_obj.effects[eff] = `**${temp[0]}** ${temp[1]}`
+            let temp_arr = ability_obj.effects[eff].split(": ")
+            temp.effects[eff] = `**${temp_arr[0]}** ${temp_arr[1]}`
         }
     }
 
@@ -33,12 +37,12 @@ function ability_embed(hero, ability) {
         "fields": [
             {
                 "name": `<:manacost:273091790603550730> ${mana}`,
-                "value": ability_obj.stats.join('\n'),
+                "value": temp.stats.join('\n'),
                 "inline": true
             },
             {
                 "name": `<:cooldown:273091737617170432> ${cool}`,
-                "value": ability_obj.effects.join('\n'),
+                "value": temp.effects.join('\n'),
                 "inline": true
             }
         ],

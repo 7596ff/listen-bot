@@ -31,7 +31,8 @@ function ability_embed(hero, ability) {
 
     return {
         "author": {
-            "name": ability
+            "name": ability,
+            "icon_url": `http://cdn.dota2.com/apps/dota2/images/heroes/${hero}_vert.jpg`
         },
         "description": `${desc}\n\n${note}\n\n${agha}`,
         "fields": [
@@ -45,10 +46,7 @@ function ability_embed(hero, ability) {
                 "value": temp.effects.join('\n'),
                 "inline": true
             }
-        ],
-        "thumbnail": {
-            "url": `http://cdn.dota2.com/apps/dota2/images/heroes/${hero}_vert.jpg`
-        }
+        ]
     }
 }
 

@@ -9010,20 +9010,6 @@
                 "Tusk compresses shards of ice into a ball of frozen energy that damages all enemies it comes in contact with. When the ball reaches its target destination the shards are released, creating a barrier that lasts for 7.0 seconds."
             ]
         },
-        "Launch Snowball": {
-            "notes": [
-                "The snowball destroys trees.",
-                "The snowball travels at 675 movement speed.",
-                "Doesn't carry illusions, but will carry Meepo clones and other units that Tusk controls.",
-                "Each Meepo clone added to the snowball will add its own bonus damage and speed."
-            ],
-            "effects": [
-                "Behavior: No Target"
-            ],
-            "description": [
-                "Launch the snowball toward the target."
-            ]
-        },
         "Snowball": {
             "stats": [
                 "BASE DAMAGE: 80 / 120 / 160 / 200",

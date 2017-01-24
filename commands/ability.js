@@ -36,7 +36,7 @@ function ability_embed(hero, ability) {
     let cool = ability_obj.cooldown ? ability_obj.cooldown.split(' ').join(' / ') : "Passive"
     let desc = ability_obj.description ? ability_obj.description.join('\n') : ""
     let note = ability_obj.notes ? ability_obj.notes.join('\n') : ""
-    let agha = ability_obj.agha ? ability_obj.agha : ""
+    let agha = ability_obj.agha ? `<:aghanims:273535039814500353> ${ability_obj.agha}` : ""
 
     return {
         "author": {
@@ -46,12 +46,12 @@ function ability_embed(hero, ability) {
         "description": `${desc}\n\n${note}\n\n${agha}`,
         "fields": [
             {
-                "name": `<:manacost:273260821495414788> ${mana}`,
+                "name": `<:manacost:273535201337016320> ${mana}`,
                 "value": temp.stats.join('\n'),
                 "inline": true
             },
             {
-                "name": `<:cooldown:273260890898300928> ${cool}`,
+                "name": `<:cooldown:273535146320199680> ${cool}`,
                 "value": temp.effects.join('\n'),
                 "inline": true
             }

@@ -29,13 +29,13 @@
   },
   "ability": {
     "name": "ability",
-    "usage": "ability <hero> <ability>",
+    "usage": "ability [<hero>] <ability>",
     "text": [
-      "returns info about a hero's ability. you are required to provide ",
-      "the hero's name, and either the default key for the ability, the whole name ", 
-      "of the ability, or the key combo for invoker."
+      "returns info about a hero's ability.",
+      "there are multiple aliases for abilites, you can discover them all ",
+      "simply by using commands! supplying a hero is not required."
     ],
-    "example": "ability ck r"
+    "example": "ability earthbind"
   },
   "wiki": {
     "name": "wiki",

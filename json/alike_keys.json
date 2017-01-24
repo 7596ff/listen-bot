@@ -1,0 +1,83 @@
+{
+    "stomp": [
+        "Hoof Stomp",
+        "Echo Stomp"
+    ],
+    "coil": [
+        "Mist Coil",
+        "Dream Coil"
+    ],
+    "curse": [
+        "Arcane Curse",
+        "Curse of Avernus",
+        "Winter's Curse"
+    ],
+    "wall": [
+        "Ice Wall",
+        "Wall of Replica"
+    ],
+    "grip": [
+        "Fiend's Grip",
+        "Geomagnetic Grip"
+    ],
+    "bolt": [
+        "Arcane Bolt",
+        "Fade Bolt",
+        "Lightning Bolt",
+        "Chaos Bolt"
+    ],
+    "kick": [
+        "Walruck Kick",
+        "Boulder Smash"
+    ],
+    "orb": [
+        "Arcane Orb",
+        "Illusory Orb"
+    ],
+    "ball": [
+        "Ball Lightning",
+        "Snowball"
+    ],
+    "split": [
+        "Split Earth",
+        "Earth Splitter",
+        "Split Shot",
+        "Primal Split"
+    ],
+    "hammer": [
+        "Storm Hammer",
+        "Sanity's Eclipse"
+    ],
+    "bash": [
+        "Greater Bash",
+        "Bash of the Deep"
+    ],
+    "purge": [
+        "Demonic Purge",
+        "Fortune's End"
+    ],
+    "chain": [
+        "Searing Chains",
+        "Chain Frost",
+        "Timber Chain"
+    ],
+    "blink": [
+        "Blink (Anti-Mage)",
+        "Blink (Queen of Pain)",
+        "Phantom Strike",
+        "Blink Strike"
+    ],
+    "dagger": [
+        "Spectral Dagger",
+        "Cloak and Dagger",
+        "Stifiling Dagger"
+    ], 
+    "net": [
+        "Ensnare",
+        "Earthbind"
+    ], 
+    "silence": [
+        "Silence (Death Prophet)",
+        "Global Silence"
+    ]
+}

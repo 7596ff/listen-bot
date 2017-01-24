@@ -79,8 +79,7 @@
         "Earthbind"
     ], 
     "silence": [
-        "Death Prophet Silence",
-        "Global Silence"
+        "There are a lot of silences. Try again with the hero name for their silence."
     ], 
     "hook": [
         "Meat Hook",
@@ -104,5 +103,11 @@
         "Nightmare",
         "Song of the Siren",
         "Echo Stomp"
+    ], 
+    "heal": [
+        "There are a lot of heals. Try again with the hero name for their heal."
+    ],
+    "aura": [
+        "There are a lot of auras. Try again with the hero name for their aura."
     ]
 }

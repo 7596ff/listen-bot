@@ -77,7 +77,7 @@
                 "Behavior: No Target",
                 "Affects: Allied Heroes"
             ],
-            "agha": "Aghanim Upgrade: Reduces cooldown by 20 seconds and allows Phantoms to be cast on an allied hero. 1200 Cast Range",
+            "agha": "Reduces cooldown by 20 seconds and allows Phantoms to be cast on an allied hero. 1200 Cast Range",
             "description": [
                 "Summons several phantasmal copies of the Chaos Knight from alternate dimensions. There is a 50% chance an extra phantasm will be summoned. The phantasms deal full damage, but take double damage.",
                 "Upgradeable by Aghanim's Scepter.",
@@ -104,7 +104,7 @@
                 "Behavior: No Target",
                 "Pierces Spell Immunity: No"
             ],
-            "agha": "Aghanim Upgrade: Song of the Siren regenerates all nearby allies for 10% of their health per second.",
+            "agha": "Song of the Siren regenerates all nearby allies for 10% of their health per second.",
             "description": [
                 "All enemies in range of the Naga Siren are put into a magical stasis where they cannot act or be attacked. Using Song of the Siren again will end the duration early.",
                 "Upgradable by Aghanim's Scepter."
@@ -197,7 +197,7 @@
                 "Damage Type: Magical",
                 "Pierces Spell Immunity: No"
             ],
-            "agha": "Aghanim Upgrade: Drags enemies with the Ghostship towards the crash site. Enemies are still able to perform actions while being dragged.",
+            "agha": "Drags enemies with the Ghostship towards the crash site. Enemies are still able to perform actions while being dragged.",
             "description": [
                 "Summons a ghostly ship that sails through the battle before smashing apart, damaging and stunning all enemies caught near the wreckage. Allied heroes touched by the Ghostship are given a swig of The Admiral's Rum, receiving bonus movement speed and a delayed reaction to incoming damage.",
                 "Upgradeable by Aghanim's Scepter."
@@ -327,7 +327,7 @@
                 "Affects: Enemy Heroes",
                 "Pierces Spell Immunity: Yes"
             ],
-            "agha": "Aghanim Upgrade: Decreases cooldown, increases cast range and upgrades the spell to the Scepter level.",
+            "agha": "Decreases cooldown, increases cast range and upgrades the spell to the Scepter level.",
             "description": [
                 "Rubick studies the trace magical essence of one enemy hero, learning the secrets of the last spell the hero cast. Rubick can use this spell as his own for several minutes or until he dies.",
                 "Upgradable by Aghanim's Scepter."
@@ -565,7 +565,7 @@
                 "Damage Type: Magical",
                 "Pierces Spell Immunity: Yes"
             ],
-            "agha": "Aghanim Upgrade: Increases damage and decreases cooldown.",
+            "agha": "Increases damage and decreases cooldown.",
             "description": [
                 "A spreading ring of poison that does damage over time to enemy units around Venomancer.  Poison Nova cannot deal lethal damage; targets will be left with at least 1 health.",
                 "Upgradable by Aghanim's Scepter."
@@ -751,7 +751,7 @@
                 "Damage Type: Magical",
                 "Pierces Spell Immunity: No"
             ],
-            "agha": "Aghanim Upgrade: Adds a Side Gunner that at random attacks enemy units within a 600 radius every 1.1 seconds.",
+            "agha": "Adds a Side Gunner that at random attacks enemy units within a 600 radius every 1.1 seconds.",
             "description": [
                 "Call down an aerial missile strike on enemy units in a target area.  Two missiles arrive in succession, the first dealing major damage and minor slow for 2 seconds; the second dealing minor damage and major slow for 4 seconds.",
                 "Upgradable by Aghanim's Scepter."
@@ -853,7 +853,7 @@
                 "Damage Type: Magical",
                 "Pierces Spell Immunity: No"
             ],
-            "agha": "Aghanim Upgrade: Grants a new ability, creating a cloud that automatically casts Lightning Bolt on nearby enemies.",
+            "agha": "Grants a new ability, creating a cloud that automatically casts Lightning Bolt on nearby enemies.",
             "description": [
                 "Strikes all enemy heroes with a bolt of lightning, no matter where they may be.  Thundergod's Wrath also provides True Sight around each hero struck.  If an enemy hero is invisible, it takes no damage, but the True Sight is still created at that hero's location."
             ]
@@ -939,7 +939,7 @@
                 "Behavior: Channelled, No Target",
                 "Affects: Allied Heroes"
             ],
-            "agha": "Aghanim Upgrade: Increases duration and allows you to target an allied hero, hiding inside them for the duration.",
+            "agha": "Increases duration and allows you to target an allied hero, hiding inside them for the duration.",
             "description": [
                 "CHANNELED - Phases out of the world while striking every enemy from behind in a 500 AoE once per second.",
                 "Upgradable by Aghanim's Scepter."
@@ -1037,7 +1037,7 @@
                 "Damage Type: Magical",
                 "Pierces Spell Immunity: Yes"
             ],
-            "agha": "Aghanim Upgrade: Increases frostbite duration.",
+            "agha": "Increases frostbite duration.",
             "description": [
                 "Launches a tracer toward any location on the battlefield, which must be triggered again to mark the area to be blasted by a damaging explosion of hail. The further the tracer travels, the larger the explosion will be. Enemies caught in the explosion, or who touch the icy ball of hail as it travels, are Frostbitten, taking damage and prevented from regenerating or healing. If a Frostbitten unit's health drops below a certain percentage, they will instantly shatter.",
                 "Upgradable by Aghanim's Scepter."
@@ -1088,7 +1088,7 @@
                 "Damage Type: Magical",
                 "Pierces Spell Immunity: Yes"
             ],
-            "agha": "Aghanim Upgrade: Increases number of attacks to destroy Supernova and allows Phoenix to cast Supernova on an allied hero, bringing both into the sun to be reborn together. Does not refresh ultimate abilities.",
+            "agha": "Increases number of attacks to destroy Supernova and allows Phoenix to cast Supernova on an allied hero, bringing both into the sun to be reborn together. Does not refresh ultimate abilities.",
             "description": [
                 "The Phoenix willingly ends its current life for the chance to be reborn. Transforms into a burning sun that scorches enemies in a huge area. The sun can be destroyed by attacks from enemy Heroes. After 6 seconds the sun explodes, stunning all nearby enemies while restoring Phoenix to full health and mana with refreshed abilities.",
                 "Upgradable by Aghanim's Scepter.",
@@ -1160,7 +1160,7 @@
                 "Damage Type: Magical",
                 "Pierces Spell Immunity: No"
             ],
-            "agha": "Aghanim Upgrade: Increases damage per second.",
+            "agha": "Increases damage per second.",
             "description": [
                 "Creates waves of damaging energy around Leshrac, one per second, to damage nearby enemy units.",
                 "Upgradable by Aghanim's Scepter."
@@ -1260,7 +1260,7 @@
                 "Affects: Allied Heroes",
                 "Pierces Spell Immunity: No"
             ],
-            "agha": "Aghanim Upgrade: If a nearby allied hero is slain, they will be transformed into a wraith and have their death delayed for 7 seconds.",
+            "agha": "If a nearby allied hero is slain, they will be transformed into a wraith and have their death delayed for 7 seconds.",
             "description": [
                 "Wraith King's form regroups after death, allowing him to resurrect when killed in battle.  Upon death, enemy units in a 900 radius will be slowed.",
                 "Upgradable by Aghanim's Scepter."
@@ -1336,7 +1336,7 @@
             "effects": [
                 "Behavior: No Target"
             ],
-            "agha": "Aghanim Upgrade: Earth gains Thunder Clap, Storm gains Drunken Haze and Fire gains Drunken Brawler.",
+            "agha": "Earth gains Thunder Clap, Storm gains Drunken Haze and Fire gains Drunken Brawler.",
             "description": [
                 "Splits Brewmaster into elements, forming 3 specialized warriors, adept at survival. If any of them survive until the end of their summoned timer, the Brewmaster is reborn.",
                 "Upgradable by Aghanim's Scepter."
@@ -1422,7 +1422,7 @@
                 "Damage Type: Magical",
                 "Pierces Spell Immunity: No"
             ],
-            "agha": "Aghanim Upgrade: Anytime Skywrath Mage casts an ability, a different random nearby target will be hit with the same ability. Heroes will take priority.",
+            "agha": "Anytime Skywrath Mage casts an ability, a different random nearby target will be hit with the same ability. Heroes will take priority.",
             "description": [
                 "Skywrath Mage uses his ultimate magical ability to conjure a precise and violent mystical field that lays waste to his adversaries. Deals massive damage distributed evenly among any Heroes in the area over 2.4 seconds.",
                 "Upgradable by Aghanim's Scepter."
@@ -1614,7 +1614,7 @@
                 "Damage Type: Pure",
                 "Pierces Spell Immunity: Yes"
             ],
-            "agha": "Aghanim Upgrade: Increases Doom's duration, and will suspend its duration while the affected unit is within 900 range. Also causes it to remove positive buffs from the target when cast, and break most passive abilities while active.",
+            "agha": "Increases Doom's duration, and will suspend its duration while the affected unit is within 900 range. Also causes it to remove positive buffs from the target when cast, and break most passive abilities while active.",
             "description": [
                 "Inflicts a curse that prevents an enemy Hero from casting spells or using items, while taking damage over time.",
                 "Upgradable by Aghanim's Scepter.",
@@ -1777,7 +1777,7 @@
                 "Damage Type: Magical",
                 "Pierces Spell Immunity: No"
             ],
-            "agha": "Aghanim Upgrade: Applies Frostbite to any unit that has been standing in the Freezing Field for over 2.5 seconds.",
+            "agha": "Applies Frostbite to any unit that has been standing in the Freezing Field for over 2.5 seconds.",
             "description": [
                 "CHANNELED - Surrounds Crystal Maiden with random icy explosions that slow enemies and deal massive damage.  Lasts 10 seconds.",
                 "Upgradable by Aghanim's Scepter."
@@ -1861,7 +1861,7 @@
             "effects": [
                 "Behavior: No Target"
             ],
-            "agha": "Aghanim Upgrade: God's Strength grants bonus damage to allies in a 900 radius.",
+            "agha": "God's Strength grants bonus damage to allies in a 900 radius.",
             "description": [
                 "Sven channels his rogue strength, granting bonus damage for 25 seconds.",
                 "Upgradable by Aghanim's Scepter."
@@ -2023,7 +2023,7 @@
                 "Damage Type: Pure",
                 "Pierces Spell Immunity: Yes"
             ],
-            "agha": "Aghanim Upgrade: Increases damage and decreases cooldown.",
+            "agha": "Increases damage and decreases cooldown.",
             "description": [
                 "Creates a gigantic wave of sound in front of Queen of Pain, dealing heavy damage to all enemy units in its wake.",
                 "Upgradable by Aghanim's Scepter."
@@ -2111,7 +2111,7 @@
                 "Damage Type: Pure",
                 "Pierces Spell Immunity: Yes"
             ],
-            "agha": "Aghanim Upgrade: Adds the current level of Midnight Pulse to Black Hole.",
+            "agha": "Adds the current level of Midnight Pulse to Black Hole.",
             "description": [
                 "CHANNELED - Summons a vortex that sucks in nearby enemy units.  Enemies affected by Black Hole cannot move, attack, or cast spells.",
                 "Upgradable by Aghanim's Scepter."
@@ -2279,7 +2279,7 @@
             "effects": [
                 "Behavior: No Target"
             ],
-            "agha": "Aghanim Upgrade: Decreases cooldown and removes mana cost from Invoke. Adds one level to the stats provided by Quas, Wex, and Exort on all Invoked spells.",
+            "agha": "Decreases cooldown and removes mana cost from Invoke. Adds one level to the stats provided by Quas, Wex, and Exort on all Invoked spells.",
             "description": [
                 "Combines the properties of the elements currently being manipulated to create a new spell for Invoker to use.  Click the help button to see the list of possible spells.",
                 "Upgradable by Aghanim's Scepter."
@@ -2495,7 +2495,7 @@
                 "Damage Type: Magical",
                 "Pierces Spell Immunity: No"
             ],
-            "agha": "Aghanim Upgrade: Causes Arctic Burn to be a toggle ability, draining 40 mana per second when active. Removes limit on number of attacks per target.",
+            "agha": "Causes Arctic Burn to be a toggle ability, draining 40 mana per second when active. Removes limit on number of attacks per target.",
             "description": [
                 "Winter Wyvern soars upon an arctic wind, granting her unobstructed movement and allowing her to exhale a blistering chill into each attack. While soaring, her attacks travel further and faster, and slow enemies with a magical freeze that strips them of 8.0% of their current health each second. Her sight is also hardened against night's chill, granting her 400 additional vision range at night while soaring.",
                 "Upgradable by Aghanim's Scepter."
@@ -2637,7 +2637,7 @@
                 "Damage Type: Magical",
                 "Pierces Spell Immunity: Yes"
             ],
-            "agha": "Aghanim Upgrade: Decreases mana cost and cooldown, and increases cast range.",
+            "agha": "Decreases mana cost and cooldown, and increases cast range.",
             "description": [
                 "Viper slows the targeted enemy unit's movement and attack speed while also dealing poison damage over time.  The slowing effect reduces over the duration of the poison.",
                 "Upgradable by Aghanim's Scepter."
@@ -2740,7 +2740,7 @@
                 "Affects: Enemy Units",
                 "Pierces Spell Immunity: No"
             ],
-            "agha": "Aghanim Upgrade: Electric Vortex affects all enemies within a radius around Storm Spirit.",
+            "agha": "Electric Vortex affects all enemies within a radius around Storm Spirit.",
             "description": [
                 "A vortex that pulls an enemy unit to Storm Spirit's location, it also slows the Storm Spirit by 50% for 3 seconds.",
                 "Upgradable by Aghanim's Scepter."
@@ -2771,7 +2771,7 @@
             ]
         },
         "Marksmanship": {
-            "agha": "Aghanim Upgrade: Causes Drow Ranger's attacks to splinter on the target, hitting nearby units with normal attacks that deal reduced damage.",
+            "agha": "Causes Drow Ranger's attacks to splinter on the target, hitting nearby units with normal attacks that deal reduced damage.",
             "stats": [
                 "BONUS AGILITY: 40 / 60 / 80",
                 "SPLIT COUNT: 2",
@@ -2854,7 +2854,7 @@
                 "Behavior: No Target",
                 "Affects: Enemy Units"
             ],
-            "agha": "Aghanim Upgrade: Enchant Totem becomes a 900 range ground target ability, causing Earthshaker to jump in the air and land at the target spot, casting Enchant Totem there.  Self-casting the ability will behave in the original form, without jumping.",
+            "agha": "Enchant Totem becomes a 900 range ground target ability, causing Earthshaker to jump in the air and land at the target spot, casting Enchant Totem there.  Self-casting the ability will behave in the original form, without jumping.",
             "description": [
                 "Empowers Earthshaker's totem, causing it to deal extra damage on the next attack.",
                 "Upgradable by Aghanim's Scepter."
@@ -3019,7 +3019,7 @@
                 "Behavior: No Target",
                 "Pierces Spell Immunity: Yes"
             ],
-            "agha": "Aghanim Upgrade: Increases duration, radius becomes global and affects buildings.",
+            "agha": "Increases duration, radius becomes global and affects buildings.",
             "description": [
                 "Omniknight summons a Guardian Angel that grants immunity from physical damage.",
                 "Upgradable by Aghanim's Scepter"
@@ -3185,7 +3185,7 @@
                 "Behavior: No Target",
                 "Affects: Allied Heroes"
             ],
-            "agha": "Aghanim Upgrade: Reduces cooldown, and allows Weaver to cast Time Lapse on an ally.",
+            "agha": "Reduces cooldown, and allows Weaver to cast Time Lapse on an ally.",
             "description": [
                 "Weaver warps backward to whatever position it was in five seconds earlier--regaining the HP and mana from that time. No effect on cooldown, gold or experience.",
                 "Upgradable by Aghanim's Scepter.",
@@ -3291,7 +3291,7 @@
             "effects": [
                 "Behavior: Unit Target"
             ],
-            "agha": "Aghanim Upgrade: Holy Persuasion can target Ancient Creeps, maximum one per level of Hand of God.",
+            "agha": "Holy Persuasion can target Ancient Creeps, maximum one per level of Hand of God.",
             "description": [
                 "Chen takes control of an enemy or neutral creep. If the persuaded creep's base health is naturally below the health minimum, its base health will be raised to the health minimum.",
                 "Upgradable by Aghanim's Scepter, allowing Chen to persuade Ancient Creeps. The number of Ancient Creeps that can be persuaded is based on the level of Hand of God."
@@ -3529,7 +3529,7 @@
                 "Damage Type: Magical",
                 "Pierces Spell Immunity: No"
             ],
-            "agha": "Aghanim Upgrade: Reduces cooldown and improves CAST POINT: .",
+            "agha": "Reduces cooldown and improves CAST POINT: .",
             "description": [
                 "Burns away impurities, dealing heavy magic damage to the target before causing them to regenerate health over time. The amount of health regenerated over its duration exceeds the amount of initial damage. Can be cast on enemies and allies.",
                 "Upgradable by Aghanim's Scepter."
@@ -3554,7 +3554,7 @@
                 "Damage Type: Magical",
                 "Pierces Spell Immunity: No"
             ],
-            "agha": "Aghanim Upgrade: Mutes items and increases duration.",
+            "agha": "Mutes items and increases duration.",
             "description": [
                 "Creates a damaging static storm that also silences all enemy units in the area for the duration.  The damage starts off weak, but increases in power over the duration.",
                 "Upgradable by Aghanim's Scepter."
@@ -3697,7 +3697,7 @@
                 "Affects: Enemy Units",
                 "Pierces Spell Immunity: No"
             ],
-            "agha": "Aghanim Upgrade: Viscous Nasal Goo becomes a no target area of effect ability, applying to all enemies within range.",
+            "agha": "Viscous Nasal Goo becomes a no target area of effect ability, applying to all enemies within range.",
             "description": [
                 "Covers a target in snot, causing it to have reduced armor and movement speed.  Multiple casts stack and refresh the duration.",
                 "Upgradable by Aghanim's Scepter."
@@ -3764,7 +3764,7 @@
                 "Damage Type: Pure",
                 "Pierces Spell Immunity: Yes"
             ],
-            "agha": "Aghanim Upgrade: Grants 2 charges to Rupture with a 40 seconds replenish time.",
+            "agha": "Grants 2 charges to Rupture with a 40 seconds replenish time.",
             "description": [
                 "Causes an enemy unit's skin to rupture. If the unit moves, it takes a percentage of the distance traveled as damage.  The damage is dealt through spell immunity.",
                 "Upgradable by Aghanim's Scepter."
@@ -3869,7 +3869,7 @@
                 "Damage Type: Physical",
                 "Pierces Spell Immunity: Yes"
             ],
-            "agha": "Aghanim Upgrade: Increases number of slashes and decreases cooldown.",
+            "agha": "Increases number of slashes and decreases cooldown.",
             "description": [
                 "Juggernaut leaps towards the target enemy unit with a damaging attack, and then slashes other nearby enemy units, dealing between 200-225 damage per slash.  Juggernaut is invulnerable for the duration.",
                 "Upgradable by Aghanim's Scepter."
@@ -3937,7 +3937,7 @@
                 "Affects: Enemy Units",
                 "Pierces Spell Immunity: Yes"
             ],
-            "agha": "Aghanim Upgrade: Reduces cooldown, decreases damage reduction, and removes penalty from Unique Attack Modifiers and item effects.",
+            "agha": "Reduces cooldown, decreases damage reduction, and removes penalty from Unique Attack Modifiers and item effects.",
             "description": [
                 "Windranger channels the wind to gain 500 additional attack speed against a single enemy unit or structure, though with a reduction to her attack damage.  Extra damage from secondary item effects is not reduced.  Lasts 20 seconds.",
                 "Upgradable by Aghanim's Scepter."
@@ -4120,7 +4120,7 @@
                 "Behavior: No Target",
                 "Pierces Spell Immunity: Yes"
             ],
-            "agha": "Aghanim Upgrade: Reduces cooldown and allows Ursa to use Enrage while disabled.",
+            "agha": "Reduces cooldown and allows Ursa to use Enrage while disabled.",
             "description": [
                 "Ursa goes into a frenzy, multiplying his Fury Swipes damage and causing him to take 80% less damage. Removes any existing debuffs.",
                 "Upgradable by Aghanim's Scepter."
@@ -4161,7 +4161,7 @@
                 "Damage Type: Physical",
                 "Pierces Spell Immunity: Yes"
             ],
-            "agha": "Aghanim Upgrade: Death Ward attacks bounce between nearby enemies.",
+            "agha": "Death Ward attacks bounce between nearby enemies.",
             "description": [
                 "CHANNELED - Summons a deadly ward to attack enemy heroes within 700 range. Lasts a maximum of 8 seconds.",
                 "Upgradable by Aghanim's Scepter."
@@ -4260,7 +4260,7 @@
                 "Damage Type: Magical",
                 "Pierces Spell Immunity: No"
             ],
-            "agha": "Aghanim Upgrade: Allows Luna to cast Eclipse on an allied unit or herself and have its effects follow them, or cast it on an area. Also increases total beams and duration, removes the limit on beams per unit, and makes the beams appear twice as fast.",
+            "agha": "Allows Luna to cast Eclipse on an allied unit or herself and have its effects follow them, or cast it on an area. Also increases total beams and duration, removes the limit on beams per unit, and makes the beams appear twice as fast.",
             "description": [
                 "Showers random nearby enemies with strikes from Luna's current level of Lucent Beam. These beams do not stun their targets, and there is a maximum number of times that a single target can be struck. Also turns day into night for 10 seconds.",
                 "Upgradable by Aghanim's Scepter."
@@ -4455,7 +4455,7 @@
                 "Damage Type: Magical",
                 "Pierces Spell Immunity: Yes"
             ],
-            "agha": "Aghanim Upgrade: Increases damage. If a unit is killed by Wrath of Nature, or within 4 seconds thereafter, a Nature's Call treant will spawn. These treants' health and damage are based on the current level of Nature's Call. If a hero is killed, a Greater Treant will be created, which has 3 times as much health and damage.",
+            "agha": "Increases damage. If a unit is killed by Wrath of Nature, or within 4 seconds thereafter, a Nature's Call treant will spawn. These treants' health and damage are based on the current level of Nature's Call. If a hero is killed, a Greater Treant will be created, which has 3 times as much health and damage.",
             "description": [
                 "Damaging energy bounces around the map, striking enemies close to the CAST POINT: that are in vision. Each enemy hit beyond the first adds damage.",
                 "Upgradable by Aghanim's Scepter."
@@ -4549,7 +4549,7 @@
                 "Damage Type: Pure",
                 "Pierces Spell Immunity: No"
             ],
-            "agha": "Aghanim Upgrade: Grants a second Chakram.",
+            "agha": "Grants a second Chakram.",
             "description": [
                 "Fires your main saw blade at the target location where it will spin in place, dealing damage in an area around it.  Enemies caught in the saw blade will move more slowly for every 5% of health missing. The blade deals damage and cuts down trees in its path when fired and retracted.  While active the ability costs mana, and you lose the ability to attack.",
                 "Upgradable by Aghanim's Scepter."
@@ -4573,7 +4573,7 @@
             "effects": [
                 "Behavior: No Target"
             ],
-            "agha": "Aghanim Upgrade: Reduces cooldown and causes Shadow Dance active to be an area of effect ability, hiding nearby allied heroes underneath it.",
+            "agha": "Reduces cooldown and causes Shadow Dance active to be an area of effect ability, hiding nearby allied heroes underneath it.",
             "description": [
                 "When used, Slark hides himself in a cloud of shadows, becoming immune to detection. Attacking, casting spells, and using items will not reveal Slark.  Passively, when not visible to the enemy team, Slark gains bonus movement speed and health regeneration.",
                 "Upgradable by Aghanim's Scepter."
@@ -4713,7 +4713,7 @@
                 "Damage Type: Magical",
                 "Pierces Spell Immunity: Yes"
             ],
-            "agha": "Aghanim Upgrade: Decreases cooldown, increases kill threshold, and increases bonus movement speed duration.",
+            "agha": "Decreases cooldown, increases kill threshold, and increases bonus movement speed duration.",
             "description": [
                 "Axe spots a weakness and strikes, instantly killing an enemy unit with low health, or dealing moderate damage otherwise. When an enemy hero is killed with Culling Blade, its cooldown is reset, and Axe and nearby allied units gain bonus movement speed.",
                 "Upgradable by Aghanim's Scepter."
@@ -4792,7 +4792,7 @@
                 "Behavior: Unit Target",
                 "Pierces Spell Immunity: Yes"
             ],
-            "agha": "Aghanim Upgrade: Decreases cooldown, allows swapping of non-hero units and causes Vengeful Spirit to spawn a Vengeance Illusion when she dies. Vengeance illusion lasts until she revives and is able to use all of your abilities (but not items).",
+            "agha": "Decreases cooldown, allows swapping of non-hero units and causes Vengeful Spirit to spawn a Vengeance Illusion when she dies. Vengeance illusion lasts until she revives and is able to use all of your abilities (but not items).",
             "description": [
                 "Instantaneously swaps positions with a target Hero, friend or enemy.  Nether Swap interrupts channeling abilities on the target.",
                 "Upgradable by Aghanim's Scepter."
@@ -4856,7 +4856,7 @@
                 "Damage Type: Magical",
                 "Pierces Spell Immunity: Yes"
             ],
-            "agha": "Aghanim Upgrade: Increases slow duration, and units pulled in by Earth Splitter are also disarmed.",
+            "agha": "Increases slow duration, and units pulled in by Earth Splitter are also disarmed.",
             "description": [
                 "Sends forth a jagged crack in front of Elder Titan. After 3 seconds, the crack implodes, slowing movement while dealing damage to each enemy based on their maximum life. Half of the damage dealt is Magical damage, while the other half is Physical damage.",
                 "Upgradable by Aghanim's Scepter."
@@ -4977,7 +4977,7 @@
             "effects": [
                 "Behavior: No Target"
             ],
-            "agha": "Aghanim Upgrade: Increases duration. While Borrowed Time is active, a percentage of all damage taken by allied Heroes in a radius will be redirected to Abaddon.",
+            "agha": "Increases duration. While Borrowed Time is active, a percentage of all damage taken by allied Heroes in a radius will be redirected to Abaddon.",
             "description": [
                 "When activated, all damage dealt to you will heal instead of harm. Most negative buffs will also be removed. If the ability is not on cooldown, it will automatically activate if your health falls below 400.",
                 "Upgradable by Aghanim's Scepter.",
@@ -5047,7 +5047,7 @@
             ]
         },
         "Divided We Stand": {
-            "agha": "Aghanim Upgrade: Adds an extra Meepo.",
+            "agha": "Adds an extra Meepo.",
             "stats": [
                 "NUMBER OF MEEPOES: 1 / 2 / 3"
             ],
@@ -5095,7 +5095,7 @@
                 "Damage Type: Magical",
                 "Pierces Spell Immunity: No"
             ],
-            "agha": "Aghanim Upgrade: Increases Heat-Seeking Missile target count.",
+            "agha": "Increases Heat-Seeking Missile target count.",
             "description": [
                 "Launches a pair of rockets at the nearest visible enemy heroes within 2500 range. ",
                 "Upgradable by Aghanim's Scepter."
@@ -5119,7 +5119,7 @@
                 "Damage Type: Pure",
                 "Pierces Spell Immunity: No"
             ],
-            "agha": "Aghanim Upgrade: Causes Laser to refract between all visible enemy units within range.",
+            "agha": "Causes Laser to refract between all visible enemy units within range.",
             "description": [
                 "Fires an intense energy beam, dealing damage and blinding the target, causing it to miss all physical attacks. ",
                 "Upgradable by Aghanim's Scepter."
@@ -5187,7 +5187,7 @@
                 "Damage Type: Magical",
                 "Pierces Spell Immunity: No"
             ],
-            "agha": "Aghanim Upgrade: Adds Caustic Finale poison to heroes hit by your Burrowstrike and doubles its cast range. Does not apply Caustic Finale to illusions.",
+            "agha": "Adds Caustic Finale poison to heroes hit by your Burrowstrike and doubles its cast range. Does not apply Caustic Finale to illusions.",
             "description": [
                 "Sand King burrows into the ground and tunnels forward, damaging and stunning enemy units above him as he resurfaces.",
                 "Upgradable by Aghanim's Scepter."
@@ -5334,7 +5334,7 @@
                 "Damage Type: Magical",
                 "Pierces Spell Immunity: No"
             ],
-            "agha": "Aghanim Upgrade: Allows Shuriken Toss to bounce twice on each hero.",
+            "agha": "Allows Shuriken Toss to bounce twice on each hero.",
             "description": [
                 "Hurls a deadly shuriken at an enemy unit, dealing damage and mini-stunning the target.  The shuriken will bounce between any Tracked units who are within a 1200 radius of each other.",
                 "Upgradable by Aghanim's Scepter."
@@ -5449,7 +5449,7 @@
                 "Affects: Allied Units",
                 "Pierces Spell Immunity: Yes"
             ],
-            "agha": "Aghanim Upgrade: Changes Empower to be an allied hero aura. Affects ranged heroes for half values and causes them to splash around the target. Can still be cast on units, but doesn't stack.",
+            "agha": "Changes Empower to be an allied hero aura. Affects ranged heroes for half values and causes them to splash around the target. Can still be cast on units, but doesn't stack.",
             "description": [
                 "Gives an allied unit bonus damage and cleave on attack.",
                 "Upgradable by Aghanim's Scepter."
@@ -5554,7 +5554,7 @@
                 "Damage Type: Physical",
                 "Pierces Spell Immunity: Yes"
             ],
-            "agha": "Aghanim Upgrade: Causes faster strikes that can damage structures as well.  When striking buildings, it will only target towers, barracks, and the Ancient.",
+            "agha": "Causes faster strikes that can damage structures as well.  When striking buildings, it will only target towers, barracks, and the Ancient.",
             "description": [
                 "A powerful lightning storm strikes out at enemy units with the lowest health, dealing damage and reducing their armor.",
                 "Upgradable by Aghanim's Scepter."
@@ -5662,7 +5662,7 @@
                 "Damage Type: Magical",
                 "Pierces Spell Immunity: Yes"
             ],
-            "agha": "Aghanim Upgrade: Cooldown is removed, replaced with 3 charges that replenish every 40 seconds. Also causes Demonic Purge to break its target's passive abilities while active.",
+            "agha": "Cooldown is removed, replaced with 3 charges that replenish every 40 seconds. Also causes Demonic Purge to break its target's passive abilities while active.",
             "description": [
                 "Purges the target enemy unit, removing positive buffs, and slowing the target for the duration.  The unit slowly regains its speed until the end of the duration, upon which damage is dealt.  Units under the effect of Disruption can still be affected by Demonic Purge.",
                 "Upgradable by Aghanim's Scepter.",
@@ -5706,7 +5706,7 @@
                 "Damage Type: Magical",
                 "Pierces Spell Immunity: Yes"
             ],
-            "agha": "Aghanim Upgrade: Causes the Greater Bash to hit an area around the initial target, decreases cooldown, and increases cast range.",
+            "agha": "Causes the Greater Bash to hit an area around the initial target, decreases cooldown, and increases cast range.",
             "description": [
                 "Spirit Breaker slips into the nether realm, reappearing next to his hapless victim. Upon reappearing, a Greater Bash of the current level occurs and deals bonus damage.",
                 "Upgradable by Aghanim's Scepter."
@@ -5903,7 +5903,7 @@
                 "Damage Type: Magical",
                 "Pierces Spell Immunity: Yes"
             ],
-            "agha": "Aghanim Upgrade: Increases drain per second and removes cooldown.",
+            "agha": "Increases drain per second and removes cooldown.",
             "description": [
                 "CHANNELED - When cast on an enemy, Pugna drains health from the target enemy unit to heal himself. If Pugna has full HP, and the enemy target is a Hero, Life Drain will restore mana instead.",
                 "When cast on an ally, Pugna will drain his own health into his ally.",
@@ -6110,7 +6110,7 @@
                 "Damage Type: Magical",
                 "Pierces Spell Immunity: No"
             ],
-            "agha": "Aghanim Upgrade: Passively triggers Starstorm every 10 seconds. Does not trigger if the enemy doesn't see Mirana.",
+            "agha": "Passively triggers Starstorm every 10 seconds. Does not trigger if the enemy doesn't see Mirana.",
             "description": [
                 "Calls down a wave of meteors to damage nearby enemy units. The closest enemy unit to Mirana in a %dstarfall_secondary_radius radius will be struck a second time for 75% of the damage.",
                 "Upgradable by Aghanim's Scepter."
@@ -6209,7 +6209,7 @@
                 "Affects: Enemy Heroes",
                 "Pierces Spell Immunity: Yes"
             ],
-            "agha": "Aghanim Upgrade: Increases Duel duration and makes Legion Commander and her opponent only take damage from each other.",
+            "agha": "Increases Duel duration and makes Legion Commander and her opponent only take damage from each other.",
             "description": [
                 "Legion Commander and the target enemy hero are forced to attack each other for a short duration.  Neither hero can use items or abilities.  If either hero dies during the duration, the hero winning the Duel gains permanent bonus damage.",
                 "Upgradable by Aghanim's Scepter."
@@ -6281,7 +6281,7 @@
                 "Damage Type: Magical",
                 "Pierces Spell Immunity: No"
             ],
-            "agha": "Aghanim Upgrade: Increases the damage dealt by illusions.",
+            "agha": "Increases the damage dealt by illusions.",
             "description": [
                 "Raises a wall of warping light that slows and creates replicas of any enemy hero who crosses it. Enemy replicas serve at the Dark Seer's will. Replicas last until they are destroyed, or until the wall's duration ends.",
                 "Upgradable by Aghanim's Scepter."
@@ -6354,7 +6354,7 @@
                 "Damage Type: Magical",
                 "Pierces Spell Immunity: No"
             ],
-            "agha": "Aghanim Upgrade: Causes Spirit Lance to bounce on nearby enemies.",
+            "agha": "Causes Spirit Lance to bounce on nearby enemies.",
             "description": [
                 "Sends a magical spirit lance to a target enemy unit that damages and slows, while summoning an illusory phantom to attack the unit.",
                 "Upgradable by Aghanim's Scepter."
@@ -6619,7 +6619,7 @@
                 "Damage Type: Magical",
                 "Pierces Spell Immunity: No"
             ],
-            "agha": "Aghanim Upgrade: Allows Geomagnetic Grip to pull allied heroes.",
+            "agha": "Allows Geomagnetic Grip to pull allied heroes.",
             "description": [
                 "Earth Spirit pulls the target Stone Remnant. Enemies struck by the gripped target will be silenced, and take damage if the gripped target is a Stone Remnant.",
                 "Upgradable by Aghanim's Scepter."
@@ -6645,7 +6645,7 @@
                 "Damage Type: Magical",
                 "Pierces Spell Immunity: No"
             ],
-            "agha": "Aghanim Upgrade: Gush becomes a ground targeted wave ability that affects enemy units in a line.  Decreases cooldown.",
+            "agha": "Gush becomes a ground targeted wave ability that affects enemy units in a line.  Decreases cooldown.",
             "description": [
                 "Summons a gush of water to damage an enemy unit, reducing their movement speed and armor.  Lasts 4 seconds.",
                 "Upgradable by Aghanim's Scepter."
@@ -6757,7 +6757,7 @@
                 "Damage Type: Magical",
                 "Pierces Spell Immunity: Yes"
             ],
-            "agha": "Aghanim Upgrade: Increases damage dealt, reduces cooldown.",
+            "agha": "Increases damage dealt, reduces cooldown.",
             "description": [
                 "Huskar draws upon his health to break an enemy's life, leaping at a target within attack range to shatter a percentage of that hero's current health, and slowing them.  While leaping, Huskar is Spell Immune.",
                 "Upgradable by Aghanim's Scepter."
@@ -6881,7 +6881,7 @@
                 "Behavior: No Target",
                 "Pierces Spell Immunity: No"
             ],
-            "agha": "Aghanim Upgrade: Heroes affected by Stampede take reduced damage, and are able to run through obstructions, including trees and up cliffs.",
+            "agha": "Heroes affected by Stampede take reduced damage, and are able to run through obstructions, including trees and up cliffs.",
             "description": [
                 "Centaur leads all allies into a vicious charge causing them to move through units at max speed and stop any enemy units they trample. Trampled enemies take damage based on Centaur Warrunner's strength. Each enemy can be trampled once.",
                 "Upgradable by Aghanim's Scepter."
@@ -6907,7 +6907,7 @@
                 "Behavior: Point Target",
                 "Pierces Spell Immunity: Yes"
             ],
-            "agha": "Aghanim Upgrade: Increases radius and armor per second.",
+            "agha": "Increases radius and armor per second.",
             "description": [
                 "Applies a buff that increases the armor of allied heroes while decreasing the armor of enemy heroes in the target area over time.",
                 "Upgradable by Aghanim's Scepter."
@@ -7065,7 +7065,7 @@
                 "Damage Type: Magical",
                 "Pierces Spell Immunity: Yes"
             ],
-            "agha": "Aghanim Upgrade: When Overgrowth is cast, it is also cast around Eye of the Forest to deal 175 damage per second.",
+            "agha": "When Overgrowth is cast, it is also cast around Eye of the Forest to deal 175 damage per second.",
             "description": [
                 "Summons an overgrowth of vines and branches around Treant that prevent afflicted enemies from moving, blinking, going invisible, or attacking."
             ]
@@ -7132,7 +7132,7 @@
                 "Damage Type: Magical",
                 "Pierces Spell Immunity: No"
             ],
-            "agha": "Aghanim Upgrade: Increases damage. Decreases cooldown. Finger of Death hits all units in a small area.",
+            "agha": "Increases damage. Decreases cooldown. Finger of Death hits all units in a small area.",
             "description": [
                 "Rips at an enemy unit, trying to turn it inside-out. Deals massive damage.",
                 "Upgradable by Aghanim's Scepter."
@@ -7313,7 +7313,7 @@
                 "Damage Type: Magical",
                 "Pierces Spell Immunity: No"
             ],
-            "agha": "Aghanim Upgrade: Increases damage and cast range.",
+            "agha": "Increases damage and cast range.",
             "description": [
                 "Plant an invisible explosive that will only detonate after a brief delay when triggered.  Does not damage buildings.",
                 "Upgradable by Aghanim's Scepter."
@@ -7330,7 +7330,7 @@
                 "Behavior: Point Target",
                 "Damage Type: DAMAGE_TYPE_NONE"
             ],
-            "agha": "Aghanim Upgrade: Allows Minefield Sign to hide any Proximity Mines, Stasis Traps, and Remote Mines in an area around the sign from True Sight.",
+            "agha": "Allows Minefield Sign to hide any Proximity Mines, Stasis Traps, and Remote Mines in an area around the sign from True Sight.",
             "description": [
                 "Plant a warning sign to remind enemies to step lightly. Only one sign can exist at a time. Lasts 180 seconds.",
                 "Upgradable by Aghanim's Scepter."
@@ -7497,7 +7497,7 @@
                 "Damage Type: Magical",
                 "Pierces Spell Immunity: No"
             ],
-            "agha": "Aghanim Upgrade: Increases strength steal.",
+            "agha": "Increases strength steal.",
             "description": [
                 "Undying steals strength from all enemy heroes in an area, dealing base damage as he claims the enemy's strength for himself.",
                 "Upgradable by Aghanim's Scepter."
@@ -7588,7 +7588,7 @@
             "effects": [
                 "Behavior: No Target"
             ],
-            "agha": "Aghanim Upgrade: Summons 3 familiars.",
+            "agha": "Summons 3 familiars.",
             "description": [
                 "Conjures two blind Familiars to fight for Visage.  Familiars have high attack power, but each attack drains a charge of damage that recharges slowly over time.  Familiars possess the Stone Form ability, that allows them to turn into stone, stunning enemies upon landing.  While in Stone Form, Familiars are invulnerable, and rapidly regenerate their health.  Familiars grant high bounty when killed.",
                 "Upgradable by Aghanim's Scepter."
@@ -7654,7 +7654,7 @@
                 "Damage Type: Magical",
                 "Pierces Spell Immunity: Yes"
             ],
-            "agha": "Aghanim Upgrade: Decreases cooldown.",
+            "agha": "Decreases cooldown.",
             "description": [
                 "Fires a grappling device rapidly at the target location.  If the hook hits a unit, Clockwerk launches himself into the target, stunning and dealing damage.  Any enemies Clockwerk collides with along the way are damaged and stunned.",
                 "Upgradable by Aghanim's Scepter."
@@ -7730,7 +7730,7 @@
             "effects": [
                 "Behavior: No Target"
             ],
-            "agha": "Aghanim Upgrade: Grants unobstructed vision in the night. The improved vision does not depend on using Darkness.",
+            "agha": "Grants unobstructed vision in the night. The improved vision does not depend on using Darkness.",
             "description": [
                 "Night Stalker smothers the sun and summons instant darkness, so that he might use his powers at their fullest. While Darkness is in effect, enemy heroes, units, wards and buildings have their vision range reduced to 675. ",
                 "Upgradable by Aghanim's Scepter."
@@ -7831,7 +7831,7 @@
                 "Damage Type: Magical",
                 "Pierces Spell Immunity: No"
             ],
-            "agha": "Aghanim Upgrade: Changes Laguna Blade's damage type to Pure, and allows it to slice through spell immunity.",
+            "agha": "Changes Laguna Blade's damage type to Pure, and allows it to slice through spell immunity.",
             "description": [
                 "Fires off a bolt of lightning at a single enemy unit, dealing massive damage.",
                 "Upgradable by Aghanim's Scepter."
@@ -8000,7 +8000,7 @@
                 "Damage Type: Pure",
                 "Pierces Spell Immunity: Yes"
             ],
-            "agha": "Aghanim Upgrade: Increases attack range, and cast range of Impetus.",
+            "agha": "Increases attack range, and cast range of Impetus.",
             "description": [
                 "Places an enchantment on each attack while activated, causing it to deal additional damage based on how far away the target is.  The farther the target, the greater the damage dealt.",
                 "Upgradable by Aghanim's Scepter."
@@ -8070,7 +8070,7 @@
                 "Affects: Enemy Units",
                 "Pierces Spell Immunity: Yes"
             ],
-            "agha": "Aghanim Upgrade: Flaming Lasso grabs both its target, as well as the target's nearest allied hero within 400 range. The secondary target is tethered to the first. Also causes Flaming Lasso to deal 100 damage per second.",
+            "agha": "Flaming Lasso grabs both its target, as well as the target's nearest allied hero within 400 range. The secondary target is tethered to the first. Also causes Flaming Lasso to deal 100 damage per second.",
             "description": [
                 "Lassoes an enemy and drags them in Batrider's wake.  Victims cannot be dragged over impassable terrain. Dragged units cannot move, attack, or use abilities.  Teleporting or blinking will break the lasso.",
                 "Upgradable by Aghanim's Scepter."
@@ -8182,7 +8182,7 @@
                 "Damage Type: Magical",
                 "Pierces Spell Immunity: Yes"
             ],
-            "agha": "Aghanim Upgrade: Calls 2 Golems with reduced stats and bounty.",
+            "agha": "Calls 2 Golems with reduced stats and bounty.",
             "description": [
                 "Summons a Golem from the depths, stunning enemies for one second. The Golem lives 60 seconds, takes reduced damage from spells, has Permanent Immolation and Flaming Fists on attack.",
                 "Upgradable by Aghanim's Scepter."
@@ -8281,7 +8281,7 @@
                 "Behavior: Point Target",
                 "Pierces Spell Immunity: Yes"
             ],
-            "agha": "Aghanim Upgrade: Decreases cooldown.",
+            "agha": "Decreases cooldown.",
             "description": [
                 "Creates a blister in spacetime, trapping all units caught in its sphere of influence and causes you to move very quickly inside it.  Only Faceless Void and any units he controls are unaffected.  Invisible units in the sphere will be revealed.",
                 "Upgradable by Aghanim's Scepter."
@@ -8323,7 +8323,7 @@
             ]
         },
         "Necromastery": {
-            "agha": "Aghanim Upgrade: Increases max souls.",
+            "agha": "Increases max souls.",
             "stats": [
                 "DAMAGE PER SOUL: 2",
                 "MAX SOULS: 18 / 24 / 30 / 36",
@@ -8362,7 +8362,7 @@
                 "Damage Type: Magical",
                 "Pierces Spell Immunity: Yes"
             ],
-            "agha": "Aghanim Upgrade: Increases Necromastery Max Souls and causes Requiem of Souls to return back to Shadow Fiend. The wave back to Shadow Fiend deals less damage, but heals Shadow Fiend for all the damage it dealt.",
+            "agha": "Increases Necromastery Max Souls and causes Requiem of Souls to return back to Shadow Fiend. The wave back to Shadow Fiend deals less damage, but heals Shadow Fiend for all the damage it dealt.",
             "description": [
                 "Shadow Fiend gathers his captured souls to release them as lines of demonic energy. Units near Shadow Fiend when the souls are released can be damaged by several lines of energy. Any unit damaged by Requiem of Souls will have its movement speed and attack damage reduced. Lines of energy are created for every 2 souls captured through Necromastery. Requiem of Souls is automatically cast whenever Shadow Fiend dies, regardless of its cooldown.",
                 "Upgradable by Aghanim's Scepter."
@@ -8405,7 +8405,7 @@
                 "Damage Type: Physical",
                 "Pierces Spell Immunity: Yes"
             ],
-            "agha": "Aghanim Upgrade: Causes Serpent Wards to have split shot, attacking two units for full damage. Increases attack range of Serpent Wards.",
+            "agha": "Causes Serpent Wards to have split shot, attacking two units for full damage. Increases attack range of Serpent Wards.",
             "description": [
                 "Summons 10 Serpent Wards to attack enemy units and structures. The Wards are immune to magic. It takes two hits to destroy a single Ward.",
                 "Upgradable by Aghanim's Scepter."
@@ -8484,7 +8484,7 @@
             "effects": [
                 "Behavior: No Target"
             ],
-            "agha": "Aghanim Upgrade: Alchemist melts down Aghanim's Scepter to grant an allied hero all Aghanim's Scepter upgrades.",
+            "agha": "Alchemist melts down Aghanim's Scepter to grant an allied hero all Aghanim's Scepter upgrades.",
             "description": [
                 "Alchemist causes his Ogre to enter a chemically induced rage, reducing base attack cooldown and increasing movement speed and regeneration."
             ]
@@ -8653,7 +8653,7 @@
             "effects": [
                 "Behavior: No Target"
             ],
-            "agha": "Aghanim Upgrade: Permanent Spirit Form. During daytime, grants unobstructed vision, and allows Illuminate to heal allies for the same amount as its damage values.",
+            "agha": "Permanent Spirit Form. During daytime, grants unobstructed vision, and allows Illuminate to heal allies for the same amount as its damage values.",
             "description": [
                 "Ezalor temporarily turns his body luminescent, gaining various abilities.  Illuminate is now channeled by a separate spirit, and gains the Blinding Light and Recall abilities.",
                 "Upgradable by Aghanim's Scepter."
@@ -8736,7 +8736,7 @@
                 "Behavior: No Target",
                 "Pierces Spell Immunity: Yes"
             ],
-            "agha": "Aghanim Upgrade: Applies the current level of Arcane Curse to all enemy Heroes.",
+            "agha": "Applies the current level of Arcane Curse to all enemy Heroes.",
             "description": [
                 "Silencer stops all sound, preventing enemy heroes and units on the map from casting spells.",
                 "Upgradable by Aghanim's Scepter."
@@ -8790,7 +8790,7 @@
                 "Damage Type: Magical",
                 "Pierces Spell Immunity: Yes"
             ],
-            "agha": "Aghanim Upgrade: Increases damage per second, mana drain, and duration. If an enemy tries to attack Bane while he is channeling Fiend's Grip, they will instantly have Bane's current level of Nightmare inflicted upon them.",
+            "agha": "Increases damage per second, mana drain, and duration. If an enemy tries to attack Bane while he is channeling Fiend's Grip, they will instantly have Bane's current level of Nightmare inflicted upon them.",
             "description": [
                 "CHANNELED - Grips an enemy unit, disabling it and causing heavy damage over time, while stealing mana every second based on the unit's maximum mana.",
                 "Upgradable by Aghanim's Scepter."
@@ -8914,7 +8914,7 @@
                 "Damage Type: Magical",
                 "Pierces Spell Immunity: No"
             ],
-            "agha": "Aghanim Upgrade: Sanity's Eclipse will also cast the current level of Astral Imprisonment on affected enemy heroes.",
+            "agha": "Sanity's Eclipse will also cast the current level of Astral Imprisonment on affected enemy heroes.",
             "description": [
                 "Unleashes a psychic blast that removes 40% of the mana from affected heroes, while also damaging them based on the difference between the affected hero's Intelligence and Outworld Devourer's. If an enemy hero has the same or higher Intelligence than Outworld Devourer, Sanity's Eclipse will not cause damage. Sanity's Eclipse can hit units trapped by Astral Imprisonment.",
                 "Upgradable by Aghanim's Scepter."
@@ -9212,7 +9212,7 @@
                 "Damage Type: Pure",
                 "Pierces Spell Immunity: Yes"
             ],
-            "agha": "Aghanim Upgrade: Reduces cooldown and increases damage.",
+            "agha": "Reduces cooldown and increases damage.",
             "description": [
                 "Launches a bloody hook toward a unit or location. The hook will snag the first unit it encounters, dragging the unit back to Pudge and dealing damage if it is an enemy.",
                 "Upgradable by Aghanim's Scepter."
@@ -9306,7 +9306,7 @@
                 "Damage Type: Magical",
                 "Pierces Spell Immunity: Yes"
             ],
-            "agha": "Aghanim Upgrade: Reduces cooldown.",
+            "agha": "Reduces cooldown.",
             "description": [
                 "Stuns the target enemy hero, then deals damage based on how much life it is missing. Heroes killed by Reaper's Scythe will have [10, 20, 30] seconds added to their respawn timer. Any kill under this effect is credited to Necrophos.",
                 "Upgradable by Aghanim's Scepter."
@@ -9484,7 +9484,7 @@
                 "Damage Type: Magical",
                 "Pierces Spell Immunity: No"
             ],
-            "agha": "Aghanim Upgrade: Increases damage and casting range. Removes the limit on the number of times Chain Frost can jump.",
+            "agha": "Increases damage and casting range. Removes the limit on the number of times Chain Frost can jump.",
             "description": [
                 "Releases an orb of frost that bounces between nearby enemy units up to [10, 10, 10] times, slowing and damaging each time it hits.  The first target is mini-stunned.",
                 "Upgradable by Aghanim's Scepter."
@@ -9660,7 +9660,7 @@
             ]
         },
         "Grow": {
-            "agha": "Aghanim Upgrade: Allows Tiny to equip a tree, increasing his attack range, damage versus buildings, and granting a cleave attack.  Improves Tossed unit damage.",
+            "agha": "Allows Tiny to equip a tree, increasing his attack range, damage versus buildings, and granting a cleave attack.  Improves Tossed unit damage.",
             "stats": [
                 "BONUS DAMAGE: 50 / 100 / 150",
                 "ATTACK SPEED LOSS: -20 / -35 / -50",
@@ -9739,7 +9739,7 @@
             "effects": [
                 "Behavior: No Target"
             ],
-            "agha": "Aghanim Upgrade: Allows Spirit Bear to attack at any range from Lone Druid, and to survive if Lone Druid dies.",
+            "agha": "Allows Spirit Bear to attack at any range from Lone Druid, and to survive if Lone Druid dies.",
             "description": [
                 "Return to Druid form.",
                 "Upgradable by Aghanim's Scepter."
@@ -9818,7 +9818,7 @@
             "effects": [
                 "Behavior: No Target"
             ],
-            "agha": "Aghanim Upgrade: Allows Spirit Bear to attack at any range from Lone Druid, and to survive if Lone Druid dies.",
+            "agha": "Allows Spirit Bear to attack at any range from Lone Druid, and to survive if Lone Druid dies.",
             "description": [
                 "Summons a powerful Spirit Bear companion that can equip items.  If the bear moves 1100 distance away from the Lone Druid, it cannot attack.  Lone Druid suffers 10.0% of his max health as backlash damage if the Spirit Bear dies.  As the bear increases in levels, it can learn the Return, Entangling Claws, and Demolish abilities.  Spirit Bear does not benefit from attributes.",
                 "Upgradable by Aghanim's Scepter."
@@ -9868,7 +9868,7 @@
             ]
         },
         "Spell Shield": {
-            "agha": "Aghanim Upgrade: Causes Spell Shield to passively block and reflect a targeted spell once every 12 seconds.",
+            "agha": "Causes Spell Shield to passively block and reflect a targeted spell once every 12 seconds.",
             "stats": [
                 "RESISTANCE: 26% / 34% / 42% / 50%"
             ],
@@ -10034,7 +10034,7 @@
                 "Damage Type: Magical",
                 "Pierces Spell Immunity: No"
             ],
-            "agha": "Aghanim Upgrade: Increases flame length, duration, and damage.",
+            "agha": "Increases flame length, duration, and damage.",
             "description": [
                 "Jakiro exhales a wide line of lasting flames, which deals damage per second to any enemy units caught in the fire.",
                 "Upgradable by Aghanim's Scepter."
@@ -10147,7 +10147,7 @@
                 "Damage Type: Magical",
                 "Pierces Spell Immunity: Yes"
             ],
-            "agha": "Aghanim Upgrade: Turns Assassinate into a ground target AoE ability, that after the channel period launches a critical strike and procs headshot on units in the AoE. Only affects visible heroes.",
+            "agha": "Turns Assassinate into a ground target AoE ability, that after the channel period launches a critical strike and procs headshot on units in the AoE. Only affects visible heroes.",
             "description": [
                 "Sniper locks onto a target enemy unit and, after 2 seconds, fires a devastating shot that deals damage at long range, and mini-stuns the target.",
                 "Upgradable by Aghanim's Scepter."
@@ -10232,7 +10232,7 @@
                 "Damage Type: Magical",
                 "Pierces Spell Immunity: Yes"
             ],
-            "agha": "Aghanim Upgrade: Reduces cooldown, and increases cast range.",
+            "agha": "Reduces cooldown, and increases cast range.",
             "description": [
                 "Beastmaster lets loose a deafening roar that stuns, and shoves open, a path to its target. All units in the path of the roar are damaged, while units shoved aside by the roar have their movement and attack speed slowed.",
                 "Upgradable by Aghanim's Scepter."
@@ -10314,7 +10314,7 @@
                 "Damage Type: Magical",
                 "Pierces Spell Immunity: No"
             ],
-            "agha": "Aghanim Upgrade: Increases damage from coil breaks, increases coil duration, coil break stun goes through spell immunity.",
+            "agha": "Increases damage from coil breaks, increases coil duration, coil break stun goes through spell immunity.",
             "description": [
                 "Creates a coil of volatile magic that latches onto enemy Heroes, stunning them for %dstun_duration seconds and damaging them.  If the enemy hero stretches the coil by moving too far away, it snaps, stunning and dealing additional damage.",
                 "Upgradable by Aghanim's Scepter."

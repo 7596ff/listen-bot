@@ -1,726 +1,728 @@
 {
     "undying": {
-        "q": "Decay",
-        "e": "Tombstone",
-        "w": "Soul Rip",
-        "r": "Flesh Golem"
+        "Q": "Decay",
+        "E": "Tombstone",
+        "W": "Soul Rip",
+        "R": "Flesh Golem"
     },
     "spirit_breaker": {
-        "q": "Charge of Darkness",
-        "e": "Greater Bash",
-        "w": "Empowering Haste",
-        "r": "Nether Strike",
+        "Q": "Charge of Darkness",
+        "E": "Greater Bash",
+        "W": "Empowering Haste",
+        "R": "Nether Strike",
         "charge": "Charge of Darkness"
     },
     "luna": {
-        "q": "Lucent Beam",
-        "e": "Lunar Blessing",
-        "w": "Moon Glaive",
-        "r": "Eclipse"
+        "Q": "Lucent Beam",
+        "E": "Lunar Blessing",
+        "W": "Moon Glaive",
+        "R": "Eclipse"
     },
     "tiny": {
-        "q": "Avalanche",
-        "e": "Craggy Exterior",
-        "w": "Toss",
-        "r": "Grow",
+        "Q": "Avalanche",
+        "E": "Craggy Exterior",
+        "W": "Toss",
+        "R": "Grow",
         "craggy": "Craggy Exterior"
     },
     "drow_ranger": {
-        "q": "Frost Arrows",
-        "e": "Precision Aura",
-        "w": "Gust",
-        "r": "Marksmanship"
+        "Q": "Frost Arrows",
+        "E": "Precision Aura",
+        "W": "Gust",
+        "R": "Marksmanship"
     },
     "gyrocopter": {
-        "q": "Rocket Barrage",
-        "e": "Flak Cannon",
-        "w": "Homing Missile",
-        "r": "Call Down"
+        "Q": "Rocket Barrage",
+        "E": "Flak Cannon",
+        "W": "Homing Missile",
+        "R": "Call Down"
     },
     "nyx_assassin": {
-        "r": "Vendetta",
+        "R": "Vendetta",
         "d": "Burrow",
-        "q": "Impale",
-        "e": "Spiked Carapace",
-        "w": "Mana Burn"
+        "Q": "Impale",
+        "E": "Spiked Carapace",
+        "W": "Mana Burn"
     },
     "rattletrap": {
-        "q": "Battery Assault",
-        "e": "Rocket Flare",
-        "w": "Power Cogs",
-        "r": "Hookshot"
+        "Q": "Battery Assault",
+        "E": "Rocket Flare",
+        "W": "Power Cogs",
+        "R": "Hookshot"
     },
     "leshrac": {
-        "q": "Split Earth",
-        "e": "Lightning Storm",
-        "w": "Diabolic Edict",
-        "r": "Pulse Nova"
+        "Q": "Split Earth",
+        "E": "Lightning Storm",
+        "W": "Diabolic Edict",
+        "R": "Pulse Nova"
     },
     "sand_king": {
-        "q": "Burrowstrike",
-        "e": "Caustic Finale",
-        "w": "Sand Storm",
-        "r": "Epicenter"
+        "Q": "Burrowstrike",
+        "E": "Caustic Finale",
+        "W": "Sand Storm",
+        "R": "Epicenter"
     },
     "centaur": {
-        "q": "Hoof Stomp",
-        "e": "Return",
-        "w": "Double Edge",
-        "r": "Stampede"
+        "Q": "Hoof Stomp",
+        "E": "Return",
+        "W": "Double Edge",
+        "R": "Stampede"
     },
     "juggernaut": {
-        "q": "Blade Fury",
-        "e": "Blade Dance",
-        "w": "Healing Ward",
-        "r": "Omnislash"
+        "Q": "Blade Fury",
+        "E": "Blade Dance",
+        "W": "Healing Ward",
+        "R": "Omnislash"
     },
     "batrider": {
-        "q": "Sticky Napalm",
-        "e": "Firefly",
-        "w": "Flamebreak",
-        "r": "Flaming Lasso"
+        "Q": "Sticky Napalm",
+        "E": "Firefly",
+        "W": "Flamebreak",
+        "R": "Flaming Lasso"
     },
     "skywrath_mage": {
-        "q": "Arcane Bolt",
-        "e": "Ancient Seal",
-        "w": "Concussive Shot",
-        "r": "Mystic Flare"
+        "Q": "Arcane Bolt",
+        "E": "Ancient Seal",
+        "W": "Concussive Shot",
+        "R": "Mystic Flare"
     },
     "shadow_shaman": {
-        "q": "Ether Shock",
-        "e": "Shackles",
-        "w": "Hex",
-        "r": "Mass Serpent Ward"
+        "Q": "Ether Shock",
+        "E": "Shackles",
+        "W": "Hex",
+        "R": "Mass Serpent Ward"
     },
     "elder_titan": {
-        "q": "Echo Stomp",
-        "e": "Natural Order",
-        "w": "Astral Spirit",
-        "r": "Earth Splitter"
+        "Q": "Echo Stomp",
+        "E": "Natural Order",
+        "W": "Astral Spirit",
+        "R": "Earth Splitter"
     },
     "venomancer": {
-        "q": "Venomous Gale",
-        "e": "Plague Ward",
-        "w": "Poison Sting",
-        "r": "Poison Nova"
+        "Q": "Venomous Gale",
+        "E": "Plague Ward",
+        "W": "Poison Sting",
+        "R": "Poison Nova"
     },
     "skeleton_king": {
-        "q": "Wraithfire Blast",
-        "e": "Mortal Strike",
-        "w": "Vampiric Aura",
-        "r": "Reincarnation"
+        "Q": "Wraithfire Blast",
+        "E": "Mortal Strike",
+        "W": "Vampiric Aura",
+        "R": "Reincarnation"
     },
     "abaddon": {
-        "q": "Mist Coil",
-        "e": "Curse of Avernus",
-        "w": "Aphotic Shield",
-        "r": "Borrowed Time"
+        "Q": "Mist Coil",
+        "E": "Curse of Avernus",
+        "W": "Aphotic Shield",
+        "R": "Borrowed Time"
     },
     "dark_seer": {
-        "q": "Vacuum",
-        "e": "Surge",
-        "w": "Ion Shell",
-        "r": "Wall of Replica"
+        "Q": "Vacuum",
+        "E": "Surge",
+        "W": "Ion Shell",
+        "R": "Wall of Replica"
     },
     "nevermore": {
         "f": "Presence of the Dark Lord",
-        "r": "Requiem of Souls",
+        "R": "Requiem of Souls",
         "d": "Necromastery",
-        "q": "Shadowraze",
-        "e": "Shadowraze",
-        "w": "Shadowraze"
+        "Q": "Shadowraze",
+        "E": "Shadowraze",
+        "W": "Shadowraze"
     },
     "kunkka": {
-        "r": "Ghostship",
-        "q": "Torrent",
-        "e": "X Marks the Spot",
-        "w": "Tidebringer"
+        "R": "Ghostship",
+        "Q": "Torrent",
+        "E": "X Marks the Spot",
+        "W": "Tidebringer"
     },
     "templar_assassin": {
-        "q": "Refraction",
-        "e": "Psi Blades",
-        "w": "Meld",
-        "r": "Psionic Trap"
+        "Q": "Refraction",
+        "E": "Psi Blades",
+        "W": "Meld",
+        "R": "Psionic Trap"
     },
     "bane": {
-        "r": "Fiend's Grip",
-        "q": "Enfeeble",
-        "e": "Nightmare",
-        "w": "Brain Sap"
+        "R": "Fiend's Grip",
+        "Q": "Enfeeble",
+        "E": "Nightmare",
+        "W": "Brain Sap"
     },
     "disruptor": {
-        "q": "Thunder Strike",
-        "e": "Kinetic Field",
-        "w": "Glimpse",
-        "r": "Static Storm"
+        "Q": "Thunder Strike",
+        "E": "Kinetic Field",
+        "W": "Glimpse",
+        "R": "Static Storm"
     },
     "pugna": {
-        "q": "Nether Blast",
-        "e": "Nether Ward",
-        "w": "Decrepify",
-        "r": "Life Drain"
+        "Q": "Nether Blast",
+        "E": "Nether Ward",
+        "W": "Decrepify",
+        "R": "Life Drain"
     },
     "meepo": {
-        "q": "Earthbind",
-        "e": "Geostrike",
-        "w": "Poof",
-        "r": "Divided We Stand"
+        "Q": "Earthbind",
+        "E": "Geostrike",
+        "W": "Poof",
+        "R": "Divided We Stand"
     },
     "magnataur": {
-        "q": "Shockwave",
-        "e": "Skewer",
-        "w": "Empower",
-        "r": "Reverse Polarity"
+        "Q": "Shockwave",
+        "E": "Skewer",
+        "W": "Empower",
+        "R": "Reverse Polarity"
     },
     "terrorblade": {
-        "q": "Reflection",
-        "e": "Metamorphosis",
-        "w": "Conjure Image",
-        "r": "Sunder"
+        "Q": "Reflection",
+        "E": "Metamorphosis",
+        "W": "Conjure Image",
+        "R": "Sunder"
     },
     "crystal_maiden": {
-        "q": "Crystal Nova",
-        "e": "Arcane Aura",
-        "w": "Frostbite",
-        "r": "Freezing Field"
+        "Q": "Crystal Nova",
+        "E": "Arcane Aura",
+        "W": "Frostbite",
+        "R": "Freezing Field"
     },
     "jakiro": {
-        "q": "Dual Breath",
-        "e": "Liquid Fire",
-        "w": "Ice Path",
-        "r": "Macropyre"
+        "Q": "Dual Breath",
+        "E": "Liquid Fire",
+        "W": "Ice Path",
+        "R": "Macropyre"
     },
     "tinker": {
-        "q": "Laser",
-        "e": "March of the Machines",
-        "w": "Heat-Seeking Missile",
-        "r": "Rearm"
+        "Q": "Laser",
+        "E": "March of the Machines",
+        "W": "Heat-Seeking Missile",
+        "R": "Rearm"
     },
     "windrunner": {
-        "q": "Shackleshot",
-        "e": "Windrun",
-        "w": "Powershot",
-        "r": "Focus Fire"
+        "Q": "Shackleshot",
+        "E": "Windrun",
+        "W": "Powershot",
+        "R": "Focus Fire"
     },
     "medusa": {
-        "q": "Split Shot",
-        "e": "Mana Shield",
-        "w": "Mystic Snake",
-        "r": "Stone Gaze"
+        "Q": "Split Shot",
+        "E": "Mana Shield",
+        "W": "Mystic Snake",
+        "R": "Stone Gaze"
     },
     "doom_bringer": {
-        "q": "Devour",
-        "e": "Infernal Blade",
-        "w": "Scorched Earth",
-        "r": "Doom"
+        "Q": "Devour",
+        "E": "Infernal Blade",
+        "W": "Scorched Earth",
+        "R": "Doom"
     },
     "rubick": {
-        "e": "Null Field",
-        "q": "Telekinesis",
-        "w": "Fade Bolt",
-        "r": "Spell Steal"
+        "E": "Null Field",
+        "Q": "Telekinesis",
+        "W": "Fade Bolt",
+        "R": "Spell Steal"
     },
     "legion_commander": {
-        "q": "Overwhelming Odds",
-        "e": "Moment of Courage",
-        "w": "Press The Attack",
-        "r": "Duel"
+        "Q": "Overwhelming Odds",
+        "E": "Moment of Courage",
+        "W": "Press The Attack",
+        "R": "Duel"
     },
     "bloodseeker": {
-        "q": "Bloodrage",
-        "e": "Thirst",
-        "w": "Blood Rite",
-        "r": "Rupture"
+        "Q": "Bloodrage",
+        "E": "Thirst",
+        "W": "Blood Rite",
+        "R": "Rupture"
     },
     "bounty_hunter": {
-        "q": "Shuriken Toss",
-        "e": "Shadow Walk",
-        "w": "Jinada",
-        "r": "Track"
+        "Q": "Shuriken Toss",
+        "E": "Shadow Walk",
+        "W": "Jinada",
+        "R": "Track"
     },
     "broodmother": {
-        "q": "Spawn Spiderlings",
-        "e": "Incapacitating Bite",
-        "w": "Spin Web",
-        "r": "Insatiable Hunger"
+        "Q": "Spawn Spiderlings",
+        "E": "Incapacitating Bite",
+        "W": "Spin Web",
+        "R": "Insatiable Hunger"
     },
     "tusk": {
         "d": "Walrus Kick",
-        "r": "Walrus PUNCH!",
-        "q": "Ice Shards",
-        "e": "Frozen Sigil",
-        "w": "Snowball"
+        "R": "Walrus PUNCH!",
+        "Q": "Ice Shards",
+        "E": "Frozen Sigil",
+        "W": "Snowball"
     },
     "sven": {
-        "q": "Storm Hammer",
-        "e": "Warcry",
-        "w": "Great Cleave",
-        "r": "God's Strength"
+        "Q": "Storm Hammer",
+        "E": "Warcry",
+        "W": "Great Cleave",
+        "R": "God's Strength"
     },
     "huskar": {
-        "q": "Inner Vitality",
-        "e": "Berserker's Blood",
-        "w": "Burning Spear",
-        "r": "Life Break"
+        "Q": "Inner Vitality",
+        "E": "Berserker's Blood",
+        "W": "Burning Spear",
+        "R": "Life Break"
     },
     "zuus": {
         "d": "Nimbus",
-        "q": "Arc Lightning",
-        "e": "Static Field",
-        "w": "Lightning Bolt",
-        "r": "Thundergod's Wrath"
+        "Q": "Arc Lightning",
+        "E": "Static Field",
+        "W": "Lightning Bolt",
+        "R": "Thundergod's Wrath"
     },
     "earth_spirit": {
         "f": "Enchant Remnant",
-        "r": "Magnetize",
+        "R": "Magnetize",
         "d": "Stone Remnant",
-        "q": "Boulder Smash",
-        "e": "Geomagnetic Grip",
-        "w": "Rolling Boulder"
+        "Q": "Boulder Smash",
+        "E": "Geomagnetic Grip",
+        "W": "Rolling Boulder"
     },
     "puck": {
-        "q": "Illusory Orb",
-        "e": "Phase Shift",
-        "w": "Waning Rift",
-        "r": "Dream Coil"
+        "Q": "Illusory Orb",
+        "E": "Phase Shift",
+        "W": "Waning Rift",
+        "R": "Dream Coil"
     },
     "lich": {
-        "q": "Frost Blast",
-        "e": "Sacrifice",
-        "w": "Ice Armor",
-        "r": "Chain Frost"
+        "Q": "Frost Blast",
+        "E": "Sacrifice",
+        "W": "Ice Armor",
+        "R": "Chain Frost"
     },
     "storm_spirit": {
-        "q": "Static Remnant",
-        "e": "Overload",
-        "w": "Electric Vortex",
-        "r": "Ball Lightning"
+        "Q": "Static Remnant",
+        "E": "Overload",
+        "W": "Electric Vortex",
+        "R": "Ball Lightning"
     },
     "treant": {
         "d": "Eyes In The Forest",
-        "q": "Nature's Guise",
-        "e": "Living Armor",
-        "w": "Leech Seed",
-        "r": "Overgrowth"
+        "Q": "Nature's Guise",
+        "E": "Living Armor",
+        "W": "Leech Seed",
+        "R": "Overgrowth"
     },
     "warlock": {
-        "q": "Fatal Bonds",
-        "e": "Upheaval",
-        "w": "Shadow Word",
-        "r": "Chaotic Offering"
+        "Q": "Fatal Bonds",
+        "E": "Upheaval",
+        "W": "Shadow Word",
+        "R": "Chaotic Offering"
     },
     "earthshaker": {
-        "q": "Fissure",
-        "e": "Aftershock",
-        "w": "Enchant Totem",
-        "r": "Echo Slam"
+        "Q": "Fissure",
+        "E": "Aftershock",
+        "W": "Enchant Totem",
+        "R": "Echo Slam"
     },
     "techies": {
         "f": "Minefield Sign",
-        "r": "Remote Mines",
+        "R": "Remote Mines",
         "d": "Focused Detonate",
-        "q": "Proximity Mines",
-        "e": "Blast Off!",
-        "w": "Stasis Trap"
+        "Q": "Proximity Mines",
+        "E": "Blast Off!",
+        "W": "Stasis Trap"
     },
     "ursa": {
-        "q": "Earthshock",
-        "e": "Fury Swipes",
-        "w": "Overpower",
-        "r": "Enrage"
+        "Q": "Earthshock",
+        "E": "Fury Swipes",
+        "W": "Overpower",
+        "R": "Enrage"
     },
     "tidehunter": {
-        "q": "Gush",
-        "e": "Anchor Smash",
-        "w": "Kraken Shell",
-        "r": "Ravage"
+        "Q": "Gush",
+        "E": "Anchor Smash",
+        "W": "Kraken Shell",
+        "R": "Ravage"
     },
     "ogre_magi": {
         "d": "Unrefined Fireblast",
-        "q": "Fireblast",
-        "e": "Bloodlust",
-        "w": "Ignite",
-        "r": "Multicast"
+        "Q": "Fireblast",
+        "E": "Bloodlust",
+        "W": "Ignite",
+        "R": "Multicast"
     },
     "dazzle": {
-        "q": "Poison Touch",
-        "e": "Shadow Wave",
-        "w": "Shallow Grave",
-        "r": "Weave"
+        "Q": "Poison Touch",
+        "E": "Shadow Wave",
+        "W": "Shallow Grave",
+        "R": "Weave"
     },
     "brewmaster": {
-        "q": "Thunder Clap",
-        "e": "Drunken Brawler",
-        "w": "Drunken Haze",
-        "r": "Primal Split"
+        "Q": "Thunder Clap",
+        "E": "Drunken Brawler",
+        "W": "Drunken Haze",
+        "R": "Primal Split"
     },
     "lone_druid": {
         "f": "True Form",
-        "r": "Druid Form",
+        "R": "Druid Form",
         "d": "Battle Cry",
-        "q": "Summon Spirit Bear",
-        "e": "Savage Roar",
-        "w": "Rabid"
+        "Q": "Summon Spirit Bear",
+        "E": "Savage Roar",
+        "W": "Rabid"
     },
     "abyssal_underlord": {
-        "r": "Dark Rift",
-        "q": "Firestorm",
-        "e": "Atrophy Aura",
-        "w": "Pit of Malice"
+        "R": "Dark Rift",
+        "Q": "Firestorm",
+        "E": "Atrophy Aura",
+        "W": "Pit of Malice"
     },
     "visage": {
-        "q": "Grave Chill",
-        "e": "Gravekeeper's Cloak",
-        "w": "Soul Assumption",
-        "r": "Summon Familiars"
+        "Q": "Grave Chill",
+        "E": "Gravekeeper's Cloak",
+        "W": "Soul Assumption",
+        "R": "Summon Familiars"
     },
     "lion": {
-        "q": "Earth Spike",
-        "e": "Mana Drain",
-        "w": "Hex",
-        "r": "Finger of Death"
+        "Q": "Earth Spike",
+        "E": "Mana Drain",
+        "W": "Hex",
+        "R": "Finger of Death"
     },
     "queenofpain": {
-        "q": "Shadow Strike",
-        "e": "Scream Of Pain",
-        "w": "Blink",
-        "r": "Sonic Wave"
+        "Q": "Shadow Strike",
+        "E": "Scream Of Pain",
+        "W": "Blink",
+        "R": "Sonic Wave"
     },
     "chaos_knight": {
-        "q": "Chaos Bolt",
-        "e": "Chaos Strike",
-        "w": "Reality Rift",
-        "r": "Phantasm"
+        "Q": "Chaos Bolt",
+        "E": "Chaos Strike",
+        "W": "Reality Rift",
+        "R": "Phantasm"
     },
     "troll_warlord": {
         "d": "Fervor",
-        "q": "Berserker's Rage",
-        "e": "Whirling Axes (Melee)",
-        "w": "Whirling Axes (Ranged)",
-        "r": "Battle Trance"
+        "Q": "Berserker's Rage",
+        "E": "Whirling Axes (Melee)",
+        "W": "Whirling Axes (Ranged)",
+        "R": "Battle Trance"
     },
     "obsidian_destroyer": {
-        "q": "Arcane Orb",
-        "e": "Essence Aura",
-        "w": "Astral Imprisonment",
-        "r": "Sanity's Eclipse"
+        "Q": "Arcane Orb",
+        "E": "Essence Aura",
+        "W": "Astral Imprisonment",
+        "R": "Sanity's Eclipse"
     },
     "oracle": {
-        "q": "Fortune's End",
-        "e": "Purifying Flames",
-        "w": "Fate's Edict",
-        "r": "False Promise"
+        "Q": "Fortune's End",
+        "E": "Purifying Flames",
+        "W": "Fate's Edict",
+        "R": "False Promise"
     },
     "bristleback": {
-        "q": "Viscous Nasal Goo",
-        "e": "Bristleback",
-        "w": "Quill Spray",
-        "r": "Warpath"
+        "Q": "Viscous Nasal Goo",
+        "E": "Bristleback",
+        "W": "Quill Spray",
+        "R": "Warpath"
     },
     "alchemist": {
-        "r": "Chemical Rage",
-        "q": "Acid Spray",
-        "e": "Greevil's Greed",
-        "w": "Unstable Concoction"
+        "R": "Chemical Rage",
+        "Q": "Acid Spray",
+        "E": "Greevil's Greed",
+        "W": "Unstable Concoction"
     },
     "necrolyte": {
-        "q": "Death Pulse",
-        "e": "Heartstopper Aura",
-        "w": "Ghost Shroud",
-        "r": "Reaper's Scythe"
+        "Q": "Death Pulse",
+        "E": "Heartstopper Aura",
+        "W": "Ghost Shroud",
+        "R": "Reaper's Scythe"
     },
     "arc_warden": {
-        "q": "Flux",
-        "e": "Spark Wraith",
-        "w": "Magnetic Field",
-        "r": "Tempest Double"
+        "Q": "Flux",
+        "E": "Spark Wraith",
+        "W": "Magnetic Field",
+        "R": "Tempest Double"
     },
     "shadow_demon": {
-        "q": "Disruption",
-        "e": "Shadow Poison",
-        "w": "Soul Catcher",
-        "r": "Demonic Purge"
+        "Q": "Disruption",
+        "E": "Shadow Poison",
+        "W": "Soul Catcher",
+        "R": "Demonic Purge"
     },
     "viper": {
-        "q": "Poison Attack",
-        "e": "Corrosive Skin",
-        "w": "Nethertoxin",
-        "r": "Viper Strike"
+        "Q": "Poison Attack",
+        "E": "Corrosive Skin",
+        "W": "Nethertoxin",
+        "R": "Viper Strike"
     },
     "phantom_lancer": {
-        "q": "Spirit Lance",
-        "e": "Phantom Rush",
-        "w": "Doppelganger",
-        "r": "Juxtapose"
+        "Q": "Spirit Lance",
+        "E": "Phantom Rush",
+        "W": "Doppelganger",
+        "R": "Juxtapose"
     },
     "weaver": {
-        "q": "The Swarm",
-        "e": "Geminate Attack",
-        "w": "Shukuchi",
-        "r": "Time Lapse"
+        "Q": "The Swarm",
+        "E": "Geminate Attack",
+        "W": "Shukuchi",
+        "R": "Time Lapse"
     },
     "enchantress": {
-        "q": "Untouchable",
-        "e": "Nature's Attendants",
-        "w": "Enchant",
-        "r": "Impetus"
+        "Q": "Untouchable",
+        "E": "Nature's Attendants",
+        "W": "Enchant",
+        "R": "Impetus"
     },
     "ember_spirit": {
         "d": "Activate Fire Remnant",
-        "q": "Searing Chains",
-        "e": "Flame Guard",
-        "w": "Sleight of Fist",
-        "r": "Fire Remnant"
+        "Q": "Searing Chains",
+        "E": "Flame Guard",
+        "W": "Sleight of Fist",
+        "R": "Fire Remnant"
     },
     "dragon_knight": {
-        "q": "Breathe Fire",
-        "e": "Dragon Blood",
-        "w": "Dragon Tail",
-        "r": "Elder Dragon Form"
+        "Q": "Breathe Fire",
+        "E": "Dragon Blood",
+        "W": "Dragon Tail",
+        "R": "Elder Dragon Form"
     },
     "antimage": {
-        "q": "Mana Break",
-        "e": "Spell Shield",
-        "w": "Blink",
-        "r": "Mana Void"
+        "Q": "Mana Break",
+        "E": "Spell Shield",
+        "W": "Blink",
+        "R": "Mana Void"
     },
     "silencer": {
-        "q": "Arcane Curse",
-        "e": "Last Word",
-        "w": "Glaives of Wisdom",
-        "r": "Global Silence"
+        "Q": "Arcane Curse",
+        "E": "Last Word",
+        "W": "Glaives of Wisdom",
+        "R": "Global Silence"
     },
     "spectre": {
-        "q": "Spectral Dagger",
-        "e": "Dispersion",
-        "w": "Desolate",
-        "r": "Haunt"
+        "Q": "Spectral Dagger",
+        "E": "Dispersion",
+        "W": "Desolate",
+        "R": "Haunt"
     },
     "furion": {
-        "q": "Sprout",
-        "e": "Nature's Call",
-        "w": "Teleportation",
-        "r": "Wrath of Nature"
+        "Q": "Sprout",
+        "E": "Nature's Call",
+        "W": "Teleportation",
+        "R": "Wrath of Nature"
     },
     "witch_doctor": {
-        "q": "Paralyzing Cask",
-        "e": "Maledict",
-        "w": "Voodoo Restoration",
-        "r": "Death Ward"
+        "Q": "Paralyzing Cask",
+        "E": "Maledict",
+        "W": "Voodoo Restoration",
+        "R": "Death Ward"
     },
     "naga_siren": {
-        "r": "Song of the Siren",
-        "q": "Mirror Image",
-        "e": "Rip Tide",
-        "w": "Ensnare"
+        "R": "Song of the Siren",
+        "Q": "Mirror Image",
+        "E": "Rip Tide",
+        "W": "Ensnare"
     },
     "death_prophet": {
-        "q": "Crypt Swarm",
-        "e": "Spirit Siphon",
-        "w": "Silence",
-        "r": "Exorcism"
+        "Q": "Crypt Swarm",
+        "E": "Spirit Siphon",
+        "W": "Silence",
+        "R": "Exorcism"
     },
     "omniknight": {
-        "q": "Purification",
-        "e": "Degen Aura",
-        "w": "Repel",
-        "r": "Guardian Angel"
+        "Q": "Purification",
+        "E": "Degen Aura",
+        "W": "Repel",
+        "R": "Guardian Angel"
     },
     "ancient_apparition": {
-        "r": "Ice Blast",
-        "q": "Cold Feet",
-        "e": "Chilling Touch",
-        "w": "Ice Vortex"
+        "R": "Ice Blast",
+        "Q": "Cold Feet",
+        "E": "Chilling Touch",
+        "W": "Ice Vortex"
     },
     "slardar": {
-        "q": "Guardian Sprint",
-        "e": "Bash of the Deep",
-        "w": "Slithereen Crush",
-        "r": "Corrosive Haze"
+        "Q": "Guardian Sprint",
+        "E": "Bash of the Deep",
+        "W": "Slithereen Crush",
+        "R": "Corrosive Haze"
     },
     "enigma": {
-        "q": "Malefice",
-        "e": "Midnight Pulse",
-        "w": "Demonic Conversion",
-        "r": "Black Hole"
+        "Q": "Malefice",
+        "E": "Midnight Pulse",
+        "W": "Demonic Conversion",
+        "R": "Black Hole"
     },
     "riki": {
-        "q": "Smoke Screen",
-        "e": "Cloak and Dagger",
-        "w": "Blink Strike",
-        "r": "Tricks of the Trade"
+        "Q": "Smoke Screen",
+        "E": "Cloak and Dagger",
+        "W": "Blink Strike",
+        "R": "Tricks of the Trade"
     },
     "vengefulspirit": {
-        "q": "Magic Missile",
-        "e": "Vengeance Aura",
-        "w": "Wave of Terror",
-        "r": "Nether Swap"
+        "Q": "Magic Missile",
+        "E": "Vengeance Aura",
+        "W": "Wave of Terror",
+        "R": "Nether Swap"
     },
     "night_stalker": {
-        "q": "Void",
-        "e": "Hunter in the Night",
-        "w": "Crippling Fear",
-        "r": "Darkness"
+        "Q": "Void",
+        "E": "Hunter in the Night",
+        "W": "Crippling Fear",
+        "R": "Darkness"
     },
     "sniper": {
-        "q": "Shrapnel",
-        "e": "Take Aim",
-        "w": "Headshot",
-        "r": "Assassinate"
+        "Q": "Shrapnel",
+        "E": "Take Aim",
+        "W": "Headshot",
+        "R": "Assassinate"
     },
     "lina": {
-        "q": "Dragon Slave",
-        "e": "Fiery Soul",
-        "w": "Light Strike Array",
-        "r": "Laguna Blade"
+        "Q": "Dragon Slave",
+        "E": "Fiery Soul",
+        "W": "Light Strike Array",
+        "R": "Laguna Blade"
     },
     "faceless_void": {
-        "q": "Time Walk",
-        "e": "Time Lock",
-        "w": "Time Dilation",
-        "r": "Chronosphere"
+        "Q": "Time Walk",
+        "E": "Time Lock",
+        "W": "Time Dilation",
+        "R": "Chronosphere"
     },
     "beastmaster": {
         "d": "Inner Beast",
-        "q": "Wild Axes",
-        "e": "Call of the Wild: Boar",
-        "w": "Call of the Wild: Hawk",
-        "r": "Primal Roar"
+        "Q": "Wild Axes",
+        "E": "Call of the Wild: Boar",
+        "W": "Call of the Wild: Hawk",
+        "R": "Primal Roar"
     },
     "phantom_assassin": {
-        "q": "Stifling Dagger",
-        "e": "Blur",
-        "w": "Phantom Strike",
-        "r": "Coup de Grace"
+        "Q": "Stifling Dagger",
+        "E": "Blur",
+        "W": "Phantom Strike",
+        "R": "Coup de Grace"
     },
     "axe": {
-        "q": "Berserker's Call",
-        "e": "Counter Helix",
-        "w": "Battle Hunger",
-        "r": "Culling Blade"
+        "Q": "Berserker's Call",
+        "E": "Counter Helix",
+        "W": "Battle Hunger",
+        "R": "Culling Blade"
     },
     "pudge": {
-        "q": "Meat Hook",
-        "e": "Flesh Heap",
-        "w": "Rot",
-        "r": "Dismember"
+        "Q": "Meat Hook",
+        "E": "Flesh Heap",
+        "W": "Rot",
+        "R": "Dismember"
     },
     "clinkz": {
-        "q": "Strafe",
-        "e": "Skeleton Walk",
-        "w": "Searing Arrows",
-        "r": "Death Pact"
+        "Q": "Strafe",
+        "E": "Skeleton Walk",
+        "W": "Searing Arrows",
+        "R": "Death Pact"
     },
     "mirana": {
-        "q": "Starstorm",
-        "e": "Leap",
-        "w": "Sacred Arrow",
-        "r": "Moonlight Shadow"
+        "Q": "Starstorm",
+        "E": "Leap",
+        "W": "Sacred Arrow",
+        "R": "Moonlight Shadow"
     },
     "razor": {
-        "q": "Plasma Field",
-        "e": "Unstable Current",
-        "w": "Static Link",
-        "r": "Eye of the Storm"
+        "Q": "Plasma Field",
+        "E": "Unstable Current",
+        "W": "Static Link",
+        "R": "Eye of the Storm"
     },
     "winter_wyvern": {
-        "q": "Arctic Burn",
-        "e": "Cold Embrace",
-        "w": "Splinter Blast",
-        "r": "Winter's Curse"
+        "Q": "Arctic Burn",
+        "E": "Cold Embrace",
+        "W": "Splinter Blast",
+        "R": "Winter's Curse"
     },
     "slark": {
-        "q": "Dark Pact",
-        "e": "Essence Shift",
-        "w": "Pounce",
-        "r": "Shadow Dance"
+        "Q": "Dark Pact",
+        "E": "Essence Shift",
+        "W": "Pounce",
+        "R": "Shadow Dance"
     },
     "lycan": {
-        "q": "Summon Wolves",
-        "e": "Feral Impulse",
-        "w": "Howl",
-        "r": "Shapeshift"
+        "Q": "Summon Wolves",
+        "E": "Feral Impulse",
+        "W": "Howl",
+        "R": "Shapeshift"
     },
     "chen": {
         "d": "Holy Persuasion",
-        "q": "Penitence",
-        "e": "Test of Faith",
-        "w": "Test of Faith (damage)",
-        "r": "Hand of God"
+        "Q": "Penitence",
+        "E": "Test of Faith",
+        "W": "Test of Faith (damage)",
+        "R": "Hand of God"
     },
     "shredder": {
-        "q": "Whirling Death",
-        "w": "Timber Chain",
-        "e": "Reactive Armor",
-        "r": "Chakram"
+        "Q": "Whirling Death",
+        "W": "Timber Chain",
+        "E": "Reactive Armor",
+        "R": "Chakram"
     },
     "monkey_king": {
-        "q": "Boundless Strike",
-        "w": "Tree Dance",
-        "e": "Primal Spring",
+        "Q": "Boundless Strike",
+        "W": "Tree Dance",
+        "E": "Primal Spring",
         "d": "Jingu Mastery",
         "f": "Mischief",
-        "r": "Wukong's Command"
+        "R": "Wukong's Command"
     },
     "life_stealer": {
-        "q": "Rage",
-        "w": "Feast",
-        "e": "Open Wounds",
+        "Q": "Rage",
+        "W": "Feast",
+        "E": "Open Wounds",
         "d": "Assimilate",
-        "r": "Infest"
+        "R": "Infest"
     },
     "keeper_of_the_light": {
-        "q": "Illuminate",
-        "w": "Mana Leak",
-        "e": "Chakra Magic",
+        "Q": "Illuminate",
+        "W": "Mana Leak",
+        "E": "Chakra Magic",
         "d": "Recall",
         "f": "Blinding Light",
-        "r": "Spirit Form"
+        "R": "Spirit Form"
     },
     "morphling": {
-        "q": "Waveform",
-        "w": "Adaptive Strike",
-        "e": "Morph (Agility Gain)",
+        "Q": "Waveform",
+        "W": "Adaptive Strike",
+        "E": "Morph (Agility Gain)",
         "d": "Morph (Strength Gain)",
         "f": "Hybrid",
-        "r": "Replicate"
+        "R": "Replicate"
     },
     "invoker": {
-        "q": "Quas",
-        "w": "Wex",
-        "e": "Exort",
-        "r": "Invoke",
-        "y": "Cold Snap",
-        "v": "Ghost Walk",
-        "x": "Tornado",
-        "c": "E.M.P.",
-        "z": "Alacrity",
-        "d": "Chaos Meteor",
-        "t": "Sun Strike",
-        "f": "Forge Spirit",
-        "g": "Ice Wall",
-        "b": "Deafening Blast",
-        "qqq": "Cold Snap",
-        "qqw": "Ghost Walk",
-        "eqq": "Ice Wall",
-        "www": "E.M.P.",
-        "wwq": "Tornado",
-        "eww": "Alacrity",
-        "eee": "Sun Strike",
-        "eeq": "Forge Spirits",
-        "eew": "Chaos Meteor",
-        "eqw": "Deafening Blast"
+        "Q": "Quas",
+        "W": "Wex",
+        "E": "Exort",
+        "R": "Invoke",
+        "Y": "Cold Snap",
+        "V": "Ghost Walk",
+        "X": "Tornado",
+        "C": "E.M.P.",
+        "Z": "Alacrity",
+        "D": "Chaos Meteor",
+        "T": "Sun Strike",
+        "F": "Forge Spirit",
+        "G": "Ice Wall",
+        "B": "Deafening Blast",
+        "QQQ": "Cold Snap",
+        "QQW": "Ghost Walk",
+        "EQQ": "Ice Wall",
+        "WWW": "E.M.P.",
+        "WWQ": "Tornado",
+        "EWW": "Alacrity",
+        "EEE": "Sun Strike",
+        "EEQ": "Forge Spirit",
+        "EEW": "Chaos Meteor",
+        "EQW": "Deafening Blast",
+        "Emp": "E.M.P.",
+        "E.m.p.": "E.M.P."
     },
     "phoenix": {
-        "q": "Icarus Dive",
-        "w": "Fire Spirits",
-        "e": "Sun Ray",
-        "r": "Supernova"
+        "Q": "Icarus Dive",
+        "W": "Fire Spirits",
+        "E": "Sun Ray",
+        "R": "Supernova"
     },
     "wisp": {
-        "q": "Tether",
-        "w": "Spirits",
-        "e": "Overcharge",
-        "r": "Relocate"
+        "Q": "Tether",
+        "W": "Spirits",
+        "E": "Overcharge",
+        "R": "Relocate"
     }
 }

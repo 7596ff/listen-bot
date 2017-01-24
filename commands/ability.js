@@ -67,7 +67,8 @@ module.exports = (message, client, helper) => {
 
     if (hero in short_heroes) {
         let true_hero = short_heroes[hero]
-
+        if (true_hero == "invoker") key = key.split('').sort().join('')
+        
         if (key in keys[true_hero]) {
             let ability = keys[true_hero][key]
             create_message(message, client, helper, true_hero, ability, key)

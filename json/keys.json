@@ -699,7 +699,17 @@
         "t": "Sun Strike",
         "f": "Forge Spirit",
         "g": "Ice Wall",
-        "b": "Deafening Blast"
+        "b": "Deafening Blast",
+        "qqq": "Cold Snap",
+        "qqw": "Ghost Walk",
+        "eqq": "Ice Wall",
+        "www": "E.M.P.",
+        "wwq": "Tornado",
+        "eww": "Alacrity",
+        "eee": "Sun Strike",
+        "eeq": "Forge Spirits",
+        "eew": "Chaos Meteor",
+        "eqw": "Deafening Blast"
     },
     "phoenix": {
         "q": "Icarus Dive",

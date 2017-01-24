@@ -13,7 +13,6 @@ module.exports.cmdlist = [
     "info", 
     "admin",
     "stats",
-    "quote",
     // aliases
     "talent"
 ]

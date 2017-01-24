@@ -1,13 +1,4 @@
 {
-  "quote": {
-    "name": "quote",
-    "usage": "quote <speaker> | <game> | <quote>",
-    "text": [
-      "places a quote of your choosing into this server's quotes channel. ",
-      "please be sure to include `|` when you call this command!"
-    ],
-    "example": "quote @alex | dota 2 | we lost"
-  },
   "patch": {
     "name": "patch",
     "usage": "patch [<version>] <hero>",

@@ -95,7 +95,9 @@ module.exports = (message, client, helper) => {
         } else if (!hero) {
             if (key.length > 1) {
                 if (key in alike_keys) {
-                    client.createMessage(message.channel.id, `Did you mean: ${alike_keys[key].join(', ')}`).then(new_message => {
+                    content = alike_keys[key].length > 1 ? `Did you mean: ${alike_keys[key].join(', ')}` : alike_keys[key][0]
+
+                    client.createMessage(message.channel.id, content).then(new_message => {
                         helper.log(message, `sent redirect for ${key}`)
                     })
                     i = 0

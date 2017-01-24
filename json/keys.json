@@ -17,14 +17,17 @@
         "q": "Lucent Beam",
         "e": "Lunar Blessing",
         "w": "Moon Glaive",
-        "r": "Eclipse"
+        "r": "Eclipse",
+        "beam": "Lucent Beam",
+        "stun": "Lucent Beam"
     },
     "tiny": {
         "q": "Avalanche",
         "e": "Craggy Exterior",
         "w": "Toss",
         "r": "Grow",
-        "craggy": "Craggy Exterior"
+        "craggy": "Craggy Exterior",
+        "ava": "Avalanche"
     },
     "drow_ranger": {
         "q": "Frost Arrows",
@@ -36,7 +39,9 @@
         "q": "Rocket Barrage",
         "e": "Flak Cannon",
         "w": "Homing Missile",
-        "r": "Call Down"
+        "r": "Call Down",
+        "stun": "Homing Missile",
+        "slow": "Call Down"
     },
     "nyx_assassin": {
         "r": "Vendetta",
@@ -44,7 +49,8 @@
         "q": "Impale",
         "e": "Spiked Carapace",
         "w": "Mana Burn",
-        "carapace": "Spiked Carapace"
+        "carapace": "Spiked Carapace",
+        "stun": "Impale"
     },
     "rattletrap": {
         "q": "Battery Assault",
@@ -52,28 +58,35 @@
         "w": "Power Cogs",
         "r": "Hookshot",
         "hook": "Hookshot",
-        "cogs": "Power Cogs"
+        "cogs": "Power Cogs",
+        "flare": "Rocket Flare",
+        "stun": "Hookshot"
     },
     "leshrac": {
         "q": "Split Earth",
         "e": "Lightning Storm",
         "w": "Diabolic Edict",
         "r": "Pulse Nova",
-        "split": "Split Earth"
+        "split": "Split Earth",
+        "stun": "Split Earth"
     },
     "sand_king": {
         "q": "Burrowstrike",
         "e": "Caustic Finale",
         "w": "Sand Storm",
         "r": "Epicenter",
-        "epi": "Epicenter"
+        "epi": "Epicenter",
+        "stun": "Burrowstrike",
+        "slow": "Caustic Finale"
     },
     "centaur": {
         "q": "Hoof Stomp",
         "e": "Return",
         "w": "Double Edge",
         "r": "Stampede",
-        "stomp": "Hoof Stomp"
+        "stomp": "Hoof Stomp",
+        "stun": "Hoof Stomp",
+        "slow": "Stampede"
     },
     "juggernaut": {
         "q": "Blade Fury",
@@ -85,7 +98,9 @@
         "q": "Sticky Napalm",
         "e": "Firefly",
         "w": "Flamebreak",
-        "r": "Flaming Lasso"
+        "r": "Flaming Lasso",
+        "stun": "Flaming Lasso",
+        "slow": "Sticky Napalm"
     },
     "skywrath_mage": {
         "q": "Arcane Bolt",
@@ -93,35 +108,41 @@
         "w": "Concussive Shot",
         "r": "Mystic Flare",
         "seal": "Ancient Seal",
-        "bolt": "Arcane Bolt"
+        "bolt": "Arcane Bolt",
+        "slow": "Concussive Shot"
     },
     "shadow_shaman": {
         "q": "Ether Shock",
         "e": "Shackles",
         "w": "Hex",
         "r": "Mass Serpent Ward",
-        "snakes": "Mass Seprent Ward"
+        "snakes": "Mass Seprent Ward",
+        "stun": "Shackles"
     },
     "elder_titan": {
         "q": "Echo Stomp",
         "e": "Natural Order",
         "w": "Astral Spirit",
         "r": "Earth Splitter",
-        "stomp": "Echo Stomp"
+        "stomp": "Echo Stomp",
+        "stun": "Echo Stomp",
+        "sleep": "Echo Stomp"
     },
     "venomancer": {
         "q": "Venomous Gale",
         "e": "Plague Ward",
         "w": "Poison Sting",
         "r": "Poison Nova",
-        "gale": "Venomous Gale"
+        "gale": "Venomous Gale",
+        "slow": "Venomous Gale"
     },
     "skeleton_king": {
         "q": "Wraithfire Blast",
         "e": "Mortal Strike",
         "w": "Vampiric Aura",
         "r": "Reincarnation",
-        "reincarnate": "Reincarnation"
+        "reincarnate": "Reincarnation",
+        "stun": "Wraithfire Blast"
     },
     "abaddon": {
         "q": "Mist Coil",
@@ -136,7 +157,8 @@
         "e": "Surge",
         "w": "Ion Shell",
         "r": "Wall of Replica",
-        "wall": "Wall of Replica"
+        "wall": "Wall of Replica",
+        "stun": "Vacuum"
     },
     "nevermore": {
         "f": "Presence of the Dark Lord",
@@ -151,20 +173,23 @@
         "q": "Torrent",
         "e": "X Marks the Spot",
         "w": "Tidebringer",
-        "boat": "Ghostship"
+        "boat": "Ghostship",
+        "stun": "Torrent"
     },
     "templar_assassin": {
         "q": "Refraction",
         "e": "Psi Blades",
         "w": "Meld",
-        "r": "Psionic Trap"
+        "r": "Psionic Trap",
+        "slow": "Psionic Trap"
     },
     "bane": {
         "r": "Fiend's Grip",
         "q": "Enfeeble",
         "e": "Nightmare",
         "w": "Brain Sap",
-        "grip": "Fiend's Grip"
+        "grip": "Fiend's Grip",
+        "sleep": "Nightmare"
     },
     "disruptor": {
         "q": "Thunder Strike",
@@ -177,7 +202,8 @@
         "q": "Nether Blast",
         "e": "Nether Ward",
         "w": "Decrepify",
-        "r": "Life Drain"
+        "r": "Life Drain",
+        "slow": "Decrepify"
     },
     "meepo": {
         "q": "Earthbind",
@@ -191,26 +217,30 @@
         "e": "Skewer",
         "w": "Empower",
         "r": "Reverse Polarity",
-        "rp": "Reverse Polarity"
+        "rp": "Reverse Polarity",
+        "stun": "Reverse Polarity"
     },
     "terrorblade": {
         "q": "Reflection",
         "e": "Metamorphosis",
         "w": "Conjure Image",
         "r": "Sunder",
-        "meta": "Metamorphosis"
+        "meta": "Metamorphosis",
+        "stun": "Reflection"
     },
     "crystal_maiden": {
         "q": "Crystal Nova",
         "e": "Arcane Aura",
         "w": "Frostbite",
-        "r": "Freezing Field"
+        "r": "Freezing Field",
+        "stun": "Frostbite"
     },
     "jakiro": {
         "q": "Dual Breath",
         "e": "Liquid Fire",
         "w": "Ice Path",
-        "r": "Macropyre"
+        "r": "Macropyre",
+        "stun": "Ice Path"
     },
     "tinker": {
         "q": "Laser",
@@ -226,32 +256,38 @@
         "e": "Windrun",
         "w": "Powershot",
         "r": "Focus Fire",
-        "shackle": "Shackleshot"
+        "shackle": "Shackleshot",
+        "stun": "Shackleshot"
     },
     "medusa": {
         "q": "Split Shot",
         "e": "Mana Shield",
         "w": "Mystic Snake",
-        "r": "Stone Gaze"
+        "r": "Stone Gaze",
+        "slow": "Stone Gaze"
     },
     "doom_bringer": {
         "q": "Devour",
         "e": "Infernal Blade",
         "w": "Scorched Earth",
-        "r": "Doom"
+        "r": "Doom",
+        "stun": "Infernal Blade"
     },
     "rubick": {
         "e": "Null Field",
         "q": "Telekinesis",
         "w": "Fade Bolt",
         "r": "Spell Steal",
-        "bolt": "Fade Bolt"
+        "bolt": "Fade Bolt",
+        "stun": "Telekinesis",
+        "lift": "Telekinesis"
     },
     "legion_commander": {
         "q": "Overwhelming Odds",
         "e": "Moment of Courage",
         "w": "Press The Attack",
-        "r": "Duel"
+        "r": "Duel",
+        "stun": "Duel"
     },
     "bloodseeker": {
         "q": "Bloodrage",
@@ -263,14 +299,17 @@
         "q": "Shuriken Toss",
         "e": "Shadow Walk",
         "w": "Jinada",
-        "r": "Track"
+        "r": "Track",
+        "slow": "Jinada"
     },
     "broodmother": {
         "q": "Spawn Spiderlings",
         "e": "Incapacitating Bite",
         "w": "Spin Web",
         "r": "Insatiable Hunger",
-        "spiders": "Spawn Spiderlings"
+        "spiders": "Spawn Spiderlings",
+        "slow": "Incapacitating Bite",
+        "bite": "incapacitating Bite"
     },
     "tusk": {
         "d": "Walrus Kick",
@@ -280,20 +319,23 @@
         "w": "Snowball",
         "kick": "Walrus Kick",
         "punch": "Walrus PUNCH!",
-        "walrus punch": "Walrus PUNCH!"
+        "walrus punch": "Walrus PUNCH!",
+        "stun": "Snowball"
     },
     "sven": {
         "q": "Storm Hammer",
         "e": "Warcry",
         "w": "Great Cleave",
         "r": "God's Strength",
-        "hammer": "Storm Hammer"
+        "hammer": "Storm Hammer",
+        "stun": "Storm Hammer"
     },
     "huskar": {
         "q": "Inner Vitality",
         "e": "Berserker's Blood",
         "w": "Burning Spear",
-        "r": "Life Break"
+        "r": "Life Break",
+        "slow": "Life Break"
     },
     "zuus": {
         "d": "Nimbus",
@@ -301,7 +343,8 @@
         "e": "Static Field",
         "w": "Lightning Bolt",
         "r": "Thundergod's Wrath",
-        "bolt": "Lightning Bolt"
+        "bolt": "Lightning Bolt",
+        "stun": "Lightning Bolt"
     },
     "earth_spirit": {
         "f": "Enchant Remnant",
@@ -312,7 +355,9 @@
         "w": "Rolling Boulder",
         "pull": "Geomagnetic Grip",
         "grip": "Geomagnetic Grip",
-        "kick": "Boulder Smash"
+        "kick": "Boulder Smash",
+        "stun": "Boulder Smash",
+        "ebola": "Magnetize"
     },
     "puck": {
         "q": "Illusory Orb",
@@ -320,13 +365,15 @@
         "w": "Waning Rift",
         "r": "Dream Coil",
         "coil": "Dream Coil",
-        "orb": "Illusory Orb"
+        "orb": "Illusory Orb",
+        "stun": "Dream Coil"
     },
     "lich": {
         "q": "Frost Blast",
         "e": "Sacrifice",
         "w": "Ice Armor",
-        "r": "Chain Frost"
+        "r": "Chain Frost",
+        "stun": "Chain Frost"
     },
     "storm_spirit": {
         "q": "Static Remnant",
@@ -334,27 +381,34 @@
         "w": "Electric Vortex",
         "r": "Ball Lightning",
         "zip": "Ball Lightning",
-        "ball": "Ball Lightning"
+        "ball": "Ball Lightning",
+        "stun": "Electric Vortex",
+        "pull": "Electric Vortex"
     },
     "treant": {
         "d": "Eyes In The Forest",
         "q": "Nature's Guise",
         "e": "Living Armor",
         "w": "Leech Seed",
-        "r": "Overgrowth"
+        "r": "Overgrowth",
+        "stun": "Overgrowth"
     },
     "warlock": {
         "q": "Fatal Bonds",
         "e": "Upheaval",
         "w": "Shadow Word",
         "r": "Chaotic Offering",
-        "rock": "Chaotic Offering"
+        "rock": "Chaotic Offering",
+        "stun": "Chaotic Offering"
     },
     "earthshaker": {
         "q": "Fissure",
         "e": "Aftershock",
         "w": "Enchant Totem",
-        "r": "Echo Slam"
+        "r": "Echo Slam",
+        "echo": "Echo Slam",
+        "totem": "Enchant Totem",
+        "stun": "Fissure"
     },
     "techies": {
         "f": "Minefield Sign",
@@ -365,7 +419,8 @@
         "w": "Stasis Trap",
         "suicide": "Blast Off!",
         "blast off": "Blast Off!",
-        "mines": "Proximity Mines"
+        "mines": "Proximity Mines",
+        "stun": "Stasis Trap"
     },
     "ursa": {
         "q": "Earthshock",
@@ -377,28 +432,32 @@
         "q": "Gush",
         "e": "Anchor Smash",
         "w": "Kraken Shell",
-        "r": "Ravage"
+        "r": "Ravage",
+        "stun": "Ravage"
     },
     "ogre_magi": {
         "d": "Unrefined Fireblast",
         "q": "Fireblast",
         "e": "Bloodlust",
         "w": "Ignite",
-        "r": "Multicast"
+        "r": "Multicast",
+        "stun": "Fireblast"
     },
     "dazzle": {
         "q": "Poison Touch",
         "e": "Shadow Wave",
         "w": "Shallow Grave",
         "r": "Weave",
-        "grave": "Shallow Grave"
+        "grave": "Shallow Grave",
+        "stun": "Poison Touch"
     },
     "brewmaster": {
         "q": "Thunder Clap",
         "e": "Drunken Brawler",
         "w": "Drunken Haze",
         "r": "Primal Split",
-        "split": "Primal Split"
+        "split": "Primal Split",
+        "stun": "Primal Split"
     },
     "lone_druid": {
         "f": "True Form",
@@ -407,14 +466,17 @@
         "q": "Summon Spirit Bear",
         "e": "Savage Roar",
         "w": "Rabid",
-        "bear": "Summon Spirit Bear"
+        "bear": "Summon Spirit Bear",
+        "stun": "Savage Roar"
     },
     "abyssal_underlord": {
         "r": "Dark Rift",
         "q": "Firestorm",
         "e": "Atrophy Aura",
         "w": "Pit of Malice",
-        "pit": "Pit of Malice"
+        "pit": "Pit of Malice",
+        "stun": "Pit of Malice",
+        "pit of malice": "Pit of Malice"
     },
     "visage": {
         "q": "Grave Chill",
@@ -433,21 +495,24 @@
         "q": "Shadow Strike",
         "e": "Scream Of Pain",
         "w": "Blink",
-        "r": "Sonic Wave"
+        "r": "Sonic Wave",
+        "slow": "Shadow Strike"
     },
     "chaos_knight": {
         "q": "Chaos Bolt",
         "e": "Chaos Strike",
         "w": "Reality Rift",
         "r": "Phantasm",
-        "bolt": "Chaos Bolt"
+        "bolt": "Chaos Bolt",
+        "stun": "Chaos Bolt"
     },
     "troll_warlord": {
         "d": "Fervor",
         "q": "Berserker's Rage",
         "e": "Whirling Axes (Melee)",
         "w": "Whirling Axes (Ranged)",
-        "r": "Battle Trance"
+        "r": "Battle Trance",
+        "bash": "Berserker's Rage",
     },
     "obsidian_destroyer": {
         "q": "Arcane Orb",
@@ -469,46 +534,53 @@
         "e": "Bristleback",
         "w": "Quill Spray",
         "r": "Warpath",
-        "goo": "Viscous Nasal Goo"
+        "goo": "Viscous Nasal Goo",
+        "slow": "Viscous Nasal Goo"
     },
     "alchemist": {
         "r": "Chemical Rage",
         "q": "Acid Spray",
         "e": "Greevil's Greed",
         "w": "Unstable Concoction",
-        "acid": "Acid Spray"
+        "acid": "Acid Spray",
+        "stun": "Unstable Concoction",
     },
     "necrolyte": {
         "q": "Death Pulse",
         "e": "Heartstopper Aura",
         "w": "Ghost Shroud",
         "r": "Reaper's Scythe",
-        "scythe": "Reaper's Scythe"
+        "scythe": "Reaper's Scythe",
+        "slow": "Ghost Shroud"
     },
     "arc_warden": {
         "q": "Flux",
         "e": "Spark Wraith",
         "w": "Magnetic Field",
-        "r": "Tempest Double"
+        "r": "Tempest Double",
+        "slow": "Spark Wraith",
     },
     "shadow_demon": {
         "q": "Disruption",
         "e": "Shadow Poison",
         "w": "Soul Catcher",
         "r": "Demonic Purge",
-        "purge": "Demonic Purge"
+        "purge": "Demonic Purge",
+        "slow": "Demonic Purge"
     },
     "viper": {
         "q": "Poison Attack",
         "e": "Corrosive Skin",
         "w": "Nethertoxin",
-        "r": "Viper Strike"
+        "r": "Viper Strike",
+        "slow": "Viper Strike"
     },
     "phantom_lancer": {
         "q": "Spirit Lance",
         "e": "Phantom Rush",
         "w": "Doppelganger",
-        "r": "Juxtapose"
+        "r": "Juxtapose",
+        "slow": "Spirit Lance"
     },
     "weaver": {
         "q": "The Swarm",
@@ -521,7 +593,8 @@
         "q": "Untouchable",
         "e": "Nature's Attendants",
         "w": "Enchant",
-        "r": "Impetus"
+        "r": "Impetus",
+        "slow": "Enchant"
     },
     "ember_spirit": {
         "d": "Activate Fire Remnant",
@@ -531,13 +604,15 @@
         "r": "Fire Remnant",
         "chains": "Searing Chains",
         "sleight": "Sleight of Fist",
-        "chain": "Searing Chains"
+        "chain": "Searing Chains",
+        "bolas": "Searing Chains"
     },
     "dragon_knight": {
         "q": "Breathe Fire",
         "e": "Dragon Blood",
         "w": "Dragon Tail",
         "r": "Elder Dragon Form",
+        "ping": "Dragon Tail",
         "stun": "Dragon Tail"
     },
     "antimage": {
@@ -552,14 +627,16 @@
         "w": "Glaives of Wisdom",
         "r": "Global Silence",
         "silence": "Global Silence",
-        "curse": "Arcane Curse"
+        "curse": "Arcane Curse",
+        "slow": "Arcane Curse"
     },
     "spectre": {
         "q": "Spectral Dagger",
         "e": "Dispersion",
         "w": "Desolate",
         "r": "Haunt",
-        "dagger": "Spectral Dagger"
+        "dagger": "Spectral Dagger",
+        "slow": "Spectral Dagger"
     },
     "furion": {
         "q": "Sprout",
@@ -573,7 +650,8 @@
         "e": "Maledict",
         "w": "Voodoo Restoration",
         "r": "Death Ward",
-        "cask": "Paralyzing Cask"
+        "cask": "Paralyzing Cask",
+        "stun": "Paralyzing Cask"
     },
     "naga_siren": {
         "r": "Song of the Siren",
@@ -581,7 +659,8 @@
         "e": "Rip Tide",
         "w": "Ensnare",
         "song": "Song of the Siren",
-        "net": "Ensnare"
+        "net": "Ensnare",
+        "sleep": "Song of the Siren"
     },
     "death_prophet": {
         "q": "Crypt Swarm",
@@ -594,90 +673,109 @@
         "e": "Degen Aura",
         "w": "Repel",
         "r": "Guardian Angel",
-        "heal": "Purification"
+        "heal": "Purification",
+        "slow": "Degen Aura"
     },
     "ancient_apparition": {
         "r": "Ice Blast",
         "q": "Cold Feet",
         "e": "Chilling Touch",
-        "w": "Ice Vortex"
+        "w": "Ice Vortex",
+        "slow": "Ice Vortex"
     },
     "slardar": {
         "q": "Guardian Sprint",
         "e": "Bash of the Deep",
         "w": "Slithereen Crush",
-        "r": "Corrosive Haze"
+        "r": "Corrosive Haze",
+        "stun": "Slithereen Crush"
     },
     "enigma": {
         "q": "Malefice",
         "e": "Midnight Pulse",
         "w": "Demonic Conversion",
-        "r": "Black Hole"
+        "r": "Black Hole",
+        "stun": "Black Hole"
     },
     "riki": {
         "q": "Smoke Screen",
         "e": "Cloak and Dagger",
         "w": "Blink Strike",
-        "r": "Tricks of the Trade"
+        "r": "Tricks of the Trade",
+        "slow": "Smoke Screen",
+        "silence": "Smoke Screen",
+        "blink": "Blink Strike"
     },
     "vengefulspirit": {
         "q": "Magic Missile",
         "e": "Vengeance Aura",
         "w": "Wave of Terror",
         "r": "Nether Swap",
-        "swap": "Nether Swap"
+        "swap": "Nether Swap",
+        "stun": "Magic Missile"
     },
     "night_stalker": {
         "q": "Void",
         "e": "Hunter in the Night",
         "w": "Crippling Fear",
-        "r": "Darkness"
+        "r": "Darkness",
+        "slow": "Void"
     },
     "sniper": {
         "q": "Shrapnel",
         "e": "Take Aim",
         "w": "Headshot",
-        "r": "Assassinate"
+        "r": "Assassinate",
+        "slow": "Shrapnel"
     },
     "lina": {
         "q": "Dragon Slave",
         "e": "Fiery Soul",
         "w": "Light Strike Array",
         "lsa": "Light Strike Array",
-        "r": "Laguna Blade"
+        "r": "Laguna Blade",
+        "stun": "Light Strike Array"
     },
     "faceless_void": {
         "q": "Time Walk",
         "e": "Time Lock",
         "w": "Time Dilation",
         "r": "Chronosphere",
-        "chrono": "Chronosphere"
+        "chrono": "Chronosphere",
+        "slow": "Time Dilation",
+        "stun": "Chronosphere"
     },
     "beastmaster": {
         "d": "Inner Beast",
         "q": "Wild Axes",
         "e": "Call of the Wild: Boar",
         "w": "Call of the Wild: Hawk",
-        "r": "Primal Roar"
+        "r": "Primal Roar",
+        "stun": "Primal Roar"
     },
     "phantom_assassin": {
         "q": "Stifling Dagger",
         "e": "Blur",
         "w": "Phantom Strike",
-        "r": "Coup de Grace"
+        "r": "Coup de Grace",
+        "blink": "Phantom Strike"
     },
     "axe": {
         "q": "Berserker's Call",
         "e": "Counter Helix",
         "w": "Battle Hunger",
-        "r": "Culling Blade"
+        "r": "Culling Blade",
+        "call": "Berserker's Call",
+        "spin": "Counter Helix",
+        "stun": "Berserker's Call"
     },
     "pudge": {
         "q": "Meat Hook",
         "e": "Flesh Heap",
         "w": "Rot",
         "r": "Dismember",
-        "hook": "Meat Hook"
+        "hook": "Meat Hook",
+        "stun": "Dismember"
     },
     "clinkz": {
         "q": "Strafe",
@@ -690,7 +788,8 @@
         "e": "Leap",
         "w": "Sacred Arrow",
         "r": "Moonlight Shadow",
-        "arrow": "Sacred Arrow"
+        "arrow": "Sacred Arrow",
+        "stun": "Sacred Arrow"
     },
     "razor": {
         "q": "Plasma Field",
@@ -703,7 +802,8 @@
         "e": "Cold Embrace",
         "w": "Splinter Blast",
         "r": "Winter's Curse",
-        "curse": "Winter's Curse"
+        "curse": "Winter's Curse",
+        "slow": "Arctic Burn"
     },
     "slark": {
         "q": "Dark Pact",
@@ -737,14 +837,17 @@
         "e": "Primal Spring",
         "d": "Jingu Mastery",
         "f": "Mischief",
-        "r": "Wukong's Command"
+        "r": "Wukong's Command",
+        "stun": "Boundless Strike",
+        "slow": "Primal Spring"
     },
     "life_stealer": {
         "q": "Rage",
         "w": "Feast",
         "e": "Open Wounds",
         "d": "Assimilate",
-        "r": "Infest"
+        "r": "Infest",
+        "slow": "Open Wounds"
     },
     "keeper_of_the_light": {
         "q": "Illuminate",
@@ -752,7 +855,8 @@
         "e": "Chakra Magic",
         "d": "Recall",
         "f": "Blinding Light",
-        "r": "Spirit Form"
+        "r": "Spirit Form",
+        "stun": "Mana Leak"
     },
     "morphling": {
         "q": "Waveform",
@@ -764,7 +868,8 @@
         "agi": "Morph (Agility Gain)",
         "str": "Morph (Strength Gain)",
         "agility": "Morph (Agility Gain)",
-        "strength": "Morph (Strength Gain)"
+        "strength": "Morph (Strength Gain)",
+        "stun": "Adaptive Strike"
     },
     "invoker": {
         "q": "Quas",
@@ -799,13 +904,15 @@
         "w": "Fire Spirits",
         "e": "Sun Ray",
         "r": "Supernova",
-        "dive": "Icarus Dive"
+        "dive": "Icarus Dive",
+        "stun": "Supernova"
     },
     "wisp": {
         "q": "Tether",
         "w": "Spirits",
         "e": "Overcharge",
         "r": "Relocate",
-        "relo": "Relocate"
+        "relo": "Relocate",
+        "slow": "Tether"
     }
 }

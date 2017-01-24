@@ -8293,7 +8293,8 @@
             "cooldown": "10",
             "stats": [
                 "DAMAGE: 100 / 175 / 250 / 325",
-                "RANGE: 700",
+                "RANGE: 200 / 450 / 700",
+                "RADIUS: 250",
                 "CAST POINT: 0.55s"
             ],
             "effects": [

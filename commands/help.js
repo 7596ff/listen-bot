@@ -30,8 +30,8 @@ module.exports = (message, client, helper) => {
   let options = message.content.split(' ')
   let specific_topic = options[1]
   if (specific_topic in help_topics) {
-    client.createMessage(message.channel.id, help_embed(help_topics[specific_topic], helper.prefix)).then(message => {
-      helper.log(message, `Helped with topic ${specific_topic}`)
+    client.createMessage(message.channel.id, help_embed(help_topics[specific_topic], helper.prefix)).then(new_message => {
+      helper.log(new_message, `Helped with topic ${specific_topic}`)
     }).catch(err => helper.handle(message, err))
   } else {
     let help_list = ''
@@ -44,8 +44,8 @@ module.exports = (message, client, helper) => {
     }
     let conditional = (options[1]) ? 'Help topic not found: `' + options[1] + '`. ' : ''
     if (conditional != '') helper.log(message, 'could not help with ' + options[1])
-    client.createMessage(message.channel.id, `${conditional}List of help topics: ${help_list}`).then(message => {
-      helper.log(message, 'helped with all topics')
+    client.createMessage(message.channel.id, `${conditional}List of help topics: ${help_list}`).then(new_message => {
+      helper.log(new_message, 'helped with all topics')
     }).catch(err => helper.handle(message, err))
   }
 }

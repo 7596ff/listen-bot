@@ -29,10 +29,11 @@
   },
   "ability": {
     "name": "ability",
-    "usage": "ability <hero> <default key>",
+    "usage": "ability <hero> <ability>",
     "text": [
       "returns info about a hero's ability. you are required to provide ",
-      "the default key the ability is set to. i'll add aliases later."
+      "the hero's name, and either the default key for the ability, the whole name ", 
+      "of the ability, or the key combo for invoker."
     ],
     "example": "ability ck r"
   },

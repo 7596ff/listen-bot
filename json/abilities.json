@@ -19,7 +19,7 @@
                 "MAXIMUM STUN: 2 / 3 / 4 / 4",
                 "MINIMUM DAMAGE: 75 / 100 / 125 / 150",
                 "MAXIMUM DAMAGE: 200 / 225 / 250 / 275",
-                "CAST POINT:  0.4s"
+                "CAST POINT: 0.4s"
             ],
             "notes": [
                 "The stun duration and damage values dealt are inversely related."
@@ -41,7 +41,7 @@
                 "RANGE: 550 / 600 / 650 / 700",
                 "ARMOR REDUCTION: -1 / -3 / -5 / -7",
                 "REDUCTION DURATION: 8",
-                "CAST POINT:  0.4s"
+                "CAST POINT: 0.4s"
             ],
             "notes": [
                 "Chaos Knight and the target unit are made to face each other, and Chaos Knight and his phantasms are issued an attack order against the target."
@@ -66,7 +66,7 @@
                 "PHANTASM DAMAGE: 100%",
                 "PHANTASM DAMAGE TAKEN: 200%",
                 "SCEPTER COOLDOWN: 110",
-                "CAST POINT:  0.4s"
+                "CAST POINT: 0.4s"
             ],
             "notes": [
                 "Removes most negative buffs from Chaos Knight.",
@@ -92,7 +92,7 @@
                 "RADIUS: 1250",
                 "DURATION: 7",
                 "SCEPTER HEALTH REGEN: 10%",
-                "CAST POINT:  0.8s"
+                "CAST POINT: 0.8s"
             ],
             "notes": [
                 "Units affected by Song of the Siren are invulnerable and cannot take damage from any source.",
@@ -113,7 +113,7 @@
         "Ensnare": {
             "stats": [
                 "DURATION: 2 / 3 / 4 / 5",
-                "CAST POINT:  0.65s"
+                "CAST POINT: 0.65s"
             ],
             "notes": [
                 "Works on Spell Immune units."
@@ -134,7 +134,7 @@
                 "DAMAGE: 100 / 140 / 180 / 220",
                 "ARMOR REDUCTION: -2 / -3 / -4 / -5",
                 "DURATION: 8",
-                "CAST POINT:  0s"
+                "CAST POINT: 0s"
             ],
             "notes": [
                 "Naga's illusions will also cast Rip Tide, but enemies in multiple areas of effect will only be hit once."
@@ -155,7 +155,7 @@
                 "IMAGE DURATION: 30",
                 "IMAGE DAMAGE: 25% / 30% / 35% / 40%",
                 "IMAGE DAMAGE TAKEN: 600% / 500% / 400% / 300%",
-                "CAST POINT:  0.65s"
+                "CAST POINT: 0.65s"
             ],
             "notes": [
                 "Naga Siren is invulnerable for 0.3 seconds when casting, allowing her to dodge stuns and damage.",
@@ -184,7 +184,7 @@
                 "RUM DURATION: 10.0",
                 "STUN DURATION: 1.4",
                 "DAMAGE DELAYED: 40% / 45% / 50%",
-                "CAST POINT:  0.3s"
+                "CAST POINT: 0.3s"
             ],
             "notes": [
                 "Damage dealt after Rum wears off is non-lethal and can never kill a hero.",
@@ -211,7 +211,7 @@
                 "SLOW DURATION: 1.75 / 2.5 / 3.25 / 4.0",
                 "STUN DURATION: 1.6",
                 "DELAY: 1.6",
-                "CAST POINT:  0.4s"
+                "CAST POINT: 0.4s"
             ],
             "notes": [
                 "The initial bubble effect is only visible to allies.",
@@ -232,7 +232,7 @@
             "cooldown": "13 10 7 4",
             "stats": [
                 "DAMAGE BONUS: 25 / 45 / 65 / 85",
-                "CAST POINT:  0s"
+                "CAST POINT: 0s"
             ],
             "notes": [
                 "Cleave damage is reduced by armor type but not by armor value.",
@@ -253,7 +253,7 @@
                 "ENEMY DELAY: 4.0",
                 "ALLIED DELAY: 8.0",
                 "RANGE: 400 / 600 / 800 / 1000",
-                "CAST POINT:  0.4s"
+                "CAST POINT: 0.4s"
             ],
             "notes": [
                 "If the target becomes Spell Immune after the cast, the target will not return to the X after the duration.",
@@ -278,7 +278,7 @@
                 "STUN DURATION: 1.0 / 1.25 / 1.5 / 1.75",
                 "IMPACT RADIUS: 325",
                 "CAST RANGE: 550 / 575 / 600 / 625",
-                "CAST POINT:  0.1s"
+                "CAST POINT: 0.1s"
             ],
             "notes": [
                 "While the target is in the air, Rubick may use a secondary ability to throw the enemy in a targeted direction.",
@@ -316,7 +316,7 @@
             "stats": [
                 "DURATION: 180 / 240 / 300",
                 "SCEPTER COOLDOWN: 2",
-                "CAST POINT:  0.1s"
+                "CAST POINT: 0.1s"
             ],
             "notes": [
                 "Cannot steal item abilities."
@@ -341,7 +341,7 @@
                 "HERO DAMAGE REDUCTION: 20 / 25 / 30 / 35",
                 "CREEP DAMAGE REDUCTION: 10 / 13 / 15 / 17",
                 "DEBUFF DURATION: 10",
-                "CAST POINT:  0.1s"
+                "CAST POINT: 0.1s"
             ],
             "effects": [
                 "Behavior: Unit Target",
@@ -361,7 +361,7 @@
                 "HAUNT DURATION: 5 / 6 / 7",
                 "HAUNT DAMAGE: 30%",
                 "HAUNT DAMAGE TAKEN: 200%",
-                "CAST POINT:  0.3s"
+                "CAST POINT: 0.3s"
             ],
             "notes": [
                 "Haunt illusions are uncontrollable and move at 400 base movement speed.",
@@ -420,7 +420,7 @@
                 "DAMAGE: 50 / 100 / 150 / 200",
                 "MOVEMENT SPEED CHANGE: 8% / 12% / 16% / 20%",
                 "DURATION: 7",
-                "CAST POINT:  0.3s"
+                "CAST POINT: 0.3s"
             ],
             "notes": [
                 "There is a 2 second grace period after leaving the path where no collision is preserved."
@@ -445,7 +445,7 @@
                 "BONUS ATTACK SPEED: 130",
                 "MAX ATTACKS: 4",
                 "RANGE: 1000",
-                "CAST POINT:  0.3s"
+                "CAST POINT: 0.3s"
             ],
             "effects": [
                 "Behavior: Unit Target",
@@ -488,7 +488,7 @@
                 "SLOW DURATION: 1 / 2 / 3 / 4",
                 "BASE DAMAGE: 65",
                 "ATTACK DAMAGE: 25% / 40% / 55% / 70%",
-                "CAST POINT:  0.3s"
+                "CAST POINT: 0.3s"
             ],
             "notes": [
                 "If an attack effect is chance-based, the chance of its application will be the same as its chance to occur."
@@ -513,7 +513,7 @@
                 "DURATION: 40.0",
                 "WARD HP: 75 / 200 / 325 / 450",
                 "WARD DAMAGE: 13 / 22 / 31 / 40",
-                "CAST POINT:  0s"
+                "CAST POINT: 0s"
             ],
             "effects": [
                 "Behavior: Point Target",
@@ -531,7 +531,7 @@
                 "INITIAL DAMAGE: 25 / 50 / 75 / 100",
                 "DAMAGE PER TICK: 10 / 40 / 70 / 100",
                 "SLOW: -50%",
-                "CAST POINT:  0s"
+                "CAST POINT: 0s"
             ],
             "notes": [
                 "Units afflicted by Venomous Gale can be denied when their HP drops below 25%.",
@@ -557,7 +557,7 @@
                 "DAMAGE: 30 / 55 / 80",
                 "SCEPTER COOLDOWN: 140 / 120 / 60",
                 "SCEPTER DAMAGE: 60 / 85 / 110",
-                "CAST POINT:  0s"
+                "CAST POINT: 0s"
             ],
             "cooldown": "140 120 100",
             "effects": [
@@ -599,7 +599,7 @@
                 "PIT DURATION: 12.0",
                 "DISABLE INTERVAL: 3.6",
                 "DISABLE DURATION: 0.9 / 1.2 / 1.5 / 1.8",
-                "CAST POINT:  0.45s"
+                "CAST POINT: 0.45s"
             ],
             "effects": [
                 "Behavior: Point Target",
@@ -635,7 +635,7 @@
                 "WAVE INTERVAL 1.0",
                 "MAX HP BURN DAMAGE: 0.75% / 1.5% / 2.25% / 3.0%",
                 "BURN DURATION: 2.0",
-                "CAST POINT:  0.6s"
+                "CAST POINT: 0.6s"
             ],
             "effects": [
                 "Behavior: Point Target",
@@ -652,7 +652,7 @@
             "stats": [
                 "TELEPORT RADIUS: 600",
                 "TELEPORT DELAY: 6 / 5 / 4",
-                "CAST POINT:  0.6s"
+                "CAST POINT: 0.6s"
             ],
             "effects": [
                 "Behavior: Point Target, Unit Target"
@@ -668,7 +668,7 @@
             "stats": [
                 "RADIUS: 1000",
                 "MAX ATTACKS: 3 / 4 / 5 / 6",
-                "CAST POINT:  0s"
+                "CAST POINT: 0s"
             ],
             "notes": [
                 "Attack range for the primary attack is unchanged."
@@ -691,7 +691,7 @@
                 "TOWER HITS TO DESTROY: 6 / 6 / 8 / 10",
                 "STUN DURATION: 2.2 / 2.4 / 2.6 / 2.8",
                 "MINIMUM DAMAGE: 50",
-                "CAST POINT:  0.3s"
+                "CAST POINT: 0.3s"
             ],
             "notes": [
                 "Towers do half damage to the missile.",
@@ -716,7 +716,7 @@
                 "DAMAGE: 7 / 12 / 17 / 22",
                 "RADIUS: 400",
                 "ROCKETS PER SECOND: 10",
-                "CAST POINT:  0s"
+                "CAST POINT: 0s"
             ],
             "notes": [
                 "Rocket Barrage can't hit units Gyrocopter has no vision over."
@@ -740,7 +740,7 @@
                 "MISSILE ONE SLOW: 30.0%",
                 "MISSILE TWO SLOW: 60.0%",
                 "RADIUS: 600",
-                "CAST POINT:  0.3s"
+                "CAST POINT: 0.3s"
             ],
             "notes": [
                 "The visual indicator is visible to allies only."
@@ -764,7 +764,7 @@
                 "DAMAGE: 100 / 175 / 275 / 350",
                 "SIGHT RADIUS: 750",
                 "SIGHT DURATION: 4.5",
-                "CAST POINT:  0.4s"
+                "CAST POINT: 0.4s"
             ],
             "notes": [
                 "You can interrupt channeling spells and items with this ability."
@@ -786,7 +786,7 @@
             "stats": [
                 "DAMAGE: 85 / 100 / 115 / 145",
                 "JUMPS: 5 / 7 / 9 / 15",
-                "CAST POINT:  0.2s"
+                "CAST POINT: 0.2s"
             ],
             "effects": [
                 "Behavior: Unit Target",
@@ -803,7 +803,7 @@
             "stats": [
                 "DURATION: 50.0",
                 "LIGHTNING BOLT BASE COOLDOWN: 2.5",
-                "CAST POINT:  0.2s"
+                "CAST POINT: 0.2s"
             ],
             "notes": [
                 "Grants 100 gold if destroyed by an enemy hero.",
@@ -845,7 +845,7 @@
                 "TRUE SIGHT RADIUS: 500",
                 "DURATION: 3",
                 "DAMAGE: 225 / 325 / 425",
-                "CAST POINT:  0.4s"
+                "CAST POINT: 0.4s"
             ],
             "cooldown": "90",
             "effects": [
@@ -883,7 +883,7 @@
             "stats": [
                 "RANGE: 700",
                 "BONUS DAMAGE: 55 / 70 / 85 / 100",
-                "CAST POINT:  0.3s"
+                "CAST POINT: 0.3s"
             ],
             "notes": [
                 "Riki's first attack after Blink Strike will be a backstab.",
@@ -907,7 +907,7 @@
                 "MISS RATE: 40% / 50% / 60% / 70%",
                 "MOVEMENT SLOW: 10% / 15% / 20% / 25%",
                 "DURATION: 6",
-                "CAST POINT:  0.4s"
+                "CAST POINT: 0.4s"
             ],
             "notes": [
                 "Doesn't prevent the use of active items."
@@ -928,7 +928,7 @@
                 "RADIUS: 500",
                 "MAX ATTACKS PER UNIT: 4 / 5 / 6",
                 "SCEPTER BONUS DURATION: 4",
-                "CAST POINT:  0.3s"
+                "CAST POINT: 0.3s"
             ],
             "notes": [
                 "Attacks once when casted and once per second after that.",
@@ -953,7 +953,7 @@
                 "MAX ATTACKS: 3 / 4 / 5 / 6",
                 "DAMAGE: 50 / 60 / 70 / 80",
                 "ATTACK SPEED: 20.0",
-                "CAST POINT:  0.01s"
+                "CAST POINT: 0.01s"
             ],
             "notes": [
                 "Extra damage is its own instance of damage.",
@@ -975,7 +975,7 @@
                 "RADIUS: 275",
                 "SLOW: -15% / -20% / -25% / -30%",
                 "INCREASED MAGIC DAMAGE: -15% / -20% / -25% / -30%",
-                "CAST POINT:  0.01s"
+                "CAST POINT: 0.01s"
             ],
             "notes": [
                 "Doesn't affect Spell Immune units."
@@ -996,7 +996,7 @@
                 "BREAK DISTANCE: 740",
                 "STUN DURATION: 1.25 / 2.0 / 2.75 / 3.5",
                 "CAST RANGE: 700 / 800 / 900 / 1000",
-                "CAST POINT:  0.01s"
+                "CAST POINT: 0.01s"
             ],
             "notes": [
                 "Total possible damage: 150/200/250/300.",
@@ -1022,7 +1022,7 @@
                 "FROSTBITTEN DAMAGE PER SECOND: 12.5 / 20.0 / 32.0",
                 "SHATTER HEALTH THRESHOLD: 10% / 11% / 12%",
                 "SCEPTER FROSTBITTEN DURATION: 17.0",
-                "CAST POINT:  0.01s"
+                "CAST POINT: 0.01s"
             ],
             "notes": [
                 "The area of effect is 275 + 50*TimeTraveled, capped at 1000.  The freeze area along the path is 275.",
@@ -1053,7 +1053,7 @@
                 "BURN DURATION: 4.0",
                 "ATTACK SPEED SLOW: -80 / -100 / -120 / -140",
                 "DAMAGE PER SECOND: 10 / 30 / 50 / 70",
-                "CAST POINT:  0.01s"
+                "CAST POINT: 0.01s"
             ],
             "notes": [
                 "Fire Spirits reveal the area they strike for 1 second."
@@ -1079,7 +1079,7 @@
                 "SCEPTER ATTACKS TO DESTROY: 7 / 10 / 13",
                 "DURATION: 6",
                 "SCEPTER CAST RANGE: 500",
-                "CAST POINT:  0.01s"
+                "CAST POINT: 0.01s"
             ],
             "cooldown": "110",
             "effects": [
@@ -1102,7 +1102,7 @@
                 "BURN DURATION: 4.0",
                 "DAMAGE PER SECOND: 10 / 30 / 50 / 70",
                 "MOVE SLOW: -28%",
-                "CAST POINT:  0.2s"
+                "CAST POINT: 0.2s"
             ],
             "notes": [
                 "Icarus Dive has a 2 second travel duration, and can be cancelled by casting the ability again while in flight."
@@ -1126,7 +1126,7 @@
                 "BASE HEAL PER SECOND: 7 / 10 / 13 / 16",
                 "MAX HEAL: 0.625% / 1.25% / 1.875% / 2.5%",
                 "DURATION: 6",
-                "CAST POINT:  0.01s"
+                "CAST POINT: 0.01s"
             ],
             "notes": [
                 "Sun Ray has a width of 130 units, and a length of 1300 units."
@@ -1151,7 +1151,7 @@
                 "RADIUS: 450",
                 "DAMAGE: 100 / 130 / 160",
                 "SCEPTER DAMAGE: 160 / 190 / 220",
-                "CAST POINT:  0s"
+                "CAST POINT: 0s"
             ],
             "cooldown": "1",
             "effects": [
@@ -1172,7 +1172,7 @@
                 "STUN DELAY: 0.35",
                 "RADIUS: 150 / 175 / 200 / 225",
                 "STUN DURATION: 2",
-                "CAST POINT:  0.7s"
+                "CAST POINT: 0.7s"
             ],
             "notes": [
                 "Split Earth will destroy trees in its area of effect.",
@@ -1195,7 +1195,7 @@
                 "DAMAGE: 9 / 18 / 27 / 36",
                 "EXPLOSIONS: 40",
                 "RADIUS: 500",
-                "CAST POINT:  0.5s"
+                "CAST POINT: 0.5s"
             ],
             "notes": [
                 "Damage is not reduced by damage block.",
@@ -1222,7 +1222,7 @@
                 "LIGHTNING JUMP RADIUS: 475",
                 "MOVEMENT SLOW: -75%",
                 "SLOW DURATION: 0.7 / 0.8 / 0.9 / 1.0",
-                "CAST POINT:  0.45s"
+                "CAST POINT: 0.45s"
             ],
             "effects": [
                 "Behavior: Unit Target",
@@ -1302,7 +1302,7 @@
                 "SLOW DURATION: 2.0",
                 "MOVEMENT SLOW: -20%",
                 "DAMAGE PER SECOND: 20 / 35 / 50 / 65",
-                "CAST POINT:  0.35s"
+                "CAST POINT: 0.35s"
             ],
             "notes": [
                 "Deals 80 / 160 / 230 / 300 total damage."
@@ -1325,7 +1325,7 @@
             "manacost": "125 150 175",
             "stats": [
                 "DURATION: 16 / 18 / 20",
-                "CAST POINT:  0.65s"
+                "CAST POINT: 0.65s"
             ],
             "notes": [
                 "The Earth Element will carry all auras that the Brewmaster has, as well as True Sight.",
@@ -1347,7 +1347,7 @@
                 "DURATION: 4.0",
                 "MOVEMENT SLOW: 10% / 20% / 30% / 40%",
                 "MISS CHANCE: 70%",
-                "CAST POINT:  0.3s"
+                "CAST POINT: 0.3s"
             ],
             "notes": [
                 "Can be disjointed."
@@ -1390,7 +1390,7 @@
                 "ATTACK SLOW: 25 / 35 / 45 / 55",
                 "HERO DURATION: 4.0",
                 "CREEP DURATION: 8",
-                "CAST POINT:  0.4s"
+                "CAST POINT: 0.4s"
             ],
             "effects": [
                 "Behavior: No Target",
@@ -1410,7 +1410,7 @@
                 "RADIUS: 170",
                 "DURATION: 2.4",
                 "DAMAGE: 600 / 1000 / 1400",
-                "CAST POINT:  0.1s"
+                "CAST POINT: 0.1s"
             ],
             "notes": [
                 "Mystic Flare only affects Heroes; it does not damage illusions or creep heroes.",
@@ -1432,7 +1432,7 @@
             "stats": [
                 "BASE DAMAGE: 60 / 80 / 100 / 120",
                 "INT DAMAGE MULTIPLIER: 1.6",
-                "CAST POINT:  0.1s"
+                "CAST POINT: 0.1s"
             ],
             "notes": [
                 "The projectile moves very slowly (500 ms), providing 325 vision around it.  Upon impact, it will reveal the target area for 3.34 seconds.",
@@ -1457,7 +1457,7 @@
                 "DAMAGE: 60 / 120 / 180 / 240",
                 "SLOW DURATION: 4.0",
                 "SLOW: 30% / 35% / 40% / 45%",
-                "CAST POINT:  0s"
+                "CAST POINT: 0s"
             ],
             "notes": [
                 "Does not work when no heroes are in range or heroes are in fog.",
@@ -1479,7 +1479,7 @@
             "stats": [
                 "INCREASED MAGIC DAMAGE: -30% / -35% / -40% / -45%",
                 "DURATION: 3 / 4 / 5 / 6",
-                "CAST POINT:  0.1s"
+                "CAST POINT: 0.1s"
             ],
             "notes": [
                 "The magic damage resistance reduction doesn't affect creeps."
@@ -1503,7 +1503,7 @@
                 "ILLUSION DURATION: 34.0",
                 "ILLUSION DAMAGE: 30% / 40% / 50% / 60%",
                 "ILLUSION DAMAGE TAKEN: 400.0%",
-                "CAST POINT:  0.15s"
+                "CAST POINT: 0.15s"
             ],
             "effects": [
                 "Behavior: No Target"
@@ -1522,7 +1522,7 @@
                 "BONUS DAMAGE: 20 / 40 / 60 / 80",
                 "MOVEMENT SPEED LOSS: 25",
                 "ILLUSION AURA RADIUS: 900",
-                "CAST POINT:  0s"
+                "CAST POINT: 0s"
             ],
             "notes": [
                 "Manta Style's cooldown time will be based on whether Terrorblade was in his ranged or melee form when the item was used."
@@ -1540,7 +1540,7 @@
             "cooldown": "120 80 40",
             "stats": [
                 "MINIMUM HP SWAP: 25%",
-                "CAST POINT:  0.35s"
+                "CAST POINT: 0.35s"
             ],
             "effects": [
                 "Behavior: Unit Target",
@@ -1558,7 +1558,7 @@
                 "MOVEMENT SLOW: 25%",
                 "ATTACK SLOW: 25",
                 "RADIUS: 900",
-                "CAST POINT:  0.3s"
+                "CAST POINT: 0.3s"
             ],
             "notes": [
                 "Reflections are untargetable, invulnerable illusions.",
@@ -1579,7 +1579,7 @@
         "Devour": {
             "stats": [
                 "BONUS GOLD: 25 / 50 / 75 / 100",
-                "CAST POINT:  0.3s"
+                "CAST POINT: 0.3s"
             ],
             "notes": [
                 "Gives Doom the original bounty of the creep, along with the bonus gold.",
@@ -1602,7 +1602,7 @@
                 "DURATION: 15.0",
                 "DAMAGE PER SECOND: 20 / 35 / 50",
                 "SCEPTER DURATION: 16.0",
-                "CAST POINT:  0.5s"
+                "CAST POINT: 0.5s"
             ],
             "notes": [
                 "Units afflicted by Doom can be denied when their HP drops below 25%."
@@ -1627,7 +1627,7 @@
                 "MAX HP AS DAMAGE: 1.25% / 2.5% / 3.75% / 5.0%",
                 "BURN DURATION: 4.0",
                 "STUN DURATION: 0.4",
-                "CAST POINT:  0s"
+                "CAST POINT: 0s"
             ],
             "notes": [
                 "Interrupts channeling abilities."
@@ -1650,7 +1650,7 @@
                 "RADIUS: 600",
                 "BONUS MOVE SPEED: 14%",
                 "DURATION: 10 / 12 / 14 / 16",
-                "CAST POINT:  0s"
+                "CAST POINT: 0s"
             ],
             "notes": [
                 "Scorched Earth follows Doom, centered on his location.",
@@ -1675,7 +1675,7 @@
                 "ATTACK SPEED: 40 / 50 / 60 / 70",
                 "INCOMING DAMAGE REDUCTION: -5% / -10% / -15% / -20%",
                 "HEALTH/MANA DRAIN: 4.5%",
-                "CAST POINT:  0s"
+                "CAST POINT: 0s"
             ],
             "notes": [
                 "Io's tethered unit will also benefit from the attack speed and reduction, but only Io pays the drain in HP and mana."
@@ -1694,7 +1694,7 @@
                 "OSCILLATION RADIUS: 875",
                 "EXPLOSION RADIUS: 300",
                 "DURATION: 19",
-                "CAST POINT:  0s"
+                "CAST POINT: 0s"
             ],
             "notes": [
                 "Min/Max Range: 100/875."
@@ -1714,7 +1714,7 @@
             "stats": [
                 "CAST DELAY: 2.7 / 2.35 / 2.0",
                 "RETURN TIME: 12",
-                "CAST POINT:  0s"
+                "CAST POINT: 0s"
             ],
             "notes": [
                 "Enemies receive a visual indicator in the world and on the minimap of the target location during the cast delay.",
@@ -1738,7 +1738,7 @@
                 "ENEMY MOVEMENT SLOW: -100%",
                 "ENEMY ATTACK SLOW: -100",
                 "ENEMY SLOW DURATION: 0.75 / 1.25 / 1.75 / 2.25",
-                "CAST POINT:  0.001s"
+                "CAST POINT: 0.001s"
             ],
             "notes": [
                 "If you try to tether a unit that is 700 distance or further away from Io, he will latch on and pull himself closer to the tethered unit (to a distance of 300).",
@@ -1765,7 +1765,7 @@
                 "MOVEMENT SLOW: -30%",
                 "ATTACK SLOW: -30",
                 "DAMAGE: 105 / 170 / 250",
-                "CAST POINT:  0.3s"
+                "CAST POINT: 0.3s"
             ],
             "notes": [
                 "The slow is applied on all enemies in the radius, even if they aren't hit by an explosion (lasts 1 second).",
@@ -1790,7 +1790,7 @@
                 "HERO TOTAL DAMAGE: 150 / 200 / 250 / 300",
                 "CREEP DURATION: 10",
                 "CREEP TOTAL DAMAGE: 1000",
-                "CAST POINT:  0.3s"
+                "CAST POINT: 0.3s"
             ],
             "notes": [
                 "Blink abilities cannot be used while under the affects of Frostbite."
@@ -1815,7 +1815,7 @@
                 "ATTACK SLOW: -20 / -30 / -40 / -50",
                 "DURATION: 4.5",
                 "DAMAGE: 100 / 150 / 200 / 250",
-                "CAST POINT:  0.3s"
+                "CAST POINT: 0.3s"
             ],
             "effects": [
                 "Behavior: Point Target",
@@ -1831,7 +1831,7 @@
             "stats": [
                 "ALLY MANA REGEN: 1.0 / 1.5 / 2.0 / 3.0",
                 "SELF MANA REGEN: 2 / 3 / 4 / 8",
-                "CAST POINT:  0.2s"
+                "CAST POINT: 0.2s"
             ],
             "notes": [
                 "Stacks with other flat mana regeneration bonuses.",
@@ -1852,7 +1852,7 @@
                 "BONUS DAMAGE: 100% / 150% / 200%",
                 "SCEPTER ALLY AURA RADIUS: 900",
                 "SCEPTER ALLY BONUS DAMAGE: 75% / 100% / 125%",
-                "CAST POINT:  0.3s"
+                "CAST POINT: 0.3s"
             ],
             "notes": [
                 "The bonus damage is based on base damage and the primary attribute of Sven."
@@ -1873,7 +1873,7 @@
                 "BONUS SPEED: 12%",
                 "RADIUS: 900",
                 "DURATION: 8",
-                "CAST POINT:  0s"
+                "CAST POINT: 0s"
             ],
             "notes": [
                 "Fully stacks with other armor and speed granting abilities."
@@ -1910,7 +1910,7 @@
                 "DAMAGE: 100 / 175 / 250 / 325",
                 "DURATION: 2.0",
                 "RADIUS: 255",
-                "CAST POINT:  0.3s"
+                "CAST POINT: 0.3s"
             ],
             "effects": [
                 "Behavior: Unit Target",
@@ -1955,7 +1955,7 @@
                 "DAMAGE: 90 / 170 / 240 / 300",
                 "DAMAGE REDUCTION: -35%",
                 "REDUCTION DURATION: 11.0",
-                "CAST POINT:  0s"
+                "CAST POINT: 0s"
             ],
             "notes": [
                 "Affects mechanical units.",
@@ -1990,7 +1990,7 @@
             "stats": [
                 "DAMAGE: 25 / 50 / 75 / 100",
                 "STUN DURATION: 2.5 / 2.75 / 3.0 / 3.25",
-                "CAST POINT:  0s"
+                "CAST POINT: 0s"
             ],
             "effects": [
                 "Behavior: Unit Target",
@@ -2012,7 +2012,7 @@
                 "DAMAGE: 290 / 380 / 470",
                 "SCEPTER COOLDOWN: 40.0",
                 "SCEPTER DAMAGE: 325 / 440 / 555",
-                "CAST POINT:  0.452s"
+                "CAST POINT: 0.452s"
             ],
             "notes": [
                 "Sonic Wave can hit units up to 1150 units away."
@@ -2036,7 +2036,7 @@
                 "MOVEMENT SLOW: -20% / -30% / -40% / -50%",
                 "CAST RANGE: 450 / 475 / 500 / 525",
                 "DURATION: 15",
-                "CAST POINT:  0.452s"
+                "CAST POINT: 0.452s"
             ],
             "notes": [
                 "The affected unit slowly regains its original movement speed every second during the duration.",
@@ -2058,7 +2058,7 @@
             "stats": [
                 "DAMAGE: 75 / 150 / 225 / 300",
                 "RADIUS: 475",
-                "CAST POINT:  0s"
+                "CAST POINT: 0s"
             ],
             "notes": [
                 "Scream Of Pain will hit invisible units.",
@@ -2078,7 +2078,7 @@
         "Blink": {
             "stats": [
                 "RANGE: 1300",
-                "CAST POINT:  0.33s"
+                "CAST POINT: 0.33s"
             ],
             "notes": [
                 "You can use Blink to dodge incoming projectiles."
@@ -2100,7 +2100,7 @@
                 "DAMAGE PER SECOND: 50 / 100 / 150",
                 "RADIUS: 420",
                 "DURATION: 4",
-                "CAST POINT:  0.3s"
+                "CAST POINT: 0.3s"
             ],
             "notes": [
                 "Disables enemies through spell immunity."
@@ -2122,7 +2122,7 @@
                 "RADIUS: 550",
                 "DAMAGE PER SECOND: 3.0% / 3.75% / 4.5% / 5.25%",
                 "DURATION: 11.0",
-                "CAST POINT:  0.1s"
+                "CAST POINT: 0.1s"
             ],
             "notes": [
                 "Damage goes through spell immunity.",
@@ -2145,7 +2145,7 @@
                 "EIDOLON HP: 180 / 200 / 220 / 240",
                 "EIDOLON DAMAGE: 20 / 28 / 38 / 47",
                 "DURATION: 35.0",
-                "CAST POINT:  0.3s"
+                "CAST POINT: 0.3s"
             ],
             "notes": [
                 "Converted enemy units will give gold bounty and experience."
@@ -2165,7 +2165,7 @@
                 "STUN DURATION: 0.25 / 0.5 / 0.75 / 1.0",
                 "DAMAGE PER HIT: 30 / 50 / 70 / 90",
                 "INSTANCES: 3",
-                "CAST POINT:  0.3s"
+                "CAST POINT: 0.3s"
             ],
             "effects": [
                 "Behavior: Unit Target",
@@ -2187,7 +2187,7 @@
                 "DAMAGE (EXORT): 40 / 80 / 120 / 160 / 200 / 240 / 280 / 320",
                 "KNOCKBACK DURATION (QUAS): 0.25 / 0.5 / 0.75 / 1.0 / 1.25 / 1.5 / 1.75 / 2.0",
                 "DISARM DURATION (WEX): 1.25 / 2.0 / 2.75 / 3.5 / 4.25 / 5.0 / 5.75 / 6.5",
-                "CAST POINT:  0.05s"
+                "CAST POINT: 0.05s"
             ],
             "effects": [
                 "Behavior: Point Target",
@@ -2208,7 +2208,7 @@
                 "CONTACT DAMAGE (EXORT): 57.5 / 75.0 / 92.5 / 110.0 / 127.5 / 145.0 / 162.5 / 180.0",
                 "BURN DURATION: 3.0",
                 "BURN DAMAGE PER SECOND (EXORT): 11.5 / 15.0 / 18.5 / 22.0 / 25.5 / 29.0 / 32.5 / 36.0",
-                "CAST POINT:  0.05s"
+                "CAST POINT: 0.05s"
             ],
             "notes": [
                 "Deals main damage to enemy units under meteor every 0.5 seconds and burns enemies for smaller damage over 3 seconds.",
@@ -2247,7 +2247,7 @@
                 "FREEZE DURATION: 0.4",
                 "FREEZE COOLDOWN (QUAS): 0.77 / 0.74 / 0.71 / 0.69 / 0.66 / 0.63 / 0.6 / 0.57",
                 "FREEZE DAMAGE (QUAS): 7 / 14 / 21 / 28 / 35 / 42 / 49 / 56",
-                "CAST POINT:  0.05s"
+                "CAST POINT: 0.05s"
             ],
             "notes": [
                 "The freeze stun only triggers on damage greater than 10 after reductions."
@@ -2290,7 +2290,7 @@
                 "DELAY: 1.7",
                 "RADIUS: 175",
                 "DAMAGE (EXORT): 100.0 / 162.5 / 225.0 / 287.5 / 350.0 / 412.5 / 475.0 / 537.5",
-                "CAST POINT:  0.05s"
+                "CAST POINT: 0.05s"
             ],
             "notes": [
                 "Gives vision of the target area before the strike.",
@@ -2329,7 +2329,7 @@
                 "BONUS ATTACK SPEED (WEX): 10 / 25 / 40 / 55 / 70 / 85 / 100 / 115",
                 "BONUS DAMAGE (EXORT): 10 / 25 / 40 / 55 / 70 / 85 / 100 / 115",
                 "DURATION: 9.0",
-                "CAST POINT:  0.05s"
+                "CAST POINT: 0.05s"
             ],
             "effects": [
                 "Behavior: Unit Target",
@@ -2347,7 +2347,7 @@
                 "RADIUS: 400",
                 "ENEMY SLOW (QUAS): -20% / -25% / -30% / -35% / -40% / -45% / -50% / -55%",
                 "SELF SPEED (WEX): 30% / 20% / 10% / 0% / 10% / 20% / 30% / 40%",
-                "CAST POINT:  0.05s"
+                "CAST POINT: 0.05s"
             ],
             "notes": [
                 "The slow effect does not work on Spell Immune enemies."
@@ -2368,7 +2368,7 @@
                 "MOVEMENT SLOW (QUAS): -20% / -40% / -60% / -80% / -100% / -120% / -140% / -160%",
                 "SLOW DURATION: 2.0",
                 "DAMAGE PER SECOND (EXORT): 6 / 12 / 18 / 24 / 30 / 36 / 42 / 48",
-                "CAST POINT:  0.05s"
+                "CAST POINT: 0.05s"
             ],
             "notes": [
                 "The slow will still affect Spell Immune enemies if their spell immunity was created after being affected by Ice Wall."
@@ -2407,7 +2407,7 @@
                 "RADIUS: 675",
                 "MAX MANA BURNED (WEX): 100 / 175 / 250 / 325 / 400 / 475 / 550 / 625",
                 "BURN DAMAGE: 60%",
-                "CAST POINT:  0.05s"
+                "CAST POINT: 0.05s"
             ],
             "notes": [
                 "Will not affect cycloned units (Tornado or Eul's Scepter of Divinity)."
@@ -2431,7 +2431,7 @@
                 "ATTACK RANGE (QUAS): 300 / 365 / 430 / 495 / 560 / 625 / 690 / 755",
                 "HEALTH (QUAS): 300 / 400 / 500 / 600 / 700 / 800 / 900 / 1000",
                 "DURATION (QUAS): 20 / 30 / 40 / 50 / 60 / 70 / 80 / 90",
-                "CAST POINT:  0.05s"
+                "CAST POINT: 0.05s"
             ],
             "notes": [
                 "Casting this abiliy will replace currently summoned Forged Spirits."
@@ -2453,7 +2453,7 @@
                 "LIFT TIME (QUAS): 0.8 / 1.1 / 1.4 / 1.7 / 2.0 / 2.3 / 2.6 / 2.9",
                 "BASE DAMAGE: 70.0",
                 "ADDED DAMAGE (WEX): 45 / 90 / 135 / 180 / 225 / 270 / 315 / 360",
-                "CAST POINT:  0.05s"
+                "CAST POINT: 0.05s"
             ],
             "notes": [
                 "Units are invulnerable while affected by Tornado, and the damage is dealt when landing."
@@ -2482,7 +2482,7 @@
                 "MOVEMENT SLOW: 19% / 26% / 33% / 40%",
                 "ADDED NIGHT VISION RANGE: 400",
                 "SCEPTER MANA PER SECOND: 40",
-                "CAST POINT:  0s"
+                "CAST POINT: 0s"
             ],
             "notes": [
                 "Enemy units can only receive the Arctic Burn debuff once per cast.",
@@ -2507,7 +2507,7 @@
                 "SHATTER RADIUS: 500",
                 "MOVEMENT SLOW: 25%",
                 "SLOW DURATION: 4.0",
-                "CAST POINT:  0.3s"
+                "CAST POINT: 0.3s"
             ],
             "notes": [
                 "The primary projectile moves at 500 movespeed, or reaches the target in 1 second, whichever is faster up to 4000 speed.",
@@ -2531,7 +2531,7 @@
                 "CURSE DAMAGE REDUCTION: 100%",
                 "CURSE ATTACK SPEED: 70",
                 "CURSE DURATION: 3.25 / 4.0 / 4.75",
-                "CAST POINT:  0.3s"
+                "CAST POINT: 0.3s"
             ],
             "notes": [
                 "If the target dies to its allies, Winter Wyvern will receive credit for the kill.",
@@ -2553,7 +2553,7 @@
                 "DURATION: 4.0",
                 "BASE HEALTH REGEN: 20",
                 "MAX HEALTH REGEN: 3% / 4% / 5% / 6%",
-                "CAST POINT:  0.3s"
+                "CAST POINT: 0.3s"
             ],
             "notes": [
                 "Cannot be dispelled."
@@ -2598,7 +2598,7 @@
                 "DAMAGE PER SECOND: 10 / 16 / 22 / 28",
                 "MOVE SLOW: -10% / -20% / -30% / -40%",
                 "ATTACK SLOW: -10 / -20 / -30 / -40",
-                "CAST POINT:  0s"
+                "CAST POINT: 0s"
             ],
             "notes": [
                 "Successive casts don't increase slow or damage, but refresh the duration."
@@ -2625,7 +2625,7 @@
                 "SCEPTER MANA COST: 125",
                 "SCEPTER COOLDOWN: 10.0",
                 "SCEPTER CAST RANGE: 900",
-                "CAST POINT:  0.3s"
+                "CAST POINT: 0.3s"
             ],
             "notes": [
                 "Slow works on spell immune units."
@@ -2664,7 +2664,7 @@
             "stats": [
                 "RADIUS: 260",
                 "DAMAGE: 140 / 180 / 220 / 260",
-                "CAST POINT:  0s"
+                "CAST POINT: 0s"
             ],
             "notes": [
                 "Remnants take 1 second to materialize after the spell is cast.",
@@ -2709,7 +2709,7 @@
                 "SPEED: 1250 / 1875 / 2500",
                 "RADIUS: 125 / 200 / 275",
                 "MANA DRAIN PER UNIT: 0.7%",
-                "CAST POINT:  0.3s"
+                "CAST POINT: 0.3s"
             ],
             "notes": [
                 "Instant cast abilities can be used while traveling.",
@@ -2732,7 +2732,7 @@
                 "SELF SLOW DURATION: 3",
                 "DURATION: 1.0 / 1.5 / 2.0 / 2.5",
                 "SCEPTER RADIUS: 475",
-                "CAST POINT:  0.3s"
+                "CAST POINT: 0.3s"
             ],
             "cooldown": "21 20 19 18",
             "effects": [
@@ -2753,7 +2753,7 @@
                 "MOVEMENT SLOW: -16% / -32% / -48% / -64%",
                 "HERO DURATION: 1.5",
                 "CREEP DURATION: 7.0",
-                "CAST POINT:  0s"
+                "CAST POINT: 0s"
             ],
             "notes": [
                 "The slow duration is refreshed on successive casts."
@@ -2793,7 +2793,7 @@
                 "WIDTH: 250",
                 "SILENCE DURATION: 3 / 4 / 5 / 6",
                 "KNOCKBACK DURATION: 0.6 / 0.7 / 0.8 / 0.9",
-                "CAST POINT:  0.25s"
+                "CAST POINT: 0.25s"
             ],
             "effects": [
                 "Behavior: Point Target",
@@ -2808,7 +2808,7 @@
             "cooldown": "100",
             "stats": [
                 "RANGE DAMAGE BONUS: 20% / 26% / 32% / 38%",
-                "CAST POINT:  0s"
+                "CAST POINT: 0s"
             ],
             "effects": [
                 "Behavior: No Target"
@@ -2843,7 +2843,7 @@
                 "BONUS: 100% / 200% / 300% / 400%",
                 "DURATION: 14",
                 "SCEPTER JUMP DISTANCE: 900",
-                "CAST POINT:  0.69s"
+                "CAST POINT: 0.69s"
             ],
             "notes": [
                 "Bonus damage is based on base damage and that given by primary attribute.",
@@ -2865,7 +2865,7 @@
                 "DAMAGE: 160 / 210 / 270",
                 "RADIUS: 600",
                 "ECHO DAMAGE: 40 / 55 / 70",
-                "CAST POINT:  0s"
+                "CAST POINT: 0s"
             ],
             "notes": [
                 "Will not damage ethereal units, such as those in Ghost Form.",
@@ -2888,7 +2888,7 @@
                 "FISSURE RANGE: 1400",
                 "FISSURE DURATION: 8.0",
                 "STUN DURATION: 1.0 / 1.25 / 1.5 / 1.75",
-                "CAST POINT:  0.69s"
+                "CAST POINT: 0.69s"
             ],
             "notes": [
                 "Creeps will wait for Fissure to disappear. They will not attempt to walk around it.",
@@ -2916,7 +2916,7 @@
                 "ALLY SEARCH RADIUS: 225",
                 "MOVEMENT SPEED SLOW: 20% / 30% / 40% / 50%",
                 "CAST RANGE: 600 / 700 / 800 / 900",
-                "CAST POINT:  0.3s"
+                "CAST POINT: 0.3s"
             ],
             "effects": [
                 "Behavior: Unit Target",
@@ -2933,7 +2933,7 @@
             "cooldown": "60 50 40",
             "stats": [
                 "DURATION: 12 / 14 / 16",
-                "CAST POINT:  0.15s"
+                "CAST POINT: 0.15s"
             ],
             "effects": [
                 "Behavior: No Target"
@@ -2949,7 +2949,7 @@
                 "DURATION: 3.5 / 4.5 / 5.5 / 6.5",
                 "ATTACK SPEED BONUS: 50 / 60 / 70 / 80",
                 "EVASION BONUS: 100%",
-                "CAST POINT:  0.3s"
+                "CAST POINT: 0.3s"
             ],
             "effects": [
                 "Behavior: Point Target",
@@ -2969,7 +2969,7 @@
                 "WRAITH SPEED: 400",
                 "DAMAGE: 100 / 160 / 220 / 280",
                 "PURGE DURATION: 0.4 / 0.5 / 0.6 / 0.7",
-                "CAST POINT:  0.3s"
+                "CAST POINT: 0.3s"
             ],
             "effects": [
                 "Behavior: Point Target",
@@ -2989,7 +2989,7 @@
             "stats": [
                 "HEAL/DAMAGE: 90 / 160 / 230 / 300",
                 "RADIUS: 260",
-                "CAST POINT:  0.2s"
+                "CAST POINT: 0.2s"
             ],
             "effects": [
                 "Behavior: Unit Target",
@@ -3008,7 +3008,7 @@
                 "DURATION: 6 / 7 / 8",
                 "RADIUS: 600",
                 "SCEPTER DURATION: 8 / 9 / 10",
-                "CAST POINT:  0.5s"
+                "CAST POINT: 0.5s"
             ],
             "notes": [
                 "Affects allies with spell immunity.",
@@ -3045,7 +3045,7 @@
         "Repel": {
             "stats": [
                 "DURATION: 4 / 5 / 6 / 7",
-                "CAST POINT:  0.35s"
+                "CAST POINT: 0.35s"
             ],
             "notes": [
                 "Repel acts the same as other sources of spell immunity, and cannot be purged."
@@ -3069,7 +3069,7 @@
                 "REFLECT DURATION: 2.25",
                 "STUN DURATION: 0.6 / 1.2 / 1.8 / 2.4",
                 "DAMAGE REFLECTED: 100%",
-                "CAST POINT:  0s"
+                "CAST POINT: 0s"
             ],
             "notes": [
                 "The damage is calculated after all reductions.",
@@ -3091,7 +3091,7 @@
             "stats": [
                 "DAMAGE: 80 / 140 / 200 / 260",
                 "STUN DURATION: 1.6 / 2.0 / 2.4 / 2.8",
-                "CAST POINT:  0.4s"
+                "CAST POINT: 0.4s"
             ],
             "notes": [
                 "The spikes move at 1600 units per second, over 700 range.",
@@ -3117,7 +3117,7 @@
                 "BURROW IMPALE RANGE: 1225",
                 "BURROW IMPALE COOLDOWN: 7",
                 "BURROW SPIKED CARAPACE RANGE: 300",
-                "CAST POINT:  1.5s"
+                "CAST POINT: 1.5s"
             ],
             "notes": [
                 "Casting Vendetta will cancel burrow."
@@ -3154,7 +3154,7 @@
             "cooldown": "28 20 12 4",
             "stats": [
                 "INTELLIGENCE MULTIPLIER: 3.5 / 4.0 / 4.5 / 5.0",
-                "CAST POINT:  0.4s"
+                "CAST POINT: 0.4s"
             ],
             "effects": [
                 "Behavior: Unit Target",
@@ -3174,7 +3174,7 @@
             "stats": [
                 "SCEPTER COOLDOWN: 16",
                 "SCEPTER ALLY CAST RANGE: 1000",
-                "CAST POINT:  0.3s"
+                "CAST POINT: 0.3s"
             ],
             "notes": [
                 "Removes most negative buffs from Weaver.",
@@ -3200,7 +3200,7 @@
                 "ARMOR REDUCTION: 1",
                 "DURATION: 16.0",
                 "ATTACKS TO DESTROY: 8",
-                "CAST POINT:  0.3s"
+                "CAST POINT: 0.3s"
             ],
             "notes": [
                 "When a beetle latches on a target, it will remain there until it is killed or the duration expires.",
@@ -3237,7 +3237,7 @@
                 "RADIUS: 175",
                 "FADE TIME: 0.25",
                 "DURATION: 4",
-                "CAST POINT:  0s"
+                "CAST POINT: 0s"
             ],
             "notes": [
                 "Can only damage the same unit once per cast."
@@ -3259,7 +3259,7 @@
             "stats": [
                 "HEAL: 200 / 300 / 400",
                 "SCEPTER HOLY PERSUASION ANCIENTS: 1 / 2 / 3",
-                "CAST POINT:  0.3s"
+                "CAST POINT: 0.3s"
             ],
             "notes": [
                 "Heals Spell Immune units."
@@ -3280,7 +3280,7 @@
             "stats": [
                 "MAX UNITS: 1 / 2 / 3 / 4",
                 "HEALTH MINIMUM: 700 / 800 / 900 / 1000",
-                "CAST POINT:  0.3s"
+                "CAST POINT: 0.3s"
             ],
             "notes": [
                 "You may only cast this ability on Ancient Creeps with Aghanim's Scepter.",
@@ -3315,7 +3315,7 @@
             "cooldown": "24",
             "stats": [
                 "HERO/SELF TP DELAY: 6 / 5 / 4 / 3",
-                "CAST POINT:  0.3s"
+                "CAST POINT: 0.3s"
             ],
             "effects": [
                 "Behavior: Unit Target",
@@ -3334,7 +3334,7 @@
                 "DURATION: 8.0",
                 "MOVEMENT SLOW: -18% / -24% / -30% / -36%",
                 "BONUS DAMAGE: 18% / 24% / 30% / 36%",
-                "CAST POINT:  0.3s"
+                "CAST POINT: 0.3s"
             ],
             "effects": [
                 "Behavior: Unit Target",
@@ -3370,7 +3370,7 @@
             "stats": [
                 "DAMAGE RADIUS: 700",
                 "DAMAGE: 150 / 275 / 400",
-                "CAST POINT:  0.2s"
+                "CAST POINT: 0.2s"
             ],
             "notes": [
                 "If the infested unit dies before Lifestealer consumes it, no health is gained.",
@@ -3395,7 +3395,7 @@
             "stats": [
                 "ERUPT DAMAGE: 300",
                 "ERUPT RADIUS: 700",
-                "CAST POINT:  0.2s"
+                "CAST POINT: 0.2s"
             ],
             "effects": [
                 "Behavior: Unit Target",
@@ -3414,7 +3414,7 @@
                 "MAX SLOW: 70%",
                 "DURATION: 8",
                 "CAST RANGE: 200 / 300 / 400 / 500",
-                "CAST POINT:  0.2s"
+                "CAST POINT: 0.2s"
             ],
             "notes": [
                 "Open Wounds slows over 8 different steps: 70% / 70% / 60% / 50% / 30% / 10% / 10% / 10%, with the slow decreasing one step per second.",
@@ -3435,7 +3435,7 @@
             "stats": [
                 "ATTACK SPEED BONUS: 50 / 60 / 70 / 80",
                 "DURATION: 3 / 4 / 5 / 6",
-                "CAST POINT:  0s"
+                "CAST POINT: 0s"
             ],
             "notes": [
                 "Upon casting, many buffs and debuffs will be removed."
@@ -3459,7 +3459,7 @@
                 "MIN STOP DURATION: 0.5",
                 "MAX STOP DURATION: 2.5",
                 "RADIUS: 300",
-                "CAST POINT:  0s"
+                "CAST POINT: 0s"
             ],
             "effects": [
                 "Behavior: Channelled, Unit Target",
@@ -3477,7 +3477,7 @@
             "cooldown": "16 13 10 7",
             "stats": [
                 "DURATION: 3.0 / 3.5 / 4.0 / 4.5",
-                "CAST POINT:  0.3s"
+                "CAST POINT: 0.3s"
             ],
             "effects": [
                 "Behavior: Unit Target",
@@ -3492,7 +3492,7 @@
         "False Promise": {
             "stats": [
                 "DURATION: 7 / 8 / 9",
-                "CAST POINT:  0.3s"
+                "CAST POINT: 0.3s"
             ],
             "notes": [
                 "Delayed damage and healing will take armor and magic resistance reductions into account when received.",
@@ -3517,7 +3517,7 @@
                 "TOTAL HEAL: 99 / 198 / 297 / 396",
                 "DURATION: 9.0",
                 "SCEPTER COOLDOWN: 1.0",
-                "CAST POINT:  0.3s"
+                "CAST POINT: 0.3s"
             ],
             "notes": [
                 "The healing from Purifying Flames can be stacked with itself."
@@ -3546,7 +3546,7 @@
                 "DURATION: 5.0",
                 "SCEPTER DURATION: 7.0",
                 "SCEPTER PULSES: 28",
-                "CAST POINT:  0.05s"
+                "CAST POINT: 0.05s"
             ],
             "cooldown": "90 80 70",
             "effects": [
@@ -3565,7 +3565,7 @@
                 "RADIUS: 340",
                 "FORMATION DELAY: 1.2",
                 "DURATION: 2.6 / 3.2 / 3.8 / 4.4",
-                "CAST POINT:  0.05s"
+                "CAST POINT: 0.05s"
             ],
             "notes": [
                 "Spell Immune units can travel through the field."
@@ -3587,7 +3587,7 @@
                 "RADIUS: 240",
                 "STRIKES: 4",
                 "STRIKE INTERVAL: 2",
-                "CAST POINT:  0.05s"
+                "CAST POINT: 0.05s"
             ],
             "effects": [
                 "Behavior: Unit Target",
@@ -3603,7 +3603,7 @@
         "Glimpse": {
             "stats": [
                 "CAST RANGE: 600 / 1000 / 1400 / 1800",
-                "CAST POINT:  0.05s"
+                "CAST POINT: 0.05s"
             ],
             "notes": [
                 "The travel time is a function of the distance the target will travel."
@@ -3664,7 +3664,7 @@
                 "QUILL STACK DAMAGE: 30 / 32 / 34 / 36",
                 "STACK DURATION: 14.0",
                 "MAX DAMAGE: 450.0",
-                "CAST POINT:  0s"
+                "CAST POINT: 0s"
             ],
             "notes": [
                 "Quill Spray damage is not reduced by damage block abilities."
@@ -3689,7 +3689,7 @@
                 "MOVE SLOW PER STACK: 3% / 6% / 9% / 12%",
                 "STACK LIMIT: 4",
                 "SCEPTER RADIUS: 700",
-                "CAST POINT:  0.3s"
+                "CAST POINT: 0.3s"
             ],
             "cooldown": "1.5",
             "effects": [
@@ -3710,7 +3710,7 @@
                 "DURATION: 9 / 10 / 11 / 12",
                 "DAMAGE INCREASE: 25% / 30% / 35% / 40%",
                 "KILL HEAL PERCENTAGE: 19% / 21% / 23% / 25%",
-                "CAST POINT:  0.2s"
+                "CAST POINT: 0.2s"
             ],
             "notes": [
                 "Bloodrage can be cast on enemy and allied units, as well as Bloodseeker himself.",
@@ -3755,7 +3755,7 @@
                 "CAST RANGE: 1000",
                 "SCEPTER CHARGES: 2",
                 "SCEPTER REPLENISH TIME: 40",
-                "CAST POINT:  0.4s"
+                "CAST POINT: 0.4s"
             ],
             "cooldown": "60",
             "effects": [
@@ -3775,7 +3775,7 @@
                 "RITUAL AREA: 600",
                 "SILENCE DURATION: 3 / 4 / 5 / 6",
                 "DAMAGE: 120 / 160 / 200 / 240",
-                "CAST POINT:  0.4s"
+                "CAST POINT: 0.4s"
             ],
             "notes": [
                 "Total time is a 2.6 second delay plus a 0.4 second cast time."
@@ -3797,7 +3797,7 @@
             "stats": [
                 "RADIUS: 250",
                 "DAMAGE: 80 / 105 / 130 / 155",
-                "CAST POINT:  0s"
+                "CAST POINT: 0s"
             ],
             "notes": [
                 "This skill doesn't affect mechanical units.",
@@ -3820,7 +3820,7 @@
         "Healing Ward": {
             "stats": [
                 "MAX HEALTH PER SECOND: 2% / 3% / 4% / 5%",
-                "CAST POINT:  0.3s"
+                "CAST POINT: 0.3s"
             ],
             "notes": [
                 "The healing ward can be controlled.",
@@ -3854,7 +3854,7 @@
                 "SLASH JUMP RADIUS: 425",
                 "SCEPTER SLASHES: 6 / 9 / 12",
                 "SCEPTER COOLDOWN: 70.0",
-                "CAST POINT:  0.3s"
+                "CAST POINT: 0.3s"
             ],
             "notes": [
                 "You can use items during Omnislash.",
@@ -3880,7 +3880,7 @@
         "Shackleshot": {
             "stats": [
                 "SHACKLE DURATION: 1.5 / 2.25 / 3.0 / 3.75",
-                "CAST POINT:  0.15s"
+                "CAST POINT: 0.15s"
             ],
             "notes": [
                 "This spell can shackle two enemies together, stunning them both.",
@@ -3902,7 +3902,7 @@
             "stats": [
                 "DAMAGE: 120 / 220 / 320 / 420",
                 "RANGE: 2600",
-                "CAST POINT:  0s"
+                "CAST POINT: 0s"
             ],
             "notes": [
                 "Powershot will destroy trees in its area of effect."
@@ -3926,7 +3926,7 @@
                 "DURATION: 20",
                 "SCEPTER COOLDOWN: 15",
                 "SCEPTER DAMAGE REDUCTION: -30% / -15% / 0%",
-                "CAST POINT:  0s"
+                "CAST POINT: 0s"
             ],
             "notes": [
                 "Can target buildings and Spell Immune units."
@@ -3950,7 +3950,7 @@
                 "ENEMY SLOW: -8% / -16% / -24% / -30%",
                 "ENEMY SLOW RADIUS: 300",
                 "DURATION: 3 / 4 / 5 / 6",
-                "CAST POINT:  0.3s"
+                "CAST POINT: 0.3s"
             ],
             "notes": [
                 "The slow will affect enemies with spell immunity.",
@@ -3972,7 +3972,7 @@
             "stats": [
                 "TRANCE DURATION: 5.0",
                 "ATTACK SPEED: 60 / 120 / 180",
-                "CAST POINT:  0s"
+                "CAST POINT: 0s"
             ],
             "notes": [
                 "Doesn't work on illusions."
@@ -3994,7 +3994,7 @@
                 "BASH CHANCE: 10%",
                 "BASH STUN DURATION: 0.8 / 1.2 / 1.6 / 2.0",
                 "BASH BONUS DAMAGE: 20 / 30 / 40 / 50",
-                "CAST POINT:  0.2s"
+                "CAST POINT: 0.2s"
             ],
             "notes": [
                 "The bash stun goes through spell immunity.",
@@ -4016,7 +4016,7 @@
                 "BLIND DURATION: 4 / 5 / 6 / 7",
                 "MISS CHANCE: 60%",
                 "WHIRL DURATION: 3.0",
-                "CAST POINT:  0s"
+                "CAST POINT: 0s"
             ],
             "notes": [
                 "Only available in melee mode.",
@@ -4050,7 +4050,7 @@
                 "AXE DAMAGE: 75",
                 "SLOW DURATION: 3.0 / 3.75 / 4.5 / 5.25",
                 "MOVEMENT SLOW: 30%",
-                "CAST POINT:  0.2s"
+                "CAST POINT: 0.2s"
             ],
             "notes": [
                 "Only available in ranged mode.",
@@ -4075,7 +4075,7 @@
                 "ATTACKS: 3 / 4 / 5 / 6",
                 "BONUS ATTACK SPEED: 400",
                 "DURATION: 15",
-                "CAST POINT:  0.3s"
+                "CAST POINT: 0.3s"
             ],
             "notes": [
                 "Overpower isn't removed by Black King Bar."
@@ -4095,7 +4095,7 @@
                 "DAMAGE: 90 / 140 / 190 / 240",
                 "RADIUS: 385",
                 "SLOW: -25% / -35% / -45% / -55%",
-                "CAST POINT:  0.3s"
+                "CAST POINT: 0.3s"
             ],
             "effects": [
                 "Behavior: No Target",
@@ -4148,7 +4148,7 @@
             "stats": [
                 "DAMAGE: 60 / 105 / 150",
                 "SCEPTER BOUNCES: 4",
-                "CAST POINT:  0.35s"
+                "CAST POINT: 0.35s"
             ],
             "notes": [
                 "The Death Ward is invulnerable, and is only destroyed if Witch Doctor is interrupted or its duration expires.",
@@ -4192,7 +4192,7 @@
                 "RADIUS: 180",
                 "DURATION: 12",
                 "LOST HEALTH BURST DAMAGE: 16% / 24% / 32% / 40%",
-                "CAST POINT:  0.35s"
+                "CAST POINT: 0.35s"
             ],
             "notes": [
                 "If an affected hero's health has increased above the amount they had when Maledict was cast, the burst damage will be 0."
@@ -4215,7 +4215,7 @@
                 "CREEP STUN DURATION: 5",
                 "HERO DAMAGE: 50",
                 "BOUNCES: 2 / 4 / 6 / 8",
-                "CAST POINT:  0.35s"
+                "CAST POINT: 0.35s"
             ],
             "notes": [
                 "Targets can be hit multiple times, as long as another unit is struck in between the bounces."
@@ -4244,7 +4244,7 @@
                 "SCEPTER TOTAL BEAMS: 6 / 12 / 18",
                 "SCEPTER DURATION: 1.8 / 3.6 / 5.4",
                 "SCEPTER CAST RANGE: 2500",
-                "CAST POINT:  0.6s"
+                "CAST POINT: 0.6s"
             ],
             "notes": [
                 "Eclipse doesn't work if Luna doesn't have any points in Lucent Beam.",
@@ -4284,7 +4284,7 @@
             "stats": [
                 "STUN DURATION: 0.8",
                 "BEAM DAMAGE: 75 / 150 / 225 / 300",
-                "CAST POINT:  0.6s"
+                "CAST POINT: 0.6s"
             ],
             "effects": [
                 "Behavior: Unit Target",
@@ -4318,7 +4318,7 @@
                 "BONUS DAMAGE: 60 / 90 / 120",
                 "LIFESTEAL: 60% / 90% / 120%",
                 "DURATION: 14",
-                "CAST POINT:  0.2s"
+                "CAST POINT: 0.2s"
             ],
             "notes": [
                 "Fully stacks with other sources of lifesteal."
@@ -4339,7 +4339,7 @@
                 "MOVE INCREASE: 40% / 50% / 60% / 70%",
                 "MAX WEB CHARGES: 1 / 2 / 3 / 4",
                 "CHARGE RESTORE TIME: 40.0",
-                "CAST POINT:  0.4s"
+                "CAST POINT: 0.4s"
             ],
             "notes": [
                 "Has a fade time of 2 seconds.",
@@ -4360,7 +4360,7 @@
                 "LIFETIME: 60",
                 "DAMAGE: 70 / 140 / 210 / 280",
                 "COUNT: 1 / 2 / 3 / 4",
-                "CAST POINT:  0.2s"
+                "CAST POINT: 0.2s"
             ],
             "notes": [
                 "If the target is killed within 2 seconds of being hit with this skill, the Spiderlings will spawn.",
@@ -4400,7 +4400,7 @@
             "stats": [
                 "TREANT COUNT: 2 / 3 / 4 / 5",
                 "TREANT DURATION: 60",
-                "CAST POINT:  0.5s"
+                "CAST POINT: 0.5s"
             ],
             "notes": [
                 "Nature's Call can only create as many treants as there are trees in the target area."
@@ -4418,7 +4418,7 @@
             "stats": [
                 "DURATION: 3 / 4 / 5 / 6",
                 "CAST RANGE: 625 / 700 / 775 / 850",
-                "CAST POINT:  0.35s"
+                "CAST POINT: 0.35s"
             ],
             "notes": [
                 "Sprout can be cast on any unit, or the ground.",
@@ -4442,7 +4442,7 @@
                 "ADDED DAMAGE PER BOUNCE: 11%",
                 "SCEPTER DAMAGE: 135 / 170 / 205",
                 "SCEPTER TREANT SPAWN TIMER: 4",
-                "CAST POINT:  0.5s"
+                "CAST POINT: 0.5s"
             ],
             "notes": [
                 "Wrath of Nature will not hit units out of vision.",
@@ -4457,7 +4457,7 @@
             ],
             "agha": "Aghanim Upgrade: Increases damage. If a unit is killed by Wrath of Nature, or within 4 seconds thereafter, a Nature's Call treant will spawn. These treants' health and damage are based on the current level of Nature's Call. If a hero is killed, a Greater Treant will be created, which has 3 times as much health and damage.",
             "description": [
-                "Damaging energy bounces around the map, striking enemies close to the CAST POINT:  that are in vision. Each enemy hit beyond the first adds damage.",
+                "Damaging energy bounces around the map, striking enemies close to the CAST POINT: that are in vision. Each enemy hit beyond the first adds damage.",
                 "Upgradable by Aghanim's Scepter."
             ]
         },
@@ -4499,7 +4499,7 @@
                 "RADIUS: 225",
                 "SPEED: 1600 / 2000 / 2400 / 2800",
                 "DAMAGE: 100 / 140 / 180 / 220",
-                "CAST POINT:  0.3s"
+                "CAST POINT: 0.3s"
             ],
             "effects": [
                 "Behavior: Point Target",
@@ -4518,7 +4518,7 @@
                 "DAMAGE: 100 / 150 / 200 / 250",
                 "STAT LOSS PERCENT: 15%",
                 "STAT LOSS DURATION: 14.0",
-                "CAST POINT:  0s"
+                "CAST POINT: 0s"
             ],
             "effects": [
                 "Behavior: No Target",
@@ -4538,7 +4538,7 @@
                 "DAMAGE PER SECOND: 50 / 75 / 100",
                 "SLOW: 5%",
                 "MANA COST PER SECOND: 20 / 25 / 30",
-                "CAST POINT:  0.3s"
+                "CAST POINT: 0.3s"
             ],
             "notes": [
                 "The Chakram will return if Timbersaw runs out of mana or moves over 2000 distance away."
@@ -4584,7 +4584,7 @@
                 "DELAY: 1.5",
                 "RADIUS: 325",
                 "DAMAGE: 75 / 150 / 225 / 300",
-                "CAST POINT:  0.001s"
+                "CAST POINT: 0.001s"
             ],
             "notes": [
                 "1.5 seconds after cast, a series of 10 pulses separated by 0.1 seconds deal the damage.",
@@ -4654,7 +4654,7 @@
                 "MOVEMENT SLOW: -12%",
                 "SPEED BONUS: 12%",
                 "DAMAGE PER SECOND: 16 / 24 / 32 / 40",
-                "CAST POINT:  0.3s"
+                "CAST POINT: 0.3s"
             ],
             "notes": [
                 "Destroying buildings will also remove the debuff.",
@@ -4677,7 +4677,7 @@
                 "RADIUS: 300",
                 "BONUS ARMOR: 40",
                 "DURATION: 2.0 / 2.4 / 2.8 / 3.2",
-                "CAST POINT:  0.4s"
+                "CAST POINT: 0.4s"
             ],
             "notes": [
                 "Affects units with spell immunity."
@@ -4704,7 +4704,7 @@
                 "SCEPTER COOLDOWN: 6",
                 "SCEPTER KILL THRESHOLD: 300 / 425 / 550",
                 "SCEPTER SPEED DURATION: 10.0",
-                "CAST POINT:  0.3s"
+                "CAST POINT: 0.3s"
             ],
             "cooldown": "75 65 55",
             "effects": [
@@ -4760,7 +4760,7 @@
             "stats": [
                 "STUN DURATION: 1.2 / 1.4 / 1.6 / 1.8",
                 "DAMAGE: 100 / 175 / 250 / 325",
-                "CAST POINT:  0.3s"
+                "CAST POINT: 0.3s"
             ],
             "effects": [
                 "Behavior: Unit Target",
@@ -4780,7 +4780,7 @@
                 "SCEPTER COOLDOWN: 10.0",
                 "SCEPTER ILLUSION DAMAGE DEALT: 50.0%",
                 "SCEPTER ILLUSION DAMAGE TAKEN: 150%",
-                "CAST POINT:  0.3s"
+                "CAST POINT: 0.3s"
             ],
             "notes": [
                 "Works on Spell Immune units.",
@@ -4805,7 +4805,7 @@
                 "ARMOR REDUCTION: -3 / -4 / -5 / -6",
                 "DEBUFF DURATION: 15.0",
                 "VISION DURATION: 3",
-                "CAST POINT:  0.3s"
+                "CAST POINT: 0.3s"
             ],
             "effects": [
                 "Behavior: Point Target",
@@ -4847,7 +4847,7 @@
                 "SLOW DURATION: 3 / 4 / 5",
                 "MAX HP AS DAMAGE: 30% / 40% / 50%",
                 "SCEPTER SLOW/DISARM DURATION: 4 / 5 / 6",
-                "CAST POINT:  0.4s"
+                "CAST POINT: 0.4s"
             ],
             "cooldown": "100",
             "effects": [
@@ -4869,7 +4869,7 @@
                 "RADIUS: 500",
                 "SLEEP DURATION: 2 / 3 / 4 / 5",
                 "STOMP DAMAGE: 70 / 100 / 130 / 160",
-                "CAST POINT:  0.4s"
+                "CAST POINT: 0.4s"
             ],
             "effects": [
                 "Behavior: Channelled, No Target",
@@ -4892,7 +4892,7 @@
                 "BONUS SPEED(HEROES): 5%",
                 "BONUS DAMAGE(CREEPS): 6 / 9 / 12 / 15",
                 "BONUS DAMAGE(HEROES): 12 / 24 / 36 / 48",
-                "CAST POINT:  0.4s"
+                "CAST POINT: 0.4s"
             ],
             "effects": [
                 "Behavior: Point Target",
@@ -4930,7 +4930,7 @@
                 "DURATION: 15.0",
                 "MAX DAMAGE ABSORBED: 110 / 140 / 170 / 200",
                 "BURST RADIUS: 675",
-                "CAST POINT:  0.4s"
+                "CAST POINT: 0.4s"
             ],
             "effects": [
                 "Behavior: Unit Target",
@@ -4948,7 +4948,7 @@
             "stats": [
                 "SELF DAMAGE: 75 / 100 / 125 / 150",
                 "DAMAGE/HEAL: 100 / 150 / 200 / 250",
-                "CAST POINT:  0.25s"
+                "CAST POINT: 0.25s"
             ],
             "effects": [
                 "Behavior: Unit Target",
@@ -5007,7 +5007,7 @@
             "stats": [
                 "DAMAGE: 80 / 100 / 120 / 140",
                 "RADIUS: 375",
-                "CAST POINT:  1.5s"
+                "CAST POINT: 1.5s"
             ],
             "notes": [
                 "Can be cast through the minimap.",
@@ -5030,7 +5030,7 @@
                 "DURATION: 2.0",
                 "RADIUS: 220",
                 "RANGE: 500 / 750 / 1000 / 1250",
-                "CAST POINT:  0.3s"
+                "CAST POINT: 0.3s"
             ],
             "notes": [
                 "While preventing units from going invisible, Earthbind won't hit units that are already invisible.",
@@ -5067,7 +5067,7 @@
         "Rearm": {
             "stats": [
                 "TIME TO REARM: 3.0 / 1.5 / 0.75",
-                "CAST POINT:  0.53s"
+                "CAST POINT: 0.53s"
             ],
             "notes": [
                 "Rearm works on all items except Black King Bar, Arcane Boots, Helm of the Dominator, Hand of Midas, Refresher Orb, Linken's Sphere, Pipe of Insight, and Necronomicon."
@@ -5087,7 +5087,7 @@
                 "DAMAGE: 125 / 200 / 275 / 350",
                 "TARGETS: 2",
                 "SCEPTER TARGETS: 4",
-                "CAST POINT:  0s"
+                "CAST POINT: 0s"
             ],
             "cooldown": "25",
             "effects": [
@@ -5110,7 +5110,7 @@
                 "LASER DAMAGE: 80 / 160 / 240 / 320",
                 "CAST RANGE: 650",
                 "SCEPTER REFRACT RADIUS: 650",
-                "CAST POINT:  0.4s"
+                "CAST POINT: 0.4s"
             ],
             "cooldown": "14",
             "effects": [
@@ -5130,7 +5130,7 @@
                 "DAMAGE: 16 / 24 / 32 / 40",
                 "RADIUS: 900",
                 "DURATION: 6.0",
-                "CAST POINT:  0.53s"
+                "CAST POINT: 0.53s"
             ],
             "notes": [
                 "Robots spawn at a rate of 24 per second."
@@ -5178,7 +5178,7 @@
                 "STUN DURATION: 2.17",
                 "RANGE: 350 / 450 / 550 / 650",
                 "SCEPTER RANGE: 700 / 900 / 1100 / 1300",
-                "CAST POINT:  0s"
+                "CAST POINT: 0s"
             ],
             "cooldown": "11",
             "effects": [
@@ -5198,7 +5198,7 @@
                 "DAMAGE: 25 / 50 / 75 / 100",
                 "INVISIBILITY DELAY: 1.5",
                 "RADIUS: 525",
-                "CAST POINT:  0s"
+                "CAST POINT: 0s"
             ],
             "notes": [
                 "Sand Storm can be used to dodge projectiles."
@@ -5221,7 +5221,7 @@
                 "MOVEMENT SLOW: -30%",
                 "ATTACK SLOW: -30",
                 "SLOW DURATION: 3",
-                "CAST POINT:  0s"
+                "CAST POINT: 0s"
             ],
             "notes": [
                 "The pulses are centered on Sand King, not where he first casted the spell.",
@@ -5246,7 +5246,7 @@
                 "BASE ATTACK TIME: 1.25 / 1.2 / 1.15 / 1.1",
                 "DAMAGE: 18 / 29 / 37 / 46",
                 "HP: 200 / 240 / 280 / 320",
-                "CAST POINT:  0.3s"
+                "CAST POINT: 0.3s"
             ],
             "notes": [
                 "If wolves are summoned during the duration of Howl, they will receive the buff until the end of its duration.",
@@ -5270,7 +5270,7 @@
                 "MINION BONUS DAMAGE: 4 / 6 / 8 / 10",
                 "HERO BONUS HEALTH: 50 / 100 / 150 / 200",
                 "MINION BONUS HEALTH: 25 / 50 / 75 / 100",
-                "CAST POINT:  0.3s"
+                "CAST POINT: 0.3s"
             ],
             "effects": [
                 "Behavior: No Target"
@@ -5322,7 +5322,7 @@
             "stats": [
                 "DAMAGE: 150 / 225 / 300 / 375",
                 "TRACK BOUNCE RANGE: 1200",
-                "CAST POINT:  0.3s"
+                "CAST POINT: 0.3s"
             ],
             "notes": [
                 "This spell interrupts channeling abilities."
@@ -5345,7 +5345,7 @@
                 "DURATION: 20 / 25 / 30 / 35",
                 "FADE TIME: 1.0 / 0.75 / 0.5 / 0.25",
                 "BONUS DAMAGE: 30 / 60 / 90 / 120",
-                "CAST POINT:  0s"
+                "CAST POINT: 0s"
             ],
             "notes": [
                 "Will not break most channeling of spells upon activation.",
@@ -5385,7 +5385,7 @@
                 "BONUS GOLD FOR ALLIES: 40 / 80 / 120",
                 "DURATION: 30",
                 "CAST RANGE: 1200",
-                "CAST POINT:  0.3s"
+                "CAST POINT: 0.3s"
             ],
             "notes": [
                 "Bounty Hunter will get the bonus gold if the target dies while Track is active, regardless of how it died.",
@@ -5413,7 +5413,7 @@
                 "SLOW: 25% / 30% / 35% / 40%",
                 "SLOW DURATION: 2.5 / 2.75 / 3.0 / 3.25",
                 "DAMAGE: 70 / 140 / 210 / 280",
-                "CAST POINT:  0.3s"
+                "CAST POINT: 0.3s"
             ],
             "notes": [
                 "Doesn't affect Spell Immune units."
@@ -5435,7 +5435,7 @@
                 "DURATION: 40",
                 "BONUS DAMAGE: 20% / 30% / 40% / 50%",
                 "CLEAVE DAMAGE: 20% / 30% / 40% / 50%",
-                "CAST POINT:  0.3s"
+                "CAST POINT: 0.3s"
             ],
             "notes": [
                 "The bonus damage is based only on base damage and damage from primary attributes.",
@@ -5461,7 +5461,7 @@
                 "DAMAGE: 50 / 125 / 200",
                 "HERO STUN DURATION: 2.25 / 3.0 / 3.75",
                 "CREEP STUN DURATION: 3 / 4 / 5",
-                "CAST POINT:  0.3s"
+                "CAST POINT: 0.3s"
             ],
             "notes": [
                 "Disable and pull work through spell immunity."
@@ -5481,7 +5481,7 @@
             "cooldown": "10 9 8 7",
             "stats": [
                 "DAMAGE: 75 / 150 / 225 / 300",
-                "CAST POINT:  0.3s"
+                "CAST POINT: 0.3s"
             ],
             "effects": [
                 "Behavior: Point Target, Unit Target",
@@ -5522,7 +5522,7 @@
                 "DAMAGE MIN: 30 / 50 / 70 / 90",
                 "DAMAGE MAX: 160 / 230 / 300 / 370",
                 "RADIUS: 700",
-                "CAST POINT:  0s"
+                "CAST POINT: 0s"
             ],
             "effects": [
                 "Behavior: No Target",
@@ -5543,7 +5543,7 @@
                 "ARMOR REDUCTION: 1",
                 "DAMAGE: 40 / 55 / 70",
                 "SCEPTER STRIKE INTERVAL: 0.6 / 0.5 / 0.4",
-                "CAST POINT:  0.3s"
+                "CAST POINT: 0.3s"
             ],
             "notes": [
                 "Each blast targets the lowest health enemy unit within range."
@@ -5565,7 +5565,7 @@
                 "LINK DURATION: 8.0",
                 "BUFF DURATION: 18",
                 "DAMAGE DRAIN RATE: 7 / 14 / 21 / 28",
-                "CAST POINT:  0.3s"
+                "CAST POINT: 0.3s"
             ],
             "notes": [
                 "The link is broken when either unit dies or the distance between them becomes greater than 800 (1020 with Aether Lens).",
@@ -5591,7 +5591,7 @@
                 "ILLUSION DURATION: 8 / 10 / 12 / 14",
                 "ILLUSION DAMAGE: 30% / 45% / 60% / 75%",
                 "ILLUSION DAMAGE TAKEN: 200.0%",
-                "CAST POINT:  0.3s"
+                "CAST POINT: 0.3s"
             ],
             "effects": [
                 "Behavior: Unit Target",
@@ -5609,7 +5609,7 @@
                 "BONUS DAMAGE: 20% / 30% / 40% / 50%",
                 "RADIUS: 450",
                 "DURATION: 12",
-                "CAST POINT:  0.3s"
+                "CAST POINT: 0.3s"
             ],
             "effects": [
                 "Behavior: Point Target",
@@ -5628,7 +5628,7 @@
                 "MAX STACKS TO MULTIPLY: 5",
                 "RADIUS: 190",
                 "DURATION: 10",
-                "CAST POINT:  0.3s"
+                "CAST POINT: 0.3s"
             ],
             "notes": [
                 "Shadow Poison can affect units under Disruption."
@@ -5650,7 +5650,7 @@
                 "PURGE DAMAGE: 200 / 300 / 400",
                 "DURATION: 5",
                 "SCEPTER CHARGE RESTORE TIME: 40",
-                "CAST POINT:  0.3s"
+                "CAST POINT: 0.3s"
             ],
             "notes": [
                 "Demonic Purge will slow Spell Immune units."
@@ -5694,7 +5694,7 @@
                 "SCEPTER RANGE: 850",
                 "SCEPTER BASH RADIUS: 250",
                 "SCEPTER COOLDOWN: 20",
-                "CAST POINT:  1.2s"
+                "CAST POINT: 1.2s"
             ],
             "notes": [
                 "Spirit Breaker appears behind the target to deliver the bash."
@@ -5716,7 +5716,7 @@
             "stats": [
                 "CHARGE SPEED: 600 / 650 / 700 / 750",
                 "STUN DURATION: 1.2 / 1.6 / 2.0 / 2.4",
-                "CAST POINT:  0.47s"
+                "CAST POINT: 0.47s"
             ],
             "notes": [
                 "Spirit Breaker passes through trees, cliffs, and units.",
@@ -5762,7 +5762,7 @@
             "stats": [
                 "DURATION: 20 / 25 / 30 / 35",
                 "BONUS MOVEMENT SPEED: 11% / 22% / 33% / 44%",
-                "CAST POINT:  0s"
+                "CAST POINT: 0s"
             ],
             "notes": [
                 "Will not break most channeling of spells or items upon activation.",
@@ -5782,7 +5782,7 @@
             "stats": [
                 "DURATION: 4 / 6 / 8 / 10",
                 "BONUS ATTACK SPEED: 130",
-                "CAST POINT:  0s"
+                "CAST POINT: 0s"
             ],
             "effects": [
                 "Behavior: No Target"
@@ -5795,7 +5795,7 @@
         "Searing Arrows": {
             "stats": [
                 "BONUS DAMAGE: 30 / 40 / 50 / 60",
-                "CAST POINT:  0s"
+                "CAST POINT: 0s"
             ],
             "notes": [
                 "Searing Arrows deal damage to structures.",
@@ -5818,7 +5818,7 @@
                 "DURATION: 35.0",
                 "HEALTH GAIN: 50% / 65% / 80%",
                 "DAMAGE GAIN: 5.0% / 6.5% / 8.0%",
-                "CAST POINT:  0.5s"
+                "CAST POINT: 0.5s"
             ],
             "notes": [
                 "If the target is an enemy, Clinkz will gain the correct experience and gold.",
@@ -5844,7 +5844,7 @@
                 "MANA REGEN REDUCTION: 0.25 / 0.5 / 0.75 / 1.0",
                 "ATTACKS TO DESTROY: 4",
                 "WARD DURATION: 30",
-                "CAST POINT:  0.2s"
+                "CAST POINT: 0.2s"
             ],
             "notes": [
                 "Nether Ward deals damage before the actual spell is cast, so if the caster dies the spell will have no effect.",
@@ -5867,7 +5867,7 @@
                 "BLAST DELAY: 0.9",
                 "RADIUS: 400",
                 "BLAST DAMAGE: 100 / 175 / 250 / 325",
-                "CAST POINT:  0.2s"
+                "CAST POINT: 0.2s"
             ],
             "notes": [
                 "Damage is delayed by 0.9 seconds."
@@ -5890,7 +5890,7 @@
                 "CAST RANGE: 900 / 1050 / 1200",
                 "MAX DURATION: 10",
                 "SCEPTER DRAIN PER SECOND: 180 / 240 / 300",
-                "CAST POINT:  0.2s"
+                "CAST POINT: 0.2s"
             ],
             "notes": [
                 "HP drained depends on the actual damage dealt.",
@@ -5916,7 +5916,7 @@
                 "ENEMY INCREASED MAGIC DAMAGE: -30% / -40% / -50% / -60%",
                 "ENEMY MOVE SLOW: -30% / -40% / -50% / -60%",
                 "DURATION: 3.5",
-                "CAST POINT:  0.2s"
+                "CAST POINT: 0.2s"
             ],
             "notes": [
                 "Only magical and pure damage can affect a unit under the effects of Decrepify.",
@@ -5957,7 +5957,7 @@
             "cooldown": "60",
             "stats": [
                 "DURATION: 20.0",
-                "CAST POINT:  0.25s"
+                "CAST POINT: 0.25s"
             ],
             "effects": [
                 "Behavior: Unit Target"
@@ -5975,7 +5975,7 @@
                 "STUN MIN: 0.25",
                 "STUN MAX: 1.25 / 2.25 / 3.25 / 4.25",
                 "CAST RANGE: 600 / 700 / 800 / 900",
-                "CAST POINT:  0.25s"
+                "CAST POINT: 0.25s"
             ],
             "notes": [
                 "Knocks the target back 100 - 300 units.",
@@ -6016,7 +6016,7 @@
             "cooldown": "11",
             "stats": [
                 "DAMAGE: 100 / 175 / 250 / 325",
-                "CAST POINT:  0.25s"
+                "CAST POINT: 0.25s"
             ],
             "effects": [
                 "Behavior: Point Target",
@@ -6034,7 +6034,7 @@
                 "REPLICATE DAMAGE: 80.0%",
                 "REPLICATE DAMAGE TAKEN: 100%",
                 "CAST RANGE: 700 / 1100 / 1500",
-                "CAST POINT:  0.25s"
+                "CAST POINT: 0.25s"
             ],
             "notes": [
                 "You can't target yourself with Replicate."
@@ -6057,7 +6057,7 @@
                 "DISTANCE: 600 / 700 / 800 / 900",
                 "MOVEMENT BONUS: 4% / 8% / 12% / 16%",
                 "ATTACK SPEED BONUS: 8 / 16 / 24 / 32",
-                "CAST POINT:  0s"
+                "CAST POINT: 0s"
             ],
             "effects": [
                 "Behavior: No Target"
@@ -6074,7 +6074,7 @@
                 "MINIMUM STUN: 0.01",
                 "MAXIMUM STUN: 5.0",
                 "MAXIMUM BONUS DAMAGE: 140",
-                "CAST POINT:  0.5s"
+                "CAST POINT: 0.5s"
             ],
             "notes": [
                 "For every 150 distance the arrow travels, the stun duration upon impact increases by 0.5 seconds, and the bonus damage added increases by 14.",
@@ -6097,7 +6097,7 @@
                 "DAMAGE: 75 / 150 / 225 / 300",
                 "RADIUS: 650",
                 "SCEPTER INTERVAL: 10.0",
-                "CAST POINT:  0.5s"
+                "CAST POINT: 0.5s"
             ],
             "notes": [
                 "Starstorm is not blocked by Linken's Sphere.",
@@ -6120,7 +6120,7 @@
             "stats": [
                 "FADE DELAY: 2.5 / 2.0 / 1.5",
                 "DURATION: 15.0",
-                "CAST POINT:  0.5s"
+                "CAST POINT: 0.5s"
             ],
             "notes": [
                 "Units affected will not auto attack enemies.",
@@ -6161,7 +6161,7 @@
                 "BONUS SPEED (HEROES): 9%",
                 "SPEED DURATION: 7.0",
                 "RADIUS: 330",
-                "CAST POINT:  0.3s"
+                "CAST POINT: 0.3s"
             ],
             "effects": [
                 "Behavior: Point Target",
@@ -6179,7 +6179,7 @@
                 "DURATION: 5.0",
                 "BONUS ATTACK SPEED: 65 / 90 / 115 / 140",
                 "HP REGEN: 30 / 40 / 50 / 60",
-                "CAST POINT:  0.2s"
+                "CAST POINT: 0.2s"
             ],
             "effects": [
                 "Behavior: Unit Target",
@@ -6198,7 +6198,7 @@
                 "DURATION: 4.0 / 4.75 / 5.5",
                 "SCEPTER DURATION: 6 / 7 / 8",
                 "BONUS DAMAGE: 10 / 14 / 18",
-                "CAST POINT:  0.3s"
+                "CAST POINT: 0.3s"
             ],
             "notes": [
                 "Duels will end if the units are pushed 2000 units apart."
@@ -6221,7 +6221,7 @@
             "stats": [
                 "RADIUS: 250 / 350 / 450 / 550",
                 "DAMAGE: 40 / 80 / 120 / 160",
-                "CAST POINT:  0.4s"
+                "CAST POINT: 0.4s"
             ],
             "notes": [
                 "This ability interrupts channeling.",
@@ -6243,7 +6243,7 @@
         "Surge": {
             "stats": [
                 "DURATION: 3.0 / 4.5 / 6.0 / 7.5",
-                "CAST POINT:  0.4s"
+                "CAST POINT: 0.4s"
             ],
             "notes": [
                 "Units with Surge cannot be slowed unless the Surge effect is removed."
@@ -6269,7 +6269,7 @@
                 "SCEPTER REPLICA DAMAGE: 100% / 120% / 140%",
                 "MOVEMENT SLOW: 75%",
                 "SLOW DURATION: 1.0",
-                "CAST POINT:  0.4s"
+                "CAST POINT: 0.4s"
             ],
             "notes": [
                 "Doesn't create illusions from other illusions, or Meepo clones.",
@@ -6292,7 +6292,7 @@
                 "RADIUS: 250",
                 "DAMAGE PER SECOND: 30 / 50 / 70 / 90",
                 "DURATION: 25.0",
-                "CAST POINT:  0.4s"
+                "CAST POINT: 0.4s"
             ],
             "notes": [
                 "Deals small amounts of damage in 0.1 intervals.",
@@ -6342,7 +6342,7 @@
                 "ILLUSION DAMAGE TAKEN: 400%",
                 "SCEPTER BOUNCE RADIUS: 400",
                 "SCEPTER BOUNCES: 5",
-                "CAST POINT:  0.3s"
+                "CAST POINT: 0.3s"
             ],
             "notes": [
                 "Nearby illusions will mimic the cast animation."
@@ -6366,7 +6366,7 @@
                 "ILLUSION GATHER RANGE: 900",
                 "REAPPEAR DELAY: 1.0",
                 "DOPPELGANGER DURATION: 8.0",
-                "CAST POINT:  0.1s"
+                "CAST POINT: 0.1s"
             ],
             "notes": [
                 "This ability can be used to dodge projectiles, and dispell debuffs.",
@@ -6407,7 +6407,7 @@
             "stats": [
                 "DAMAGE: 75 / 150 / 225 / 300",
                 "RANGE: 810",
-                "CAST POINT:  0.5s"
+                "CAST POINT: 0.5s"
             ],
             "notes": [
                 "Can hit units up to 1110 range away."
@@ -6432,7 +6432,7 @@
                 "ENEMY SLOW: 5% / 10% / 15% / 20%",
                 "MAX CHARGES: 1 / 2 / 3 / 4",
                 "CHARGE RESTORE TIME: 45",
-                "CAST POINT:  0.1s"
+                "CAST POINT: 0.1s"
             ],
             "notes": [
                 "Cannot cast multiple on same target."
@@ -6455,7 +6455,7 @@
                 "SPIRITS: 8 / 16 / 24",
                 "LIFE DRAIN: 25%",
                 "SPIRIT DAMAGE: 55",
-                "CAST POINT:  0.5s"
+                "CAST POINT: 0.5s"
             ],
             "notes": [
                 "Radius represents the area in which the spirits will acquire targets around Death Prophet.",
@@ -6476,7 +6476,7 @@
             "stats": [
                 "RADIUS: 425",
                 "DURATION: 3 / 4 / 5 / 6",
-                "CAST POINT:  0.5s"
+                "CAST POINT: 0.5s"
             ],
             "notes": [
                 "Doesn't prevent usage of items."
@@ -6501,7 +6501,7 @@
                 "MAGNETIZE DURATION: 6.0",
                 "REMNANT REFRESH RADIUS: 400",
                 "REMNANT EXPLOSION RADIUS: 600",
-                "CAST POINT:  0.01s"
+                "CAST POINT: 0.01s"
             ],
             "effects": [
                 "Behavior: No Target",
@@ -6519,7 +6519,7 @@
                 "REMNANT DURATION: 3.0",
                 "SHATTER DAMAGE: 300.0",
                 "SHATTER RADIUS: 300.0",
-                "CAST POINT:  0.2s"
+                "CAST POINT: 0.2s"
             ],
             "effects": [
                 "Behavior: Unit Target",
@@ -6540,7 +6540,7 @@
                 "DAMAGE: 100",
                 "MOVEMENT SLOW: 80%",
                 "SLOW DURATION: 1.4 / 1.6 / 1.8 / 2.0",
-                "CAST POINT:  0.01s"
+                "CAST POINT: 0.01s"
             ],
             "notes": [
                 "Rolling over a Stone Remnant will destroy the Remnant.",
@@ -6563,7 +6563,7 @@
                 "MAX CHARGES: 6",
                 "CHARGE RESTORE TIME: 30.0",
                 "DURATION: 120.0",
-                "CAST POINT:  0s"
+                "CAST POINT: 0s"
             ],
             "effects": [
                 "Behavior: Point Target"
@@ -6581,7 +6581,7 @@
                 "TRAVEL SPEED: 900",
                 "DISTANCE: 500 / 600 / 700 / 800",
                 "DISTANCE (REMNANT): 2000.0",
-                "CAST POINT:  0.01s"
+                "CAST POINT: 0.01s"
             ],
             "notes": [
                 "Stun is only applied if the initial target is a Stone Remnant.",
@@ -6606,7 +6606,7 @@
                 "HERO PULL SPEED: 600.0",
                 "REMNANT DAMAGE: 50 / 100 / 150 / 200",
                 "REMNANT PULL SPEED: 1000.0",
-                "CAST POINT:  0.01s"
+                "CAST POINT: 0.01s"
             ],
             "notes": [
                 "Will not work on a unit inside Chronosphere, Duel, or Black Hole.",
@@ -6636,7 +6636,7 @@
                 "SCEPTER RADIUS: 240",
                 "SCEPTER COOLDOWN: 7",
                 "SCEPTER RANGE: 1800",
-                "CAST POINT:  0.3s"
+                "CAST POINT: 0.3s"
             ],
             "cooldown": "12",
             "effects": [
@@ -6656,7 +6656,7 @@
                 "DAMAGE: 200 / 290 / 380",
                 "RADIUS: 1025",
                 "DURATION: 2.0 / 2.4 / 2.8",
-                "CAST POINT:  0.3s"
+                "CAST POINT: 0.3s"
             ],
             "notes": [
                 "Ravage will hit invisible units.",
@@ -6699,7 +6699,7 @@
                 "DAMAGE REDUCTION: -45% / -50% / -55% / -60%",
                 "DURATION: 6",
                 "RADIUS: 375",
-                "CAST POINT:  0.4s"
+                "CAST POINT: 0.4s"
             ],
             "notes": [
                 "Anchor Smash works on all Ancient creeps except for Roshan."
@@ -6743,7 +6743,7 @@
                 "SLOW DURATION: 4 / 5 / 6",
                 "SCEPTER DAMAGE DEALT: 65%",
                 "SCEPTER COOLDOWN: 4.0",
-                "CAST POINT:  0.3s"
+                "CAST POINT: 0.3s"
             ],
             "notes": [
                 "If Huskar is disabled during the charge or the target moves more than 1400 units in 0.015 seconds, the charge stops.",
@@ -6767,7 +6767,7 @@
             "stats": [
                 "DAMAGE: 5 / 10 / 15 / 20",
                 "HEALTH COST: 15",
-                "CAST POINT:  0s"
+                "CAST POINT: 0s"
             ],
             "notes": [
                 "Burning Spears stacks additively when used multiple times on one target.  There is no cap.",
@@ -6790,7 +6790,7 @@
                 "HEALTH REGEN: 10",
                 "BONUS FROM ATTRIBUTE: 5% / 10% / 15% / 20%",
                 "BONUS WHEN HURT: 20% / 40% / 60% / 80%",
-                "CAST POINT:  0.3s"
+                "CAST POINT: 0.3s"
             ],
             "notes": [
                 "The HP percentage is checked every second and the regeneration adjusted accordingly.",
@@ -6814,7 +6814,7 @@
                 "RADIUS: 315",
                 "STUN DURATION 2.0 / 2.25 / 2.5 / 2.75",
                 "STOMP DAMAGE: 100 / 150 / 200 / 250",
-                "CAST POINT:  0.5s"
+                "CAST POINT: 0.5s"
             ],
             "effects": [
                 "Behavior: No Target",
@@ -6847,7 +6847,7 @@
         "Double Edge": {
             "stats": [
                 "DAMAGE: 175 / 250 / 325 / 400",
-                "CAST POINT:  0.5s"
+                "CAST POINT: 0.5s"
             ],
             "notes": [
                 "Double Edge deals magic type damage to both the targets and himself."
@@ -6897,7 +6897,7 @@
                 "DURATION: 24.0",
                 "SCEPTER RADIUS: 775",
                 "SCEPTER ARMOR PER SECOND: 1.25 / 1.5 / 1.75",
-                "CAST POINT:  0.3s"
+                "CAST POINT: 0.3s"
             ],
             "notes": [
                 "Places a buff on units, so entering or leaving the area after the cast has no effect."
@@ -6919,7 +6919,7 @@
                 "DAMAGE RADIUS: 185",
                 "MAX HEAL TARGETS: 4 / 5 / 6 / 7",
                 "DAMAGE: 80 / 100 / 120 / 140",
-                "CAST POINT:  0.3s"
+                "CAST POINT: 0.3s"
             ],
             "notes": [
                 "Prioritizes allied heroes over creeps.",
@@ -6941,7 +6941,7 @@
             "stats": [
                 "DURATION: 5",
                 "RANGE: 550 / 700 / 850 / 1000",
-                "CAST POINT:  0.4s"
+                "CAST POINT: 0.4s"
             ],
             "notes": [
                 "HP cannot go below 1 while under the effects of Shallow Grave, but Axe's Culling Blade will still kill the hero."
@@ -6962,7 +6962,7 @@
                 "DAMAGE: 14 / 20 / 26 / 36",
                 "SLOW TIME: 3",
                 "DAMAGE DURATION: 10.0",
-                "CAST POINT:  0.3s"
+                "CAST POINT: 0.3s"
             ],
             "notes": [
                 "The damage is not reduced by damage block abilities."
@@ -6991,7 +6991,7 @@
                 "REGEN: 4 / 8 / 12 / 16",
                 "BLOCK: 20 / 40 / 60 / 80",
                 "DURATION: 15.0",
-                "CAST POINT:  0.5s"
+                "CAST POINT: 0.5s"
             ],
             "notes": [
                 "Can be cast through the minimap."
@@ -7014,7 +7014,7 @@
                 "MOVEMENT SLOW: -28%",
                 "RADIUS: 500",
                 "DURATION: 4.5",
-                "CAST POINT:  0.5s"
+                "CAST POINT: 0.5s"
             ],
             "effects": [
                 "Behavior: Unit Target",
@@ -7032,7 +7032,7 @@
                 "TREE VISION RADIUS: 800.0",
                 "SCEPTER OVERGROWTH RADIUS: 800",
                 "SCEPTER OVERGROWTH DAMAGE PER SEC: 175.0",
-                "CAST POINT:  0.2s"
+                "CAST POINT: 0.2s"
             ],
             "notes": [
                 "Being entangled by Overgrowth through enchanted trees from Eyes of the Forest does damage. Being entangled by Overgrowth directly from Treant Protector does not.",
@@ -7053,7 +7053,7 @@
             "stats": [
                 "DURATION: 3.0 / 3.75 / 4.5",
                 "RADIUS: 800",
-                "CAST POINT:  0.5s"
+                "CAST POINT: 0.5s"
             ],
             "notes": [
                 "Works on Spell Immune units, but if units gain spell immunity after the effect starts, they'll break free.",
@@ -7096,7 +7096,7 @@
                 "CHANNEL TIME: 5.0",
                 "MANA PER SECOND: 20 / 40 / 60 / 120",
                 "BREAK DISTANCE: 1200",
-                "CAST POINT:  0.3s"
+                "CAST POINT: 0.3s"
             ],
             "notes": [
                 "Destroys illusions."
@@ -7120,7 +7120,7 @@
                 "SCEPTER MANA COST: 200 / 420 / 625",
                 "SCEPTER COOLDOWN: 100 / 60 / 20",
                 "SCEPTER AREA OF EFFECT: 325.0",
-                "CAST POINT:  0.3s"
+                "CAST POINT: 0.3s"
             ],
             "notes": [
                 "Finger of Death has a 0.25 delay before the damage is applied after the spell is cast, allowing certain abilities to avoid the damage."
@@ -7142,7 +7142,7 @@
             "stats": [
                 "DAMAGE: 80 / 140 / 200 / 260",
                 "STUN DURATION: 1.1 / 1.6 / 2.1 / 2.6",
-                "CAST POINT:  0.3s"
+                "CAST POINT: 0.3s"
             ],
             "notes": [
                 "The spikes move at 1600 units per second."
@@ -7162,7 +7162,7 @@
         "Hex": {
             "stats": [
                 "DURATION: 2.5 / 3.0 / 3.5 / 4.0",
-                "CAST POINT:  0s"
+                "CAST POINT: 0s"
             ],
             "notes": [
                 "Instantly destroys illusions.",
@@ -7200,7 +7200,7 @@
                 "RADIUS: 400",
                 "MAGIC ABSORB: 50 / 200 / 350 / 500",
                 "DAMAGE PER SECOND: 30 / 40 / 50 / 60",
-                "CAST POINT:  0s"
+                "CAST POINT: 0s"
             ],
             "notes": [
                 "Magic damage reduction is calculated before any reductions."
@@ -7223,7 +7223,7 @@
                 "DAMAGE PER SECOND: 80 / 60 / 120 / 100",
                 "TOTAL DAMAGE: 80 / 120 / 240 / 300",
                 "UNIT COUNT: 2",
-                "CAST POINT:  0s"
+                "CAST POINT: 0s"
             ],
             "notes": [
                 "Targets are chosen randomly around Xin.",
@@ -7247,7 +7247,7 @@
                 "BONUS HERO DAMAGE: 20 / 40 / 60 / 80",
                 "ATTACK INTERVAL: 0.2",
                 "CREEP DAMAGE PENALTY: -50%",
-                "CAST POINT:  0s"
+                "CAST POINT: 0s"
             ],
             "notes": [
                 "Targets are determined when the spell is cast.",
@@ -7273,7 +7273,7 @@
                 "DAMAGE: 100 / 200 / 300",
                 "RADIUS: 450",
                 "DURATION: 45.0",
-                "CAST POINT:  0s"
+                "CAST POINT: 0s"
             ],
             "notes": [
                 "Starts with 3 charges (maximum).",
@@ -7302,7 +7302,7 @@
                 "CAST RANGE: 500",
                 "SCEPTER DAMAGE: 450 / 600 / 750",
                 "SCEPTER CAST RANGE: 700",
-                "CAST POINT:  1s"
+                "CAST POINT: 1s"
             ],
             "notes": [
                 "Grants 10 gold if destroyed by an enemy hero."
@@ -7323,7 +7323,7 @@
             "manacost": "0",
             "stats": [
                 "SIGN DURATION: 180",
-                "CAST POINT:  0s"
+                "CAST POINT: 0s"
             ],
             "cooldown": "360",
             "effects": [
@@ -7342,7 +7342,7 @@
                 "FULL DAMAGE: 300 / 400 / 500 / 600",
                 "SILENCE DURATION: 4 / 5 / 6 / 7",
                 "MAX HP SELF DAMAGE: 50%",
-                "CAST POINT:  1s"
+                "CAST POINT: 1s"
             ],
             "notes": [
                 "Dying from this ability counts as suicide, and does not award gold or experience to the enemy team.",
@@ -7366,7 +7366,7 @@
                 "ROOT RADIUS: 600",
                 "ROOT DURATION: 2 / 3 / 4 / 5",
                 "TRAP FADE TIME: 2.0",
-                "CAST POINT:  1s"
+                "CAST POINT: 1s"
             ],
             "notes": [
                 "Stasis Traps destroy all other Stasis Traps in their area of effect when they detonate.",
@@ -7389,7 +7389,7 @@
                 "DAMAGE: 225 / 400 / 575 / 750",
                 "BUILDING DAMAGE: 25%",
                 "ACTIVATION DELAY: 1.75",
-                "CAST POINT:  0s"
+                "CAST POINT: 0s"
             ],
             "notes": [
                 "Cannot be placed within active AoE of another Proximity Mine.",
@@ -7459,7 +7459,7 @@
                 "DEATHLUST FLAT HEALTH THRESHOLD: 100 / 200 / 300 / 400",
                 "DEATHLUST PCT HEALTH THRESHOLD: 20% / 25% / 30% / 35%",
                 "ZOMBIE SPAWN INTERVAL: 3.0",
-                "CAST POINT:  0.45s"
+                "CAST POINT: 0.45s"
             ],
             "notes": [
                 "Tombstone is Spell Immune, but can be healed by Soul Rip.",
@@ -7484,7 +7484,7 @@
                 "STEAL DURATION: 45.0",
                 "RADIUS: 325",
                 "SCEPTER STRENGTH STEAL: 10",
-                "CAST POINT:  0.45s"
+                "CAST POINT: 0.45s"
             ],
             "notes": [
                 "The strength stolen stacks, but can't cause a hero to have strength below 1.",
@@ -7509,7 +7509,7 @@
                 "MAX UNITS: 10 / 12 / 14 / 16",
                 "RIP RADIUS: 1300",
                 "TOMBSTONE HEAL: 2 / 4 / 6 / 8",
-                "CAST POINT:  0.45s"
+                "CAST POINT: 0.45s"
             ],
             "notes": [
                 "Can heal Tombstone, but can't heal or damage other buildings.",
@@ -7536,7 +7536,7 @@
                 "CHARGE DURATION: 6.0",
                 "GATHER DAMAGE THRESHOLD: 110",
                 "GATHER DAMAGE RADIUS: 1375",
-                "CAST POINT:  0.2s"
+                "CAST POINT: 0.2s"
             ],
             "notes": [
                 "Charges are only gained for damage greater than 2 and less than 3000 that is dealt by a player or Roshan.  Self-damage or Soul Assumption damage isn't counted.",
@@ -7578,7 +7578,7 @@
                 "FAMILIAR SPEED: 430",
                 "FAMILIAR DAMAGE: 56 / 112 / 168",
                 "DAMAGE RECHARGE TIME: 2.0",
-                "CAST POINT:  0s"
+                "CAST POINT: 0s"
             ],
             "notes": [
                 "Casting Summon Familiars will replace any existing Familiars.",
@@ -7599,7 +7599,7 @@
                 "DURATION: 3 / 4 / 5 / 6",
                 "MOVE SPEED DRAIN: 32%",
                 "ATTACK SPEED DRAIN: 64",
-                "CAST POINT:  0.2s"
+                "CAST POINT: 0.2s"
             ],
             "notes": [
                 "The two buffs can be removed separately by purge.",
@@ -7623,7 +7623,7 @@
             "stats": [
                 "DAMAGE: 80 / 120 / 160 / 200",
                 "RADIUS: 600",
-                "CAST POINT:  0.3s"
+                "CAST POINT: 0.3s"
             ],
             "effects": [
                 "Behavior: Point Target",
@@ -7642,7 +7642,7 @@
                 "RANGE: 2000 / 2500 / 3000",
                 "DAMAGE: 100 / 200 / 300",
                 "SCEPTER COOLDOWN: 12",
-                "CAST POINT:  0.3s"
+                "CAST POINT: 0.3s"
             ],
             "notes": [
                 "Hookshot will latch and take Clockwerk to allies, but not damage or disable them.",
@@ -7665,7 +7665,7 @@
                 "DURATION: 5 / 6 / 7 / 8",
                 "MANA/HEALTH DRAIN: 80 / 120 / 160 / 200",
                 "ATTACKS REQUIRED: 2 / 2 / 2 / 3",
-                "CAST POINT:  0.2s"
+                "CAST POINT: 0.2s"
             ],
             "notes": [
                 "Cogs can shock invisible units."
@@ -7687,7 +7687,7 @@
                 "RADIUS: 275",
                 "DURATION: 10.5",
                 "INTERVAL: 0.7",
-                "CAST POINT:  0.3s"
+                "CAST POINT: 0.3s"
             ],
             "notes": [
                 "Deals damage every 0.7 seconds.",
@@ -7724,7 +7724,7 @@
             "stats": [
                 "DURATION: 50.0",
                 "ENEMY VISION RANGE: 675",
-                "CAST POINT:  0.3s"
+                "CAST POINT: 0.3s"
             ],
             "cooldown": "160 120 80",
             "effects": [
@@ -7743,7 +7743,7 @@
                 "NIGHT DURATION: 5 / 6 / 7 / 8",
                 "DAY CHANCE TO MISS: 10%",
                 "NIGHT CHANCE TO MISS: 50%",
-                "CAST POINT:  0.3s"
+                "CAST POINT: 0.3s"
             ],
             "effects": [
                 "Behavior: Unit Target",
@@ -7763,7 +7763,7 @@
                 "NIGHT DURATION: 2.5 / 3.0 / 3.5 / 4.0",
                 "MOVE SLOW: -50%",
                 "ATTACK SLOW: -50",
-                "CAST POINT:  0.3s"
+                "CAST POINT: 0.3s"
             ],
             "effects": [
                 "Behavior: Unit Target",
@@ -7781,7 +7781,7 @@
         "Dragon Slave": {
             "stats": [
                 "DAMAGE: 110 / 180 / 250 / 320",
-                "CAST POINT:  0.45s"
+                "CAST POINT: 0.45s"
             ],
             "notes": [
                 "Dragon Slave can hit units up to 1225 units away."
@@ -7819,7 +7819,7 @@
             "manacost": "280 420 680",
             "stats": [
                 "DAMAGE: 450 / 650 / 850",
-                "CAST POINT:  0.45s"
+                "CAST POINT: 0.45s"
             ],
             "notes": [
                 "Laguna Blade has a 0.25 delay before the damage is applied after the spell is cast, allowing certain abilities to avoid the damage."
@@ -7843,7 +7843,7 @@
                 "RADIUS: 225",
                 "CAST DELAY: 0.5",
                 "STUN DURATION: 1.6 / 1.9 / 2.2 / 2.5",
-                "CAST POINT:  0.45s"
+                "CAST POINT: 0.45s"
             ],
             "notes": [
                 "Light Strike Array will destroy trees in its area of effect."
@@ -7864,7 +7864,7 @@
         "Mana Shield": {
             "stats": [
                 "DAMAGE PER MANA: 1.6 / 1.9 / 2.2 / 2.5",
-                "CAST POINT:  0.4s"
+                "CAST POINT: 0.4s"
             ],
             "notes": [
                 "Absorbs damage before any damage reduction takes place, meaning that armor will not reduce the amount of mana needed to absorb damage."
@@ -7881,7 +7881,7 @@
                 "OUTGOING DAMAGE: 80%",
                 "TOTAL TARGETS: 2 / 3 / 4 / 5",
                 "RANGE: 700",
-                "CAST POINT:  0.4s"
+                "CAST POINT: 0.4s"
             ],
             "notes": [
                 "Secondary targets will be the closest enemy units excluding the primary target.",
@@ -7903,7 +7903,7 @@
                 "DAMAGE: 80 / 120 / 160 / 200",
                 "MANA STEAL: 11% / 14% / 17% / 20%",
                 "DAMAGE INCREASE PER JUMP: 35%",
-                "CAST POINT:  0.4s"
+                "CAST POINT: 0.4s"
             ],
             "notes": [
                 "Mystic Snake cannot be disjointed."
@@ -7927,7 +7927,7 @@
                 "SLOW: 35%",
                 "STONE DURATION: 3.0",
                 "BONUS PHYSICAL DAMAGE: 50%",
-                "CAST POINT:  0.4s"
+                "CAST POINT: 0.4s"
             ],
             "notes": [
                 "Affects Spell Immune units.",
@@ -7951,7 +7951,7 @@
                 "CREEP ENCHANT DURATION: 80.0",
                 "HERO MOVE SLOW: -20% / -30% / -40% / -50%",
                 "HERO SLOW DURATION: 5.5",
-                "CAST POINT:  0.3s"
+                "CAST POINT: 0.3s"
             ],
             "notes": [
                 "Illusions can be converted."
@@ -7987,7 +7987,7 @@
             "stats": [
                 "DISTANCE DAMAGE: 14% / 18% / 22%",
                 "SCEPTER BONUS RANGE: 190",
-                "CAST POINT:  0s"
+                "CAST POINT: 0s"
             ],
             "notes": [
                 "The damage is capped at 1750 distance.",
@@ -8011,7 +8011,7 @@
                 "HEAL PER SECOND: 10",
                 "RADIUS: 275",
                 "WISPS: 4 / 6 / 8 / 10",
-                "CAST POINT:  0.3s"
+                "CAST POINT: 0.3s"
             ],
             "notes": [
                 "Units with full HP will not be selected for the heal.",
@@ -8035,7 +8035,7 @@
                 "DURATION: 8",
                 "MOVEMENT SLOW: -3% / -5% / -7% / -9%",
                 "TURN RATE SLOW: -70%",
-                "CAST POINT:  0.2s"
+                "CAST POINT: 0.2s"
             ],
             "notes": [
                 "All damage from Batrider gets amplified, except for Radiance and Orb of Venom."
@@ -8056,7 +8056,7 @@
                 "DURATION: 3.0 / 3.5 / 4.0",
                 "SCEPTER TETHER RANGE: 400",
                 "SCEPTER DAMAGE PER SECOND: 100.0",
-                "CAST POINT:  0.2s"
+                "CAST POINT: 0.2s"
             ],
             "notes": [
                 "Killing the target or the Batrider will break the lasso before its expiration.",
@@ -8081,7 +8081,7 @@
                 "DAMAGE PER SECOND: 10 / 30 / 50 / 70",
                 "RADIUS: 200",
                 "DURATION: 18",
-                "CAST POINT:  0s"
+                "CAST POINT: 0s"
             ],
             "notes": [
                 "During this the Batrider can fly above units, trees and impassable terrain.",
@@ -8106,7 +8106,7 @@
                 "BURN DURATION: 4 / 5 / 6 / 7",
                 "TOTAL DAMAGE: 100 / 150 / 210 / 280",
                 "RADIUS: 375",
-                "CAST POINT:  0.2s"
+                "CAST POINT: 0.2s"
             ],
             "effects": [
                 "Behavior: Point Target",
@@ -8125,7 +8125,7 @@
             "stats": [
                 "DAMAGE: 15 / 25 / 35 / 45",
                 "DURATION: 12.0",
-                "CAST POINT:  0.5s"
+                "CAST POINT: 0.5s"
             ],
             "effects": [
                 "Behavior: Unit Target",
@@ -8142,7 +8142,7 @@
             "stats": [
                 "ENEMIES BOUND: 3 / 4 / 5 / 6",
                 "DURATION: 25.0",
-                "CAST POINT:  0.2s"
+                "CAST POINT: 0.2s"
             ],
             "notes": [
                 "Damage will not disable abilities or items like Blink Dagger which require player based damage."
@@ -8170,7 +8170,7 @@
                 "SCEPTER GOLEM HEALTH: 750 / 1125 / 1500",
                 "SCEPTER GOLEM DAMAGE: 56 / 75 / 94",
                 "SCEPTER BOUNTY REDUCTION: 50%",
-                "CAST POINT:  0.5s"
+                "CAST POINT: 0.5s"
             ],
             "notes": [
                 "Spell Immune units will be stunned.",
@@ -8193,7 +8193,7 @@
                 "RADIUS: 650",
                 "MAX SLOW CHANNEL: 12.5 / 6.5 / 4.5 / 3.5",
                 "MAX SLOW: 84.0%",
-                "CAST POINT:  0.5s"
+                "CAST POINT: 0.5s"
             ],
             "notes": [
                 "The slow increase is based on length of the channel, not the duration an enemy was standing in the area."
@@ -8235,7 +8235,7 @@
                 "RADIUS: 725",
                 "DURATION: 6 / 8 / 10 / 12",
                 "SLOW PER COOLDOWN: 10%",
-                "CAST POINT:  0.1s"
+                "CAST POINT: 0.1s"
             ],
             "effects": [
                 "Behavior: No Target"
@@ -8249,7 +8249,7 @@
             "stats": [
                 "RANGE: 675",
                 "BACKTRACK DURATION: 2.0",
-                "CAST POINT:  0.3s"
+                "CAST POINT: 0.3s"
             ],
             "notes": [
                 "Faceless Void is invulnerable while using Time Walk."
@@ -8270,7 +8270,7 @@
                 "RADIUS: 425",
                 "DURATION: 4.0 / 4.5 / 5.0",
                 "SCEPTER COOLDOWN: 60.0",
-                "CAST POINT:  0.35s"
+                "CAST POINT: 0.35s"
             ],
             "notes": [
                 "Pauses all units and buildings, friendly or enemy, except those owned by Faceless Void.",
@@ -8294,7 +8294,7 @@
             "stats": [
                 "DAMAGE: 100 / 175 / 250 / 325",
                 "RANGE: 700",
-                "CAST POINT:  0.55s"
+                "CAST POINT: 0.55s"
             ],
             "effects": [
                 "Behavior: No Target",
@@ -8350,7 +8350,7 @@
                 "REDUCTION DURATION: 5",
                 "SCEPTER HEAL ON RETURN: 100.0%",
                 "SCEPTER DAMAGE ON RETURN: 40.0%",
-                "CAST POINT:  1.67s"
+                "CAST POINT: 1.67s"
             ],
             "notes": [
                 "One line is generated from Shadow Fiend for every 2 souls in his possession, for a maximum of 18 lines (23 lines with Scepter).",
@@ -8374,7 +8374,7 @@
             "stats": [
                 "TARGETS: 1 / 3 / 5 / 7",
                 "DAMAGE: 140 / 200 / 260 / 320",
-                "CAST POINT:  0.3s"
+                "CAST POINT: 0.3s"
             ],
             "notes": [
                 "Can hit secondary targets up to 1000 distance away."
@@ -8397,7 +8397,7 @@
                 "ATTACK DAMAGE: 40 / 70 / 100",
                 "DURATION: 45",
                 "SCEPTER BONUS ATTACK RANGE: 225",
-                "CAST POINT:  0.3s"
+                "CAST POINT: 0.3s"
             ],
             "cooldown": "120",
             "effects": [
@@ -8416,7 +8416,7 @@
             "stats": [
                 "TOTAL DAMAGE: 120 / 200 / 280 / 360",
                 "MAX DURATION: 2.75 / 3.5 / 4.25 / 5.0",
-                "CAST POINT:  0.3s"
+                "CAST POINT: 0.3s"
             ],
             "effects": [
                 "Behavior: Channelled, Unit Target",
@@ -8432,7 +8432,7 @@
         "Hex": {
             "stats": [
                 "DURATION: 1.25 / 2.0 / 2.75 / 3.5",
-                "CAST POINT:  0s"
+                "CAST POINT: 0s"
             ],
             "notes": [
                 "Instantly destroys illusions.",
@@ -8475,7 +8475,7 @@
                 "BONUS HEALTH REGEN: 50 / 75 / 100",
                 "BONUS MANA REGEN: 3.0 / 7.5 / 12.0",
                 "BONUS MOVE SPEED: 30 / 40 / 60",
-                "CAST POINT:  0s"
+                "CAST POINT: 0s"
             ],
             "notes": [
                 "Has a 0.35 second transformation time, which can be used to dodge projectiles and stuns."
@@ -8494,7 +8494,7 @@
                 "MAX STUN: 1.75 / 2.5 / 3.25 / 4.0",
                 "MAX DAMAGE: 150 / 220 / 290 / 360",
                 "EXPLOSION RADIUS: 175",
-                "CAST POINT:  0s"
+                "CAST POINT: 0s"
             ],
             "notes": [
                 "Alchemist can move and act normally while brewing.",
@@ -8521,7 +8521,7 @@
                 "DURATION: 16.0",
                 "DAMAGE PER SECOND: 15 / 20 / 25 / 30",
                 "ARMOR REDUCTION: 4 / 5 / 6 / 7",
-                "CAST POINT:  0.2s"
+                "CAST POINT: 0.2s"
             ],
             "effects": [
                 "Behavior: Point Target",
@@ -8542,7 +8542,7 @@
                 "WIDTH: 375",
                 "RANGE: 1550",
                 "TOTAL DAMAGE: 200 / 300 / 400 / 500",
-                "CAST POINT:  0.3s"
+                "CAST POINT: 0.3s"
             ],
             "notes": [
                 "Gives increasing vision over the channeling time.",
@@ -8566,7 +8566,7 @@
                 "DURATION: 4 / 5 / 6",
                 "MISS CHANCE: 80%",
                 "KNOCKBACK DISTANCE: 525",
-                "CAST POINT:  0.3s"
+                "CAST POINT: 0.3s"
             ],
             "notes": [
                 "Causes knockback of 250 range over 0.4 seconds, centered on the middle of the target area. Upon landing, units will destroy trees in a 150 radius.",
@@ -8588,7 +8588,7 @@
                 "MANA LEAK PERCENT: 5.0%",
                 "STUN DURATION: 1.5 / 2.0 / 2.5 / 3.0",
                 "CAST RANGE: 550 / 700 / 850 / 1000",
-                "CAST POINT:  0.3s"
+                "CAST POINT: 0.3s"
             ],
             "notes": [
                 "If the target travels over 300 distance in less than 0.1 second (by using blink skills, for example), Mana Leak will not decrease its mana for that distance."
@@ -8607,7 +8607,7 @@
         "Recall": {
             "stats": [
                 "TELEPORT DELAY: 5 / 4 / 3",
-                "CAST POINT:  0.3s"
+                "CAST POINT: 0.3s"
             ],
             "notes": [
                 "If Keeper of the Light dies, the spell effect is interrupted.",
@@ -8632,7 +8632,7 @@
                 "MANA RESTORE: 75 / 150 / 225 / 300",
                 "ALLY COOLDOWN REDUCTION: 3 / 4 / 5 / 6",
                 "COOLDOWN REDUCTION DURATION: 15.0",
-                "CAST POINT:  0.3s"
+                "CAST POINT: 0.3s"
             ],
             "effects": [
                 "Behavior: Unit Target",
@@ -8666,7 +8666,7 @@
                 "DAMAGE: 150 / 200 / 250 / 300",
                 "ENEMY CAST TIMER: 4.0",
                 "SILENCE DURATION: 3 / 4 / 5 / 6",
-                "CAST POINT:  0.3s"
+                "CAST POINT: 0.3s"
             ],
             "notes": [
                 "Channeling abilities will trigger this effect once the caster finishes its channel."
@@ -8690,7 +8690,7 @@
                 "BASE DURATION: 6",
                 "PENALTY DURATION: 4",
                 "MOVEMENT SLOW: -9% / -12% / -15% / -18%",
-                "CAST POINT:  0.3s"
+                "CAST POINT: 0.3s"
             ],
             "notes": [
                 "If an enemy hero affected by Arcane Curse is silenced, Arcane Curse will pause damage, slow and duration.",
@@ -8726,7 +8726,7 @@
             "manacost": "250 375 500",
             "stats": [
                 "DURATION: 4 / 5 / 6",
-                "CAST POINT:  0.3s"
+                "CAST POINT: 0.3s"
             ],
             "notes": [
                 "This skill works on invisible and Spell Immune units, but gaining spell immunity will remove its effect."
@@ -8749,7 +8749,7 @@
                 "DAMAGE: 20",
                 "DURATION: 4 / 5 / 6 / 7",
                 "CAST RANGE: 500 / 550 / 600 / 650",
-                "CAST POINT:  0.5s"
+                "CAST POINT: 0.5s"
             ],
             "notes": [
                 "Nightmare deals damage to allies and himself, so it can be used to deny heroes or himself.",
@@ -8778,7 +8778,7 @@
                 "SCEPTER MANA DRAIN: 10%",
                 "SCEPTER DURATION: 7.0",
                 "SCEPTER DAMAGE: 155 / 215 / 270",
-                "CAST POINT:  0.5s"
+                "CAST POINT: 0.5s"
             ],
             "notes": [
                 "Fiend's Grip will disable and drain mana from Spell Immune units, but not damage them."
@@ -8799,7 +8799,7 @@
         "Enfeeble": {
             "stats": [
                 "REDUCTION: 30 / 60 / 90 / 120",
-                "CAST POINT:  0.5s"
+                "CAST POINT: 0.5s"
             ],
             "notes": [
                 "Enfeeble cannot be purged."
@@ -8820,7 +8820,7 @@
             "stats": [
                 "DAMAGE: 90 / 160 / 230 / 300",
                 "HEAL AMOUNT: 90 / 160 / 230 / 300",
-                "CAST POINT:  0.5s"
+                "CAST POINT: 0.5s"
             ],
             "effects": [
                 "Behavior: Unit Target",
@@ -8882,7 +8882,7 @@
                 "RADIUS: 400",
                 "DAMAGE: 100 / 175 / 250 / 325",
                 "CAST RANGE: 225 / 300 / 375 / 450",
-                "CAST POINT:  0.25s"
+                "CAST POINT: 0.25s"
             ],
             "notes": [
                 "Imprisoned units are hidden and invulnerable.",
@@ -8906,7 +8906,7 @@
                 "INT DIFF DAMAGE MULTIPLIER: 8 / 9 / 10",
                 "RADIUS: 375 / 475 / 575",
                 "CAST RANGE: 700",
-                "CAST POINT:  0.25s"
+                "CAST POINT: 0.25s"
             ],
             "cooldown": "160",
             "effects": [
@@ -8929,7 +8929,7 @@
                 "MOVE SLOW: 40%",
                 "SLOW DURATION: 4",
                 "DAMAGE: 350",
-                "CAST POINT:  0.2s"
+                "CAST POINT: 0.2s"
             ],
             "effects": [
                 "Behavior: Unit Target",
@@ -8948,7 +8948,7 @@
                 "DURATION: 30.0",
                 "MOVEMENT SLOW: 10% / 15% / 20% / 25%",
                 "ATTACK SLOW: 30 / 40 / 50 / 60",
-                "CAST POINT:  0.1s"
+                "CAST POINT: 0.1s"
             ],
             "notes": [
                 "If no order is given, the Sigil will follow Tusk.",
@@ -8971,7 +8971,7 @@
                 "AIR TIME: 1.0",
                 "SLOW DURATION: 2 / 3 / 4",
                 "MOVEMENT SLOW: 40%",
-                "CAST POINT:  0s"
+                "CAST POINT: 0s"
             ],
             "notes": [
                 "Works fully on Spell Immune units."
@@ -8993,7 +8993,7 @@
                 "SHARD DAMAGE: 60 / 120 / 180 / 240",
                 "SHARD DURATION: 7.0",
                 "CAST RANGE: 1800",
-                "CAST POINT:  0.1s"
+                "CAST POINT: 0.1s"
             ],
             "notes": [
                 "Creates an impassable barrier."
@@ -9017,7 +9017,7 @@
                 "STUN DURATION: 0.5 / 0.75 / 1.0 / 1.25",
                 "GATHER RADIUS: 100",
                 "LAUNCH TIME: 3.0",
-                "CAST POINT:  0.1s"
+                "CAST POINT: 0.1s"
             ],
             "notes": [
                 "The snowball destroys trees.",
@@ -9045,7 +9045,7 @@
             "stats": [
                 "STUN DURATION: 0.5 / 1.0 / 1.5 / 2.0",
                 "CRIT MULTIPLIER: 140% / 160% / 180% / 200%",
-                "CAST POINT:  0.4s"
+                "CAST POINT: 0.4s"
             ],
             "effects": [
                 "Behavior: Point Target",
@@ -9084,7 +9084,7 @@
                 "MOVEMENT SLOW: 40% / 50% / 60% / 70%",
                 "SLOW DURATION: 4.0",
                 "MAX DISTANCE: 1000",
-                "CAST POINT:  0s"
+                "CAST POINT: 0s"
             ],
             "effects": [
                 "Behavior: Channelled, Point Target",
@@ -9100,7 +9100,7 @@
             "cooldown": "3",
             "stats": [
                 "MOVESPEED: 200",
-                "CAST POINT:  0s"
+                "CAST POINT: 0s"
             ],
             "effects": [
                 "Behavior: No Target"
@@ -9115,7 +9115,7 @@
                 "BONUS DAMAGE: 50 / 70 / 90",
                 "SOLDIER ATK SPEED: 2.0",
                 "DURATION: 13 / 14 / 15",
-                "CAST POINT:  1.2s"
+                "CAST POINT: 1.2s"
             ],
             "notes": [
                 "Soldiers do not receive Jingu Mastery bonuses."
@@ -9136,7 +9136,7 @@
                 "DAMAGE COOLDOWN: 3.0",
                 "PRIMAL SPRING DAMAGE: 100 / 180 / 260 / 340",
                 "PRIMAL SPRING SLOW: 40% / 50% / 60% / 70%",
-                "CAST POINT:  0.3s"
+                "CAST POINT: 0.3s"
             ],
             "notes": [
                 "Tree Dance cooldown starts upon landing.",
@@ -9174,7 +9174,7 @@
                 "RADIUS: 250",
                 "MOVE SLOW: -30%",
                 "DAMAGE: 30 / 60 / 90 / 120",
-                "CAST POINT:  0s"
+                "CAST POINT: 0s"
             ],
             "notes": [
                 "Using Rot doesn't interrupt channeling.",
@@ -9198,7 +9198,7 @@
                 "RANGE: 1000 / 1100 / 1200 / 1300",
                 "SCEPTER COOLDOWN: 4.0",
                 "SCEPTER DAMAGE: 180 / 270 / 360 / 450",
-                "CAST POINT:  0.3s"
+                "CAST POINT: 0.3s"
             ],
             "notes": [
                 "Interrupts channeling spells of the primary target if it's an enemy.",
@@ -9222,7 +9222,7 @@
             "stats": [
                 "DAMAGE PER SECOND: 60 / 90 / 120",
                 "STRENGTH MULTIPLIER: 0.3 / 0.45 / 0.6",
-                "CAST POINT:  0.3s"
+                "CAST POINT: 0.3s"
             ],
             "notes": [
                 "Dismember will disable Spell Immune units, but not damage them.",
@@ -9251,7 +9251,7 @@
                 "MANA REGEN PER KILL: 1 / 3 / 5 / 7",
                 "REGEN DURATION: 7.0",
                 "HERO KILL REGEN MULTIPLIER: 10",
-                "CAST POINT:  0s"
+                "CAST POINT: 0s"
             ],
             "notes": [
                 "Death Pulse can't be disjointed.",
@@ -9276,7 +9276,7 @@
                 "MOVEMENT SLOW: 12% / 20% / 28% / 36%",
                 "SLOW RADIUS: 600",
                 "INCREASED MAGIC DAMAGE: -20%",
-                "CAST POINT:  0s"
+                "CAST POINT: 0s"
             ],
             "effects": [
                 "Behavior: No Target"
@@ -9293,7 +9293,7 @@
                 "STUN DURATION: 1.5",
                 "SCEPTER COOLDOWN: 55 / 40 / 25",
                 "ADDED RESPAWN TIME: 10 / 20 / 30",
-                "CAST POINT:  0.5s"
+                "CAST POINT: 0.5s"
             ],
             "notes": [
                 "Damage is dealt at the end of the stun.",
@@ -9337,7 +9337,7 @@
                 "BONUS MOVE SPEED: 20% / 28% / 36% / 44%",
                 "ADDED DAMAGE TAKEN: 15%",
                 "DURATION: 12.0",
-                "CAST POINT:  0s"
+                "CAST POINT: 0s"
             ],
             "notes": [
                 "Activating this skill doesn't interrupt channeling abilities."
@@ -9377,7 +9377,7 @@
                 "ATTACK SLOW: -20",
                 "SLOW DURATION: 2.0",
                 "STUN DURATION: 1.6 / 1.9 / 2.2 / 2.5",
-                "CAST POINT:  0.35s"
+                "CAST POINT: 0.35s"
             ],
             "effects": [
                 "Behavior: No Target",
@@ -9393,7 +9393,7 @@
             "stats": [
                 "ARMOR REDUCTION: -10 / -15 / -20",
                 "DURATION: 25",
-                "CAST POINT:  0.35s"
+                "CAST POINT: 0.35s"
             ],
             "notes": [
                 "Gives True Sight and vision of the target.",
@@ -9419,7 +9419,7 @@
                 "SLOW DURATION: 2",
                 "ENEMY MOVE SLOW: -30%",
                 "ENEMY ATTACK SLOW: -30",
-                "CAST POINT:  0.4s"
+                "CAST POINT: 0.4s"
             ],
             "notes": [
                 "If autocast is activated, Lich will cast this spell on nearby allies who are attacked."
@@ -9443,7 +9443,7 @@
                 "MOVEMENT SLOW: -30%",
                 "ATTACK SLOW: -20",
                 "AREA DAMAGE: 75 / 100 / 125 / 150",
-                "CAST POINT:  0.4s"
+                "CAST POINT: 0.4s"
             ],
             "effects": [
                 "Behavior: Unit Target",
@@ -9469,7 +9469,7 @@
                 "SCEPTER CAST RANGE: 850",
                 "MOVEMENT SLOW: -50%",
                 "ATTACK SLOW: -50",
-                "CAST POINT:  0.4s"
+                "CAST POINT: 0.4s"
             ],
             "notes": [
                 "The first target will be immediately interrupted.  This stun goes through spell immunity.",
@@ -9494,7 +9494,7 @@
             "cooldown": "60 50 40 30",
             "stats": [
                 "HEALTH CONVERSION: 30% / 50% / 70% / 90%",
-                "CAST POINT:  0.4s"
+                "CAST POINT: 0.4s"
             ],
             "effects": [
                 "Behavior: Unit Target",
@@ -9512,7 +9512,7 @@
                 "DURATION: 5 / 6 / 7 / 8",
                 "BURN DAMAGE: 26 / 34 / 42 / 50",
                 "SLOW: -20% / -22% / -24% / -26%",
-                "CAST POINT:  0.45s"
+                "CAST POINT: 0.45s"
             ],
             "notes": [
                 "Multicast makes this spell have an area of effect (150/300/450 based on Multicast level).",
@@ -9535,7 +9535,7 @@
             "stats": [
                 "DAMAGE: 55 / 110 / 165 / 220",
                 "STUN DURATION: 1.5",
-                "CAST POINT:  0.45s"
+                "CAST POINT: 0.45s"
             ],
             "notes": [
                 "When Multicast, Fireblast hits the same target each time with a 0.3 seconds interval.",
@@ -9580,7 +9580,7 @@
                 "BONUS MOVE SPEED: 10% / 12% / 14% / 16%",
                 "BONUS ATTACK SPEED: 30 / 40 / 50 / 60",
                 "DURATION: 30.0",
-                "CAST POINT:  0.45s"
+                "CAST POINT: 0.45s"
             ],
             "notes": [
                 "When multicast, nearby allies will be selected randomly in an 575 area of effect to receive Bloodlust.",
@@ -9603,7 +9603,7 @@
             "stats": [
                 "DAMAGE: 275",
                 "STUN DURATION: 1.5",
-                "CAST POINT:  0.45s"
+                "CAST POINT: 0.45s"
             ],
             "effects": [
                 "Behavior: Unit Target",
@@ -9641,7 +9641,7 @@
                 "RADIUS: 275",
                 "RANGE: 1300",
                 "DAMAGE: 75 / 150 / 225 / 300",
-                "CAST POINT:  0s"
+                "CAST POINT: 0s"
             ],
             "notes": [
                 "If a unit is hit by Avalanche then Tossed, it can be hit a second time by Avalanche if it lands in the area of effect before Avalanche ends.",
@@ -9688,7 +9688,7 @@
                 "RADIUS: 275",
                 "STUN DURATION: 1.0",
                 "DAMAGE: 100 / 180 / 260 / 300",
-                "CAST POINT:  0s"
+                "CAST POINT: 0s"
             ],
             "notes": [
                 "Deals damage over a 1 second duration."
@@ -9713,7 +9713,7 @@
                 "BONUS HP: 300 / 600 / 900",
                 "BASE SPEED LOSS: 45",
                 "TRANSFORM TIME: 1.933",
-                "CAST POINT:  0s"
+                "CAST POINT: 0s"
             ],
             "notes": [
                 "You can dodge stuns during the 2 second duration of transforming.",
@@ -9733,7 +9733,7 @@
             "manacost": "25",
             "stats": [
                 "TRANSFORM TIME: 0.8",
-                "CAST POINT:  0s"
+                "CAST POINT: 0s"
             ],
             "cooldown": "0",
             "effects": [
@@ -9750,7 +9750,7 @@
                 "RANGE: 325",
                 "ENEMY MOVEMENT SPEED BONUS: 20%",
                 "DURATION: 1.2 / 1.6 / 2.0 / 2.4",
-                "CAST POINT:  0.1s"
+                "CAST POINT: 0.1s"
             ],
             "notes": [
                 "An entangled hero will not be able to move.",
@@ -9772,7 +9772,7 @@
                 "ATTACK SPEED: 10 / 20 / 30 / 40",
                 "MOVEMENT SPEED: 10% / 15% / 20% / 25%",
                 "DURATION: 18 / 22 / 26 / 30",
-                "CAST POINT:  0.5s"
+                "CAST POINT: 0.5s"
             ],
             "effects": [
                 "Behavior: No Target"
@@ -9789,7 +9789,7 @@
                 "BONUS ARMOR: 10 / 15 / 20",
                 "DURATION: 6.0",
                 "RADIUS: 1000.0",
-                "CAST POINT:  0.5s"
+                "CAST POINT: 0.5s"
             ],
             "effects": [
                 "Behavior: No Target"
@@ -9807,7 +9807,7 @@
                 "BEAR BASE ATTACK TIME: 1.75 / 1.65 / 1.55 / 1.45",
                 "BEAR ARMOR: 3 / 4 / 5 / 6",
                 "BACKLASH PURE DAMAGE: 10.0%",
-                "CAST POINT:  0.5s"
+                "CAST POINT: 0.5s"
             ],
             "notes": [
                 "Most spells interact with the Spirit Bear in the same way as they do with heroes.",
@@ -9831,7 +9831,7 @@
                 "DAMAGE: 0.6 / 0.85 / 1.1",
                 "STUN DURATION: 0.3",
                 "RADIUS: 500",
-                "CAST POINT:  0.3s"
+                "CAST POINT: 0.3s"
             ],
             "notes": [
                 "The stun passes through spell immunity.",
@@ -9886,7 +9886,7 @@
         "Blink": {
             "stats": [
                 "RANGE: 925 / 1000 / 1075 / 1150",
-                "CAST POINT:  0.4s"
+                "CAST POINT: 0.4s"
             ],
             "notes": [
                 "You can use Blink to dodge incoming projectiles."
@@ -9907,7 +9907,7 @@
                 "INSTANCES: 3 / 4 / 5 / 6",
                 "BONUS DAMAGE: 20 / 40 / 60 / 80",
                 "DURATION: 17",
-                "CAST POINT:  0s"
+                "CAST POINT: 0s"
             ],
             "notes": [
                 "Damage as HP Removal bypasses Refraction (it won't reduce the charges).",
@@ -9931,7 +9931,7 @@
                 "MIN MOVEMENT SLOW: 30%",
                 "MAX MOVEMENT SLOW: 60%",
                 "SLOW DURATION: 5",
-                "CAST POINT:  0.3s"
+                "CAST POINT: 0.3s"
             ],
             "notes": [
                 "Traps last indefinitely.",
@@ -9971,7 +9971,7 @@
                 "BONUS DAMAGE: 50 / 100 / 150 / 200",
                 "ARMOR REDUCTION: -2 / -4 / -6 / -8",
                 "ARMOR REDUCTION DURATION: 10",
-                "CAST POINT:  0s"
+                "CAST POINT: 0s"
             ],
             "notes": [
                 "Meld is broken by any action other than staying in position.",
@@ -9997,7 +9997,7 @@
                 "RADIUS: 300",
                 "BURN DAMAGE: 12 / 16 / 20 / 24",
                 "DURATION: 5",
-                "CAST POINT:  0s"
+                "CAST POINT: 0s"
             ],
             "notes": [
                 "Works on both units and buildings."
@@ -10022,7 +10022,7 @@
                 "SCEPTER DAMAGE PER SECOND: 125 / 175 / 225",
                 "SCEPTER FLAME LENGTH: 1800",
                 "SCEPTER DURATION: 30",
-                "CAST POINT:  0.65s"
+                "CAST POINT: 0.65s"
             ],
             "notes": [
                 "Macropyre destroys trees in its path."
@@ -10046,7 +10046,7 @@
                 "DURATION: 1.0 / 1.5 / 2.0 / 2.5",
                 "RADIUS: 150",
                 "DAMAGE: 50",
-                "CAST POINT:  0.65s"
+                "CAST POINT: 0.65s"
             ],
             "notes": [
                 "It takes 0.5 seconds for the path to reach its full extent."
@@ -10071,7 +10071,7 @@
                 "MOVE SLOW: -28% / -32% / -36% / -40%",
                 "ATTACK SLOW: -28 / -32 / -36 / -40",
                 "DURATION: 5",
-                "CAST POINT:  0.65s"
+                "CAST POINT: 0.65s"
             ],
             "notes": [
                 "Can hit units up to 1000 range away.",
@@ -10108,7 +10108,7 @@
                 "RADIUS: 450",
                 "DAMAGE: 15 / 35 / 55 / 75",
                 "DURATION: 10.0",
-                "CAST POINT:  0.3s"
+                "CAST POINT: 0.3s"
             ],
             "notes": [
                 "Damage is dealt 11 times, immediately at spell effect then every second.",
@@ -10133,7 +10133,7 @@
                 "RANGE: 2000 / 2500 / 3000",
                 "SCEPTER RADIUS: 400",
                 "SCEPTER CRITICAL DAMAGE: 280%",
-                "CAST POINT:  2s"
+                "CAST POINT: 2s"
             ],
             "notes": [
                 "Crosshair effect is only visible to allies.",
@@ -10180,7 +10180,7 @@
                 "HAWK DAY SIGHT RANGE: 500 / 750 / 1000 / 1250",
                 "HAWK NIGHT SIGHT RANGE: 500 / 650 / 800 / 950",
                 "HAWK DURATION: 60",
-                "CAST POINT:  0.3s"
+                "CAST POINT: 0.3s"
             ],
             "effects": [
                 "Behavior: No Target"
@@ -10199,7 +10199,7 @@
                 "BOAR ATTACK SLOW: 10 / 20 / 30 / 40",
                 "BOAR POISON DURATION: 3",
                 "BOAR DURATION: 60",
-                "CAST POINT:  0.3s"
+                "CAST POINT: 0.3s"
             ],
             "effects": [
                 "Behavior: No Target"
@@ -10220,7 +10220,7 @@
                 "SLOW DURATION: 2 / 3 / 4",
                 "SCEPTER CAST RANGE: 950",
                 "SCEPTER COOLDOWN: 45",
-                "CAST POINT:  0.5s"
+                "CAST POINT: 0.5s"
             ],
             "notes": [
                 "The stun will hit Spell Immune units. The damage will not."
@@ -10242,7 +10242,7 @@
             "stats": [
                 "RANGE: 1300",
                 "DAMAGE PER AXE: 70 / 100 / 130 / 160",
-                "CAST POINT:  0.4s"
+                "CAST POINT: 0.4s"
             ],
             "notes": [
                 "This ability hits Spell Immune units.",
@@ -10278,7 +10278,7 @@
             "stats": [
                 "DAMAGE: 70 / 140 / 210 / 280",
                 "MAX DISTANCE: 1950",
-                "CAST POINT:  0.1s"
+                "CAST POINT: 0.1s"
             ],
             "notes": [
                 "The Illusory Orb grants unobstructed vision around its location while it travels.",
@@ -10306,7 +10306,7 @@
                 "SCEPTER COIL DURATION: 8.0",
                 "SCEPTER BREAK DAMAGE: 200 / 250 / 300",
                 "SCEPTER BREAK STUN DURATION: 1.5 / 3.0 / 4.5",
-                "CAST POINT:  0.1s"
+                "CAST POINT: 0.1s"
             ],
             "cooldown": "70 65 60",
             "effects": [
@@ -10323,7 +10323,7 @@
         "Phase Shift": {
             "stats": [
                 "DURATION: 0.75 / 1.5 / 2.25 / 3.25",
-                "CAST POINT:  0s"
+                "CAST POINT: 0s"
             ],
             "notes": [
                 "Puck retains collision size while under the effects of Phase Shift.",
@@ -10345,7 +10345,7 @@
                 "DAMAGE: 100 / 160 / 220 / 280",
                 "RADIUS: 400",
                 "DURATION: 0.75 / 1.5 / 2.25 / 3.0",
-                "CAST POINT:  0.1s"
+                "CAST POINT: 0.1s"
             ],
             "effects": [
                 "Behavior: No Target",

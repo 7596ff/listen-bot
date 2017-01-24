@@ -102,11 +102,9 @@ module.exports = (message, client, helper) => {
                 } else {
                     for (key_obj in keys) {
                         if (keys[key_obj][key]) {
-                            console.log(keys[key_obj][key])
                             create_message(message, client, helper, key_obj, keys[key_obj][key], key)
                             i = 0
                         } else if (keys[key_obj][key.split('').sort().join('')]) {
-                            console.log(keys[key_obj][key.split('').sort().join('')])
                             create_message(message, client, helper, key_obj, 
                                 keys[key_obj][key.split('').sort().join('')], key)
                             i = 0
@@ -115,7 +113,6 @@ module.exports = (message, client, helper) => {
                     
                     for (hero_obj in abilities) {
                         if (abilities[hero_obj][capitalize_first(key)]) {
-                            console.log(capitalize_first(key))
                             create_message(message, client, helper, hero_obj, 
                                 capitalize_first(key), capitalize_first(key))
                             i = 0 

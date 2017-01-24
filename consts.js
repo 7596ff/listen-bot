@@ -1,14 +1,19 @@
 module.exports.cmdlist = [
+    // undocumented
     "eval",
-    "help",
-    "info", 
-    "patch",
-    "quote",
-    "talents",
-    "admin",
-    "stats",
     "shardinfo",
+    // dota commands
+    "patch",
+    "talents",
     "wiki",
     "list",
-    "ability"
+    "ability",
+    // meta
+    "help",
+    "info", 
+    "admin",
+    "stats",
+    "quote",
+    // aliases
+    "talent"
 ]

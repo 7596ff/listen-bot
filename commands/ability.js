@@ -80,7 +80,7 @@ module.exports = (message, client, helper) => {
 
         if (hero in short_heroes) {
             let true_hero = short_heroes[hero]
-            if (true_hero == "invoker" && key.length == 3) key = key.split('').sort().join('')
+            if (true_hero == "invoker" && key.length == 3) key = key.toLowerCase().split('').sort().join('').toUpperCase()
             
             if (key in keys[true_hero]) {
                 let ability = keys[true_hero][key]

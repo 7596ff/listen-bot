@@ -45,12 +45,12 @@ function ability_embed(hero, ability) {
         "description": `${desc}\n\n${note}\n\n${agha}`,
         "fields": [
             {
-                "name": `<:manacost:273091790603550730> ${mana}`,
+                "name": `<:manacost:273260821495414788> ${mana}`,
                 "value": temp.stats.join('\n'),
                 "inline": true
             },
             {
-                "name": `<:cooldown:273091737617170432> ${cool}`,
+                "name": `<:cooldown:273260890898300928> ${cool}`,
                 "value": temp.effects.join('\n'),
                 "inline": true
             }

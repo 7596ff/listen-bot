@@ -6230,7 +6230,7 @@
                 "Trees near the center of the vacuum will be destroyed."
             ],
             "manacost": "100 130 160 190",
-            "cooldown": "28",
+            "cooldown": "28.0",
             "effects": [
                 "Behavior: Point Target",
                 "Damage Type: Magical",

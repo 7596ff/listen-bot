@@ -50,7 +50,9 @@
     ],
     "bash": [
         "Greater Bash",
-        "Bash of the Deep"
+        "Bash of the Deep",
+        "Time Lock",
+        "Berserker's Rage"
     ],
     "purge": [
         "Demonic Purge",
@@ -79,5 +81,13 @@
     "silence": [
         "Silence (Death Prophet)",
         "Global Silence"
+    ], 
+    "hook": [
+        "Meat Hook",
+        "Hookshot"
+    ],
+    "shackle": [
+        "Shackleshot",
+        "Shackles"
     ]
 }

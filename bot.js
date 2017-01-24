@@ -69,8 +69,8 @@ process.on('exit', (code) => {
   util.log(`Exiting with code ${code}`)
   fs.writeFileSync('./json/usage.json', JSON.stringify(client.all_usage))
   if (code == 1) {
-    fs.writeFileSync('./json/last_error.json', JSON.stringify(log_message))
-    util.log('wrote last error')
+    //fs.writeFileSync('./json/last_error.json', JSON.stringify(log_message))
+    //util.log('wrote last error')
   }
 })
 

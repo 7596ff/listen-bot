@@ -2,6 +2,14 @@ const short_heroes = require('../json/short_heroes.json')
 const keys = require('../json/keys.json')
 const abilities = require('../json/abilities.json')
 
+function capitalize_first(key) {
+    words = key.split(' ')
+    for (word in words) {
+        words[word] = words[word].substr(0, 1).toUpperCase() + words[word].substr(1, words[word].length)
+    }
+    return words.join(' ')
+}
+
 function ability_embed(hero, ability) {
     let ability_obj = abilities[hero][ability]
     let temp = {
@@ -51,7 +59,11 @@ function ability_embed(hero, ability) {
 }
 
 function create_message(message, client, helper, true_hero, ability, key) {
-    helper.log(message, `ability: hero name (${true_hero}) and ability (${key}: ${ability})`)
+    if (key = ability) {
+        helper.log(message, `ability: hero name (${true_hero}) and ability (${ability})`)
+    } else {
+        helper.log(message, `ability: hero name (${true_hero}) and ability (${key}: ${ability})`)
+    }
     client.createMessage(message.channel.id, {
         embed: ability_embed(true_hero, ability)
     }).then(new_message => {
@@ -62,16 +74,22 @@ function create_message(message, client, helper, true_hero, ability, key) {
 module.exports = (message, client, helper) => {
     let options = message.content.toLowerCase().split(' ')
     options.shift()
-    let key = options.pop()
-    let hero = options.join(' ')
+    for (let i = 0; i < options.length; i++) {
+        let key = capitalize_first(options.slice(options.length - i, options.length).join(' '))
+        let hero = options.slice(0, options.length - i).join(' ')
 
-    if (hero in short_heroes) {
-        let true_hero = short_heroes[hero]
-        if (true_hero == "invoker") key = key.split('').sort().join('')
-        
-        if (key in keys[true_hero]) {
-            let ability = keys[true_hero][key]
-            create_message(message, client, helper, true_hero, ability, key)
+        if (hero in short_heroes) {
+            let true_hero = short_heroes[hero]
+            if (true_hero == "invoker" && key.length == 3) key = key.split('').sort().join('')
+            
+            if (key in keys[true_hero]) {
+                let ability = keys[true_hero][key]
+                create_message(message, client, helper, true_hero, ability, key)
+            }
+            
+            if (key in abilities[true_hero]) {
+                create_message(message, client, helper, true_hero, key, key)
+            }
         }
     }
 }

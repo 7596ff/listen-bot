@@ -79,7 +79,7 @@
         "Earthbind"
     ], 
     "silence": [
-        "Silence (Death Prophet)",
+        "Death Prophet Silence",
         "Global Silence"
     ], 
     "hook": [
@@ -89,5 +89,20 @@
     "shackle": [
         "Shackleshot",
         "Shackles"
+    ],
+    "dunk": [
+        "Culling Blade",
+        "Echo Slam"
+    ],
+    "stun": [
+        "There are a lot of stuns. Try again with the hero name for their stun."
+    ],
+    "slow": [
+        "There are a lot of slows. Try again with the hero name for their slow."
+    ],
+    "sleep": [
+        "Nightmare",
+        "Song of the Siren",
+        "Echo Stomp"
     ]
 }

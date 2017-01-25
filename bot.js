@@ -23,7 +23,7 @@ client.usage = {
   "all": 0
 }
 
-for (cmd of require('./consts').cmdlist) {
+for (cmd of require('./util/consts.json').cmdlist) {
   commands[cmd] = require(`./commands/${cmd}`)
   client.usage[cmd] = 0
   client.all_usage[cmd] = isNaN(client.all_usage[cmd]) ? 0 : client.all_usage[cmd]
@@ -83,11 +83,11 @@ client.on('ready', () => {
   stats_messages = schedule.scheduleJob('*/15 * * * *', () => {
     client.editMessage(config.edit_channel, config.shard_edit_message, {
       "embed": {
-        "description": require('./shardinfo_helper')(client)
+        "description": require('./util/shardinfo_helper')(client)
       }
     }).catch(err => util.log(err))
     client.editMessage(config.edit_channel, config.stats_edit_message, {
-      "embed": require('./stats_helper')(client)
+      "embed": require('./util/stats_helper')(client)
     }).catch(err => util.log(err))
   })
 })

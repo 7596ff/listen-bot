@@ -1,5 +1,5 @@
 const help_topics = require('../json/help.json')
-const cmdlist = require('../consts').cmdlist
+const cmdlist = require('../util/consts.json').cmdlist
 var guilds_list = require('../json/guilds.json')
 const util = require('util')
 

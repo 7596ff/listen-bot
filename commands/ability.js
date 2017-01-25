@@ -14,6 +14,10 @@ function capitalize_first(key) {
     return words.join(' ')
 }
 
+function clean(key) {
+    return key.replace("'", "").replace(" ", "_").toLowerCase()
+}
+
 function ability_embed(hero, ability) {
     let ability_obj = abilities[hero][ability]
     let temp = {
@@ -58,7 +62,10 @@ function ability_embed(hero, ability) {
                 "value": temp.effects.join('\n'),
                 "inline": true
             }
-        ]
+        ], 
+        "thumbnail": {
+            "url": `http://cdn.dota2.com/apps/dota2/images/abilities/${hero}_${clean(ability)}_lg.png`
+        }
     }
 }
 

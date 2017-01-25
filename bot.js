@@ -158,7 +158,7 @@ client.on('messageCreate', message => {
               client.createMessage(message.channel.id, 
                 `\`#${message.channel.name}\` Please cool down! ${Math.floor((_channels[message.channel.id].last_message + channel_limit - Date.now()) / 1000) + 1} second(s) left.`
               ).then(new_message => {
-                setTimeout(() => {new_message.delete()}, 3000)
+                setTimeout(() => {new_message.delete()}, 4000)
                 _helper.log(message, `channel ratelimited`)
                 _channels[message.channel.id].cooldown_sent = true
               }).catch(err => _helper.handle(err))
@@ -167,9 +167,9 @@ client.on('messageCreate', message => {
         } else {
           if (!_members[message.member.id].cooldown_sent) {
             client.createMessage(message.channel.id, 
-              `<@!${message.member.id}>, Please cool down! ${Math.floor((_members[message.channel.id].last_message + channel_limit - Date.now()) / 1000) + 1} second(s) left.`
+              `<@!${message.member.id}>, Please cool down! ${Math.floor((_members[message.member.id].last_message + member_limit - Date.now()) / 1000) + 1} second(s) left.`
             ).then(new_message => {
-              setTimeout(() => {new_message.delete()}, 3000)
+              setTimeout(() => {new_message.delete()}, 4000)
               _helper.log(message, `member ratelimited`)
               _members[message.member.id].cooldown_sent = true
             }).catch(err => _helper.handle(err))

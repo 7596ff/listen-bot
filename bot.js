@@ -1,11 +1,6 @@
 const Eris = require('eris')
 const config = require('./json/config.json')
-const client = new Eris(config.token, {
-  "maxShards": config.shard_count, 
-  "disableEvents": {
-    "TYPING_START": true
-  }
-})
+const client = new Eris(config.token, config.options)
 const schedule = require('node-schedule')
 
 const util = require('util')

@@ -68,16 +68,29 @@
     ],
     "example": "help patch"
   },
-  "admin": {
-    "name": "admin",
-    "usage": "admin <subcommand> [<arguments>]",
+  "admin disable": {
+    "name": "admin disable",
+    "usage": "admin disable [<arguments>]",
     "text": [
-      "`admin disable`: \n  show list of disabled commands\n\n",
-      "`admin disable <arguments>`: \n  disable one or more commands\n  (`admin disable quote patch`)\n\n",
-      "`admin enable <arguments>`: \n  enable one or more commands\n  (`admin enable patch quote`)\n\n",
-      "`admin prefix <new prefix>`: \n  change the server specific prefix. use `\"\"` to include spaces in the prefix, ",
-      "the code wil replace them with nothing. will still respond to `--`.\n  (`admin prefix \"long prefix \"`)\n\n"
+      "if used by itself, admin disable will show a list of all disabled commands in this channel.",
+      "if arguments are passed, admin disable will disable those commands in this channel."
     ],
-    "example": "admin disable quote"
+    "example": "admin disable quote patch"
+  },
+  "admin enable": {
+    "name": "admin enable",
+    "usage": "admin enable <arguments>",
+    "text": [
+      "enables commands in the current text channel. use `admin disable` to check which commands are disabled."
+    ],
+    "example": "admin enable patch quote"
+  },
+  "admin prefix": {
+    "name": "admin prefix",
+    "usage": "admin prefix <new prefix>",
+    "text": [
+      "change the server specific prefix (note: will still respond to `--`)"
+    ],
+    "example": "admin prefix &&"
   }
 }

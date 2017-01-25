@@ -53,7 +53,7 @@ function ability_embed(hero, ability) {
             "name": ability,
             "icon_url": `http://cdn.dota2.com/apps/dota2/images/heroes/${hero}_vert.jpg`
         },
-        "description": `${desc}\n\n${note}\n\n${agha}`,
+        "description": [desc, note, agha].join('\n\n').replace('\n\n\n\n', '\n\n'),
         "fields": [
             {
                 "name": `<:manacost:273535201337016320> ${mana}`,

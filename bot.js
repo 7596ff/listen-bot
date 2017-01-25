@@ -1,15 +1,16 @@
 const Eris = require('eris')
 const config = require('./json/config.json')
 const client = new Eris(config.token, config.options)
-const schedule = require('node-schedule')
 
+const schedule = require('node-schedule')
 const util = require('util')
 const fs = require('fs')
+const stringify = require('json-stringify-safe')
 
 const default_prefix = "--"
 
 var stats_messages
-var log_message
+var log_message = ""
 
 var guilds_list = require('./json/guilds.json')
 var commands = {}
@@ -29,10 +30,6 @@ function Helper(prefix) {
 
   this.log = (message, text) => {
     require('util').log(`${message.channel.guild.name}/${message.channel.name}: ${text}`)
-  }
-  
-  this.error = (text) => {
-    return `:octagonal_sign: ${text}`
   }
 
   this.handle = (message, err) => {
@@ -64,8 +61,8 @@ process.on('exit', (code) => {
   util.log(`Exiting with code ${code}`)
   fs.writeFileSync('./json/usage.json', JSON.stringify(client.all_usage))
   if (code == 1) {
-    //fs.writeFileSync('./json/last_error.json', JSON.stringify(log_message))
-    //util.log('wrote last error')
+    fs.writeFileSync('./json/last_error.json', log_message)
+    util.log('wrote last error')
   }
 })
 
@@ -126,7 +123,7 @@ client.on('guildDelete', guild => {
 client.on('messageCreate', message => {
   if (!message.channel.guild) return
 
-  log_message = message
+  log_message = stringify(message, null, 4)
 
   client.guilds_list = guilds_list
   _prefix = guilds_list[message.channel.guild.id].prefix

@@ -11,6 +11,8 @@ const default_prefix = "--"
 var stats_messages
 
 var guilds_list = require('./json/guilds.json')
+var _members = {}
+var _channels = {}
 var commands = {}
 client.all_usage = require('./json/usage.json')
 client.usage = {
@@ -63,7 +65,7 @@ process.on('exit', (code) => {
 client.on('ready', () => {
   util.log('listen-bot ready.')
   client.shards.forEach(shard => {
-    shard.editStatus("online", {"name": `${default_prefix}info | ${default_prefix}help [${shard.id + 1}/${client.shards.size}]`})
+    shard.editStatus("online", { "name": `${default_prefix}info | ${default_prefix}help [${shard.id + 1}/${client.shards.size}]` })
   })
 
   stats_messages = schedule.scheduleJob('*/15 * * * *', () => {
@@ -108,7 +110,7 @@ client.on('guildUpdate', guild => {
 client.on('guildDelete', guild => {
   util.log(`${guild.id}/${guild.name}: left guild`)
   delete guilds_list[guild.id]
-  
+
   write_guilds_list(guilds_list, () => {
     util.log('  removed guild successfully')
   })
@@ -131,12 +133,48 @@ client.on('messageCreate', message => {
       _helper.log(message, `permissions error in command ${command}`)
     } else {
       if (command in commands) {
-        commands[command](message, client, _helper)
-        client.usage['all'] += 1
-        client.usage[command] += 1
-        client.all_usage['all'] += 1
-        client.all_usage[command] += 1
-        
+        let member_limit = guilds_list[message.channel.guild.id].member_limit
+          ? guilds_list[message.channel.guild.id].member_limit
+          : 0
+        let channel_limit = guilds_list[message.channel.guild.id].channel_limit
+          ? guilds_list[message.channel.guild.id].channel_limit
+          : 0
+
+        if (!_members[message.member.id] || _members[message.member.id].last_message + member_limit < Date.now()) {
+          if (!_channels[message.channel.id] || _channels[message.channel.id].last_message + channel_limit < Date.now()) {
+            let rate = {
+              "last_message": Date.now(),
+              "cooldown_sent": false
+            }
+            _members[message.member.id] = JSON.parse(JSON.stringify(rate))
+            _channels[message.channel.id] = JSON.parse(JSON.stringify(rate))
+            commands[command](message, client, _helper)
+            client.usage['all'] += 1
+            client.usage[command] += 1
+            client.all_usage['all'] += 1
+            client.all_usage[command] += 1
+          } else {
+            if (!_channels[message.channel.id].cooldown_sent) {
+              client.createMessage(message.channel.id, 
+                `\`#${message.channel.name}\` Please cool down! ${Math.floor((_channels[message.channel.id].last_message + channel_limit - Date.now()) / 1000)} seconds left.`
+              ).then(new_message => {
+                setTimeout(() => {new_message.delete()}, 3000)
+                _helper.log(message, `channel ratelimited`)
+                _channels[message.channel.id].cooldown_sent = true
+              }).catch(err => _helper.handle(err))
+            }
+          }
+        } else {
+          if (!_members[message.member.id].cooldown_sent) {
+            client.createMessage(message.channel.id, 
+              `<@!${message.member.id}>, Please cool down! ${Math.floor((_channels[message.channel.id].last_message + channel_limit - Date.now()) / 1000)} seconds left.`
+            ).then(new_message => {
+              setTimeout(() => {new_message.delete()}, 3000)
+              _helper.log(message, `member ratelimited`)
+              _members[message.member.id].cooldown_sent = true
+            }).catch(err => _helper.handle(err))
+          }
+        }
       } else {
         _helper.log(message, `malformed command used`)
       }

@@ -177,6 +177,7 @@ client.on('messageCreate', message => {
         }
       } else {
         _helper.log(message, `malformed command used`)
+        _helper.log(message, message.content)
       }
     }
   }

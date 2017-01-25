@@ -3,24 +3,27 @@ const cmdlist = require('../util/consts.json').cmdlist
 var guilds_list = require('../json/guilds.json')
 const util = require('util')
 
-const help_embed = function(help_obj, prefix) {
+const help_embed = function (help_obj, prefix) {
+  fields = []
+
+  if (help_obj.usage) fields.push({
+    "name": "Usage",
+    "value": `\`${prefix}${help_obj.usage}\``,
+    "inline": true
+  })
+
+  if (help_obj.example) fields.push({
+    "name": "Example",
+    "value": `\`${prefix}${help_obj.example}\``,
+    "inline": true
+  })
+
   return {
     'embed': {
       'author': {
         'name': help_obj.name
       },
-      'fields': [
-        {
-          "name": "Usage",
-          "value": `\`${prefix}${help_obj.usage}\``,
-          "inline": true
-        },
-        {
-          "name": "Example",
-          "value": `\`${prefix}${help_obj.example}\``,
-          "inline": true
-        }
-      ],
+      'fields': fields,
       'description': help_obj.text.join('')
     }
   }
@@ -28,7 +31,8 @@ const help_embed = function(help_obj, prefix) {
 
 module.exports = (message, client, helper) => {
   let options = message.content.split(' ')
-  let specific_topic = options[1]
+  options.shift()
+  let specific_topic = options.join(' ')
   if (specific_topic in help_topics) {
     client.createMessage(message.channel.id, help_embed(help_topics[specific_topic], helper.prefix)).then(new_message => {
       helper.log(new_message, `Helped with topic ${specific_topic}`)
@@ -42,8 +46,8 @@ module.exports = (message, client, helper) => {
         help_list += `\`${topic}\` `;
       }
     }
-    let conditional = (options[1]) ? 'Help topic not found: `' + options[1] + '`. ' : ''
-    if (conditional != '') helper.log(message, 'could not help with ' + options[1])
+    let conditional = specific_topic ? `Help topic not found: \`${specific_topic}\`. ` : null
+    if (conditional) helper.log(message, 'could not help with ' + specific_topic)
     client.createMessage(message.channel.id, `${conditional}List of help topics: ${help_list}`).then(new_message => {
       helper.log(new_message, 'helped with all topics')
     }).catch(err => helper.handle(message, err))

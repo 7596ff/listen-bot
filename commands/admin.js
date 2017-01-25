@@ -6,7 +6,7 @@ const admin_commands = {
 }
 
 module.exports = (message, client, helper) => {
-    if (message.member.permission.json.manageGuild) {
+    if (message.member.permission.json.manageMessages) {
         let options = message.content.split(' ')
         const command = options.slice(1, options.length)[0]
         message.content = options.slice(2, options.length).join(' ')

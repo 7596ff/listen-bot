@@ -44,6 +44,9 @@ function ability_embed(hero, ability) {
     let desc = ability_obj.description ? ability_obj.description.join('\n') : ""
     let note = ability_obj.notes ? ability_obj.notes.join('\n') : ""
     let agha = ability_obj.agha ? `<:aghanims:273535039814500353> ${ability_obj.agha}` : ""
+    let thum = require('../json/config.json').is_discord_shit ? {} : {
+        "url": `http://cdn.dota2.com/apps/dota2/images/abilities/${hero}_${clean(ability)}_lg.png`
+    }
 
     return {
         "author": {
@@ -62,10 +65,8 @@ function ability_embed(hero, ability) {
                 "value": temp.effects.join('\n'),
                 "inline": true
             }
-        ], 
-        "thumbnail": {
-            "url": `http://cdn.dota2.com/apps/dota2/images/abilities/${hero}_${clean(ability)}_lg.png`
-        }
+        ],
+        "thumbnail": thum
     }
 }
 

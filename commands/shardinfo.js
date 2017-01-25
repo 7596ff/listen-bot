@@ -1,4 +1,4 @@
-const shardinfo_helper = require('../shardinfo_helper')
+const shardinfo_helper = require('../util/shardinfo_helper')
 
 module.exports = (message, client, helper) => {
     client.createMessage(message.channel.id, {

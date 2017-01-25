@@ -1,0 +1,16 @@
+{
+    "cmdlist": [
+        "eval",
+        "shardinfo",
+        "patch",
+        "talents",
+        "wiki",
+        "list",
+        "ability",
+        "help",
+        "info",
+        "admin",
+        "stats",
+        "talent"
+    ]
+}

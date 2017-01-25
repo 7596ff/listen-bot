@@ -99,7 +99,7 @@
     "text": [
       "sets the cooldowns for the entire guild for members or channels. for example: if the channel cooldown is 10, ",
       "10 seconds must pass before a new command is processed. all commands in between the time of the first command and ",
-      "any new commands. \n\nrecommended cooldowns: 10 seconds for member and 5 seconds for channel. \ndefault cooldowns: 0."
+      "any new commands are ignored. \n\nrecommended cooldowns: 10 seconds for member and 5 seconds for channel. \ndefault cooldowns: 0."
     ],
     "example": "admin cooldowns member 5"
   }

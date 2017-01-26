@@ -11,6 +11,9 @@
         "info",
         "admin",
         "stats",
-        "talent"
+        "talent",
+        "skill",
+        "about",
+        "spell"
     ]
 }

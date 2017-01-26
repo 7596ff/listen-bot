@@ -1,3 +1,3 @@
 module.exports = (message, client, helper) => {
-    require('./talents')(message, client, helper)
+    require('./info')(message, client, helper)
 }

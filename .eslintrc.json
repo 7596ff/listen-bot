@@ -8,10 +8,6 @@
         "sourceType": "module"
     },
     "rules": {
-        "node/exports-style": [
-            "error",
-            "module.exports"
-        ],
         "indent": [
             "error",
             4

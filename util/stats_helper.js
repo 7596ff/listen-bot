@@ -21,7 +21,7 @@ module.exports = (client) => {
                 "inline": true
             }, {
                 "name": "Uptime",
-                "value": require('pretty-ms')(client.uptime),
+                "value": require("pretty-ms")(client.uptime),
                 "inline": true
             }, {
                 "name": "Cmds (session/all time)",
@@ -30,5 +30,5 @@ module.exports = (client) => {
             }
         ],
         "timestamp": new Date().toJSON()
-    }
-}
+    };
+};

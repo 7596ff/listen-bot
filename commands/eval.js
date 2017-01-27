@@ -1,24 +1,32 @@
+const util = require("util");
+
 const clean = (text) => {
-  if (typeof (text) === 'string') {
-    return text.replace(/`/g, '`' + String.fromCharCode(8203)).replace(/@/g, '@' + String.fromCharCode(8203));
-  } else {
-    return text;
-  }
-}
+    if (typeof (text) === "string") {
+        return text.replace(/`/g, "`" + String.fromCharCode(8203)).replace(/@/g, "@" + String.fromCharCode(8203));
+    } else {
+        return text;
+    }
+};
 
 module.exports = (message, client, helper) => {
-  let params = message.content.split(' ').splice(1)
+    let params = message.content.split(" ").splice(1);
   
-  if (message.member.id == '102645408223731712') {
-    try {
-      var code = params.join(" ")
-      var evaled = eval(code)
+    if (message.member.id == "102645408223731712") {
+        try {
+            var code = params.join(" ");
+            var evaled = eval(code);
 
-      if (typeof evaled !== "string") evaled = require("util").inspect(evaled)
+            if (typeof evaled !== "string") evaled = require("util").inspect(evaled);
 
-      client.createMessage(message.channel.id, `${"```js\n"}${clean(evaled)}${"\n```"}`)
-    } catch (err) {
-      client.createMessage(message.channel.id, `${"`ERROR`\n```js\n"}${clean(err)}${"\n```"}`)
+            client.createMessage(message.channel.id, 
+                `${"```js\n"}${clean(evaled)}${"\n```"}`).then(() => {
+                    util.log(clean(evaled));
+                }).catch(err => helper.handle(message, err));
+        } catch (err) {
+            client.createMessage(message.channel.id, 
+                `${"`ERROR`\n```js\n"}${clean(err)}${"\n```"}`).then(() => {
+                    util.log(clean(err));
+                }).catch(e_err => helper.handle(message, e_err));
+        }
     }
-  }
-}
+};

@@ -123,6 +123,12 @@ client.on('messageCreate', message => {
   _prefix = guilds_list[message.channel.guild.id].prefix
   _helper = new Helper(_prefix)
 
+  if (!message.author) {
+    _helper.log(message, 'no author')
+    _helper.log(message, message.content)
+    return
+  }
+  
   if (message.author.id == client.user.id) return
   if (message.content.startsWith(_prefix) || message.content.startsWith(default_prefix)) {
     message.content = message.content.replace(default_prefix, "").replace(_prefix, "").trim()

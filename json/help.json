@@ -23,7 +23,7 @@
     "name": "ability",
     "usage": "ability [<hero>] <ability>",
     "text": [
-      "returns info about a hero's ability.",
+      "returns info about a hero's ability. ",
       "there are multiple aliases for abilites, you can discover them all ",
       "simply by using commands! supplying a hero is not required. aliases: ",
       "`skill` `spell`"

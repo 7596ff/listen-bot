@@ -77,6 +77,24 @@ client.on("ready", () => {
         client.editMessage(config.edit_channel, config.stats_edit_message, {
             "embed": require("./util/stats_helper")(client)
         }).catch(err => util.log(err));
+        if (config.dbots_token) {
+            require("needle").post(
+                `https://bots.discord.pw/api/bots/${config.master_id}/stats`,
+                JSON.stringify({
+                    "server_count": client.guilds.size
+                }),
+                {
+                    "headers": {
+                        "Authorization": config.dbots_token,
+                        "Content-Type": "application/json"
+                    }
+                },
+                (err, resp) => {
+                    if (err) util.log(err);
+                    if (resp.statusCode != 200) util.log(resp.statusCode);
+                }
+            );
+        }
     });
 });
 
@@ -129,7 +147,7 @@ client.on("messageCreate", message => {
         _helper.log(message, message.content);
         return;
     }
-  
+
     if (message.author.id == client.user.id) return;
     if (message.content.startsWith(_prefix) || message.content.startsWith(default_prefix)) {
         message.content = message.content.replace(default_prefix, "").replace(_prefix, "").trim();
@@ -162,10 +180,10 @@ client.on("messageCreate", message => {
                         client.all_usage[command] += 1;
                     } else {
                         if (!_channels[message.channel.id].cooldown_sent) {
-                            client.createMessage(message.channel.id, 
+                            client.createMessage(message.channel.id,
                                 `\`#${message.channel.name}\` Please cool down! ${Math.floor((_channels[message.channel.id].last_message + channel_limit - Date.now()) / 1000) + 1} second(s) left.`
                             ).then(new_message => {
-                                setTimeout(() => {new_message.delete();}, 4000);
+                                setTimeout(() => { new_message.delete(); }, 4000);
                                 _helper.log(message, "channel ratelimited");
                                 _channels[message.channel.id].cooldown_sent = true;
                             }).catch(err => _helper.handle(err));
@@ -173,10 +191,10 @@ client.on("messageCreate", message => {
                     }
                 } else {
                     if (!_members[message.member.id].cooldown_sent) {
-                        client.createMessage(message.channel.id, 
+                        client.createMessage(message.channel.id,
                             `<@!${message.member.id}>, Please cool down! ${Math.floor((_members[message.member.id].last_message + member_limit - Date.now()) / 1000) + 1} second(s) left.`
                         ).then(new_message => {
-                            setTimeout(() => {new_message.delete();}, 4000);
+                            setTimeout(() => { new_message.delete(); }, 4000);
                             _helper.log(message, "member ratelimited");
                             _members[message.member.id].cooldown_sent = true;
                         }).catch(err => _helper.handle(err));

@@ -118,6 +118,7 @@ client.on("guildDelete", guild => {
 
 client.on("messageCreate", message => {
     if (!message.channel.guild) return;
+    
     if (message.member.bot) return;
 
     client.guilds_list = guilds_list;

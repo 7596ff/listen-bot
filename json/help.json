@@ -50,8 +50,8 @@
     "name": "info",
     "usage": "info",
     "text": [
-      "returns some info about the bot. alias: ",
-      "`about`"
+      "returns some info about the bot. aliases: ",
+      "`about` `invite`"
     ],
     "example": "info"
   },

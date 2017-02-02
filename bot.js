@@ -13,14 +13,14 @@ var stats_messages;
 var guilds_list = require("./json/guilds.json");
 var _members = {};
 var _channels = {};
-var commands = {};
+client.commands = {};
 client.all_usage = require("./json/usage.json");
 client.usage = {
     "all": 0
 };
 
 for (let cmd of require("./util/consts.json").cmdlist) {
-    commands[cmd] = require(`./commands/${cmd}`);
+    client.commands[cmd] = require(`./commands/${cmd}`);
     client.usage[cmd] = 0;
     client.all_usage[cmd] = isNaN(client.all_usage[cmd]) ? 0 : client.all_usage[cmd];
 }
@@ -157,7 +157,7 @@ client.on("messageCreate", message => {
         if (disabled_list && disabled_list.indexOf(command) != -1) {
             _helper.log(message, `permissions error in command ${command}`);
         } else {
-            if (command in commands) {
+            if (command in client.commands) {
                 let member_limit = guilds_list[message.channel.guild.id].member_limit
                     ? guilds_list[message.channel.guild.id].member_limit
                     : 0;
@@ -173,7 +173,7 @@ client.on("messageCreate", message => {
                         };
                         _members[message.member.id] = JSON.parse(JSON.stringify(rate));
                         _channels[message.channel.id] = JSON.parse(JSON.stringify(rate));
-                        commands[command](message, client, _helper);
+                        client.commands[command](message, client, _helper);
                         client.usage["all"] += 1;
                         client.usage[command] += 1;
                         client.all_usage["all"] += 1;

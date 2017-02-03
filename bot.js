@@ -90,8 +90,12 @@ client.on("ready", () => {
                     }
                 },
                 (err, resp) => {
-                    if (err) util.log(err);
-                    if (resp.statusCode != 200) util.log(resp.statusCode);
+                    if (err) {
+                        util.log(err);
+                        return;
+                    } else if (resp.statusCode != 200) {
+                        util.log(resp.statusCode);
+                    }
                 }
             );
         }

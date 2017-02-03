@@ -6,8 +6,6 @@ const schedule = require("node-schedule");
 const util = require("util");
 const fs = require("fs");
 
-const default_prefix = "--";
-
 var stats_messages;
 
 var guilds_list = require("./json/guilds.json");
@@ -65,7 +63,7 @@ process.on("exit", (code) => {
 client.on("ready", () => {
     util.log("listen-bot ready.");
     client.shards.forEach(shard => {
-        shard.editStatus("online", { "name": `${default_prefix}info | ${default_prefix}help [${shard.id + 1}/${client.shards.size}]` });
+        shard.editStatus("online", { "name": `${config.default_prefix}info | ${config.default_prefix}help [${shard.id + 1}/${client.shards.size}]` });
     });
 
     stats_messages = schedule.scheduleJob("*/15 * * * *", () => {
@@ -108,7 +106,7 @@ client.on("guildCreate", guild => {
     util.log("  creating guild object");
     guilds_list[guild.id] = {
         "name": guild.name,
-        "prefix": default_prefix,
+        "prefix": config.default_prefix,
         "starboard": "none",
         "starboard_emoji": "⭐",
         "disabled": {}
@@ -153,8 +151,8 @@ client.on("messageCreate", message => {
     }
 
     if (message.author.id == client.user.id) return;
-    if (message.content.startsWith(_prefix) || message.content.startsWith(default_prefix)) {
-        message.content = message.content.replace(default_prefix, "").replace(_prefix, "").trim();
+    if (message.content.startsWith(_prefix) || message.content.startsWith(config.default_prefix)) {
+        message.content = message.content.replace(config.default_prefix, "").replace(_prefix, "").trim();
 
         const command = message.content.split(" ").shift();
         let disabled_list = client.guilds_list[message.channel.guild.id].disabled[message.channel.id];

@@ -25,6 +25,9 @@ function playerinfo_embed(player) {
         mmr.push(player.mmr_estimate.estimate);
     }
 
+    let dotabuff_link = `https://www.dotabuff.com/players/${player.profile.account_id}`;
+    let opendota_link = `https://www.opendota.com/players/${player.profile.account_id}`;
+
     return {
         "title": `Player Stats for ${player.profile.personaname}`,
         "fields": [
@@ -44,8 +47,8 @@ function playerinfo_embed(player) {
                 "inline": true
             },
             {
-                "name": "Profile URL",
-                "value": `[${player.profile.personaname}](${player.profile.profileurl})`,
+                "name": "Links",
+                "value": `[DB](${dotabuff_link}) / [OD](opendota_link) / [Steam](${player.profile.profileurl})`,
                 "inline": true
             }
         ],
@@ -60,7 +63,6 @@ module.exports = (message, client, helper) => {
     let acc_id = options[1];
 
     if (acc_id.match("dotabuff") || acc_id.match("opendota")) {
-        console.log('found a link')
         let url = acc_id.split("/");
         acc_id = url[url.length - 1];
     }

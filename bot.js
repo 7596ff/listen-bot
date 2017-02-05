@@ -3,6 +3,8 @@ const config = require("./json/config.json");
 const client = new Eris(config.token, config.options);
 
 const schedule = require("node-schedule");
+const Mika = require("mika");
+
 const util = require("util");
 const fs = require("fs");
 
@@ -11,11 +13,13 @@ var stats_messages;
 var guilds_list = require("./json/guilds.json");
 var _members = {};
 var _channels = {};
+
 client.commands = {};
 client.all_usage = require("./json/usage.json");
 client.usage = {
     "all": 0
 };
+client.mika = new Mika();
 
 for (let cmd of require("./util/consts.json").cmdlist) {
     client.commands[cmd] = require(`./commands/${cmd}`);

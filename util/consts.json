@@ -15,6 +15,7 @@
         "skill",
         "about",
         "spell",
-        "invite"
+        "invite",
+        "playerinfo"
     ]
 }

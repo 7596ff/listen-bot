@@ -102,6 +102,16 @@ client.on("ready", () => {
             );
         }
     });
+
+    client.mika.getHeroes().then(od_heroes => {
+        fs.writeFile("./json/od_heroes.json", JSON.stringify(od_heroes), err => {
+            if (err) {
+                util.error(err);
+            } else {
+                util.log("  saved hero list.");
+            }
+        });
+    });
 });
 
 client.on("guildCreate", guild => {

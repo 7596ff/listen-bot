@@ -1,3 +1,5 @@
+const od_heroes = require("../json/od_heroes.json");
+
 function playerinfo_embed(player) {
     let winrate = (player.wl.win / (player.wl.win + player.wl.lose));
     winrate = winrate * 10000;
@@ -25,6 +27,17 @@ function playerinfo_embed(player) {
         mmr.push(player.mmr_estimate.estimate);
     }
 
+    let display_heroes = []
+    player.heroes = player.heroes.slice(0, 5);
+    for (let hero in player.heroes) {
+        let local_name = od_heroes.find(od_hero => od_hero.id == player.heroes[hero].hero_id).localized_name;
+        let winrate = (player.heroes[hero].win / player.heroes[hero].games);
+        winrate = winrate * 10000;
+        winrate = Math.round(winrate);
+        winrate = winrate / 100;
+        display_heroes.push(`(${winrate}% with ${player.heroes[hero].games} games) **${local_name}**`);
+    }
+
     let dotabuff_link = `https://www.dotabuff.com/players/${player.profile.account_id}`;
     let opendota_link = `https://www.opendota.com/players/${player.profile.account_id}`;
 
@@ -50,6 +63,11 @@ function playerinfo_embed(player) {
                 "name": "Links",
                 "value": `[DB](${dotabuff_link}) / [OD](opendota_link) / [Steam](${player.profile.profileurl})`,
                 "inline": true
+            },
+            {
+                "name": "Top 5 Heroes",
+                "value": display_heroes.join("\n"),
+                "inline": false
             }
         ],
         "thumbnail": {
@@ -77,12 +95,14 @@ module.exports = (message, client, helper) => {
     message.channel.createMessage("loading...").then(new_message => {
         client.mika.getPlayer(acc_id).then(player => {
             client.mika.getPlayerWL(acc_id).then(wl => {
-                player.wl = wl
-                new_message.edit({
-                    embed: playerinfo_embed(player)
-                }).then(() => {
-                    helper.log(message, "  sent player info")
-                }).catch(err => helper.handle(message, err));
+                client.mika.getPlayerHeroes(acc_id).then(heroes => {
+                    player.wl = wl
+                    player.heroes = heroes
+
+                    new_message.edit({ embed: playerinfo_embed(player) }).then(() => {
+                        helper.log(message, "  sent player info")
+                    }).catch(err => helper.handle(message, err));
+                })
             }).catch(err => {
                 helper.log(message, `mika failed with statusCode ${err.statusCode}`);
                 new_message.edit("Something went wrong.");

@@ -27,6 +27,10 @@ function playerinfo_embed(player) {
         mmr.push(player.mmr_estimate.estimate);
     }
 
+    if (mmr.length < 1) {
+        mmr.push("No mmr data found.");
+    }
+
     let display_heroes = []
     player.heroes = player.heroes.slice(0, 5);
     for (let hero in player.heroes) {

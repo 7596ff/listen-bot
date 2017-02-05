@@ -84,12 +84,17 @@ module.exports = (message, client, helper) => {
     let options = message.content.split(" ");
     let acc_id = options[1];
 
+    if (!acc_id) {
+        message.channel.createMessage("Please supply an account ID!");
+        return;
+    }
+
     if (acc_id.match("dotabuff") || acc_id.match("opendota")) {
         let url = acc_id.split("/");
         acc_id = url[url.length - 1];
     }
 
-    if (isNaN(acc_id) || !acc_id) {
+    if (isNaN(acc_id)) {
         message.channel.createMessage("I couldn't find an account ID in your message!");
         return;
     }

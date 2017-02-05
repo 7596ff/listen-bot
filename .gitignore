@@ -2,6 +2,7 @@ _old
 config.json
 guilds.json
 usage.json
+od_heroes.json
 
 # Logs
 logs

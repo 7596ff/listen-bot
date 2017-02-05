@@ -46,6 +46,15 @@
     ],
     "example": "list beastmaster"
   },
+  "playerinfo": {
+    "name": "playerinfo",
+    "usage": "playerinfo <link or id>",
+    "text": [
+      "returns some basic player info for a specified person. accepts ",
+      "a dotabuff or opendota link, as well as an account id."
+    ],
+    "example": "playerinfo https://www.opendota.com/players/103637655"
+  },
   "info": {
     "name": "info",
     "usage": "info",

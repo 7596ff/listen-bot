@@ -89,7 +89,7 @@ module.exports = (message, client, helper) => {
         acc_id = url[url.length - 1];
     }
 
-    if (isNaN(acc_id)) {
+    if (isNaN(acc_id) || !acc_id) {
         message.channel.createMessage("I couldn't find an account ID in your message!");
         return;
     }

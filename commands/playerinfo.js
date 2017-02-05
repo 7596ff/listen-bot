@@ -61,7 +61,7 @@ function playerinfo_embed(player) {
             },
             {
                 "name": "Links",
-                "value": `[DB](${dotabuff_link}) / [OD](opendota_link) / [Steam](${player.profile.profileurl})`,
+                "value": `[DB](${dotabuff_link}) / [OD](${opendota_link}) / [Steam](${player.profile.profileurl})`,
                 "inline": true
             },
             {

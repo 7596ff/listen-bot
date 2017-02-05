@@ -60,7 +60,7 @@ function playerinfo_embed(player) {
             },
             {
                 "name": "Country",
-                "value": `${countrycode} ${flag}`,
+                "value": `${flag} ${countrycode}`,
                 "inline": true
             },
             {

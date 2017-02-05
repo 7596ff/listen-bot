@@ -16,6 +16,8 @@
         "about",
         "spell",
         "invite",
-        "playerinfo"
+        "playerinfo",
+        "patchnotes",
+        "notes"
     ]
 }

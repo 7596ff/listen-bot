@@ -12,18 +12,36 @@ module.exports = (client) => {
                 "inline": true
             },
             {
+                "name": "Redis Version",
+                "value": client.redis.server_info.versions.join("."),
+                "inline": true
+            },
+            {
                 "name": "Memory Usage",
                 "value": `${(process.memoryUsage().rss / (1024 * 1024)).toFixed(1)} MB`,
                 "inline": true
-            }, {
+            },
+            {
+                "name": "Redis Usage",
+                "value": `${(client.redis.server_info.used_memory_rss / (1024 * 1024)).toFixed(1)} MB`,
+                "inline": true
+            },
+            {
+                "name": "\u200b",
+                "value": "\u200b",
+                "inline": true
+            },
+            {
                 "name": "Servers / Users",
                 "value": `${client.guilds.size} / ${client.users.size}`,
                 "inline": true
-            }, {
+            }, 
+            {
                 "name": "Uptime",
                 "value": require("pretty-ms")(client.uptime),
                 "inline": true
-            }, {
+            }, 
+            {
                 "name": "Cmds (session/all time)",
                 "value": `${client.usage.all}/${client.all_usage.all}`,
                 "inline": true

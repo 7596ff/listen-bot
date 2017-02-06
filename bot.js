@@ -64,9 +64,6 @@ var write_usage_stats = schedule.scheduleJob("*/10 * * * *", () => {
 process.on("exit", (code) => {
     util.log(`Exiting with code ${code}`);
     fs.writeFileSync("./json/usage.json", JSON.stringify(client.all_usage));
-    client.shards.forEach(shard => {
-        shard.editStatus("invisible");
-    });
 });
 
 client.on("ready", () => {

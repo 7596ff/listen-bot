@@ -1,2488 +1,2262 @@
 {
-    "abaddon": {
-        "talents": {
-            "10": [
-                "+25 Damage",
-                "+15% XP Gain"
-            ],
-            "15": [
-                "+5 Armor",
-                "+200 Mana"
-            ],
-            "20": [
-                "+25 Movement Speed",
-                "15% Cooldown Reduction"
-            ],
-            "25": [
-                "+25 Strength",
-                "+200 Shield HP"
-            ]
-        },
-        "true_name": "abaddon",
-        "format_name": "Abaddon"
-    },
-    "alchemist": {
-        "talents": {
-            "10": [
-                "+20 Damage",
-                "+4 Armor"
-            ],
-            "15": [
-                "+15 Movement Speed",
-                "+6 All Stats"
-            ],
-            "20": [
-                "+30 Attack Speed",
-                "+300 Health"
-            ],
-            "25": [
-                "30% Lifesteal",
-                "-4 Acid Spray Armor"
-            ]
-        },
-        "true_name": "alchemist",
-        "format_name": "Alchemist"
-    },
-    "ancient_apparition": {
-        "talents": {
-            "10": [
-                "+60 Gold/Min",
-                "+8% Spell Amplification"
-            ],
-            "15": [
-                "+15 Intelligence",
-                "+25 Health Regen"
-            ],
-            "20": [
-                "+25 Health Regen",
-                "-30s Respawn Time"
-            ],
-            "25": [
-                "+80 Chilling Touch Damage",
-                "3 Charges of Cold Feet"
-            ]
-        },
-        "true_name": "ancient_apparition",
-        "format_name": "Ancient Apparition"
-    },
-    "antimage": {
-        "talents": {
-            "10": [
-                "+6 Strength",
-                "+20 Damage"
-            ],
-            "15": [
-                "+20 Attack Speed",
-                "+250 HP"
-            ],
-            "20": [
-                "15% Evasion",
-                "+10 All Stats"
-            ],
-            "25": [
-                "-2s Blink Cooldown",
-                "+25 Agility"
-            ]
-        },
-        "true_name": "antimage",
-        "format_name": "Anti-Mage"
-    },
-    "arc_warden": {
-        "talents": {
-            "10": [
-                "+125 Health",
-                "+25 Attack Speed"
-            ],
-            "15": [
-                "+30 Damage",
-                "+8 Strength"
-            ],
-            "20": [
-                "10% Cooldown Reduction",
-                "+100 Attack Range"
-            ],
-            "25": [
-                "30% Lifesteal",
-                "+175 Spark Wraith Damage"
-            ]
-        },
-        "true_name": "arc_warden",
-        "format_name": "Arc Warden"
-    },
-    "axe": {
-        "talents": {
-            "10": [
-                "+6 Strength",
-                "+3 Mana Regen"
-            ],
-            "15": [
-                "+75 Damage",
-                "+250 Health"
-            ],
-            "20": [
-                "+25 Health Regen",
-                "+30 Movement Speed"
-            ],
-            "25": [
-                "+100 Battle Hunger DPS",
-                "+15 Armor"
-            ]
-        },
-        "true_name": "axe",
-        "format_name": "Axe"
-    },
-    "bane": {
-        "talents": {
-            "10": [
-                "+6 Armor",
-                "+200 Mana"
-            ],
-            "15": [
-                "+25% XP Gain",
-                "+250 Health"
-            ],
-            "20": [
-                "+35 Movement Speed",
-                "+175 Cast Range"
-            ],
-            "25": [
-                "+120 Enfeeble Damage Reduction",
-                "+200 Brain Sap Damage/Heal"
-            ]
-        },
-        "true_name": "bane",
-        "format_name": "Bane"
-    },
-    "batrider": {
-        "talents": {
-            "10": [
-                "+10 Intelligence",
-                "+4 Armor"
-            ],
-            "15": [
-                "+175 Health",
-                "+5% Spell Amplification"
-            ],
-            "20": [
-                "15% Cooldown Reduction",
-                "+35 Movement Speed"
-            ],
-            "25": [
-                "+8s Firefly Duration",
-                "+200 Flamebreak AoE/Knockback"
-            ]
-        },
-        "true_name": "batrider",
-        "format_name": "Batrider"
-    },
-    "beastmaster": {
-        "talents": {
-            "10": [
-                "+15% XP Gain",
-                "+20 Movement Speed"
-            ],
-            "15": [
-                "+12 Strength",
-                "-25s Respawn Time"
-            ],
-            "20": [
-                "12% Cooldown Reduction",
-                "+300 Health"
-            ],
-            "25": [
-                "+175 Wild Axes Damage",
-                "+120 Damage"
-            ]
-        },
-        "true_name": "beastmaster",
-        "format_name": "Beastmaster"
-    },
-    "bloodseeker": {
-        "talents": {
-            "10": [
-                "+5 Armor",
-                "+25 Damage"
-            ],
-            "15": [
-                "+30 Attack Speed",
-                "+250 Health"
-            ],
-            "20": [
-                "-30s Respawn Time",
-                "+10 All Stats"
-            ],
-            "25": [
-                "-7s Bloodrite Cooldown",
-                "30% Lifesteal"
-            ]
-        },
-        "true_name": "bloodseeker",
-        "format_name": "Bloodseeker"
-    },
-    "bounty_hunter": {
-        "talents": {
-            "10": [
-                "+175 Health",
-                "+15% XP Gain"
-            ],
-            "15": [
-                "+40 Attack Speed",
-                "+15 Movement Speed"
-            ],
-            "20": [
-                "+10% Spell Amplification",
-                "+100 Damage"
-            ],
-            "25": [
-                "20% Evasion",
-                "-5s Jinada Cooldown"
-            ]
-        },
-        "true_name": "bounty_hunter",
-        "format_name": "Bounty Hunter"
-    },
     "brewmaster": {
-        "talents": {
-            "10": [
-                "+25 Attack Speed",
-                "+3 Mana Regen"
-            ],
-            "15": [
-                "+20 Movement Speed",
-                "+10% Magic Resistance"
-            ],
-            "20": [
-                "-30s Respawn Time",
-                "+20 Strength"
-            ],
-            "25": [
-                "+14 Primal Split Unit Armor",
-                "+75 Damage"
-            ]
-        },
         "true_name": "brewmaster",
+        "20": [
+            "+20 Strength",
+            "-25s Respawn Time"
+        ],
+        "15": [
+            "+10% Magic Resistance",
+            "+20 Movement Speed"
+        ],
+        "25": [
+            "+14 Primal Split Unit Armor",
+            "+75 Damage"
+        ],
+        "10": [
+            "+3 Mana Regen",
+            "+25 Attack Speed"
+        ],
         "format_name": "Brewmaster"
     },
-    "bristleback": {
-        "talents": {
-            "10": [
-                "+7 Strength",
-                "+2 Mana Regen"
-            ],
-            "15": [
-                "+20 Movement Speed",
-                "+200 Health"
-            ],
-            "20": [
-                "+45 Attack Speed",
-                "-30s Respawn Time"
-            ],
-            "25": [
-                "+25 Health Regen",
-                "+4 Max Goo Stacks"
-            ]
-        },
-        "true_name": "bristleback",
-        "format_name": "Bristleback"
+    "tiny": {
+        "true_name": "tiny",
+        "20": [
+            "+14 Mana Regen",
+            "+25 Attack Speed"
+        ],
+        "15": [
+            "+15 Movement Speed",
+            "+45 Damage"
+        ],
+        "25": [
+            "+200 Avalanche Damage",
+            "20% Cooldown Reduction"
+        ],
+        "10": [
+            "+10 Intelligence",
+            "+6 Strength"
+        ],
+        "format_name": "Tiny"
     },
-    "broodmother": {
-        "talents": {
-            "10": [
-                "+10 Agility",
-                "+15% XP Gain"
-            ],
-            "15": [
-                "20% Cooldown Reduction",
-                "+7 Armor"
-            ],
-            "20": [
-                "+300 Health",
-                "+50 Attack Speed"
-            ],
-            "25": [
-                "+8 Max Webs",
-                "+200 Spiderlings Health"
-            ]
-        },
-        "true_name": "broodmother",
-        "format_name": "Broodmother"
-    },
-    "centaur": {
-        "talents": {
-            "10": [
-                "+30 Damage",
-                "+2 Mana Regen"
-            ],
-            "15": [
-                "10% Evasion",
-                "+10% Magic Resistance"
-            ],
-            "20": [
-                "+10% Spell Amplification",
-                "+15 Strength"
-            ],
-            "25": [
-                "+1s Hoof Stomp Duration",
-                "Gains Return Aura"
-            ]
-        },
-        "true_name": "centaur",
-        "format_name": "Centaur Warrunner"
-    },
-    "chaos_knight": {
-        "talents": {
-            "10": [
-                "+15 Attack Speed",
-                "+7 Intelligence"
-            ],
-            "15": [
-                "+15 Movement Speed",
-                "+10 Strength"
-            ],
-            "20": [
-                "+120 Gold/Min",
-                "+12 All Stats"
-            ],
-            "25": [
-                "Reality Rift Pierces Spell Immunity",
-                "20% Cooldown Reduction"
-            ]
-        },
-        "true_name": "chaos_knight",
-        "format_name": "Chaos Knight"
-    },
-    "chen": {
-        "talents": {
-            "10": [
-                "+15 Movement Speed",
-                "+125 Cast Range"
-            ],
-            "15": [
-                "+200 Health",
-                "+25% Spell Amplification"
-            ],
-            "20": [
-                "+90 Gold/Min",
-                "-40s Respawn Time"
-            ],
-            "25": [
-                "+2 Holy Persuasion Max Count",
-                "+200 Hand of God Heal"
-            ]
-        },
-        "true_name": "chen",
-        "format_name": "Chen"
-    },
-    "clinkz": {
-        "talents": {
-            "10": [
-                "+10 Intelligence",
-                "+10% Magic Resistance"
-            ],
-            "15": [
-                "+12 Strength",
-                "+30 Searing Arrows Damage"
-            ],
-            "20": [
-                "20% Evasion",
-                "+10 All Stats"
-            ],
-            "25": [
-                "+70 Strafe Attack Speed",
-                "+125 Attack Range"
-            ]
-        },
-        "true_name": "clinkz",
-        "format_name": "Clinkz"
-    },
-    "rattletrap": {
-        "talents": {
-            "10": [
-                "+4 Armor",
-                "+200 Mana"
-            ],
-            "15": [
-                "+40 Damage",
-                "+15 Movement Speed"
-            ],
-            "20": [
-                "-25s Respawn Time",
-                "+12% Magic Resistance"
-            ],
-            "25": [
-                "+10s Battery Assault Duration",
-                "+400 Health"
-            ]
-        },
-        "true_name": "rattletrap",
-        "format_name": "Clockwerk"
-    },
-    "crystal_maiden": {
-        "talents": {
-            "10": [
-                "+15% Magic Resistance",
-                "+50 Damage"
-            ],
-            "15": [
-                "+125 Cast Range",
-                "+200 Health"
-            ],
-            "20": [
-                "+120 Gold/Min",
-                "-35s Respawn Time"
-            ],
-            "25": [
-                "+1.5s Frostbite Duration",
-                "+200 Crystal Nova Damage"
-            ]
-        },
-        "true_name": "crystal_maiden",
-        "format_name": "Crystal Maiden"
-    },
-    "dark_seer": {
-        "talents": {
-            "10": [
-                "12% Evasion",
-                "+100 Cast Range"
-            ],
-            "15": [
-                "+90 Damage",
-                "+14 Health Regen"
-            ],
-            "20": [
-                "+12 Strength",
-                "+25 Intelligence"
-            ],
-            "25": [
-                "12% Cooldown Reduction",
-                "+70 Ion Shell Damage"
-            ]
-        },
-        "true_name": "dark_seer",
-        "format_name": "Dark Seer"
-    },
-    "dazzle": {
-        "talents": {
-            "10": [
-                "+10 Intelligence",
-                "+125 Health"
-            ],
-            "15": [
-                "+100 Cast Range",
-                "+40 Damage"
-            ],
-            "20": [
-                "+25 Movement Speed",
-                "-30s Respawn Time"
-            ],
-            "25": [
-                "-6s Poison Touch Cooldown",
-                "+60 Shadow Wave Heal"
-            ]
-        },
-        "true_name": "dazzle",
-        "format_name": "Dazzle"
-    },
-    "death_prophet": {
-        "talents": {
-            "10": [
-                "+4% Spell Amplification",
-                "+7 Strength"
-            ],
-            "15": [
-                "+8% Magic Resistance",
-                "+75 Cast Range"
-            ],
-            "20": [
-                "10% Cooldown Reduction",
-                "+25 Movement Speed"
-            ],
-            "25": [
-                "+400 Health",
-                "+6 Exorcism Spirits"
-            ]
-        },
-        "true_name": "death_prophet",
-        "format_name": "Death Prophet"
-    },
-    "disruptor": {
-        "talents": {
-            "10": [
-                "+100 Cast Range",
-                "+60 Gold/Min"
-            ],
-            "15": [
-                "+200 Health",
-                "-30s Respawn Time"
-            ],
-            "20": [
-                "15% Cooldown Reduction",
-                "+10% Spell Amplification"
-            ],
-            "25": [
-                "+30% Magic Resistance",
-                "+4 Thunder Strike Hits"
-            ]
-        },
-        "true_name": "disruptor",
-        "format_name": "Disruptor"
-    },
-    "doom_bringer": {
-        "talents": {
-            "10": [
-                "+150 Health",
-                "+8 Intelligence"
-            ],
-            "15": [
-                "+15 Movement Speed",
-                "+6 Armor"
-            ],
-            "20": [
-                "+65 Damage",
-                "+20 Health Regen"
-            ],
-            "25": [
-                "+2% Infernal Blade Damage",
-                "Devour Can Target Ancients"
-            ]
-        },
-        "true_name": "doom_bringer",
-        "format_name": "Doom"
-    },
-    "dragon_knight": {
-        "talents": {
-            "10": [
-                "+6 Strength",
-                "+20 Attack Speed"
-            ],
-            "15": [
-                "+25% XP Gain",
-                "+40 Damage"
-            ],
-            "20": [
-                "+120 Gold/Min",
-                "+300 Health"
-            ],
-            "25": [
-                "2x Dragon Blood Regen/Armor",
-                "+50 Movement Speed"
-            ]
-        },
-        "true_name": "dragon_knight",
-        "format_name": "Dragon Knight"
-    },
-    "drow_ranger": {
-        "talents": {
-            "10": [
-                "+15 Movement Speed",
-                "+5 All Stats"
-            ],
-            "15": [
-                "+175 Health",
-                "+20 Attack Speed"
-            ],
-            "20": [
-                "+6% Precision Aura Damage",
-                "+14 Strength"
-            ],
-            "25": [
-                "+350 Gust Distance/Knockback",
-                "+25 Marksmanship Agility"
-            ]
-        },
-        "true_name": "drow_ranger",
-        "format_name": "Drow Ranger"
-    },
-    "earth_spirit": {
-        "talents": {
-            "10": [
-                "+10 Intelligence",
-                "+4 Armor"
-            ],
-            "15": [
-                "+15% Magic Resistance",
-                "+90 Gold/Min"
-            ],
-            "20": [
-                "+15% Spell Amplification",
-                "+300 Health"
-            ],
-            "25": [
-                "+300 Rolling Boulder Damage",
-                "-35s Respawn Time"
-            ]
-        },
-        "true_name": "earth_spirit",
-        "format_name": "Earth Spirit"
-    },
-    "earthshaker": {
-        "talents": {
-            "10": [
-                "+250 Mana",
-                "+8 Strength"
-            ],
-            "15": [
-                "+20 Movement Speed",
-                "+50 Damage"
-            ],
-            "20": [
-                "+10% Spell Amplification",
-                "-35s Respawn Time"
-            ],
-            "25": [
-                "+500 Health",
-                "-2s Enchant Totem Cooldown"
-            ]
-        },
-        "true_name": "earthshaker",
-        "format_name": "Earthshaker"
-    },
-    "elder_titan": {
-        "talents": {
-            "10": [
-                "-20s Respawn Time",
-                "+10 Strength"
-            ],
-            "15": [
-                "+275 Health",
-                "+25% XP Gain"
-            ],
-            "20": [
-                "+12% Magic Resistance",
-                "+50 Attack Speed"
-            ],
-            "25": [
-                "+15 Armor",
-                "+80 Astral Spirit Hero Attack"
-            ]
-        },
-        "true_name": "elder_titan",
-        "format_name": "Elder Titan"
-    },
-    "ember_spirit": {
-        "talents": {
-            "10": [
-                "+15% Spell Amplification",
-                "+20 Damage"
-            ],
-            "15": [
-                "+20 Movement Speed",
-                "+6 All Stats"
-            ],
-            "20": [
-                "+8 Armor",
-                "15% Cooldown Reduction [Note: Affects remnant charges]"
-            ],
-            "25": [
-                "+500 Flame Guard Absorption",
-                "+2s Searing Chains"
-            ]
-        },
-        "true_name": "ember_spirit",
-        "format_name": "Ember Spirit"
-    },
-    "enchantress": {
-        "talents": {
-            "10": [
-                "+5 All Stats",
-                "+20 Movement Speed"
-            ],
-            "15": [
-                "+8s Nature's Attendants Duration",
-                "+40 Damage"
-            ],
-            "20": [
-                "+12% Magic Resistance",
-                "-30s Respawn Time"
-            ],
-            "25": [
-                "+10 Nature's Attendants Wisps",
-                "+25 Intelligence"
-            ]
-        },
-        "true_name": "enchantress",
-        "format_name": "Enchantress"
-    },
-    "enigma": {
-        "talents": {
-            "10": [
-                "+20 Movement Speed",
-                "+12% Magic Resistance"
-            ],
-            "15": [
-                "15% Cooldown Reduction",
-                "+120 Gold/Min"
-            ],
-            "20": [
-                "+300 Health",
-                "-30s Respawn Time"
-            ],
-            "25": [
-                "+8 Demonic Conversion Eidolons",
-                "+12 Armor"
-            ]
-        },
-        "true_name": "enigma",
-        "format_name": "Enigma"
-    },
-    "faceless_void": {
-        "talents": {
-            "10": [
-                "+15 Attack Speed",
-                "+5 Strength"
-            ],
-            "15": [
-                "+7 Armor ",
-                "+25 Damage"
-            ],
-            "20": [
-                "+300 Health",
-                "+120 Gold/Min"
-            ],
-            "25": [
-                "+600 Timewalk Cast Range",
-                "20% Evasion"
-            ]
-        },
-        "true_name": "faceless_void",
-        "format_name": "Faceless Void"
-    },
-    "gyrocopter": {
-        "talents": {
-            "10": [
-                "+6% Spell Amplification",
-                "+150 Health"
-            ],
-            "15": [
-                "+10% Magic Resistance",
-                "+30 Damage"
-            ],
-            "20": [
-                "+25 Movement Speed",
-                "20% Cooldown Reduction"
-            ],
-            "25": [
-                "+3 Homing Missile Charges",
-                "+4 Flak Cannon Attacks"
-            ]
-        },
-        "true_name": "gyrocopter",
-        "format_name": "Gyrocopter"
-    },
-    "huskar": {
-        "talents": {
-            "10": [
-                "+150 Health",
-                "+15 Movement Speed"
-            ],
-            "15": [
-                "+30 Damage",
-                "15% Lifesteal"
-            ],
-            "20": [
-                "+15 Strength",
-                "+40 Attack Speed"
-            ],
-            "25": [
-                "+100 Attack Range",
-                "+400 Life Break Cast Range"
-            ]
-        },
-        "true_name": "huskar",
-        "format_name": "Huskar"
-    },
-    "invoker": {
-        "talents": {
-            "10": [
-                "+15 Damage",
-                "+125 Health"
-            ],
-            "15": [
-                "+1 Forged Spirit Summoned",
-                "+25% XP Gain"
-            ],
-            "20": [
-                "+7 All Stats",
-                "+35 Attack Speed"
-            ],
-            "25": [
-                "AoE Deafening Blast",
-                " -15s Tornado Cooldown"
-            ]
-        },
-        "true_name": "invoker",
-        "format_name": "Invoker"
-    },
-    "wisp": {
-        "talents": {
-            "10": [
-                "+10% Magic Resistance",
-                "+6 Armor"
-            ],
-            "15": [
-                "+10 Mana Regen",
-                " +10 Strength"
-            ],
-            "20": [
-                "+20 Health Regen",
-                "+120 Gold/Min"
-            ],
-            "25": [
-                "+150 Spirits Damage",
-                "-40s Respawn Time"
-            ]
-        },
-        "true_name": "wisp",
-        "format_name": "io"
-    },
-    "jakiro": {
-        "talents": {
-            "10": [
-                "+15% XP Gain",
-                "+8% Spell Amplification"
-            ],
-            "15": [
-                "+125 Cast Range",
-                "+250 Health"
-            ],
-            "20": [
-                "+400 Attack Range",
-                "+150 Gold/Min"
-            ],
-            "25": [
-                "+1.25s Ice Path Duration",
-                "-50s Respawn Time"
-            ]
-        },
-        "true_name": "jakiro",
-        "format_name": "Jakiro"
-    },
-    "juggernaut": {
-        "talents": {
-            "10": [
-                "+150 Health",
-                "+20 Damage"
-            ],
-            "15": [
-                "+20 Attack Speed",
-                "+6 Armor"
-            ],
-            "20": [
-                "+20 Movement Speed",
-                "+8 All Stats"
-            ],
-            "25": [
-                "+175 Blade Fury DPS",
-                "+20 Agility"
-            ]
-        },
-        "true_name": "juggernaut",
-        "format_name": "Juggernaut"
-    },
-    "keeper_of_the_light": {
-        "talents": {
-            "10": [
-                "+6 Strength",
-                "+20 Movement Speed"
-            ],
-            "15": [
-                "+20% XP Gain ",
-                " -25s Respawn Time"
-            ],
-            "20": [
-                "+10% Magic Resistance",
-                "+7 Armor"
-            ],
-            "25": [
-                "+300 Cast Range",
-                "+200 Illuminate Damage/Heal"
-            ]
-        },
-        "true_name": "keeper_of_the_light",
-        "format_name": "Keeper of the Light"
-    },
-    "kunkka": {
-        "talents": {
-            "10": [
-                "+20 Damage",
-                "+150 Mana"
-            ],
-            "15": [
-                "+15 Health Regen",
-                "+15 Movement Speed"
-            ],
-            "20": [
-                "+300 Health",
-                "+120 Gold/Min"
-            ],
-            "25": [
-                "+200 Torrent AoE",
-                "+25% Magic Resistance"
-            ]
-        },
-        "true_name": "kunkka",
-        "format_name": "Kunkka"
-    },
-    "legion_commander": {
-        "talents": {
-            "10": [
-                "+7 Strength",
-                "+15% XP Gain"
-            ],
-            "15": [
-                "+30 Damage",
-                "+20 Movement Speed"
-            ],
-            "20": [
-                "+7 Armor",
-                "-20s Respawn Time"
-            ],
-            "25": [
-                "25% Cooldown Reduction",
-                "+40 Duel Damage Bonus"
-            ]
-        },
-        "true_name": "legion_commander",
-        "format_name": "Legion Commander"
-    },
-    "leshrac": {
-        "talents": {
-            "10": [
-                "+125 Health",
-                "+15 Movement Speed"
-            ],
-            "15": [
-                "+400 Mana",
-                "+8% Magic Resistance"
-            ],
-            "20": [
-                "+5% Spell Amplification",
-                "+12 Strength"
-            ],
-            "25": [
-                "+50 Diabolic Edict Explosions",
-                "+2s Lightning Storm Slow Duration"
-            ]
-        },
-        "true_name": "leshrac",
-        "format_name": "Leshrac"
-    },
-    "lich": {
-        "talents": {
-            "10": [
-                "+125 Health",
-                " +15 Movement Speed"
-            ],
-            "15": [
-                "+100 Cast Range",
-                "+5 All Stats"
-            ],
-            "20": [
-                "+150 Damage",
-                "+120 Gold/Min"
-            ],
-            "25": [
-                "+25 Frost Armor Structure Armor",
-                "Attacks Apply 30% MS and AS slow"
-            ]
-        },
-        "true_name": "lich",
-        "format_name": "Lich"
-    },
-    "life_stealer": {
-        "talents": {
-            "10": [
-                "+5 All Stats",
-                "+15 Attack Speed"
-            ],
-            "15": [
-                "+200 Health",
-                "+25 Damage"
-            ],
-            "20": [
-                "15% Evasion",
-                "+25 Movement Speed"
-            ],
-            "25": [
-                "+1s Rage Duration",
-                "+15 Armor"
-            ]
-        },
-        "true_name": "life_stealer",
-        "format_name": "Lifestealer"
+    "phantom_lancer": {
+        "true_name": "phantom_lancer",
+        "20": [
+            "15% Evasion",
+            "+15% Magic Resistance"
+        ],
+        "15": [
+            "15% Cooldown Reduction",
+            "+8 All Stats"
+        ],
+        "25": [
+            "+600 Phantom Rush Range",
+            "+20 Strength"
+        ],
+        "10": [
+            "+20 Attack Speed",
+            "+150 Health"
+        ],
+        "format_name": "Phantom Lancer"
     },
     "lina": {
-        "talents": {
-            "10": [
-                "+250 Mana",
-                "+20 Damage"
-            ],
-            "15": [
-                "-30s Respawn Time",
-                "+125 Cast Range"
-            ],
-            "20": [
-                "+6% Spell Amplification",
-                "+150 Attack Range"
-            ],
-            "25": [
-                "+1 Fiery Soul Max Stacks",
-                "-4s Dragon Slave Cooldown"
-            ]
-        },
         "true_name": "lina",
+        "20": [
+            "+150 Attack Range",
+            "+6% Spell Amplification"
+        ],
+        "15": [
+            "+125 Cast Range",
+            "-30s Respawn Time"
+        ],
+        "25": [
+            "+1 Firey Soul Max Stacks",
+            "-4s Dragon Slave Cooldown"
+        ],
+        "10": [
+            "+20 Damage",
+            "+250 Mana"
+        ],
         "format_name": "Lina"
     },
+    "bloodseeker": {
+        "true_name": "bloodseeker",
+        "20": [
+            "+10 All Stats",
+            "-30s Respawn Time"
+        ],
+        "15": [
+            "+250 Health",
+            "+30 Attack Speed"
+        ],
+        "25": [
+            "30% Lifesteal",
+            "-7s Bloodrite Cooldown"
+        ],
+        "10": [
+            "+25 Damage",
+            "+5 Armor"
+        ],
+        "format_name": "Bloodseeker"
+    },
+    "arc_warden": {
+        "true_name": "arc_warden",
+        "20": [
+            "+100 Attack Range",
+            "10% Cooldown Reduction"
+        ],
+        "15": [
+            "+8 Strength",
+            "+30 Damage"
+        ],
+        "25": [
+            "+175 Spark Wraith Damage",
+            "30% Lifesteal"
+        ],
+        "10": [
+            "+25 Attack Speed",
+            "+125 Health"
+        ],
+        "format_name": "Arc Warden"
+    },
+    "sniper": {
+        "true_name": "sniper",
+        "20": [
+            "25% Cooldown Reduction",
+            "+8 Armor"
+        ],
+        "15": [
+            "+200 Health",
+            "+20 Shrapnel DPS"
+        ],
+        "25": [
+            "+4 Shrapnel Charges",
+            "+100 Attack Range"
+        ],
+        "10": [
+            "+15 Attack Speed",
+            "+4 Mana Regen"
+        ],
+        "format_name": "Sniper"
+    },
+    "bristleback": {
+        "true_name": "bristleback",
+        "20": [
+            "-30s Respawn Time",
+            "+45 Attack Speed"
+        ],
+        "15": [
+            "+200 Health",
+            "+20 Movement Speed"
+        ],
+        "25": [
+            "+4 Max Goo Stacks",
+            "+25 Health Regen"
+        ],
+        "10": [
+            "+2 Mana Regen",
+            "+7 Strength"
+        ],
+        "format_name": "Bristleback"
+    },
+    "bounty_hunter": {
+        "true_name": "bounty_hunter",
+        "20": [
+            "+100 Damage",
+            "+8% Spell Amplification"
+        ],
+        "15": [
+            "+15 Movement Speed",
+            "+40 Attack Speed"
+        ],
+        "25": [
+            "-5s Jinada Cooldown",
+            "20% Evasion"
+        ],
+        "10": [
+            "+15% XP Gain",
+            "+175 Health"
+        ],
+        "format_name": "Bounty Hunter"
+    },
+    "shredder": {
+        "true_name": "shredder",
+        "20": [
+            "+125 Cast Range",
+            "+5% Spell Amplification"
+        ],
+        "15": [
+            "+15 Intelligence",
+            "+14 Health Regen"
+        ],
+        "25": [
+            "+20 Strength",
+            "+6% Whirling Death Attribute Reduction"
+        ],
+        "10": [
+            "+10% XP Gain",
+            "+150 Health"
+        ],
+        "format_name": "Timbersaw"
+    },
+    "vengefulspirit": {
+        "true_name": "vengefulspirit",
+        "20": [
+            "+20 Movement Speed",
+            "+50 Damage"
+        ],
+        "15": [
+            "+100 Magic Missile Damage",
+            "+8 All Stats"
+        ],
+        "25": [
+            "Magic Missile Pierces Spell Immunity",
+            "+20% Vengeance Aura Damage"
+        ],
+        "10": [
+            "+25 Attack Speed",
+            "+8% Magic Resistance"
+        ],
+        "format_name": "Vengeful Spirit"
+    },
+    "riki": {
+        "true_name": "riki",
+        "20": [
+            "+8 All Stats",
+            "+250 Cast Range"
+        ],
+        "15": [
+            "+20% XP Gain",
+            "+10 Agility"
+        ],
+        "25": [
+            "-4s Smokescreen Cooldown",
+            "+0.4 Backstab Multiplier"
+        ],
+        "10": [
+            "+15 Movement Speed",
+            "+150 Health"
+        ],
+        "format_name": "Riki"
+    },
+    "venomancer": {
+        "true_name": "venomancer",
+        "20": [
+            "+15% Magic Resistance",
+            "+75 Damage"
+        ],
+        "15": [
+            "+150 Cast Range",
+            "+175 Health"
+        ],
+        "25": [
+            "3x Plague Ward HP/Damage",
+            "-60s Respawn Time"
+        ],
+        "10": [
+            "+20 Movement Speed",
+            "+20% XP Gain"
+        ],
+        "format_name": "Venomancer"
+    },
+    "nyx_assassin": {
+        "true_name": "nyx_assassin",
+        "20": [
+            "+15% Magic Resistance",
+            "+120 Gold/Min"
+        ],
+        "15": [
+            "+10 Strength",
+            "+25 Agility"
+        ],
+        "25": [
+            "200% Spiked Carapace Damage",
+            "+40 Movement Speed"
+        ],
+        "10": [
+            "+175 Health",
+            "+5% Spell Amplification"
+        ],
+        "format_name": "Nyx Assassin"
+    },
     "lion": {
-        "talents": {
-            "10": [
-                "+175 Health",
-                "+45 Damage"
-            ],
-            "15": [
-                "+90 Gold/Min",
-                "-30s Respawn Time"
-            ],
-            "20": [
-                "20% Magic Resistance",
-                "+8% Spell Amplification"
-            ],
-            "25": [
-                "+3 Mana Drain Multi Target",
-                "+20 All Stats"
-            ]
-        },
         "true_name": "lion",
+        "20": [
+            "+8% Spell Amplification",
+            "+20% Magic Resistance"
+        ],
+        "15": [
+            "+90 Gold/Min",
+            "-30s Respawn Time"
+        ],
+        "25": [
+            "+3 Mana Drain Multi Target",
+            "+20 All Stats"
+        ],
+        "10": [
+            "+45 Damage",
+            "+175 Health"
+        ],
         "format_name": "Lion"
     },
-    "lone_druid": {
-        "talents": {
-            "10": [
-                "+250 Health",
-                "+200 Attack Range"
-            ],
-            "15": [
-                "+65 Damage",
-                "+30 Spirit Bear Damage"
-            ],
-            "20": [
-                "+7 Spirit Bear Armor",
-                "-50s Respawn Time"
-            ],
-            "25": [
-                "+1.5s Entangle Duration",
-                "-10s Savage Roar Cooldown"
-            ]
-        },
-        "true_name": "lone_druid",
-        "format_name": "Lone Druid"
+    "enigma": {
+        "true_name": "enigma",
+        "20": [
+            "-30s Respawn Time",
+            "+300 Health"
+        ],
+        "15": [
+            "+120 Gold/Min",
+            "15% Cooldown Reduction"
+        ],
+        "25": [
+            "+8 Demonic Conversion Eidolons",
+            "+12 Armor"
+        ],
+        "10": [
+            "+12% Magic Resistance",
+            "+20 Movement Speed"
+        ],
+        "format_name": "Enigma"
     },
-    "luna": {
-        "talents": {
-            "10": [
-                "+15 Damage",
-                "+4 Armor"
-            ],
-            "15": [
-                "+150 Health",
-                "+40 Lucent Beam Damage"
-            ],
-            "20": [
-                "+25 Attack Speed",
-                "+10% Magic Resistance"
-            ],
-            "25": [
-                "-4s Lucent Beam Cooldown",
-                "+15 All Stats"
-            ]
-        },
-        "true_name": "luna",
-        "format_name": "Luna"
+    "necrolyte": {
+        "true_name": "necrolyte",
+        "20": [
+            "+10% Magic Resistance",
+            "+5% Spell Amplification"
+        ],
+        "15": [
+            "+15 Movement Speed",
+            "+6 All Stats"
+        ],
+        "25": [
+            "-1s Death Pulse Cooldown",
+            "+400 Health"
+        ],
+        "10": [
+            "+6 Strength",
+            "+40 Damage"
+        ],
+        "format_name": "Necrophos"
+    },
+    "huskar": {
+        "true_name": "huskar",
+        "20": [
+            "+40 Attack Speed",
+            "+15 Strength"
+        ],
+        "15": [
+            "15% Lifesteal",
+            "+30 Damage"
+        ],
+        "25": [
+            "+400 Life Break Cast Range",
+            "+100 Attack Range"
+        ],
+        "10": [
+            "+15 Movement Speed",
+            "+150 Health"
+        ],
+        "format_name": "Huskar"
     },
     "lycan": {
-        "talents": {
-            "10": [
-                "+15 Damage",
-                "+150 Health"
-            ],
-            "15": [
-                "-20s Respawn Time",
-                "+12 Strength"
-            ],
-            "20": [
-                "15% Evasion",
-                "15% Cooldown Reduction"
-            ],
-            "25": [
-                "+15s Shapeshift Duration",
-                "+2 Wolves Summoned"
-            ]
-        },
         "true_name": "lycan",
+        "20": [
+            "15% Cooldown Reduction",
+            "15% Evasion"
+        ],
+        "15": [
+            "+12 Strength",
+            "-20s Respawn Time"
+        ],
+        "25": [
+            "+2 Wolves Summoned",
+            "+15s Shapeshift Duration"
+        ],
+        "10": [
+            "+150 Health",
+            "+15 Damage"
+        ],
         "format_name": "Lycan"
     },
-    "magnataur": {
-        "talents": {
-            "10": [
-                "+25 Attack Speed",
-                "+15% Spell Amplification"
-            ],
-            "15": [
-                "+90 Gold/Min",
-                "+50 Damage"
-            ],
-            "20": [
-                "+15 Strength",
-                "+20 Movement Speed"
-            ],
-            "25": [
-                "-4s Shockwave Cooldown",
-                "-35 Respawn Time"
-            ]
-        },
-        "true_name": "magnataur",
-        "format_name": "Magnus"
+    "tusk": {
+        "true_name": "tusk",
+        "20": [
+            "+10% Magic Resistance",
+            "+6 Armor"
+        ],
+        "15": [
+            "+90 Gold/Min",
+            "+15 Strength"
+        ],
+        "25": [
+            "+150% Walrus Punch Crit",
+            "+500 Health"
+        ],
+        "10": [
+            "+30 Damage",
+            "+20% XP Gain"
+        ],
+        "format_name": "Tusk"
+    },
+    "dark_seer": {
+        "true_name": "dark_seer",
+        "20": [
+            "+25 Intelligence",
+            "+12 Strength"
+        ],
+        "15": [
+            "+14 Health Regen",
+            "+90 Damage"
+        ],
+        "25": [
+            "+70 Ion Shell Damage",
+            "12% Cooldown Reduction"
+        ],
+        "10": [
+            "+100 Cast Range",
+            "12% Evasion"
+        ],
+        "format_name": "Dark Seer"
+    },
+    "pugna": {
+        "true_name": "pugna",
+        "20": [
+            "+100 Cast Range",
+            "+10 All Stats"
+        ],
+        "15": [
+            "+10 Strength",
+            "-25s Respawn Time"
+        ],
+        "25": [
+            "+100 Nether Blast Damage",
+            "+50% Life Drain Heal"
+        ],
+        "10": [
+            "+150 Health",
+            "+3 Mana Regen"
+        ],
+        "format_name": "Pugna"
+    },
+    "shadow_shaman": {
+        "true_name": "shadow_shaman",
+        "20": [
+            "+20% Magic Resistance",
+            "-30s Respawn Time"
+        ],
+        "15": [
+            "+20% XP Gain",
+            "+100 Cast Range"
+        ],
+        "25": [
+            "+3s Shackles Duration",
+            "+1 Serpent Wards Attacks HP"
+        ],
+        "10": [
+            "+15 Movement Speed",
+            "+150 Health"
+        ],
+        "format_name": "Shadow Shaman"
+    },
+    "zuus": {
+        "true_name": "zuus",
+        "20": [
+            "-40s Respawn Time",
+            "+35 Movement Speed"
+        ],
+        "15": [
+            "+10% Magic Resistance",
+            "+5 Armor"
+        ],
+        "25": [
+            "+1.5% Static Field Damage",
+            "+200 Cast Range"
+        ],
+        "10": [
+            "+150 Health",
+            "+2 Mana Regen"
+        ],
+        "format_name": "Zeus"
+    },
+    "troll_warlord": {
+        "true_name": "troll_warlord",
+        "20": [
+            "+40 Damage",
+            "+300 Health"
+        ],
+        "15": [
+            "+6 Armor",
+            "+15 Movement Speed"
+        ],
+        "25": [
+            "-7s Whirling Axes Cooldown",
+            "+20% Magic Resistance"
+        ],
+        "10": [
+            "+10 Agility",
+            "+6 Strength"
+        ],
+        "format_name": "Troll Warlord"
+    },
+    "ursa": {
+        "true_name": "ursa",
+        "20": [
+            "+250 Health",
+            "+15 Movement Speed"
+        ],
+        "15": [
+            "+20 Attack Speed",
+            "+5 Armor"
+        ],
+        "25": [
+            "+10 Fury Swipes Damage",
+            "+14 All Stats"
+        ],
+        "10": [
+            "+8% Magic Resistance",
+            "+25 Damage"
+        ],
+        "format_name": "Ursa"
+    },
+    "elder_titan": {
+        "true_name": "elder_titan",
+        "20": [
+            "+50 Attack Speed",
+            "+12% Magic Resistance"
+        ],
+        "15": [
+            "+25% XP Gain",
+            "+275 Health"
+        ],
+        "25": [
+            "+80 Astral Spirit Hero Attack",
+            "+15 Armor"
+        ],
+        "10": [
+            "+10 Strength",
+            "-20s Respawn Time"
+        ],
+        "format_name": "Elder Titan"
+    },
+    "chaos_knight": {
+        "true_name": "chaos_knight",
+        "20": [
+            "+12 All Stats",
+            "+120 Gold/Min"
+        ],
+        "15": [
+            "+10 Strength",
+            "+15 Movement Speed"
+        ],
+        "25": [
+            "Reality Rift Pierces Spell Immune",
+            "20% Cooldown Reduction"
+        ],
+        "10": [
+            "+7 Intelligence",
+            "+15 Attack Speed"
+        ],
+        "format_name": "Chaos Knight"
+    },
+    "kunkka": {
+        "true_name": "kunkka",
+        "20": [
+            "+120 Gold/Min",
+            "+300 Health"
+        ],
+        "15": [
+            "+15 Movement Speed",
+            "+15 Health Regen"
+        ],
+        "25": [
+            "+200 Torrent AoE",
+            "+25% Magic Resistance"
+        ],
+        "10": [
+            "+150 Mana",
+            "+20 Damage"
+        ],
+        "format_name": "Kunkka"
+    },
+    "night_stalker": {
+        "true_name": "night_stalker",
+        "20": [
+            "+50 Damage",
+            "+30 Movement Speed"
+        ],
+        "15": [
+            "+25 Attack Speed",
+            "+300 Mana"
+        ],
+        "25": [
+            "-6s Crippling Fear Cooldown",
+            "+12 Armor"
+        ],
+        "10": [
+            "+100 Cast Range",
+            "+7 Strength"
+        ],
+        "format_name": "Night Stalker"
+    },
+    "storm_spirit": {
+        "true_name": "storm_spirit",
+        "20": [
+            "+7 Armor",
+            "+40 Attack Speed"
+        ],
+        "15": [
+            "+10 Intelligence",
+            "+175 Health"
+        ],
+        "25": [
+            "+0.75s Electric Vortex",
+            "+10% Spell Amplification"
+        ],
+        "10": [
+            "+3 Mana Regen",
+            "+20 Damage"
+        ],
+        "format_name": "Storm Spirit"
+    },
+    "legion_commander": {
+        "true_name": "legion_commander",
+        "20": [
+            "-20s Respawn Time",
+            "+7 Armor"
+        ],
+        "15": [
+            "+20 Movement Speed",
+            "+30 Damage"
+        ],
+        "25": [
+            "25% Cooldown Reduction",
+            "+40 Duel Damage Bonus"
+        ],
+        "10": [
+            "+15% XP Gain",
+            "+7 Strength"
+        ],
+        "format_name": "Legion Commander"
+    },
+    "alchemist": {
+        "true_name": "alchemist",
+        "20": [
+            "+300 Health",
+            "+30 Attack Speed"
+        ],
+        "15": [
+            "+6 All Stats",
+            "+15 Movement Speed"
+        ],
+        "25": [
+            "-4 Acid Spray Armor",
+            "30% Lifesteal"
+        ],
+        "10": [
+            "+4 Armor",
+            "+20 Damage"
+        ],
+        "format_name": "Alchemist"
+    },
+    "jakiro": {
+        "true_name": "jakiro",
+        "20": [
+            "+150 Gold/Min",
+            "+400 Attack Range"
+        ],
+        "15": [
+            "+250 Health",
+            "+125 Cast Range"
+        ],
+        "25": [
+            "+1.25s Ice Path Duration",
+            "-50s Respawn Time"
+        ],
+        "10": [
+            "+8% Spell Amplification",
+            "+15% XP Gain"
+        ],
+        "format_name": "Jakiro"
+    },
+    "abyssal_underlord": {
+        "true_name": "abyssal_underlord",
+        "20": [
+            "+100 Cast Range",
+            "+50 Attack Speed"
+        ],
+        "15": [
+            "+10% Spell Amplification",
+            "+200 Health"
+        ],
+        "25": [
+            "+0.4s Pit of Malice Root",
+            "+50 Health Regen"
+        ],
+        "10": [
+            "+2 Mana Regen",
+            "+4 Armor"
+        ],
+        "format_name": "Underlord"
+    },
+    "sand_king": {
+        "true_name": "sand_king",
+        "20": [
+            "+120 Gold/Min",
+            "+350 Health"
+        ],
+        "15": [
+            "+15 Movement Speed",
+            "+12% Magic Resistance"
+        ],
+        "25": [
+            "+4 Epicenter Pulses",
+            "+50 Health Regen"
+        ],
+        "10": [
+            "+5 Armor",
+            "+200 Mana"
+        ],
+        "format_name": "Sand King"
+    },
+    "ancient_apparition": {
+        "true_name": "ancient_apparition",
+        "20": [
+            "-30s Respawn Time",
+            "+35 Movement Speed"
+        ],
+        "15": [
+            "+25 Health Regen",
+            "+15 Intelligence"
+        ],
+        "25": [
+            "+80 Chilling Touch Damage",
+            "3 Charges of Cold Feet"
+        ],
+        "10": [
+            "+8% Spell Amplification",
+            "+60 Gold/Min"
+        ],
+        "format_name": "Ancient Apparition"
+    },
+    "rattletrap": {
+        "true_name": "rattletrap",
+        "20": [
+            "+12% Magic Resistance",
+            "-25s Respawn Time"
+        ],
+        "15": [
+            "+15 Movement Speed",
+            "+40 Damage"
+        ],
+        "25": [
+            "+10s Battery Assault Duration",
+            "+400 Health"
+        ],
+        "10": [
+            "+200 Mana",
+            "+4 Armor"
+        ],
+        "format_name": "Clockwerk"
+    },
+    "bane": {
+        "true_name": "bane",
+        "20": [
+            "+175 Cast Range",
+            "+35 Movement Speed"
+        ],
+        "15": [
+            "+25% XP Gain",
+            "+250 Health"
+        ],
+        "25": [
+            "+200 Brain Sap Damage/Heal",
+            "+120 Enfeeble Damage Reduction"
+        ],
+        "10": [
+            "+200 Mana",
+            "+6 Armor"
+        ],
+        "format_name": "Bane"
+    },
+    "sven": {
+        "true_name": "sven",
+        "20": [
+            "15% Evasion",
+            "+30 Attack Speed"
+        ],
+        "15": [
+            "+8 All Stats",
+            "+20 Movement Speed"
+        ],
+        "25": [
+            "-5s Storm Hammer Cooldown",
+            "+65 Damage"
+        ],
+        "10": [
+            "+200 Mana",
+            "+6 Strength"
+        ],
+        "format_name": "Sven"
+    },
+    "shadow_demon": {
+        "true_name": "shadow_demon",
+        "20": [
+            "-25s Respawn Time",
+            "+10% Magic Resistance"
+        ],
+        "15": [
+            "+6% Spell Amplification",
+            "+75 Cast Range"
+        ],
+        "25": [
+            "-1s Shadow Poison Cooldown",
+            "+400 Demonic Purge Damage"
+        ],
+        "10": [
+            "+10 Movement Speed",
+            "+6 Strength"
+        ],
+        "format_name": "Shadow Demon"
     },
     "medusa": {
-        "talents": {
-            "10": [
-                "+10 Intelligence",
-                "+15 Damage"
-            ],
-            "15": [
-                "+20 Attack Speed",
-                "10% Evasion"
-            ],
-            "20": [
-                "+15 Agility",
-                "+500 Mana"
-            ],
-            "25": [
-                "+1s Stone Gaze Stun",
-                "25% Lifesteal"
-            ]
-        },
         "true_name": "medusa",
+        "20": [
+            "+500 Mana",
+            "+15 Agility"
+        ],
+        "15": [
+            "10% Evasion",
+            "+20 Attack Speed"
+        ],
+        "25": [
+            "+1s Stone Gaze Stun",
+            "25% Lifesteal"
+        ],
+        "10": [
+            "+15 Damage",
+            "+10 Intelligence"
+        ],
         "format_name": "Medusa"
     },
     "meepo": {
-        "talents": {
-            "10": [
-                "Level 10: +4 Armor",
-                "+15 Damage"
-            ],
-            "15": [
-                "Level 15: 15% Lifesteal",
-                "+20 Movement Speed"
-            ],
-            "20": [
-                "10% Evasion",
-                "+25 Attack Speed"
-            ],
-            "25": [
-                "Level 25: +400 Health",
-                "-3s Poof Cooldown"
-            ]
-        },
         "true_name": "meepo",
+        "20": [
+            "+25 Attack Speed",
+            "10% Evasion"
+        ],
+        "15": [
+            "+20 Movement Speed",
+            "15% Lifesteal"
+        ],
+        "25": [
+            "-3s Poof Cooldown",
+            "+400 Health"
+        ],
+        "10": [
+            "+15 Damage",
+            "+4 Armor"
+        ],
         "format_name": "Meepo"
     },
-    "mirana": {
-        "talents": {
-            "10": [
-                "+8 Agility",
-                "+150 Health"
-            ],
-            "15": [
-                "+5% Spell Amplification",
-                "+30 Attack Speed"
-            ],
-            "20": [
-                "+40 Damage",
-                "+8 Armor"
-            ],
-            "25": [
-                "+100 Leap Attack Speed",
-                "+2 Multishot Sacred Arrows"
-            ]
-        },
-        "true_name": "mirana",
-        "format_name": "Mirana"
-    },
-    "morphling": {
-        "talents": {
-            "10": [
-                "+8 Agility",
-                "+200 Mana"
-            ],
-            "15": [
-                "+25 Attack Speed",
-                "12% Cooldown Reduction"
-            ],
-            "20": [
-                "+25 Movement Speed",
-                "+40 Damage"
-            ],
-            "25": [
-                "+400 Waveform Range",
-                "+30% Replicate Damage"
-            ]
-        },
-        "true_name": "morphling",
-        "format_name": "Morphling"
-    },
-    "monkey_king": {
-        "talents": {
-            "10": [
-                "+5 Armor",
-                "+20 Attack Speed"
-            ],
-            "15": [
-                "+20 Movement Speed",
-                "+275 Health"
-            ],
-            "20": [
-                "+15 Strength",
-                "+40 Damage"
-            ],
-            "25": [
-                "+100% Boundless Strike​ Crit",
-                "+25% Magic Resistance"
-            ]
-        },
-        "true_name": "monkey_king",
-        "format_name": "Monkey King"
-    },
-    "naga_siren": {
-        "talents": {
-            "10": [
-                "+250 Mana",
-                "+125 Health"
-            ],
-            "15": [
-                "+30 Attack Speed",
-                "15% Evasion"
-            ],
-            "20": [
-                "+15 Agility",
-                "+20 Strength"
-            ],
-            "25": [
-                "+1 Mirror Image Illusion",
-                "+40 Movement Speed"
-            ]
-        },
-        "true_name": "naga_siren",
-        "format_name": "Naga Siren"
-    },
     "furion": {
-        "talents": {
-            "10": [
-                "+20 Damage",
-                "+175 Health"
-            ],
-            "15": [
-                "+15 Intelligence",
-                "+20 Movement Speed"
-            ],
-            "20": [
-                "+35 Attack Speed",
-                "+8 Armor"
-            ],
-            "25": [
-                "2x Treants HP/Damage",
-                "-40s Respawn Time"
-            ]
-        },
         "true_name": "furion",
+        "20": [
+            "+8 Armor",
+            "+35 Attack Speed"
+        ],
+        "15": [
+            "+20 Movement Speed",
+            "+15 Intelligence"
+        ],
+        "25": [
+            "2x Treant HP/Damage",
+            "-40s Respawn Time"
+        ],
+        "10": [
+            "+175 Health",
+            "+20 Damage"
+        ],
         "format_name": "Nature's Prophet"
     },
-    "necrolyte": {
-        "talents": {
-            "10": [
-                "+40 Damage",
-                "+6 Strength"
-            ],
-            "15": [
-                "+6 All Stats ",
-                "+15 Movement Speed"
-            ],
-            "20": [
-                "+5% Spell Amplification",
-                "+10% Magic Resistance"
-            ],
-            "25": [
-                "+400 Health",
-                "-1s Death Pulse Cooldown"
-            ]
-        },
-        "true_name": "necrolyte",
-        "format_name": "Necrophos"
+    "crystal_maiden": {
+        "true_name": "crystal_maiden",
+        "20": [
+            "-35s Respawn Time",
+            "+120 Gold/Min"
+        ],
+        "15": [
+            "+200 Health",
+            "+125 Cast Range"
+        ],
+        "25": [
+            "+200 Crystal Nova Damage",
+            "+1.5s Frostbite Duration"
+        ],
+        "10": [
+            "+50 Damage",
+            "+15% Magic Resistance"
+        ],
+        "format_name": "Crystal Maiden"
     },
-    "night_stalker": {
-        "talents": {
-            "10": [
-                "+7 Strength",
-                "+100 Cast Range"
-            ],
-            "15": [
-                "+300 Mana",
-                "+25 Attack Speed"
-            ],
-            "20": [
-                "+30 Movement Speed",
-                "+50 Damage"
-            ],
-            "25": [
-                "+12 Armor",
-                "-6s Crippling Fear Cooldown"
-            ]
-        },
-        "true_name": "night_stalker",
-        "format_name": "Night Stalker"
+    "death_prophet": {
+        "true_name": "death_prophet",
+        "20": [
+            "+25 Movement Speed",
+            "10% Cooldown Reduction"
+        ],
+        "15": [
+            "+75 Cast Range",
+            "+8% Magic Resistance"
+        ],
+        "25": [
+            "+6 Exorcism Spirits",
+            "+400 Health"
+        ],
+        "10": [
+            "+7 Strength",
+            "+4% Spell Amplification"
+        ],
+        "format_name": "Death Prophet"
     },
-    "nyx_assassin": {
-        "talents": {
-            "10": [
-                "+5% Spell Amplification",
-                "+175 Health"
-            ],
-            "15": [
-                "+25 Agility",
-                "+10 Strength"
-            ],
-            "20": [
-                "+120 Gold/Min",
-                "+15% Magic Resistance"
-            ],
-            "25": [
-                "+40 Movement Speed",
-                "+200% Spiked Carapace Damage"
-            ]
-        },
-        "true_name": "nyx_assassin",
-        "format_name": "Nyx Assassin"
+    "chen": {
+        "true_name": "chen",
+        "20": [
+            "-40s Respawn Time",
+            "+90 Gold/Min"
+        ],
+        "15": [
+            "+25% Spell Amplification",
+            "+200 Health"
+        ],
+        "25": [
+            "+200 Hand of God Heal",
+            "+2 Holy Persuation Max Count"
+        ],
+        "10": [
+            "+125 Cast Range",
+            "+15 Movement Speed"
+        ],
+        "format_name": "Chen"
     },
-    "ogre_magi": {
-        "talents": {
-            "10": [
-                "+60 Gold/Min",
-                "+100 Cast Range"
-            ],
-            "15": [
-                "+40 Damage",
-                "+8% Magic Resistance"
-            ],
-            "20": [
-                "+250 Health",
-                "+25 Movement Speed"
-            ],
-            "25": [
-                "+15% Spell Amplification",
-                "+40 Bloodlust Attack Speed"
-            ]
-        },
-        "true_name": "ogre_magi",
-        "format_name": "Ogre Magi"
+    "monkey_king": {
+        "true_name": "monkey_king",
+        "20": [
+            "+15 Strength",
+            "+40 Damage"
+        ],
+        "15": [
+            "+20 Movement Speed",
+            "+275 Health"
+        ],
+        "25": [
+            "+100% Boundless Strike Crit",
+            "+25% Magic Resistance"
+        ],
+        "10": [
+            "+5 Armor",
+            "+20 Attack Speed"
+        ],
+        "format_name": "Monkey King"
     },
-    "omniknight": {
-        "talents": {
-            "10": [
-                "+60 Gold/Min",
-                "+15% XP Gain"
-            ],
-            "15": [
-                "+75 Cast Range",
-                "+8 Strength"
-            ],
-            "20": [
-                "+100 Damage",
-                "+6 Mana Regen"
-            ],
-            "25": [
-                "-16% Degen Aura ",
-                "+200 Purification Damage/Heal"
-            ]
-        },
-        "true_name": "omniknight",
-        "format_name": "Omniknight"
+    "lich": {
+        "true_name": "lich",
+        "20": [
+            "+120 Gold/Min",
+            "+150 Damage"
+        ],
+        "15": [
+            "+5 All Stats",
+            "+100 Cast Range"
+        ],
+        "25": [
+            "Attacks Apply 30% MS and AS Slow",
+            "+25 Frost Armor Structure Armor"
+        ],
+        "10": [
+            "+15 Movement Speed",
+            "+125 Health"
+        ],
+        "format_name": "Lich"
     },
-    "obsidian_destroyer": {
-        "talents": {
-            "10": [
-                "+250 Mana",
-                "+10 Movement Speed"
-            ],
-            "15": [
-                "+5 Armor",
-                "+20 Attack Speed"
-            ],
-            "20": [
-                "+15 Intelligence",
-                "+250 Health"
-            ],
-            "25": [
-                "+60s Arcane Orb Intelligence Steal",
-                "+8% Spell Amplification"
-            ]
-        },
-        "true_name": "obsidian_destroyer",
-        "format_name": "Outworld Devourer"
-    },
-    "phantom_assassin": {
-        "talents": {
-            "10": [
-                "+150 Health ",
-                "+15 Damage"
-            ],
-            "15": [
-                "10% Lifesteal ",
-                "+15 Movement Speed"
-            ],
-            "20": [
-                "+35 Attack Speed ",
-                "+10 All Stats"
-            ],
-            "25": [
-                "+25 Agility",
-                "Double Strike Stifling Dagger"
-            ]
-        },
-        "true_name": "phantom_assassin",
-        "format_name": "Phantom Assassin"
-    },
-    "phantom_lancer": {
-        "talents": {
-            "10": [
-                "+150 Health",
-                "+20 Attack Speed"
-            ],
-            "15": [
-                "+8 All Stats",
-                "15% Cooldown Reduction"
-            ],
-            "20": [
-                "+15% Magic Resistance",
-                "15% Evasion"
-            ],
-            "25": [
-                "+600 Phantom Rush Range",
-                "+20 Strength"
-            ]
-        },
-        "true_name": "phantom_lancer",
-        "format_name": "Phantom Lancer"
-    },
-    "phoenix": {
-        "talents": {
-            "10": [
-                "-20s Respawn Time",
-                "+175 Health"
-            ],
-            "15": [
-                "+90 Gold/Min",
-                "+12 Strength"
-            ],
-            "20": [
-                "+10 Armor",
-                "+8% Spell Amplification"
-            ],
-            "25": [
-                "+2 Supernova Hit Count",
-                "+1s Supernova Stun Duration"
-            ]
-        },
-        "true_name": "phoenix",
-        "format_name": "Phoenix"
-    },
-    "puck": {
-        "talents": {
-            "10": [
-                "+8 Intelligence",
-                "+150 Health"
-            ],
-            "15": [
-                "+40 Damage",
-                "+20 Movement Speed"
-            ],
-            "20": [
-                "+8% Spell Amplification",
-                "+20% Magic Resistance"
-            ],
-            "25": [
-                "+300 Gold/Min",
-                "+75% Illusory Orb Distance/Speed"
-            ]
-        },
-        "true_name": "puck",
-        "format_name": "Puck"
-    },
-    "pudge": {
-        "talents": {
-            "10": [
-                "+8 Strength",
-                "+2 Mana Regen"
-            ],
-            "15": [
-                "+5 Armor",
-                "+15 Movement Speed"
-            ],
-            "20": [
-                "+150 Gold/Min",
-                "-35s Respawn Time"
-            ],
-            "25": [
-                "+1.75 Flesh Heap Stack Strength",
-                "+120 Rot Damage"
-            ]
-        },
-        "true_name": "pudge",
-        "format_name": "Pudge"
-    },
-    "pugna": {
-        "talents": {
-            "10": [
-                "+3 Mana Regen",
-                "+150 Health"
-            ],
-            "15": [
-                "-25s Respawn Time",
-                "+10 Strength"
-            ],
-            "20": [
-                "+10 All Stats",
-                "+100 Cast Range"
-            ],
-            "25": [
-                "+50% Life Drain Heal",
-                "+100 Nether Blast Damage"
-            ]
-        },
-        "true_name": "pugna",
-        "format_name": "Pugna"
-    },
-    "queenofpain": {
-        "talents": {
-            "10": [
-                "+20 Damage",
-                "+5 Strength"
-            ],
-            "15": [
-                "+12% Cooldown Reduction",
-                "+90 Gold/Min"
-            ],
-            "20": [
-                "+100 Attack Range",
-                "+200 Health"
-            ],
-            "25": [
-                "70% Spell Lifesteal (1/5 for non-heroes)",
-                "+35 Intelligence"
-            ]
-        },
-        "true_name": "queenofpain",
-        "format_name": "Queen of Pain"
-    },
-    "razor": {
-        "talents": {
-            "10": [
-                "+15 Movement Speed ",
-                "+10 Agility"
-            ],
-            "15": [
-                "+5 Armor",
-                "+150 Cast Range"
-            ],
-            "20": [
-                "+250 Health",
-                "+30 Attack Speed"
-            ],
-            "25": [
-                "+175 Attack Range",
-                "+14 Static Link Damage Steal"
-            ]
-        },
-        "true_name": "razor",
-        "format_name": "Razor"
-    },
-    "riki": {
-        "talents": {
-            "10": [
-                "+15 Movement Speed",
-                "+150 Health"
-            ],
-            "15": [
-                "+10 Agility",
-                "+20% XP Gain"
-            ],
-            "20": [
-                "+250 Cast Range",
-                "+8 All Stats"
-            ],
-            "25": [
-                "+0.4 Backstab Multiplier",
-                "-4s Smokescreen Cooldown"
-            ]
-        },
-        "true_name": "riki",
-        "format_name": "Riki"
-    },
-    "rubick": {
-        "talents": {
-            "10": [
-                "+60 Gold/Min",
-                "+50 Damage"
-            ],
-            "15": [
-                "+150 Health",
-                "+15 Intelligence"
-            ],
-            "20": [
-                "+75 Cast Range",
-                "+8% Spell Amplification"
-            ],
-            "25": [
-                "20% Cooldown Reduction",
-                "+400 Telekinesis Land Distance"
-            ]
-        },
-        "true_name": "rubick",
-        "format_name": "Rubick"
-    },
-    "sand_king": {
-        "talents": {
-            "10": [
-                "+200 Mana",
-                "+5 Armor"
-            ],
-            "15": [
-                "+12% Magic Resistance",
-                "+15 Movement Speed"
-            ],
-            "20": [
-                "+350 Health",
-                "+120 Gold/Min"
-            ],
-            "25": [
-                "+4 Epicenter Pulses",
-                "+50 Health Regen"
-            ]
-        },
-        "true_name": "sand_king",
-        "format_name": "Sand King"
-    },
-    "shadow_demon": {
-        "talents": {
-            "10": [
-                "+6 Strength",
-                "+10 Movement Speed"
-            ],
-            "15": [
-                "+75 Cast Range",
-                "+6% Spell Amplification"
-            ],
-            "20": [
-                "+10% Magic Resistance",
-                "-25s Respawn Time"
-            ],
-            "25": [
-                "+400 Demonic Purge Damage",
-                "-1s Shadow Poison Cooldown"
-            ]
-        },
-        "true_name": "shadow_demon",
-        "format_name": "Shadow Demon"
-    },
-    "nevermore": {
-        "talents": {
-            "10": [
-                "+15 Movement Speed",
-                "+20 Attack Speed"
-            ],
-            "15": [
-                "+6% Spell Amplification ",
-                "+175 Health"
-            ],
-            "20": [
-                "15% Evasion",
-                "+2 Damage Per Soul"
-            ],
-            "25": [
-                "+150 Attack Range",
-                "-7s Shadow Raze Cooldown"
-            ]
-        },
-        "true_name": "nevermore",
-        "format_name": "Shadow Fiend"
-    },
-    "shadow_shaman": {
-        "talents": {
-            "10": [
-                "+150 Health",
-                "+15 Movement Speed"
-            ],
-            "15": [
-                "+100 Cast Range",
-                "+20% XP Gain"
-            ],
-            "20": [
-                "-30s Respawn Time",
-                "+20% Magic Resistance"
-            ],
-            "25": [
-                "+1 Serpent Wards Attacks Health",
-                "+3s Shackles Duration"
-            ]
-        },
-        "true_name": "shadow_shaman",
-        "format_name": "Shadow Shaman"
-    },
-    "silencer": {
-        "talents": {
-            "10": [
-                "+4 Armor",
-                "+7 Intelligence"
-            ],
-            "15": [
-                "+200 Health",
-                "+60 Gold/Min"
-            ],
-            "20": [
-                "+30 Attack Speed",
-                "+12% Magic Resistance"
-            ],
-            "25": [
-                "+200 Attack Range",
-                "+20% Curse Slow"
-            ]
-        },
-        "true_name": "silencer",
-        "format_name": "Silencer"
-    },
-    "skywrath_mage": {
-        "talents": {
-            "10": [
-                "+125 Health",
-                "+7 Intelligence"
-            ],
-            "15": [
-                "+50 Damage",
-                "+60 Gold/Min"
-            ],
-            "20": [
-                "+20 Movement Speed",
-                "+15% Magic Resistance"
-            ],
-            "25": [
-                "-4s Ancient Seal Cooldown",
-                "+14 Mana Regen"
-            ]
-        },
-        "true_name": "skywrath_mage",
-        "format_name": "Skywrath Mage"
-    },
-    "slardar": {
-        "talents": {
-            "10": [
-                "+6 Health Regen",
-                "+175 Mana"
-            ],
-            "15": [
-                "+200 Health",
-                "+25 Attack Speed"
-            ],
-            "20": [
-                "+35 Damage",
-                "+7 Armor"
-            ],
-            "25": [
-                "+20 Strength",
-                "+10% Bash Chance"
-            ]
-        },
-        "true_name": "slardar",
-        "format_name": "Slardar"
-    },
-    "slark": {
-        "talents": {
-            "10": [
-                "10% Life Steal",
-                "+15 Damage"
-            ],
-            "15": [
-                "+15 Agility",
-                "+10 Strength"
-            ],
-            "20": [
-                "+250 Health",
-                "+25 Attack Speed"
-            ],
-            "25": [
-                "+3s Pounce Leash",
-                "+12 All Stats"
-            ]
-        },
-        "true_name": "slark",
-        "format_name": "Slark"
-    },
-    "sniper": {
-        "talents": {
-            "10": [
-                "+4 Mana Regen",
-                "+15 Attack Speed"
-            ],
-            "15": [
-                "+20 Shrapnel DPS",
-                "+200 Health"
-            ],
-            "20": [
-                "+8 Armor",
-                "25% Cooldown Reduction"
-            ],
-            "25": [
-                "+100 Attack Range",
-                "+4 Shrapnel Charges"
-            ]
-        },
-        "true_name": "sniper",
-        "format_name": "Sniper"
-    },
-    "spectre": {
-        "talents": {
-            "10": [
-                "+20 Damage",
-                "+5 Armor"
-            ],
-            "15": [
-                "+6 All Stats",
-                "+15 Movement Speed"
-            ],
-            "20": [
-                "+25 Attack Speed",
-                "+12 Strength"
-            ],
-            "25": [
-                "-10s Spectral Dagger Cooldown",
-                "400 Health"
-            ]
-        },
-        "true_name": "spectre",
-        "format_name": "Spectre"
-    },
-    "spirit_breaker": {
-        "talents": {
-            "10": [
-                "+5 All Stats",
-                "+15 Movement Speed"
-            ],
-            "15": [
-                "+20 Damage",
-                "+5 Armor"
-            ],
-            "20": [
-                "+120 Gold/Min",
-                "-40s Respawn Time"
-            ],
-            "25": [
-                "+17% Greater Bash Chance ",
-                "+500 Charge Speed"
-            ]
-        },
-        "true_name": "spirit_breaker",
-        "format_name": "Spirit Breaker"
-    },
-    "storm_spirit": {
-        "talents": {
-            "10": [
-                "+20 Damage",
-                "+3 Mana Regen"
-            ],
-            "15": [
-                "+175 Health",
-                "+10 Intelligence"
-            ],
-            "20": [
-                "+40 Attack Speed",
-                "+7 Armor"
-            ],
-            "25": [
-                "+0.75s Electric Vortex ",
-                "+10% Spell Amplification"
-            ]
-        },
-        "true_name": "storm_spirit",
-        "format_name": "Storm Spirit"
-    },
-    "sven": {
-        "talents": {
-            "10": [
-                "+6 Strength",
-                "+200 Mana"
-            ],
-            "15": [
-                "+20 Movement Speed",
-                "+8 All Stats"
-            ],
-            "20": [
-                "+30 Attack Speed",
-                "15% Evasion"
-            ],
-            "25": [
-                "+65 Damage",
-                "-5s Stormbolt Cooldown"
-            ]
-        },
-        "true_name": "sven",
-        "format_name": "Sven"
-    },
-    "techies": {
-        "talents": {
-            "10": [
-                "+20 Movement Speed",
-                "+2 Mana Regen"
-            ],
-            "15": [
-                "+25% XP Gain",
-                "+200 Cast Range"
-            ],
-            "20": [
-                "+120 Gold/Min",
-                "-60s Respawn Time"
-            ],
-            "25": [
-                "+400 Blast Off Damage",
-                "25% Cooldown Reduction"
-            ]
-        },
-        "true_name": "techies",
-        "format_name": "Techies"
-    },
-    "templar_assassin": {
-        "talents": {
-            "10": [
-                "+25 Attack Speed",
-                "+15 Movement Speed"
-            ],
-            "15": [
-                "+6 All Stats",
-                "12% Evasion"
-            ],
-            "20": [
-                "+250 Health",
-                "+40 Damage"
-            ],
-            "25": [
-                "+3 Refraction Instances",
-                "-30s Respawn Time"
-            ]
-        },
-        "true_name": "templar_assassin",
-        "format_name": "Templar Assassin"
-    },
-    "terrorblade": {
-        "talents": {
-            "10": [
-                "+6 Health Regen",
-                "+15 Attack Speed"
-            ],
-            "15": [
-                "+25 Damage",
-                "+175 Health"
-            ],
-            "20": [
-                "+15 Agility ",
-                "+15 Movement Speed"
-            ],
-            "25": [
-                "+15 All Stats ",
-                "-30s Sunder Cooldown"
-            ]
-        },
-        "true_name": "terrorblade",
-        "format_name": "Terrorblade"
-    },
-    "tidehunter": {
-        "talents": {
-            "10": [
-                "+50 Damage",
-                "+150 Health"
-            ],
-            "15": [
-                "+7 Armor",
-                "+30% XP Gain"
-            ],
-            "20": [
-                "+6 Mana Regen",
-                "+15 Strength"
-            ],
-            "25": [
-                "-5 Gush Armor",
-                "20% Cooldown Reduction"
-            ]
-        },
-        "true_name": "tidehunter",
-        "format_name": "Tidehunter"
-    },
-    "shredder": {
-        "talents": {
-            "10": [
-                "+150 Health",
-                "+10% XP Gain"
-            ],
-            "15": [
-                "+14 Health Regen",
-                "+15 Intelligence"
-            ],
-            "20": [
-                "+5% Spell Amplification",
-                "+125 Cast Range"
-            ],
-            "25": [
-                "+6% Whirling Death Attribute Reduction",
-                "+20 Strength"
-            ]
-        },
-        "true_name": "shredder",
-        "format_name": "Timbersaw"
-    },
-    "tinker": {
-        "talents": {
-            "10": [
-                "+8 Intelligence",
-                "+5 Armor"
-            ],
-            "15": [
-                "+200 Health",
-                "4% Spell Amplification"
-            ],
-            "20": [
-                "+75 Cast Range ",
-                "15% Magic Resistance"
-            ],
-            "25": [
-                " 20% Spell Lifesteal (1/5 for non-heroes) ",
-                "+100 Laser Damage"
-            ]
-        },
-        "true_name": "tinker",
-        "format_name": "Tinker"
-    },
-    "tiny": {
-        "talents": {
-            "10": [
-                "+6 Strength",
-                "+10 Intelligence"
-            ],
-            "15": [
-                "+45 Damage ",
-                "+15 Movement Speed"
-            ],
-            "20": [
-                "+25 Attack Speed ",
-                "+14 Mana Regen"
-            ],
-            "25": [
-                "20% Cooldown Reduction",
-                "+200 Avalanche Damage"
-            ]
-        },
-        "true_name": "tiny",
-        "format_name": "Tiny"
-    },
-    "treant": {
-        "talents": {
-            "10": [
-                "+30 Attack Speed",
-                "+2 Mana Regen"
-            ],
-            "15": [
-                "+90 Gold/Min",
-                "+25 Movement Speed"
-            ],
-            "20": [
-                "15% Cooldown Reduction",
-                "+65 Damage"
-            ],
-            "25": [
-                "+5 Living Armor Block Instances",
-                "-50s Respawn Time"
-            ]
-        },
-        "true_name": "treant",
-        "format_name": "Treant Protector"
-    },
-    "troll_warlord": {
-        "talents": {
-            "10": [
-                "+6 Strength",
-                "10 Agility"
-            ],
-            "15": [
-                "+15 Movement Speed",
-                "+6 Armor"
-            ],
-            "20": [
-                "+300 Health",
-                "+40 Damage"
-            ],
-            "25": [
-                "-7s Whirling Axes Cooldown",
-                "+20% Magic Resistance"
-            ]
-        },
-        "true_name": "troll_warlord",
-        "format_name": "Troll Warlord"
-    },
-    "tusk": {
-        "talents": {
-            "10": [
-                "+20% XP Gain",
-                "+30 Damage"
-            ],
-            "15": [
-                "+15 Strength",
-                "+90 Gold/Min"
-            ],
-            "20": [
-                "+6 Armor ",
-                "+10% Magic Resistance"
-            ],
-            "25": [
-                "+500 Health ",
-                "+150% Walrus Punch Crit"
-            ]
-        },
-        "true_name": "tusk",
-        "format_name": "Tusk"
-    },
-    "abyssal_underlord": {
-        "talents": {
-            "10": [
-                "+4 Armor",
-                "+2 Mana Regen"
-            ],
-            "15": [
-                "+200 Health",
-                "+8% Spell Amplification"
-            ],
-            "20": [
-                "+50 Attack Speed",
-                "+100 Cast Range"
-            ],
-            "25": [
-                "+0.4s Pit of Malice Root",
-                "+50 Health Regen"
-            ]
-        },
-        "true_name": "abyssal_underlord",
-        "format_name": "Underlord"
-    },
-    "undying": {
-        "talents": {
-            "10": [
-                "-30s Respawn Time",
-                "+90 Gold/Min"
-            ],
-            "15": [
-                "+30% XP Gain",
-                "+300 Health"
-            ],
-            "20": [
-                "+10 All Stats ",
-                "+20 Movement Speed"
-            ],
-            "25": [
-                "+40 Tombstone Zombie Damage",
-                "+12 Armor"
-            ]
-        },
-        "true_name": "undying",
-        "format_name": "Undying"
-    },
-    "ursa": {
-        "talents": {
-            "10": [
-                "+25 Damage",
-                "+8% Magic Resistance"
-            ],
-            "15": [
-                "+5 Armor ",
-                "+20 Attack Speed"
-            ],
-            "20": [
-                "+15 Movement Speed ",
-                "+250 Health"
-            ],
-            "25": [
-                "+10 Fury Swipes Damage",
-                "+14 All Stats"
-            ]
-        },
-        "true_name": "ursa",
-        "format_name": "Ursa"
-    },
-    "vengefulspirit": {
-        "talents": {
-            "10": [
-                "+8% Magic Resistance",
-                "+25 Attack Speed"
-            ],
-            "15": [
-                "+100 Magic Missile Damage",
-                "+8 All Stats"
-            ],
-            "20": [
-                "+50 Damage",
-                "+20 Movement Speed"
-            ],
-            "25": [
-                "+20% Vengeance Aura Damage",
-                "Magic Missile Pierces Spell Immunity"
-            ]
-        },
-        "true_name": "vengefulspirit",
-        "format_name": "Vengeful Spirit"
-    },
-    "venomancer": {
-        "talents": {
-            "10": [
-                "+20% XP Gain",
-                "+20 Movement Speed"
-            ],
-            "15": [
-                "+175 Health",
-                "+150 Cast Range"
-            ],
-            "20": [
-                "+15% Magic Resistance",
-                "+75 Damage"
-            ],
-            "25": [
-                "3x Plague Ward HP/Damage",
-                "-60s Respawn Time"
-            ]
-        },
-        "true_name": "venomancer",
-        "format_name": "Venomancer"
-    },
-    "viper": {
-        "talents": {
-            "10": [
-                "+15 Damage",
-                "+125 Health"
-            ],
-            "15": [
-                "+7 Strength",
-                "+14 Agility"
-            ],
-            "20": [
-                "+7 Armor",
-                "+75 Attack Range"
-            ],
-            "25": [
-                "Poison Attack Affects Buildings",
-                "+80 Viper Strike DPS"
-            ]
-        },
-        "true_name": "viper",
-        "format_name": "Viper"
+    "lone_druid": {
+        "true_name": "lone_druid",
+        "20": [
+            "-50s Respawn Time",
+            "+7 Spirit Bear Armor"
+        ],
+        "15": [
+            "+30 Spirit Bear Damage",
+            "+65 Damage"
+        ],
+        "25": [
+            "-10s Savage Roar Cooldown",
+            "+1.5s Entangle Duration"
+        ],
+        "10": [
+            "+200 Attack Range",
+            "+250 Health"
+        ],
+        "format_name": "Lone Druid"
     },
     "visage": {
-        "talents": {
-            "10": [
-                "+60 Gold/Min",
-                "+15% XP Gain"
-            ],
-            "15": [
-                "+50 Damage",
-                "+100 Cast Range"
-            ],
-            "20": [
-                "+250 Health",
-                "-30s Respawn Time"
-            ],
-            "25": [
-                "+20% Spell Amplification",
-                "+120 Familiars Movement Speed"
-            ]
-        },
         "true_name": "visage",
+        "20": [
+            "-30s Respawn Time",
+            "+250 Health"
+        ],
+        "15": [
+            "+100 Cast Range",
+            "+50 Damage"
+        ],
+        "25": [
+            "+120 Familiars Movement Speed",
+            "+20% Spell Amplification"
+        ],
+        "10": [
+            "+15% XP Gain",
+            "+60 Gold/Min"
+        ],
         "format_name": "Visage"
     },
-    "warlock": {
-        "talents": {
-            "10": [
-                "+6 All Stats",
-                "+15% XP Gain"
-            ],
-            "15": [
-                "+125 Cast Range",
-                "+20 Movement Speed"
-            ],
-            "20": [
-                "+350 Health",
-                "-30s Respawn Time"
-            ],
-            "25": [
-                "Spell Immunity for Chaotic Offering Golems",
-                "+15 Chaotic Offering Golems Armor"
-            ]
-        },
-        "true_name": "warlock",
-        "format_name": "Warlock"
+    "earth_spirit": {
+        "true_name": "earth_spirit",
+        "20": [
+            "+300 Health",
+            "+15% Spell Amplification"
+        ],
+        "15": [
+            "+90 Gold/Min",
+            "+15% Magic Resistance"
+        ],
+        "25": [
+            "+300 Rolling Boulder Damage",
+            "-35s Respawn Time"
+        ],
+        "10": [
+            "+4 Armor",
+            "+10 Intelligence"
+        ],
+        "format_name": "Earth Spirit"
     },
-    "weaver": {
-        "talents": {
-            "10": [
-                "+6 Strength",
-                "+30 Shukuchi Damage"
-            ],
-            "15": [
-                "+25 Damage",
-                "+7 All Stats"
-            ],
-            "20": [
-                "+7 All Stats",
-                "+15 Agility"
-            ],
-            "25": [
-                "+200 Shukuchi Movement Speed",
-                "+20% Magic Resistance"
-            ]
-        },
-        "true_name": "weaver",
-        "format_name": "Weaver"
-    },
-    "windrunner": {
-        "talents": {
-            "10": [
-                "+15 Damage",
-                "+4 Mana Regen"
-            ],
-            "15": [
-                "+200 Health",
-                "+16 Intelligence"
-            ],
-            "20": [
-                "+12% Spell Amplification",
-                "+12% Magic Resistance"
-            ],
-            "25": [
-                "+100 Attack Range",
-                " -5s Powershot Cooldown"
-            ]
-        },
-        "true_name": "windrunner",
-        "format_name": "Windranger"
-    },
-    "winter_wyvern": {
-        "talents": {
-            "10": [
-                "+8 Intelligence",
-                "+5 Strength"
-            ],
-            "15": [
-                "+15 Movement Speed",
-                "+40 Damage"
-            ],
-            "20": [
-                "+120 Gold/Min",
-                "-35s Respawn Time"
-            ],
-            "25": [
-                "-3s Splinter Blast Cooldown",
-                "+15% Arctic Burn Slow"
-            ]
-        },
-        "true_name": "winter_wyvern",
-        "format_name": "Winter Wyvern"
-    },
-    "witch_doctor": {
-        "talents": {
-            "10": [
-                "+200 Health",
-                "+20% XP Gain"
-            ],
-            "15": [
-                "+75 Damage",
-                "-35s Respawn Time"
-            ],
-            "20": [
-                "+8 Armor",
-                "+15% Magic Resistance"
-            ],
-            "25": [
-                "+175 Death Ward Attack Range",
-                "+20 Voodoo Restoration Heal"
-            ]
-        },
-        "true_name": "witch_doctor",
-        "format_name": "Witch Doctor"
-    },
-    "skeleton_king": {
-        "talents": {
-            "10": [
-                "+15 Damage ",
-                "+8 Intelligence"
-            ],
-            "15": [
-                "+15 Movement Speed",
-                "+200 Health"
-            ],
-            "20": [
-                "+40 Attack Speed",
-                "+20 Strength"
-            ],
-            "25": [
-                "No Reincarnation mana cost",
-                "+20% Vampiric Aura Lifesteal"
-            ]
-        },
-        "true_name": "skeleton_king",
-        "format_name": "Wraith King"
-    },
-    "zuus": {
-        "talents": {
-            "10": [
-                "+2 Mana Regen",
-                "150 Health"
-            ],
-            "15": [
-                "+5 Armor",
-                "10% Magic Resistance"
-            ],
-            "20": [
-                "+35 Movement Speed",
-                "-40 Respawn Time"
-            ],
-            "25": [
-                "+1.5% Static Field Damage",
-                "+200 Cast Range"
-            ]
-        },
-        "true_name": "zuus",
-        "format_name": "Zeus"
+    "techies": {
+        "true_name": "techies",
+        "20": [
+            "-60s Respawn Time",
+            "+120 Gold/Min"
+        ],
+        "15": [
+            "+200 Cast Range",
+            "+25% XP Gain"
+        ],
+        "25": [
+            "+400 Blast Off Damage",
+            "25% Cooldown Reduction"
+        ],
+        "10": [
+            "+2 Mana Regen",
+            "+20 Movement Speed"
+        ],
+        "format_name": "Techies"
     },
     "oracle": {
-        "talents": {
-            "10": [
-                "-20s Respawn Time",
-                "+15% XP Gain"
-            ],
-            "15": [
-                "+200 Health",
-                "+60 Gold/Min"
-            ],
-            "20": [
-                "+25 Movement Speed",
-                "+20 Intelligence"
-            ],
-            "25": [
-                "+2s False Promise​ Duration",
-                "+250 Cast Range"
-            ]
-        },
         "true_name": "oracle",
+        "20": [
+            "+20 Intelligence",
+            "+25 Movement Speed"
+        ],
+        "15": [
+            "+60 Gold/Min",
+            "+200 Health"
+        ],
+        "25": [
+            "+2 False Promise Duration",
+            "+250 Cast Range"
+        ],
+        "10": [
+            "+15% XP Gain",
+            "-20s Respawn Time"
+        ],
         "format_name": "Oracle"
+    },
+    "keeper_of_the_light": {
+        "true_name": "keeper_of_the_light",
+        "20": [
+            "+7 Armor",
+            "+10% Magic Resistance"
+        ],
+        "15": [
+            "-25s Respawn Time",
+            "+20% XP Gain"
+        ],
+        "25": [
+            "+200 Illuminate Damage/Heal",
+            "+300 Cast Range"
+        ],
+        "10": [
+            "+20 Movement Speed",
+            "+6 Strength"
+        ],
+        "format_name": "Keeper of the Light"
+    },
+    "phantom_assassin": {
+        "true_name": "phantom_assassin",
+        "20": [
+            "+10 All Stats",
+            "+35 Attack Speed"
+        ],
+        "15": [
+            "+15 Movement Speed",
+            "10% Lifesteal"
+        ],
+        "25": [
+            "Double Strike Stifling Dagger",
+            "+25 Agility"
+        ],
+        "10": [
+            "+15 Damage",
+            "+150 Health"
+        ],
+        "format_name": "Phantom Assassin"
+    },
+    "luna": {
+        "true_name": "luna",
+        "20": [
+            "+10% Magic Resistance",
+            "+25 Attack Speed"
+        ],
+        "15": [
+            "+40 Lucent Beam Damage",
+            "+150 Health"
+        ],
+        "25": [
+            "-4s Lucent Beam Cooldown",
+            "+15 All Stats"
+        ],
+        "10": [
+            "+4 Armor",
+            "+15 Damage"
+        ],
+        "format_name": "Luna"
+    },
+    "viper": {
+        "true_name": "viper",
+        "20": [
+            "+75 Attack Range",
+            "+7 Armor"
+        ],
+        "15": [
+            "+14 Agility",
+            "+7 Strength"
+        ],
+        "25": [
+            "+80 Viper Strike DPS",
+            "Poison Attack Affects Buildings"
+        ],
+        "10": [
+            "+125 Health",
+            "+15 Damage"
+        ],
+        "format_name": "Viper"
+    },
+    "naga_siren": {
+        "true_name": "naga_siren",
+        "20": [
+            "+20 Strength",
+            "+15 Agility"
+        ],
+        "15": [
+            "15% Evasion",
+            "+30 Attack Speed"
+        ],
+        "25": [
+            "+1 Mirror Image Illusion",
+            "+40 Movement Speed"
+        ],
+        "10": [
+            "+125 Health",
+            "+250 Mana"
+        ],
+        "format_name": "Naga Siren"
+    },
+    "razor": {
+        "true_name": "razor",
+        "20": [
+            "+30 Attack Speed",
+            "+250 Health"
+        ],
+        "15": [
+            "+150 Cast Range",
+            "+5 Armor"
+        ],
+        "25": [
+            "+14 Static Link Damage Steal ",
+            "+175 Attack Range"
+        ],
+        "10": [
+            "+10 Agility",
+            "+15 Movement Speed"
+        ],
+        "format_name": "Razor"
+    },
+    "winter_wyvern": {
+        "true_name": "winter_wyvern",
+        "20": [
+            "-35s Respawn Time",
+            "+120 Gold/Min"
+        ],
+        "15": [
+            "+40 Damage",
+            "+15 Movement Speed"
+        ],
+        "25": [
+            "-3s Splinter Blast Cooldown",
+            "+15% Arctic Burn Slow"
+        ],
+        "10": [
+            "+5 Strength",
+            "+8 Intelligence"
+        ],
+        "format_name": "Winter Wyvern"
+    },
+    "templar_assassin": {
+        "true_name": "templar_assassin",
+        "20": [
+            "+40 Damage",
+            "+250 Health"
+        ],
+        "15": [
+            "12% Evasion",
+            "+6 All Stats"
+        ],
+        "25": [
+            "+3 Refraction Instances",
+            "-30s Respawn Time"
+        ],
+        "10": [
+            "+15 Movement Speed",
+            "+25 Attack Speed"
+        ],
+        "format_name": "Templar Assassin"
+    },
+    "ember_spirit": {
+        "true_name": "ember_spirit",
+        "20": [
+            "+8 Armor",
+            "15% Cooldown Reduction"
+        ],
+        "15": [
+            "+6 All Stats",
+            "+20 Movement Speed"
+        ],
+        "25": [
+            "+2s Searing Chains",
+            "+500 Flame Guard Absorption"
+        ],
+        "10": [
+            "+20 Damage",
+            "+15% Spell Amplification"
+        ],
+        "format_name": "Ember Spirit"
+    },
+    "spectre": {
+        "true_name": "spectre",
+        "20": [
+            "+12 Strength",
+            "+25 Attack Speed"
+        ],
+        "15": [
+            "+15 Movement Speed",
+            "+6 All Stats"
+        ],
+        "25": [
+            "-10s Spectral Dagger Cooldown",
+            "+400 Health"
+        ],
+        "10": [
+            "+5 Armor",
+            "+20 Damage"
+        ],
+        "format_name": "Spectre"
+    },
+    "terrorblade": {
+        "true_name": "terrorblade",
+        "20": [
+            "+15 Movement Speed",
+            "+15 Agility"
+        ],
+        "15": [
+            "+175 Health",
+            "+25 Damage"
+        ],
+        "25": [
+            "-30s Sunder Cooldown",
+            "+15 All Stats"
+        ],
+        "10": [
+            "+15 Attack Speed",
+            "+6 Health Regen"
+        ],
+        "format_name": "Terrorblade"
+    },
+    "abaddon": {
+        "true_name": "abaddon",
+        "20": [
+            "15% Cooldown Reduction",
+            "+25 Movement Speed"
+        ],
+        "15": [
+            "+5 Armor",
+            "+200 Mana"
+        ],
+        "25": [
+            "+200 Aphotic Shield Health",
+            "+25 Strength"
+        ],
+        "10": [
+            "+15% XP Gain",
+            "+25 Damage"
+        ],
+        "format_name": "Abaddon"
+    },
+    "obsidian_destroyer": {
+        "true_name": "obsidian_destroyer",
+        "20": [
+            "+250 Health",
+            "+15 Intelligence"
+        ],
+        "15": [
+            "+20 Attack Speed",
+            "+5 Armor"
+        ],
+        "25": [
+            "+8% Spell Amplification",
+            "+60s Arcane Orb Int Steal"
+        ],
+        "10": [
+            "+10 Movement Speed",
+            "+250 Mana"
+        ],
+        "format_name": "Outworld Devourer"
+    },
+    "beastmaster": {
+        "true_name": "beastmaster",
+        "20": [
+            "+300 Health",
+            "12% Cooldown Reduction"
+        ],
+        "15": [
+            "-30s Respawn Time",
+            "+12 Strength"
+        ],
+        "25": [
+            "+175 Wild Axes Damage",
+            "+120 Damage"
+        ],
+        "10": [
+            "+20 Movement Speed",
+            "+15% XP Gain"
+        ],
+        "format_name": "Beastmaster"
+    },
+    "enchantress": {
+        "true_name": "enchantress",
+        "20": [
+            "-30s Respawn Time",
+            "+12% Magic Resistance"
+        ],
+        "15": [
+            "+40 Damage",
+            "+8s Nature's Attendants Duration"
+        ],
+        "25": [
+            "+10 Nature's Attendants Wisps",
+            "+25 Intelligence"
+        ],
+        "10": [
+            "+20 Movement Speed",
+            "+5 All Stats"
+        ],
+        "format_name": "Enchantress"
+    },
+    "ogre_magi": {
+        "true_name": "ogre_magi",
+        "20": [
+            "+25 Movement Speed",
+            "+250 Health"
+        ],
+        "15": [
+            "+8% Magic Resistance",
+            "+40 Damage"
+        ],
+        "25": [
+            "+40 Bloodlust AS",
+            "+15% Spell Amplification"
+        ],
+        "10": [
+            "+100 Cast Range",
+            "+60 Gold/Min"
+        ],
+        "format_name": "Ogre Magi"
+    },
+    "centaur": {
+        "true_name": "centaur",
+        "20": [
+            "+15 Strength",
+            "+10% Spell Amplification"
+        ],
+        "15": [
+            "+10% Magic Resistance",
+            "10% Evasion"
+        ],
+        "25": [
+            "+1s Hoof Stomp Duration",
+            "Gains Return Aura"
+        ],
+        "10": [
+            "+2 Mana Regen",
+            "+30 Damage"
+        ],
+        "format_name": "Centaur Warrunner"
+    },
+    "life_stealer": {
+        "true_name": "life_stealer",
+        "20": [
+            "+25 Movement Speed",
+            "15% Evasion"
+        ],
+        "15": [
+            "+25 Damage",
+            "+200 Health"
+        ],
+        "25": [
+            "+1s Rage Duration",
+            "+15 Armor"
+        ],
+        "10": [
+            "+15 Attack Speed",
+            "+5 All Stats"
+        ],
+        "format_name": "Lifestealer"
+    },
+    "undying": {
+        "true_name": "undying",
+        "20": [
+            "+20 Movement Speed",
+            "+10 All Stats"
+        ],
+        "15": [
+            "+300 Health",
+            "+30% XP Gain"
+        ],
+        "25": [
+            "+40 Tombstone Zombie Damage",
+            "+12 Armor"
+        ],
+        "10": [
+            "+90 Gold/Min",
+            "-30s Respawn Time"
+        ],
+        "format_name": "Undying"
+    },
+    "morphling": {
+        "true_name": "morphling",
+        "20": [
+            "+40 Damage",
+            "+25 Movement Speed"
+        ],
+        "15": [
+            "12% Cooldown Reduction",
+            "+25 Attack Speed"
+        ],
+        "25": [
+            "+30% Replicate Damage",
+            "+400 Waveform Range"
+        ],
+        "10": [
+            "+200 Mana",
+            "+8 Agility"
+        ],
+        "format_name": "Morphling"
+    },
+    "treant": {
+        "true_name": "treant",
+        "20": [
+            "+65 Damage",
+            "15% Cooldown Reduction"
+        ],
+        "15": [
+            "+25 Movement Speed",
+            "+90 Gold/Min"
+        ],
+        "25": [
+            "+5 Living Armor Block Instances",
+            "-50s Respawn Time"
+        ],
+        "10": [
+            "+2 Mana Regen",
+            "+30 Attack Speed"
+        ],
+        "format_name": "Treant Protector"
+    },
+    "leshrac": {
+        "true_name": "leshrac",
+        "20": [
+            "+12 Strength",
+            "+5% Spell Amplification"
+        ],
+        "15": [
+            "+8% Magic Resistance",
+            "+400 Mana"
+        ],
+        "25": [
+            "+2s Lightning Storm Slow Duration",
+            "+50 Diabolic Edict Explosions"
+        ],
+        "10": [
+            "+15 Movement Speed",
+            "+125 Health"
+        ],
+        "format_name": "Leshrac"
+    },
+    "wisp": {
+        "true_name": "wisp",
+        "20": [
+            "+120 Gold/Min",
+            "+20 Health Regen"
+        ],
+        "15": [
+            "+10 Strength",
+            "+10 Mana Regen"
+        ],
+        "25": [
+            "+150 Spirits Damage",
+            "-40s Respawn Time"
+        ],
+        "10": [
+            "+6 Armor",
+            "+10% Magic Resistance"
+        ],
+        "format_name": "io"
+    },
+    "broodmother": {
+        "true_name": "broodmother",
+        "20": [
+            "+50 Attack Speed",
+            "+300 Health"
+        ],
+        "15": [
+            "+7 Armor",
+            "20% Cooldown Reduction"
+        ],
+        "25": [
+            "+200 Spiders Health",
+            "+8 Max Webs"
+        ],
+        "10": [
+            "+15% XP Gain",
+            "+10 Agility"
+        ],
+        "format_name": "Broodmother"
+    },
+    "disruptor": {
+        "true_name": "disruptor",
+        "20": [
+            "+10% Spell Amplification",
+            "15% Cooldown Reduction"
+        ],
+        "15": [
+            "-30s Respawn Time",
+            "+200 Health"
+        ],
+        "25": [
+            "+30% Magic Resistance",
+            "+4 Thunder Strike Hits"
+        ],
+        "10": [
+            "+60 Gold/Min",
+            "+100 Cast Range"
+        ],
+        "format_name": "Disruptor"
+    },
+    "nevermore": {
+        "true_name": "nevermore",
+        "20": [
+            "+2 Damage Per Soul",
+            "15% Evasion"
+        ],
+        "15": [
+            "+175 Health",
+            "+6% Spell Amplification"
+        ],
+        "25": [
+            "-7s Shadow Raze Cooldown",
+            "+150 Attack Range"
+        ],
+        "10": [
+            "+20 Attack Speed",
+            "+15 Movement Speed"
+        ],
+        "format_name": "Shadow Fiend"
+    },
+    "queenofpain": {
+        "true_name": "queenofpain",
+        "20": [
+            "+200 Health",
+            "+100 Attack Range"
+        ],
+        "15": [
+            "+90 Gold/Min",
+            "12% Cooldown Reduction"
+        ],
+        "25": [
+            "70% Spell Lifesteal",
+            "+35 Intelligence"
+        ],
+        "10": [
+            "+5 Strength",
+            "+20 Damage"
+        ],
+        "format_name": "Queen of Pain"
+    },
+    "skywrath_mage": {
+        "true_name": "skywrath_mage",
+        "20": [
+            "+15% Magic Resistance",
+            "+20 Movement Speed"
+        ],
+        "15": [
+            "+60 Gold/Min",
+            "+50 Damage"
+        ],
+        "25": [
+            "-4s Ancient Seal Cooldown",
+            "+14 Mana Regen"
+        ],
+        "10": [
+            "+7 Intelligence",
+            "+125 Health"
+        ],
+        "format_name": "Skywrath Mage"
+    },
+    "gyrocopter": {
+        "true_name": "gyrocopter",
+        "20": [
+            "20% Cooldown Reduction",
+            "+25 Movement Speed"
+        ],
+        "15": [
+            "+30 Damage",
+            "+10% Magic Resistance"
+        ],
+        "25": [
+            "+4 Flak Cannon Attacks",
+            "3 Homing Missile Charges"
+        ],
+        "10": [
+            "+150 Health",
+            "+6% Spell Amplification"
+        ],
+        "format_name": "Gyrocopter"
+    },
+    "skeleton_king": {
+        "true_name": "skeleton_king",
+        "20": [
+            "+20 Strength",
+            "+40 Attack Speed"
+        ],
+        "15": [
+            "+200 Health",
+            "+15 Movement Speed"
+        ],
+        "25": [
+            "+20% Vampiric Aura Lifesteal",
+            "No Reincarnation Manacost"
+        ],
+        "10": [
+            "+8 Intelligence",
+            "+15 Damage"
+        ],
+        "format_name": "Wraith King"
+    },
+    "doom_bringer": {
+        "true_name": "doom_bringer",
+        "20": [
+            "+25 Health Regen",
+            "+65 Damage"
+        ],
+        "15": [
+            "+6 Armor",
+            "+15 Movement Speed"
+        ],
+        "25": [
+            "Devour Can Target Ancients",
+            "+2% Infernal Blade Damage"
+        ],
+        "10": [
+            "+8 Intelligence",
+            "+150 Health"
+        ],
+        "format_name": "Doom"
+    },
+    "rubick": {
+        "true_name": "rubick",
+        "20": [
+            "+8% Spell Amplification",
+            "+75 Cast Range"
+        ],
+        "15": [
+            "+15 Intelligence",
+            "+150 Health"
+        ],
+        "25": [
+            "+400 Telekinesis Land Distance",
+            "20% Cooldown Reduction"
+        ],
+        "10": [
+            "+50 Damage",
+            "+60 Gold/Min"
+        ],
+        "format_name": "Rubick"
+    },
+    "silencer": {
+        "true_name": "silencer",
+        "20": [
+            "+12% Magic Resistance",
+            "+30 Attack Speed"
+        ],
+        "15": [
+            "+60 Gold/Min",
+            "+200 Health"
+        ],
+        "25": [
+            "+20% Curse Slow",
+            "+200 Attack Range"
+        ],
+        "10": [
+            "+7 Intelligence",
+            "+4 Armor"
+        ],
+        "format_name": "Silencer"
+    },
+    "tidehunter": {
+        "true_name": "tidehunter",
+        "20": [
+            "+15 Strength",
+            "+6 Mana Regen"
+        ],
+        "15": [
+            "+30% XP Gain",
+            "+7 Armor"
+        ],
+        "25": [
+            "-5 Gush Armor",
+            "20% Cooldown Reduction"
+        ],
+        "10": [
+            "+150 Health",
+            "+50 Damage"
+        ],
+        "format_name": "Tidehunter"
+    },
+    "windrunner": {
+        "true_name": "windrunner",
+        "20": [
+            "+12% Magic Resistance",
+            "+12% Spell Amplification"
+        ],
+        "15": [
+            "+16 Intelligence",
+            "+200 Health"
+        ],
+        "25": [
+            "-5s Powershot Cooldown",
+            "+100 Attack Range"
+        ],
+        "10": [
+            "+4 Mana Regen",
+            "+15 Damage"
+        ],
+        "format_name": "Windranger"
+    },
+    "faceless_void": {
+        "true_name": "faceless_void",
+        "20": [
+            "+120 Gold/Min",
+            "+300 Health"
+        ],
+        "15": [
+            "+25 Damage",
+            "+7 Armor"
+        ],
+        "25": [
+            "+600 Timewalk Cast Range",
+            "20% Evasion"
+        ],
+        "10": [
+            "+5 Strength",
+            "+15 Attack Speed"
+        ],
+        "format_name": "Faceless Void"
+    },
+    "antimage": {
+        "true_name": "antimage",
+        "20": [
+            "+10 All Stats",
+            "15% Evasion"
+        ],
+        "15": [
+            "+250 Health",
+            "+20 Attack Speed"
+        ],
+        "25": [
+            "-2s Blink Cooldown",
+            "+25 Agility"
+        ],
+        "10": [
+            "+20 Damage",
+            "+6 Strength"
+        ],
+        "format_name": "Anti-Mage"
+    },
+    "omniknight": {
+        "true_name": "omniknight",
+        "20": [
+            "+6 Mana Regen",
+            "+100 Damage"
+        ],
+        "15": [
+            "+8 Strength",
+            "+75 Cast Range"
+        ],
+        "25": [
+            "-16% Degen Aura",
+            "+200 Purification Damage/Heal"
+        ],
+        "10": [
+            "+15% XP Gain",
+            "+60 Gold/Min"
+        ],
+        "format_name": "Omniknight"
+    },
+    "witch_doctor": {
+        "true_name": "witch_doctor",
+        "20": [
+            "+15% Magic Resistance",
+            "+8 Armor"
+        ],
+        "15": [
+            "-35s Respawn Time",
+            "+75 Damage"
+        ],
+        "25": [
+            "+20 Voodoo Restoration Heal",
+            "+175 Death Ward Attack Range"
+        ],
+        "10": [
+            "+20% XP Gain",
+            "+200 Health"
+        ],
+        "format_name": "Witch Doctor"
+    },
+    "spirit_breaker": {
+        "true_name": "spirit_breaker",
+        "20": [
+            "-40s Respawn Time",
+            "+120 Gold/Min"
+        ],
+        "15": [
+            "+5 Armor",
+            "+20 Damage"
+        ],
+        "25": [
+            "+500 Charge Speed",
+            "+17% Greater Bash Chance"
+        ],
+        "10": [
+            "+15 Movement Speed",
+            "+5 All Stats"
+        ],
+        "format_name": "Spirit Breaker"
+    },
+    "drow_ranger": {
+        "true_name": "drow_ranger",
+        "20": [
+            "+14 Strength",
+            "+6% Precision Aura Damage"
+        ],
+        "15": [
+            "+20 Attack Speed",
+            "+175 Health"
+        ],
+        "25": [
+            "+25 Marksmanship Agility",
+            "+350 Gust Distance/Knockback"
+        ],
+        "10": [
+            "+5 All Stats",
+            "+15 Movement Speed"
+        ],
+        "format_name": "Drow Ranger"
+    },
+    "pudge": {
+        "true_name": "pudge",
+        "20": [
+            "-35s Respawn Time",
+            "+150 Gold/Min"
+        ],
+        "15": [
+            "+15 Movement Speed",
+            "+5 Armor"
+        ],
+        "25": [
+            "+120 Rot Damage",
+            "+1.75 Flesh Heap Stack Str"
+        ],
+        "10": [
+            "+2 Mana Regen",
+            "+8 Strength"
+        ],
+        "format_name": "Pudge"
+    },
+    "weaver": {
+        "true_name": "weaver",
+        "20": [
+            "+15 Agility",
+            "+200 Health"
+        ],
+        "15": [
+            "+7 All Stats",
+            "+25 Damage"
+        ],
+        "25": [
+            "+200 Shukuchi Movement Speed",
+            "+20% Magic Resistance"
+        ],
+        "10": [
+            "+30 Shukuchi Damage",
+            "+6 Strength"
+        ],
+        "format_name": "Weaver"
+    },
+    "tinker": {
+        "true_name": "tinker",
+        "20": [
+            "+15% Magic Resistance",
+            "+75 Cast Range"
+        ],
+        "15": [
+            "+4% Spell Amplification",
+            "+200 Health"
+        ],
+        "25": [
+            "+100 Laser Damage",
+            "20% Spell Lifesteal"
+        ],
+        "10": [
+            "+5 Armor",
+            "+8 Intelligence"
+        ],
+        "format_name": "Tinker"
+    },
+    "mirana": {
+        "true_name": "mirana",
+        "20": [
+            "+8 Armor",
+            "+40 Damage"
+        ],
+        "15": [
+            "+30 Attack Speed",
+            "+5% Spell Amplification"
+        ],
+        "25": [
+            "+2 Multishot Sacred Arrows",
+            "+100 Leap Attack Speed"
+        ],
+        "10": [
+            "+150 Health",
+            "+8 Agility"
+        ],
+        "format_name": "Mirana"
+    },
+    "axe": {
+        "true_name": "axe",
+        "20": [
+            "+30 Movement Speed",
+            "+25 Health Regen"
+        ],
+        "15": [
+            "+250 Health",
+            "+75 Damage"
+        ],
+        "25": [
+            "+100 Battle Hunger DPS",
+            "+15 Armor"
+        ],
+        "10": [
+            "+3 Mana Regen",
+            "+6 Strength"
+        ],
+        "format_name": "Axe"
+    },
+    "invoker": {
+        "true_name": "invoker",
+        "20": [
+            "+35 Attack Speed",
+            "+7 All Stats"
+        ],
+        "15": [
+            "+25% XP Gain",
+            "+1 Forged Spirit Summoned"
+        ],
+        "25": [
+            "-15s Tornado Cooldown",
+            "AoE Deafening Blast"
+        ],
+        "10": [
+            "+125 Health",
+            "+15 Damage"
+        ],
+        "format_name": "Invoker"
+    },
+    "dazzle": {
+        "true_name": "dazzle",
+        "20": [
+            "-30s Respawn Time",
+            "+25 Movement Speed"
+        ],
+        "15": [
+            "+40 Damage",
+            "+100 Cast Range"
+        ],
+        "25": [
+            "+60 Shadow Wave Heal",
+            "-6s Poison Touch Cooldown"
+        ],
+        "10": [
+            "+125 Health",
+            "+10 Intelligence"
+        ],
+        "format_name": "Dazzle"
+    },
+    "batrider": {
+        "true_name": "batrider",
+        "20": [
+            "+35 Movement Speed",
+            "15% Cooldown Reduction"
+        ],
+        "15": [
+            "+175 Health",
+            "+5% Spell Amplification"
+        ],
+        "25": [
+            "+200 Flamebreak AoE/Knockback",
+            "+8s Firefly Duration"
+        ],
+        "10": [
+            "+4 Armor",
+            "+10 Intelligence"
+        ],
+        "format_name": "Batrider"
+    },
+    "juggernaut": {
+        "true_name": "juggernaut",
+        "20": [
+            "+8 All Stats",
+            "+20 Movement Speed"
+        ],
+        "15": [
+            "+6 Armor",
+            "+20 Attack Speed"
+        ],
+        "25": [
+            "+175 Blade Fury DPS",
+            "+20 Agility"
+        ],
+        "10": [
+            "+20 Damage",
+            "+150 Health"
+        ],
+        "format_name": "Juggernaut"
+    },
+    "dragon_knight": {
+        "true_name": "dragon_knight",
+        "20": [
+            "+300 Health",
+            "+120 Gold/Min"
+        ],
+        "15": [
+            "+40 Damage",
+            "+25% XP Gain"
+        ],
+        "25": [
+            "2x Dragon Blood HP Regen/Armor",
+            "+50 Movement Speed"
+        ],
+        "10": [
+            "+20 Attack Speed",
+            "+6 Strength"
+        ],
+        "format_name": "Dragon Knight"
+    },
+    "slardar": {
+        "true_name": "slardar",
+        "20": [
+            "+7 Armor",
+            "+35 Damage"
+        ],
+        "15": [
+            "+25 Attack Speed",
+            "+200 Health"
+        ],
+        "25": [
+            "+10% Bash Chance",
+            "+20 Strength"
+        ],
+        "10": [
+            "+175 Mana",
+            "+6 Health Regen"
+        ],
+        "format_name": "Slardar"
+    },
+    "phoenix": {
+        "true_name": "phoenix",
+        "20": [
+            "+8% Spell Amplification",
+            "+10 Armor"
+        ],
+        "15": [
+            "+90 Gold/Min",
+            "+12 Strength"
+        ],
+        "25": [
+            "+1s Supernova Stun Duration",
+            "+2 Supernova Hit Count"
+        ],
+        "10": [
+            "+175 Health",
+            "-20s Respawn Time"
+        ],
+        "format_name": "Phoenix"
+    },
+    "warlock": {
+        "true_name": "warlock",
+        "20": [
+            "-30s Respawn Time",
+            "+350 Health"
+        ],
+        "15": [
+            "+20 Movement Speed",
+            "+125 Cast Range"
+        ],
+        "25": [
+            "+15 Chaotic Offering Golems Armor",
+            "Magic Immunity for Chaotic Offering Golems"
+        ],
+        "10": [
+            "+6 All Stats",
+            "+15% XP Gain"
+        ],
+        "format_name": "Warlock"
+    },
+    "clinkz": {
+        "true_name": "clinkz",
+        "20": [
+            "+10 All Stats",
+            "20% Evasion"
+        ],
+        "15": [
+            "+30 Searing Arrows Damage",
+            "+12 Strength"
+        ],
+        "25": [
+            "+70 Strafe Attack Speed",
+            "+125 Attack Range"
+        ],
+        "10": [
+            "+10% Magic Resistance",
+            "+10 Intelligence"
+        ],
+        "format_name": "Clinkz"
+    },
+    "puck": {
+        "true_name": "puck",
+        "20": [
+            "+20% Magic Resistance",
+            "+8% Spell Amplification"
+        ],
+        "15": [
+            "+20 Movement Speed",
+            "+40 Damage"
+        ],
+        "25": [
+            "+75% Illusory Orb Distance/Speed ",
+            "+300 Gold/Min"
+        ],
+        "10": [
+            "+150 Health",
+            "+8 Intelligence"
+        ],
+        "format_name": "Puck"
+    },
+    "magnataur": {
+        "true_name": "magnataur",
+        "20": [
+            "+20 Movement Speed",
+            "+15 Strength"
+        ],
+        "15": [
+            "+50 Damage",
+            "+90 Gold/Min"
+        ],
+        "25": [
+            "-4s Shockwave Cooldown",
+            "-35s Respawn Time"
+        ],
+        "10": [
+            "+15% Spell Amplification",
+            "+25 Attack Speed"
+        ],
+        "format_name": "Magnus"
+    },
+    "slark": {
+        "true_name": "slark",
+        "20": [
+            "+25 Attack Speed",
+            "+250 Health"
+        ],
+        "15": [
+            "+10 Strength",
+            "+15 Agility"
+        ],
+        "25": [
+            "+3s Pounce Leash",
+            "+12 All Stats"
+        ],
+        "10": [
+            "+15 Damage",
+            "10% Lifesteal"
+        ],
+        "format_name": "Slark"
+    },
+    "earthshaker": {
+        "true_name": "earthshaker",
+        "20": [
+            "-35s Respawn Time",
+            "+10% Spell Amplification"
+        ],
+        "15": [
+            "+50 Damage",
+            "+20 Movement Speed"
+        ],
+        "25": [
+            "-2s Enchant Totem Cooldown",
+            "+500 Health"
+        ],
+        "10": [
+            "+250 Mana",
+            "+8 Strength"
+        ],
+        "format_name": "Earthshaker"
     }
 }

@@ -2,7 +2,7 @@ const talents = require("../json/talents.json");
 const short_heroes = require("../json/short_heroes.json");
 
 const talent_hero_embed = function(hero_name) {
-    let talent_obj = talents[hero_name].talents;
+    let talent_obj = talents[hero_name];
     let talent_arr = [
         `**25:** ${talent_obj["25"][0]} *or* ${talent_obj["25"][1]}`,
         `**20:** ${talent_obj["20"][0]} *or* ${talent_obj["20"][1]}`,

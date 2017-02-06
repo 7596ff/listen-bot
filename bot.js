@@ -1,4 +1,5 @@
 const Eris = require("eris");
+const redis = require("redis");
 const config = require("./json/config.json");
 const client = new Eris(config.token, config.options);
 
@@ -20,6 +21,7 @@ client.usage = {
     "all": 0
 };
 client.mika = new Mika();
+client.redis = redis.createClient();
 
 for (let cmd of require("./util/consts.json").cmdlist) {
     client.commands[cmd] = require(`./commands/${cmd}`);
@@ -108,7 +110,7 @@ client.on("ready", () => {
             if (err) {
                 util.error(err);
             } else {
-                util.log("  saved hero list.");
+                util.log("saved hero list.");
             }
         });
     });
@@ -224,4 +226,7 @@ client.on("messageCreate", message => {
     }
 });
 
-client.connect();
+client.redis.on("ready", () => {
+    util.log("redis ready.");
+    client.connect();
+});

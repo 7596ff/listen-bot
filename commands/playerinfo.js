@@ -102,23 +102,37 @@ module.exports = (message, client, helper) => {
     helper.log(message, `playerinfo: ${acc_id}`)
 
     message.channel.createMessage("loading...").then(new_message => {
-        client.mika.getPlayer(acc_id).then(player => {
-            client.mika.getPlayerWL(acc_id).then(wl => {
-                client.mika.getPlayerHeroes(acc_id).then(heroes => {
-                    player.wl = wl
-                    player.heroes = heroes
+        client.redis.get(`playerinfo:${acc_id}`, (err, reply) => {
+            if (err) helper.log(message, err);
+            if (reply) {
+                new_message.edit({ embed: playerinfo_embed(JSON.parse(reply)) }).then(() => {
+                    helper.log(message, "  sent player info")
+                }).catch(err => helper.handle(message, err));
+            } else {
+                client.mika.getPlayer(acc_id).then(player => {
+                    client.mika.getPlayerWL(acc_id).then(wl => {
+                        client.mika.getPlayerHeroes(acc_id).then(heroes => {
+                            player.wl = wl
+                            player.heroes = heroes
 
-                    new_message.edit({ embed: playerinfo_embed(player) }).then(() => {
-                        helper.log(message, "  sent player info")
-                    }).catch(err => helper.handle(message, err));
-                })
-            }).catch(err => {
-                helper.log(message, `mika failed with statusCode ${err.statusCode}`);
-                new_message.edit("Something went wrong.");
-            });
-        }).catch(err => {
-            helper.log(message, `mika failed with statusCode ${err.statusCode}`);
-            new_message.edit("Something went wrong.");
+                            new_message.edit({ embed: playerinfo_embed(player) }).then(() => {
+                                helper.log(message, "  sent player info")
+                            }).catch(err => helper.handle(message, err));
+
+                            client.redis.set(`playerinfo:${acc_id}`, JSON.stringify(player), (err) => {
+                                if (err) helper.log(message, err);
+                                client.redis.expire(`playerinfo:${acc_id}`, 3600);
+                            });
+                        })
+                    }).catch(err => {
+                        helper.log(message, `mika failed with statusCode ${err.statusCode}`);
+                        new_message.edit("Something went wrong.");
+                    });
+                }).catch(err => {
+                    helper.log(message, `mika failed with statusCode ${err.statusCode}`);
+                    new_message.edit("Something went wrong.");
+                });
+            }
         });
     });
 }

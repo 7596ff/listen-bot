@@ -31,7 +31,7 @@ function playerinfo_embed(player) {
         mmr.push("No mmr data found.");
     }
 
-    let display_heroes = []
+    let display_heroes = [];
     player.heroes = player.heroes.slice(0, 5);
     for (let hero in player.heroes) {
         let local_name = od_heroes.find(od_hero => od_hero.id == player.heroes[hero].hero_id).localized_name;
@@ -99,31 +99,31 @@ module.exports = (message, client, helper) => {
         return;
     }
 
-    helper.log(message, `playerinfo: ${acc_id}`)
+    helper.log(message, `playerinfo: ${acc_id}`);
 
     message.channel.createMessage("loading...").then(new_message => {
         client.redis.get(`playerinfo:${acc_id}`, (err, reply) => {
             if (err) helper.log(message, err);
             if (reply) {
                 new_message.edit({ embed: playerinfo_embed(JSON.parse(reply)) }).then(() => {
-                    helper.log(message, "  sent player info")
+                    helper.log(message, "  sent player info");
                 }).catch(err => helper.handle(message, err));
             } else {
                 client.mika.getPlayer(acc_id).then(player => {
                     client.mika.getPlayerWL(acc_id).then(wl => {
                         client.mika.getPlayerHeroes(acc_id).then(heroes => {
-                            player.wl = wl
-                            player.heroes = heroes
+                            player.wl = wl;
+                            player.heroes = heroes;
 
                             new_message.edit({ embed: playerinfo_embed(player) }).then(() => {
-                                helper.log(message, "  sent player info")
+                                helper.log(message, "  sent player info");
                             }).catch(err => helper.handle(message, err));
 
                             client.redis.set(`playerinfo:${acc_id}`, JSON.stringify(player), (err) => {
                                 if (err) helper.log(message, err);
                                 client.redis.expire(`playerinfo:${acc_id}`, 3600);
                             });
-                        })
+                        });
                     }).catch(err => {
                         helper.log(message, `mika failed with statusCode ${err.statusCode}`);
                         new_message.edit("Something went wrong.");
@@ -135,4 +135,4 @@ module.exports = (message, client, helper) => {
             }
         });
     });
-}
+};

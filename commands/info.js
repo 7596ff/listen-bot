@@ -15,7 +15,7 @@ module.exports = (message, client, helper) => {
             }
         ],
         "timestamp": new Date().toJSON(),
-        "description": "A Dota 2 related bot. Features include current talents and patch notes for 6.79+ heroes. Contact alex#2899 for support and questions!"
+        "description": "A Dota 2 related bot. Features include current talents and patch notes for 6.79+ heroes. Contact alexa#2899 for support and questions!"
     }}).then(() => {
         helper.log(message, "sent info message");
     }).catch(err => helper.handle(message, err));

@@ -223,5 +223,9 @@
   "mtn": "weaver",
   "potm": "mirana",
   "cent": "centaur",
-  "magina": "antimage"
+  "magina": "antimage",
+  "rattletrap": "rattletrap",
+  "rt": "rattletrap",
+  "bara": "spirit_breaker",
+  "np": "furion"
 }

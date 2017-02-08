@@ -1,4 +1,6 @@
 module.exports = (message, client, helper) => {
+    let me = message.channel.guild.members.has("102645408223731712") ? "<@102645408223731712>" : "alexa#2899";
+
     client.createMessage(message.channel.id, {"embed": {
         "fields": [
             {
@@ -15,7 +17,7 @@ module.exports = (message, client, helper) => {
             }
         ],
         "timestamp": new Date().toJSON(),
-        "description": "A Dota 2 related bot. Features include current talents and patch notes for 6.79+ heroes. Contact alexa#2899 for support and questions!"
+        "description": `A Dota 2 related bot. Features include current talents and patch notes for 6.79+ heroes. Contact ${me} for support and questions!`
     }}).then(() => {
         helper.log(message, "sent info message");
     }).catch(err => helper.handle(message, err));

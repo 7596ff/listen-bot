@@ -1,7 +1,8 @@
 const Eris = require("eris");
 const redis = require("redis");
+const pg = require("pg");
 const config = require("./json/config.json");
-const client = new Eris(config.token, config.options);
+var client = new Eris(config.token, config.options);
 
 const schedule = require("node-schedule");
 const Mika = require("mika");
@@ -22,6 +23,7 @@ client.usage = {
 };
 client.mika = new Mika();
 client.redis = redis.createClient();
+client.pg = new pg.Pool(config.pgconfig);
 
 for (let cmd of require("./util/consts.json").cmdlist) {
     client.commands[cmd] = require(`./commands/${cmd}`);
@@ -66,6 +68,10 @@ process.on("exit", (code) => {
     fs.writeFileSync("./json/usage.json", JSON.stringify(client.all_usage));
 });
 
+client.pg.on("error", (err, pgclient) => {
+    util.error("idle pgclient error", err.message, err.stack);
+});
+
 client.on("ready", () => {
     util.log("listen-bot ready.");
     client.shards.forEach(shard => {
@@ -103,16 +109,6 @@ client.on("ready", () => {
                 }
             );
         }
-    });
-
-    client.mika.getHeroes().then(od_heroes => {
-        fs.writeFile("./json/od_heroes.json", JSON.stringify(od_heroes), err => {
-            if (err) {
-                util.error(err);
-            } else {
-                util.log("saved hero list.");
-            }
-        });
     });
 });
 
@@ -226,7 +222,17 @@ client.on("messageCreate", message => {
     }
 });
 
+// connect to everthing in order
 client.redis.on("ready", () => {
     util.log("redis ready.");
-    client.connect();
+    client.pg.connect((err, pgclient, done) => {
+        if (err) {
+            util.error("err fetching client from pool");
+            util.error(err);
+            process.exit(1);
+        }
+
+        util.log("pg ready.");
+        client.connect();
+    });
 });

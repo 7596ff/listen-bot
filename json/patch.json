@@ -1000,7 +1000,9 @@
                     "format_name": "Zeus",
                     "true_name": "zuus"
                 }
-            }
+            },
+            "items": {},
+            "version": "7.02"
         },
         {
             "heroes": {

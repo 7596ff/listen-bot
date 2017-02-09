@@ -635,25 +635,24 @@
                     "format_name": "Puck",
                     "true_name": "puck"
                 },
-                "pugna": {
+                "pudge": {
                     "changes": [
                         "• Movement Speed reduced from 285 to 280",
                         "• Fixed Meat Hook sometimes landing the target behind your hero (requiring you to sometimes turn to dismember)",
                         "• Level 20 Talent from -35s Respawn Time to -40s",
-                        "• "
                     ],
-                    "true_name": "pugna",
-                    "format_name": "Pugna"
+                    "true_name": "pudge",
+                    "format_name": "Pudge"
                 },
-                "pudge": {
+                "pugna": {
                     "changes": [
                         "• Level 15 Talent from +10 Strength to +12",
                         "• Level 20 Talent from +10 All Stats to +0.5 Netherward Damage Per Mana",
                         "• Level 20 Talent from +100 Cast Range to +150",
                         "• Level 25 Talent from +100 Nether Blast Damage to +125"
                     ],
-                    "format_name": "Pudge",
-                    "true_name": "pudge"
+                    "format_name": "Pugna",
+                    "true_name": "pugna"
                 },
                 "queenofpain": {
                     "changes": [

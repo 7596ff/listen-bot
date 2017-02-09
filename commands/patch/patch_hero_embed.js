@@ -1,6 +1,6 @@
 const patch_list = require("../../json/patch.json");
 
-function patch_hero_embed(hero_name, version, prefix) {
+function patch_hero_embed(hero_name, version) {
     let hero_obj = patch_list.data[version]["heroes"][hero_name];
 
     return {

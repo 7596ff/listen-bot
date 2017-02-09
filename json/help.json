@@ -80,23 +80,6 @@
     ],
     "example": "help patch"
   },
-  "admin disable": {
-    "name": "admin disable",
-    "usage": "admin disable [<arguments>]",
-    "text": [
-      "if used by itself, admin disable will show a list of all disabled commands in this channel.",
-      "if arguments are passed, admin disable will disable those commands in this channel."
-    ],
-    "example": "admin disable quote patch"
-  },
-  "admin enable": {
-    "name": "admin enable",
-    "usage": "admin enable <arguments>",
-    "text": [
-      "enables commands in the current text channel. use `admin disable` to check which commands are disabled."
-    ],
-    "example": "admin enable patch quote"
-  },
   "admin prefix": {
     "name": "admin prefix",
     "usage": "admin prefix <new prefix>",

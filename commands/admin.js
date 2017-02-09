@@ -1,6 +1,4 @@
 const admin_commands = {
-    "disable": require("./admin/disable"),
-    "enable": require("./admin/enable"),
     "prefix": require("./admin/prefix"),
     "cooldowns": require("./admin/cooldowns")
 };

@@ -639,7 +639,7 @@
                     "changes": [
                         "• Movement Speed reduced from 285 to 280",
                         "• Fixed Meat Hook sometimes landing the target behind your hero (requiring you to sometimes turn to dismember)",
-                        "• Level 20 Talent from -35s Respawn Time to -40s",
+                        "• Level 20 Talent from -35s Respawn Time to -40s"
                     ],
                     "true_name": "pudge",
                     "format_name": "Pudge"

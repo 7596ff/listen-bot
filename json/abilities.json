@@ -232,7 +232,9 @@
             "cooldown": "13 10 7 4",
             "stats": [
                 "DAMAGE BONUS: 25 / 45 / 65 / 85",
-                "CAST POINT: 0s"
+                "CAST POINT: 0s",
+                "CLEAVE DISTANCE: 650 / 800 / 950 / 1100",
+                "CLEAVE RADIUS: 500 / 550 / 600 / 650"
             ],
             "notes": [
                 "Cleave damage is reduced by armor type but not by armor value.",
@@ -614,7 +616,7 @@
         "Atrophy Aura": {
             "stats": [
                 "RADIUS: 900",
-                "DAMAGE REDUCTION: 10% / 20% / 30% / 40%",
+                "DAMAGE REDUCTION: 4% / 16% / 28% / 40%",
                 "BONUS DAMAGE(CREEP): 5",
                 "BONUS DAMAGE(HERO): 30 / 35 / 40 / 45",
                 "DURATION: 30 / 40 / 50 / 60"
@@ -801,8 +803,8 @@
         },
         "Nimbus": {
             "stats": [
-                "DURATION: 50.0",
-                "LIGHTNING BOLT BASE COOLDOWN: 2.5",
+                "DURATION: 40.0",
+                "LIGHTNING BOLT BASE COOLDOWN: 2.25",
                 "CAST POINT: 0.2s"
             ],
             "notes": [
@@ -810,7 +812,7 @@
                 "Affects the closest enemy unit."
             ],
             "manacost": "275",
-            "cooldown": "50",
+            "cooldown": "40",
             "effects": [
                 "Behavior: Point Target",
                 "Damage Type: Magical",
@@ -3194,7 +3196,7 @@
         },
         "The Swarm": {
             "stats": [
-                "ATTACK DAMAGE: 20",
+                "ATTACK DAMAGE: 14 / 16 / 18 / 20",
                 "ATTACK FREQUENCY: 1.25 / 1.1 / 0.95 / 0.8",
                 "COUNT: 12",
                 "ARMOR REDUCTION: 1",
@@ -3663,7 +3665,7 @@
                 "QUILL BASE DAMAGE: 20 / 40 / 60 / 80",
                 "QUILL STACK DAMAGE: 30 / 32 / 34 / 36",
                 "STACK DURATION: 14.0",
-                "MAX DAMAGE: 450.0",
+                "MAX DAMAGE: 550.0",
                 "CAST POINT: 0s"
             ],
             "notes": [
@@ -3688,7 +3690,7 @@
                 "BASE MOVEMENT SLOW: 20%",
                 "MOVE SLOW PER STACK: 3% / 6% / 9% / 12%",
                 "STACK LIMIT: 4",
-                "SCEPTER RADIUS: 700",
+                "SCEPTER RADIUS: 750",
                 "CAST POINT: 0.3s"
             ],
             "cooldown": "1.5",
@@ -3832,7 +3834,7 @@
                 "Behavior: Point Target"
             ],
             "description": [
-                "Summons a Healing Ward which heals all nearby allied units, based on their max health.  The Healing Ward moves at 420 movement speed after being summoned.  Lasts 25 seconds."
+                "Summons a Healing Ward which heals all nearby allied units, based on their max health. The Healing Ward moves at 420 movement speed after being summoned. Lasts 25 seconds. Has a 25 Gold bounty."
             ]
         },
         "Blade Dance": {
@@ -3900,7 +3902,7 @@
         },
         "Powershot": {
             "stats": [
-                "DAMAGE: 120 / 220 / 320 / 420",
+                "DAMAGE: 180 / 260 / 340 / 420",
                 "RANGE: 2600",
                 "CAST POINT: 0s"
             ],
@@ -3908,7 +3910,7 @@
                 "Powershot will destroy trees in its area of effect."
             ],
             "manacost": "90 100 110 120",
-            "cooldown": "9",
+            "cooldown": "12 / 11 / 10 / 9",
             "effects": [
                 "Behavior: Channelled, Point Target",
                 "Damage Type: Magical",
@@ -3948,7 +3950,7 @@
                 "MOVE SPEED BONUS: 50%",
                 "EVASION: 100%",
                 "ENEMY SLOW: -8% / -16% / -24% / -30%",
-                "ENEMY SLOW RADIUS: 300",
+                "ENEMY SLOW RADIUS: 325",
                 "DURATION: 3 / 4 / 5 / 6",
                 "CAST POINT: 0.3s"
             ],
@@ -3956,7 +3958,7 @@
                 "The slow will affect enemies with spell immunity.",
                 "Activating Windrun will evade incoming projectiles."
             ],
-            "manacost": "100",
+            "manacost": "75",
             "cooldown": "13",
             "effects": [
                 "Behavior: No Target",
@@ -4270,7 +4272,7 @@
             "stats": [
                 "BLESSING RADIUS: 900",
                 "BONUS DAMAGE: 14 / 22 / 30 / 38",
-                "BONUS NIGHT VISION: 1000"
+                "BONUS NIGHT VISION: 250 / 500 / 750 / 1000"
             ],
             "effects": [
                 "Behavior: Passive"
@@ -4821,7 +4823,7 @@
     "elder_titan": {
         "Natural Order": {
             "stats": [
-                "RADIUS: 325",
+                "RADIUS: 350",
                 "BASE ARMOR REDUCTION: 40% / 60% / 80% / 100%",
                 "BASE RESIST REDUCTION: 40% / 60% / 80% / 100%"
             ],
@@ -5278,7 +5280,7 @@
             "description": [
                 "Grants bonus damage and bonus health to Lycan, all allied heroes and all units under their control. Howl has double effect during night."
             ],
-            "manacost": "30"
+            "manacost": "40"
         },
         "Feral Impulse": {
             "stats": [
@@ -5334,7 +5336,7 @@
                 "Damage Type: Magical",
                 "Pierces Spell Immunity: No"
             ],
-            "agha": "Allows Shuriken Toss to bounce twice on each hero.",
+            "agha": "Allows Shuriken Toss to bounce twice on each hero. Increases Shuriken Toss ministun duration from 0.1 to 0.75",
             "description": [
                 "Hurls a deadly shuriken at an enemy unit, dealing damage and mini-stunning the target.  The shuriken will bounce between any Tracked units who are within a 1200 radius of each other.",
                 "Upgradable by Aghanim's Scepter."
@@ -5590,7 +5592,7 @@
                 "BANISH DURATION: 2.5",
                 "ILLUSION DURATION: 8 / 10 / 12 / 14",
                 "ILLUSION DAMAGE: 30% / 45% / 60% / 75%",
-                "ILLUSION DAMAGE TAKEN: 200.0%",
+                "ILLUSION DAMAGE TAKEN: 300.0%",
                 "CAST POINT: 0.3s"
             ],
             "effects": [
@@ -6299,7 +6301,7 @@
                 "Doesn't damage the target it is cast on.",
                 "If cast on a unit that already has Ion Shell, the new Shell replaces the old one."
             ],
-            "manacost": "70 90 110 130",
+            "manacost": "100 110 120 130",
             "cooldown": "9",
             "effects": [
                 "Behavior: Unit Target",
@@ -7011,7 +7013,7 @@
             "cooldown": "16 13 10 7",
             "stats": [
                 "DAMAGE PER PULSE: 15 / 30 / 45 / 60",
-                "MOVEMENT SLOW: -28%",
+                "MOVEMENT SLOW: -22 / -24 / -26 / -28%",
                 "RADIUS: 500",
                 "DURATION: 4.5",
                 "CAST POINT: 0.5s"
@@ -7074,8 +7076,8 @@
             "stats": [
                 "FADE TIME: 6 / 5 / 4 / 3",
                 "TREE RADIUS: 265",
-                "MOVEMENT SPEED: 16% / 22% / 28% / 34%",
-                "BASH DURATION: 0.7 / 1.2 / 1.7 / 2.2"
+                "MOVEMENT SPEED: 10% / 18% / 26% / 34%",
+                "BASH DURATION: 0.4 / 1.0 / 1.6 / 2.2"
             ],
             "notes": [
                 "Attack out of invisibilty cannot miss.",
@@ -7190,7 +7192,8 @@
                 "Pierces Spell Immunity: No"
             ],
             "description": [
-                "Select the Fire Remnant to arrive at."
+                "Select the Fire Remnant to arrive at.",
+                "Disabled by Root."
             ],
             "manacost": "150"
         },
@@ -7389,7 +7392,8 @@
                 "DAMAGE: 225 / 400 / 575 / 750",
                 "BUILDING DAMAGE: 25%",
                 "ACTIVATION DELAY: 1.75",
-                "CAST POINT: 0s"
+                "CAST POINT: 0s",
+                "BOUNTY 50g"
             ],
             "notes": [
                 "Cannot be placed within active AoE of another Proximity Mine.",
@@ -9064,8 +9068,8 @@
                 "REQUIRED HITS: 4",
                 "COUNTER DURATION: 10",
                 "CHARGES: 4",
-                "BONUS DAMAGE: 80 / 120 / 160 / 200",
-                "BONUS LIFESTEAL: 20% / 30% / 40% / 50%"
+                "BONUS DAMAGE: 75 / 100 / 125 / 150",
+                "BONUS LIFESTEAL: 15% / 30% / 45% / 60%"
             ],
             "notes": [
                 "Hitting an enemy with Boundless Strike adds to the hit counter."
@@ -9119,7 +9123,8 @@
                 "CAST POINT: 1.2s"
             ],
             "notes": [
-                "Soldiers do not receive Jingu Mastery bonuses."
+                "Soldiers do not receive Jingu Mastery bonuses.",
+                "Does not persist through Aegis Reincarnation."
             ],
             "manacost": "100",
             "cooldown": "100 85 70",
@@ -9377,7 +9382,7 @@
                 "MOVEMENT SLOW: -20%",
                 "ATTACK SLOW: -20",
                 "SLOW DURATION: 2.0",
-                "STUN DURATION: 1.6 / 1.9 / 2.2 / 2.5",
+                "STUN DURATION: 1.5 / 1.75 / 2 / 2.25",
                 "CAST POINT: 0.35s"
             ],
             "effects": [

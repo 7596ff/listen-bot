@@ -115,36 +115,57 @@ client.on("ready", () => {
 client.on("guildCreate", guild => {
     util.log(`${guild.id}/${guild.name}: joined guild on shard ${guild.shard.id}`);
 
-    util.log("  creating guild object");
-    guilds_list[guild.id] = {
-        "name": guild.name,
-        "prefix": config.default_prefix,
-        "starboard": "none",
-        "starboard_emoji": "⭐",
-        "disabled": {}
-    };
-
-    write_guilds_list(guilds_list, () => {
-        util.log("  wrote new guild config successfully");
+    util.log("  inserting into database");
+    let qstring = [
+        "INSERT INTO public.guilds (id, name, prefix, climit, mlimit) VALUES (",
+        `'${guild.id}',`,
+        `'${guild.name.replace("'", "")}',`,
+        `'--',`,
+        `'${0}',`,
+        `'${0}'`,
+        ");"
+    ];
+    client.pg.query(qstring.join(" ")).then(() => {
+        util.log("  inserted");
+    }).catch(err => {
+        util.log("  something went wrong inserting");
+        util.log(err);
     });
 });
 
 client.on("guildUpdate", guild => {
-    if (guilds_list[guild.id].name != guild.name) {
-        util.log(`${guild.id}/${guild.name}: guild updated, modifying name`);
-        guilds_list[guild.id].name = guild.name;
-        write_guilds_list(guilds_list, () => {
-            util.log("  wrote new guild config successfully");
-        });
-    }
+    client.pg.query(`SELECT * FROM public.guilds WHERE id = '${guild.id}';`).then(res => {
+        if (res.rows[0].name != guild.name) {
+            util.log(`${guild.id}/${guild.name}: guild updated, modifying name`);
+            let qstring = [
+                "UPDATE public.guilds",
+                `SET name = '${guild.name.replace("'", "")}'`,
+                `WHERE id = '${guild.id}';`
+            ];
+            console.log(qstring);
+            client.pg.query(qstring.join(" ")).then(() => {
+                util.log("  updated guild successfully");
+            }).catch(err => {
+                util.log("  something went wrong updating");
+                util.log(err);
+            });
+        }
+    }).catch(err => {
+        util.log(` something went wrong selecting guild ${guild.id}/${guild.name}`);
+    });
 });
 
 client.on("guildDelete", guild => {
     util.log(`${guild.id}/${guild.name}: left guild`);
-    delete guilds_list[guild.id];
-
-    write_guilds_list(guilds_list, () => {
-        util.log("  removed guild successfully");
+    let qstring = [
+        "DELETE FROM public.guilds",
+        `WHERE id = '${guild.id}';`
+    ];
+    client.pg.query(qstring.join(" ")).then(() => {
+        util.log("  deleted guild successfully");
+    }).catch(err => {
+        util.log("  something went wrong deleting");
+        util.log(err);
     });
 });
 

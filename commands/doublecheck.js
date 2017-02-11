@@ -10,7 +10,7 @@ module.exports = (message, client, helper) => {
                 if (res.rowCount != 1) {
                     qstring = "INSERT INTO public.guilds (id, name, prefix, climit, mlimit) VALUES (" + 
                         `'${guild.id}',` + 
-                        `'${guild.name}',` + 
+                        `'${guild.name.replace("'", "\'")}',` + 
                         `'${require("../json/config.json").default_prefix}',` + 
                         `'0',` + 
                         `'0'` + 

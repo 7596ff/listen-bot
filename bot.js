@@ -23,7 +23,7 @@ client.usage = {
 };
 client.mika = new Mika();
 client.redis = redis.createClient();
-client.pg = new pg.Pool(config.pgconfig);
+client.pg = new pg.Client(config.pgconfig);
 
 for (let cmd of require("./util/consts.json").cmdlist) {
     client.commands[cmd] = require(`./commands/${cmd}`);
@@ -225,9 +225,9 @@ client.on("messageCreate", message => {
 // connect to everthing in order
 client.redis.on("ready", () => {
     util.log("redis ready.");
-    client.pg.connect((err, pgclient, done) => {
+    client.pg.connect((err) => {
         if (err) {
-            util.error("err fetching client from pool");
+            util.error("err conencting to client");
             util.error(err);
             process.exit(1);
         }

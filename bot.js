@@ -213,9 +213,6 @@ client.on("messageCreate", message => {
                         }).catch(err => _helper.handle(err));
                     }
                 }
-            } else {
-                _helper.log(message, "malformed command used");
-                _helper.log(message, message.content);
             }
         }
     }).catch(err => {

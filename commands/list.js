@@ -21,7 +21,7 @@ module.exports = (message, client, helper) => {
             }
             patch_seq_num++;
         }
-        client.createMessage(message.channel.id, `${talents[short_heroes[hero]].format_name} has changed in ${patches.join(", ")}`).then(() => {
+        message.channel.createMessage(`${talents[short_heroes[hero]].format_name} has changed in ${patches.join(", ")}`).then(() => {
             helper.log(message, `listed hero (${short_heroes[hero]})`);
         }).catch(err => helper.handle(message, err));
     }

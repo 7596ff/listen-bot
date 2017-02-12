@@ -227,5 +227,14 @@
   "rattletrap": "rattletrap",
   "rt": "rattletrap",
   "bara": "spirit_breaker",
-  "np": "furion"
+  "np": "furion",
+  "sylla": "lone_druid",
+  "syllabear": "lone_druid",
+  "leoric": "skeleton_king",
+  "thrall": "disruptor",
+  "yurnero": "juggernaut",
+  "rexxar": "lich",
+  "pitlord": "abyssal_underlord",
+  "rhasta": "shadow_shaman",
+  "kael": "invoker"
 }

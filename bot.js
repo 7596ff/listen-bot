@@ -141,7 +141,6 @@ client.on("guildUpdate", guild => {
                 `SET name = '${guild.name.replace("'", "")}'`,
                 `WHERE id = '${guild.id}';`
             ];
-            console.log(qstring);
             client.pg.query(qstring.join(" ")).then(() => {
                 util.log("  updated guild successfully");
             }).catch(err => {

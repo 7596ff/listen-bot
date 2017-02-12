@@ -11,7 +11,17 @@ module.exports = (message, client, helper) => {
         if (command in admin_commands) {
             admin_commands[command](message, client, helper);
         } else {
-            helper.log(message, "malformed command used");
+            message.channel.createMessage({
+                "embed": {
+                    "description": [
+                        `Channel-specifc cooldowns: \`${message.gcfg.climit / 1000}\``,
+                        `Member-specific cooldowns: \`${message.gcfg.mlimit / 1000}\``,
+                        `Custom prefix: \`${message.gcfg.prefix}\``
+                    ].join("\n")
+                }
+            }).then(() => {
+                helper.log(message, "sent current admin stuff")
+            }).catch(err => helper.handle(message, err));
         }
     } else {
         helper.log(message, "permissions error");

@@ -1,7 +1,6 @@
 const util = require("util");
 
 module.exports = (message, client, helper) => {  
-    if (message.member.id == "102645408223731712") {
         util.log("migrating...");
         let guilds_list = require("../json/guilds.json");
 
@@ -16,7 +15,7 @@ module.exports = (message, client, helper) => {
                 for (gid in guilds_list) {
                     qstring = "INSERT INTO public.guilds (id, name, prefix, climit, mlimit) VALUES (" + 
                         `'${gid}',` + 
-                        `'${guilds_list[gid].name}',` + 
+                        `'${guilds_list[gid].name.replace("'", "")}',` + 
                         `'${guilds_list[gid].prefix}',` + 
                         `'${guilds_list[gid].channel_limit || 0}',` + 
                         `'${guilds_list[gid].member_limit || 0}'` + 
@@ -34,5 +33,5 @@ module.exports = (message, client, helper) => {
                 console.error("something went wrong with creating the table");
                 console.error(err);
             });
-    }
+    
 };

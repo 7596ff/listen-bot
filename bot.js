@@ -66,6 +66,7 @@ client.pg.on("error", (err, pgclient) => {
 
 client.on("ready", () => {
     util.log("listen-bot ready.");
+
     client.shards.forEach(shard => {
         shard.editStatus("online", { "name": `${config.default_prefix}info | ${config.default_prefix}help [${shard.id + 1}/${client.shards.size}]` });
     });
@@ -108,16 +109,10 @@ client.on("guildCreate", guild => {
     util.log(`${guild.id}/${guild.name}: joined guild on shard ${guild.shard.id}`);
 
     util.log("  inserting into database");
-    let qstring = [
-        "INSERT INTO public.guilds (id, name, prefix, climit, mlimit) VALUES (",
-        `'${guild.id}',`,
-        `'${guild.name.replace("'", "")}',`,
-        "'--',",
-        `'${0}',`,
-        `'${0}'`,
-        ");"
-    ];
-    client.pg.query(qstring.join(" ")).then(() => {
+    client.pg.query({
+        "text": "INSERT INTO public.guilds (id, name, prefix, climit, mlimit) VALUES ($1, $2, $3, $4, $5);",
+        "values": [guild.id, guild.name, "--", 0, 0]
+    }).then(() => {
         util.log("  inserted");
     }).catch(err => {
         util.log("  something went wrong inserting");
@@ -134,7 +129,10 @@ client.on("guildUpdate", guild => {
                 `SET name = '${guild.name.replace("'", "")}'`,
                 `WHERE id = '${guild.id}';`
             ];
-            client.pg.query(qstring.join(" ")).then(() => {
+            client.pg.query({
+                "text": "UPDATE public.guilds SET name = $1 WHERE id = $2",
+                "values": [guild.name, guild.id]
+            }).then(() => {
                 util.log("  updated guild successfully");
             }).catch(err => {
                 util.log("  something went wrong updating");
@@ -149,11 +147,11 @@ client.on("guildUpdate", guild => {
 
 client.on("guildDelete", guild => {
     util.log(`${guild.id}/${guild.name}: left guild`);
-    let qstring = [
-        "DELETE FROM public.guilds",
-        `WHERE id = '${guild.id}';`
-    ];
-    client.pg.query(qstring.join(" ")).then(() => {
+
+    client.pg.query({
+        "text": "DELETE FROM public.guilds WHERE id = $1",
+        "values": [guild.id]
+    }).then(() => {
         util.log("  deleted guild successfully");
     }).catch(err => {
         util.log("  something went wrong deleting");

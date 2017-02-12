@@ -1,24 +1,25 @@
 const fs = require("fs");
 
-function write_obj(guilds_list, message, helper) {
-    fs.writeFile("./json/guilds.json", JSON.stringify(guilds_list), (err) => {
-        if (err) {
-            helper.log(message, err);
-        } else {
-            helper.log(message, "  wrote guilds list object successfully");
-        }
-    });
-}
-
 module.exports = (message, client, helper) => {
     if (message.content) {
         let options = message.content.split(" ");
         if (["channel", "member"].indexOf(options[0]) != -1 && !isNaN(options[1])) {
-            client.guilds_list[message.channel.guild.id][`${options[0]}_limit`] = options[1] * 1000;
-            write_obj(client.guilds_list, message, helper);
-            client.createMessage(message.channel.id, `:k_hand: Set ${options[0]} limit to ${options[1]} seconds.`).then(() => {
-                helper.log(message, "set new cooldowns");
-            }).catch(err => helper.handle(message, err));
+            let limit = options[1] * 1000;
+            let letter = options[0].substring(0, 1);
+
+            let qstring = [
+                "UPDATE public.guilds",
+                `SET ${letter}limit = '${limit}'`,
+                `WHERE id = '${message.channel.guild.id}';`
+            ];
+            client.pg.query(qstring.join(" ")).then(res => {
+                client.createMessage(message.channel.id, `:ok_hand: Set ${options[0]} limit to ${options[1]} seconds.`).then(() => {
+                    helper.log(message, "set new cooldowns");
+                }).catch(err => helper.handle(message, err));
+            }).catch(err => {
+                helper.log(message, "something went wrong updating a config");
+                helper.log(message, err);
+            });
         }
     }
 };

@@ -12,10 +12,21 @@ function write_obj(guilds_list, message, helper) {
 
 module.exports = (message, client, helper) => {
     if (message.content) {
-        client.guilds_list[message.channel.guild.id].prefix = message.content.replace("\"", "");
-        write_obj(client.guilds_list, message, helper);
-        client.createMessage(message.channel.id, `:ok_hand: prefix set to \`${client.guilds_list[message.channel.guild.id].prefix}\``).then(() => {
-            helper.log(message, "changed guild prefix");
-        }).catch(err => helper.handle(message, err));
+        let newprefix = message.content.replace("\"", "");
+
+        let qstring = [
+            "UPDATE public.guilds",
+            `SET prefix = '${newprefix}'`,
+            `WHERE id = '${message.channel.guild.id}';`
+        ];
+        client.pg.query(qstring.join(" ")).then(res => {
+            client.createMessage(message.channel.id, `:ok_hand: prefix set to \`${newprefix}\``).then(() => {
+                helper.log(message, `changed guild prefix to ${newprefix}`);
+            }).catch(err => helper.handle(message, err));
+        }).catch(err => {
+            helper.log(message, "something went wrong with updating prefix");
+            helper.log(message, err);
+        });
+
     }
 };

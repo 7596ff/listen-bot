@@ -20,22 +20,20 @@ function clean(key) {
 
 function ability_embed(hero, ability) {
     let ability_obj = abilities[hero][ability];
-    let temp = {
-        "stats": new Array(ability_obj.stats.length, ""),
-        "effects": new Array(ability_obj.effects.length, "")
-    };
+    let stats = new Array(ability_obj.stats.length, "");
+    let effects = new Array(ability_obj.effects.length, "");
 
     if (ability_obj.stats) {
         for (let stat in ability_obj.stats) {
             let temp_arr = ability_obj.stats[stat].split(": ");
-            temp.stats[stat] = `**${temp_arr[0]}** ${temp_arr[1]}`;
+            stats[stat] = `**${temp_arr[0]}** ${temp_arr[1]}`;
         }
     }
 
     if (ability_obj.effects) {
         for (let eff in ability_obj.effects) {
             let temp_arr = ability_obj.effects[eff].split(": ");
-            temp.effects[eff] = `**${temp_arr[0]}** ${temp_arr[1]}`;
+            effects[eff] = `**${temp_arr[0]}** ${temp_arr[1]}`;
         }
     }
 
@@ -57,12 +55,12 @@ function ability_embed(hero, ability) {
         "fields": [
             {
                 "name": `<:manacost:273535201337016320> ${mana}`,
-                "value": temp.stats.join("\n"),
+                "value": stats.join("\n"),
                 "inline": true
             },
             {
                 "name": `<:cooldown:273535146320199680> ${cool}`,
-                "value": temp.effects.join("\n"),
+                "value": effects.join("\n"),
                 "inline": true
             }
         ],
@@ -76,7 +74,7 @@ function create_message(message, client, helper, true_hero, ability, key) {
     } else {
         helper.log(message, `ability: hero name (${true_hero}) and ability (${key}: ${ability})`);
     }
-    client.createMessage(message.channel.id, {
+    message.channel.createMessage({
         embed: ability_embed(true_hero, ability)
     }).then(() => {
         helper.log(message, "  sent ability message");
@@ -108,7 +106,7 @@ module.exports = (message, client, helper) => {
                 if (i > 0 && key in alike_keys) {
                     let content = alike_keys[key].length > 1 ? `Did you mean: ${alike_keys[key].join(", ")}` : alike_keys[key][0];
 
-                    client.createMessage(message.channel.id, content).then(() => {
+                    message.channel.createMessage(content).then(() => {
                         helper.log(message, `sent redirect for ${key}`);
                     });
                     i = 0;

@@ -6,13 +6,12 @@ module.exports = (message, client, helper) => {
             "text": "UPDATE public.guilds SET prefix = $1 WHERE id = $2",
             "values": [newprefix, message.channel.guild.id]
         }).then(() => {
-            client.createMessage(message.channel.id, `:ok_hand: prefix set to \`${newprefix}\``).then(() => {
+            message.channel.createMessage(`:ok_hand: prefix set to \`${newprefix}\``).then(() => {
                 helper.log(message, `changed guild prefix to ${newprefix}`);
             }).catch(err => helper.handle(message, err));
         }).catch(err => {
             helper.log(message, "something went wrong with updating prefix");
             helper.log(message, err);
         });
-
     }
 };

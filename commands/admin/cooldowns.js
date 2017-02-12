@@ -9,7 +9,7 @@ module.exports = (message, client, helper) => {
                     "text": "UPDATE public.guilds SET climit = $1 WHERE id = $2",
                     "values": [limit, message.channel.guild.id]
                 }).then(() => {
-                    client.createMessage(message.channel.id, `:ok_hand: Set ${options[0]} limit to ${options[1]} seconds.`).then(() => {
+                    message.channel.createMessage(`:ok_hand: Set ${options[0]} limit to ${options[1]} seconds.`).then(() => {
                         helper.log(message, "set new cooldowns");
                     }).catch(err => helper.handle(message, err));
                 }).catch(err => {
@@ -23,7 +23,7 @@ module.exports = (message, client, helper) => {
                     "text": "UPDATE public.guilds SET mlimit = $1 WHERE id = $2",
                     "values": [limit, message.channel.guild.id]
                 }).then(() => {
-                    client.createMessage(message.channel.id, `:ok_hand: Set ${options[0]} limit to ${options[1]} seconds.`).then(() => {
+                    message.channel.createMessage(`:ok_hand: Set ${options[0]} limit to ${options[1]} seconds.`).then(() => {
                         helper.log(message, "set new cooldowns");
                     }).catch(err => helper.handle(message, err));
                 }).catch(err => {

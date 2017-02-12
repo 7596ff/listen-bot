@@ -16,13 +16,11 @@ const help_embed = function (help_obj, prefix) {
     });
 
     return {
-        "embed": {
-            "author": {
-                "name": help_obj.name
-            },
-            "fields": fields,
-            "description": help_obj.text.join("")
-        }
+        "author": {
+            "name": help_obj.name
+        },
+        "fields": fields,
+        "description": help_obj.text.join("")
     };
 };
 
@@ -31,7 +29,9 @@ module.exports = (message, client, helper) => {
     options.shift();
     let specific_topic = options.join(" ");
     if (specific_topic in help_topics) {
-        client.createMessage(message.channel.id, help_embed(help_topics[specific_topic], helper.prefix)).then(new_message => {
+        message.channel.createMessage({
+            "embed": help_embed(help_topics[specific_topic], helper.prefix)
+        }).then(new_message => {
             helper.log(new_message, `Helped with topic ${specific_topic}`);
         }).catch(err => helper.handle(message, err));
     } else {
@@ -45,7 +45,7 @@ module.exports = (message, client, helper) => {
         }
         let conditional = specific_topic ? `Help topic not found: \`${specific_topic}\`. ` : "";
         if (conditional != "") helper.log(message, "could not help with " + specific_topic);
-        client.createMessage(message.channel.id, `${conditional}List of help topics: ${help_list}`).then(new_message => {
+        message.channel.createMessage(`${conditional}List of help topics: ${help_list}`).then(new_message => {
             helper.log(new_message, "helped with all topics");
         }).catch(err => helper.handle(message, err));
     }

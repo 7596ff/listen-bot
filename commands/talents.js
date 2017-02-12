@@ -30,7 +30,7 @@ module.exports = (message, client, helper) => {
         helper.log(message, `talents: hero name (${short_heroes[hero]})`);
 
         if (hero in short_heroes) {
-            client.createMessage(message.channel.id, {
+            message.channel.createMessage({
                 "embed": talent_hero_embed(short_heroes[hero])
             }).then(() => {
                 helper.log(message, "  sent talents message");

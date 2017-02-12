@@ -10,19 +10,16 @@ const Mika = require("mika");
 const util = require("util");
 const fs = require("fs");
 
-var stats_messages;
-
 var _members = {};
 var _channels = {};
 
 client.commands = {};
 client.all_usage = require("./json/usage.json");
-client.usage = {
-    "all": 0
-};
+client.usage = { "all": 0 };
 client.mika = new Mika();
 client.redis = redis.createClient();
 client.pg = new pg.Client(config.pgconfig);
+client.config = config;
 
 for (let cmd of require("./util/consts.json").cmdlist) {
     client.commands[cmd] = require(`./commands/${cmd}`);
@@ -49,7 +46,7 @@ function Helper(prefix) {
     };
 }
 
-var write_usage_stats = schedule.scheduleJob("*/10 * * * *", () => {
+client.write_usage_stats = schedule.scheduleJob("*/10 * * * *", () => {
     fs.writeFile("./json/usage.json", JSON.stringify(client.all_usage), (err) => {
         if (err) util.log(err);
     });
@@ -61,17 +58,19 @@ process.on("exit", (code) => {
 });
 
 client.pg.on("error", (err, pgclient) => {
-    util.error("idle pgclient error", err.message, err.stack);
+    util.log("idle pgclient error", err.message, err.stack);
 });
 
 client.on("ready", () => {
     util.log("listen-bot ready.");
 
     client.shards.forEach(shard => {
-        shard.editStatus("online", { "name": `${config.default_prefix}info | ${config.default_prefix}help [${shard.id + 1}/${client.shards.size}]` });
+        shard.editStatus("online", {
+            "name": `${config.default_prefix}info | ${config.default_prefix}help [${shard.id + 1}/${client.shards.size}]`
+        });
     });
 
-    stats_messages = schedule.scheduleJob("*/15 * * * *", () => {
+    client.stats_messages = schedule.scheduleJob("*/15 * * * *", () => {
         client.editMessage(config.edit_channel, config.shard_edit_message, {
             "embed": {
                 "description": require("./util/shardinfo_helper")(client)
@@ -85,8 +84,7 @@ client.on("ready", () => {
                 `https://bots.discord.pw/api/bots/${config.master_id}/stats`,
                 JSON.stringify({
                     "server_count": client.guilds.size
-                }),
-                {
+                }), {
                     "headers": {
                         "Authorization": config.dbots_token,
                         "Content-Type": "application/json"
@@ -124,11 +122,7 @@ client.on("guildUpdate", guild => {
     client.pg.query(`SELECT * FROM public.guilds WHERE id = '${guild.id}';`).then(res => {
         if (res.rows[0].name != guild.name) {
             util.log(`${guild.id}/${guild.name}: guild updated, modifying name`);
-            let qstring = [
-                "UPDATE public.guilds",
-                `SET name = '${guild.name.replace("'", "")}'`,
-                `WHERE id = '${guild.id}';`
-            ];
+
             client.pg.query({
                 "text": "UPDATE public.guilds SET name = $1 WHERE id = $2",
                 "values": [guild.name, guild.id]
@@ -171,16 +165,17 @@ client.on("messageCreate", message => {
         return;
     }
 
-    let qstring = [
-        "SELECT * FROM public.guilds",
-        `WHERE id = '${message.channel.guild.id}';`
-    ];
-    client.pg.query(qstring.join(" ")).then(res => {
+    client.pg.query({
+        "text": "SELECT * FROM public.guilds WHERE id = $1;",
+        "values": [message.channel.guild.id]
+    }).then(res => {
         message.gcfg = res.rows[0];
         let _helper = new Helper(message.gcfg.prefix);
 
         if (message.content.startsWith(message.gcfg.prefix) || message.content.startsWith(config.default_prefix)) {
-            message.content = message.content.replace(config.default_prefix, "").replace(message.gcfg.prefix, "").trim();
+            if (message.content.startsWith(message.gcfg.prefix)) message.content = message.content.replace(message.gcfg.prefix, "");
+            if (message.content.startsWith(config.default_prefix)) message.content = message.content.replace(config.default_prefix, "");
+            message.content = message.content.trim();
 
             const command = message.content.split(" ").shift();
             if (command in client.commands) {
@@ -190,6 +185,7 @@ client.on("messageCreate", message => {
                             "last_message": Date.now(),
                             "cooldown_sent": false
                         };
+
                         _members[message.member.id] = JSON.parse(JSON.stringify(rate));
                         _channels[message.channel.id] = JSON.parse(JSON.stringify(rate));
                         client.commands[command](message, client, _helper);
@@ -199,9 +195,8 @@ client.on("messageCreate", message => {
                         client.all_usage[command] += 1;
                     } else {
                         if (!_channels[message.channel.id].cooldown_sent) {
-                            client.createMessage(message.channel.id,
-                                `\`#${message.channel.name}\` Please cool down! ${Math.floor((_channels[message.channel.id].last_message + message.gcfg.climit - Date.now()) / 1000) + 1} second(s) left.`
-                            ).then(new_message => {
+                            let timeleft = Math.ceil((_channels[message.channel.id].last_message + message.gcfg.climit - Date.now()) / 1000);
+                            message.channel.createMessage(`\`#${message.channel.name}\` Please cool down! ${timeleft} second(s) left.`).then(new_message => {
                                 setTimeout(() => { new_message.delete(); }, 4000);
                                 _helper.log(message, "channel ratelimited");
                                 _channels[message.channel.id].cooldown_sent = true;
@@ -210,9 +205,8 @@ client.on("messageCreate", message => {
                     }
                 } else {
                     if (!_members[message.member.id].cooldown_sent) {
-                        client.createMessage(message.channel.id,
-                            `<@!${message.member.id}>, Please cool down! ${Math.floor((_members[message.member.id].last_message + message.gcfg.mlimit - Date.now()) / 1000) + 1} second(s) left.`
-                        ).then(new_message => {
+                        let timeleft = Math.ceil((_members[message.member.id].last_message + message.gcfg.mlimit - Date.now()) / 1000);
+                        message.channel.createmessage(`<@!${message.member.id}>, Please cool down! ${timeleft} second(s) left.`).then(new_message => {
                             setTimeout(() => { new_message.delete(); }, 4000);
                             _helper.log(message, "member ratelimited");
                             _members[message.member.id].cooldown_sent = true;
@@ -235,8 +229,8 @@ client.redis.on("ready", () => {
     util.log("redis ready.");
     client.pg.connect((err) => {
         if (err) {
-            util.error("err conencting to client");
-            util.error(err);
+            util.log("err conencting to client");
+            util.log(err);
             process.exit(1);
         }
 

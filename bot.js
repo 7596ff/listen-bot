@@ -49,13 +49,6 @@ function Helper(prefix) {
     };
 }
 
-function write_guilds_list(object_to, callback) {
-    fs.writeFile("./json/guilds.json", JSON.stringify(object_to), err => {
-        if (err) util.log(err);
-        callback();
-    });
-}
-
 var write_usage_stats = schedule.scheduleJob("*/10 * * * *", () => {
     fs.writeFile("./json/usage.json", JSON.stringify(client.all_usage), (err) => {
         if (err) util.log(err);
@@ -119,7 +112,7 @@ client.on("guildCreate", guild => {
         "INSERT INTO public.guilds (id, name, prefix, climit, mlimit) VALUES (",
         `'${guild.id}',`,
         `'${guild.name.replace("'", "")}',`,
-        `'--',`,
+        "'--',",
         `'${0}',`,
         `'${0}'`,
         ");"
@@ -150,6 +143,7 @@ client.on("guildUpdate", guild => {
         }
     }).catch(err => {
         util.log(` something went wrong selecting guild ${guild.id}/${guild.name}`);
+        util.log(err);
     });
 });
 

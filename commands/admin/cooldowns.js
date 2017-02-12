@@ -1,5 +1,3 @@
-const fs = require("fs");
-
 module.exports = (message, client, helper) => {
     if (message.content) {
         let options = message.content.split(" ");
@@ -12,7 +10,7 @@ module.exports = (message, client, helper) => {
                 `SET ${letter}limit = '${limit}'`,
                 `WHERE id = '${message.channel.guild.id}';`
             ];
-            client.pg.query(qstring.join(" ")).then(res => {
+            client.pg.query(qstring.join(" ")).then(() => {
                 client.createMessage(message.channel.id, `:ok_hand: Set ${options[0]} limit to ${options[1]} seconds.`).then(() => {
                     helper.log(message, "set new cooldowns");
                 }).catch(err => helper.handle(message, err));

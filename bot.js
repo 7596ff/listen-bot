@@ -173,8 +173,8 @@ client.on("messageCreate", message => {
         let _helper = new Helper(message.gcfg.prefix);
 
         if (message.content.startsWith(message.gcfg.prefix) || message.content.startsWith(config.default_prefix)) {
-            if (message.content.startsWith(message.gcfg.prefix)) message.content = message.content.replace(message.gcfg.prefix, "");
             if (message.content.startsWith(config.default_prefix)) message.content = message.content.replace(config.default_prefix, "");
+            if (message.content.startsWith(message.gcfg.prefix)) message.content = message.content.replace(message.gcfg.prefix, "");
             message.content = message.content.trim();
 
             const command = message.content.split(" ").shift();

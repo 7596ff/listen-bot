@@ -20,7 +20,7 @@ module.exports = (message, client, helper) => {
                     ].join("\n")
                 }
             }).then(() => {
-                helper.log(message, "sent current admin stuff")
+                helper.log(message, "sent current admin stuff");
             }).catch(err => helper.handle(message, err));
         }
     } else {

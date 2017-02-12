@@ -101,11 +101,11 @@ module.exports = (message, client, helper) => {
 
     helper.log(message, `playerinfo: ${acc_id}`);
 
-    message.channel.createMessage("loading...").then(new_message => {
+    message.channel.sendTyping().then(() => {
         client.redis.get(`playerinfo:${acc_id}`, (err, reply) => {
             if (err) helper.log(message, err);
             if (reply) {
-                new_message.edit({ embed: playerinfo_embed(JSON.parse(reply)) }).then(() => {
+                message.channel.createMessage({ embed: playerinfo_embed(JSON.parse(reply)) }).then(() => {
                     helper.log(message, "  sent player info from redis");
                 }).catch(err => helper.handle(message, err));
             } else {
@@ -117,7 +117,7 @@ module.exports = (message, client, helper) => {
                     plist[0].wl = plist[1];
                     plist[0].heroes = plist[2];
 
-                    new_message.edit({ embed: playerinfo_embed(plist[0]) }).then(() => {
+                    message.channel.createMessage({ embed: playerinfo_embed(plist[0]) }).then(() => {
                         helper.log(message, "  sent player info from api");
                     }).catch(err => helper.handle(message, err));
 
@@ -127,7 +127,7 @@ module.exports = (message, client, helper) => {
                     });
                 }).catch(err => {
                     helper.log(message, `mika failed with err: \n${err}`);
-                    new_message.edit("Something went wrong.");
+                    message.channel.createMessage("Something went wrong.");
                 });
             }
         });

@@ -38,14 +38,14 @@ module.exports = (message, client, helper) => {
         let help_list = [];
         for (let topic in help_topics) {
             if (topic.match("admin")) {
-                if (message.member.permission.has("manageMessages")) help_list += `\`${topic}\` `;
+                if (message.member.permission.has("manageMessages")) help_list.push(topic);
             } else {
                 help_list.push(topic);
             }
         }
         let conditional = specific_topic ? `Help topic not found: \`${specific_topic}\`. ` : "";
         if (conditional != "") helper.log(message, "could not help with " + specific_topic);
-        let fmt = help_list.map(topic => `\`${topic}\``);
+        let fmt = help_list.map(topic => `\`${topic}\``).join(" ");
         message.channel.createMessage(`${conditional}List of help topics: ${fmt}`).then(new_message => {
             helper.log(new_message, "helped with all topics");
         }).catch(err => helper.handle(message, err));

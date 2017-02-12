@@ -12,7 +12,6 @@ const fs = require("fs");
 
 var stats_messages;
 
-var guilds_list = require("./json/guilds.json");
 var _members = {};
 var _channels = {};
 
@@ -172,36 +171,30 @@ client.on("guildDelete", guild => {
 client.on("messageCreate", message => {
     if (!message.channel.guild) return;
     if (message.member && message.member.bot) return;
-
-    client.guilds_list = guilds_list;
-    let _prefix = guilds_list[message.channel.guild.id].prefix;
-    let _helper = new Helper(_prefix);
+    if (message.author.id == client.user.id) return;
 
     if (!message.author) {
-        _helper.log(message, "no author");
-        _helper.log(message, message.content);
+        util.log("no author");
+        util.log(`${message.channel.guild.id}/${message.channel.guild.name}`);
+        util.log(`${message.content}`);
         return;
     }
 
-    if (message.author.id == client.user.id) return;
-    if (message.content.startsWith(_prefix) || message.content.startsWith(config.default_prefix)) {
-        message.content = message.content.replace(config.default_prefix, "").replace(_prefix, "").trim();
+    let qstring = [
+        "SELECT * FROM public.guilds",
+        `WHERE id = '${message.channel.guild.id}';`
+    ];
+    client.pg.query(qstring.join(" ")).then(res => {
+        message.gcfg = res.rows[0];
+        let _helper = new Helper(message.gcfg.prefix);
 
-        const command = message.content.split(" ").shift();
-        let disabled_list = client.guilds_list[message.channel.guild.id].disabled[message.channel.id];
-        if (disabled_list && disabled_list.indexOf(command) != -1) {
-            _helper.log(message, `permissions error in command ${command}`);
-        } else {
+        if (message.content.startsWith(message.gcfg.prefix) || message.content.startsWith(config.default_prefix)) {
+            message.content = message.content.replace(config.default_prefix, "").replace(message.gcfg.prefix, "").trim();
+
+            const command = message.content.split(" ").shift();
             if (command in client.commands) {
-                let member_limit = guilds_list[message.channel.guild.id].member_limit
-                    ? guilds_list[message.channel.guild.id].member_limit
-                    : 0;
-                let channel_limit = guilds_list[message.channel.guild.id].channel_limit
-                    ? guilds_list[message.channel.guild.id].channel_limit
-                    : 0;
-
-                if (!_members[message.member.id] || _members[message.member.id].last_message + member_limit < Date.now()) {
-                    if (!_channels[message.channel.id] || _channels[message.channel.id].last_message + channel_limit < Date.now()) {
+                if (!_members[message.member.id] || _members[message.member.id].last_message + message.gcfg.mlimit < Date.now()) {
+                    if (!_channels[message.channel.id] || _channels[message.channel.id].last_message + message.gcfg.climit < Date.now()) {
                         let rate = {
                             "last_message": Date.now(),
                             "cooldown_sent": false
@@ -216,7 +209,7 @@ client.on("messageCreate", message => {
                     } else {
                         if (!_channels[message.channel.id].cooldown_sent) {
                             client.createMessage(message.channel.id,
-                                `\`#${message.channel.name}\` Please cool down! ${Math.floor((_channels[message.channel.id].last_message + channel_limit - Date.now()) / 1000) + 1} second(s) left.`
+                                `\`#${message.channel.name}\` Please cool down! ${Math.floor((_channels[message.channel.id].last_message + message.gcfg.climit - Date.now()) / 1000) + 1} second(s) left.`
                             ).then(new_message => {
                                 setTimeout(() => { new_message.delete(); }, 4000);
                                 _helper.log(message, "channel ratelimited");
@@ -227,7 +220,7 @@ client.on("messageCreate", message => {
                 } else {
                     if (!_members[message.member.id].cooldown_sent) {
                         client.createMessage(message.channel.id,
-                            `<@!${message.member.id}>, Please cool down! ${Math.floor((_members[message.member.id].last_message + member_limit - Date.now()) / 1000) + 1} second(s) left.`
+                            `<@!${message.member.id}>, Please cool down! ${Math.floor((_members[message.member.id].last_message + message.gcfg.mlimit - Date.now()) / 1000) + 1} second(s) left.`
                         ).then(new_message => {
                             setTimeout(() => { new_message.delete(); }, 4000);
                             _helper.log(message, "member ratelimited");
@@ -240,7 +233,10 @@ client.on("messageCreate", message => {
                 _helper.log(message, message.content);
             }
         }
-    }
+    }).catch(err => {
+        util.log(`something went wrong with selcting ${message.channel.guild.id}/${message.channel.guild.name}`);
+        util.log(err);
+    });
 });
 
 // connect to everthing in order

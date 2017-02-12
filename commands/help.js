@@ -37,14 +37,10 @@ module.exports = (message, client, helper) => {
     } else {
         let help_list = "";
         for (let topic in help_topics) {
-            let disabled_list = client.guilds_list[message.channel.guild.id].disabled[message.channel.id];
-            disabled_list = disabled_list ? disabled_list : [];  // lol
-            if (disabled_list && disabled_list.indexOf(topic) == -1 && topic != "eval") {
-                if (topic.match("admin")) {
-                    if (message.member.permission.has("manageMessages")) help_list += `\`${topic}\` `;
-                } else {
-                    help_list += `\`${topic}\` `;
-                }
+            if (topic.match("admin")) {
+                if (message.member.permission.has("manageMessages")) help_list += `\`${topic}\` `;
+            } else {
+                help_list += `\`${topic}\` `;
             }
         }
         let conditional = specific_topic ? `Help topic not found: \`${specific_topic}\`. ` : "";

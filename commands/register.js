@@ -6,7 +6,6 @@ const queryString = require("../util/queryString");
 
 function resolve_url(url, steam_key) {
     return new Promise((resolve, reject) => {
-        console.log(url)
         if (url.endsWith("/")) url = url.slice(0, -1);
 
         if (url.match("dotabuff.com/players") || url.match("opendota.com/players")) {
@@ -15,13 +14,13 @@ function resolve_url(url, steam_key) {
         }
 
         if (url.match("steamcommunity.com/")) {
-            if (url.match("profiles")) {
+            if (url.match("/profiles/")) {
                 url = url.split("/");
                 url = url[url.length - 1];
                 resolve(new Bignumber(url).minus("76561197960265728"));
             } 
 
-            if (url.match("id")) {
+            if (url.match("/id/")) {
                 url = url.split("/");
                 url = url[url.length - 1];
                 let options = {

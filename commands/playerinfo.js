@@ -1,4 +1,5 @@
 const od_heroes = require("../json/od_heroes.json");
+const resolve_user = require("../util/resolve_user");
 
 function playerinfo_embed(player) {
     let winrate = (player.wl.win / (player.wl.win + player.wl.lose));
@@ -47,65 +48,43 @@ function playerinfo_embed(player) {
 
     return {
         "title": `Player Stats for ${player.profile.personaname}`,
-        "fields": [
-            {
-                "name": `MMR: ${mmr_display.join(" / ")}`,
-                "value": mmr.join(" / "),
-                "inline": true
-            },
-            {
-                "name": "Wins/Losses",
-                "value": `${player.wl.win}/${player.wl.lose} (${winrate}%)`,
-                "inline": true
-            },
-            {
-                "name": "Country",
-                "value": `${flag} ${countrycode}`,
-                "inline": true
-            },
-            {
-                "name": "Links",
-                "value": `[DB](${dotabuff_link}) / [OD](${opendota_link}) / [Steam](${player.profile.profileurl})`,
-                "inline": true
-            },
-            {
-                "name": "Top 5 Heroes",
-                "value": display_heroes.join("\n"),
-                "inline": false
-            }
-        ],
+        "fields": [{
+            "name": `MMR: ${mmr_display.join(" / ")}`,
+            "value": mmr.join(" / "),
+            "inline": true
+        }, {
+            "name": "Wins/Losses",
+            "value": `${player.wl.win}/${player.wl.lose} (${winrate}%)`,
+            "inline": true
+        }, {
+            "name": "Country",
+            "value": `${flag} ${countrycode}`,
+            "inline": true
+        }, {
+            "name": "Links",
+            "value": `[DB](${dotabuff_link}) / [OD](${opendota_link}) / [Steam](${player.profile.profileurl})`,
+            "inline": true
+        }, {
+            "name": "Top 5 Heroes",
+            "value": display_heroes.join("\n"),
+            "inline": false
+        }],
         "thumbnail": {
             "url": player.profile.avatarfull
         }
     };
 }
 
-module.exports = (message, client, helper) => {
-    let options = message.content.split(" ");
-    let acc_id = options[1];
-
-    if (!acc_id) {
-        message.channel.createMessage("Please supply an account ID!");
-        return;
-    }
-
-    if (acc_id.match("dotabuff") || acc_id.match("opendota")) {
-        let url = acc_id.split("/");
-        acc_id = url[url.length - 1];
-    }
-
-    if (isNaN(acc_id)) {
-        message.channel.createMessage("I couldn't find an account ID in your message!");
-        return;
-    }
-
+function send_message(message, client, helper, acc_id) {
     helper.log(message, `playerinfo: ${acc_id}`);
 
     message.channel.sendTyping().then(() => {
         client.redis.get(`playerinfo:${acc_id}`, (err, reply) => {
             if (err) helper.log(message, err);
             if (reply) {
-                message.channel.createMessage({ embed: playerinfo_embed(JSON.parse(reply)) }).then(() => {
+                message.channel.createMessage({
+                    embed: playerinfo_embed(JSON.parse(reply))
+                }).then(() => {
                     helper.log(message, "  sent player info from redis");
                 }).catch(err => helper.handle(message, err));
             } else {
@@ -117,7 +96,9 @@ module.exports = (message, client, helper) => {
                     plist[0].wl = plist[1];
                     plist[0].heroes = plist[2];
 
-                    message.channel.createMessage({ embed: playerinfo_embed(plist[0]) }).then(() => {
+                    message.channel.createMessage({
+                        embed: playerinfo_embed(plist[0])
+                    }).then(() => {
                         helper.log(message, "  sent player info from api");
                     }).catch(err => helper.handle(message, err));
 
@@ -132,4 +113,48 @@ module.exports = (message, client, helper) => {
             }
         });
     });
+}
+
+module.exports = (message, client, helper) => {
+    if (message.mentions.length > 0) {
+        resolve_user(client, message.mentions[0].id).then(acc_id => {
+            send_message(message, client, helper, acc_id);
+        }).catch(err => {
+            if (err == "nouser") {
+                message.channel.createMessage(`That user has not registered with me yet! Try \`${helper.prefix}help register\`.`);
+            } else {
+                message.channel.createMessage("Something went wrong selecting this user from the database.");
+                helper.log(message, err);
+            }
+        });
+    } else {
+        let options = message.content.split(" ");
+        let acc_id = options[1];
+
+        if (!acc_id) {
+            resolve_user(client, message.author.id).then(acc_id => {
+                send_message(message, client, helper, acc_id);
+            }).catch(err => {
+                if (err == "nouser") {
+                    message.channel.createMessage(`You have not registered with me yet! Try \`${helper.prefix}help register\`.`);
+                } else {
+                    message.channel.createMessage("Something went wrong selecting this user from the database.");
+                    helper.log(message, err);
+                }
+            });
+            return;
+        }
+
+        if (acc_id.match("dotabuff") || acc_id.match("opendota")) {
+            let url = acc_id.split("/");
+            acc_id = url[url.length - 1];
+        }
+
+        if (isNaN(acc_id)) {
+            message.channel.createMessage("I couldn't find an account ID in your message!");
+            return;
+        }
+
+        send_message(message, client, helper, acc_id);
+    }
 };

@@ -233,8 +233,11 @@ client.steam_client.on("connected", () => {
 });
 
 client.steam_client.on("logOnResponse", () => {
-    util.log("logged on to steam.");
     client.steam_friends.setPersonaState(Steam.EPersonaState.Online);
+});
+
+client.steam_client.once("logOnResponse", () => {
+    util.log("logged on to steam.");
     util.log("connecting to discord...");
     client.connect();
 });

@@ -1,4 +1,5 @@
 const pg = require("pg");
+const util = require("util");
 
 module.exports = client => {
     var devconfig = JSON.parse(JSON.stringify(client.config.pgconfig));

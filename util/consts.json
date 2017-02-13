@@ -18,6 +18,7 @@
         "invite",
         "playerinfo",
         "patchnotes",
-        "notes"
+        "notes",
+        "register"
     ]
 }

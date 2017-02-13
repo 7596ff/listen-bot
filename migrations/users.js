@@ -12,7 +12,7 @@ module.exports = client => {
         }).then(res => {
             for (row in res.rows) {
                 client.pg.query({
-                    "SELECT * FROM public.users WHERE id = $1",
+                    "text": "SELECT * FROM public.users WHERE id = $1;",
                     "values": [res.rows[row].id]
                 }).then((newres) => {
                     if (newres.rowCount == 0) {

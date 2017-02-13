@@ -18,9 +18,9 @@ module.exports = client => {
                     if (newres.rowCount == 0) {
                         client.pg.query({
                             "text": "INSERT INTO public.users (id, steamid, dotaid) VALUES ($1, $2, $3);",
-                            "values": [discord_id, parseInt(steam_id), parseInt(dota_id)]
+                            "values": [res.rows[row].id, res.rows[row].steamid, res.rows[row].dotaid]
                         }).then(() => {
-                            util.log(`  inserted dota id ${dota_id}`);
+                            util.log(`  inserted dota id ${res.rows[row].id}`);
                         }).catch(err => {
                             util.log("  something went wrong inserting a user");
                             util.log(err);
@@ -28,9 +28,9 @@ module.exports = client => {
                     } else {
                         client.pg.query({
                             "text": "UPDATE public.users SET id = $1, steamid = $2, dotaid = $3 WHERE id = $1;",
-                            "values": [discord_id, parseInt(steam_id), parseInt(dota_id)]
+                            "values": [res.rows[row].id, res.rows[row].steamid, res.rows[row].dotaid]
                         }).then(() => {
-                            util.log(`  updated dota id ${newres.rows[0].dotaid} -> ${dota_id}`);
+                            util.log(`  updated dota id ${newres.rows[0].dotaid} -> ${res.rows[row].id}`);
                         }).catch(err => {
                             util.log("  something went wrong updating a user");
                             util.log(err);

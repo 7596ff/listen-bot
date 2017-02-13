@@ -2,7 +2,7 @@ const util = require("util");
 const Bignumber = require("bignumber.js");
 const needle = require("needle");
 
-const queryString = require("../util/queryString");
+const query_string = require("../util/query_string");
 
 function resolve_url(url, steam_key) {
     return new Promise((resolve, reject) => {
@@ -28,7 +28,7 @@ function resolve_url(url, steam_key) {
                     "vanityurl": url
                 };
 
-                needle.get(`http://api.steampowered.com/ISteamUser/ResolveVanityURL/v0001/${queryString(options)}`, (err, response) => {
+                needle.get(`http://api.steampowered.com/ISteamUser/ResolveVanityURL/v0001/${query_string(options)}`, (err, response) => {
                     let body = response.body.response; // thanks gabe
                     if (body.success == 1) {
                         resolve(new Bignumber(body.steamid).minus("76561197960265728"));
@@ -37,7 +37,7 @@ function resolve_url(url, steam_key) {
                     }
                 });
             } else {
-                reject("nosteam")
+                reject("nosteam");
             }
         }
     });

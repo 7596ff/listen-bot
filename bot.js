@@ -56,6 +56,7 @@ function steam_cleanup(client, dota_id, steam_id, discord_id) {
     client.users.get(discord_id).getDMChannel().then(dm_channel => {
         dm_channel.createMessage(`All set! Dota ID ${dota_id} associated with Discord ID ${discord_id} (<@${discord_id}>).`);
     });
+    client.redis.expire(`register:${steam_id}`, 0);
 }
 
 client.write_usage_stats = schedule.scheduleJob("*/10 * * * *", () => {
@@ -259,6 +260,7 @@ client.steam_friends.on("friendMsg", (steam_id, message) => {
     let q = `register:${steam_id}`;
     client.redis.get(q, (err, reply) => {
         if (err) util.log(err);
+        if (!reply) return;
         reply = reply.split(":");
         let code = reply[0];
         let discord_id = reply[1];

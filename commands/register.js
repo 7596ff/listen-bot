@@ -72,7 +72,9 @@ module.exports = (message, client, helper) => {
                             "Thanks for registering with listen-bot!",
                             "Please check your steam friend requests. You should recieve a request from me.",
                             `On acceptance, I will prompt you for a code, please send me this: \`${rand}\``,
-                            "This code will time out in 10 minutes."
+                            "This code will time out in 10 minutes.",
+                            "",
+                            `If you didn't get a friend request, try sending me a request as well: ${client.config.steam_acc_url}`
                         ].join("\n")).then(() => {
                             util.log("  sent friend req, awaiting code");
                         }).catch(err => {

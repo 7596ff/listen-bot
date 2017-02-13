@@ -46,12 +46,23 @@
     ],
     "example": "list beastmaster"
   },
+  "register": {
+    "name": "register",
+    "usage": "register <steam profile, dotabuff link or opendota link",
+    "text": [
+      "register your steam profile with the bot. accepts a steam profile link or a ",
+      "dotabuff/opendota link.\nthe bot account will send you a friend request on steam ",
+      "along with a direct message on discord with instructions."
+    ],
+    "example": "register https://www.dotabuff.com/players/2334328933479237"
+  },
   "playerinfo": {
     "name": "playerinfo",
-    "usage": "playerinfo <link or id>",
+    "usage": "playerinfo <link or @mention>",
     "text": [
       "returns some basic player info for a specified person. accepts ",
-      "a dotabuff or opendota link, as well as an account id."
+      "a dotabuff or opendota link, as well as a username mention (if that user ",
+      "has their profile linked.)"
     ],
     "example": "playerinfo https://www.opendota.com/players/103637655"
   },
@@ -64,13 +75,13 @@
     ],
     "example": "info"
   },
-  "stats": {
-    "name": "stats",
-    "usage": "stats",
+  "botstats": {
+    "name": "botstats",
+    "usage": "botstats",
     "text": [
       "returns some stats about the bot."
     ],
-    "example": "stats"
+    "example": "botstats"
   },
   "help": {
     "name": "help",

@@ -70,7 +70,7 @@ process.on("exit", (code) => {
     fs.writeFileSync("./json/usage.json", JSON.stringify(client.all_usage));
 });
 
-client.pg.on("error", (err, pgclient) => {
+client.pg.on("error", (err) => {
     util.log("idle pgclient error", err.message, err.stack);
 });
 

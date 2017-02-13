@@ -311,7 +311,7 @@ client.redis.on("ready", () => {
         }
 
         util.log("pg ready.");
-        if (config.steam_config) {
+        if (config.steam_enabled) {
             util.log("conncting to steam...");
             client.steam_client.connect();
         } else {

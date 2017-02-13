@@ -51,6 +51,14 @@ function Helper(prefix) {
     };
 }
 
+function steam_cleanup(client, dota_id, steam_id, discord_id) {
+    client.steam_friends.removeFriend(steam_id);
+    client.users.get(discord_id).getDMChannel().then(dm_channel => {
+        dm_channel.createMessage(`All set! Dota ID ${dota_id} associated with Discord ID ${discord_id} (<@${discord_id}>).`);
+    });
+    client.redis.expire(`register:${steam_id}`, 0);
+}
+
 client.write_usage_stats = schedule.scheduleJob("*/10 * * * *", () => {
     fs.writeFile("./json/usage.json", JSON.stringify(client.all_usage), (err) => {
         if (err) util.log(err);
@@ -268,10 +276,7 @@ client.steam_friends.on("friendMsg", (steam_id, message) => {
                         "values": [discord_id, parseInt(steam_id), parseInt(dota_id)]
                     }).then(() => {
                         util.log(`  inserted dota id ${dota_id}`);
-                        client.steam_friends.removeFriend(steam_id);
-                        client.users.get(discord_id).getDMChannel().then(dm_channel => {
-                            dm_channel.createMessage(`All set! Dota ID ${dota_id} associated with Discord ID ${discord_id} (<@${discord_id}>).`);
-                        });
+                        steam_cleanup(client, dota_id, steam_id, discord_id);
                     }).catch(err => {
                         util.log("  something went wrong inserting a user");
                         util.log(err);
@@ -282,10 +287,7 @@ client.steam_friends.on("friendMsg", (steam_id, message) => {
                         "values": [discord_id, parseInt(steam_id), parseInt(dota_id)]
                     }).then(() => {
                         util.log(`  updated dota id ${res.rows[0].dotaid} -> ${dota_id}`);
-                        client.steam_friends.removeFriend(steam_id);
-                        client.users.get(discord_id).getDMChannel().then(dm_channel => {
-                            dm_channel.createMessage(`All set! Dota ID ${dota_id} associated with Discord ID ${discord_id} (<@${discord_id}>).`);
-                        });
+                        steam_cleanup(client, dota_id, steam_id, discord_id);
                     }).catch(err => {
                         util.log("  something went wrong updating a user");
                         util.log(err);

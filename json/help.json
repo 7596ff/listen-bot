@@ -48,13 +48,13 @@
   },
   "register": {
     "name": "register",
-    "usage": "register <steam profile, dotabuff link or opendota link",
+    "usage": "register <steam profile, dotabuff link or opendota link>",
     "text": [
       "register your steam profile with the bot. accepts a steam profile link or a ",
       "dotabuff/opendota link.\nthe bot account will send you a friend request on steam ",
       "along with a direct message on discord with instructions."
     ],
-    "example": "register https://www.dotabuff.com/players/2334328933479237"
+    "example": "register https://www.dotabuff.com/players/103637655"
   },
   "playerinfo": {
     "name": "playerinfo",

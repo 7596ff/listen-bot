@@ -2,7 +2,6 @@ const talents = require("../json/talents.json");
 const short_heroes = require("../json/short_heroes.json");
 
 const clean = require("../util/clean");
-const capitalize_first = require("../util/capitalize_first");
 
 const talent_hero_embed = function(hero_name) {
     let talent_obj = talents[hero_name];

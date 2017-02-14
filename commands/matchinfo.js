@@ -56,6 +56,8 @@ module.exports = (message, client, helper) => {
         return;
     }
 
+    helper.log(message, `matchinfo: ${match_id}`);
+
     message.channel.sendTyping().then(() => {
         client.redis.get(`matchinfo:${match_id}`, (err, reply) => {
             if (err) helper.log(message, err);

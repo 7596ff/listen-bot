@@ -55,8 +55,8 @@ module.exports = (match_data, mentions) => {
     let highest = new Array(9).fill(0);
 
     match_data.players.forEach(player => {
-        let row = [`${(player.personaname || "Unknown").slice(0, 16)}  `,
-            `${od_heroes.find(hero => hero.id == player.hero_id).localized_name.replace("Keeper of the Light", "KOTL")}  `,
+        let row = [`${(player.personaname || "Unknown").slice(0, 11)}  `,
+            `${od_heroes.find(hero => hero.id == player.hero_id).localized_name.slice(0, 11)}  `,
             `${player.kills}/${player.deaths}/${player.assists}`,
             `${player.last_hits}/${player.denies}`,
             player.hero_damage.toString(),

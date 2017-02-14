@@ -3,19 +3,20 @@
         "name": "patch",
         "usage": "patch [<version>] <hero>",
         "text": [
-            "returns the latest changes to a hero in dota from the latest balance patch.\n\n",
-            "using ``patch <hero>`` alone will return the changes from the latest patch, ",
+            "returns the latest changes to a hero in dota from the latest balance patch.",
+            "\n\nusing ``patch <hero>`` alone will return the changes from the latest patch, ",
             "while using ``patch <version> <hero>`` will return the changes from that spec",
             "ific patch (currently only down to version 6.79)."
         ],
+        "aliases": ["patchnotes", "notes"],
         "example": "patch 7.01 monkey king"
     }, {
         "name": "talents",
         "usage": "talents <hero>",
         "text": [
-            "returns the current talents of a requested hero. alias: ",
-            "`talent`"
+            "returns the current talents of a requested hero."
         ],
+        "aliases": ["talent"],
         "example": "talents spirit breaker"
     }, {
         "name": "ability",
@@ -23,9 +24,9 @@
         "text": [
             "returns info about a hero's ability. ",
             "there are multiple aliases for abilites, you can discover them all ",
-            "simply by using commands! supplying a hero is not required. aliases: ",
-            "`skill` `spell`"
+            "simply by using commands! supplying a hero is not required."
         ],
+        "aliases": ["skill", "spell"],
         "example": "ability earthbind"
     }, {
         "name": "wiki",
@@ -46,8 +47,9 @@
         "name": "register",
         "usage": "register <steam profile, dotabuff link or opendota link>",
         "text": [
-            "register your steam profile with the bot. accepts a steam profile link or a ",
-            "dotabuff/opendota link.\nthe bot account will send you a friend request on steam ",
+            "register your steam profile with the bot.",
+            " accepts a steam profile link or a dotabuff/opendota link.\n",
+            "the bot account will send you a friend request on steam ",
             "along with a direct message on discord with instructions."
         ],
         "example": "register https://www.dotabuff.com/players/103637655"
@@ -55,8 +57,8 @@
         "name": "playerinfo",
         "usage": "playerinfo <link or @mention>",
         "text": [
-            "returns some basic player info for a specified person. accepts ",
-            "a dotabuff or opendota link, as well as a username mention (if that user ",
+            "returns some basic player info for a specified person. ",
+            "accepts a dotabuff or opendota link, as well as a username mention (if that user ",
             "has their profile linked.)"
         ],
         "example": "playerinfo https://www.opendota.com/players/103637655"
@@ -71,23 +73,23 @@
         "name": "lastmatch",
         "usage": "lastmatch <@mention or name>",
         "text": [
-            "automatically calls `matchinfo` on your latest match or the latest ",
-            "match of someone in the server you are in."
+            "looks up your last match (if you are registered) and returns it.",
+            "also can be used to look up other user's matches."
         ],
         "example": "lastmatch Moo"
     }],
     "meta": [{
         "name": "info",
         "text": [
-            "returns some info about the bot. aliases: ",
-            "`about` `invite`"
-        ]
+            "returns some info about the bot."
+        ],
+        "aliases": ["about"]
     }, {
         "name": "invite",
         "text": [
             "invite link for the bot"
         ]
-    },{
+    }, {
         "name": "botstats",
         "text": [
             "returns some stats about the bot"
@@ -105,7 +107,7 @@
         "text": [
             "displays the current config for the server."
         ]
-    },{
+    }, {
         "name": "admin prefix",
         "usage": "admin prefix <new prefix>",
         "text": [
@@ -116,7 +118,8 @@
         "name": "admin cooldowns",
         "usage": "admin cooldowns <channel or member> <time in seconds>",
         "text": [
-            "sets the cooldowns for the entire guild for members or channels. for example: if the channel cooldown is 10, ",
+            "sets the cooldowns for the entire guild for members or channels.",
+            " for example: if the channel cooldown is 10, ",
             "10 seconds must pass before a new command is processed. all commands in between the time of the first command and ",
             "any new commands are ignored. \n\nrecommended cooldowns: 10 seconds for member and 5 seconds for channel. \ndefault cooldowns: 0."
         ],

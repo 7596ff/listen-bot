@@ -28,26 +28,33 @@ module.exports = (message, client, helper) => {
     let options = message.content.split(" ");
     options.shift();
     let specific_topic = options.join(" ");
-    if (specific_topic in help_topics) {
-        message.channel.createMessage({
-            "embed": help_embed(help_topics[specific_topic], helper.prefix)
-        }).then(new_message => {
-            helper.log(new_message, `Helped with topic ${specific_topic}`);
-        }).catch(err => helper.handle(message, err));
-    } else {
-        let help_list = [];
-        for (let topic in help_topics) {
-            if (topic.match("admin")) {
-                if (message.member.permission.has("manageMessages")) help_list.push(topic);
-            } else {
-                help_list.push(topic);
-            }
+
+    for (let cat in help_topics) {
+        let present = help_topics[cat].find(topic => topic.name == specific_topic)
+        if (present) {
+            message.channel.createMessage({
+                "embed": help_embed(present, helper.prefix)
+            }).then(new_message => {
+                helper.log(new_message, `Helped with topic ${specific_topic}`);
+            }).catch(err => helper.handle(message, err));
+            return;
         }
-        let conditional = specific_topic ? `Help topic not found: \`${specific_topic}\`. ` : "";
-        if (conditional != "") helper.log(message, "could not help with " + specific_topic);
-        let fmt = help_list.map(topic => `\`${topic}\``).join(" ");
-        message.channel.createMessage(`${conditional}List of help topics: ${fmt}`).then(new_message => {
-            helper.log(new_message, "helped with all topics");
-        }).catch(err => helper.handle(message, err));
     }
+
+    let help_list = ["List of commands:"];
+
+    if (specific_topic) help_list.splice(0, 0, `Help topic not found: \`${specific_topic}\`.\n`);
+
+    for (let key in help_topics) {
+        let fmt = help_topics[key].map(topic => `\`${topic.name}\``);
+        if (key == "admin" && message.member.permission.has("manageMessages")) {
+            help_list.push(`${key}: ${fmt.join(", ")}`);
+        } else if (key != "admin") {
+            help_list.push(`${key}: ${fmt.join(", ")}`);
+        }
+    }
+
+    message.channel.createMessage(help_list.join("\n")).then(new_message => {
+        helper.log(new_message, "helped with all topics");
+    }).catch(err => helper.handle(message, err));  
 };

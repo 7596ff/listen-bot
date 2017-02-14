@@ -3,20 +3,8 @@ const keys = require("../json/keys.json");
 const abilities = require("../json/abilities.json");
 const alike_keys = require("../json/alike_keys.json");
 
-function capitalize_first(key) {
-    let words = key.split(" ");
-    let short_words = ["of", "and", "in", "the", "de"];
-    for (let word in words) {
-        if (short_words.indexOf(words[word]) == -1) {
-            words[word] = words[word].substr(0, 1).toUpperCase() + words[word].substr(1, words[word].length);
-        }
-    }
-    return words.join(" ");
-}
-
-function clean(key) {
-    return key.replace("'", "").replace(" ", "_").toLowerCase();
-}
+const capitalize_first = require("../util/capitalize_first");
+const clean = require("../util/clean");
 
 function ability_embed(hero, ability) {
     let ability_obj = abilities[hero][ability];

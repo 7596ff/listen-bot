@@ -55,8 +55,8 @@ module.exports = (match_data, mentions) => {
     let highest = new Array(9).fill(0);
 
     match_data.players.forEach(player => {
-        let row = [`${(player.personaname || "Unknown").slice(0, 11)}  `,
-            `${od_heroes.find(hero => hero.id == player.hero_id).localized_name.slice(0, 11)}  `,
+        let row = [(player.personaname || "Unknown").slice(0, 13),
+            od_heroes.find(hero => hero.id == player.hero_id).localized_name.slice(0, 13),
             `${player.kills}/${player.deaths}/${player.assists}`,
             `${player.last_hits}/${player.denies}`,
             player.hero_damage.toString(),
@@ -87,7 +87,7 @@ module.exports = (match_data, mentions) => {
     let victory = match_data.radiant_win ? "Radiant Victory!" : "Dire Victory!";
     let ptime = pretty_ms(match_data.duration * 1000);
     let gametype = `${lobby_types[match_data.lobby_type]} / ${game_modes[match_data.game_mode]}`;
-    let skill = skills[match_data.skill];
+    let skill = match_data.skill ? skills[match_data.skill] : skills[0];
     let mention_str = mentions.length > 0 
         ? `\n\nMembers from this server: ${mentions.map(mention => `<@${mention.discord_id}> (${od_heroes.find(hero => hero.id == mention.hero_id).localized_name})`).join(", ")}` 
         : "";

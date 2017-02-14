@@ -8,6 +8,8 @@ client.steam_client = new Steam.SteamClient();
 client.steam_user = new Steam.SteamUser(client.steam_client);
 client.steam_friends = new Steam.SteamFriends(client.steam_client);
 
+const consts = require("./util/consts.json");
+
 const schedule = require("node-schedule");
 const Mika = require("mika");
 const bignumber = require("bignumber.js");
@@ -26,7 +28,7 @@ client.redis = redis.createClient();
 client.pg = new pg.Client(config.pgconfig);
 client.config = config;
 
-for (let cmd of require("./util/consts.json").cmdlist) {
+for (let cmd in consts.cmds) {
     client.commands[cmd] = require(`./commands/${cmd}`);
     client.usage[cmd] = 0;
     client.all_usage[cmd] = isNaN(client.all_usage[cmd]) ? 0 : client.all_usage[cmd];
@@ -190,7 +192,14 @@ client.on("messageCreate", message => {
             if (message.content.startsWith(message.gcfg.prefix)) message.content = message.content.replace(message.gcfg.prefix, "");
             message.content = message.content.trim();
 
-            const command = message.content.split(" ").shift();
+            let command = message.content.split(" ").shift();
+
+            for (let cmd in consts.cmds) {
+                if (consts.cmds[cmd].indexOf(command) != -1) {
+                    command = consts.cmds[cmd][0];
+                }
+            }
+
             if (command in client.commands) {
                 if (!_members[message.member.id] || _members[message.member.id].last_message + message.gcfg.mlimit < Date.now()) {
                     if (!_channels[message.channel.id] || _channels[message.channel.id].last_message + message.gcfg.climit < Date.now()) {

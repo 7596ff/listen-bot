@@ -1,26 +1,20 @@
 {
-    "cmdlist": [
-        "eval",
-        "shardinfo",
-        "patch",
-        "talents",
-        "wiki",
-        "list",
-        "ability",
-        "help",
-        "info",
-        "admin",
-        "botstats",
-        "talent",
-        "skill",
-        "about",
-        "spell",
-        "invite",
-        "playerinfo",
-        "patchnotes",
-        "notes",
-        "register",
-        "matchinfo",
-        "lastmatch"
-    ]
+    "cmds": {
+        "patch": ["patch", "patchnotes", "notes"],
+        "talents": ["talents", "talent"],
+        "ability": ["ability", "skill", "spell"],
+        "wiki": ["wiki"],
+        "list": ["list"],
+        "register": ["register"],
+        "playerinfo": ["playerinfo"],
+        "matchinfo": ["matchinfo"],
+        "lastmatch": ["lastmatch"],
+        "info": ["info", "about"],
+        "invite": ["invite"],
+        "botstats": ["botstats"],
+        "admin": ["admin"],
+        "help": ["help"],
+        "eval": ["eval"],
+        "shardinfo": ["shardinfo"]
+    }
 }

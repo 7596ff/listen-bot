@@ -49,6 +49,7 @@ function ability_embed(hero, ability) {
     return {
         "author": {
             "name": ability,
+            "url": `http://dota2.gamepedia.com/${capitalize_first(hero)}#${capitalize_first(ability).replace(" ", "_")}`,
             "icon_url": `http://cdn.dota2.com/apps/dota2/images/heroes/${hero}_vert.jpg`
         },
         "description": [desc, note, agha].join("\n\n").replace("\n\n\n\n", "\n\n"),

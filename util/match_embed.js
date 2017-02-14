@@ -62,7 +62,7 @@ module.exports = (match_data, mentions) => {
             player.hero_healing.toString(),
             player.gold_per_min.toString(),
             player.xp_per_min.toString(),
-            (player.personaname || "Unknown").slice(0, 15)
+            (player.personaname || "Unknown").slice(0, 18)
         ];
 
         for (let val in row) {

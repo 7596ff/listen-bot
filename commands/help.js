@@ -30,7 +30,7 @@ module.exports = (message, client, helper) => {
     let specific_topic = options.join(" ");
 
     for (let cat in help_topics) {
-        let present = help_topics[cat].find(topic => topic.name == specific_topic)
+        let present = help_topics[cat].find(topic => topic.name == specific_topic);
         if (present) {
             message.channel.createMessage({
                 "embed": help_embed(present, helper.prefix)

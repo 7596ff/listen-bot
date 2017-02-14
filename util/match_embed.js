@@ -86,7 +86,6 @@ module.exports = (match_data, mentions) => {
 
     let victory = match_data.radiant_win ? "Radiant Victory!" : "Dire Victory!";
     let ptime = pretty_ms(match_data.duration * 1000);
-    let gametype = `${lobby_types[match_data.lobby_type]} / ${game_modes[match_data.game_mode]}`;
     let skill = match_data.skill ? skills[match_data.skill] : skills[0];
     let mention_str = mentions.length > 0 
         ? `\n\nMembers from this server: ${mentions.map(mention => `<@${mention.discord_id}> (${od_heroes.find(hero => hero.id == mention.hero_id).localized_name})`).join(", ")}` 
@@ -107,7 +106,7 @@ module.exports = (match_data, mentions) => {
             "value": game_modes[match_data.game_mode],
             "inline": true
         }, {
-            "name": `Skill`,
+            "name": "Skill",
             "value": skill,
             "inline": true
         }, {

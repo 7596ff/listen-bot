@@ -1,6 +1,9 @@
 const talents = require("../json/talents.json");
 const short_heroes = require("../json/short_heroes.json");
 
+const clean = require("../util/clean");
+const capitalize_first = require("../util/capitalize_first");
+
 const talent_hero_embed = function(hero_name) {
     let talent_obj = talents[hero_name];
     let talent_arr = [
@@ -12,6 +15,7 @@ const talent_hero_embed = function(hero_name) {
     return {
         "author": {
             "name": talents[hero_name]["format_name"],
+            "url": `http://dota2.gamepedia.com/${talent_obj.format_name.replace(" ", "_")}`,
             "icon_url": `http://cdn.dota2.com/apps/dota2/images/heroes/${talents[hero_name]["true_name"]}_vert.jpg`
         },
         "fields": [

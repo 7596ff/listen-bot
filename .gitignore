@@ -3,6 +3,7 @@ config.json
 guilds.json
 usage.json
 od_heroes.json
+bulma.html
 
 # Logs
 logs

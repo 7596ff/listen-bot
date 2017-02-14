@@ -60,8 +60,8 @@ module.exports = (match_data, mentions) => {
             `${player.last_hits}/${player.denies}`,
             player.hero_damage.toString(),
             player.hero_healing.toString(),
-            player.xp_per_min.toString(),
             player.gold_per_min.toString(),
+            player.xp_per_min.toString(),
             (player.personaname || "Unknown").slice(0, 15)
         ];
 

@@ -93,14 +93,26 @@ module.exports = (match_data, mentions) => {
         : "";
 
     return {
-        "title": `${victory} ${match_data.radiant_score} - ${match_data.dire_score}, ${ptime}`,
+        "title": victory,
         "fields": [{
-            "name": "Lobby Type / Gamemode",
-            "value": gametype,
+            "name": "Result",
+            "value": `${match_data.radiant_score} - ${match_data.dire_score}, ${ptime}`,
             "inline": true
         }, {
-            "name": `Skill: ${skill}`,
-            "value": `Match ID: ${match_data.match_id}`,
+            "name": "Lobby Type",
+            "value": lobby_types[match_data.lobby_type],
+            "inline": true
+        }, {
+            "name": "Gamemode",
+            "value": game_modes[match_data.game_mode],
+            "inline": true
+        }, {
+            "name": `Skill`,
+            "value": skill,
+            "inline": true
+        }, {
+            "name": "Match ID",
+            "value": match_data.match_id,
             "inline": true
         }, {
             "name": "Links",

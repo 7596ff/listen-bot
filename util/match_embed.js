@@ -50,19 +50,19 @@ const skills = [
 ];
 
 module.exports = (match_data, mentions) => {
-    let table = [["Name", "Hero", "K/D/A", "LH/D", "HD", "HH", "GPM", "XPM"]];
+    let table = [["Hero", "K/D/A", "LH/D", "HD", "HH", "GPM", "XPM", "Name"]];
     let ftable = [];
     let highest = new Array(9).fill(0);
 
     match_data.players.forEach(player => {
-        let row = [(player.personaname || "Unknown").slice(0, 13),
-            od_heroes.find(hero => hero.id == player.hero_id).localized_name.slice(0, 13),
+        let row = [od_heroes.find(hero => hero.id == player.hero_id).localized_name,
             `${player.kills}/${player.deaths}/${player.assists}`,
             `${player.last_hits}/${player.denies}`,
             player.hero_damage.toString(),
             player.hero_healing.toString(),
             player.xp_per_min.toString(),
-            player.gold_per_min.toString()
+            player.gold_per_min.toString(),
+            (player.personaname || "Unknown").slice(0, 15)
         ];
 
         for (let val in row) {

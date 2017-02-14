@@ -2,6 +2,8 @@ const matchinfo = require("./matchinfo");
 const resolve_user = require("../util/resolve_user");
 
 function send_message(message, client, helper, acc_id) {
+    helper.log(message, `lastmatch: ${acc_id}`);
+
     message.channel.sendTyping().then(() => {
         client.redis.get(`lastmatch:${acc_id}`, (err, res) => {
             if (err) helper.log(message, err);

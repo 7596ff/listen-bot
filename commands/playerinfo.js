@@ -129,7 +129,39 @@ module.exports = (message, client, helper) => {
         });
     } else {
         let options = message.content.split(" ");
-        let acc_id = options[1];
+        options.shift();
+        let acc_id = options[0];
+        let name = options.join(" ");
+        let inguild = message.channel.guild.members.find(member => (member.nick || member.username) == name);
+        let inclient = client.users.find(user => user.username == name);
+
+        if (inguild) {
+            resolve_user(client, inguild.id).then(acc_id => {
+                send_message(message, client, helper, acc_id);
+            }).catch(err => {
+                if (err == "nouser") {
+                    message.channel.createMessage(`That user has not registered with me yet! Try \`${helper.prefix}help register\`.`);
+                } else {
+                    message.channel.createMessage("Something went wrong selecting this user from the database.");
+                    helper.log(message, err);
+                }
+            });
+            return;
+        }
+
+        if (inclient) {
+            resolve_user(client, inclient.id).then(acc_id => {
+                send_message(message, client, helper, acc_id);
+            }).catch(err => {
+                if (err == "nouser") {
+                    message.channel.createMessage(`That user has not registered with me yet! Try \`${helper.prefix}help register\`.`);
+                } else {
+                    message.channel.createMessage("Something went wrong selecting this user from the database.");
+                    helper.log(message, err);
+                }
+            });
+            return;
+        }
 
         if (!acc_id) {
             resolve_user(client, message.author.id).then(acc_id => {

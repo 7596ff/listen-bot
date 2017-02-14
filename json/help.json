@@ -66,6 +66,23 @@
     ],
     "example": "playerinfo https://www.opendota.com/players/103637655"
   },
+  "matchinfo": {
+    "name": "matchinfo",
+    "usage": "matchinfo <link or match id>",
+    "text": [
+      "returns information about a specific dota match."
+    ],
+    "example": "matchinfo https://www.dotabuff.com/matches/2992668596"
+  },
+  "lastmatch": {
+    "name": "lastmatch",
+    "usage": "lastmatch <@mention or name>",
+    "text": [
+      "automatically calls `matchinfo` on your latest match or the latest ",
+      "match of someone in the server you are in."
+    ],
+    "example": "lastmatch Moo"
+  },
   "info": {
     "name": "info",
     "usage": "info",

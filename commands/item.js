@@ -13,8 +13,8 @@ module.exports = (message, client, helper) => {
 
     loop1: for (let i = 0; i <= options.length; i++) {
         loop2: for (let j = 0; j <= options.length; j++) {
+            let term = options.slice(i, j).join(" ").toLowerCase();
             if (i < j) {
-                let term = options.slice(i, j).join(" ").toLowerCase();
                 search = items.filter(item => {
                     if (item.format_name.toLowerCase().match(term)) return true;
                     if ((item.aliases || []).indexOf(term) != -1) return true;
@@ -47,8 +47,11 @@ module.exports = (message, client, helper) => {
             content += `Possible conflicts: ${conflicts.join(", ")}`;
         }
 
-        message.channel.createMessage(content).then(() => {
+        message.channel.createMessage(content).then(new_message => {
             helper.log(message, "sent not found");
+            setTimeout(() => {
+                new_message.delete();
+            }, 10000);
         });
     }
 };

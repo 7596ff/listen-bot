@@ -124,5 +124,22 @@
             "any new commands are ignored. \n\nrecommended cooldowns: 10 seconds for member and 5 seconds for channel. \ndefault cooldowns: 0."
         ],
         "example": "admin cooldowns member 5"
+    }, {
+        "name": "admin disable",
+        "usage": "admin disable [commands]",
+        "text": [
+            "disables a list of commands per channel.",
+            "note: you can not disable commands from the meta or admin categories.",
+            "use the admin command by itself to see disabled commands for a channel."
+        ],
+        "example": "admin disable lastmatch matchinfo"
+    }, {
+        "name": "admin enable",
+        "usage": "admin enable [commands]",
+        "text": [
+            "re enables a list of commands for a channel.",
+            "use the admin command by itself to see a list of disabled commands."
+        ],
+        "example": "admin enable patch list wiki"
     }]
 }

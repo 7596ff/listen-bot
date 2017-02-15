@@ -1,6 +1,8 @@
 const admin_commands = {
     "prefix": require("./admin/prefix"),
-    "cooldowns": require("./admin/cooldowns")
+    "cooldowns": require("./admin/cooldowns"),
+    "disable": require("./admin/disable"),
+    "enable": require("./admin/enable")
 };
 
 module.exports = (message, client, helper) => {
@@ -11,12 +13,16 @@ module.exports = (message, client, helper) => {
         if (command in admin_commands) {
             admin_commands[command](message, client, helper);
         } else {
+            let disabledlist = message.gcfg.disabled[message.channel.id];
+            let prettylist = disabledlist.map(item => `\`${item}\``).join(" ");
+            prettylist = disabledlist.length > 0 ? `Disabled commands here: ${prettylist}` : "No disabled commands in this channel.";
             message.channel.createMessage({
                 "embed": {
                     "description": [
                         `Channel-specifc cooldowns: \`${message.gcfg.climit / 1000}\``,
                         `Member-specific cooldowns: \`${message.gcfg.mlimit / 1000}\``,
-                        `Custom prefix: \`${message.gcfg.prefix}\``
+                        `Custom prefix: \`${message.gcfg.prefix}\``,
+                        prettylist
                     ].join("\n")
                 }
             }).then(() => {

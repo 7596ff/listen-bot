@@ -29,7 +29,7 @@ module.exports = item => {
         },
         "fields": [{
             "name": costs.join("   "),
-            "value": att.length > 1 ? att.join("\n") : "Nothing special.",
+            "value": att.length > 0 ? att.join("\n") : "Nothing special.",
             "inline": true
         }],
         "description": desc.join("\n"),

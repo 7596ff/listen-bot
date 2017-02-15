@@ -34,7 +34,7 @@ module.exports = (message, client, helper) => {
             send_message(message, client, helper, acc_id);
         }).catch(err => {
             if (err == "nouser") {
-                message.channel.createMessage(`That user has not registered with me yet! Try \`${helper.prefix}help register\`.`);
+                message.channel.createMessage(`That user has not registered with me yet! Try \`${message.gcfg.prefix}help register\`.`);
             } else {
                 message.channel.createMessage("Something went wrong selecting this user from the database.");
                 helper.log(message, err);
@@ -53,7 +53,7 @@ module.exports = (message, client, helper) => {
                 send_message(message, client, helper, acc_id);
             }).catch(err => {
                 if (err == "nouser") {
-                    message.channel.createMessage(`That user has not registered with me yet! Try \`${helper.prefix}help register\`.`);
+                    message.channel.createMessage(`That user has not registered with me yet! Try \`${message.gcfg.prefix}help register\`.`);
                 } else {
                     message.channel.createMessage("Something went wrong selecting this user from the database.");
                     helper.log(message, err);
@@ -67,7 +67,7 @@ module.exports = (message, client, helper) => {
                 send_message(message, client, helper, acc_id);
             }).catch(err => {
                 if (err == "nouser") {
-                    message.channel.createMessage(`That user has not registered with me yet! Try \`${helper.prefix}help register\`.`);
+                    message.channel.createMessage(`That user has not registered with me yet! Try \`${message.gcfg.prefix}help register\`.`);
                 } else {
                     message.channel.createMessage("Something went wrong selecting this user from the database.");
                     helper.log(message, err);
@@ -81,7 +81,7 @@ module.exports = (message, client, helper) => {
                 send_message(message, client, helper, acc_id);
             }).catch(err => {
                 if (err == "nouser") {
-                    message.channel.createMessage(`You have not registered with me yet! Try \`${helper.prefix}help register\`.`);
+                    message.channel.createMessage(`You have not registered with me yet! Try \`${message.gcfg.prefix}help register\`.`);
                 } else {
                     message.channel.createMessage("Something went wrong selecting this user from the database.");
                     helper.log(message, err);

@@ -33,7 +33,7 @@ module.exports = (message, client, helper) => {
         let present = help_topics[cat].find(topic => topic.name == specific_topic);
         if (present) {
             message.channel.createMessage({
-                "embed": help_embed(present, helper.prefix)
+                "embed": help_embed(present, message.gcfg.prefix)
             }).then(new_message => {
                 helper.log(new_message, `Helped with topic ${specific_topic}`);
             }).catch(err => helper.handle(message, err));

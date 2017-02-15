@@ -34,14 +34,23 @@ for (let cmd in consts.cmds) {
     client.all_usage[cmd] = isNaN(client.all_usage[cmd]) ? 0 : client.all_usage[cmd];
 }
 
-function Helper(prefix) {
-    this.prefix = prefix;
+client.helper = {
+    log: (message, text) => {
+        if (this.last_guild == message.channel.guild.name) {
+            if (this.last_channel == message.channel.name) {
+                util.log(`  ${text.trim()}`);
+            } else {
+                util.log(`${message.channel.name}: ${text.trim()}`);
+            }
+        } else {
+            util.log(`${message.channel.guild.name}/${message.channel.name}: ${text.trim()}`);
+        }
 
-    this.log = (message, text) => {
-        require("util").log(`${message.channel.guild.name}/${message.channel.name}: ${text}`);
-    };
+        this.last_guild = message.channel.guild.name;
+        this.last_channel = message.channel.name;
+    },
 
-    this.handle = (message, err) => {
+    handle: (message, err) => {
         let result = err.toString().split(" ")[1];
         if (result == "400") {
             this.log(message, "probably don't have permissions to embed here");
@@ -50,7 +59,7 @@ function Helper(prefix) {
         } else {
             this.log(message, err.toString());
         }
-    };
+    }
 }
 
 function steam_cleanup(client, dota_id, steam_id, discord_id) {
@@ -185,7 +194,7 @@ client.on("messageCreate", message => {
         "values": [message.channel.guild.id]
     }).then(res => {
         message.gcfg = res.rows[0];
-        let _helper = new Helper(message.gcfg.prefix);
+        let _helper = client.helper;
 
         if (message.content.startsWith(message.gcfg.prefix) || message.content.startsWith(config.default_prefix)) {
             if (message.content.startsWith(config.default_prefix)) message.content = message.content.replace(config.default_prefix, "");

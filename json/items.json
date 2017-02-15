@@ -888,27 +888,6 @@
         ]
     },
     {
-        "true_name": "travel_boots_2",
-        "id": 220,
-        "format_name": "Boots of Travel",
-        "cost": 4400,
-        "cooldown": 45,
-        "description": [
-            "Active: Teleport - Teleports you to any allied structure or unit, including heroes. Double-click to teleport to your team's base fountain.",
-            "",
-            "Flat movement speed bonuses from multiple pairs of boots do not stack."
-        ],
-        "notes": [
-            "Shares cooldown with Town Portal Scrolls."
-        ],
-        "attributes": [
-            "+100 Movement Speed"
-        ],
-        "lore": [
-            "Winged boots that grant omnipresence."
-        ]
-    },
-    {
         "true_name": "phase_boots",
         "id": 50,
         "format_name": "Phase Boots",
@@ -1620,86 +1599,6 @@
         ]
     },
     {
-        "true_name": "dagon_2",
-        "id": 201,
-        "format_name": "Dagon",
-        "cost": 3970,
-        "cooldown": 35,
-        "description": [
-            "Active: Energy Burst - Emits a powerful burst of magical damage upon a targeted enemy unit. Upgradable."
-        ],
-        "attributes": [
-            "+13/16/19/22/25 Intelligence",
-            "+3 All Attributes",
-            "+9 Damage",
-            "BURST DAMAGE: 400/500/600/700/800",
-            "CAST RANGE: 600/650/700/750/800"
-        ],
-        "lore": [
-            "A lesser wand that grows in power the longer it is used, it brings magic to the fingertips of the user."
-        ]
-    },
-    {
-        "true_name": "dagon_3",
-        "id": 202,
-        "format_name": "Dagon",
-        "cost": 5220,
-        "cooldown": 35,
-        "description": [
-            "Active: Energy Burst - Emits a powerful burst of magical damage upon a targeted enemy unit. Upgradable."
-        ],
-        "attributes": [
-            "+13/16/19/22/25 Intelligence",
-            "+3 All Attributes",
-            "+9 Damage",
-            "BURST DAMAGE: 400/500/600/700/800",
-            "CAST RANGE: 600/650/700/750/800"
-        ],
-        "lore": [
-            "A lesser wand that grows in power the longer it is used, it brings magic to the fingertips of the user."
-        ]
-    },
-    {
-        "true_name": "dagon_4",
-        "id": 203,
-        "format_name": "Dagon",
-        "cost": 6470,
-        "cooldown": 35,
-        "description": [
-            "Active: Energy Burst - Emits a powerful burst of magical damage upon a targeted enemy unit. Upgradable."
-        ],
-        "attributes": [
-            "+13/16/19/22/25 Intelligence",
-            "+3 All Attributes",
-            "+9 Damage",
-            "BURST DAMAGE: 400/500/600/700/800",
-            "CAST RANGE: 600/650/700/750/800"
-        ],
-        "lore": [
-            "A lesser wand that grows in power the longer it is used, it brings magic to the fingertips of the user."
-        ]
-    },
-    {
-        "true_name": "dagon_5",
-        "id": 204,
-        "format_name": "Dagon",
-        "cost": 7720,
-        "cooldown": 35,
-        "description": [
-            "Active: Energy Burst - Emits a powerful burst of magical damage upon a targeted enemy unit."
-        ],
-        "attributes": [
-            "+13/16/19/22/25 Intelligence",
-            "+3 All Attributes",
-            "+9 Damage",
-            "BURST DAMAGE: 400/500/600/700/800",
-            "CAST RANGE: 600/650/700/750/800"
-        ],
-        "lore": [
-            "A lesser wand that grows in power the longer it is used, it brings magic to the fingertips of the user."
-        ]
-    },
-    {
         "true_name": "necronomicon",
         "id": 106,
         "format_name": "Necronomicon",
@@ -1720,56 +1619,6 @@
             "ARCHER MANA BURN: 200/300/400",
             "ARCHER AURA MOVE SPEED: 5%/7%/9%",
             "ARCHER AURA ATTACK SPEED: 5/10/15"
-        ],
-        "lore": [
-            "Considered the ultimate in necromancy and demonology, a powerful malefic force is locked within its pages."
-        ]
-    },
-    {
-        "true_name": "necronomicon_2",
-        "id": 193,
-        "format_name": "Necronomicon",
-        "cost": 3850,
-        "cooldown": 95,
-        "description": [
-            "Active: Demonic Summoning - Summons a Warrior and an Archer to fight for you for 40 seconds, whose strength and abilities increase as Necronomicon is upgraded. Warrior gains True Sight at level 3. Upgradable."
-        ],
-        "attributes": [
-            "+15/21/24 Intelligence",
-            "+8/12/16 Strength",
-            "WARRIOR HEALTH: 700/800/900",
-            "WARRIOR DAMAGE: 75/100/125",
-            "WARRIOR MANA BREAK: 20/30/40",
-            "WARRIOR LAST WILL DMG: 550/675/800",
-            "ARCHER HEALTH: 700/800/900",
-            "ARCHER DAMAGE: 60/90/120",
-            "ARCHER MANA BURN: 200/300/400",
-            "ARCHER AURA SPEED: 5%/10%/15%"
-        ],
-        "lore": [
-            "Considered the ultimate in necromancy and demonology, a powerful malefic force is locked within its pages."
-        ]
-    },
-    {
-        "true_name": "necronomicon_3",
-        "id": 194,
-        "format_name": "Necronomicon",
-        "cost": 5050,
-        "cooldown": 95,
-        "description": [
-            "Active: Demonic Summoning - Summons a Warrior and an Archer to fight for you for 40 seconds, whose strength and abilities increase as Necronomicon is upgraded. Warrior gains True Sight at level 3."
-        ],
-        "attributes": [
-            "+15/21/24 Intelligence",
-            "+8/12/16 Strength",
-            "WARRIOR HEALTH: 700/800/900",
-            "WARRIOR DAMAGE: 75/100/125",
-            "WARRIOR MANA BREAK: 20/30/40",
-            "WARRIOR LAST WILL DMG: 550/675/800",
-            "ARCHER HEALTH: 700/800/900",
-            "ARCHER DAMAGE: 60/90/120",
-            "ARCHER MANA BURN: 200/300/400",
-            "ARCHER AURA SPEED: 5%/10%/15%"
         ],
         "lore": [
             "Considered the ultimate in necromancy and demonology, a powerful malefic force is locked within its pages."
@@ -2649,27 +2498,6 @@
             "Active: Purge - Targets an enemy, removing buffs from the target and slowing it for 4.0 seconds.",
             "Passive: Manabreak - Each attack burns 50 mana from the target, and deals 0.8 physical damage per burned mana. Burns 16 mana per attack from melee illusions and 8 mana per attack from ranged illusions. Does not stack with other manabreak abilities.",
             "Upgradable.",
-            "DISPEL TYPE: Basic Dispel"
-        ],
-        "attributes": [
-            "+25/35 Agility",
-            "+10/15 Intelligence",
-            "PURGE SLOW DURATION: 4",
-            "PURGE CAST RANGE: 600"
-        ],
-        "lore": [
-            "An enchanted blade that allows the user to cut straight into the enemy's soul."
-        ]
-    },
-    {
-        "true_name": "diffusal_blade_2",
-        "id": 196,
-        "format_name": "Diffusal Blade",
-        "cost": 3850,
-        "cooldown": 4,
-        "description": [
-            "Active: Purge - Targets an enemy, removing from the target and slowing it for 4.0 seconds.",
-            "Passive: Manabreak - Each attack burns 50 mana from the target, and deals 0.8 physical damage per burned mana. Burns 16 mana per attack from melee illusions and 8 mana per attack from ranged illusions. Does not stack with other manabreak abilities.",
             "DISPEL TYPE: Basic Dispel"
         ],
         "attributes": [

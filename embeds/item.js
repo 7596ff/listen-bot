@@ -1,21 +1,25 @@
 module.exports = item => {
     let costs = [];
+    let desc = [];
+    let att = [];
 
     if (item.mc) costs.push(`<:manacost:273535201337016320> ${item.mc}`);
     if (item.cooldown) costs.push(`<:cooldown:273535146320199680> ${item.cooldown}`);
     if (item.cost) costs.push(`Cost: ${item.cost}`);
 
-    if (item.notes) for (note in item.notes) item.description.push(item.notes[note]);
+    for (line in item.description) desc.push(item.description[line]);
+    if (item.notes) for (note in item.notes) desc.push(item.notes[note]);
 
     for (attr in item.attributes) {
         let split = item.attributes[attr].split(": ");
         if (split.length > 1) {
             split[0] = `**${split[0]}**`;
-            item.attributes[attr] = split.join(": ");
+            att.push(split.join(": "));
         } else {
-            item.attributes[attr] = `**${item.attributes[attr]}**`;
+            att.push(`**${item.attributes[attr]}**`);
         }
     }
+    
 
     return {
         "author": {
@@ -25,10 +29,10 @@ module.exports = item => {
         },
         "fields": [{
             "name": costs.join("   "),
-            "value": item.attributes.join("\n"),
+            "value": att.length > 1 ? att.join("\n") : "Nothing special.",
             "inline": true
         }],
-        "description": item.description.join("\n"),
+        "description": desc.join("\n"),
         "footer": {
             "text": item.lore ? item.lore.join(" ") : ""
         }

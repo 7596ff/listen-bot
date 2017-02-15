@@ -29,6 +29,13 @@
         "aliases": ["skill", "spell"],
         "example": "ability earthbind"
     }, {
+        "name": "item",
+        "usage": "item <item name>",
+        "text": [
+            "search for an item name and display it. "
+        ],
+        "example": "item skadi"
+    },{
         "name": "wiki",
         "usage": "wiki <hero name>",
         "text": [

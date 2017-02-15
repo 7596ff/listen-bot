@@ -28,7 +28,7 @@ module.exports = (message, client, helper) => {
     let options = message.content.split(" ");
     if (options[1]) {
         let hero = options.slice(1).join(" ").toLowerCase();
-        helper.log(message, `talents: hero name (${short_heroes[hero]})`);
+        helper.log(message, `talents: hero name (${hero})`);
 
         if (hero in short_heroes) {
             message.channel.createMessage({

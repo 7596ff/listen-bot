@@ -4,7 +4,7 @@ const short_heroes = require("../../json/short_heroes.json");
 const patch_hero_embed = require("./patch_hero_embed");
 
 module.exports = (message, client, helper, version, hero) => {
-    helper.log(message, `patch: version (${version}) and hero name (${short_heroes[hero]})`);
+    helper.log(message, `patch: version (${version}) and hero name (${hero})`);
     if (patch_list.data[patch_list.schema.indexOf(version)]["heroes"][short_heroes[hero]]) {
         message.channel.createMessage({
             "embed": patch_hero_embed(short_heroes[hero], patch_list.schema.indexOf(version))

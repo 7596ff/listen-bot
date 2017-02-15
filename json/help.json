@@ -71,7 +71,7 @@
             "has their profile linked.)"
         ],
         "example": "playerinfo https://www.opendota.com/players/103637655",
-        "aliases": "profile"
+        "aliases": ["profile"]
     }, {
         "name": "matchinfo",
         "usage": "matchinfo <link or match id>",
@@ -79,7 +79,7 @@
             "returns information about a specific dota match."
         ],
         "example": "matchinfo https://www.dotabuff.com/matches/2992668596",
-        "aliases": "gameinfo"
+        "aliases": ["gameinfo"]
     }, {
         "name": "lastmatch",
         "usage": "lastmatch <@mention or name>",
@@ -88,7 +88,7 @@
             "also can be used to look up other user's matches."
         ],
         "example": "lastmatch Moo",
-        "aliases": "lastgame"
+        "aliases": ["lastgame"]
     }],
     "meta": [{
         "name": "info",

@@ -1,6 +1,8 @@
 const items = require("../json/items.json");
 const item_embed = require("../embeds/item");
 
+const too_short = ["of", "and", "in", "the", "de"];
+
 module.exports = (message, client, helper) => {
     let options = message.content.split(" ");
     options.shift();
@@ -15,7 +17,9 @@ module.exports = (message, client, helper) => {
         loop2: for (let j = 0; j <= options.length; j++) {
             let term = options.slice(i, j).join(" ").toLowerCase();
             if (i < j) {
+                if (too_short.indexOf(term) != -1) break loop2;
                 search = items.filter(item => {
+                    if (too_short.indexOf(item) != -1) return false;
                     if (item.format_name.toLowerCase().match(term)) return true;
                     if ((item.aliases || []).indexOf(term) != -1) return true;
                     if (item.true_name.split("_").indexOf(term) != -1) return true;

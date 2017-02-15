@@ -60,7 +60,7 @@ client.helper = {
             util.log(err.toString());
         }
     }
-}
+};
 
 function steam_cleanup(client, dota_id, steam_id, discord_id) {
     client.steam_friends.removeFriend(steam_id);

@@ -4,7 +4,6 @@ const abilities = require("../json/abilities.json");
 const alike_keys = require("../json/alike_keys.json");
 
 const capitalize_first = require("../util/capitalize_first");
-const clean = require("../util/clean");
 const ability_embed = require("../embeds/ability");
 
 function create_message(message, client, helper, true_hero, ability, key) {

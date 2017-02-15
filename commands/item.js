@@ -29,8 +29,8 @@ module.exports = (message, client, helper) => {
                     result = search[0];
                     break loop1;
                 } else if (search.length > 1) {
-                    let conf = search.map(item => item.format_name)
-                    for (item in conf) conflicts.push(conf[item]);
+                    let conf = search.map(item => item.format_name);
+                    for (let item in conf) conflicts.push(conf[item]);
                 }
             }
         }
@@ -45,7 +45,7 @@ module.exports = (message, client, helper) => {
             helper.handle(message, err);
         });
     } else {
-        let content = "Couldn't find that item. "
+        let content = "Couldn't find that item. ";
         if (conflicts.length > 1) {
             conflicts = conflicts.filter((item, inc, newlist) => newlist.indexOf(item) === inc);
             content += `Possible conflicts: ${conflicts.join(", ")}`;

@@ -37,7 +37,7 @@ const lobby_types = [
     "Co-op Bots",
     "Team Ranked", 
     "Solo Ranked",
-    "Party Ranked",
+    "Ranked",
     "1v1 Mid",
     "Battle Cup"
 ];

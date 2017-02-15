@@ -53,11 +53,11 @@ client.helper = {
     handle: (message, err) => {
         let result = err.toString().split(" ")[1];
         if (result == "400") {
-            this.log(message, "probably don't have permissions to embed here");
+            util.log("probably don't have permissions to embed here");
         } else if (result == "403") {
-            this.log(message, "probably don't have permissions to send messages here");
+            util.log("probably don't have permissions to send messages here");
         } else {
-            this.log(message, err.toString());
+            util.log(err.toString());
         }
     }
 }

@@ -200,7 +200,8 @@ client.on("messageCreate", message => {
                 }
             }
 
-            if (message.gcfg.disabled[message.channel.id].indexOf(command) != -1) return;
+            let disabled_list = message.gcfg.disabled ? message.gcfg.disabled[message.channel.id] : undefined;
+            if (disabled_list && disabled_list.indexOf(command) != -1) return;
 
             if (command in client.commands) {
                 if (!_members[message.member.id] || _members[message.member.id].last_message + message.gcfg.mlimit < Date.now()) {

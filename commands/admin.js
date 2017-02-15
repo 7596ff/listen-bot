@@ -13,9 +13,9 @@ module.exports = (message, client, helper) => {
         if (command in admin_commands) {
             admin_commands[command](message, client, helper);
         } else {
-            let disabledlist = message.gcfg.disabled[message.channel.id];
-            let prettylist = disabledlist.map(item => `\`${item}\``).join(" ");
-            prettylist = disabledlist.length > 0 ? `Disabled commands here: ${prettylist}` : "No disabled commands in this channel.";
+            let disabled_list = message.gcfg.disabled ? message.gcfg.disabled[message.channel.id] : undefined;
+            let prettylist = disabled_list ? disabled_list.map(item => `\`${item}\``).join(" ") : "";
+            prettylist = prettylist.length > 0 ? `Disabled commands here: ${prettylist}` : "No disabled commands in this channel.";
             message.channel.createMessage({
                 "embed": {
                     "description": [

@@ -838,28 +838,6 @@
         ]
     },
     {
-        "true_name": "tango_single",
-        "id": 241,
-        "format_name": "Tango (Shared)",
-        "cost": 30,
-        "cooldown": 60,
-        "description": [
-            "Use: Eat a Tree or Ward - Consume a target tree or ward to gradually restore health."
-        ],
-        "notes": [
-            "Heals for double duration when used on a Ironwood Tree or Wards."
-        ],
-        "attributes": [
-            "EAT TREE HEALTH RESTORED: 115",
-            "EAT WARD HEALTH RESTORED: 230",
-            "EAT WARD CAST RANGE: 450",
-            "HEAL DURATION: 16"
-        ],
-        "lore": [
-            "Om nom nom."
-        ]
-    },
-    {
         "true_name": "courier",
         "id": 45,
         "format_name": "Animal Courier",

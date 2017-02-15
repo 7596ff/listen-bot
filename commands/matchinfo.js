@@ -1,4 +1,4 @@
-const match_embed = require("../util/match_embed");
+const match_embed = require("../embeds/match");
 
 function check_if_registered(client, dota_id, hero_id) {
     return new Promise((resolve) => {

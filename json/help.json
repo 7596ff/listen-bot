@@ -50,7 +50,9 @@
             "register your steam profile with the bot.",
             " accepts a steam profile link or a dotabuff/opendota link.\n",
             "the bot account will send you a friend request on steam ",
-            "along with a direct message on discord with instructions."
+            "along with a direct message on discord with instructions.\n\n",
+            "make sure your steam account is public and you have discord set ",
+            "to accept friend requests from other users before trying this!"
         ],
         "example": "register https://www.dotabuff.com/players/103637655"
     }, {

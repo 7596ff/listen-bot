@@ -61,6 +61,12 @@ module.exports = (message, client, helper) => {
         helper.log(message, `register: ${acc_id}`);
 
         client.mika.getPlayer(acc_id).then(res => {
+            if (!res.profile) {
+                message.channel.createMessage("This steam account is private! I can't register it!");
+                helper.log(message, "  failed on private steam account");
+                return;
+            }
+
             if (res.profile.steamid) {
                 let rand = require("randomstring").generate(6);
                 client.redis.set(`register:${res.profile.steamid}`, `${rand}:${message.author.id}`, (err) => {

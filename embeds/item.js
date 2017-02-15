@@ -7,10 +7,10 @@ module.exports = item => {
     if (item.cooldown) costs.push(`<:cooldown:273535146320199680> ${item.cooldown}`);
     if (item.cost) costs.push(`Cost: ${item.cost}`);
 
-    for (line in item.description) desc.push(item.description[line]);
-    if (item.notes) for (note in item.notes) desc.push(item.notes[note]);
+    for (let line in item.description) desc.push(item.description[line]);
+    if (item.notes) for (let note in item.notes) desc.push(item.notes[note]);
 
-    for (attr in item.attributes) {
+    for (let attr in item.attributes) {
         let split = item.attributes[attr].split(": ");
         if (split.length > 1) {
             split[0] = `**${split[0]}**`;

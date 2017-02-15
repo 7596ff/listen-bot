@@ -1,4 +1,5 @@
 const abilities = require("../json/abilities.json");
+const clean = require("../util/clean");
 const capitalize_first = require("../util/capitalize_first");
 
 module.exports = (hero, ability) => {
@@ -50,4 +51,4 @@ module.exports = (hero, ability) => {
         ],
         "thumbnail": thum
     };
-}
+};

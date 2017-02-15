@@ -19,7 +19,8 @@ for (let cat in help) {
 
         bulma.push(`<td>${topic.name}</td>`);
         bulma.push(`<td>${topic.text[0]}</td>`);
-        bulma.push(`<td>${topic.example || ""}</td>`)
+        let code = topic.example ? `<code>--${topic.example}</code>` : "";
+        bulma.push(`<td>${code}</td>`)
         bulma.push(`<td>${topic.aliases ? topic.aliases.join(", ") : ""}</td>`)
 
         bulma.push('</tr>')

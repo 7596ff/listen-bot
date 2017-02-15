@@ -61,14 +61,16 @@
             "accepts a dotabuff or opendota link, as well as a username mention (if that user ",
             "has their profile linked.)"
         ],
-        "example": "playerinfo https://www.opendota.com/players/103637655"
+        "example": "playerinfo https://www.opendota.com/players/103637655",
+        "aliases": "profile"
     }, {
         "name": "matchinfo",
         "usage": "matchinfo <link or match id>",
         "text": [
             "returns information about a specific dota match."
         ],
-        "example": "matchinfo https://www.dotabuff.com/matches/2992668596"
+        "example": "matchinfo https://www.dotabuff.com/matches/2992668596",
+        "aliases": "gameinfo"
     }, {
         "name": "lastmatch",
         "usage": "lastmatch <@mention or name>",
@@ -76,7 +78,8 @@
             "looks up your last match (if you are registered) and returns it.",
             "also can be used to look up other user's matches."
         ],
-        "example": "lastmatch Moo"
+        "example": "lastmatch Moo",
+        "aliases": "lastgame"
     }],
     "meta": [{
         "name": "info",
@@ -129,7 +132,7 @@
         "usage": "admin disable [commands]",
         "text": [
             "disables a list of commands per channel. ",
-            "note: you can not disable commands from the meta or admin categories.",
+            "note: you can not disable commands from the meta or admin categories. ",
             "use the admin command by itself to see disabled commands for a channel."
         ],
         "example": "admin disable lastmatch matchinfo"

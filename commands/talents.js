@@ -12,7 +12,7 @@ const talent_hero_embed = function(hero_name) {
     return {
         "author": {
             "name": talents[hero_name]["format_name"],
-            "url": `http://dota2.gamepedia.com/${talent_obj.format_name.replace(" ", "_")}`,
+            "url": `http://dota2.gamepedia.com/${talent_obj.format_name.split(" ").join("_")}`,
             "icon_url": `http://cdn.dota2.com/apps/dota2/images/heroes/${talents[hero_name]["true_name"]}_vert.jpg`
         },
         "fields": [

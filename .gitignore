@@ -1,4 +1,6 @@
 _old
+json_ignore
+
 config.json
 guilds.json
 usage.json

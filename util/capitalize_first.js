@@ -7,4 +7,4 @@ module.exports = (key, splitter = " ") => {
         }
     }
     return words.join(splitter);
-}
+};

@@ -1265,7 +1265,8 @@
         ],
         "lore": [
             "An eerie mask that is haunted with the malice of a fallen vampire."
-        ]
+        ],
+        "aliases": ["vlads"]
     },
     {
         "true_name": "flying_courier",
@@ -1419,7 +1420,7 @@
         "lore": [
             "The most guarded relic among the cult of Vyse, it is the most coveted weapon among magi."
         ],
-        "aliases": ["hex", "sheep"]
+        "aliases": ["hex", "sheep", "guinsoo"]
     },
     {
         "true_name": "orchid",
@@ -2038,7 +2039,8 @@
         ],
         "lore": [
             "Only the mightiest and most experienced of warriors can wield the Butterfly, but it provides incredible dexterity in combat."
-        ]
+        ],
+        "aliases": ["bfly"]
     },
     {
         "true_name": "greater_crit",
@@ -2056,7 +2058,8 @@
         ],
         "lore": [
             "A weapon of incredible power that is difficult for even the strongest of warriors to control."
-        ]
+        ],
+        "aliases": ["buriza"]
     },
     {
         "true_name": "basher",
@@ -2460,7 +2463,8 @@
         ],
         "lore": [
             "A wicked weapon, used in torturing political criminals."
-        ]
+        ],
+        "aliases": ["stygian"]
     },
     {
         "true_name": "yasha",
@@ -2977,7 +2981,8 @@
         ],
         "lore": [
             "While they increase the longevity of the wearer, this boot is not particularly reliable."
-        ]
+        ],
+        "aliases": ["tranqs"]
     },
     {
         "true_name": "shadow_amulet",

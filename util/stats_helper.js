@@ -1,3 +1,6 @@
+const eris_version = require("eris/package.json").version;
+const prettyms = require("pretty-ms");
+
 module.exports = (client) => {
     return new Promise((resolve) => {
         let plist = [
@@ -12,7 +15,7 @@ module.exports = (client) => {
                 },
                 "fields": [{
                     "name": "Eris Version",
-                    "value": require("eris/package.json").version,
+                    "value": eris_version,
                     "inline": true
                 }, {
                     "name": "Redis Version",
@@ -40,7 +43,7 @@ module.exports = (client) => {
                     "inline": true
                 }, {
                     "name": "Uptime",
-                    "value": require("pretty-ms")(client.uptime),
+                    "value": prettyms(client.uptime),
                     "inline": true
                 }, {
                     "name": "Cmds (session/all time)",

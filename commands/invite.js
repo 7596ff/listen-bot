@@ -1,3 +1,5 @@
+const invite = require("../json/config.json").url_invite;
+
 module.exports = (message) => {
-    message.channel.createMessage(require("../json/config.json").url_invite);
+    message.channel.createMessage(invite);
 };

@@ -1,6 +1,7 @@
 const abilities = require("../json/abilities.json");
 const clean = require("../util/clean");
 const capitalize_first = require("../util/capitalize_first");
+const is_discord_shit = require("../json/config.json").is_discord_shit;
 
 module.exports = (hero, ability) => {
     let ability_obj = abilities[hero][ability];
@@ -26,7 +27,7 @@ module.exports = (hero, ability) => {
     let desc = ability_obj.description ? ability_obj.description.join("\n") : "";
     let note = ability_obj.notes ? ability_obj.notes.join("\n") : "";
     let agha = ability_obj.agha ? `<:aghanims:273535039814500353> ${ability_obj.agha}` : "";
-    let thum = require("../json/config.json").is_discord_shit ? {} : {
+    let thum = is_discord_shit ? {} : {
         "url": `http://cdn.dota2.com/apps/dota2/images/abilities/${hero}_${clean(ability)}_lg.png`
     };
 

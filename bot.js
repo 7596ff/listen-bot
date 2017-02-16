@@ -10,10 +10,12 @@ client.steam_friends = new Steam.SteamFriends(client.steam_client);
 
 const consts = require("./util/consts.json");
 const stats_helper = require("./util/stats_helper");
+const shardinfo_helper = require("./util/shardinfo_helper");
 
 const schedule = require("node-schedule");
 const Mika = require("mika");
 const bignumber = require("bignumber.js");
+const needle = require("needle");
 
 const util = require("util");
 const fs = require("fs");
@@ -104,12 +106,12 @@ client.on("ready", () => {
         
         client.editMessage(config.edit_channel, config.shard_edit_message, {
             "embed": {
-                "description": require("./util/shardinfo_helper")(client)
+                "description": shardinfo_helper(client)
             }
         }).catch(err => util.log(err));
 
         if (config.dbots_token) {
-            require("needle").post(
+            needle.post(
                 `https://bots.discord.pw/api/bots/${config.master_id}/stats`,
                 JSON.stringify({
                     "server_count": client.guilds.size

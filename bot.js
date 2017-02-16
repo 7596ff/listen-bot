@@ -38,12 +38,12 @@ client.helper = {
     log: (message, text) => {
         if (this.last_guild == message.channel.guild.name) {
             if (this.last_channel == message.channel.name) {
-                util.log(`  ${text.trim()}`);
+                util.log(`  ${text.toString().trim()}`);
             } else {
-                util.log(`${message.channel.name}: ${text.trim()}`);
+                util.log(`${message.channel.name}: ${text.toString().trim()}`);
             }
         } else {
-            util.log(`${message.channel.guild.name}/${message.channel.name}: ${text.trim()}`);
+            util.log(`${message.channel.guild.name}/${message.channel.name}: ${text.toString().trim()}`);
         }
 
         this.last_guild = message.channel.guild.name;

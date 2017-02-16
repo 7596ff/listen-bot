@@ -50,7 +50,8 @@ const skills = [
 ];
 
 module.exports = (match_data, mentions) => {
-    let table = [["Hero", "K/D/A", "LH/D", "HD", "HH", "GPM", "XPM", "Name"]];
+    let heading = ["Hero", "K/D/A", "LH/D", "HD", "HH", "GPM", "XPM", "Name"];
+    let table = [];
     let ftable = [];
     let highest = new Array(9).fill(0);
 
@@ -62,7 +63,7 @@ module.exports = (match_data, mentions) => {
             player.hero_healing.toString(),
             player.gold_per_min.toString(),
             player.xp_per_min.toString(),
-            (player.personaname || "Unknown").slice(0, 18)
+            (player.personaname || "Unknown").slice(0, 16)
         ];
 
         for (let val in row) {
@@ -74,15 +75,15 @@ module.exports = (match_data, mentions) => {
         table.push(row);
     });
 
+    table.splice(6, 0, heading);
+    table.splice(0, 0, heading);
+
     table.forEach(row => {
         for (let item in row) {
             row[item] = pad(row[item], highest[item]);
         }
         ftable.push(`\`${row.join(" ")}\``);
     });
-
-    ftable.splice(1, 0, "Radiant");
-    ftable.splice(7, 0, "\nDire");
 
     let victory = match_data.radiant_win ? "Radiant Victory!" : "Dire Victory!";
     let ptime = pretty_ms(match_data.duration * 1000);
@@ -118,8 +119,12 @@ module.exports = (match_data, mentions) => {
             "value": `[DB](https://www.dotabuff.com/matches/${match_data.match_id}) / [OD](https://www.opendota.com/matches/${match_data.match_id})`,
             "inline": true
         }, {
-            "name": "Stats",
-            "value": `${ftable.join("\n")}${mention_str}`,
+            "name": "Radiant",
+            "value": ftable.slice(0, 6).join("\n"),
+            "inline": false
+        }, {
+            "name": "Dire",
+            "value": `${ftable.slice(6, 11).join("\n")}${mention_str}`,
             "inline": false
         }]
     };

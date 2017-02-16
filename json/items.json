@@ -1705,7 +1705,7 @@
         "id": 116,
         "format_name": "Black King Bar",
         "cost": 3975,
-        "cooldown": 80,
+        "cooldown": "80/75/70/65/60/55",
         "description": [
             "Active: Avatar - Grants Spell Immunity and 100% Magic Damage Resistance. Duration and cooldown decrease with each use. Some abilities are able to disable through Avatar.",
             "",

@@ -1,11 +1,3 @@
-function add_icons(str) {
-    str = str.replace("Agility", "<:agility:281578883264806915> Agility")
-        .replace("Strength", "<:strength:281578819721363457> Strength")
-        .replace("Intelligence", "<:intelligence:281578849190281217> Intelligence");
-
-    return str;
-}
-
 module.exports = item => {
     let costs = [];
     let desc = [];
@@ -24,7 +16,7 @@ module.exports = item => {
             split[0] = `**${split[0]}**`;
             att.push(split.join(": "));
         } else {
-            att.push(`**${add_icons(item.attributes[attr])}**`);
+            att.push(`**${item.attributes[attr]}**`);
         }
     }
     

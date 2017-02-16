@@ -20,9 +20,10 @@ module.exports = (message, client, helper) => {
                 if (too_short.indexOf(term) != -1) break loop2;
                 search = items.filter(item => {
                     if (too_short.indexOf(item) != -1) return false;
-                    if (item.format_name.toLowerCase().match(`\b${term}\b`)) return true;
+                    if (item.format_name.toLowerCase().match(`${term}`) && term.length > 2) return true;
                     if ((item.aliases || []).indexOf(term) != -1) return true;
                     if (item.true_name.split("_").indexOf(term) != -1) return true;
+                    if (item.format_name.split(" ").map(item => item.charAt(0)).join("").toLowerCase() == term) return true;
                 });
 
                 if (search.length == 1) {

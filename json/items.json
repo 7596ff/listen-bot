@@ -162,7 +162,8 @@
         ],
         "lore": [
             "The axe of a fallen gnome, it allows you to effectively maneuver the forest."
-        ]
+        ],
+        "aliases": ["qb"]
     },
     {
         "true_name": "faerie_fire",
@@ -499,7 +500,8 @@
         ],
         "lore": [
             "A mask commonly used by mages and warlocks for various rituals."
-        ]
+        ],
+        "aliases": ["sages", "sage"]
     },
     {
         "true_name": "boots",
@@ -515,7 +517,8 @@
         ],
         "lore": [
             "Fleet footwear, increasing movement."
-        ]
+        ],
+        "aliases": ["brown boots", "boots"]
     },
     {
         "true_name": "gem",
@@ -771,7 +774,8 @@
         ],
         "lore": [
             "A form of half-sentient plant, often cultivated by apprentice wizards."
-        ]
+        ],
+        "aliases": ["obs wards", "obs", "observers"]
     },
     {
         "true_name": "ward_sentry",
@@ -790,7 +794,8 @@
         ],
         "lore": [
             "A form of plant originally grown in the garden of a fearful king."
-        ]
+        ],
+        "aliases": ["sentries", "sentry wards", "sents"]
     },
     {
         "true_name": "ward_dispenser",
@@ -840,7 +845,7 @@
     {
         "true_name": "courier",
         "id": 45,
-        "format_name": "Animal Courier",
+        "format_name": "Courier",
         "cost": 100,
         "cooldown": false,
         "description": [
@@ -848,7 +853,8 @@
         ],
         "lore": [
             "Losing the courier is punishable by death."
-        ]
+        ],
+        "aliases": ["chick", "chicken"]
     },
     {
         "true_name": "tpscroll",
@@ -864,7 +870,8 @@
         ],
         "lore": [
             "What a hero truly needs."
-        ]
+        ],
+        "aliases": ["tp", "teleport"]
     },
     {
         "true_name": "travel_boots",
@@ -885,7 +892,8 @@
         ],
         "lore": [
             "Winged boots that grant omnipresence."
-        ]
+        ],
+        "aliases": ["bots"]
     },
     {
         "true_name": "phase_boots",
@@ -1680,7 +1688,8 @@
         ],
         "lore": [
             "Forged in the depths of the nether reaches, this hellish mail provides an army with increased armor and attack speed."
-        ]
+        ],
+        "aliases": ["ac"]
     },
     {
         "true_name": "heart",
@@ -2222,7 +2231,8 @@
         ],
         "lore": [
             "The blade of a fallen king, it allows you to move unseen and strike from the shadows."
-        ]
+        ],
+        "aliases": ["lothar's", "lothar's edge", "lothar"]
     },
     {
         "true_name": "silver_edge",
@@ -2276,7 +2286,8 @@
         ],
         "lore": [
             "Sange and Yasha, when attuned by the moonlight and used together, become a very powerful combination."
-        ]
+        ],
+        "aliases": ["sny"]
     },
     {
         "true_name": "satanic",
@@ -2535,7 +2546,8 @@
         ],
         "lore": [
             "A flickering blade of a ghastly nature, it is capable of dealing damage in both magical and physical planes."
-        ]
+        ],
+        "aliases": ["eblade"]
     },
     {
         "true_name": "soul_ring",
@@ -2580,7 +2592,8 @@
         ],
         "lore": [
             "Magi equipped with these boots are valued in battle."
-        ]
+        ],
+        "aliases": ["arcanes", "mana boots"]
     },
     {
         "true_name": "octarine_core",

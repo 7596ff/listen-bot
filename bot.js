@@ -9,6 +9,7 @@ client.steam_user = new Steam.SteamUser(client.steam_client);
 client.steam_friends = new Steam.SteamFriends(client.steam_client);
 
 const consts = require("./util/consts.json");
+const stats_helper = require("./util/stats_helper");
 
 const schedule = require("node-schedule");
 const Mika = require("mika");
@@ -95,14 +96,18 @@ client.on("ready", () => {
     });
 
     client.stats_messages = schedule.scheduleJob("*/15 * * * *", () => {
+        stats_helper(client).then(embed => {
+            client.editMessage(config.edit_channel, config.stats_edit_message, {
+                "embed": embed
+            }).catch(err => util.log(err));
+        });
+        
         client.editMessage(config.edit_channel, config.shard_edit_message, {
             "embed": {
                 "description": require("./util/shardinfo_helper")(client)
             }
         }).catch(err => util.log(err));
-        client.editMessage(config.edit_channel, config.stats_edit_message, {
-            "embed": require("./util/stats_helper")(client)
-        }).catch(err => util.log(err));
+
         if (config.dbots_token) {
             require("needle").post(
                 `https://bots.discord.pw/api/bots/${config.master_id}/stats`,

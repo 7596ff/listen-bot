@@ -5,7 +5,7 @@ module.exports = item => {
 
     if (item.mc) costs.push(`<:manacost:273535201337016320> ${item.mc}`);
     if (item.cooldown) costs.push(`<:cooldown:273535146320199680> ${item.cooldown}`);
-    if (item.cost) costs.push(`Cost: ${item.cost}`);
+    if (item.cost) costs.push(`<:gold:281572294030131200> ${item.cost}`);
 
     for (let line in item.description) desc.push(item.description[line]);
     if (item.notes) for (let note in item.notes) desc.push(item.notes[note]);

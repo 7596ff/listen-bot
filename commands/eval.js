@@ -16,7 +16,7 @@ module.exports = (message, client, helper) => {
             var code = params.join(" ");
             var evaled = eval(code);
 
-            if (typeof evaled !== "string") evaled = require("util").inspect(evaled);
+            if (typeof evaled !== "string") evaled = util.inspect(evaled);
 
             message.channel.createMessage(`${"```js\n"}${clean(evaled)}${"\n```"}`).then(() => {
                 util.log(clean(evaled));

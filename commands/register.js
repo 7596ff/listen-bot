@@ -1,6 +1,7 @@
 const util = require("util");
 const Bignumber = require("bignumber.js");
 const needle = require("needle");
+const randomstring = require("randomstring");
 
 const query_string = require("../util/query_string");
 const resolve_steam_url = require("../util/resolve_steam_url");
@@ -30,7 +31,7 @@ module.exports = (message, client, helper) => {
             }
 
             if (res.profile.steamid) {
-                let rand = require("randomstring").generate(6);
+                let rand = randomstring.generate(6);
                 client.redis.set(`register:${res.profile.steamid}`, `${rand}:${message.author.id}`, (err) => {
                     if (err) helper.log(message, err);
                     client.redis.expire(`register:${res.profile.steamid}`, 900);

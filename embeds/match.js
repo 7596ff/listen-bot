@@ -75,7 +75,7 @@ module.exports = (match_data, mentions) => {
         table.push(row);
     });
 
-    table.splice(6, 0, heading);
+    table.splice(5, 0, heading);
     table.splice(0, 0, heading);
 
     table.forEach(row => {
@@ -124,7 +124,7 @@ module.exports = (match_data, mentions) => {
             "inline": false
         }, {
             "name": "Dire",
-            "value": `${ftable.slice(6, 11).join("\n")}${mention_str}`,
+            "value": `${ftable.slice(6, 12).join("\n")}${mention_str}`,
             "inline": false
         }]
     };

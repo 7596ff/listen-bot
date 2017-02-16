@@ -7,6 +7,7 @@
         "wiki": ["wiki"],
         "list": ["list"],
         "register": ["register"],
+        "unregister": ["unregister"],
         "playerinfo": ["playerinfo", "profile"],
         "matchinfo": ["matchinfo", "gameinfo"],
         "lastmatch": ["lastmatch", "lastgame"],

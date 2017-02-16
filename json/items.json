@@ -1418,7 +1418,8 @@
         ],
         "lore": [
             "The most guarded relic among the cult of Vyse, it is the most coveted weapon among magi."
-        ]
+        ],
+        "aliases": ["hex", "sheep"]
     },
     {
         "true_name": "orchid",
@@ -1648,7 +1649,8 @@
         ],
         "lore": [
             "The scepter of a wizard with demigod-like powers."
-        ]
+        ],
+        "aliases": ["aghs"]
     },
     {
         "true_name": "refresher",
@@ -1974,7 +1976,8 @@
         ],
         "lore": [
             "So powerful, it cannot have a single owner."
-        ]
+        ],
+        "aliases": ["rapira"]
     },
     {
         "true_name": "monkey_king_bar",
@@ -2111,7 +2114,8 @@
         ],
         "lore": [
             "The bearer of this mighty axe gains the ability to cut down swaths of enemies at once."
-        ]
+        ],
+        "aliases": ["battlefury"]
     },
     {
         "true_name": "manta",

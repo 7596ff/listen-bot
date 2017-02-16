@@ -1,7 +1,11 @@
+const stats_helper = require("../util/stats_helper");
+
 module.exports = (message, client, helper) => {
-    message.channel.createMessage({
-        "embed": require("../util/stats_helper")(client)
-    }).then(() => {
-        helper.log(message, "sent stats");
-    }).catch(err => helper.handle(message, err));
+    stats_helper(client).then(embed => {
+        message.channel.createMessage({
+            "embed": embed
+        }).then(() => {
+            helper.log(message, "sent stats");
+        }).catch(err => helper.handle(message, err));
+    });
 };

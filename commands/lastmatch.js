@@ -1,10 +1,6 @@
 const matchinfo = require("./matchinfo");
 const resolve_dota_id = require("../util/resolve_dota_id");
 
-function send_message(message, client, helper, acc_id) {
-
-}
-
 module.exports = (message, client, helper) => {
     message.channel.sendTyping().then(() => {
         let check = message.content.split(" ")[1];
@@ -68,7 +64,7 @@ module.exports = (message, client, helper) => {
             }).catch(err => {
                 console.log(err)
                 if (err.err) {
-                    message.channel.createMessage(err.text);
+                    message.channel.createMessage(err.text || "Something went wrong.");
                     helper.log(message, err.text);
                     helper.log(message, err.err);
                 } else if (err.text) {

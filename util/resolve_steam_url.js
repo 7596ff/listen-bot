@@ -1,5 +1,6 @@
 const steam_key = require("../json/config.json").steam_key;
 const needle = require("needle");
+const query_string = require("../util/query_string");
 
 module.exports = (url) => {
     return new Promise((resolve, reject) => {

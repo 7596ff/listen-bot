@@ -2,7 +2,6 @@ const util = require("util");
 const Bignumber = require("bignumber.js");
 const randomstring = require("randomstring");
 
-const query_string = require("../util/query_string");
 const resolve_steam_url = require("../util/resolve_steam_url");
 
 module.exports = (message, client, helper) => {

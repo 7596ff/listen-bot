@@ -1,5 +1,4 @@
 const util = require("util");
-const Bignumber = require("bignumber.js");
 const randomstring = require("randomstring");
 
 const resolve_steam_url = require("../util/resolve_steam_url");

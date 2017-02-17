@@ -3,7 +3,7 @@ const resolve_user = require("./resolve_user");
 module.exports = (message, from_discord) => {
     return new Promise((resolve, reject) => {
         if (from_discord) {
-            let inclient = message._client.users.find(user => user.id = from_discord);
+            let inclient = message._client.users.find(user => user.id == from_discord);
             if (inclient) {
                 resolve_user(message._client, inclient.id).then(acc_id => {
                     resolve(acc_id);

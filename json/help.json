@@ -94,6 +94,13 @@
         ],
         "example": "lastmatch Moo",
         "aliases": ["lastgame"]
+    }, {
+        "name": "lastmatch with",
+        "usage": "lastmatch with @mention",
+        "text": [
+            "finds the last match you played with a list of registered users."
+        ],
+        "example": "lastmatch with @hdcbdhbfgt"
     }],
     "meta": [{
         "name": "info",

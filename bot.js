@@ -152,7 +152,8 @@ client.on("guildCreate", guild => {
 client.on("guildUpdate", guild => {
     client.pg.query(`SELECT * FROM public.guilds WHERE id = '${guild.id}';`).then(res => {
         if (res.rows[0].name != guild.name) {
-            util.log(`${guild.id}/${guild.name}: guild updated, modifying name`);
+            util.log(`${guild.id}: guild updated, modifying name`);
+            util.log(`  ${res.rows[0].name} -> ${guild.name}`);
 
             client.pg.query({
                 "text": "UPDATE public.guilds SET name = $1 WHERE id = $2",

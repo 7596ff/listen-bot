@@ -1,6 +1,5 @@
 const util = require("util");
 const Bignumber = require("bignumber.js");
-const needle = require("needle");
 const randomstring = require("randomstring");
 
 const query_string = require("../util/query_string");

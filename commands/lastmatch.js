@@ -71,10 +71,12 @@ module.exports = (message, client, helper) => {
                     message.channel.createMessage(err.text);
                     helper.log(message, err.text);
                     helper.log(message, err.err);
-                } else if (err) {
-                    message.channel.createMessage(err);
+                } else if (err.text) {
+                    message.channel.createMessage(err.text);
+                    helper.log(message, err.text);
                 } else {
                     message.channel.createMessage("Something went wrong.");
+                    helper.log(message, err);
                 }
             });
         }

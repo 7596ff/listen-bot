@@ -42,6 +42,13 @@ function send_message(message, client, helper, match_data, origin) {
     });
 }
 
+function fix_scores(match_data, mika) {
+    match_data.radiant_score = match_data.players.slice(0, 5).map(player => player.kills).reduce((a, b) => a + b, 0);
+    match_data.dire_score = match_data.players.slice(5, 10).map(player => player.kills).reduce((a, b) => a + b, 0);
+
+    if (mika) mika.postRequestByMatchId(match_data.match_id);
+}
+
 module.exports = (message, client, helper) => {
     let match_id = message.content.split(" ")[1];
     if (!match_id) return;
@@ -62,9 +69,12 @@ module.exports = (message, client, helper) => {
         client.redis.get(`matchinfo:${match_id}`, (err, reply) => {
             if (err) helper.log(message, err);
             if (reply) {
-                send_message(message, client, helper, JSON.parse(reply), "redis");
+                reply = JSON.parse(reply)
+                if (!reply.radiant_score && !reply.dire_score) fix_scores(reply);
+                send_message(message, client, helper, reply, "redis");
             } else {
                 client.mika.getMatch(match_id).then(match_data => {
+                    if (!match_data.radiant_score && !match_data.dire_score) fix_scores(match_data, mika);
                     send_message(message, client, helper, match_data, "api");
                     client.redis.set(`matchinfo:${match_id}`, JSON.stringify(match_data), (err) => {
                         if (err) helper.log(message, err);

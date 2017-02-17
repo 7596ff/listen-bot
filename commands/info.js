@@ -1,5 +1,6 @@
 module.exports = (message, client, helper) => {
-    let me = message.channel.guild.members.has(client.config.owner) ? `<@${client.config.owner}>` : "alexa#2899";
+    let user_me = client.users.get(client.config.owner);
+    let me = message.channel.guild.members.has(client.config.owner) ? `<@${client.config.owner}>` : `${user_me.username}#${user_me.discriminator}`;
 
     let desc = [
         `A Dota 2 related bot. Features include current \ntalents and patch notes for 6.79+ heroes. \nContact ${me} for support and questions!\n`,

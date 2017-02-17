@@ -74,7 +74,7 @@ module.exports = (message, client, helper) => {
                 send_message(message, client, helper, reply, "redis");
             } else {
                 client.mika.getMatch(match_id).then(match_data => {
-                    if (!match_data.radiant_score && !match_data.dire_score) fix_scores(match_data, mika);
+                    if (!match_data.radiant_score && !match_data.dire_score) fix_scores(match_data, client.mika);
                     send_message(message, client, helper, match_data, "api");
                     client.redis.set(`matchinfo:${match_id}`, JSON.stringify(match_data), (err) => {
                         if (err) helper.log(message, err);

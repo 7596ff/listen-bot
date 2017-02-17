@@ -1,4 +1,3 @@
-const pretty_ms = require("pretty-ms");
 const pad = require("pad");
 
 const od_heroes = require("../json/od_heroes.json");
@@ -86,7 +85,7 @@ module.exports = (match_data, mentions) => {
     });
 
     let victory = match_data.radiant_win ? "Radiant Victory!" : "Dire Victory!";
-    let ptime = pretty_ms(match_data.duration * 1000);
+    let ptime = `${Math.floor(match_data.duration / 60)}:${match_data.duration % 60}`
     let skill = match_data.skill ? skills[match_data.skill] : skills[0];
     let mention_str = mentions.length > 0 
         ? `\n\nMembers from this server: ${mentions.map(mention => `<@${mention.discord_id}> (${od_heroes.find(hero => hero.id == mention.hero_id).localized_name})`).join(", ")}` 
@@ -95,28 +94,16 @@ module.exports = (match_data, mentions) => {
     return {
         "title": victory,
         "fields": [{
-            "name": "Result",
-            "value": `${match_data.radiant_score} - ${match_data.dire_score}, ${ptime}`,
-            "inline": true
-        }, {
-            "name": "Lobby Type",
-            "value": lobby_types[match_data.lobby_type],
-            "inline": true
-        }, {
-            "name": "Gamemode",
-            "value": game_modes[match_data.game_mode],
-            "inline": true
-        }, {
-            "name": "Skill",
-            "value": skill,
-            "inline": true
-        }, {
-            "name": "Match ID",
+            "name": `${match_data.radiant_score} - ${match_data.dire_score}, ${ptime}`,
             "value": match_data.match_id,
             "inline": true
         }, {
-            "name": "Links",
-            "value": `[DB](https://www.dotabuff.com/matches/${match_data.match_id}) / [OD](https://www.opendota.com/matches/${match_data.match_id})`,
+            "name": lobby_types[match_data.lobby_type],
+            "value": game_modes[match_data.game_mode],
+            "inline": true
+        }, {
+            "name": `${skill} Skill`,
+            "value": `[OD](https://www.opendota.com/matches/${match_data.match_id}) / [DB](https://www.dotabuff.com/matches/${match_data.match_id})`,
             "inline": true
         }, {
             "name": "Radiant",

@@ -11,7 +11,7 @@ module.exports = (message, client, helper) => {
             `:information_source: [Help Server](${client.config.discord_invite})`
         ];
 
-        let gitlinks = err ? ["rip github"] : response.body.slice(0, 3).map(commit => `[\`${commit.sha.slice(0, 6)}\`](${commit.html_url}) - ${commit.commit.message}`);
+        let gitlinks = err ? ["rip github"] : response.body.slice(0, 3).map(commit => `[\`${commit.sha.slice(0, 6)}\`](${commit.html_url}) - ${commit.commit.message.slice(0, 35)}${commit.commit.message.length > 35 ? "..." : ""}`);
 
         message.channel.createMessage({
             "embed": {

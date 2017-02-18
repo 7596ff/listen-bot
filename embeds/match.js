@@ -90,7 +90,10 @@ module.exports = (match_data) => {
 
     return {
         "title": victory,
-        "timestamp": new Date(match_data.start_time * 1000),
+        "footer": {
+            "text": "Ended"
+        },
+        "timestamp": new Date((match_data.start_time + match_data.duration) * 1000),
         "fields": [{
             "name": `${match_data.radiant_score} - ${match_data.dire_score}, ${ptime}`,
             "value": match_data.match_id,

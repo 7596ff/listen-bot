@@ -1,7 +1,15 @@
 {
     "static": [{
+        "name": "hero",
+        "usage": "hero <hero name>",
+        "text": [
+            "returns hero's basic stats and ability names."
+        ],
+        "aliases": ["abilities", "skills", "spells"],
+        "example": "hero sf"
+    }, {
         "name": "patch",
-        "usage": "patch [<version>] <hero>",
+        "usage": "patch [<version>] <hero name>",
         "text": [
             "returns the latest changes to a hero in dota from the latest balance patch.",
             "\n\nusing ``patch <hero>`` alone will return the changes from the latest patch, ",

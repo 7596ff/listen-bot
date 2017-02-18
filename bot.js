@@ -197,7 +197,7 @@ client.on("messageCreate", message => {
             if (message.content.startsWith(message.gcfg.prefix)) message.content = message.content.replace(message.gcfg.prefix, "");
             message.content = message.content.trim();
 
-            let command = message.content.split(" ").shift();
+            let command = message.content.split(" ").shift().toLowerCase();
 
             for (let cmd in consts.cmds) {
                 if (consts.cmds[cmd].indexOf(command) != -1) {

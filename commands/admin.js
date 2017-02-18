@@ -19,8 +19,8 @@ module.exports = (message, client, helper) => {
             message.channel.createMessage({
                 "embed": {
                     "description": [
-                        `Channel-specifc cooldowns: \`${message.gcfg.climit / 1000}\``,
-                        `Member-specific cooldowns: \`${message.gcfg.mlimit / 1000}\``,
+                        `Channel-specifc cooldowns: \`${message.gcfg.climit}\``,
+                        `Member-specific cooldowns: \`${message.gcfg.mlimit}\``,
                         `Custom prefix: \`${message.gcfg.prefix}\``,
                         prettylist
                     ].join("\n")

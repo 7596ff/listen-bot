@@ -12,6 +12,7 @@ const consts = require("./util/consts.json");
 const stats_helper = require("./util/stats_helper");
 const shardinfo_helper = require("./util/shardinfo_helper");
 const dbots_post = require("./dbots/post");
+const Helper = require("./util/helper");
 
 const schedule = require("node-schedule");
 const Mika = require("mika");
@@ -34,33 +35,7 @@ for (let cmd in consts.cmds) {
     client.all_usage[cmd] = isNaN(client.all_usage[cmd]) ? 0 : client.all_usage[cmd];
 }
 
-client.helper = {
-    log: (message, text) => {
-        if (this.last_guild == message.channel.guild.name) {
-            if (this.last_channel == message.channel.name) {
-                util.log(`  ${text.toString().trim()}`);
-            } else {
-                util.log(`${message.channel.name}: ${text.toString().trim()}`);
-            }
-        } else {
-            util.log(`${message.channel.guild.name}/${message.channel.name}: ${text.toString().trim()}`);
-        }
-
-        this.last_guild = message.channel.guild.name;
-        this.last_channel = message.channel.name;
-    },
-
-    handle: (message, err) => {
-        let result = err.toString().split(" ")[1];
-        if (result == "400") {
-            util.log("probably don't have permissions to embed here");
-        } else if (result == "403") {
-            util.log("probably don't have permissions to send messages here");
-        } else {
-            util.log(err.toString());
-        }
-    }
-};
+client.helper = new Helper();
 
 function steam_cleanup(client, dota_id, steam_id, discord_id) {
     client.steam_friends.removeFriend(steam_id);
@@ -243,7 +218,7 @@ client.on("messageCreate", message => {
                             client.redis.ttl(climit, (err, reply) => {
                                 let channel_str = `<#${message.channel.id}>`;
                                 message.channel.createMessage(`${channel_str}, please cool down! ${reply} seconds left.`).then(new_message => {
-                                    setTimeout(() => { new_message.delete() }, reply * 1000);
+                                    setTimeout(() => { new_message.delete(); }, reply * 1000);
                                 });
                                 client.redis.set(climit, "2");
                                 client.redis.expire(climit, reply);
@@ -256,7 +231,7 @@ client.on("messageCreate", message => {
                                     client.redis.ttl(mlimit, (err, reply) => {
                                         let member_str = `<@${message.author.id}>`;
                                         message.channel.createMessage(`${member_str}, please cool down! ${reply} seconds left.`).then(new_message => {
-                                            setTimeout(() => { new_message.delete() }, reply * 1000);
+                                            setTimeout(() => { new_message.delete(); }, reply * 1000);
                                         });
                                         client.redis.set(mlimit, "2");
                                         client.redis.expire(mlimit, reply);

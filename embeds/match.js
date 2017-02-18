@@ -85,11 +85,12 @@ module.exports = (match_data) => {
     });
 
     let victory = match_data.radiant_win ? "Radiant Victory!" : "Dire Victory!";
-    let ptime = `${Math.floor(match_data.duration / 60)}:${("00" + match_data.duration % 60).substr(-2, 2)}`
+    let ptime = `${Math.floor(match_data.duration / 60)}:${("00" + match_data.duration % 60).substr(-2, 2)}`;
     let skill = match_data.skill ? skills[match_data.skill] : skills[0];
 
     return {
         "title": victory,
+        "timestamp": new Date(match_data.start_time * 1000),
         "fields": [{
             "name": `${match_data.radiant_score} - ${match_data.dire_score}, ${ptime}`,
             "value": match_data.match_id,

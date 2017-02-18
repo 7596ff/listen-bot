@@ -3,7 +3,6 @@ module.exports = (message, client, helper) => {
         "text": "SELECT * FROM public.users WHERE id = $1;",
         "values": [message.author.id]
     }).then(res => {
-        console.log(res.rows[0])
         if (res.rowCount > 0) {
             client.pg.query({
                 "text": "DELETE FROM public.users WHERE id = $1;",
@@ -19,5 +18,5 @@ module.exports = (message, client, helper) => {
         message.channel.createMessage("Couldn't delete. Contact alexa#2899");
         helper.log(message, "something went wrong deleting from users");
         helper.log(err);
-    })
+    });
 };

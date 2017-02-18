@@ -1,4 +1,5 @@
 const needle = require("needle");
+const util = require("util");
 
 module.exports = client => {
     needle.post(`https://bots.discord.pw/api/bots/${client.config.master_id}/stats`,

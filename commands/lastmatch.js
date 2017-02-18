@@ -6,7 +6,7 @@ module.exports = (message, client, helper) => {
         let check = message.content.split(" ")[1];
         if (check && check == "with") {
             let queries = [resolve_dota_id(message, message.author.id)];
-            for (ping in message.mentions) {
+            for (let ping in message.mentions) {
                 queries.push(resolve_dota_id(message, message.mentions[ping].id));
             }
 
@@ -33,7 +33,7 @@ module.exports = (message, client, helper) => {
                 } else {
                     message.channel.createMessage(err.text);
                 }
-            })
+            });
         } else {
             resolve_dota_id(message).then(acc_id => {
                 helper.log(message, `lastmatch: ${acc_id}`);
@@ -62,7 +62,6 @@ module.exports = (message, client, helper) => {
                     }
                 });
             }).catch(err => {
-                console.log(err)
                 if (err.err) {
                     message.channel.createMessage(err.text || "Something went wrong.");
                     helper.log(message, err.text);

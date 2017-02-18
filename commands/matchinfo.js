@@ -1,6 +1,6 @@
 const match_embed = require("../embeds/match");
 
-function check_if_registered(client, dota_id, hero_id) {
+function check_if_registered(client, dota_id) {
     return new Promise((resolve) => {
         client.pg.query({
             "text": "SELECT * FROM public.users WHERE dotaid = $1",
@@ -22,7 +22,7 @@ function send_message(message, client, helper, match_data, origin) {
     let queries = [];
 
     match_data.players.forEach(player => {
-        queries.push(check_if_registered(client, player.account_id, player.hero_id));
+        queries.push(check_if_registered(client, player.account_id));
     });
 
     Promise.all(queries).then(results => {
@@ -74,7 +74,7 @@ module.exports = (message, client, helper) => {
         client.redis.get(`matchinfo:${match_id}`, (err, reply) => {
             if (err) helper.log(message, err);
             if (reply) {
-                reply = JSON.parse(reply)
+                reply = JSON.parse(reply);
                 if (!reply.radiant_score && !reply.dire_score) fix_scores(reply);
                 send_message(message, client, helper, reply, "redis");
             } else {

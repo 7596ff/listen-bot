@@ -11,6 +11,7 @@ client.steam_friends = new Steam.SteamFriends(client.steam_client);
 const consts = require("./util/consts.json");
 const stats_helper = require("./util/stats_helper");
 const shardinfo_helper = require("./util/shardinfo_helper");
+const dbots_post = require("./dbots/post");
 
 const schedule = require("node-schedule");
 const Mika = require("mika");
@@ -110,27 +111,7 @@ client.on("ready", () => {
             }
         }).catch(err => util.log(err));
 
-        if (config.dbots_token) {
-            needle.post(
-                `https://bots.discord.pw/api/bots/${config.master_id}/stats`,
-                JSON.stringify({
-                    "server_count": client.guilds.size
-                }), {
-                    "headers": {
-                        "Authorization": config.dbots_token,
-                        "Content-Type": "application/json"
-                    }
-                },
-                (err, resp) => {
-                    if (err) {
-                        util.log(err);
-                        return;
-                    } else if (resp.statusCode != 200) {
-                        util.log(resp.statusCode);
-                    }
-                }
-            );
-        }
+        if (config.dbots_token) dbots_post(client);
     });
 });
 

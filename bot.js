@@ -191,15 +191,11 @@ function invoke(message, client, helper, command) {
     client.all_usage["all"] += 1;
     client.all_usage[command] += 1;
 
-    client.redis.set(`climit:${message.channel.id}`, "1", (err) => {
-        if (err) util.log(err);
-        client.redis.expire(`climit:${message.channel.id}`, message.gcfg.climit / 1000);
-    });
+    client.redis.set(`climit:${message.channel.id}`, "1")
+    client.redis.set(`mlimit:${message.author.id}`, "1")
 
-    client.redis.set(`mlimit:${message.author.id}`, "1", (err) => {
-        if (err) util.log(err);
-        client.redis.expire(`mlimit:${message.author.id}`, message.gcfg.mlimit / 1000);
-    });
+    client.redis.expire(`climit:${message.channel.id}`, message.gcfg.climit / 1000);
+    client.redis.expire(`mlimit:${message.author.id}`, message.gcfg.mlimit / 1000);
 }
 
 client.on("messageCreate", message => {
@@ -242,24 +238,30 @@ client.on("messageCreate", message => {
 
             if (command in client.commands) {
                 client.redis.get(climit, (err, reply) => {
-                    if (reply == 1) {
-                        client.redis.ttl(climit, (err, reply) => {
-                            let channel_str = `<#${message.channel.id}>`;
-                            message.channel.createMessage(`${channel_str}, please cool down! ${reply} seconds left.`).then(new_message => {
-                                setTimeout(() => { new_message.delete() }, reply * 1000)
+                    if (reply) {
+                        if (reply == "1") {
+                            client.redis.ttl(climit, (err, reply) => {
+                                let channel_str = `<#${message.channel.id}>`;
+                                message.channel.createMessage(`${channel_str}, please cool down! ${reply} seconds left.`).then(new_message => {
+                                    setTimeout(() => { new_message.delete() }, reply * 1000)
+                                });
+                                client.redis.set(climit, "2");
+                                client.redis.expire(climit, reply);
                             });
-                            client.redis.set(climit, "2");
-                        });
+                        }
                     } else {
                         client.redis.get(mlimit, (err, reply) => {
-                            if (reply == 1) {
-                                client.redis.ttl(mlimit, (err, reply) => {
-                                    let member_str = `<@${message.author.id}>`;
-                                    message.channel.createMessage(`${member_str}, please cool down! ${reply} seconds left.`).then(new_message => {
-                                        setTimeout(() => { new_message.delete() }, reply * 1000)
+                            if (reply) {
+                                if (reply == "1") { 
+                                    client.redis.ttl(mlimit, (err, reply) => {
+                                        let member_str = `<@${message.author.id}>`;
+                                        message.channel.createMessage(`${member_str}, please cool down! ${reply} seconds left.`).then(new_message => {
+                                            setTimeout(() => { new_message.delete() }, reply * 1000)
+                                        });
+                                        client.redis.set(mlimit, "2");
+                                        client.redis.expire(mlimit, reply);
                                     });
-                                    client.redis.set(mlimit, "2");
-                                });
+                                }
                             } else {
                                 invoke(message, client, _helper, command);
                             }

@@ -9,7 +9,7 @@ function check_if_registered(client, dota_id, hero_id) {
             if (res.rowCount != 0) {
                 resolve({
                     "discord_id": res.rows[0].id,
-                    "hero_id": hero_id
+                    "dota_id": res.rows[0].dotaid
                 });
             } else {
                 resolve(undefined);
@@ -26,9 +26,14 @@ function send_message(message, client, helper, match_data, origin) {
     });
 
     Promise.all(queries).then(results => {
-        let filtered = results.filter(result => result && message.channel.guild.members.find(member => member.id == result.discord_id));
+        for (let player in match_data.players) {
+            if (results[player] && match_data.players[player].account_id == results[player].dota_id && message.channel.guild.members.find(member => member.id == results[player].discord_id)) {
+                match_data.players[player]["mention_str"] = `<@${results[player].discord_id}>`;
+            }
+        }
+
         message.channel.createMessage({
-            "embed": match_embed(match_data, filtered),
+            "embed": match_embed(match_data),
             "content": message.header || ""
         }).then(() => {
             helper.log(message, `  sent match data from ${origin}`);

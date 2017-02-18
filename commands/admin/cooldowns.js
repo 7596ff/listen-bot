@@ -2,7 +2,7 @@ module.exports = (message, client, helper) => {
     if (message.content) {
         let options = message.content.split(" ");
         if (["channel", "member"].indexOf(options[0]) != -1 && !isNaN(options[1])) {
-            let limit = options[1] * 1000;
+            let limit = options[1];
 
             if (options[0] == "channel") {
                 client.pg.query({

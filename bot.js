@@ -20,9 +20,6 @@ const bignumber = require("bignumber.js");
 const util = require("util");
 const fs = require("fs");
 
-var _members = {};
-var _channels = {};
-
 client.commands = {};
 client.all_usage = require("./json/usage.json");
 client.usage = { "all": 0 };
@@ -187,6 +184,24 @@ client.on("guildDelete", guild => {
     });
 });
 
+function invoke(message, client, helper, command) {
+    client.commands[command](message, client, helper);
+    client.usage["all"] += 1;
+    client.usage[command] += 1;
+    client.all_usage["all"] += 1;
+    client.all_usage[command] += 1;
+
+    client.redis.set(`climit:${message.channel.id}`, "1", (err) => {
+        if (err) util.log(err);
+        client.redis.expire(`climit:${message.channel.id}`, message.gcfg.climit / 1000);
+    });
+
+    client.redis.set(`mlimit:${message.author.id}`, "1", (err) => {
+        if (err) util.log(err);
+        client.redis.expire(`mlimit:${message.author.id}`, message.gcfg.mlimit / 1000);
+    });
+}
+
 client.on("messageCreate", message => {
     if (!message.channel.guild) return;
     if (message.member && message.member.bot) return;
@@ -222,41 +237,35 @@ client.on("messageCreate", message => {
             let disabled_list = message.gcfg.disabled ? message.gcfg.disabled[message.channel.id] : undefined;
             if (disabled_list && disabled_list.indexOf(command) != -1) return;
 
-            if (command in client.commands) {
-                if (!_members[message.member.id] || _members[message.member.id].last_message + message.gcfg.mlimit < Date.now()) {
-                    if (!_channels[message.channel.id] || _channels[message.channel.id].last_message + message.gcfg.climit < Date.now()) {
-                        let rate = {
-                            "last_message": Date.now(),
-                            "cooldown_sent": false
-                        };
+            let climit = `climit:${message.channel.id}`;
+            let mlimit = `mlimit:${message.author.id}`;
 
-                        _members[message.member.id] = JSON.parse(JSON.stringify(rate));
-                        _channels[message.channel.id] = JSON.parse(JSON.stringify(rate));
-                        client.commands[command](message, client, _helper);
-                        client.usage["all"] += 1;
-                        client.usage[command] += 1;
-                        client.all_usage["all"] += 1;
-                        client.all_usage[command] += 1;
+            if (command in client.commands) {
+                client.redis.get(climit, (err, reply) => {
+                    if (reply == 1) {
+                        client.redis.ttl(climit, (err, reply) => {
+                            let channel_str = `<#${message.channel.id}>`;
+                            message.channel.createMessage(`${channel_str}, please cool down! ${reply} seconds left.`).then(new_message => {
+                                setTimeout(() => { new_message.delete() }, reply * 1000)
+                            });
+                            client.redis.set(climit, "2");
+                        });
                     } else {
-                        if (!_channels[message.channel.id].cooldown_sent) {
-                            let timeleft = Math.ceil((_channels[message.channel.id].last_message + message.gcfg.climit - Date.now()) / 1000);
-                            message.channel.createMessage(`\`#${message.channel.name}\` Please cool down! ${timeleft} second(s) left.`).then(new_message => {
-                                setTimeout(() => { new_message.delete(); }, 4000);
-                                _helper.log(message, "channel ratelimited");
-                                _channels[message.channel.id].cooldown_sent = true;
-                            }).catch(err => _helper.handle(err));
-                        }
+                        client.redis.get(mlimit, (err, reply) => {
+                            if (reply == 1) {
+                                client.redis.ttl(mlimit, (err, reply) => {
+                                    let member_str = `<@${message.author.id}>`;
+                                    message.channel.createMessage(`${member_str}, please cool down! ${reply} seconds left.`).then(new_message => {
+                                        setTimeout(() => { new_message.delete() }, reply * 1000)
+                                    });
+                                    client.redis.set(mlimit, "2");
+                                });
+                            } else {
+                                invoke(message, client, _helper, command);
+                            }
+                        });
                     }
-                } else {
-                    if (!_members[message.member.id].cooldown_sent) {
-                        let timeleft = Math.ceil((_members[message.member.id].last_message + message.gcfg.mlimit - Date.now()) / 1000);
-                        message.channel.createmessage(`<@!${message.member.id}>, Please cool down! ${timeleft} second(s) left.`).then(new_message => {
-                            setTimeout(() => { new_message.delete(); }, 4000);
-                            _helper.log(message, "member ratelimited");
-                            _members[message.member.id].cooldown_sent = true;
-                        }).catch(err => _helper.handle(err));
-                    }
-                }
+                });
             }
         }
     }).catch(err => {

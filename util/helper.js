@@ -19,7 +19,7 @@ class Helper {
 
         this.last_guild = message.channel.guild.name;
         this.last_channel = message.channel.name;
-    };
+    }
 
     handle(message, err) {
         let result = err.toString().split(" ")[1];
@@ -30,7 +30,7 @@ class Helper {
         } else {
             this.log(err.toString());
         }
-    };
-};
+    }
+}
 
 module.exports = Helper;

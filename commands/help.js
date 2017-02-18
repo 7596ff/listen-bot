@@ -27,7 +27,7 @@ const help_embed = function (help_obj, prefix) {
 module.exports = (message, client, helper) => {
     let options = message.content.split(" ");
     options.shift();
-    let specific_topic = options.join(" ");
+    let specific_topic = options.join(" ").toLowerCase();
 
     for (let cat in help_topics) {
         let present = help_topics[cat].find(topic => topic.name == specific_topic);

@@ -191,11 +191,11 @@ function invoke(message, client, helper, command) {
     client.all_usage["all"] += 1;
     client.all_usage[command] += 1;
 
-    client.redis.set(`climit:${message.channel.id}`, "1")
-    client.redis.set(`mlimit:${message.author.id}`, "1")
+    client.redis.set(`climit:${message.channel.id}`, "1");
+    client.redis.set(`mlimit:${message.author.id}`, "1");
 
-    client.redis.expire(`climit:${message.channel.id}`, message.gcfg.climit / 1000);
-    client.redis.expire(`mlimit:${message.author.id}`, message.gcfg.mlimit / 1000);
+    client.redis.expire(`climit:${message.channel.id}`, message.gcfg.climit);
+    client.redis.expire(`mlimit:${message.author.id}`, message.gcfg.mlimit);
 }
 
 client.on("messageCreate", message => {
@@ -243,7 +243,7 @@ client.on("messageCreate", message => {
                             client.redis.ttl(climit, (err, reply) => {
                                 let channel_str = `<#${message.channel.id}>`;
                                 message.channel.createMessage(`${channel_str}, please cool down! ${reply} seconds left.`).then(new_message => {
-                                    setTimeout(() => { new_message.delete() }, reply * 1000)
+                                    setTimeout(() => { new_message.delete() }, reply * 1000);
                                 });
                                 client.redis.set(climit, "2");
                                 client.redis.expire(climit, reply);
@@ -256,7 +256,7 @@ client.on("messageCreate", message => {
                                     client.redis.ttl(mlimit, (err, reply) => {
                                         let member_str = `<@${message.author.id}>`;
                                         message.channel.createMessage(`${member_str}, please cool down! ${reply} seconds left.`).then(new_message => {
-                                            setTimeout(() => { new_message.delete() }, reply * 1000)
+                                            setTimeout(() => { new_message.delete() }, reply * 1000);
                                         });
                                         client.redis.set(mlimit, "2");
                                         client.redis.expire(mlimit, reply);

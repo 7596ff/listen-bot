@@ -216,8 +216,7 @@ client.on("messageCreate", message => {
                     if (reply) {
                         if (reply == "1") {
                             client.redis.ttl(climit, (err, reply) => {
-                                let channel_str = `<#${message.channel.id}>`;
-                                message.channel.createMessage(`${channel_str}, please cool down! ${reply} seconds left.`).then(new_message => {
+                                message.channel.createMessage(`${message.channel.mention}, please cool down! ${reply} seconds left.`).then(new_message => {
                                     setTimeout(() => { new_message.delete(); }, reply * 1000);
                                 });
                                 client.redis.set(climit, "2");
@@ -228,9 +227,8 @@ client.on("messageCreate", message => {
                         client.redis.get(mlimit, (err, reply) => {
                             if (reply) {
                                 if (reply == "1") { 
-                                    client.redis.ttl(mlimit, (err, reply) => {
-                                        let member_str = `<@${message.author.id}>`;
-                                        message.channel.createMessage(`${member_str}, please cool down! ${reply} seconds left.`).then(new_message => {
+                                    client.redis.ttl(mlimit, (err, reply) => {;
+                                        message.channel.createMessage(`${message.author.mention}, please cool down! ${reply} seconds left.`).then(new_message => {
                                             setTimeout(() => { new_message.delete(); }, reply * 1000);
                                         });
                                         client.redis.set(mlimit, "2");

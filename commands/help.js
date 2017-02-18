@@ -35,7 +35,7 @@ module.exports = (message, client, helper) => {
             message.channel.createMessage({
                 "embed": help_embed(present, message.gcfg.prefix)
             }).then(new_message => {
-                helper.log(new_message, `Helped with topic ${specific_topic}`);
+                helper.log(new_message, `helped with topic ${specific_topic}`);
             }).catch(err => helper.handle(message, err));
             return;
         }

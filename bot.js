@@ -92,6 +92,28 @@ client.pg.on("error", (err) => {
 client.on("ready", () => {
     util.log("listen-bot ready.");
 
+    util.log("checking for new guilds...");
+    client.pg.query("SELECT id FROM GUILDS;").then(res => {
+        let pg_guilds = res.rows.map(row => row.id);
+        client.guilds.forEach(guild => {
+            if (!pg_guilds.includes(guild.id)) {
+                util.log("found new guild, inserting...");
+                client.pg.query({
+                    "text": "INSERT INTO public.guilds (id, name, prefix, climit, mlimit) VALUES ($1, $2, $3, $4, $5);",
+                    "values": [guild.id, guild.name, "--", 0, 0]
+                }).then(() => {
+                    util.log("  inserted.");
+                }).catch(err => {
+                    util.log("  something went wrong inserting unfound guild");
+                    util.log(err);
+                });
+            }
+        });
+    }).catch(err => {
+        util.log("something went wrong selecting id from guilds.");
+        util.log(err);
+    });
+
     client.shards.forEach(shard => {
         shard.editStatus("online", {
             "name": `${config.default_prefix}info | ${config.default_prefix}help [${shard.id + 1}/${client.shards.size}]`

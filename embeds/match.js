@@ -58,8 +58,8 @@ module.exports = (match_data) => {
         let row = [od_heroes.find(hero => hero.id == player.hero_id).localized_name,
             `${player.kills}/${player.deaths}/${player.assists}`,
             `${player.last_hits}/${player.denies}`,
-            player.hero_damage.toString(),
-            player.hero_healing.toString(),
+            player.hero_damage < 1000 ? player.hero_damage.toString() : `${(player.hero_damage / 1000).toFixed(1)}k`,
+            player.hero_healing < 1000 ? player.hero_healing.toString() : `${(player.hero_healing / 1000).toFixed(1)}k`,
             player.gold_per_min.toString(),
             player.xp_per_min.toString(),
             player.mention_str || player.personaname || "Unknown"
@@ -81,7 +81,7 @@ module.exports = (match_data) => {
         for (let item in row) {
             row[item] = pad(row[item], highest[item]);
         }
-        ftable.push(`\`${row.slice(0, row.length - 2).join(" ")}\`  ${row[row.length - 1]}`);
+        ftable.push(`\`${row.slice(0, row.length - 1).join(" ")}\`  ${row[row.length - 1]}`);
     });
 
     let victory = match_data.radiant_win ? "Radiant Victory!" : "Dire Victory!";

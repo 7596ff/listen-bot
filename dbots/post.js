@@ -1,7 +1,7 @@
 const needle = require("needle");
 
 module.exports = client => {
-    needle.post(`https://bots.discord.pw/api/bots/${config.master_id}/stats`,
+    needle.post(`https://bots.discord.pw/api/bots/${client.config.master_id}/stats`,
         JSON.stringify({ "server_count": client.guilds.size }), 
         { "headers": { "Authorization": client.config.dbots_token, "Content-Type": "application/json" }},
         (err, resp) => {

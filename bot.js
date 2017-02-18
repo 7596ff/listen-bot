@@ -16,7 +16,6 @@ const dbots_post = require("./dbots/post");
 const schedule = require("node-schedule");
 const Mika = require("mika");
 const bignumber = require("bignumber.js");
-const needle = require("needle");
 
 const util = require("util");
 const fs = require("fs");

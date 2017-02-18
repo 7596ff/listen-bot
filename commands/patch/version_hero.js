@@ -25,5 +25,7 @@ module.exports = (message, client, helper, version, hero) => {
                 }
             }
         }
-    })
+    }).catch(() => {
+        helper.log(message, `patch hero: couldn't find hero ${hero}`);
+    });
 };

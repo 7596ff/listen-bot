@@ -48,8 +48,8 @@ const skills = [
     "Very High"
 ];
 
-module.exports = (match_data, mentions) => {
-    let heading = ["Hero", "K/D/A", "LH/D", "HD", "HH", "GPM", "XPM", "Name"];
+module.exports = (match_data) => {
+    let heading = ["Hero", "K/D/A", "LH/D", "HD", "HH", "GPM", "XPM", "\u200b"];
     let table = [];
     let ftable = [];
     let highest = new Array(9).fill(0);
@@ -62,7 +62,7 @@ module.exports = (match_data, mentions) => {
             player.hero_healing.toString(),
             player.gold_per_min.toString(),
             player.xp_per_min.toString(),
-            (player.personaname || "Unknown").replace(/`/g, "").slice(0, 16)
+            player.mention_str || player.personaname || "Unknown"
         ];
 
         for (let val in row) {
@@ -81,15 +81,12 @@ module.exports = (match_data, mentions) => {
         for (let item in row) {
             row[item] = pad(row[item], highest[item]);
         }
-        ftable.push(`\`${row.join(" ")}\``);
+        ftable.push(`\`${row.slice(0, row.length - 2).join(" ")}\`  ${row[row.length - 1]}`);
     });
 
     let victory = match_data.radiant_win ? "Radiant Victory!" : "Dire Victory!";
-    let ptime = `${Math.floor(match_data.duration / 60)}:${match_data.duration % 60}`
+    let ptime = `${Math.floor(match_data.duration / 60)}:${("00" + match_data.duration % 60).substr(-2, 2)}`
     let skill = match_data.skill ? skills[match_data.skill] : skills[0];
-    let mention_str = mentions.length > 0 
-        ? `\n\nMembers from this server: ${mentions.map(mention => `<@${mention.discord_id}> (${od_heroes.find(hero => hero.id == mention.hero_id).localized_name})`).join(", ")}` 
-        : "";
 
     return {
         "title": victory,
@@ -111,7 +108,7 @@ module.exports = (match_data, mentions) => {
             "inline": false
         }, {
             "name": "Dire",
-            "value": `${ftable.slice(6, 12).join("\n")}${mention_str}`,
+            "value": ftable.slice(6, 12).join("\n"),
             "inline": false
         }]
     };

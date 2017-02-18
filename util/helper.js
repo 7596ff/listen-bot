@@ -24,9 +24,9 @@ class Helper {
     handle(message, err) {
         let result = err.toString().split(" ")[1];
         if (result == "400") {
-            this.log("probably don't have permissions to embed here");
+            this.log(message, "probably don't have permissions to embed here");
         } else if (result == "403") {
-            this.log("probably don't have permissions to send messages here");
+            this.log(message, "probably don't have permissions to send messages here");
         } else {
             this.log(err.toString());
         }

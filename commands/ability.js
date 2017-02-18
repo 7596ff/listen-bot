@@ -1,4 +1,4 @@
-const short_heroes = require("../json/short_heroes.json");
+const find_hero = require("../util/find_hero");
 const keys = require("../json/keys.json");
 const abilities = require("../json/abilities.json");
 const alike_keys = require("../json/alike_keys.json");
@@ -26,8 +26,7 @@ module.exports = (message, client, helper) => {
         let key = options.slice(options.length - i, options.length).join(" ");
         let hero = options.slice(0, options.length - i).join(" ");
 
-        if (hero in short_heroes) {
-            let true_hero = short_heroes[hero];
+        find_hero(hero).then(true_hero => {
             if (true_hero == "invoker" && key.length == 3) key = key.split("").sort().join("");
             if (i > 0 && key in keys[true_hero]) {
                 let ability = keys[true_hero][key];
@@ -39,7 +38,7 @@ module.exports = (message, client, helper) => {
                 create_message(message, client, helper, true_hero, capitalize_first(key), key);
                 i = 0;
             }
-        } else if (!hero) {
+        }).catch(() => {
             if (key.length > 1) {
                 if (i > 0 && key in alike_keys) {
                     let content = alike_keys[key].length > 1 ? `Did you mean: ${alike_keys[key].join(", ")}` : alike_keys[key][0];
@@ -69,6 +68,6 @@ module.exports = (message, client, helper) => {
                     }
                 }
             }
-        }
+        });
     }
 };

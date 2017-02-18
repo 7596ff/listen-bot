@@ -10,7 +10,7 @@ module.exports = (message, client, helper) => {
         message.channel.createMessage(`<http://dota2.gamepedia.com/${underscore}>`).then(() => {
             helper.log(message, `sent wiki link (${res})`);
         }).catch(err => helper.handle(message, err));
-    }).catch(err => {
+    }).catch(() => {
         helper.log(message, `wiki: couldn't find hero ${hero}`);
     });
 };

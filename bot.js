@@ -227,7 +227,7 @@ client.on("messageCreate", message => {
                         client.redis.get(mlimit, (err, reply) => {
                             if (reply) {
                                 if (reply == "1") { 
-                                    client.redis.ttl(mlimit, (err, reply) => {;
+                                    client.redis.ttl(mlimit, (err, reply) => {
                                         message.channel.createMessage(`${message.author.mention}, please cool down! ${reply} seconds left.`).then(new_message => {
                                             setTimeout(() => { new_message.delete(); }, reply * 1000);
                                         });

@@ -25,7 +25,7 @@ module.exports = (message, client, helper) => {
         message.channel.createMessage(`${format_name} has changed in ${patches.join(", ")}`).then(() => {
             helper.log(message, `listed hero (${res})`);
         }).catch(err => helper.handle(message, err));
-    }).catch(err => {
+    }).catch(() => {
         helper.log(message, `list: couldn't find hero ${hero}`);
     });
 };

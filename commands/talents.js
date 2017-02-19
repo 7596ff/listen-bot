@@ -1,5 +1,5 @@
 const talents = require("../json/talents.json");
-const short_heroes = require("../json/short_heroes.json");
+const find_hero = require("../util/find_hero");
 
 const talent_hero_embed = function(hero_name) {
     let talent_obj = talents[hero_name];
@@ -30,12 +30,18 @@ module.exports = (message, client, helper) => {
         let hero = options.slice(1).join(" ").toLowerCase();
         helper.log(message, `talents: hero name (${hero})`);
 
-        if (hero in short_heroes) {
+        find_hero(hero).then(res => {
             message.channel.createMessage({
-                "embed": talent_hero_embed(short_heroes[hero])
+                "embed": talent_hero_embed(res)
             }).then(() => {
                 helper.log(message, "  sent talents message");
             }).catch(err => helper.handle(message, err));
-        }
+        }).catch(err => {
+            if (err.not_found) {
+                helper.log(message, `talents: couldn't find ${hero}}`);
+            } else {
+                helper.log(message, err.toString());
+            }
+        })
     }
 };

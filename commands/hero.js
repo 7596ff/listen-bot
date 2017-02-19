@@ -4,7 +4,7 @@ const heroes = require("../json/heroes.json");
 const hero_embed = require("../embeds/hero");
 
 module.exports = (message, client, helper) => {
-    let alias = message.content.split(" ").slice(1).join(" ");
+    let alias = message.content.split(" ").slice(1).join(" ").toLowerCase();
     helper.log(message, `hero: ${alias}`);
     find_hero(alias).then(res => {
         let hero_obj = heroes.find(hero => hero.true_name == res);

@@ -3,9 +3,7 @@ const od_heroes = require("../json/od_heroes.json");
 const find_hero = require("../util/find_hero");
 
 module.exports = (message, client, helper) => {
-    let hero = message.content.toLowerCase().split(" ");
-    hero.shift();
-    hero = hero.join(" ");
+    let hero = message.content.split(" ").slice(1).join(" ").toLowerCase();
 
     find_hero(hero).then(res => {
         let format_name = od_heroes.find(od_hero => od_hero.name == `npc_dota_hero_${res}`).localized_name;

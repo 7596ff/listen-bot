@@ -4,11 +4,10 @@ const hero = require("./patch/hero");
 const version_hero = require("./patch/version_hero");
 
 module.exports = (message, client, helper) => {
-    let options = message.content.toLowerCase().split(" ");
-    options.shift();
+    let options = message.content.split(" ").slice(1);
   
     for (let arg in options) {
-        if (patch_list.schema.indexOf(options[arg]) != -1) {
+        if (patch_list.schema.includes(options[arg])) {
             let version = options[arg];
             options.splice(options.indexOf(version), 1);
             version_hero(message, client, helper, version, options.join(" ").toLowerCase());

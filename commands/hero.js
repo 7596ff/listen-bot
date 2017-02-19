@@ -10,7 +10,7 @@ module.exports = (message, client, helper) => {
         let hero_obj = heroes.find(hero => hero.true_name == res);
         hero_obj.abilities = [];
         for (skill in abilities[res]) hero_obj.abilities.push(skill);
-            
+
         message.channel.createMessage({
             "embed": hero_embed(hero_obj)
         }).then(() => {
@@ -19,7 +19,10 @@ module.exports = (message, client, helper) => {
             helper.handle(message, err);
         })
     }).catch(err => {
-        helper.log(message, `hero: couldn't find ${alias}`);
-        helper.log(message, err);
+        if (err.not_found) {
+            helper.log(message, `hero: couldn't find ${alias}`);    
+        } else {
+            helper.log(message, err.toString());
+        }
     });
 };

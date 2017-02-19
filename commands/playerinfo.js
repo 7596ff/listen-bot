@@ -7,7 +7,7 @@ function playerinfo_embed(player) {
     winrate = Math.round(winrate);
     winrate = winrate / 100;
 
-    let countrycode = player.profile.loccountrycode ? player.profile.loccountrycode : "Unknown";
+    let countrycode = player.profile.loccountrycode || "Unknown";
     let flag = countrycode == "Unknown" ? "" : `:flag_${countrycode.toLowerCase()}:`;
 
     let mmr_display = [];

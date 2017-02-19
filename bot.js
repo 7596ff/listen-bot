@@ -200,13 +200,13 @@ client.on("messageCreate", message => {
             let command = message.content.split(" ").shift().toLowerCase();
 
             for (let cmd in consts.cmds) {
-                if (consts.cmds[cmd].indexOf(command) != -1) {
+                if (consts.cmds[cmd].includes(command)) {
                     command = consts.cmds[cmd][0];
                 }
             }
 
             let disabled_list = message.gcfg.disabled ? message.gcfg.disabled[message.channel.id] : undefined;
-            if (disabled_list && disabled_list.indexOf(command) != -1) return;
+            if (disabled_list && disabled_list.includes(command)) return;
 
             let climit = `climit:${message.channel.id}`;
             let mlimit = `mlimit:${message.author.id}`;

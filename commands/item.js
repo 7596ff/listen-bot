@@ -4,8 +4,7 @@ const item_embed = require("../embeds/item");
 const too_short = ["of", "and", "in", "the", "de"];
 
 module.exports = (message, client, helper) => {
-    let options = message.content.split(" ");
-    options.shift();
+    let options = message.content.toLowerCase().split(" ").slice(1);
 
     helper.log(message, `item: ${options.join(" ")}`);
 
@@ -15,14 +14,14 @@ module.exports = (message, client, helper) => {
 
     loop1: for (let i = 0; i <= options.length; i++) {
         loop2: for (let j = 0; j <= options.length; j++) {
-            let term = options.slice(i, j).join(" ").toLowerCase();
+            let term = options.slice(i, j).join(" ");
             if (i < j) {
-                if (too_short.indexOf(term) != -1) break loop2;
+                if (too_short.includes(term)) break loop2;
                 search = items.filter(item => {
-                    if (too_short.indexOf(item) != -1) return false;
+                    if (too_short.includes(item)) return false;
                     if (item.format_name.toLowerCase().match(`${term}`) && term.length > 2) return true;
-                    if ((item.aliases || []).indexOf(term) != -1) return true;
-                    if (item.true_name.split("_").indexOf(term) != -1) return true;
+                    if ((item.aliases || []).includes(term)) return true;
+                    if (item.true_name.split("_").includes(term)) return true;
                     if (item.format_name.split(" ").map(item => item.charAt(0)).join("").toLowerCase() == term) return true;
                 });
 

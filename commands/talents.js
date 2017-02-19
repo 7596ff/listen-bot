@@ -25,23 +25,21 @@ const talent_hero_embed = function(hero_name) {
 };
 
 module.exports = (message, client, helper) => {
-    let options = message.content.split(" ");
-    if (options[1]) {
-        let hero = options.slice(1).join(" ").toLowerCase();
-        helper.log(message, `talents: hero name (${hero})`);
+    let hero = message.content.split(" ").slice(1).join(" ").toLowerCase();
+    helper.log(message, `talents: hero name (${hero})`);
 
-        find_hero(hero).then(res => {
-            message.channel.createMessage({
-                "embed": talent_hero_embed(res)
-            }).then(() => {
-                helper.log(message, "  sent talents message");
-            }).catch(err => helper.handle(message, err));
-        }).catch(err => {
-            if (err.not_found) {
-                helper.log(message, `talents: couldn't find ${hero}}`);
-            } else {
-                helper.log(message, err.toString());
-            }
-        })
-    }
+    find_hero(hero).then(res => {
+        message.channel.createMessage({
+            "embed": talent_hero_embed(res)
+        }).then(() => {
+            helper.log(message, "  sent talents message");
+        }).catch(err => helper.handle(message, err));
+    }).catch(err => {
+        if (err.not_found) {
+            helper.log(message, `talents: couldn't find ${hero}}`);
+        } else {
+            helper.log(message, err.toString());
+        }
+    })
+    
 };

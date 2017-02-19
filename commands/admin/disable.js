@@ -14,7 +14,7 @@ module.exports = (message, client, helper) => {
     let actual = [];
 
     for (let candidate in to) {
-        if (possible.indexOf(to[candidate]) != -1) actual.push(to[candidate]);
+        if (possible.includes(to[candidate])) actual.push(to[candidate]);
     }
 
     client.pg.query({

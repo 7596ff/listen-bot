@@ -14,12 +14,13 @@ module.exports = (message, client, helper) => {
 
     loop1: for (let i = 0; i <= options.length; i++) {
         loop2: for (let j = 0; j <= options.length; j++) {
-            let term = options.slice(i, j).join(" ");
             if (i < j) {
+                let term = options.slice(i, j).join(" ");
                 if (too_short.includes(term)) break loop2;
+                
                 search = items.filter(item => {
                     if (too_short.includes(item)) return false;
-                    if (item.format_name.toLowerCase().match(`${term}`) && term.length > 2) return true;
+                    if (item.format_name.toLowerCase().match(term) && term.length > 2) return true;
                     if ((item.aliases || []).includes(term)) return true;
                     if (item.true_name.split("_").includes(term)) return true;
                     if (item.format_name.split(" ").map(item => item.charAt(0)).join("").toLowerCase() == term) return true;

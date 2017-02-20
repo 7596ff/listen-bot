@@ -17,7 +17,7 @@ module.exports = (message, client, helper) => {
 
             let names = options.slice(options.indexOf("with") + 1);
             loop1: for (let i = 0; i <= names.length; i++) {
-                loop2: for(let j = 0; j <= names.length; j++) {
+                loop2: for (let j = 0; j <= names.length; j++) {
                     if (i < j) {
                         let term = names.slice(i, j).join(" ");
                         let search = message.channel.guild.members.find(member => (member.nick || member.username) == term);
@@ -28,15 +28,13 @@ module.exports = (message, client, helper) => {
                     }
                 }
             }
-            
+
             if (found_any) queries.push(resolve_dota_id(message, message.author.id));
         } else if (options.length > 1) {
             queries.push(resolve_dota_id(message));
         } else {
             queries.push(resolve_dota_id(message, message.author.id));
         }
-
-        console.log(queries)
 
         Promise.all(queries).then(results => {
             helper.log(message, `lastmatch: ${results.join(", ")}`);

@@ -20,7 +20,7 @@ module.exports = (message, client, helper) => {
                 loop2: for (let j = 0; j <= names.length; j++) {
                     if (i < j) {
                         let term = names.slice(i, j).join(" ");
-                        let search = message.channel.guild.members.find(member => (member.nick || member.username) == term);
+                        let search = message.channel.guild.members.find(member => (member.nick || member.username) == term || member.username == term);
                         if (search) {
                             queries.push(resolve_dota_id(message, search.id));
                             found_any = true;

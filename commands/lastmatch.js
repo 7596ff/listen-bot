@@ -3,77 +3,68 @@ const resolve_dota_id = require("../util/resolve_dota_id");
 
 module.exports = (message, client, helper) => {
     message.channel.sendTyping().then(() => {
-        let check = message.content.split(" ")[1];
-        if (check && check == "with") {
-            let queries = [resolve_dota_id(message, message.author.id)];
+        message.content = message.content.replace(/<@[0-9]+>/g, "");
+        let options = message.content.split(" ");
+        let queries = [];
+
+        if (message.content.match("with")) {
+            let found_any = false;
+
             for (let ping in message.mentions) {
                 queries.push(resolve_dota_id(message, message.mentions[ping].id));
+                found_any = true;
             }
 
-            Promise.all(queries).then(results => {
-                helper.log(message, `lastmatch: ${results.join(", ")}`);
-                client.mika.getPlayerMatches(results[0], {
-                    "limit": 1,
-                    "included_account_id": results.slice(1)
-                }).then(match => {
-                    if (match) {
-                        let match_id = match[0].match_id;
-                        message.content = `matchinfo ${match_id}`;
-                        matchinfo(message, client, helper);
+            let names = options.slice(options.indexOf("with") + 1);
+            loop1: for (let i = 0; i <= names.length; i++) {
+                loop2: for(let j = 0; j <= names.length; j++) {
+                    if (i < j) {
+                        let term = names.slice(i, j).join(" ");
+                        let search = message.channel.guild.members.find(member => (member.nick || member.username) == term);
+                        if (search) {
+                            queries.push(resolve_dota_id(message, search.id));
+                            found_any = true;
+                        }
                     }
-                }).catch(err => {
-                    helper.log(message, err);
-                    message.channel.createMessage("Something went wrong.");
-                });
-            }).catch(err => {
-                if (err.err) {
-                    message.channel.createMessage(err.text);
-                    helper.log(message, err.text);
-                    helper.log(message, err.err);
-                } else {
-                    message.channel.createMessage(err.text);
                 }
-            });
+            }
+            
+            if (found_any) queries.push(resolve_dota_id(message, message.author.id));
+        } else if (options.length > 1) {
+            queries.push(resolve_dota_id(message));
         } else {
-            resolve_dota_id(message).then(acc_id => {
-                helper.log(message, `lastmatch: ${acc_id}`);
-
-                client.redis.get(`lastmatch:${acc_id}`, (err, res) => {
-                    if (err) helper.log(message, err);
-                    if (res) {
-                        message.content = `matchinfo ${res}`;
-                        matchinfo(message, client, helper);
-                    } else {
-                        client.mika.getPlayerMatches(acc_id, {
-                            "limit": "1"
-                        }).then(match => {
-                            if (match) {
-                                let match_id = match[0].match_id;
-                                message.content = `matchinfo ${match_id}`;
-                                matchinfo(message, client, helper);
-                                client.redis.set(`lastmatch:${acc_id}`, match_id, (err) => {
-                                    if (err) helper.log(err);
-                                    client.redis.expire(`lastmatch:${acc_id}`, 1800);
-                                });
-                            } else {
-                                message.channel.createMessage("Couldn't find this player on Opendota!");
-                            }
-                        });
-                    }
-                });
-            }).catch(err => {
-                if (err.err) {
-                    message.channel.createMessage(err.text || "Something went wrong.");
-                    helper.log(message, err.text);
-                    helper.log(message, err.err);
-                } else if (err.text) {
-                    message.channel.createMessage(err.text);
-                    helper.log(message, err.text);
-                } else {
-                    message.channel.createMessage("Something went wrong.");
-                    helper.log(message, err);
-                }
-            });
+            queries.push(resolve_dota_id(message, message.author.id));
         }
+
+        console.log(queries)
+
+        Promise.all(queries).then(results => {
+            helper.log(message, `lastmatch: ${results.join(", ")}`);
+            client.mika.getPlayerMatches(results[0], {
+                "limit": 1,
+                "included_account_id": results.slice(1)
+            }).then(match => {
+                if (match) {
+                    let match_id = match[0].match_id;
+                    message.content = `matchinfo ${match_id}`;
+                    matchinfo(message, client, helper);
+                }
+            }).catch(err => {
+                helper.log(message, err);
+                message.channel.createMessage("Something went wrong.");
+            });
+        }).catch(err => {
+            if (err.err) {
+                message.channel.createMessage(err.text || "Something went wrong.");
+                helper.log(message, err.text);
+                helper.log(message, err.err);
+            } else if (err.text) {
+                message.channel.createMessage(err.text);
+                helper.log(message, err.text);
+            } else {
+                message.channel.createMessage("Something went wrong.");
+                helper.log(message, err);
+            }
+        });
     });
 };

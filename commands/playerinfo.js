@@ -96,6 +96,11 @@ function send_message(message, client, helper, acc_id) {
                     plist[0].wl = plist[1];
                     plist[0].heroes = plist[2];
 
+                    if (!plist[0].profile) {
+                        message.channel.createMessage("This user's account is private. ");
+                        return;
+                    }
+
                     message.channel.createMessage({
                         embed: playerinfo_embed(plist[0])
                     }).then(() => {

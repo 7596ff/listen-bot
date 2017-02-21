@@ -38,7 +38,7 @@ module.exports = (message, client, helper) => {
         Promise.all(queries).then(results => {
             results.forEach(result => {
                 if (result.length < 1) {
-                    message.channel.createMessage("This user's account is private. ");
+                    message.channel.createMessage("This user's account is private.");
                     return;
                 }
             })

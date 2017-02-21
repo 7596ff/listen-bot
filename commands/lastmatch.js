@@ -1,5 +1,6 @@
 const matchinfo = require("./matchinfo");
 const resolve_dota_id = require("../util/resolve_dota_id");
+const search_members = require("../util/search_members");
 
 module.exports = (message, client, helper) => {
     message.channel.sendTyping().then(() => {
@@ -16,20 +17,18 @@ module.exports = (message, client, helper) => {
             }
 
             let names = options.slice(options.indexOf("with") + 1);
-            loop1: for (let i = 0; i <= names.length; i++) {
-                loop2: for (let j = 0; j <= names.length; j++) {
-                    if (i < j) {
-                        let term = names.slice(i, j).join(" ");
-                        let search = message.channel.guild.members.find(member => (member.nick || member.username) == term || member.username == term);
-                        if (search) {
-                            queries.push(resolve_dota_id(message, search.id));
-                            found_any = true;
-                        }
-                    }
-                }
+            let results = search_members(message.channel.guild.members, names);
+            if (results.length > 0) {
+                queries.push(...results.map(result => resolve_dota_id(message, result)));
+                found_any = true;
             }
 
-            if (found_any) queries.push(resolve_dota_id(message, message.author.id));
+            if (found_any) {
+                queries.push(resolve_dota_id(message, message.author.id));
+            } else {
+                message.channel.createMessage("Couldn't find any server members in your match!");
+                return;
+            }
         } else if (options.length > 1) {
             queries.push(resolve_dota_id(message));
         } else {

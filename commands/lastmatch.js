@@ -36,6 +36,13 @@ module.exports = (message, client, helper) => {
         }
 
         Promise.all(queries).then(results => {
+            results.forEach(result => {
+                if (result.length < 1) {
+                    message.channel.createMessage("This user's account is private. ");
+                    return;
+                }
+            })
+
             helper.log(message, `lastmatch: ${results.join(", ")}`);
             client.mika.getPlayerMatches(results[0], {
                 "limit": 1,
@@ -57,7 +64,7 @@ module.exports = (message, client, helper) => {
                 helper.log(message, err.err);
             } else if (err.text) {
                 message.channel.createMessage(err.text);
-                helper.log(message, err.text);
+                helper.log(message, err.log);
             } else {
                 message.channel.createMessage("Something went wrong.");
                 helper.log(message, err);

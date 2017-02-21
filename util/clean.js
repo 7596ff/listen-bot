@@ -1,3 +1,3 @@
 module.exports = (key) => {
-    return key.replace("'", "").replace(" ", "_").toLowerCase();
+    return key.replace(/'/g, "").replace(/ /g, "_").toLowerCase();
 };

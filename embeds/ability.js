@@ -34,7 +34,7 @@ module.exports = (hero, ability) => {
     return {
         "author": {
             "name": ability,
-            "url": `http://dota2.gamepedia.com/${capitalize_first(hero, "_")}#${capitalize_first(ability).replace(" ", "_")}`,
+            "url": `http://dota2.gamepedia.com/${capitalize_first(hero, "_")}#${capitalize_first(clean(ability), "_")}`,
             "icon_url": `http://cdn.dota2.com/apps/dota2/images/heroes/${hero}_vert.jpg`
         },
         "description": [desc, note, agha].join("\n\n").replace("\n\n\n\n", "\n\n"),

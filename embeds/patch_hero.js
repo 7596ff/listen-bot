@@ -6,7 +6,7 @@ function patch_hero_embed(hero_name, version) {
     return {
         "author": {
             "name": hero_obj["format_name"],
-            "url": `http://dota2.gamepedia.com/${hero_obj.format_name.split(" ").join("_")}`,
+            "url": `http://dota2.gamepedia.com/${hero_obj.format_name.replace(/ /g, "_")}`,
             "icon_url": `http://cdn.dota2.com/apps/dota2/images/heroes/${hero_obj.true_name}_vert.jpg`
         },
         "footer": {

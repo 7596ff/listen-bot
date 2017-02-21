@@ -24,7 +24,7 @@ module.exports = item => {
     return {
         "author": {
             "name": item.format_name,
-            "url": `http://dota2.gamepedia.com/${item.format_name.split(" ").join("_")}`,
+            "url": `http://dota2.gamepedia.com/${item.format_name.replace(/ /g, "_")}`,
             "icon_url": `http://cdn.dota2.com/apps/dota2/images/items/${item.true_name}_lg.png`
         },
         "fields": [{

@@ -1,22 +1,5 @@
 const match_embed = require("../embeds/match");
-
-function check_if_registered(client, dota_id) {
-    return new Promise((resolve) => {
-        client.pg.query({
-            "text": "SELECT * FROM public.users WHERE dotaid = $1",
-            "values": [dota_id]
-        }).then(res => {
-            if (res.rowCount != 0) {
-                resolve({
-                    "discord_id": res.rows[0].id,
-                    "dota_id": res.rows[0].dotaid
-                });
-            } else {
-                resolve(undefined);
-            }
-        });
-    });
-}
+const check_if_registered = require("../util/check_if_registered");
 
 function send_message(message, client, helper, match_data, origin) {
     let queries = [];

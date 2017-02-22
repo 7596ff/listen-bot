@@ -1,7 +1,7 @@
 {
     "cmds": {
         "hero": ["hero", "abilities", "skills", "spells"],
-        "patch": ["patch", "patchnotes", "notes"],
+        "patch": ["patch", "patchnotes", "notes", "parch"],
         "talents": ["talents", "talent"],
         "ability": ["ability", "skill", "spell"],
         "item": ["item"],

@@ -6,6 +6,7 @@ module.exports = (client, history) => {
         let queries = [check_if_registered(client, history.p1), check_if_registered(client, history.p2)];
 
         Promise.all(queries).then(res => {
+            if (!res[0] || !res[1]) reject("couldn't find one of the players fsr");
             embed.description = `History between <@${res.find(person => person.dota_id == history.p1).discord_id}> and <@${res.find(person => person.dota_id == history.p2).discord_id}>`;
             embed.fields = [{
                 "name": "Same Team",

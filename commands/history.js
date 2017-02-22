@@ -78,6 +78,9 @@ module.exports = (message, client, helper) => {
                     message.channel.createMessage({ "embed": embed })
                         .then(() => helper.log(message, "sent history embed"))
                         .catch(err => helper.handle(message, err));
+                }).catch(err => {
+                    message.channel.createMessage("Something went wrong. Check the spelling of the players and try again.");
+                    helper.log(message, err);
                 });
             }).catch(err => {
                 message.channel.createMessage("Something went wrong.");

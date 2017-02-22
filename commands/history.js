@@ -41,6 +41,12 @@ module.exports = (message, client, helper) => {
 
         Promise.all(queries).then(results => {
             results = results.sort();
+
+            if (results[0] == results[1]) {
+                message.channel.createMessage("I don't have enough data for this command!");
+                return;
+            }
+
             let constraints = results.length == 2 ? {
                 "included_account_id": results[1]
             } : {};

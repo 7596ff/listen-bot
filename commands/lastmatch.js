@@ -41,7 +41,7 @@ module.exports = (message, client, helper) => {
                     message.channel.createMessage("This user's account is private.");
                     return;
                 }
-            })
+            });
 
             helper.log(message, `lastmatch: ${results.join(", ")}`);
             client.mika.getPlayerMatches(results[0], {

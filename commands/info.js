@@ -14,7 +14,7 @@ module.exports = (message, client, helper) => {
 
         let gitlinks = err ? ["rip github"] : response.body.slice(0, 4).map(commit => {
             let cmsg = commit.commit.message.slice(0, 40).split("\n")[0];
-            return `[\`${commit.sha.slice(0, 7)}\`](${commit.html_url}) - ${cmsg}${cmsg.length > 40 ? "..." : ""}`
+            return `[\`${commit.sha.slice(0, 7)}\`](${commit.html_url}) - ${cmsg}${cmsg.length > 40 ? "..." : ""}`;
         });
 
         message.channel.createMessage({

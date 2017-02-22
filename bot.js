@@ -261,8 +261,11 @@ client.steam_client.on("logOnResponse", () => {
 
 client.steam_client.once("logOnResponse", () => {
     util.log("logged on to steam.");
-    util.log("connecting to discord...");
-    client.connect();
+});
+
+client.steam_client.on("error", (err) => {
+    util.log(err);
+    client.steam_client.connect();
 });
 
 client.steam_friends.on("friend", (id, relationship) => {
@@ -329,12 +332,12 @@ client.redis.on("ready", () => {
         }
 
         util.log("pg ready.");
+        util.log("conncting to discord...");
+        client.connect();
+
         if (config.steam_enabled) {
             util.log("conncting to steam...");
             client.steam_client.connect();
-        } else {
-            util.log("conncting to discord...");
-            client.connect();
         }
     });
 });

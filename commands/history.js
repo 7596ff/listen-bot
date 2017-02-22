@@ -73,7 +73,7 @@ module.exports = (message, client, helper) => {
                         p1_team == match.radiant_win ? data.against[results[0]] += 1 : data.against[results[1]] += 1;
                     }
                 });
-                console.log(data)
+
                 embed_history(client, data).then(embed => {
                     message.channel.createMessage({ "embed": embed })
                         .then(() => helper.log(message, "sent history embed"))
@@ -82,7 +82,7 @@ module.exports = (message, client, helper) => {
             }).catch(err => {
                 message.channel.createMessage("Something went wrong.");
                 helper.log(message, err);
-            })
+            });
         }).catch(err => {
             if (err.err) {
                 message.channel.createMessage(err.text || "Something went wrong.");

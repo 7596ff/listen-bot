@@ -12,6 +12,7 @@
         "playerinfo": ["playerinfo", "profile"],
         "matchinfo": ["matchinfo", "gameinfo"],
         "lastmatch": ["lastmatch", "lastgame"],
+        "history": ["history"],
         "info": ["info", "about"],
         "invite": ["invite"],
         "botstats": ["botstats"],

@@ -1,5 +1,4 @@
 const check_if_registered = require("../util/check_if_registered");
-const util = require("util")
 
 module.exports = (client, history) => {
     return new Promise((resolve, reject) => {

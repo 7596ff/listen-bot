@@ -257,9 +257,6 @@ client.steam_client.on("connected", () => {
 
 client.steam_client.on("logOnResponse", () => {
     client.steam_friends.setPersonaState(Steam.EPersonaState.Online);
-});
-
-client.steam_client.once("logOnResponse", () => {
     util.log("logged on to steam.");
 });
 

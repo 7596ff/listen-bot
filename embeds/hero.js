@@ -1,11 +1,9 @@
-const capitalize_first = require("../util/capitalize_first");
-
 module.exports = hero => {
     let attrs = {
         str: `${hero.basestr} + ${hero.strgain}`,
         agi: `${hero.baseagi} + ${hero.agigain}`,
         int: `${hero.baseint} + ${hero.intgain}`
-    }
+    };
 
     let val1 = [
         `Lv.1 Damage: ${hero.damage1}`,
@@ -33,7 +31,7 @@ module.exports = hero => {
     return {
         "author": {
             "name": hero.format_name,
-            "url": `http://dota2.gamepedia.com/${hero.format_name.replace(" ", "_")}`,
+            "url": `http://dota2.gamepedia.com/${hero.format_name.replace(/ /g, "_")}`,
             "icon_url": `http://cdn.dota2.com/apps/dota2/images/heroes/${hero.true_name}_vert.jpg`
         },
         "fields": [{

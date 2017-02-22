@@ -1,5 +1,4 @@
 const resolve_user = require("./resolve_user");
-const search_members = require("./search_members");
 
 function handle(reject, err, username, prefix) {
     if (err == "nouser") {

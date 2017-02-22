@@ -40,6 +40,5 @@ module.exports = (message, client, helper) => {
         } else {
             helper.log(message, err.toString());
         }
-    })
-    
+    });
 };

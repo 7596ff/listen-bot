@@ -40,6 +40,7 @@ module.exports = (message, client, helper) => {
         }
 
         Promise.all(queries).then(results => {
+            helper.log(message, `history: ${results[0]} and ${results[1]}`);
             results = results.sort();
 
             if (results[0] == results[1]) {

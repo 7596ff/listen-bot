@@ -109,6 +109,20 @@
             "finds the last match you played with a list of registered users."
         ],
         "example": "lastmatch with @hdcbdhbfgt"
+    }, {
+        "name": "history",
+        "usage": "history <person 1> <person 2>",
+        "text": [
+            "checks the winrate and amount of games between two players and displays it."
+        ],
+        "example": "history Frascamelon EPICish"
+    }, {
+        "name": "history with",
+        "usage": "history with <person>",
+        "text": [
+            "checks the winrate and amount of games with you and a specified person."
+        ],
+        "example": "history with Mike"
     }],
     "meta": [{
         "name": "info",

@@ -176,7 +176,7 @@ function invoke(message, client, helper, command) {
 client.on("messageCreate", message => {
     if (!message.channel.guild) return;
     if (message.member && message.member.bot) return;
-    if (message.author.id == client.user.id) return;
+    if (message.author && message.author.id == client.user.id) return;
 
     if (!message.author) {
         util.log("no author");

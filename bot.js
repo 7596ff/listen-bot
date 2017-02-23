@@ -199,11 +199,7 @@ client.on("messageCreate", message => {
 
             let command = message.content.split(" ").shift().toLowerCase();
 
-            for (let cmd in consts.cmds) {
-                if (consts.cmds[cmd].includes(command)) {
-                    command = consts.cmds[cmd][0];
-                }
-            }
+            for (let cmd in consts.cmds) if (consts.cmds[cmd].includes(command)) command = cmd;
 
             let disabled_list = message.gcfg.disabled ? message.gcfg.disabled[message.channel.id] : undefined;
             if (disabled_list && disabled_list.includes(command)) return;
@@ -317,7 +313,7 @@ client.steam_friends.on("friendMsg", (steam_id, message) => {
     });
 });
 
-// connect to everthing in order
+// connect to everthing 
 client.redis.on("ready", () => {
     util.log("redis ready.");
     util.log("connecting to pg...");

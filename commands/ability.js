@@ -9,6 +9,7 @@ function escapeRegExp(string){
 
 module.exports = (message, client, helper) => {
     let options = message.content.split(" ").slice(1);
+    helper.log(message, `ability: ${options.join(" ")}`);
     let hero_name = false;
 
     let key = options.find(option => {
@@ -53,10 +54,12 @@ module.exports = (message, client, helper) => {
         if (conflicts.length > 0) {
             message.channel.createMessage(`Ability not found. Possible conflicts: ${conflicts.map(conflict => conflict.name).join(", ")}`).then(new_message => {
                 setTimeout(() => { new_message.delete(); }, 10000);
+                helper.log(message, "sent not found with conflicts");
             }).catch(err => helper.handle(message, err));
         } else {
             message.channel.createMessage("Couldn't find anything.").catch(err => helper.handle(message, err)).then(new_message => {
                 setTimeout(() => { new_message.delete(); }, 10000);
+                helper.log(message, "sent not found");
             });
         }
     }

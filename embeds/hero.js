@@ -47,7 +47,7 @@ module.exports = hero => {
             "value": val3.map(item => `**${item.split(": ")[0]}**: ${item.split(": ")[1]}`).join("\n"),
             "inline": true
         }, {
-            "name": "Abilities in no particular order",
+            "name": "Abilities",
             "value": hero.abilities.join(", "),
             "inline": false
         }]

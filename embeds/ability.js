@@ -1,4 +1,3 @@
-const abilities = require("../json/abilities.json");
 const clean = require("../util/clean");
 const capitalize_first = require("../util/capitalize_first");
 const is_discord_shit = require("../json/config.json").is_discord_shit;

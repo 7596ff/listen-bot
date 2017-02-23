@@ -1,11 +1,10 @@
 const abilities = require("../json/abilities.json");
 const short_heroes = require("../json/short_heroes.json");
 
-const capitalize_first = require("../util/capitalize_first");
 const ability_embed = require("../embeds/ability");
 
 function escapeRegExp(string){
-  return string.replace(/([.*+?^=!:${}()|\[\]\/\\])/g, "\\$1");
+    return string.replace(/([.*+?^=!:${}()|\[\]\/\\])/g, "\\$1");
 }
 
 module.exports = (message, client, helper) => {
@@ -53,11 +52,11 @@ module.exports = (message, client, helper) => {
         let conflicts = abilities.filter(ability => ability.name.toLowerCase().match(options.join(" ")));
         if (conflicts.length > 0) {
             message.channel.createMessage(`Ability not found. Possible conflicts: ${conflicts.map(conflict => conflict.name).join(", ")}`).then(new_message => {
-                setTimeout(() => { new_message.delete() }, 10000);
-            }).catch(err => helper.handle(message, err));;
+                setTimeout(() => { new_message.delete(); }, 10000);
+            }).catch(err => helper.handle(message, err));
         } else {
             message.channel.createMessage("Couldn't find anything.").catch(err => helper.handle(message, err)).then(new_message => {
-                setTimeout(() => { new_message.delete() }, 10000);
+                setTimeout(() => { new_message.delete(); }, 10000);
             });
         }
     }

@@ -26,11 +26,15 @@ module.exports = (message, client, helper) => {
             if (found_any) {
                 queries.push(resolve_dota_id(message, message.author.id));
             } else {
-                message.channel.createMessage("Couldn't find any server members in your match!");
+                message.channel.createMessage("Couldn't find any server members in your match!").catch(err => helper.handle(message, err));
                 return;
             }
         } else if (options.length > 1) {
-            queries.push(resolve_dota_id(message));
+            let names = options.slice(1);
+            let results = search_members(message.channel.guild.members, names);
+            if (results.length > 0) {
+                queries.push(...results.map(result => resolve_dota_id(message, result)));
+            }
         } else {
             queries.push(resolve_dota_id(message, message.author.id));
         }
@@ -38,7 +42,7 @@ module.exports = (message, client, helper) => {
         Promise.all(queries).then(results => {
             results.forEach(result => {
                 if (result.length < 1) {
-                    message.channel.createMessage("This user's account is private.");
+                    message.channel.createMessage("This user's account is private.").catch(err => helper.handle(message, err));
                     return;
                 }
             });
@@ -55,18 +59,18 @@ module.exports = (message, client, helper) => {
                 }
             }).catch(err => {
                 helper.log(message, err);
-                message.channel.createMessage("Something went wrong.");
+                message.channel.createMessage("Something went wrong.").catch(err => helper.handle(message, err));
             });
         }).catch(err => {
             if (err.err) {
-                message.channel.createMessage(err.text || "Something went wrong.");
+                message.channel.createMessage(err.text || "Something went wrong.").catch(err => helper.handle(message, err));
                 helper.log(message, err.text);
                 helper.log(message, err.err);
             } else if (err.text) {
-                message.channel.createMessage(err.text);
+                message.channel.createMessage(err.text).catch(err => helper.handle(message, err));
                 helper.log(message, err.log);
             } else {
-                message.channel.createMessage("Something went wrong.");
+                message.channel.createMessage("Something went wrong.").catch(err => helper.handle(message, err));
                 helper.log(message, err);
             }
         });

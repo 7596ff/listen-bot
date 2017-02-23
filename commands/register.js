@@ -8,12 +8,12 @@ module.exports = (message, client, helper) => {
     let url = options[1];
 
     if (!client.steam_client.connected) {
-        message.channel.createMessage("Steam is down or registering is disabled at the moment, sorry about that.");
+        message.channel.createMessage("Steam is down or registering is disabled at the moment, sorry about that.").catch(err => helper.handle(message, err));
         return;
     }
 
     if (!url) {
-        message.channel.createMessage("Please give me something to register!");
+        message.channel.createMessage("Please give me something to register!").catch(err => helper.handle(message, err));
         return;
     }
 
@@ -22,7 +22,7 @@ module.exports = (message, client, helper) => {
 
         client.mika.getPlayer(acc_id).then(res => {
             if (!res.profile) {
-                message.channel.createMessage("This steam account is private! I can't register it!");
+                message.channel.createMessage("This steam account is private! I can't register it!").catch(err => helper.handle(message, err));
                 helper.log(message, "  failed on private steam account");
                 return;
             }
@@ -43,13 +43,11 @@ module.exports = (message, client, helper) => {
                             `If you didn't get a friend request, try sending me a request as well: <${client.config.steam_acc_url}>`
                         ].join("\n")).then(() => {
                             util.log("  sent friend req, awaiting code");
-                        }).catch(err => {
-                            helper.handle(message, err);
-                        });
+                        }).catch(err => helper.handle(message, err));
                     });
                 });
             } else {
-                client.createMessage("I couldn't find a steam ID associated with this user!");
+                client.createMessage("I couldn't find a steam ID associated with this user!").catch(err => helper.handle(message, err));
             }
         }).catch(err => {
             helper.log(message, "something went wrong with mika");
@@ -57,7 +55,7 @@ module.exports = (message, client, helper) => {
         });
     }).catch(err => {
         if (err == "nosteam") {
-            message.channel.createMessage("I couldn't find a steam profile in that message!");
+            message.channel.createMessage("I couldn't find a steam profile in that message!").catch(err => helper.handle(message, err));
         } else {
             util.log("something went wrong resolving a url");
             util.log(err);

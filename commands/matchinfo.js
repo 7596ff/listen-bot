@@ -1,4 +1,4 @@
-const match_embed = require("../embeds/match");
+.catch(err => helper.handle(message, err))const match_embed = require("../embeds/match");
 const check_if_registered = require("../util/check_if_registered");
 
 function send_message(message, client, helper, match_data, origin) {
@@ -47,7 +47,7 @@ module.exports = (message, client, helper) => {
     }
 
     if (isNaN(match_id)) {
-        message.channel.createMessage("I couldn't find a match ID in your message!");
+        message.channel.createMessage("I couldn't find a match ID in your message!").catch(err => helper.handle(message, err));
         return;
     }
 
@@ -69,7 +69,7 @@ module.exports = (message, client, helper) => {
                         client.redis.expire(`matchinfo:${match_id}`, 604800);
                     });
                 }).catch(err => {
-                    message.channel.createMessage("Something went wrong.");
+                    message.channel.createMessage("Something went wrong.").catch(err => helper.handle(message, err));
                     helper.log(message, "  something went wrong with mika");
                     helper.log(message, err);
                 });

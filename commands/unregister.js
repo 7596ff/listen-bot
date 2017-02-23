@@ -8,14 +8,14 @@ module.exports = (message, client, helper) => {
                 "text": "DELETE FROM public.users WHERE id = $1;",
                 "values": [message.author.id]
             }).then(() => {
-                message.channel.createMessage(":ok_hand: Deleted. Sorry to see you go...");
+                message.channel.createMessage(":ok_hand: Deleted. Sorry to see you go...").catch(err => helper.handle(message, err));
                 helper.log(message, "deleted a user");
             });
         } else {
-            message.channel.createMessage("You don't have a registration with me.");
+            message.channel.createMessage("You don't have a registration with me.").catch(err => helper.handle(message, err));
         }
     }).catch(err => {
-        message.channel.createMessage("Couldn't delete. Contact alexa#0199");
+        message.channel.createMessage("Couldn't delete. Contact alexa#0199").catch(err => helper.handle(message, err));
         helper.log(message, "something went wrong deleting from users");
         helper.log(err);
     });

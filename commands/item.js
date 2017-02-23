@@ -19,6 +19,7 @@ module.exports = (message, client, helper) => {
                 if (too_short.includes(term)) break loop2;
                 
                 search = items.filter(item => {
+                    if (item.true_name == "sange_and_yasha" & (term.toLowerCase() == "yasha" | term.toLowerCase() == "sange")) return false;
                     if (too_short.includes(item)) return false;
                     if (item.format_name.toLowerCase().match(term) && term.length > 2) return true;
                     if ((item.aliases || []).includes(term)) return true;

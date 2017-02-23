@@ -58,6 +58,6 @@ module.exports = (message, client, helper) => {
             setTimeout(() => {
                 new_message.delete();
             }, 10000);
-        });
+        }).catch(err => helper.handle(message, err));
     }
 };

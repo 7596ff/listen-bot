@@ -35,7 +35,7 @@ module.exports = (message, client, helper) => {
         }
 
         if (!found_any) {
-            message.channel.createMessage("I don't have enough data for this command!");
+            message.channel.createMessage("I don't have enough data for this command!").catch(err => helper.handle(message, err));
             return;
         }
 
@@ -44,7 +44,7 @@ module.exports = (message, client, helper) => {
             results = results.sort();
 
             if (results[0] == results[1]) {
-                message.channel.createMessage("I don't have enough data for this command!");
+                message.channel.createMessage("I don't have enough data for this command!").catch(err => helper.handle(message, err));
                 return;
             }
 
@@ -86,23 +86,23 @@ module.exports = (message, client, helper) => {
                         .then(() => helper.log(message, "sent history embed"))
                         .catch(err => helper.handle(message, err));
                 }).catch(err => {
-                    message.channel.createMessage("Something went wrong. Check the spelling of the players and try again.");
+                    message.channel.createMessage("Something went wrong. Check the spelling of the players and try again.").catch(err => helper.handle(message, err));
                     helper.log(message, err);
                 });
             }).catch(err => {
-                message.channel.createMessage("Something went wrong.");
+                message.channel.createMessage("Something went wrong.").catch(err => helper.handle(message, err));
                 helper.log(message, err);
             });
         }).catch(err => {
             if (err.err) {
-                message.channel.createMessage(err.text || "Something went wrong.");
+                message.channel.createMessage(err.text || "Something went wrong.").catch(err => helper.handle(message, err));
                 helper.log(message, err.text);
                 helper.log(message, err.err);
             } else if (err.text) {
-                message.channel.createMessage(err.text);
+                message.channel.createMessage(err.text).catch(err => helper.handle(message, err));
                 helper.log(message, err.log);
             } else {
-                message.channel.createMessage("Something went wrong.");
+                message.channel.createMessage("Something went wrong.").catch(err => helper.handle(message, err));
                 helper.log(message, err);
             }
         });

@@ -1,73 +1,64 @@
-const find_hero = require("../util/find_hero");
-const keys = require("../json/keys.json");
 const abilities = require("../json/abilities.json");
-const alike_keys = require("../json/alike_keys.json");
+const short_heroes = require("../json/short_heroes.json");
 
 const capitalize_first = require("../util/capitalize_first");
 const ability_embed = require("../embeds/ability");
 
-function create_message(message, client, helper, true_hero, ability, key) {
-    if (key == ability) {
-        helper.log(message, `ability: hero name (${true_hero}) and ability (${ability})`);
-    } else {
-        helper.log(message, `ability: hero name (${true_hero}) and ability (${key}: ${ability})`);
-    }
-    message.channel.createMessage({
-        embed: ability_embed(true_hero, ability)
-    }).then(() => {
-        helper.log(message, "  sent ability message");
-    }).catch(err => helper.handle(message, err));
+function escapeRegExp(string){
+  return string.replace(/([.*+?^=!:${}()|\[\]\/\\])/g, "\\$1");
 }
 
 module.exports = (message, client, helper) => {
-    let options = message.content.toLowerCase().split(" ");
-    options.shift();
-    for (let i = options.length; i > 0; i--) {
-        let key = options.slice(options.length - i, options.length).join(" ");
-        let hero = options.slice(0, options.length - i).join(" ");
+    let options = message.content.split(" ").slice(1);
+    let hero_name = false;
 
-        find_hero(hero).then(true_hero => {
-            if (true_hero == "invoker" && key.length == 3) key = key.split("").sort().join("");
-            if (i > 0 && key in keys[true_hero]) {
-                let ability = keys[true_hero][key];
-                create_message(message, client, helper, true_hero, ability, key);
-                i = 0;
-            }
+    let key = options.find(option => {
+        if (["q", "w", "e", "d", "f", "r"].includes(option.toLowerCase())) return true;
+        if (option.toLowerCase().match(/[qwe][qwe][qwe]/) || option.toLowerCase() == "emp") return true;
+    });
+    if (key) options.splice(options.indexOf(key), 1);
 
-            if (i > 0 && capitalize_first(key) in abilities[true_hero]) {
-                create_message(message, client, helper, true_hero, capitalize_first(key), key);
-                i = 0;
-            }
-        }).catch(() => {
-            if (key.length > 1) {
-                if (i > 0 && key in alike_keys) {
-                    let content = alike_keys[key].length > 1 ? `Did you mean: ${alike_keys[key].join(", ")}` : alike_keys[key][0];
-
-                    message.channel.createMessage(content).then(() => {
-                        helper.log(message, `sent redirect for ${key}`);
-                    });
-                    i = 0;
-                } else {
-                    for (let key_obj in keys) {
-                        if (i > 0 && keys[key_obj][key]) {
-                            create_message(message, client, helper, key_obj, keys[key_obj][key], key);
-                            i = 0;
-                        } else if (i > 0 && keys[key_obj][key.split("").sort().join("")]) {
-                            create_message(message, client, helper, key_obj,
-                                keys[key_obj][key.split("").sort().join("")], key);
-                            i = 0;
-                        }
-                    }
-
-                    for (let hero_obj in abilities) {
-                        if (i > 0 && abilities[hero_obj][capitalize_first(key)]) {
-                            create_message(message, client, helper, hero_obj,
-                                capitalize_first(key), capitalize_first(key));
-                            i = 0;
+    if (key && key.length == 1) {
+        for (let i = 0; i <= options.length; i++) {
+            for (let j = 0; j <= options.length; j++) {
+                if (i < j) {
+                    for (let hero in short_heroes) {
+                        let term = options.slice(i, j).join(" ");
+                        if (short_heroes[hero].includes(term)) {
+                            hero_name = hero;
                         }
                     }
                 }
             }
-        });
+        }
+    } else if (key && key.length == 3) {
+        hero_name = "invoker";
+        if (key == "emp") key = "www";
+        key = key.split("").sort().join("");
+    }
+
+    let skill = abilities.filter(ability => {
+        if (hero_name) {
+            if (ability.hero_name == hero_name && ability.key == key.toLowerCase()) return true;
+        } else {
+            return RegExp(`\\b${escapeRegExp(options.join(" ").replace(/'/g, ""))}\\b`, "i").test(ability.name.toLowerCase().replace(/'/g, ""));
+        }
+    });
+
+    if (skill.length == 1) {
+        message.channel.createMessage({ "embed": ability_embed(skill[0]) })
+            .then(() => helper.log(message, "sent ability embed"))
+            .catch(err => helper.handle(message, err));
+    } else {
+        let conflicts = abilities.filter(ability => ability.name.toLowerCase().match(options.join(" ")));
+        if (conflicts.length > 0) {
+            message.channel.createMessage(`Ability not found. Possible conflicts: ${conflicts.map(conflict => conflict.name).join(", ")}`).then(new_message => {
+                setTimeout(() => { new_message.delete() }, 10000);
+            }).catch(err => helper.handle(message, err));;
+        } else {
+            message.channel.createMessage("Couldn't find anything.").catch(err => helper.handle(message, err)).then(new_message => {
+                setTimeout(() => { new_message.delete() }, 10000);
+            });
+        }
     }
 };

@@ -1,4 +1,3 @@
-.catch(err => helper.handle(message, err))const match_embed = require("../embeds/match");
 const check_if_registered = require("../util/check_if_registered");
 
 function send_message(message, client, helper, match_data, origin) {

@@ -49,7 +49,7 @@ const skills = [
 ];
 
 module.exports = (match_data) => {
-    let heading = ["Hero", "K/D/A", "LH/D", "HD", "HH", "GPM", "XPM", "\u200b"];
+    let heading = ["Hero", "K/D/A", "LH/D", "HD", "TD", "GPM", "XPM", "\u200b"];
     let table = [];
     let ftable = [];
     let highest = new Array(9).fill(0);
@@ -59,7 +59,7 @@ module.exports = (match_data) => {
             `${player.kills}/${player.deaths}/${player.assists}`,
             `${player.last_hits}/${player.denies}`,
             player.hero_damage < 1000 ? player.hero_damage.toString() : `${(player.hero_damage / 1000).toFixed(1)}k`,
-            player.hero_healing < 1000 ? player.hero_healing.toString() : `${(player.hero_healing / 1000).toFixed(1)}k`,
+            player.tower_damage < 1000 ? player.tower_damage.toString() : `${(player.tower_damage / 1000).toFixed(1)}k`,
             player.gold_per_min.toString(),
             player.xp_per_min.toString(),
             player.mention_str || player.personaname || "Unknown"

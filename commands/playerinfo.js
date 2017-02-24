@@ -136,26 +136,11 @@ module.exports = (message, client, helper) => {
         let options = message.content.split(" ");
         options.shift();
         let acc_id = options[0];
-        let name = options.join(" ");
-        let inguild = message.channel.guild.members.find(member => (member.nick || member.username) == name);
-        let inclient = client.users.find(user => user.username == name);
+        let name = options.join(" ").toLowerCase();
+        let inguild = message.channel.guild.members.find(member => (member.nick || member.username).toLowerCase() == name || member.username.toLowerCase() == name);
 
         if (inguild) {
             resolve_user(client, inguild.id).then(acc_id => {
-                send_message(message, client, helper, acc_id);
-            }).catch(err => {
-                if (err == "nouser") {
-                    message.channel.createMessage(`That user has not registered with me yet! Try \`${message.gcfg.prefix}help register\`.`);
-                } else {
-                    message.channel.createMessage("Something went wrong selecting this user from the database.");
-                    helper.log(message, err);
-                }
-            });
-            return;
-        }
-
-        if (inclient) {
-            resolve_user(client, inclient.id).then(acc_id => {
                 send_message(message, client, helper, acc_id);
             }).catch(err => {
                 if (err == "nouser") {

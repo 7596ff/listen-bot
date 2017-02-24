@@ -8,35 +8,27 @@ module.exports = (message, client, helper) => {
         let options = message.content.split(" ");
         let queries = [];
 
-        if (message.content.match("with")) {
-            let found_any = false;
+        let found_any = false;
 
-            for (let ping in message.mentions) {
-                queries.push(resolve_dota_id(message, message.mentions[ping].id));
-                found_any = true;
-            }
+        for (let ping in message.mentions) {
+            queries.push(resolve_dota_id(message, message.mentions[ping].id));
+            found_any = true;
+        }
 
-            let names = options.slice(options.indexOf("with") + 1);
-            let results = search_members(message.channel.guild.members, names);
-            if (results.length > 0) {
-                queries.push(...results.map(result => resolve_dota_id(message, result)));
-                found_any = true;
-            }
+        let names = options.slice(1);
+        let results = search_members(message.channel.guild.members, names);
+        if (results.length > 0) {
+            queries.push(...results.map(result => resolve_dota_id(message, result)));
+            found_any = true;
+        }
 
-            if (found_any) {
-                queries.push(resolve_dota_id(message, message.author.id));
-            } else {
-                message.channel.createMessage("Couldn't find any server members in your match!").catch(err => helper.handle(message, err));
-                return;
-            }
-        } else if (options.length > 1) {
-            let names = options.slice(1);
-            let results = search_members(message.channel.guild.members, names);
-            if (results.length > 0) {
-                queries.push(...results.map(result => resolve_dota_id(message, result)));
-            }
-        } else {
+        if ((found_any && options[1] == "with") || (!found_any && options[1] != "with")) {
             queries.push(resolve_dota_id(message, message.author.id));
+        }
+
+        if (!found_any && options[1] == "with") {
+            message.channel.createMessage("Couldn't find any server members in your match!").catch(err => helper.handle(message, err));
+            return;
         }
 
         Promise.all(queries).then(results => {

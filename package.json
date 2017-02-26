@@ -22,7 +22,7 @@
   "dependencies": {
     "bignumber.js": "4.0.0",
     "d": "1.0.0",
-    "eris": "0.5.2",
+    "eris": "0.6.0",
     "mika": "github:bippum/mika#master",
     "needle": "1.4.5",
     "node-schedule": "1.2.0",
@@ -31,7 +31,6 @@
     "pretty-ms": "2.1.0",
     "randomstring": "1.1.5",
     "redis": "2.6.5",
-    "steam": "1.4.0",
-    "uws": "0.13.0"
+    "steam": "1.4.0"
   }
 }

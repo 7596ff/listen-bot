@@ -214,7 +214,7 @@ client.on("messageCreate", message => {
                             client.redis.ttl(climit, (err, reply) => {
                                 message.channel.createMessage(`${message.channel.mention}, please cool down! ${reply} seconds left.`).then(new_message => {
                                     setTimeout(() => { new_message.delete(); }, reply * 1000);
-                                }).catch(err => helper.handle(message, err));
+                                }).catch(err => _helper.handle(message, err));
                                 client.redis.set(climit, "2");
                                 client.redis.expire(climit, reply);
                             });
@@ -226,7 +226,7 @@ client.on("messageCreate", message => {
                                     client.redis.ttl(mlimit, (err, reply) => {
                                         message.channel.createMessage(`${message.author.mention}, please cool down! ${reply} seconds left.`).then(new_message => {
                                             setTimeout(() => { new_message.delete(); }, reply * 1000);
-                                        }).catch(err => helper.handle(message, err));
+                                        }).catch(err => _helper.handle(message, err));
                                         client.redis.set(mlimit, "2");
                                         client.redis.expire(mlimit, reply);
                                     });

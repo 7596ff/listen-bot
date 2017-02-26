@@ -11,8 +11,8 @@ module.exports = (client, history) => {
             embed.fields = [{
                 "name": "Same Team",
                 "value": [
-                    `**Total Games:** ${history.with}`,
-                    `**Winrate Together:** ${(Math.round((history.winwith / history.with) * 10000)) / 100}%`
+                    `**Win/Loss:** ${history.winwith}/${history.with - history.winwith} (${history.with} games)`,
+                    `**Winrate:** ${(Math.round((history.winwith / history.with) * 10000)) / 100}%`
                 ].join("\n"),
                 "inline": false
             }, {

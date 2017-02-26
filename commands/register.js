@@ -1,4 +1,3 @@
-const util = require("util");
 const randomstring = require("randomstring");
 
 const resolve_steam_url = require("../util/resolve_steam_url");
@@ -42,7 +41,7 @@ module.exports = (message, client, helper) => {
                             "",
                             `If you didn't get a friend request, try sending me a request as well: <${client.config.steam_acc_url}>`
                         ].join("\n")).then(() => {
-                            util.log("  sent friend req, awaiting code");
+                            helper.log(message, "sent friend req, awaiting code");
                         }).catch(err => helper.handle(message, err));
                     });
                 });
@@ -56,9 +55,13 @@ module.exports = (message, client, helper) => {
     }).catch(err => {
         if (err == "nosteam") {
             message.channel.createMessage("I couldn't find a steam profile in that message!").catch(err => helper.handle(message, err));
+        } else if (err.success == 42) {
+            message.channel.createMessage("I couldn't find a steam profile associated with that link!").catch(err => helper.handle(message, err));
+
         } else {
-            util.log("something went wrong resolving a url");
-            util.log(err);
+            message.channel.createMessage("Something went wrong resolving this profile.").catch(err => helper.handle(message, err));
+            helper.log(message, "something went wrong resolving a url");
+            helper.log(message, err);
         }
     });
 };

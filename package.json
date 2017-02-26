@@ -1,0 +1,37 @@
+{
+  "name": "listen-bot",
+  "version": "0.0.1",
+  "description": "a dota 2 bot",
+  "main": "bot.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bippum/listen-bot.git"
+  },
+  "keywords": [
+    "dota2"
+  ],
+  "author": "alexa",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bippum/listen-bot/issues"
+  },
+  "homepage": "https://github.com/bippum/listen-bot#readme",
+  "dependencies": {
+    "bignumber.js": "4.0.0",
+    "d": "1.0.0",
+    "eris": "0.5.2",
+    "mika": "github:bippum/mika#master",
+    "needle": "1.4.5",
+    "node-schedule": "1.2.0",
+    "pad": "1.1.0",
+    "pg": "6.1.2",
+    "pretty-ms": "2.1.0",
+    "randomstring": "1.1.5",
+    "redis": "2.6.5",
+    "steam": "1.4.0",
+    "uws": "0.13.0"
+  }
+}

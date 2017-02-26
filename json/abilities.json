@@ -11076,7 +11076,8 @@
             "Short distance teleportation that allows Anti-Mage to move in and out of combat."
         ],
         "hero_name": "antimage",
-        "name": "Blink"
+        "name": "Blink",
+        "key": "w"
     },
     {
         "stats": [

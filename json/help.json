@@ -95,20 +95,15 @@
         "aliases": ["gameinfo"]
     }, {
         "name": "lastmatch",
-        "usage": "lastmatch <@mention or name>",
+        "usage": "lastmatch [with <person>] OR [of <person>] [as <hero>]",
         "text": [
-            "looks up your last match (if you are registered) and returns it.",
-            "also can be used to look up other user's matches."
+            "looks up the last match someone played.",
+            "flags: \n`with <player>`: adds you to the search of players",
+            "\n`of <player>`: only looks for the last match between these players",
+            "\n`as <hero>`: adds a hero filter to the first player in the search is"
         ],
         "example": "lastmatch Moo",
         "aliases": ["lastgame"]
-    }, {
-        "name": "lastmatch with",
-        "usage": "lastmatch with @mention",
-        "text": [
-            "finds the last match you played with a list of registered users."
-        ],
-        "example": "lastmatch with @hdcbdhbfgt"
     }, {
         "name": "history",
         "usage": "history <person 1> <person 2>",

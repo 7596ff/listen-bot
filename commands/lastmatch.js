@@ -65,6 +65,11 @@ module.exports = (message, client, helper) => {
             return;
         }
 
+        if (!has_with && !has_as && !has_of) {
+            message.channel.createMessage(`Whoa! Please use the new format for finding the last match of someone! Try \`${message.gcfg.prefix}lastmatch of <someone>\`.`);
+            return;
+        }
+
         Promise.all(queries).then(results => {
             results.forEach(result => {
                 if (result.length < 1) {

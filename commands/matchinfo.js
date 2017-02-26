@@ -1,5 +1,5 @@
 const check_if_registered = require("../util/check_if_registered");
-const match_embed = require("../embeds/match")
+const match_embed = require("../embeds/match");
 
 function send_message(message, client, helper, match_data, origin) {
     let queries = [];

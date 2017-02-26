@@ -25,7 +25,7 @@ client.commands = {};
 client.all_usage = require("./json/usage.json");
 client.usage = { "all": 0 };
 client.mika = new Mika();
-client.redis = redis.createClient();
+client.redis = redis.createClient(config.redisconfig);
 client.pg = new pg.Client(config.pgconfig);
 client.config = config;
 

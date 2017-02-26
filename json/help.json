@@ -97,7 +97,7 @@
         "name": "lastmatch",
         "usage": "lastmatch [with <person>] OR [of <person>] [as <hero>]",
         "text": [
-            "looks up the last match someone played.",
+            "looks up the last match someone played. ",
             "flags: \n`with <player>`: adds you to the search of players",
             "\n`of <player>`: only looks for the last match between these players",
             "\n`as <hero>`: adds a hero filter to the first player in the search is"

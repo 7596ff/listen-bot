@@ -48,7 +48,7 @@ module.exports = (message, client, helper) => {
             helper.handle(message, err);
         });
     }).catch(err => {
-        if (err.not_found) {
+        if (!err) {
             helper.log(message, `hero: couldn't find ${alias}`);
         } else {
             helper.log(message, err.toString());

@@ -35,7 +35,7 @@ module.exports = (message, client, helper) => {
             helper.log(message, "  sent talents message");
         }).catch(err => helper.handle(message, err));
     }).catch(err => {
-        if (err.not_found) {
+        if (!err) {
             helper.log(message, `talents: couldn't find ${hero}}`);
         } else {
             helper.log(message, err.toString());

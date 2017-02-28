@@ -4,6 +4,6 @@ module.exports = (hero_name) => {
     return new Promise((resolve, reject) => {
         for (let hero in short_heroes) if (short_heroes[hero].includes(hero_name)) resolve(hero);
 
-        reject({ "not_found": true });
+        reject(false);
     });
 };

@@ -102,7 +102,7 @@
             "\n`of <player>`: only looks for the last match between these players",
             "\n`as <hero>`: adds a hero filter to the first player in the search is"
         ],
-        "example": "lastmatch Moo",
+        "example": "lastmatch of Moo",
         "aliases": ["lastgame"]
     }, {
         "name": "history",

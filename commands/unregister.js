@@ -15,7 +15,7 @@ module.exports = (message, client, helper) => {
             message.channel.createMessage("You don't have a registration with me.").catch(err => helper.handle(message, err));
         }
     }).catch(err => {
-        message.channel.createMessage("Couldn't delete. Contact alexa#0199").catch(err => helper.handle(message, err));
+        message.channel.createMessage("Couldn't delete. Use --info and contact me.").catch(err => helper.handle(message, err));
         helper.log(message, "something went wrong deleting from users");
         helper.log(err);
     });

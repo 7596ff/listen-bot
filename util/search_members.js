@@ -8,6 +8,7 @@ function search_members(members, terms) {
                 let search = members.find(member => {
                     if (member.username.toLowerCase() === term) return true;
                     if (member.nick && member.nick.toLowerCase() === term) return true;
+                    if (member.id == term.replace(/\D/g, "")) return true;
                 });
                 if (search) res.push(search.id);
             }

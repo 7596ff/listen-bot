@@ -1,11 +1,11 @@
 const search_members = require("./search_members");
 
 function eat(message, options) {
-    return new Promise((resolve, reject) => {
+    return new Promise(resolve => {
         let searches = Object.entries(options).map(entry => entry[0]);
         let responses = {};
 
-        for (search in options) {
+        for (let search in options) {
             let type = options[search];
             let split = message.content.split(" ");
             let not_search = searches.slice(0);
@@ -21,12 +21,12 @@ function eat(message, options) {
             if (first_found) {
                 let res = split.slice(first_found + 1, outer_bound || split.length);
                 switch(type) {
-                    case "string": 
-                        responses[search] = res.join(" ");
-                        break;
-                    case "member": 
-                        responses[search] = search_members(message.channel.guild.members, res);
-                        break;
+                case "string":
+                    responses[search] = res.join(" ");
+                    break;
+                case "member":
+                    responses[search] = search_members(message.channel.guild.members, res);
+                    break;
                 }
             }
         }

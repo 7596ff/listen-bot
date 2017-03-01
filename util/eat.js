@@ -2,7 +2,7 @@ const search_members = require("./search_members");
 
 function eat(message, options) {
     return new Promise(resolve => {
-        let searches = Object.entries(options).map(entry => entry[0]);
+        let searches = Object.keys(options);
         let responses = {};
 
         for (let search in options) {

@@ -1,12 +1,9 @@
 const Eris = require("eris");
-const Steam = require("steam");
 const redis = require("redis");
 const pg = require("pg");
 const config = require("./json/config.json");
 var client = new Eris(config.token, config.options);
-client.steam_client = new Steam.SteamClient();
-client.steam_user = new Steam.SteamUser(client.steam_client);
-client.steam_friends = new Steam.SteamFriends(client.steam_client);
+var sub = redis.createClient(config.redisconfig);
 
 const consts = require("./util/consts.json");
 const stats_helper = require("./util/stats_helper");
@@ -16,7 +13,6 @@ const Helper = require("./util/helper");
 
 const schedule = require("node-schedule");
 const Mika = require("mika");
-const bignumber = require("bignumber.js");
 
 const util = require("util");
 const fs = require("fs");
@@ -28,6 +24,7 @@ client.mika = new Mika();
 client.redis = redis.createClient(config.redisconfig);
 client.pg = new pg.Client(config.pgconfig);
 client.config = config;
+client.steam_connected = false;
 
 for (let cmd in consts.cmds) {
     client.commands[cmd] = require(`./commands/${cmd}`);
@@ -36,14 +33,6 @@ for (let cmd in consts.cmds) {
 }
 
 client.helper = new Helper();
-
-function steam_cleanup(client, dota_id, steam_id, discord_id) {
-    client.steam_friends.removeFriend(steam_id);
-    client.users.get(discord_id).getDMChannel().then(dm_channel => {
-        dm_channel.createMessage(`All set! Dota ID ${dota_id} associated with Discord ID ${discord_id} (<@${discord_id}>).`);
-    });
-    client.redis.expire(`register:${steam_id}`, 0);
-}
 
 client.write_usage_stats = schedule.scheduleJob("*/10 * * * *", () => {
     fs.writeFile("./json/usage.json", JSON.stringify(client.all_usage), (err) => {
@@ -62,6 +51,11 @@ client.pg.on("error", (err) => {
 
 client.on("ready", () => {
     util.log("listen-bot ready.");
+
+    client.redis.publish("discord", JSON.stringify({
+        "code": 4,
+        "message": "ping"
+    }));
 
     util.log("checking for new guilds...");
     client.pg.query("SELECT id FROM GUILDS;").then(res => {
@@ -159,6 +153,32 @@ client.on("guildDelete", guild => {
     });
 });
 
+sub.on("message", (channel, message) => {
+    if (channel == "steam") {
+        message = JSON.parse(message);
+        util.log(`REDIS: ${message.message}`);
+
+        switch(message.code) {
+        case 0:
+            client.steam_connected = true;
+            break;
+        case 1:
+            client.steam_connected = false;
+            break;
+        case 3:
+            client.users.get(message.discord_id).getDMChannel().then(dm_channel => {
+                let dm = `All set! Dota ID ${message.dota_id} associated with Discord ID ${message.discord_id} (<@${message.discord_id}>).`;
+                dm_channel.createMessage(dm);
+                client.redis.expire(`register:${message.steam_id}`, 0);
+            });
+            break;
+        case 4:
+            client.steam_connected = true;
+            break;
+        }
+    }
+});
+
 function invoke(message, client, helper, command) {
     client.commands[command](message, client, helper);
     client.usage["all"] += 1;
@@ -245,78 +265,9 @@ client.on("messageCreate", message => {
     });
 });
 
-client.steam_client.on("connected", () => {
-    util.log("connected to steam.");
-    util.log("logging on to steam...");
-    client.steam_user.logOn(config.steam_config);
-});
-
-client.steam_client.on("logOnResponse", () => {
-    client.steam_friends.setPersonaState(Steam.EPersonaState.Online);
-    util.log("logged on to steam.");
-});
-
-client.steam_client.on("error", (err) => {
-    util.log(err);
-    client.steam_client.connect();
-});
-
-client.steam_friends.on("friend", (id, relationship) => {
-    if (relationship == 3) {
-        client.steam_friends.sendMessage(id, "Please send me the code you recieved on Discord!");
-    }
-});
-
-client.steam_friends.on("friendMsg", (steam_id, message) => {
-    let q = `register:${steam_id}`;
-    client.redis.get(q, (err, reply) => {
-        if (err) util.log(err);
-        if (!reply) return;
-        reply = reply.split(":");
-        let code = reply[0];
-        let discord_id = reply[1];
-        if (code == message.trim()) {
-            let dota_id = new bignumber(steam_id).minus("76561197960265728");
-
-            client.pg.query({
-                "text": "SELECT * FROM public.users WHERE id = $1;",
-                "values": [discord_id]
-            }).then(res => {
-                if (res.rowCount == 0) {
-                    client.pg.query({
-                        "text": "INSERT INTO public.users (id, steamid, dotaid) VALUES ($1, $2, $3);",
-                        "values": [discord_id, parseInt(steam_id), parseInt(dota_id)]
-                    }).then(() => {
-                        util.log(`  inserted dota id ${dota_id}`);
-                        steam_cleanup(client, dota_id, steam_id, discord_id);
-                    }).catch(err => {
-                        util.log("  something went wrong inserting a user");
-                        util.log(err);
-                    });
-                } else {
-                    client.pg.query({
-                        "text": "UPDATE public.users SET id = $1, steamid = $2, dotaid = $3 WHERE id = $1;",
-                        "values": [discord_id, parseInt(steam_id), parseInt(dota_id)]
-                    }).then(() => {
-                        util.log(`  updated dota id ${res.rows[0].dotaid} -> ${dota_id}`);
-                        steam_cleanup(client, dota_id, steam_id, discord_id);
-                    }).catch(err => {
-                        util.log("  something went wrong updating a user");
-                        util.log(err);
-                    });
-                }
-            }).catch(err => {
-                util.log("  something went wrong selecting a user");
-                util.log(err);
-            });
-        }
-    });
-});
-
-// connect to everthing 
+// connect to everything in order 
 client.redis.on("ready", () => {
     util.log("redis ready.");
-    util.log("connecting to pg...");
     client.pg.connect((err) => {
         if (err) {
             util.log("err conencting to client");
@@ -325,12 +276,11 @@ client.redis.on("ready", () => {
         }
 
         util.log("pg ready.");
-        util.log("conncting to discord...");
         client.connect();
-
-        if (config.steam_enabled) {
-            util.log("conncting to steam...");
-            client.steam_client.connect();
-        }
     });
+});
+
+sub.on("ready", () => {
+    util.log("redis sub ready.")
+    sub.subscribe("steam");
 });

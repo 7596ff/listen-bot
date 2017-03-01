@@ -6,7 +6,7 @@ module.exports = (message, client, helper) => {
     let options = message.content.split(" ");
     let url = options[1];
 
-    if (!client.steam_client.connected) {
+    if (!client.steam_connected) {
         message.channel.createMessage("Steam is down or registering is disabled at the moment, sorry about that.").catch(err => helper.handle(message, err));
         return;
     }
@@ -31,7 +31,11 @@ module.exports = (message, client, helper) => {
                 client.redis.set(`register:${res.profile.steamid}`, `${rand}:${message.author.id}`, (err) => {
                     if (err) helper.log(message, err);
                     client.redis.expire(`register:${res.profile.steamid}`, 900);
-                    client.steam_friends.addFriend(res.profile.steamid);
+                    client.redis.publish("discord", JSON.stringify({
+                        "code": 3,
+                        "message": "registering a user",
+                        "steam_id": res.profile.steamid
+                    }));
                     message.author.getDMChannel().then(dm_channel => {
                         dm_channel.createMessage([
                             "Thanks for registering with listen-bot!",

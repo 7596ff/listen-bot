@@ -25,26 +25,26 @@ steam_client.on("logOnResponse", () => {
     steam_friends.setPersonaState(Steam.EPersonaState.Online);
     util.log("logged on to steam.");
     redis.publish("steam", JSON.stringify({
-    	"code": 0,
-    	"message": "connected"
+        "code": 0,
+        "message": "connected"
     }));
 });
 
 steam_client.on("error", (err) => {
     if (err.match("Error: Disconnected")) {
-    	util.log("disconnected from steam. reconnecting in 10 seconds...")
+        util.log("disconnected from steam. reconnecting in 10 seconds...");
     } else {
-    	util.log(err);
+        util.log(err);
     }
 
     redis.publish("steam", JSON.stringify({
-    	"code": 1,
-    	"message": "disconnected from steam"
+        "code": 1,
+        "message": "disconnected from steam"
     }));
 
     setTimeout(() => { 
-    	util.log("reconnecting to steam...")
-    	steam_client.connect();
+        util.log("reconnecting to steam...");
+        steam_client.connect();
     }, 10000);
 });
 
@@ -56,10 +56,10 @@ steam_friends.on("friend", (id, relationship) => {
 });
 
 process.on("exit", (code) => {
-	util.log(`steam exiting with code ${code}`);
-	redis.publish("steam", JSON.stringify({
-    	"code": 1,
-    	"message": "disconnected from steam"
+    util.log(`steam exiting with code ${code}`);
+    redis.publish("steam", JSON.stringify({
+        "code": 1,
+        "message": "disconnected from steam"
     }));
 });
 
@@ -78,7 +78,7 @@ steam_friends.on("friendMsg", (steam_id, message) => {
                 "text": "SELECT * FROM public.users WHERE id = $1;",
                 "values": [discord_id]
             }).then(res => {
-            	let query = { "values": [discord_id, parseInt(steam_id), parseInt(dota_id)] };
+                let query = { "values": [discord_id, parseInt(steam_id), parseInt(dota_id)] };
 
                 if (res.rowCount == 0) {
                     query.text = "INSERT INTO public.users (id, steamid, dotaid) VALUES ($1, $2, $3);";
@@ -87,15 +87,15 @@ steam_friends.on("friendMsg", (steam_id, message) => {
                 }
 
                 pg.query(query).then(() => {
-                	let action = res.rowCount == 0 ? "inserted" : "updated";
-                	redis.publish("steam", JSON.stringify({
-                		"code": 3,
-                		"message": `${action} a user`,
-                		"discord_id": discord_id,
-                		"steam_id": steam_id,
-                		"dota_id": dota_id
-                	}));
-                	steam_friends.removeFriend(steam_id);
+                    let action = res.rowCount == 0 ? "inserted" : "updated";
+                    redis.publish("steam", JSON.stringify({
+                        "code": 3,
+                        "message": `${action} a user`,
+                        "discord_id": discord_id,
+                        "steam_id": steam_id,
+                        "dota_id": dota_id
+                    }));
+                    steam_friends.removeFriend(steam_id);
                 }).catch(err => {
                     util.log("something went wrong inserting or updating a user");
                     util.log(err);
@@ -115,13 +115,13 @@ sub.on("message", (channel, message) => {
 
         switch(message.code) {
         case 3:
-        	steam_friends.addFriend(message.steam_id);
-        	break;
+            steam_friends.addFriend(message.steam_id);
+            break;
         case 4:
-        	if (steam_client.connected) redis.publish("steam", JSON.stringify({
-        		"code": 4,
-        		"message": "pong"
-        	}));
+            if (steam_client.connected) redis.publish("steam", JSON.stringify({
+                "code": 4,
+                "message": "pong"
+            }));
             break;
         }
     }
@@ -137,11 +137,11 @@ redis.on("ready", () => {
         }
 
         util.log("pg ready.");
-		steam_client.connect();
+        steam_client.connect();
     });
 });
 
 sub.on("ready", () => {
-	util.log("redis sub ready.")
-	sub.subscribe("discord");
+    util.log("redis sub ready.");
+    sub.subscribe("discord");
 });

@@ -281,6 +281,6 @@ client.redis.on("ready", () => {
 });
 
 sub.on("ready", () => {
-    util.log("redis sub ready.")
+    util.log("redis sub ready.");
     sub.subscribe("steam");
 });

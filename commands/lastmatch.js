@@ -37,7 +37,14 @@ async function lastmatch(message, client, helper) {
 
     if (!response.with && !response.of) qids.push(message.author.id);
 
-    let found_hero = response.as ? await find_hero(response.as) : false;
+    let found_hero = false;
+    try {
+        found_hero = await find_hero(response.as);
+    } catch (err) {
+        if (err === false) {
+            helper.log(message, `couldn't find hero ${response.as}`);
+        }
+    }
     let hero_id = found_hero ? od_heroes.find(hero => hero.name == `npc_dota_hero_${found_hero}`).id : false;
 
     Promise.all(qids.map(id => resolve_dota_id(message, id))).then(results => {

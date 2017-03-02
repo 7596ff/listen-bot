@@ -17,7 +17,7 @@
         "invite": ["invite"],
         "botstats": ["botstats"],
         "admin": ["admin"],
-        "help": ["help"],
+        "help": ["help", "commands", "command"],
         "eval": ["eval"],
         "shardinfo": ["shardinfo"]
     }

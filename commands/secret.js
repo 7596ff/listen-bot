@@ -76,8 +76,7 @@ async function secret(message, client, helper) {
 
         client.watching[new_message.id] = { 
             "📊": hero_embed_res,
-            "author_id": message.author.id,
-            "❌": "lol"
+            "author_id": message.author.id
         };
         keys = ["📊"];
         hero_obj.abilities.forEach(ability => {
@@ -88,7 +87,6 @@ async function secret(message, client, helper) {
             client.watching[new_message.id][unicode[key]] = temp_embed;
             keys.push(unicode[key]);
         });
-        keys.push("❌")
 
         react(new_message, keys).then(() => {
             helper.log(message, "reacted to hero embed");

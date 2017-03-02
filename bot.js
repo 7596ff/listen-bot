@@ -105,13 +105,9 @@ client.on("ready", () => {
 
 client.on("messageReactionAdd", (message, emoji, userID) => {
     if (client.watching.hasOwnProperty(message.id) && client.watching[message.id].hasOwnProperty(emoji.name) && client.watching[message.id].author_id == userID) {
-        if (emoji.name == "❌") {
-            delete client.watching[message.id];
-        } else {
-            client.editMessage(message.channel.id, message.id, {
-                "embed": client.watching[message.id][emoji.name]
-            });
-        }
+        client.editMessage(message.channel.id, message.id, {
+            "embed": client.watching[message.id][emoji.name]
+        });
     }
 });
 

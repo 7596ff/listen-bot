@@ -48,8 +48,9 @@ function react(message, keys) {
 async function secret(message, client, helper) {
     let alias = message.content.split(" ").slice(1).join(" ").toLowerCase();
     helper.log(message, `hero: ${alias}`);
+    let res = "";
     try {
-        let res = await find_hero(alias);
+        res = await find_hero(alias);
     } catch (err) {
         if (err === false) {
             helper.log(message, `couldn't find hero ${alias}`);

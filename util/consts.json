@@ -19,6 +19,7 @@
         "admin": ["admin"],
         "help": ["help", "commands", "command"],
         "eval": ["eval"],
-        "shardinfo": ["shardinfo"]
+        "shardinfo": ["shardinfo"],
+        "secret": ["secret"]
     }
 }

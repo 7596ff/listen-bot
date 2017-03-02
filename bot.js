@@ -18,6 +18,7 @@ const util = require("util");
 const fs = require("fs");
 
 client.commands = {};
+client.watching = {};
 client.all_usage = require("./json/usage.json");
 client.usage = { "all": 0 };
 client.mika = new Mika();
@@ -102,6 +103,18 @@ client.on("ready", () => {
     });
 });
 
+client.on("messageReactionAdd", (message, emoji, userID) => {
+    if (client.watching.hasOwnProperty(message.id) && client.watching[message.id].hasOwnProperty(emoji.name) && client.watching[message.id].author_id == userID) {
+        if (emoji.name == "❌") {
+            delete client.watching[message.id];
+        } else {
+            client.editMessage(message.channel.id, message.id, {
+                "embed": client.watching[message.id][emoji.name]
+            });
+        }
+    }
+});
+
 client.on("guildCreate", guild => {
     util.log(`${guild.id}/${guild.name}: joined guild on shard ${guild.shard.id}`);
 
@@ -166,6 +179,7 @@ sub.on("message", (channel, message) => {
             client.steam_connected = false;
             break;
         case 3:
+            if (!client.users.find(message.discord_id)) break;
             client.users.get(message.discord_id).getDMChannel().then(dm_channel => {
                 let dm = `All set! Dota ID ${message.dota_id} associated with Discord ID ${message.discord_id} (<@${message.discord_id}>).`;
                 dm_channel.createMessage(dm);

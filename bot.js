@@ -105,18 +105,25 @@ client.on("ready", () => {
 
 client.on("messageReactionAdd", (message, emoji, userID) => {
     if (userID == client.user.id) return;
+    if (!message.author) return;
+    if (message.author.id != client.user.id) return;
+
     client.redis.get(`${message.id}:author_id`, (err, author_id) => {
         if (err) {
             util.log("something went wrong getting from redis");
             util.log("err");
             return;
         }
-        
+
         client.redis.get(`${message.id}:${emoji.name}`, (err, reply) => {
             if (!err && reply && JSON.parse(author_id) == userID) {
                 client.editMessage(message.channel.id, message.id, {
                     "embed": JSON.parse(reply)
-                });
+                }).catch(err => util.log(err));
+
+                if (client.guilds.get(client.channelGuildMap[message.channel.id]).members.get(client.user.id).permission.has("manageMessages")) {
+                    client.removeMessageReaction(message.channel.id, message.id, emoji.id ? `${emoji.name}:${emoji.id}` : emoji.name, JSON.parse(author_id));
+                }
             } else if (err) {
                 util.log("something went wrong getting from redis");
                 util.log(err);

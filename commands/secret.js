@@ -1,4 +1,4 @@
-    const abilities = require("../json/abilities.json");
+const abilities = require("../json/abilities.json");
 const find_hero = require("../util/find_hero");
 const heroes = require("../json/heroes.json");
 const hero_embed = require("../embeds/hero");
@@ -31,13 +31,13 @@ const unicode = {
     "r": "🇷"
 };
 
-function react(message, keys) {
+function react(message, keys, top_resolve) {
     return new Promise((resolve, reject) => {
         message.addReaction(keys[0]).then(() => {
             if (keys.length > 1) {
-                react(message, keys.slice(1));
+                react(message, keys.slice(1), top_resolve || resolve);
             } else {
-                resolve();
+                top_resolve ? top_resolve() : resolve();
             }
         }).catch(err => {
             reject(err);
@@ -81,32 +81,34 @@ async function secret(message, client, helper) {
         helper.log(message, "sent hero embed");
         if (res == "invoker") return;
 
-        client.watching[new_message.id] = { 
+        let to_redis = { 
             "📊": hero_embed_res,
             "author_id": message.author.id
         };
-        keys = ["📊"];
+        let keys = ["📊"];
         hero_obj.abilities.forEach(ability => {
             let key = ability.charAt(0).toLowerCase();
             let temp_embed = ability_embed(abilities.filter(skill => {
                 if (skill.hero_name == res && skill.key == key) return true;
             })[0]);
-            client.watching[new_message.id][unicode[key]] = temp_embed;
+            to_redis[unicode[key]] = temp_embed;
             keys.push(unicode[key]);
+        });
+
+        Object.keys(to_redis).forEach(key => {
+            client.redis.set(`${new_message.id}:${key}`, JSON.stringify(to_redis[key]), (err) => {
+                if (err) console.log(err);
+                client.redis.expire(`${new_message.id}:${key}`, 600);
+            });
         });
 
         react(new_message, keys).then(() => {
             helper.log(message, "reacted to hero embed");
-            setTimeout(() => {
-                delete client.watching[new_message.id];
-            }, 600000);
         }).catch(err => {
             helper.log(message, "something went wrong reacting to message");
             helper.log(err);
         });
-    }).catch(err => {
-        console.log(err)
-    });
-};
+    }).catch(err => helper.handle(message, err));
+}
 
 module.exports = secret;

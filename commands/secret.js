@@ -76,6 +76,7 @@ async function secret(message, client, helper) {
     let hero_embed_res = hero_embed(hero_obj);
 
     message.channel.createMessage({
+        "content": `To take full advantage of this command, reinvite the bot to your server to give it new permissions! Use \`${message.gcfg.prefix}invite\`.`,
         "embed": hero_embed_res
     }).then((new_message) => {
         helper.log(message, "sent hero embed");

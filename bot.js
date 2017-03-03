@@ -119,12 +119,13 @@ client.on("messageReactionAdd", (message, emoji, userID) => {
 
         client.redis.get(`${message.id}:${emoji.name}`, (err, reply) => {
             if (!err && reply && JSON.parse(author_id) == userID) {
+                let has_perms = client.guilds.get(client.channelGuildMap[message.channel.id]).members.get(client.user.id).permission.has("manageMessages");
                 client.editMessage(message.channel.id, message.id, {
-                    "content": message.content || "",
+                    "content": has_perms ? "" : (message.content || ""),
                     "embed": JSON.parse(reply)
                 }).catch(err => util.log(err));
 
-                if (client.guilds.get(client.channelGuildMap[message.channel.id]).members.get(client.user.id).permission.has("manageMessages")) {
+                if (has_perms) {
                     setTimeout(() => {
                         client.removeMessageReaction(message.channel.id, message.id, emoji.id ? `${emoji.name}:${emoji.id}` : emoji.name, JSON.parse(author_id));
                     }, 250);

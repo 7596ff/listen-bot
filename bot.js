@@ -115,6 +115,8 @@ client.on("messageReactionAdd", (message, emoji, userID) => {
             return;
         }
 
+        if (!author_id) return;
+
         client.redis.get(`${message.id}:${emoji.name}`, (err, reply) => {
             if (!err && reply && JSON.parse(author_id) == userID) {
                 client.editMessage(message.channel.id, message.id, {
@@ -122,7 +124,9 @@ client.on("messageReactionAdd", (message, emoji, userID) => {
                 }).catch(err => util.log(err));
 
                 if (client.guilds.get(client.channelGuildMap[message.channel.id]).members.get(client.user.id).permission.has("manageMessages")) {
-                    client.removeMessageReaction(message.channel.id, message.id, emoji.id ? `${emoji.name}:${emoji.id}` : emoji.name, JSON.parse(author_id));
+                    setTimeout(() => {
+                        client.removeMessageReaction(message.channel.id, message.id, emoji.id ? `${emoji.name}:${emoji.id}` : emoji.name, JSON.parse(author_id));
+                    }, 250);
                 }
             } else if (err) {
                 util.log("something went wrong getting from redis");

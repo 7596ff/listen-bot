@@ -120,6 +120,7 @@ client.on("messageReactionAdd", (message, emoji, userID) => {
         client.redis.get(`${message.id}:${emoji.name}`, (err, reply) => {
             if (!err && reply && JSON.parse(author_id) == userID) {
                 client.editMessage(message.channel.id, message.id, {
+                    "content": message.content || "",
                     "embed": JSON.parse(reply)
                 }).catch(err => util.log(err));
 

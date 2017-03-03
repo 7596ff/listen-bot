@@ -104,11 +104,25 @@ client.on("ready", () => {
 });
 
 client.on("messageReactionAdd", (message, emoji, userID) => {
-    if (client.watching.hasOwnProperty(message.id) && client.watching[message.id].hasOwnProperty(emoji.name) && client.watching[message.id].author_id == userID) {
-        client.editMessage(message.channel.id, message.id, {
-            "embed": client.watching[message.id][emoji.name]
+    if (userID == client.user.id) return;
+    client.redis.get(`${message.id}:author_id`, (err, author_id) => {
+        if (err) {
+            util.log("something went wrong getting from redis");
+            util.log("err");
+            return;
+        }
+        
+        client.redis.get(`${message.id}:${emoji.name}`, (err, reply) => {
+            if (!err && reply && JSON.parse(author_id) == userID) {
+                client.editMessage(message.channel.id, message.id, {
+                    "embed": JSON.parse(reply)
+                });
+            } else if (err) {
+                util.log("something went wrong getting from redis");
+                util.log(err);
+            }
         });
-    }
+    });
 });
 
 client.on("guildCreate", guild => {

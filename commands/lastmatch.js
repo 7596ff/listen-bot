@@ -1,6 +1,5 @@
 const matchinfo = require("./matchinfo");
 const resolve_dota_id = require("../util/resolve_dota_id");
-const search_members = require("../util/search_members");
 const find_hero = require("../util/find_hero");
 const eat = require("../util/eat");
 const od_heroes = require("../json/od_heroes.json");
@@ -90,7 +89,6 @@ async function lastmatch(message, client, helper) {
             return;
         }
     }
-
-};
+}
 
 module.exports = lastmatch;

@@ -8,7 +8,7 @@ module.exports = (message, client, helper) => {
         let desc = `A Dota 2 related bot. Contact ${me} for support and questions!`;
         let links = [":page_facing_up: [GitHub](https://github.com/bippum/listen-bot)",
             "<:botTag:230105988211015680> [Online Help](https://bots.discord.pw/bots/240209888771309568)",
-            `:link: [Invite Link](${client.config.url_invite})`,
+            `:link: [Invite Link](https://discordapp.com/oauth2/authorize?permissions=${client.config.permissions}&scope=bot&client_id=${client.user.id})`,
             `:information_source: [Help Server](${client.config.discord_invite})`
         ];
 

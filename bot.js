@@ -190,6 +190,7 @@ client.on("guildDelete", guild => {
 });
 
 sub.on("message", (channel, message) => {
+    if (!client.config.steam_enabled) return;
     if (channel == "steam") {
         message = JSON.parse(message);
         util.log(`REDIS: ${message.message}`);
@@ -202,7 +203,6 @@ sub.on("message", (channel, message) => {
             client.steam_connected = false;
             break;
         case 3:
-            if (!client.users.find(message.discord_id)) break;
             client.users.get(message.discord_id).getDMChannel().then(dm_channel => {
                 let dm = `All set! Dota ID ${message.dota_id} associated with Discord ID ${message.discord_id} (<@${message.discord_id}>).`;
                 dm_channel.createMessage(dm);

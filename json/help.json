@@ -116,6 +116,12 @@
         "example": "history with frosty",
         "aliases": ["lastgame"]
     }],
+    "fun": [{
+        "name": "courage", 
+        "text": [
+            "returns an item build challenge a la divine courage."
+        ]
+    }],
     "meta": [{
         "name": "info",
         "text": [

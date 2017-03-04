@@ -21,6 +21,7 @@
   "homepage": "https://github.com/bippum/listen-bot#readme",
   "dependencies": {
     "bignumber.js": "4.0.0",
+    "canvas": "1.6.4",
     "d": "1.0.0",
     "eris": "0.6.0",
     "mika": "github:bippum/mika#master",

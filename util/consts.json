@@ -13,6 +13,7 @@
         "matchinfo": ["matchinfo", "gameinfo"],
         "lastmatch": ["lastmatch", "lastgame"],
         "history": ["history"],
+        "courage": ["courage", "divinecourage", "divine"],
         "info": ["info", "about"],
         "invite": ["invite"],
         "botstats": ["botstats"],

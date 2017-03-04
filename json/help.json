@@ -115,7 +115,7 @@
         ],
         "example": "history with frosty",
         "aliases": ["lastgame"]
-    }, ],
+    }],
     "meta": [{
         "name": "info",
         "text": [

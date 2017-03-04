@@ -75,7 +75,9 @@ async function courage(message, client, helper) {
                     }, {
                         "file": data,
                         "name": "lol.png"
-                    })
+                    }).then(() => {
+                        helper.log(message, "sent courage");
+                    }).catch(err => helper.handle(message, err));
                 });
             }
         }

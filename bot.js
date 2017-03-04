@@ -19,6 +19,7 @@ const fs = require("fs");
 
 client.commands = {};
 client.watching = {};
+client.gcfg = {};
 client.all_usage = require("./json/usage.json");
 client.usage = { "all": 0 };
 client.mika = new Mika();
@@ -230,6 +231,56 @@ function invoke(message, client, helper, command) {
     client.redis.expire(`mlimit:${message.author.id}`, message.gcfg.mlimit);
 }
 
+function handle(message, client) {
+    if (message.content.startsWith(message.gcfg.prefix) || message.content.startsWith(config.default_prefix)) {
+        if (message.content.startsWith(config.default_prefix)) message.content = message.content.replace(config.default_prefix, "");
+        if (message.content.startsWith(message.gcfg.prefix)) message.content = message.content.replace(message.gcfg.prefix, "");
+        message.content = message.content.trim();
+
+        let command = message.content.split(" ").shift().toLowerCase();
+
+        for (let cmd in consts.cmds) if (consts.cmds[cmd].includes(command)) command = cmd;
+
+        let disabled_list = message.gcfg.disabled ? message.gcfg.disabled[message.channel.id] : undefined;
+        if (disabled_list && disabled_list.includes(command)) return;
+
+        let climit = `climit:${message.channel.id}`;
+        let mlimit = `mlimit:${message.author.id}`;
+
+        if (command in client.commands) {
+            client.redis.get(climit, (err, reply) => {
+                if (reply) {
+                    if (reply == "1") {
+                        client.redis.ttl(climit, (err, reply) => {
+                            message.channel.createMessage(`${message.channel.mention}, please cool down! ${reply} seconds left.`).then(new_message => {
+                                setTimeout(() => { new_message.delete(); }, reply * 1000);
+                            }).catch(err => client.helper.handle(message, err));
+                            client.redis.set(climit, "2");
+                            client.redis.expire(climit, reply);
+                        });
+                    }
+                } else {
+                    client.redis.get(mlimit, (err, reply) => {
+                        if (reply) {
+                            if (reply == "1") { 
+                                client.redis.ttl(mlimit, (err, reply) => {
+                                    message.channel.createMessage(`${message.author.mention}, please cool down! ${reply} seconds left.`).then(new_message => {
+                                        setTimeout(() => { new_message.delete(); }, reply * 1000);
+                                    }).catch(err => client.helper.handle(message, err));
+                                    client.redis.set(mlimit, "2");
+                                    client.redis.expire(mlimit, reply);
+                                });
+                            }
+                        } else {
+                            invoke(message, client, client.helper, command);
+                        }
+                    });
+                }
+            });
+        }
+    }
+}
+
 client.on("messageCreate", message => {
     if (!message.channel.guild) return;
     if (message.member && message.member.bot) return;
@@ -242,64 +293,22 @@ client.on("messageCreate", message => {
         return;
     }
 
-    client.pg.query({
-        "text": "SELECT * FROM public.guilds WHERE id = $1;",
-        "values": [message.channel.guild.id]
-    }).then(res => {
-        message.gcfg = res.rows[0];
-        let _helper = client.helper;
-
-        if (message.content.startsWith(message.gcfg.prefix) || message.content.startsWith(config.default_prefix)) {
-            if (message.content.startsWith(config.default_prefix)) message.content = message.content.replace(config.default_prefix, "");
-            if (message.content.startsWith(message.gcfg.prefix)) message.content = message.content.replace(message.gcfg.prefix, "");
-            message.content = message.content.trim();
-
-            let command = message.content.split(" ").shift().toLowerCase();
-
-            for (let cmd in consts.cmds) if (consts.cmds[cmd].includes(command)) command = cmd;
-
-            let disabled_list = message.gcfg.disabled ? message.gcfg.disabled[message.channel.id] : undefined;
-            if (disabled_list && disabled_list.includes(command)) return;
-
-            let climit = `climit:${message.channel.id}`;
-            let mlimit = `mlimit:${message.author.id}`;
-
-            if (command in client.commands) {
-                client.redis.get(climit, (err, reply) => {
-                    if (reply) {
-                        if (reply == "1") {
-                            client.redis.ttl(climit, (err, reply) => {
-                                message.channel.createMessage(`${message.channel.mention}, please cool down! ${reply} seconds left.`).then(new_message => {
-                                    setTimeout(() => { new_message.delete(); }, reply * 1000);
-                                }).catch(err => _helper.handle(message, err));
-                                client.redis.set(climit, "2");
-                                client.redis.expire(climit, reply);
-                            });
-                        }
-                    } else {
-                        client.redis.get(mlimit, (err, reply) => {
-                            if (reply) {
-                                if (reply == "1") { 
-                                    client.redis.ttl(mlimit, (err, reply) => {
-                                        message.channel.createMessage(`${message.author.mention}, please cool down! ${reply} seconds left.`).then(new_message => {
-                                            setTimeout(() => { new_message.delete(); }, reply * 1000);
-                                        }).catch(err => _helper.handle(message, err));
-                                        client.redis.set(mlimit, "2");
-                                        client.redis.expire(mlimit, reply);
-                                    });
-                                }
-                            } else {
-                                invoke(message, client, _helper, command);
-                            }
-                        });
-                    }
-                });
-            }
-        }
-    }).catch(err => {
-        util.log(`something went wrong with selcting ${message.channel.guild.id}/${message.channel.guild.name}`);
-        util.log(err);
-    });
+    if (client.gcfg.hasOwnProperty(message.channel.guild.id)) {
+        message.gcfg = JSON.parse(JSON.stringify(client.gcfg[message.channel.guild.id]));
+        handle(message, client);
+    } else {
+        client.pg.query({
+            "text": "SELECT * FROM public.guilds WHERE id = $1;",
+            "values": [message.channel.guild.id]
+        }).then(res => {
+            client.gcfg[message.channel.guild.id] = JSON.parse(JSON.stringify(res.rows[0]));
+            message.gcfg = JSON.parse(JSON.stringify(client.gcfg[message.channel.guild.id]));
+            handle(message, client);
+        }).catch(err => {
+            util.log(`something went wrong with selcting ${message.channel.guild.id}/${message.channel.guild.name}`);
+            util.log(err);
+        });
+    }
 });
 
 // connect to everything in order 

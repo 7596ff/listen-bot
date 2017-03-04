@@ -100,7 +100,7 @@ async function secret(message, client, helper) {
 
         Object.keys(to_redis).forEach(key => {
             client.redis.set(`${new_message.id}:${key}`, JSON.stringify(to_redis[key]), (err) => {
-                if (err) console.log(err);
+                if (err) helper.log(message, err);
                 client.redis.expire(`${new_message.id}:${key}`, 600);
             });
         });

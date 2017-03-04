@@ -103,22 +103,19 @@
             "\n`as <hero>`: adds a hero filter to the first player in the search is"
         ],
         "example": "lastmatch of Moo",
-        "aliases": ["lastgame"]
+        "aliases": ["gameinfo"]
     }, {
         "name": "history",
-        "usage": "history <person 1> <person 2>",
+        "usage": "history [with <person>] OR [of <person>] [as <hero>]",
         "text": [
-            "checks the winrate and amount of games between two players and displays it."
+            "looks up the history someone has on a hero, or history between two players. ",
+            "flags: \n`with <player>`: shows winrate with and against you and someone else",
+            "\n`of <player>`: as <hero>`: shows someone's winrate on a specific hero",
+            "\n`as <hero>`: shows your winrate on a hero"
         ],
-        "example": "history Frascamelon EPICish"
-    }, {
-        "name": "history with",
-        "usage": "history with <person>",
-        "text": [
-            "checks the winrate and amount of games with you and a specified person."
-        ],
-        "example": "history with Mike"
-    }],
+        "example": "history with frosty",
+        "aliases": ["lastgame"]
+    }, ],
     "meta": [{
         "name": "info",
         "text": [

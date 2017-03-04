@@ -115,6 +115,15 @@
         ],
         "example": "history with frosty",
         "aliases": ["lastgame"]
+    }, {
+        "name": "matches", 
+        "usage": "matches [as <hero>] and/or with <person>] and/or [of <person>]",
+        "text": [
+            "returns the last 12 games of somoene. ",
+            "filter by hero or with a person."
+        ],
+        "example": "matches of alexa as ember",
+        "aliases": ["matchhistory", "games"]
     }],
     "fun": [{
         "name": "courage", 

@@ -1,6 +1,7 @@
 const resolve_dota_id = require("../util/resolve_dota_id");
 const search_members = require("../util/search_members");
 const embed_history = require("../embeds/history");
+const eat = require("../util/eat");
 
 function find_player_team(match, account_id) {
     let slot = -1;
@@ -13,38 +14,20 @@ function find_player_team(match, account_id) {
 }
 
 async function history(message, client, helper) {
+    let response = await eat(message, { "with": "member" });
+    if (!response.with || response.with.length != 1) {
+        message.channel.createMessage("I don't have enough data for this command!").catch(err => helper.handle(message, err));
+        return;
+    }
+    let qids = response.with.length == 1 ? [message.author.id, response.with[0]] : [];
+
     try {
         await message.channel.sendTyping();
     } catch (err) {
         helper.handle(message, err);
     }
-    
-    let options = message.content.split(" ").slice(1);
-    let queries = [];
-    let found_any = false;
 
-    if (options[0] == "with") {
-        queries.push(resolve_dota_id(message, message.author.id));
-        options = options.slice(1);
-    }
-
-    if (message.mentions.length == 2 || message.mentions.length == 1) {
-        queries.push(...message.mentions.map(mention => resolve_dota_id(message, mention.id)));
-        found_any = true;
-    }
-
-    let results = search_members(message.channel.guild.members, options);
-    if (results.length == 2 || results.length == 1) {
-        queries.push(...results.map(result => resolve_dota_id(message, result)));
-        found_any = true;
-    }
-
-    if (!found_any) {
-        message.channel.createMessage("I don't have enough data for this command!").catch(err => helper.handle(message, err));
-        return;
-    }
-
-    Promise.all(queries).then(results => {
+    Promise.all(qids.map(id => resolve_dota_id(message, id))).then(results => {
         helper.log(message, `history: ${results[0]} and ${results[1]}`);
         results = results.sort();
 

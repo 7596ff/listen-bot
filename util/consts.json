@@ -12,6 +12,7 @@
         "playerinfo": ["playerinfo", "profile"],
         "matchinfo": ["matchinfo", "gameinfo"],
         "lastmatch": ["lastmatch", "lastgame"],
+        "matches": ["mathes", "matchhistory", "games"],
         "history": ["history"],
         "courage": ["courage", "divinecourage", "divine"],
         "info": ["info", "about"],

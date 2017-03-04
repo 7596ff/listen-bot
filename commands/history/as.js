@@ -26,7 +26,7 @@ async function as_(message, client, helper, as, _of) {
             return;
         }
 
-        helper.log(message, `history as ${hero_id} ${_of ? "of " + _of.username}`);
+        helper.log(message, `history as ${hero_id}`);
         client.mika.getPlayerMatches(account_id, {
             "hero_id": hero_id
         }).then(matches => {

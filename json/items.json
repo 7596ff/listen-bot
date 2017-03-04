@@ -1237,7 +1237,8 @@
         ],
         "lore": [
             "A glowing jewel formed out of assorted parts that somehow fit together perfectly."
-        ]
+        ],
+        "courage": true
     },
     {
         "true_name": "vladmir",
@@ -1266,7 +1267,8 @@
         "lore": [
             "An eerie mask that is haunted with the malice of a fallen vampire."
         ],
-        "aliases": ["vlads"]
+        "aliases": ["vlads"],
+        "courage": true
     },
     {
         "true_name": "flying_courier",
@@ -1350,7 +1352,8 @@
         ],
         "lore": [
             "A powerful artifact of mysterious origin, it creates barriers against magical forces."
-        ]
+        ],
+        "courage": true
     },
     {
         "true_name": "urn_of_shadows",
@@ -1420,7 +1423,8 @@
         "lore": [
             "The most guarded relic among the cult of Vyse, it is the most coveted weapon among magi."
         ],
-        "aliases": ["hex", "sheep", "guinsoo"]
+        "aliases": ["hex", "sheep", "guinsoo"],
+        "courage": true
     },
     {
         "true_name": "orchid",
@@ -1469,7 +1473,8 @@
         ],
         "lore": [
             "A reviled blade that bites deeper with each wriggle of its victim's final throes."
-        ]
+        ],
+        "courage": true
     },
     {
         "true_name": "echo_sabre",
@@ -1492,7 +1497,8 @@
         ],
         "lore": [
             "A deceptively swift blade imbued with resonant magic."
-        ]
+        ],
+        "courage": true
     },
     {
         "true_name": "cyclone",
@@ -1518,7 +1524,8 @@
         ],
         "lore": [
             "A mysterious scepter passed down through the ages, its disruptive winds can be used for good or evil."
-        ]
+        ],
+        "courage": true
     },
     {
         "true_name": "aether_lens",
@@ -1537,7 +1544,8 @@
         ],
         "lore": [
             "Polished with the incantation of his final breath, the gift of a dying mage to his sickly son."
-        ]
+        ],
+        "courage": true
     },
     {
         "true_name": "force_staff",
@@ -1586,7 +1594,8 @@
         ],
         "lore": [
             "A legendary pike once held as royal sigil of the ancient wyvern riders."
-        ]
+        ],
+        "courage": true
     },
     {
         "true_name": "dagon",
@@ -1606,7 +1615,8 @@
         ],
         "lore": [
             "A lesser wand that grows in power the longer it is used, it brings magic to the fingertips of the user."
-        ]
+        ],
+        "courage": true
     },
     {
         "true_name": "necronomicon",
@@ -1632,7 +1642,8 @@
         ],
         "lore": [
             "Considered the ultimate in necromancy and demonology, a powerful malefic force is locked within its pages."
-        ]
+        ],
+        "courage": true
     },
     {
         "true_name": "ultimate_scepter",
@@ -1669,7 +1680,8 @@
         ],
         "lore": [
             "A powerful artifact created for wizards."
-        ]
+        ],
+        "courage": true
     },
     {
         "true_name": "assault",
@@ -1692,7 +1704,8 @@
         "lore": [
             "Forged in the depths of the nether reaches, this hellish mail provides an army with increased armor and attack speed."
         ],
-        "aliases": ["ac"]
+        "aliases": ["ac"],
+        "courage": true
     },
     {
         "true_name": "heart",
@@ -1710,7 +1723,8 @@
         ],
         "lore": [
             "Preserved heart of an extinct monster, it bolsters the bearer's fortitude."
-        ]
+        ],
+        "courage": true
     },
     {
         "true_name": "black_king_bar",
@@ -1734,7 +1748,8 @@
         ],
         "lore": [
             "A powerful staff imbued with the strength of giants."
-        ]
+        ],
+        "courage": true
     },
     {
         "true_name": "aegis",
@@ -1775,7 +1790,8 @@
         ],
         "lore": [
             "Said to have belonged to a goddess, today it retains much of its former power."
-        ]
+        ],
+        "courage": true
     },
     {
         "true_name": "bloodstone",
@@ -1798,7 +1814,8 @@
         ],
         "lore": [
             "The Bloodstone's bright ruby color is unmistakable on the battlefield, as the owner seems to have infinite vitality and spirit."
-        ]
+        ],
+        "courage": true
     },
     {
         "true_name": "sphere",
@@ -1818,7 +1835,8 @@
         ],
         "lore": [
             "This magical sphere once protected one of the most famous heroes in history."
-        ]
+        ],
+        "courage": true
     },
     {
         "true_name": "lotus_orb",
@@ -1842,7 +1860,8 @@
         ],
         "lore": [
             "The jewel at its center still reflects a pale image of its creator."
-        ]
+        ],
+        "courage": true
     },
     {
         "true_name": "vanguard",
@@ -1896,7 +1915,8 @@
         ],
         "lore": [
             "A cuirass originally built to protect against the dreaded Year Beast."
-        ]
+        ],
+        "courage": true
     },
     {
         "true_name": "blade_mail",
@@ -1922,7 +1942,8 @@
         ],
         "lore": [
             "A razor-sharp coat of mail, it is the choice of selfless martyrs in combat."
-        ]
+        ],
+        "courage": true
     },
     {
         "true_name": "soul_booster",
@@ -1978,7 +1999,8 @@
         "lore": [
             "So powerful, it cannot have a single owner."
         ],
-        "aliases": ["rapira"]
+        "aliases": ["rapira"],
+        "courage": true
     },
     {
         "true_name": "monkey_king_bar",
@@ -1997,7 +2019,8 @@
         ],
         "lore": [
             "A powerful staff used by a master warrior."
-        ]
+        ],
+        "courage": true
     },
     {
         "true_name": "radiance",
@@ -2016,7 +2039,8 @@
         ],
         "lore": [
             "A divine weapon that causes damage and a bright burning effect that lays waste to nearby enemies."
-        ]
+        ],
+        "courage": true
     },
     {
         "true_name": "butterfly",
@@ -2040,7 +2064,8 @@
         "lore": [
             "Only the mightiest and most experienced of warriors can wield the Butterfly, but it provides incredible dexterity in combat."
         ],
-        "aliases": ["bfly"]
+        "aliases": ["bfly"],
+        "courage": true
     },
     {
         "true_name": "greater_crit",
@@ -2059,7 +2084,8 @@
         "lore": [
             "A weapon of incredible power that is difficult for even the strongest of warriors to control."
         ],
-        "aliases": ["buriza"]
+        "aliases": ["buriza"],
+        "courage": true
     },
     {
         "true_name": "basher",
@@ -2084,7 +2110,8 @@
         ],
         "lore": [
             "A feared weapon in the right hands, this maul's ability to shatter the defenses of its opponents should not be underestimated."
-        ]
+        ],
+        "courage": true
     },
     {
         "true_name": "bfury",
@@ -2118,7 +2145,8 @@
         "lore": [
             "The bearer of this mighty axe gains the ability to cut down swaths of enemies at once."
         ],
-        "aliases": ["battlefury"]
+        "aliases": ["battlefury"],
+        "courage": true
     },
     {
         "true_name": "manta",
@@ -2152,7 +2180,8 @@
         ],
         "lore": [
             "An axe made of reflective materials that causes confusion amongst enemy ranks."
-        ]
+        ],
+        "courage": true
     },
     {
         "true_name": "lesser_crit",
@@ -2192,7 +2221,8 @@
         "lore": [
             "The forward charge of the wyvern host grants no quarter."
         ],
-        "aliases": ["dlance"]
+        "aliases": ["dlance"],
+        "courage": true
     },
     {
         "true_name": "armlet",
@@ -2215,7 +2245,8 @@
         ],
         "lore": [
             "Weapon of choice among brutes, the bearer sacrifices his life energy to gain immense strength and power."
-        ]
+        ],
+        "courage": true
     },
     {
         "true_name": "invis_sword",
@@ -2265,7 +2296,8 @@
         ],
         "lore": [
             "Once used to slay an unjust king, only to have the kingdom erupt into civil war in the aftermath."
-        ]
+        ],
+        "courage": true
     },
     {
         "true_name": "sange_and_yasha",
@@ -2294,7 +2326,8 @@
         "lore": [
             "Sange and Yasha, when attuned by the moonlight and used together, become a very powerful combination."
         ],
-        "aliases": ["sny"]
+        "aliases": ["sny"],
+        "courage": true
     },
     {
         "true_name": "satanic",
@@ -2316,7 +2349,8 @@
         ],
         "lore": [
             "Immense power at the cost of your soul."
-        ]
+        ],
+        "courage": true
     },
     {
         "true_name": "mjollnir",
@@ -2346,7 +2380,8 @@
         ],
         "lore": [
             "Thor's magical hammer, made for him by the dwarves Brok and Eitri."
-        ]
+        ],
+        "courage": true
     },
     {
         "true_name": "skadi",
@@ -2371,7 +2406,8 @@
         ],
         "lore": [
             "Extremely rare artifact, guarded by the azure dragons."
-        ]
+        ],
+        "courage": true
     },
     {
         "true_name": "sange",
@@ -2464,7 +2500,8 @@
         "lore": [
             "A wicked weapon, used in torturing political criminals."
         ],
-        "aliases": ["stygian"]
+        "aliases": ["stygian"],
+        "courage": true
     },
     {
         "true_name": "yasha",
@@ -2527,7 +2564,8 @@
         ],
         "lore": [
             "An enchanted blade that allows the user to cut straight into the enemy's soul."
-        ]
+        ],
+        "courage": true
     },
     {
         "true_name": "ethereal_blade",
@@ -2555,7 +2593,8 @@
         "lore": [
             "A flickering blade of a ghastly nature, it is capable of dealing damage in both magical and physical planes."
         ],
-        "aliases": ["eblade"]
+        "aliases": ["eblade"],
+        "courage": true
     },
     {
         "true_name": "soul_ring",
@@ -2623,7 +2662,8 @@
         ],
         "lore": [
             "At the core of spellcraft are spectrums only the very gifted can sense."
-        ]
+        ],
+        "courage": true
     },
     {
         "true_name": "orb_of_venom",
@@ -2691,7 +2731,8 @@
         ],
         "lore": [
             "A relic that enchants the bodies of those around it for swifter movement in times of crisis."
-        ]
+        ],
+        "courage": true
     },
     {
         "true_name": "medallion_of_courage",
@@ -2735,7 +2776,8 @@
         ],
         "lore": [
             "A talisman forged to honor the daytime sky."
-        ]
+        ],
+        "courage": true
     },
     {
         "true_name": "smoke_of_deceit",
@@ -2797,7 +2839,8 @@
         ],
         "lore": [
             "The headwear of corrupt magi."
-        ]
+        ],
+        "courage": true
     },
     {
         "true_name": "guardian_greaves",
@@ -2847,7 +2890,8 @@
         ],
         "lore": [
             "Atos, the Lord of Blight, has his essence stored in this deceptively simple wand."
-        ]
+        ],
+        "courage": true
     },
     {
         "true_name": "iron_talon",
@@ -2905,7 +2949,8 @@
         ],
         "lore": [
             "The lost blade of the Commander of the Abyss, this edge cuts into an enemy's soul."
-        ]
+        ],
+        "courage": true
     },
     {
         "true_name": "heavens_halberd",
@@ -2937,7 +2982,8 @@
         ],
         "lore": [
             "This halberd moves with the speed of a smaller weapon, allowing the bearer to win duels that a heavy edge would not."
-        ]
+        ],
+        "courage": true
     },
     {
         "true_name": "ring_of_aquila",

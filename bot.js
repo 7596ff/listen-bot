@@ -250,27 +250,25 @@ function handle(message, client) {
         if (command in client.commands) {
             client.redis.get(climit, (err, reply) => {
                 if (reply) {
-                    if (reply == "1") {
-                        client.redis.ttl(climit, (err, reply) => {
-                            message.channel.createMessage(`${message.channel.mention}, please cool down! ${reply} seconds left.`).then(new_message => {
-                                setTimeout(() => { new_message.delete(); }, reply * 1000);
-                            }).catch(err => client.helper.handle(message, err));
-                            client.redis.set(climit, "2");
-                            client.redis.expire(climit, reply);
-                        });
-                    }
+                    if (reply != "1") return;
+                    client.redis.ttl(climit, (err, reply) => {
+                        message.channel.createMessage(`${message.channel.mention}, please cool down! ${reply} seconds left.`).then(new_message => {
+                            setTimeout(() => { new_message.delete(); }, reply * 1000);
+                        }).catch(err => client.helper.handle(message, err));
+                        client.redis.set(climit, "2");
+                        client.redis.expire(climit, reply);
+                    });
                 } else {
                     client.redis.get(mlimit, (err, reply) => {
                         if (reply) {
-                            if (reply == "1") { 
-                                client.redis.ttl(mlimit, (err, reply) => {
-                                    message.channel.createMessage(`${message.author.mention}, please cool down! ${reply} seconds left.`).then(new_message => {
-                                        setTimeout(() => { new_message.delete(); }, reply * 1000);
-                                    }).catch(err => client.helper.handle(message, err));
-                                    client.redis.set(mlimit, "2");
-                                    client.redis.expire(mlimit, reply);
-                                });
-                            }
+                            if (reply != "1") return;
+                            client.redis.ttl(mlimit, (err, reply) => {
+                                message.channel.createMessage(`${message.author.mention}, please cool down! ${reply} seconds left.`).then(new_message => {
+                                    setTimeout(() => { new_message.delete(); }, reply * 1000);
+                                }).catch(err => client.helper.handle(message, err));
+                                client.redis.set(mlimit, "2");
+                                client.redis.expire(mlimit, reply);
+                            });
                         } else {
                             invoke(message, client, client.helper, command);
                         }

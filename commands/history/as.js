@@ -26,6 +26,7 @@ async function as_(message, client, helper, as, _of) {
             return;
         }
 
+        helper.log(message, `history as ${hero_id} ${_of ? "of " + _of.username}`);
         client.mika.getPlayerMatches(account_id, {
             "hero_id": hero_id
         }).then(matches => {
@@ -42,7 +43,9 @@ async function as_(message, client, helper, as, _of) {
                         `**Winrate:** ${(Math.round((wins.length / matches.length) * 10000)) / 100}%`
                     ].join("\n")
                 }
-            })
+            }).then(() => {
+                helper.log(message, "sent history embed");
+            }).catch(err => helper.handle(message, err));
         }).catch(err => {
             message.channel.createMessage("Something went wrong.").catch(err => helper.handle(message, err));
             helper.log(message, "something went wrong with mika");

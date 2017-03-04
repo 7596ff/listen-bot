@@ -110,7 +110,7 @@
         "text": [
             "looks up the history someone has on a hero, or history between two players. ",
             "flags: \n`with <player>`: shows winrate with and against you and someone else",
-            "\n`of <player>: as <hero>`: shows someone's winrate on a specific hero",
+            "\n`of <player> as <hero>`: shows someone's winrate on a specific hero",
             "\n`as <hero>`: shows your winrate on a hero"
         ],
         "example": "history with frosty",

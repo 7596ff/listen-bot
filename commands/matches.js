@@ -68,7 +68,7 @@ async function matches(message, client, helper) {
         if (hero_id) mika_opt.hero_id = hero_id;
 
         client.mika.getPlayerMatches(results[0], mika_opt).then(matches => {
-            let embed = matches_embed(matches, message.channel.guild.members.get(qids[0]), hero_id);
+            let embed = matches_embed(matches, `Use \`${message.gcfg.prefix}matchinfo\` to get more about a specific match.`);
             message.channel.createMessage({
                 "embed": embed
             }).then(() => {

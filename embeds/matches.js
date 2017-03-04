@@ -1,13 +1,14 @@
 const od_heroes = require("../json/od_heroes.json");
 const pad = require("pad");
 
-module.exports = (matches, member, hero_id) => {
-    let matchlist = [["R", "Hero", "K/D/A", "Time", "End Date"]];
+module.exports = (matches, name) => {
+    let matchlist = [["Match ID", " ", "Hero", "K/D/A", "Time", "\u200b"]];
     let fmatchlist = [];
-    let highest = new Array(5).fill(0);
+    let highest = new Array(6).fill(0);
 
     matches.forEach(match => {
         let row = [
+            match.match_id.toString(),
             match.player_slot < 5 == match.radiant_win ? "W" : "L",
             od_heroes.find(hero => hero.id == match.hero_id).localized_name,
             [match.kills, match.deaths, match.assists].join("/"),
@@ -33,8 +34,8 @@ module.exports = (matches, member, hero_id) => {
 
     return {
         "fields": [{
-            "name": `\u200b`,
-            "value": fmatchlist.map(row => `\`${row.join(" ")}\``).join("\n")
+            "name": name,
+            "value": fmatchlist.map(row => `\`${row.slice(0, -1).join(" ")}\` ${row[row.length - 1]}`).join("\n")
         }]
     }
 };

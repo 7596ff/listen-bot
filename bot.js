@@ -10,6 +10,7 @@ const stats_helper = require("./util/stats_helper");
 const shardinfo_helper = require("./util/shardinfo_helper");
 const dbots_post = require("./dbots/post");
 const Helper = require("./util/helper");
+const Trivia = require("./trivia/trivia");
 
 const schedule = require("node-schedule");
 const Mika = require("mika");
@@ -276,6 +277,8 @@ function handle(message, client) {
                 }
             });
         }
+    } else {
+        if (client.trivia && client.trivia.channels.hasOwnProperty(message.channel.id)) client.trivia.handle(message, client, helper);
     }
 }
 

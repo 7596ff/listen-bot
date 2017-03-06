@@ -14,7 +14,8 @@
         ],
         "lore": [
             "The fabled dagger used by the fastest assassin ever to walk the lands."
-        ]
+        ],
+        "courage": true
     },
     {
         "true_name": "blades_of_attack",
@@ -1566,7 +1567,8 @@
         ],
         "lore": [
             "Allows you to manipulate others, for good or evil."
-        ]
+        ],
+        "courage": true
     },
     {
         "true_name": "hurricane_pike",
@@ -1662,7 +1664,8 @@
         "lore": [
             "The scepter of a wizard with demigod-like powers."
         ],
-        "aliases": ["aghs"]
+        "aliases": ["aghs"],
+        "courage": true
     },
     {
         "true_name": "refresher",
@@ -2456,7 +2459,8 @@
         ],
         "lore": [
             "The powerful headpiece of a dead necromancer."
-        ]
+        ],
+        "courage": true
     },
     {
         "true_name": "maelstrom",

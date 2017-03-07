@@ -9,7 +9,7 @@ class Trivia {
     }
 
     clean(str) {
-        return str.toString().replace(/[+\-%s]/g, "").trim().toLowerCase();
+        return str.toString().replace(/[+\-%s\.]/g, "").trim().toLowerCase();
     }
 
     get_new_question(old_question, redis, channel) {
@@ -18,11 +18,11 @@ class Trivia {
 
         if (redis && channel) {
             redis.set(`trivia:${channel}:hint`, true);
-            redis.expire(`trivia:${channel}:hint`, 20);
+            redis.expire(`trivia:${channel}:hint`, 10);
             redis.set(`trivia:${channel}:retries`, 2);
 
             this.active_questions[channel] = ret;
-            this.hints[channel] = ret.answer.replace(/[^+\-%s]/g, "•");
+            this.hints[channel] = ret.answer.replace(/[^+\-%s\.]/g, "•");
         }
 
         return ret;

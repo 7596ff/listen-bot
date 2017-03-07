@@ -4,6 +4,7 @@ module.exports = (message, client, helper) => {
     if (command == "start") {
         if (message.gcfg.trivia == message.channel.id) {
             client.trivia.init(client, message.channel.id);
+            helper.log(message, "trivia started");
         } else if (message.gcfg.trivia != 0 && message.gcfg.trivia != message.channel.id) {
             message.channel.createMessage(`Try this command in the trivia channel! <#${message.gcfg.trivia}>`);
         } else {
@@ -15,6 +16,7 @@ module.exports = (message, client, helper) => {
         // if (!message.member.permission.has("manageMessages")) break;
         if (client.trivia.channels.includes(message.gcfg.trivia)) client.trivia.channels.splice(client.trivia.channels.indexOf(message.gcfg.trivia), 1);
         message.channel.createMessage(":ok_hand: Trivia stopped.").catch(err => helper.handle(message, err));
+        helper.log(message, "trivia stopped manually");
     }
 
     if (["top", "leaderboard", "scores", "points"].includes(command)) {

@@ -33,7 +33,9 @@ module.exports = (message, client, helper) => {
             }
             rows = rows.slice(0, 10);
             msg.push(...rows.map(row => `${client.users.find(user => user.id == row.id).username}: ${row.score}`));
-            message.channel.createMessage(msg.join("\n")).catch(err => helper.handle(message, err));
+            message.channel.createMessage(msg.join("\n"))
+                .then(() => helper.log(message, `sent trivia leaderboard ${subcommand == "all" ? "of everywhere" : "of guild"}`))
+                .catch(err => helper.handle(message, err));
         }).catch(err => {
             helper.log(message, "something went wrong selecting scores");
             helper.log(message, err);

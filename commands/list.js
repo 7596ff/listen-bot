@@ -3,7 +3,7 @@ const od_heroes = require("../json/od_heroes.json");
 const find_hero = require("../util/find_hero");
 
 module.exports = (message, client, helper) => {
-    if (message.gcfg.trivia == message.channel.id) return;
+    if (client.trivia.channels.includes(message.channel.id)) return;
 
     let hero = message.content.split(" ").slice(1).join(" ").toLowerCase();
 

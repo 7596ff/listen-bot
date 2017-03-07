@@ -130,6 +130,14 @@
         "text": [
             "returns an item build challenge a la divine courage."
         ]
+    }, {
+        "name": "trivia",
+        "text":  [
+            "starts or stops a trivia game going on in a designated trivia channel.",
+            "\n`--trivia start`: starts the game.",
+            "\n`--trivia stop`: stops the game."
+        ],
+        "aliases": ["t", "challenge"]
     }],
     "meta": [{
         "name": "info",
@@ -194,5 +202,13 @@
             "use the admin command by itself to see a list of disabled commands."
         ],
         "example": "admin enable patch list wiki"
+    }, {
+        "name": "admin trivia",
+        "text": [
+            "configures the channel in which trivia takes place.",
+            "\n`--admin trivia channel [#channel]`: sets the trivia channel to #channel.",
+            "\n`--admin trivia channel here`: sets the trivia channel to the current channel.",
+            "\n`--admin trivia channel none`: disables trivia entirely." 
+        ]
     }]
 }

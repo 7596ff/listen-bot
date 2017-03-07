@@ -24,6 +24,7 @@ module.exports = (message, client, helper) => {
                         `Channel-specifc cooldowns: \`${message.gcfg.climit}\``,
                         `Member-specific cooldowns: \`${message.gcfg.mlimit}\``,
                         `Custom prefix: \`${message.gcfg.prefix}\``,
+                        `Trivia Channel: ${message.gcfg.trivia == 0 ? "none" : "<#" + message.gcfg.trivia + ">"}`,
                         prettylist
                     ].join("\n")
                 }

@@ -2,6 +2,8 @@ const find_hero = require("../util/find_hero");
 const od_heroes = require("../json/od_heroes.json");
 
 module.exports = (message, client, helper) => {
+    if (message.gcfg.trivia == message.channel.id) return;
+    
     let hero = message.content.split(" ").slice(1).join(" ").toLowerCase();
     find_hero(hero).then(res => {
         let underscore = od_heroes.find(od_hero => od_hero.name == `npc_dota_hero_${res}`).localized_name.split(" ").join("_");

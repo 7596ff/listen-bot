@@ -4,6 +4,8 @@ const item_embed = require("../embeds/item");
 const too_short = ["of", "and", "in", "the", "de"];
 
 module.exports = (message, client, helper) => {
+    if (message.gcfg.trivia == message.channel.id) return;
+    
     let options = message.content.toLowerCase().split(" ").slice(1);
 
     helper.log(message, `item: ${options.join(" ")}`);

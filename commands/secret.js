@@ -46,6 +46,8 @@ function react(message, keys, top_resolve) {
 }
 
 async function secret(message, client, helper) {
+    if (message.gcfg.trivia == message.channel.id) return;
+    
     let alias = message.content.split(" ").slice(1).join(" ").toLowerCase();
     helper.log(message, `hero: ${alias}`);
     let res = "";

@@ -22,6 +22,8 @@ const reverse = {
 };
 
 module.exports = (message, client, helper) => {
+    if (message.gcfg.trivia == message.channel.id) return;
+    
     let alias = message.content.split(" ").slice(1).join(" ").toLowerCase();
     helper.log(message, `hero: ${alias}`);
     find_hero(alias).then(res => {

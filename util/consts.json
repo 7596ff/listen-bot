@@ -23,6 +23,7 @@
         "help": ["help", "commands", "command"],
         "eval": ["eval"],
         "shardinfo": ["shardinfo"],
+        "restart": ["restart"],
         "secret": ["secret"]
     }
 }

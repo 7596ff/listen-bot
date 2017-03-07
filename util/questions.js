@@ -2,10 +2,6 @@ const abilities = require("../json/abilities.json");
 const items = require("../json/items.json");
 //const talents = require("../json/talents.json");
 
-function clean(str) {
-    return str.toString().replace(/[+\-%s]/g, "").trim();
-}
-
 module.exports = () => {
     let questions = [];
 
@@ -15,7 +11,7 @@ module.exports = () => {
                 ability.manacost.split(" ").forEach((cost, index, array) => {
                     questions.push({
                         "question": `Mana Cost: Level ${index + 1} ${ability.name}`,
-                        "answer": clean(array[index])
+                        "answer": array[index].toString().trim()
                     });
                 })
             }
@@ -24,7 +20,7 @@ module.exports = () => {
                 ability.manacost.split("/").forEach((cost, index, array) => {
                     questions.push({
                         "question": `Mana Cost: Level ${index + 1} ${ability.name}`,
-                        "answer": clean(array[index])
+                        "answer": array[index].toString().trim()
                     });
                 })
             }
@@ -32,7 +28,7 @@ module.exports = () => {
             if (!ability.manacost.match(/[ ]/g) && ability.manacost.match(/[\/]/g)) {
                 questions.push({
                     "question": "Mana Cost: ${ability.name}",
-                    "answer": clean(ability.manacost)
+                    "answer": ability.manacost.toString().trim()
                 })
             }
         }
@@ -42,7 +38,7 @@ module.exports = () => {
                 ability.cooldown.split(" ").forEach((cost, index, array) => {
                     questions.push({
                         "question": `Cooldown: Level ${index + 1} ${ability.name}`,
-                        "answer": clean(array[index])
+                        "answer": array[index].toString().trim()
                     });
                 })
             }
@@ -51,7 +47,7 @@ module.exports = () => {
                 ability.cooldown.split("/").forEach((cost, index, array) => {
                     questions.push({
                         "question": `Cooldown: Level ${index + 1} ${ability.name}`,
-                        "answer": clean(array[index])
+                        "answer": array[index].toString().trim()
                     });
                 })
             }
@@ -59,7 +55,7 @@ module.exports = () => {
             if (!ability.cooldown.match(/[ ]/g) && ability.cooldown.match(/[\/]/g)) {
                 questions.push({
                     "question": "Cooldown: ${ability.name}",
-                    "answer": clean(ability.cooldown)
+                    "answer": bility.cooldown.toString().trim()
                 })
             }
         }
@@ -72,19 +68,19 @@ module.exports = () => {
                         attr[1].split("/").forEach((item, index, array) => {
                             questions.push({
                                 "question": `${attr[0]}: Level ${index + 1} ${ability.name}`,
-                                "answer": clean(item)
+                                "answer": item.toString().trim()
                             })
                         });
                     } else {
                         questions.push({
                             "question": `${ability.name}: ${attr[0]}`,
-                            "answer": clean(attr[1])
+                            "answer": attr[1].toString().trim()
                         });
                     }
                 } else {
                     questions.push({
                         "question": `${ability.name}: ${attr.slice(1).join(" ")}?`,
-                        "answer": clean(attr[0])
+                        "answer": attr[0].toString().trim()
                     });
                 }
             });
@@ -98,21 +94,21 @@ module.exports = () => {
                         attr[1].split("/").forEach((item, index, array) => {
                             questions.push({
                                 "question": `${attr[0]}: Level ${index + 1} ${ability.name}`,
-                                "answer": clean(item)
+                                "answer": item.toString().trim()
                             })
                         });
                     } else {
                         if (!attr[0] == "Behavior") {
                             questions.push({
                                 "question": `${ability.name}: ${attr[0]}`,
-                                "answer": clean(attr[1])
+                                "answer": attr[1].toString().trim()
                             });
                         }
                     }
                 } else {
                     questions.push({
                         "question": `${ability.name}: ${attr.slice(1).join(" ")}?`,
-                        "answer": clean(attr[0])
+                        "answer": attr[0].toString().trim()
                     });
                 }
             });
@@ -124,14 +120,14 @@ module.exports = () => {
             if (item.manacost) {
                 questions.push({
                     "question": `Mana Cost: ${item.format_name}`,
-                    "answer": clean(item.manacost)
+                    "answer": item.manacost.toString().trim()
                 });
             }
 
             if (item.cooldown) {
                 questions.push({
                     "question": `Cooldown: ${item.format_name}`,
-                    "answer": clean(item.cooldown)
+                    "answer": item.cooldown.toString().trim()
                 });
             }
 
@@ -141,12 +137,12 @@ module.exports = () => {
                     if (attribute.match(": ")) {
                         questions.push({
                             "question": `${item.format_name}: ${attr[0]}`,
-                            "answer": clean(attr[1])
+                            "answer": attr[1].toString().trim()
                         });
                     } else {
                         questions.push({
                             "question": `${item.format_name}: ${attr.slice(1).join(" ")}?`,
-                            "answer": clean(attr[0].toString())
+                            "answer": attr[0].toString().trim()
                         });
                     }
                 });

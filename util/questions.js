@@ -1,6 +1,6 @@
 const abilities = require("../json/abilities.json");
 const items = require("../json/items.json");
-//const talents = require("../json/talents.json");
+const talents = require("../json/talents.json");
 
 function clean(str) {
     str = str.toString();
@@ -156,15 +156,20 @@ module.exports = () => {
         }
     });
 
-    // talents.forEach(talent => {
-    //     talent.keys().forEach(key => {
-    //         if (!isNaN(key)) {
-    //             talent[key].forEach(tale => {
-    //                 let's do this later
-    //             });
-    //         }
-    //     });
-    // });
+    for (let talent in talents) {
+        talent = talents[talent];
+        tlist = []; tlist.push(...talent["10"], ...talent["15"], ...talent["20"], ...talent["25"]); // xd
+        tlist.forEach(tl => {
+            tl.split(" ").forEach((item, index, array) => {
+                if (!isNaN(item.replace(/[+\-%s\.]/g, ""))) {
+                    questions.push({
+                        "question": `Talents: ${talent.format_name}: ${array.slice(0, index).join(" ")} ${Array(item.length).join("•")} ${array.slice(index + 1).join(" ")}`,
+                        "answer": item
+                    });
+                }
+            });
+        });
+    }
 
     return questions;
 };

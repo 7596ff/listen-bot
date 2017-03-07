@@ -219,7 +219,7 @@ sub.on("message", (channel, message) => {
         }
     }
 
-    if (channel == "__keyevent@0__:expired" && message.startsWith("trivia")) client.trivia.keyevent(message, client);
+    if (channel == "__keyevent@0__:expired" && message.startsWith("trivia") && client.trivia) client.trivia.keyevent(message, client);
 });
 
 function invoke(message, client, helper, command) {

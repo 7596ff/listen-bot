@@ -1,5 +1,4 @@
 const resolve_dota_id = require("../../util/resolve_dota_id");
-const search_members = require("../../util/search_members");
 const embed_history = require("../../embeds/history");
 
 function find_player_team(match, account_id) {

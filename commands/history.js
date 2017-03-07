@@ -1,6 +1,3 @@
-const resolve_dota_id = require("../util/resolve_dota_id");
-const search_members = require("../util/search_members");
-const embed_history = require("../embeds/history");
 const history_with = require("./history/with");
 const history_as = require("./history/as");
 const eat = require("../util/eat");

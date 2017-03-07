@@ -83,8 +83,8 @@ async function courage(message, client, helper) {
         }
     }).catch(err => {
         message.channel.createMessage("Something went wrong.").catch(err => helper.handle(message, err));
-        helper.log(message, err)
-    })
+        helper.log(message, err);
+    });
 }
 
 module.exports = courage;

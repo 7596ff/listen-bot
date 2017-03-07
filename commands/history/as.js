@@ -50,8 +50,8 @@ async function as_(message, client, helper, as, _of) {
             message.channel.createMessage("Something went wrong.").catch(err => helper.handle(message, err));
             helper.log(message, "something went wrong with mika");
             helper.log(message, err);
-        })
-    })
+        });
+    });
 }
 
 module.exports = as_;

@@ -37,5 +37,5 @@ module.exports = (matches, name) => {
             "name": name,
             "value": fmatchlist.map(row => `\`${row.slice(0, -1).join(" ")}\` ${row[row.length - 1]}`).join("\n")
         }]
-    }
+    };
 };

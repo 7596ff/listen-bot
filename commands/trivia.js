@@ -7,6 +7,6 @@ module.exports = (message, client, helper) => {
 
     if (command == "stop") {
         if (client.trivia.channels.includes(message.gcfg.trivia)) client.trivia.channels.splice(client.trivia.channels.indexOf(message.gcfg.trivia), 1);
-        message.channel.createMessage(":ok_hand: Trivia stopped.");
+        message.channel.createMessage(":ok_hand: Trivia stopped.").catch(err => helper.handle(message, err));
     }
 };

@@ -135,7 +135,8 @@
         "text":  [
             "starts or stops a trivia game going on in a designated trivia channel.",
             "\n`--trivia start`: starts the game.",
-            "\n`--trivia stop`: stops the game."
+            "\n`--trivia top`: leaderboard of users in this server.",
+            "\n`--trivia top all`: leaderboard of all users."
         ],
         "aliases": ["t", "challenge"]
     }],

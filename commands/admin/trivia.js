@@ -23,5 +23,7 @@ module.exports = (message, client, helper) => {
             helper.log(message, "something went wrong with updating trivia channel");
             helper.log(message, err);
         });
+
+        if (client.trivia.channels.includes(message.gcfg.trivia)) client.trivia.channels.splice(client.trivia.channels.indexOf(message.gcfg.trivia), 1);
     }
 };

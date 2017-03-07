@@ -8,6 +8,8 @@ function escapeRegExp(string){
 }
 
 module.exports = (message, client, helper) => {
+    if (message.gcfg.trivia == message.channel.id) return;
+
     let options = message.content.split(" ").slice(1);
     helper.log(message, `ability: ${options.join(" ")}`);
     let hero_name = false;

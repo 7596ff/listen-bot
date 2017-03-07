@@ -4,6 +4,8 @@ const hero = require("./patch/hero");
 const version_hero = require("./patch/version_hero");
 
 module.exports = (message, client, helper) => {
+    if (message.gcfg.trivia == message.channel.id) return;
+    
     let options = message.content.split(" ").slice(1);
   
     for (let arg in options) {

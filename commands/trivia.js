@@ -37,4 +37,23 @@ module.exports = (message, client, helper) => {
             helper.log(message, err);
         });
     }
+
+    if (command == "stats") {
+        client.pg.query("SELECT * FROM scores ORDER BY score DESC;").then(res => {
+            let embed = {
+                "description": [
+                    `**Current trivia games running:** ${client.trivia.channels.length}`,
+                    `**Total questions:** ${client.trivia.questions.length}`,
+                    `**First place:** ${client.users.find(user => user.id == res.rows[0].id).username} - ${res.rows[0].score}`
+                ].join("\n"),
+                "timestamp": new Date()
+            };
+
+            message.channel.createMessage({
+                "embed": embed
+            }).catch(err => helper.handle(message, err)).then(res => {
+                helper.log(message, "sent trivia stats");
+            });
+        });
+    }
 };

@@ -1,6 +1,8 @@
 const help = require("../help");
 
-function edit_trivia(pg, channel, message, helper) {
+function edit_trivia(pg, channel, message, client, helper) {
+    if (client.trivia.channels.includes(message.gcfg.trivia)) client.trivia.channels.splice(client.trivia.channels.indexOf(message.gcfg.trivia), 1);
+
     pg.query({
         "text": "UPDATE public.guilds SET trivia = $1 WHERE id = $2",
         "values": [channel || 0, message.channel.guild.id]
@@ -20,12 +22,12 @@ module.exports = (message, client, helper) => {
     switch(split_content[0]) {
     case "channel":
         if (message.channelMentions.length > 0) {
-            edit_trivia(client.pg, message.channelMentions[0], message, helper);
+            edit_trivia(client.pg, message.channelMentions[0], message, client, helper);
         } else if (split_content.slice(1).join(" ").trim() == "here") {
-            edit_trivia(client.pg, message.channel.id, message, helper);
+            edit_trivia(client.pg, message.channel.id, message, client, helper);
         } else if (split_content.slice(1).join(" ").trim() == "none") {
             if (client.trivia.channels.includes(message.gcfg.trivia)) client.trivia.channels.splice(client.trivia.channels.indexOf(message.gcfg.trivia), 1);
-            edit_trivia(client.pg, null, message, helper);
+            edit_trivia(client.pg, null, message, client, helper);
         }
         break;
     default:

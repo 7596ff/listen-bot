@@ -148,7 +148,7 @@ module.exports = () => {
                     } else {
                         questions.push({
                             "question": `${item.format_name}: ${attr.slice(1).join(" ")}?`,
-                            "answer": clean(attr[1])
+                            "answer": clean(attr[0])
                         });
                     }
                 });

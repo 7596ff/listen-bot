@@ -2,7 +2,8 @@ const admin_commands = {
     "prefix": require("./admin/prefix"),
     "cooldowns": require("./admin/cooldowns"),
     "disable": require("./admin/disable"),
-    "enable": require("./admin/enable")
+    "enable": require("./admin/enable"),
+    "trivia": require("./admin/trivia")
 };
 
 module.exports = (message, client, helper) => {

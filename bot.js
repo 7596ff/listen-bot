@@ -82,6 +82,8 @@ client.on("ready", () => {
         util.log(err);
     });
 
+    client.trivia = new Trivia(require("./util/questions")());
+
     client.shards.forEach(shard => {
         shard.editStatus("online", {
             "name": `${config.default_prefix}info | ${config.default_prefix}help [${shard.id + 1}/${client.shards.size}]`
@@ -192,8 +194,8 @@ client.on("guildDelete", guild => {
 });
 
 sub.on("message", (channel, message) => {
-    if (!client.config.steam_enabled) return;
     if (channel == "steam") {
+        if (!client.config.steam_enabled) return;
         message = JSON.parse(message);
         util.log(`REDIS: ${message.message}`);
 
@@ -216,6 +218,8 @@ sub.on("message", (channel, message) => {
             break;
         }
     }
+
+    if (channel == "__keyevent@0__:expired" && message.startsWith("trivia")) client.trivia.keyevent(message, client);
 });
 
 function invoke(message, client, helper, command) {
@@ -278,7 +282,7 @@ function handle(message, client) {
             });
         }
     } else {
-        if (client.trivia && client.trivia.channels.hasOwnProperty(message.channel.id)) client.trivia.handle(message, client, helper);
+        if (client.trivia && client.trivia.channels.includes(message.channel.id) && message.gcfg.trivia == message.channel.id) client.trivia.handle(message, client, client.helper);
     }
 }
 
@@ -330,4 +334,5 @@ client.redis.on("ready", () => {
 sub.on("ready", () => {
     util.log("redis sub ready.");
     sub.subscribe("steam");
+    sub.subscribe("__keyevent@0__:expired");
 });

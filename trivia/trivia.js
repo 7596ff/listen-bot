@@ -1,7 +1,9 @@
 class Trivia {
     constructor(questions) {
         this.questions = questions;
-        this.channels = ["269635488002867200"];
+        this.active_questions = {};
+        this.channels = [];
+        this.hints = {};
     }
 
     get_new_question(old_question, redis, channel) {
@@ -9,59 +11,67 @@ class Trivia {
         let ret = old_question.question != "new" && old_question.question == res.question ? this.get_new_question(old_question) : res;
 
         if (redis && channel) {
-            redis.set(`trivia:${channel}:question`, JSON.stringify(ret));
-            redis.set(`trivia:${channel}:20`, true);
-            redis.expire(`trivia:${channel}:20`, 40);
-            redis.set(`trivia:${channel}:0`, true);
-            redis.expire(`trivia:${channel}:0`, 60);
+            redis.set(`trivia:${channel}:hint`, true);
+            redis.expire(`trivia:${channel}:hint`, 20);
             redis.set(`trivia:${channel}:retries`, 2);
+
+            this.active_questions[channel] = ret;
+            this.hints[channel] = Array(ret.answer.length + 1).join("•");
         }
 
         return ret;
     }
 
     init(client, channel) {
+        this.channels.push(channel);
         client.createMessage(channel, "Trivia game started in this channel.");
         let question = this.get_new_question("new", client.redis, channel);
         client.createMessage(channel, `**${question.question}**`);
     }
 
     handle(message, client, helper) {
-        client.redis.get(`trivia:${message.channel.id}:question`, (err, reply) => {
-            if (!reply) return;
-            if (err) helper.log(message, err);
+        let question = this.active_questions[message.channel.id];
+        if (message.content.toLowerCase() == question.answer.toLowerCase()) {
+            // TODO: points
+            let new_question = this.get_new_question(question, client.redis, message.channel.id);
+            message.channel.createMessage(`**${message.author.username}#${message.author.discriminator}** is correct! The answer was **${question.answer}**. New question:\n**${new_question.question}**`);
+        }
+    }
 
-            reply = JSON.parse(reply);
-            if (message.content == reply.answer) {
-                let new_question = this.get_new_question(reply, client.redis, message.channel.id);
-                message.channel.createMessage(`**${message.author.username}#${message.author.discriminator}** is correct! New question:\n**${new_question.question}**`);
-            }
-        });
+    replace(str, orig) {
+        let index = Math.floor(Math.random() * str.length);
+        if (str.charAt(index) == "•") {
+            return `${str.substr(0, index)}${orig.charAt(index)}${str.substr(index + 1)}`;
+        } else {
+            return this.replace(str, orig); // this can crash the bot
+        }
     }
 
     keyevent(message, client) {
         let split_content = message.split(":")
         let channel = split_content[1], code = split_content[2];
-        switch(code) {
-            case "20":
-                client.createMessage(channel, "20 seconds left!");
-                break;
-            case "0":
-                client.redis.get(`trivia:${channel}:retries`, (err, reply) => {
-                    console.log(reply)
-                    if (reply > 0) {
-                        client.redis.get(`trivia:${channel}:question`, (err, question) => {
-                            question = JSON.parse(question);
-                            let new_question = this.get_new_question(question, client.redis, channel);
+        if (!this.channels.includes(channel)) return;
 
-                            client.redis.set(`trivia:${channel}:retries`, reply - 1);
-                            client.createMessage(channel, `Time's up! The answer was **${question.answer}**. New question:\n**${new_question.question}**`).catch(err => util.log(err));
-                        });
+        if (code == "hint") {
+            let question = this.active_questions[channel];
+            this.hints[channel] = this.replace(this.hints[channel], question.answer);
+            if (question.answer == this.hints[channel]) {
+                client.redis.get(`trivia:${channel}:retries`, (err, reply) => {
+                    if (reply > 0) {
+                        let new_question = this.get_new_question(question, client.redis, channel);
+
+                        client.redis.set(`trivia:${channel}:retries`, reply - 1);
+                        client.createMessage(channel, `Time's up! The answer was **${question.answer}**. New question:\n**${new_question.question}**`).catch(err => util.log(err));     
                     } else {
+                        this.channels.splice(this.channels.indexOf(channel), 1);
                         client.createMessage(channel, "Time's up! Not enough activity detected in this channel.\nUse `--trivia start` to start up a new game.").catch(err => util.log(err));
                     }
                 });
-                break;
+            } else {
+                client.redis.set(`trivia:${channel}:hint`, true);
+                client.redis.expire(`trivia:${channel}:hint`, 10);
+                client.createMessage(channel, `Hint: ${this.hints[channel]}`).catch(err => util.log(err));
+            }
         }
     }
 }

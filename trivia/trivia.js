@@ -94,7 +94,8 @@ class Trivia {
                         delete this.points[channel];
                     } else {
                         this.channels.splice(this.channels.indexOf(channel), 1);
-                        client.createMessage(channel, "Time's up! Not enough activity detected in this channel.\nUse `--trivia start` to start up a new game.").catch(err => util.log(err));
+                        client.createMessage(channel, `Time's up! The answer was **${question.answer}**. Not enough activity detected in this channel.\nUse \`--trivia start\` to start up a new game.`).catch(err => util.log(err));
+                        util.log(`${channel}: trivia timed out`);
                         delete this.points[channel];
                     }
                 });

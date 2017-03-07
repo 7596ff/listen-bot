@@ -25,7 +25,7 @@ const talent_hero_embed = function(hero_name) {
 };
 
 module.exports = (message, client, helper) => {
-    if (message.gcfg.trivia == message.channel.id) return;
+    if (client.trivia.channels.includes(message.channel.id)) return;
     
     let hero = message.content.split(" ").slice(1).join(" ").toLowerCase();
     helper.log(message, `talents: hero name (${hero})`);

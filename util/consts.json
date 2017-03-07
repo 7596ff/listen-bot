@@ -15,6 +15,7 @@
         "matches": ["mathes", "matchhistory", "games"],
         "history": ["history"],
         "courage": ["courage", "divinecourage", "divine"],
+        "trivia": ["trivia"],
         "info": ["info", "about"],
         "invite": ["invite"],
         "botstats": ["botstats"],

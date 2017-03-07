@@ -65,7 +65,7 @@ class Trivia {
                         let new_question = this.get_new_question(question, client.redis, channel);
 
                         client.redis.set(`trivia:${channel}:retries`, reply - 1);
-                        client.createMessage(channel, `Time's up! The answer was **${question.answer}**. New question:\n**${new_question.question}** (Hint: ${this.hints[message.channel.id]})`).catch(err => util.log(err));     
+                        client.createMessage(channel, `Time's up! The answer was **${question.answer}**. New question:\n**${new_question.question}** (Hint: ${this.hints[channel]})`).catch(err => util.log(err));     
                     } else {
                         this.channels.splice(this.channels.indexOf(channel), 1);
                         client.createMessage(channel, "Time's up! Not enough activity detected in this channel.\nUse `--trivia start` to start up a new game.").catch(err => util.log(err));

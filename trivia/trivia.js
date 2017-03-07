@@ -1,3 +1,5 @@
+const util = require("util");
+
 class Trivia {
     constructor(questions) {
         this.questions = questions;
@@ -33,7 +35,7 @@ class Trivia {
         client.createMessage(channel, `**${question.question}** (Hint: ${this.hints[channel]})`);
     }
 
-    handle(message, client, helper) {
+    handle(message, client) {
         let question = this.active_questions[message.channel.id];
         if (this.clean(message.content) == this.clean(question.answer)) {
             // TODO: points
@@ -52,7 +54,7 @@ class Trivia {
     }
 
     keyevent(message, client) {
-        let split_content = message.split(":")
+        let split_content = message.split(":");
         let channel = split_content[1], code = split_content[2];
         if (!this.channels.includes(channel)) return;
 

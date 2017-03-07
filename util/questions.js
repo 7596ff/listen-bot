@@ -13,7 +13,7 @@ module.exports = () => {
                         "question": `Mana Cost: Level ${index + 1} ${ability.name}`,
                         "answer": array[index].toString().trim()
                     });
-                })
+                });
             }
 
             if (ability.manacost.match(/[\/]/g)) {
@@ -22,14 +22,14 @@ module.exports = () => {
                         "question": `Mana Cost: Level ${index + 1} ${ability.name}`,
                         "answer": array[index].toString().trim()
                     });
-                })
+                });
             }
 
             if (!ability.manacost.match(/[ ]/g) && ability.manacost.match(/[\/]/g)) {
                 questions.push({
                     "question": "Mana Cost: ${ability.name}",
                     "answer": ability.manacost.toString().trim()
-                })
+                });
             }
         }
 
@@ -40,7 +40,7 @@ module.exports = () => {
                         "question": `Cooldown: Level ${index + 1} ${ability.name}`,
                         "answer": array[index].toString().trim()
                     });
-                })
+                });
             }
 
             if (ability.cooldown.match(/[\/]/g)) {
@@ -49,14 +49,14 @@ module.exports = () => {
                         "question": `Cooldown: Level ${index + 1} ${ability.name}`,
                         "answer": array[index].toString().trim()
                     });
-                })
+                });
             }
 
             if (!ability.cooldown.match(/[ ]/g) && ability.cooldown.match(/[\/]/g)) {
                 questions.push({
                     "question": "Cooldown: ${ability.name}",
-                    "answer": bility.cooldown.toString().trim()
-                })
+                    "answer": ability.cooldown.toString().trim()
+                });
             }
         }
 
@@ -65,11 +65,11 @@ module.exports = () => {
                 let attr = attribute.match(": ") ? attribute.split(": ") : attribute.split(" ");
                 if (attribute.match(": ")) {
                     if (attr[1].match(/[/]/g)) {
-                        attr[1].split("/").forEach((item, index, array) => {
+                        attr[1].split("/").forEach((item, index) => {
                             questions.push({
                                 "question": `${attr[0]}: Level ${index + 1} ${ability.name}`,
                                 "answer": item.toString().trim()
-                            })
+                            });
                         });
                     } else {
                         questions.push({
@@ -91,11 +91,11 @@ module.exports = () => {
                 let attr = attribute.match(": ") ? attribute.split(": ") : attribute.split(" ");
                 if (attribute.match(": ")) {
                     if (attr[1].match(/[/]/g)) {
-                        attr[1].split("/").forEach((item, index, array) => {
+                        attr[1].split("/").forEach((item, index) => {
                             questions.push({
                                 "question": `${attr[0]}: Level ${index + 1} ${ability.name}`,
                                 "answer": item.toString().trim()
-                            })
+                            });
                         });
                     } else {
                         if (!attr[0] == "Behavior") {

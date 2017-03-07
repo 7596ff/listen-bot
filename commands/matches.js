@@ -72,7 +72,7 @@ async function matches(message, client, helper) {
             message.channel.createMessage({
                 "embed": embed
             }).then(() => {
-                helper.log(message, "sent matches")
+                helper.log(message, "sent matches");
             }).catch(err => helper.handle(message, err));
         }).catch(err => {
             helper.log(message, err);

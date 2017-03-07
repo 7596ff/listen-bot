@@ -133,10 +133,12 @@
     }, {
         "name": "trivia",
         "text":  [
-            "starts or stops a trivia game going on in a designated trivia channel.",
+            "set of commands for the trivia game. ",
             "\n`--trivia start`: starts the game.",
+            "\n`--trivia stop`: stops the game.",
             "\n`--trivia top`: leaderboard of users in this server.",
-            "\n`--trivia top all`: leaderboard of all users."
+            "\n`--trivia top all`: leaderboard of all users.",
+            "\n`--trivia stats`: stats about the trivia game."
         ],
         "aliases": ["t", "challenge"]
     }],

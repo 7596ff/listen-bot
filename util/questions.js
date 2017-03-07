@@ -102,10 +102,12 @@ module.exports = () => {
                             })
                         });
                     } else {
-                        questions.push({
-                            "question": `${ability.name}: ${attr[0]}`,
-                            "answer": clean(attr[1])
-                        });
+                        if (!attr[0] == "Behavior") {
+                            questions.push({
+                                "question": `${ability.name}: ${attr[0]}`,
+                                "answer": clean(attr[1])
+                            });
+                        }
                     }
                 } else {
                     questions.push({

@@ -1,8 +1,9 @@
 const util = require("util");
 
 class Trivia {
-    constructor(questions) {
+    constructor(questions, categories) {
         this.questions = questions;
+        this.categories = categories;
         this.active_questions = {};
         this.channels = [];
         this.hints = {};
@@ -14,7 +15,9 @@ class Trivia {
     }
 
     get_new_question(old_question, redis, channel) {
-        let res = this.questions[Math.floor(Math.random() * this.questions.length)];
+        let cat = this.categories[Math.floor(Math.random() * this.categories.length)];
+        let fil = this.questions.filter(question => question.category == cat);
+        let res = fil[Math.floor(Math.random() * fil.length)];
         let ret = old_question.question != "new" && old_question.question == res.question ? this.get_new_question(old_question) : res;
 
         if (redis && channel) {
@@ -59,7 +62,7 @@ class Trivia {
         if (this.clean(message.content) == this.clean(question.answer)) {
             let new_question = this.get_new_question(question, client.redis, message.channel.id);
             this.increment_user(client.pg, message.author.id, this.points[message.channel.id][message.author.id]);
-            message.channel.createMessage(`(+${this.points[message.channel.id][message.author.id]}) **${message.author.username}#${message.author.discriminator}** is correct! The answer was **${question.answer}**. New question:\n**${new_question.question}** (Hint: ${this.hints[message.channel.id]})`);
+            message.channel.createMessage(`(+${this.points[message.channel.id][message.author.id]}) **${message.author.username}#${message.author.discriminator}** is correct! The answer was **${question.answer}**. New question:\n\n**${new_question.question}** (Hint: ${this.hints[message.channel.id]})`);
             delete this.points[message.channel.id];
         } else {
             let pts = this.points[message.channel.id][message.author.id];
@@ -90,7 +93,7 @@ class Trivia {
                         let new_question = this.get_new_question(question, client.redis, channel);
 
                         client.redis.set(`trivia:${channel}:retries`, reply - 1);
-                        client.createMessage(channel, `Time's up! The answer was **${question.answer}**. New question:\n**${new_question.question}** (Hint: ${this.hints[channel]})`).catch(err => util.log(err));
+                        client.createMessage(channel, `Time's up! The answer was **${question.answer}**. New question:\n\n**${new_question.question}** (Hint: ${this.hints[channel]})`).catch(err => util.log(err));
                         delete this.points[channel];
                     } else {
                         this.channels.splice(this.channels.indexOf(channel), 1);

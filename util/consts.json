@@ -21,6 +21,7 @@
         "botstats": ["botstats"],
         "admin": ["admin"],
         "help": ["help", "commands", "command"],
+        "usage": ["usage"],
         "eval": ["eval"],
         "shardinfo": ["shardinfo"],
         "restart": ["restart"],

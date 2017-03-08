@@ -72,6 +72,11 @@ module.exports = (message, client, helper) => {
         client.pg.query("SELECT * FROM scores ORDER BY score DESC;").then(res => {
             let search = search_members(message.channel.guild.members, split_content.slice(1))[0] || message.author.id;
             let data = res.rows.find(row => row.id == search);
+            let guild = res.rows.filter(row => message.channel.guild.members.get(row.id));
+            if (!data) {
+                message.channel.createMessage(`${client.users.get(search).username} hasn't played trivia yet!`).catch(err => helper.handle(message, err));
+                return;
+            }
 
             let embed = {
                 "author": {
@@ -80,9 +85,9 @@ module.exports = (message, client, helper) => {
                 },
                 "description": [
                     `**Points:** ${data.score}`,
-                    `**Global Rank:** ${res.rows.indexOf(data) + 1}`,
-                    `**Server Rank:** ${res.rows.filter(row => message.channel.guild.members.get(row.id)).indexOf(data) + 1}`,
-                    `**Highest Streak:** ${data.streak}`
+                    `**Highest Streak:** ${data.streak}`,
+                    `**Server Rank:** ${guild.indexOf(data) + 1}/${guild.length}`,
+                    `**Global Rank:** ${res.rows.indexOf(data) + 1}/${res.rows.length}`
                 ].join("\n"),
                 "timestamp": new Date()
             };
@@ -90,7 +95,7 @@ module.exports = (message, client, helper) => {
             message.channel.createMessage({
                 "embed": embed
             }).catch(err => helper.handle(message, err)).then(res => {
-                helper.log(message, "sent trivia stats");
+                helper.log(message, "sent trivia points for a user");
             });
         });
         return;

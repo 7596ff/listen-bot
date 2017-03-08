@@ -138,6 +138,8 @@
             "\n`--trivia stop`: stops the game.",
             "\n`--trivia top`: leaderboard of users in this server.",
             "\n`--trivia top all`: leaderboard of all users.",
+            "\n`--trivia points`: your scores.",
+            "\n`--trivia points [member]`: scores of someone.",
             "\n`--trivia stats`: stats about the trivia game."
         ],
         "aliases": ["t", "challenge"]

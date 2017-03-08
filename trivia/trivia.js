@@ -9,6 +9,7 @@ class Trivia {
         this.hints = {};
         this.hlock = {};
         this.points = {};
+        this.streaks = {};
     }
 
     clean(str) {
@@ -72,7 +73,31 @@ class Trivia {
         if (this.clean(message.content) == this.clean(question.answer)) {
             let new_question = this.get_new_question(question, client.redis, message.channel.id);
             this.increment_user(client.pg, message.author.id, this.points[message.channel.id][message.author.id]);
-            message.channel.createMessage(`(+${this.points[message.channel.id][message.author.id]}) ${this.notping(message.author)} is correct! The answer was **${question.answer}**. New question:\n\n**${new_question.question}** (Hint: ${this.hints[message.channel.id]})`);
+
+            let streakstr = "";
+
+            if (!this.streaks[message.channel.id]) {
+                this.streaks[message.channel.id] = {
+                    "user": message.author.id,
+                    "streak": 0
+                };
+            }
+
+            if (this.streaks[message.channel.id].user == message.author.id) {
+                this.streaks[message.channel.id].streak += 1;
+                streakstr = `${this.notping(message.author)} is on a streak of ${this.streaks[message.channel.id].streak}! `;
+            } else {
+                if (this.streaks[message.channel.id].streak > 2) {
+                    streakstr = `${this.notping(message.author)} broke ${this.notping(client.users.get(this.streaks[message.channel.id].user))}'s streak of ${this.streaks[message.channel.id].streak}! `;
+                }
+                
+                this.streaks[message.channel.id] = {
+                    "user": message.author.id,
+                    "streak": 1
+                };
+            }
+
+            message.channel.createMessage(`(+${this.points[message.channel.id][message.author.id]}) ${this.notping(message.author)} is correct! The answer was **${question.answer}**. ${streakstr}New question:\n\n**${new_question.question}** (Hint: ${this.hints[message.channel.id]})`);
             delete this.points[message.channel.id];
         } else {
             let pts = this.points[message.channel.id][message.author.id];
@@ -104,13 +129,14 @@ class Trivia {
                     if (reply > 0) {
                         let new_question = this.get_new_question(question, client.redis, channel, reply - 1);
                         client.createMessage(channel, `Time's up! The answer was **${question.answer}**. New question:\n\n**${new_question.question}** (Hint: ${this.hints[channel]})`).catch(err => util.log(err));
-                        delete this.points[channel];
                     } else {
                         this.channels.splice(this.channels.indexOf(channel), 1);
                         client.createMessage(channel, `Time's up! The answer was **${question.answer}**. Not enough activity detected in this channel.\nUse \`--trivia start\` to start up a new game.`).catch(err => util.log(err));
                         util.log(`${channel}: trivia timed out`);
-                        delete this.points[channel];
                     }
+
+                    delete this.points[channel];
+                    delete this.streaks[channel];
                 });
             } else {
                 if (!this.hlock[channel]) {

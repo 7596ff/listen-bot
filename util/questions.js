@@ -17,7 +17,8 @@ module.exports = () => {
                 ability.manacost.split(" ").forEach((cost, index, array) => {
                     questions.push({
                         "question": `Mana Cost: Level ${index + 1} ${ability.name}`,
-                        "answer": clean(array[index])
+                        "answer": clean(array[index]),
+                        "category": "ability"
                     });
                 });
             }
@@ -26,7 +27,8 @@ module.exports = () => {
                 ability.manacost.split("/").forEach((cost, index, array) => {
                     questions.push({
                         "question": `Mana Cost: Level ${index + 1} ${ability.name}`,
-                        "answer": clean(array[index])
+                        "answer": clean(array[index]),
+                        "category": "ability"
                     });
                 });
             }
@@ -34,7 +36,8 @@ module.exports = () => {
             if (!ability.manacost.match(/[ ]/g) && ability.manacost.match(/[\/]/g)) {
                 questions.push({
                     "question": "Mana Cost: ${ability.name}",
-                    "answer": clean(array[index])
+                    "answer": clean(array[index]),
+                    "category": "ability"
                 });
             }
         }
@@ -44,7 +47,8 @@ module.exports = () => {
                 ability.cooldown.split(" ").forEach((cost, index, array) => {
                     questions.push({
                         "question": `Cooldown: Level ${index + 1} ${ability.name}`,
-                        "answer": clean(array[index])
+                        "answer": clean(array[index]),
+                        "category": "ability"
                     });
                 });
             }
@@ -53,7 +57,8 @@ module.exports = () => {
                 ability.cooldown.split("/").forEach((cost, index, array) => {
                     questions.push({
                         "question": `Cooldown: Level ${index + 1} ${ability.name}`,
-                        "answer": clean(array[index])
+                        "answer": clean(array[index]),
+                        "category": "ability"
                     });
                 });
             }
@@ -61,7 +66,8 @@ module.exports = () => {
             if (!ability.cooldown.match(/[ ]/g) && ability.cooldown.match(/[\/]/g)) {
                 questions.push({
                     "question": "Cooldown: ${ability.name}",
-                    "answer": clean(array[index])
+                    "answer": clean(array[index]),
+                    "category": "ability"
                 });
             }
         }
@@ -74,19 +80,22 @@ module.exports = () => {
                         attr[1].split("/").forEach((item, index) => {
                             questions.push({
                                 "question": `${attr[0]}: Level ${index + 1} ${ability.name}`,
-                                "answer": clean(item)
+                                "answer": clean(item),
+                                "category": "ability"
                             });
                         });
                     } else {
                         questions.push({
                             "question": `${ability.name}: ${attr[0]}`,
-                            "answer": clean(attr[1])
+                            "answer": clean(attr[1]),
+                            "category": "ability"
                         });
                     }
                 } else {
                     questions.push({
                         "question": `${ability.name}: ${attr.slice(1).join(" ")}?`,
-                        "answer": clean(attr[0])
+                        "answer": clean(attr[0]),
+                        "category": "ability"
                     });
                 }
             });
@@ -100,21 +109,24 @@ module.exports = () => {
                         attr[1].split("/").forEach((item, index) => {
                             questions.push({
                                 "question": `${attr[0]}: Level ${index + 1} ${ability.name}`,
-                                "answer": clean(item)
+                                "answer": clean(item),
+                                "category": "ability"
                             });
                         });
                     } else {
                         if (!attr[0] == "Behavior") {
                             questions.push({
                                 "question": `${ability.name}: ${attr[0]}`,
-                                "answer": clean(attr[1])
+                                "answer": clean(attr[1]),
+                                "category": "ability"
                             });
                         }
                     }
                 } else {
                     questions.push({
                         "question": `${ability.name}: ${attr.slice(1).join(" ")}?`,
-                        "answer": clean(attr[0])
+                        "answer": clean(attr[0]),
+                        "category": "ability"
                     });
                 }
             });
@@ -126,14 +138,16 @@ module.exports = () => {
             if (item.manacost) {
                 questions.push({
                     "question": `Mana Cost: ${item.format_name}`,
-                    "answer": clean(item.manacost)
+                    "answer": clean(item.manacost),
+                    "category": "item"
                 });
             }
 
             if (item.cooldown) {
                 questions.push({
                     "question": `Cooldown: ${item.format_name}`,
-                    "answer": clean(item.cooldown)
+                    "answer": clean(item.cooldown),
+                    "category": "item"
                 });
             }
 
@@ -143,12 +157,14 @@ module.exports = () => {
                     if (attribute.match(": ")) {
                         questions.push({
                             "question": `${item.format_name}: ${attr[0]}`,
-                            "answer": clean(attr[1])
+                            "answer": clean(attr[1]),
+                            "category": "item"
                         });
                     } else {
                         questions.push({
                             "question": `${item.format_name}: ${attr.slice(1).join(" ")}?`,
-                            "answer": clean(attr[0])
+                            "answer": clean(attr[0]),
+                            "category": "item"
                         });
                     }
                 });
@@ -164,7 +180,8 @@ module.exports = () => {
                 if (!isNaN(item.replace(/[+\-%s\.]/g, ""))) {
                     questions.push({
                         "question": `Talents: ${talent.format_name}: ${array.slice(0, index).join(" ")} ${Array(item.length).join("•")} ${array.slice(index + 1).join(" ")}`,
-                        "answer": item
+                        "answer": item,
+                        "category": "talents"
                     });
                 }
             });

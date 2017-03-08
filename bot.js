@@ -82,7 +82,8 @@ client.on("ready", () => {
         util.log(err);
     });
 
-    client.trivia = new Trivia(require("./util/questions")());
+    let questions = require("./util/questions")();
+    client.trivia = new Trivia(questions, questions.map(question => question.category).filter((item, index, array) => array.indexOf(item) === index));
 
     client.shards.forEach(shard => {
         shard.editStatus("online", {

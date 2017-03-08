@@ -10,7 +10,7 @@ module.exports = (message, client, helper) => {
     Object.keys(help).forEach(key => {
         embed.fields.push({
             "name": key,
-            "value": help[key].map(topic => `\`${topic.name}\`: ${client.all_usage[topic.name] || 0}`).join("\n"), 
+            "value": help[key].filter(topic => topic.name.split(" ").length === 1).map(topic => `\`${topic.name}\`: ${client.all_usage[topic.name] || 0}`).join("\n"), 
             "inline": true
         });
     });
@@ -23,8 +23,6 @@ module.exports = (message, client, helper) => {
             "inline": true
         });
     }
-
-    console.log(embed.fields.length)
 
     message.channel.createMessage({
         "embed": embed

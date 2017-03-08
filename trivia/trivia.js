@@ -7,6 +7,7 @@ class Trivia {
         this.active_questions = {};
         this.channels = [];
         this.hints = {};
+        this.hlock = {};
         this.points = {};
     }
 
@@ -14,19 +15,28 @@ class Trivia {
         return str.toString().replace(/[+\-%s\.]/g, "").trim().toLowerCase();
     }
 
-    get_new_question(old_question, redis, channel) {
+    notping(author) {
+        return `**${author.username}#${author.discriminator}**`;
+    }
+
+    get_new_question(old_question, redis, channel, retries = 2) {
         let cat = this.categories[Math.floor(Math.random() * this.categories.length)];
         let fil = this.questions.filter(question => question.category == cat);
         let res = fil[Math.floor(Math.random() * fil.length)];
         let ret = old_question.question != "new" && old_question.question == res.question ? this.get_new_question(old_question) : res;
 
         if (redis && channel) {
-            redis.set(`trivia:${channel}:hint`, true);
-            redis.expire(`trivia:${channel}:hint`, 10);
-            redis.set(`trivia:${channel}:retries`, 2);
-
+            this.hlock[channel] = true;
             this.active_questions[channel] = ret;
             this.hints[channel] = ret.answer.replace(/[^+\-%s\.]/g, "•");
+
+            redis.set(`trivia:${channel}:hint`, true, () => {
+                redis.expire(`trivia:${channel}:hint`, 10, () => {
+                    redis.set(`trivia:${channel}:retries`, retries, () => {
+                        this.hlock[channel] = false;
+                    });
+                });
+            }); // AAAAAAAAAAAAAAAAAAAAAAAAAAAa
         }
 
         return ret;
@@ -62,7 +72,7 @@ class Trivia {
         if (this.clean(message.content) == this.clean(question.answer)) {
             let new_question = this.get_new_question(question, client.redis, message.channel.id);
             this.increment_user(client.pg, message.author.id, this.points[message.channel.id][message.author.id]);
-            message.channel.createMessage(`(+${this.points[message.channel.id][message.author.id]}) **${message.author.username}#${message.author.discriminator}** is correct! The answer was **${question.answer}**. New question:\n\n**${new_question.question}** (Hint: ${this.hints[message.channel.id]})`);
+            message.channel.createMessage(`(+${this.points[message.channel.id][message.author.id]}) ${this.notping(message.author)} is correct! The answer was **${question.answer}**. New question:\n\n**${new_question.question}** (Hint: ${this.hints[message.channel.id]})`);
             delete this.points[message.channel.id];
         } else {
             let pts = this.points[message.channel.id][message.author.id];
@@ -71,11 +81,12 @@ class Trivia {
     }
 
     replace(str, orig) {
+        if (str.split("•").length === 1) return orig;
         let index = Math.floor(Math.random() * str.length);
         if (str.charAt(index) == "•") {
             return `${str.substr(0, index)}${orig.charAt(index)}${str.substr(index + 1)}`;
         } else {
-            return this.replace(str, orig); // this can crash the bot
+            return this.replace(str, orig);
         }
     }
 
@@ -87,12 +98,11 @@ class Trivia {
         if (code == "hint") {
             let question = this.active_questions[channel];
             this.hints[channel] = this.replace(this.hints[channel], question.answer);
+            if (this.hints[channel].length > 10) this.replace(this.hints[channel], question.answer);
             if (question.answer == this.hints[channel]) {
                 client.redis.get(`trivia:${channel}:retries`, (err, reply) => {
                     if (reply > 0) {
-                        let new_question = this.get_new_question(question, client.redis, channel);
-
-                        client.redis.set(`trivia:${channel}:retries`, reply - 1);
+                        let new_question = this.get_new_question(question, client.redis, channel, reply - 1);
                         client.createMessage(channel, `Time's up! The answer was **${question.answer}**. New question:\n\n**${new_question.question}** (Hint: ${this.hints[channel]})`).catch(err => util.log(err));
                         delete this.points[channel];
                     } else {
@@ -103,9 +113,13 @@ class Trivia {
                     }
                 });
             } else {
-                client.redis.set(`trivia:${channel}:hint`, true);
-                client.redis.expire(`trivia:${channel}:hint`, 10);
-                client.createMessage(channel, `Hint: ${this.hints[channel]}`).catch(err => util.log(err));
+                if (!this.hlock[channel]) {
+                    client.redis.set(`trivia:${channel}:hint`, true);
+                    client.redis.expire(`trivia:${channel}:hint`, 10);
+                    client.createMessage(channel, `Hint: ${this.hints[channel]}`).catch(err => util.log(err));
+                } else {
+                    util.log(`lock jiggled in ${channel}`);
+                }
             }
         }
     }

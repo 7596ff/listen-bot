@@ -8,7 +8,7 @@ module.exports = (message, client, helper) => {
     });
 
     client.trivia.channels.forEach(channel => {
-        tasks.push(client.createMessage(channel, "The bot is going down for a restart. Wait a few seconds and type `--trivia start` again. Sorry for the inconvenience!"));
+        tasks.push(client.createMessage(channel, "The bot is going down for an update. Wait a few seconds and type `--trivia start` again. Sorry for the inconvenience!"));
     });
 
     Promise.all(tasks).then(() => {

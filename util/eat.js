@@ -20,7 +20,7 @@ function eat(message, options) {
 
             if (first_found) {
                 let res = split.slice(first_found + 1, outer_bound || split.length);
-                switch(type) {
+                switch (type) {
                 case "string":
                     responses[search] = res.join(" ");
                     break;

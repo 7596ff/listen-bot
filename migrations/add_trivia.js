@@ -22,7 +22,16 @@ function add_scores(pg) {
     });
 }
 
+function add_streaks(pg) {
+    pg.query("ALTER TABLE scores ADD streak bigint; UPDATE scores SET streak = 0;").then(res => {
+        util.log(res);
+    }).catch(err => {
+        util.log(err);
+    });
+}
+
 module.exports = {
     "add_trivia": add_trivia,
-    "add_scores": add_scores
+    "add_scores": add_scores,
+    "add_streaks": add_streaks
 }

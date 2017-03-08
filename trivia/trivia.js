@@ -54,16 +54,26 @@ class Trivia {
         pg.query({
             "text": "UPDATE scores SET score = (SELECT score FROM scores WHERE id = $1) + $2 WHERE id = $1;",
             "values": [user_id, score]
-        }).catch(err => {
-            util.log(err);
-        });
+        }).catch(err => util.log(err));
 
         pg.query({
             "text": "INSERT INTO scores (id, score) SELECT $1, $2 WHERE NOT EXISTS (SELECT id FROM scores WHERE id = $1);",
             "values": [user_id, score]
-        }).catch(err => {
-            util.log(err);
-        });
+        }).catch(err => util.log(err));
+    }
+
+    store_streak(pg, user_id, streak) {
+        pg.query({
+            "text": "SELECT streak FROM scores WHERE id = $1;",
+            "values": [user_id]
+        }).then(res => {
+            if (res.rows[0].streak < streak) {
+                pg.query({
+                    "text": "UPDATE scores SET streak = $1 WHERE id = $2;",
+                    "values": [streak, user_id]
+                }).catch(err => util.log(err));
+            }
+        }).catch(err => util.log(err));
     }
 
     handle(message, client) {
@@ -90,6 +100,8 @@ class Trivia {
                 if (this.streaks[message.channel.id].streak > 2) {
                     streakstr = `${this.notping(message.author)} broke ${this.notping(client.users.get(this.streaks[message.channel.id].user))}'s streak of ${this.streaks[message.channel.id].streak}! `;
                 }
+
+                this.store_streak(client.pg, this.streaks[message.channel.id].user, this.streaks[message.channel.id].streak);
                 
                 this.streaks[message.channel.id] = {
                     "user": message.author.id,
@@ -135,6 +147,7 @@ class Trivia {
                         util.log(`${channel}: trivia timed out`);
                     }
 
+                    this.store_streak(client.pg, this.streaks[channel].user, this.streaks[channel].streak);
                     delete this.points[channel];
                     delete this.streaks[channel];
                 });

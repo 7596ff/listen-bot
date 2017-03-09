@@ -209,6 +209,12 @@ module.exports = () => {
             "category": "etc"
         });
 
+        questions.push({
+            "question": `${hero.format_name}: Primary Attribute?`,
+            "answer": fullnames[hero.mainattribute],
+            "category": "etc"
+        });
+
         if (hero.dota_name) {
             questions.push({
                 "question": `Names/Titles: ${hero.dota_name}?`,

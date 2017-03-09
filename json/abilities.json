@@ -709,7 +709,7 @@
             "RADIUS: 400",
             "WAVE COUNT: 6",
             "WAVE DAMAGE: 25 / 40 / 55 / 70",
-            "WAVE INTERVAL 1.0",
+            "WAVE INTERVAL: 1.0",
             "MAX HP BURN DAMAGE: 0.75% / 1.5% / 2.25% / 3.0%",
             "BURN DURATION: 2.0",
             "CAST POINT: 0.6s"

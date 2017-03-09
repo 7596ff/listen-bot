@@ -1,3 +1,6 @@
+const help = require("./help");
+const search_members = require("../util/search_members");
+
 module.exports = (message, client, helper) => {
     const split_content = message.content.split(" ").slice(1)
     const command = split_content[0];
@@ -10,6 +13,7 @@ module.exports = (message, client, helper) => {
         } else {
             message.channel.createMessage(`This server does not have a desginated trivia channel! Try \`${message.gcfg.prefix}help admin trivia\`.`);
         }
+        return;
     }
 
     if (command == "stop") {
@@ -17,9 +21,10 @@ module.exports = (message, client, helper) => {
         if (client.trivia.channels.includes(message.gcfg.trivia)) client.trivia.channels.splice(client.trivia.channels.indexOf(message.gcfg.trivia), 1);
         message.channel.createMessage(":ok_hand: Trivia stopped.").catch(err => helper.handle(message, err));
         helper.log(message, "trivia stopped manually");
+        return;
     }
 
-    if (["top", "leaderboard", "scores", "points"].includes(command)) {
+    if (["top", "leaderboard", "scores"].includes(command)) {
         const subcommand = split_content[1];
 
         client.pg.query("SELECT * FROM scores ORDER BY score DESC;").then(res => {
@@ -40,6 +45,7 @@ module.exports = (message, client, helper) => {
             helper.log(message, "something went wrong selecting scores");
             helper.log(message, err);
         });
+        return;
     }
 
     if (command == "stats") {
@@ -59,5 +65,42 @@ module.exports = (message, client, helper) => {
                 helper.log(message, "sent trivia stats");
             });
         });
+        return;
     }
+
+    if (command == "points") {
+        client.pg.query("SELECT * FROM scores ORDER BY score DESC;").then(res => {
+            let search = search_members(message.channel.guild.members, split_content.slice(1))[0] || message.author.id;
+            let data = res.rows.find(row => row.id == search);
+            let guild = res.rows.filter(row => message.channel.guild.members.get(row.id));
+            if (!data) {
+                message.channel.createMessage(`${client.users.get(search).username} hasn't played trivia yet!`).catch(err => helper.handle(message, err));
+                return;
+            }
+
+            let embed = {
+                "author": {
+                    "name": client.users.get(search).username,
+                    "icon_url": client.users.get(search).avatarURL
+                },
+                "description": [
+                    `**Points:** ${data.score}`,
+                    `**Highest Streak:** ${data.streak}`,
+                    `**Server Rank:** ${guild.indexOf(data) + 1}/${guild.length}`,
+                    `**Global Rank:** ${res.rows.indexOf(data) + 1}/${res.rows.length}`
+                ].join("\n"),
+                "timestamp": new Date()
+            };
+
+            message.channel.createMessage({
+                "embed": embed
+            }).catch(err => helper.handle(message, err)).then(res => {
+                helper.log(message, "sent trivia points for a user");
+            });
+        });
+        return;
+    }
+
+    message.content = "help trivia";
+    help(message, client, helper);
 };

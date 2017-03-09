@@ -39,47 +39,47 @@ client.helper = new Helper();
 
 client.write_usage_stats = schedule.scheduleJob("*/10 * * * *", () => {
     fs.writeFile("./json/usage.json", JSON.stringify(client.all_usage), (err) => {
-        if (err) util.log(err);
+        if (err) client.helper.log("bot", err, "error");
     });
 });
 
 process.on("exit", (code) => {
-    util.log(`Exiting with code ${code}`);
+    client.helper.log("bot", `Exiting with code ${code}`);
     fs.writeFileSync("./json/usage.json", JSON.stringify(client.all_usage));
 });
 
 client.pg.on("error", (err) => {
-    util.log("idle pgclient error", err.message, err.stack);
+    client.helper.log("bot", "idle pgclient error", err, "error");
 });
 
 client.on("ready", () => {
-    util.log("listen-bot ready.");
+    client.helper.log("bot", "listen-bot ready.");
 
     client.redis.publish("discord", JSON.stringify({
         "code": 4,
         "message": "ping"
     }));
 
-    util.log("checking for new guilds...");
+    client.helper.log("bot", "checking for new guilds...");
     client.pg.query("SELECT id FROM GUILDS;").then(res => {
         let pg_guilds = res.rows.map(row => row.id);
         client.guilds.forEach(guild => {
             if (!pg_guilds.includes(guild.id)) {
-                util.log("found new guild, inserting...");
+                client.helper.log("bot", "found new guild, inserting...");
                 client.pg.query({
                     "text": "INSERT INTO public.guilds (id, name, prefix, climit, mlimit) VALUES ($1, $2, $3, $4, $5);",
                     "values": [guild.id, guild.name, "--", 0, 0]
                 }).then(() => {
-                    util.log("  inserted.");
+                    client.helper.log("bot", "  inserted.");
                 }).catch(err => {
-                    util.log("  something went wrong inserting unfound guild");
-                    util.log(err);
+                    client.helper.log("bot", "  something went wrong inserting unfound guild");
+                    client.helper.log("bot", err, "error");
                 });
             }
         });
     }).catch(err => {
-        util.log("something went wrong selecting id from guilds.");
-        util.log(err);
+        client.helper.log("bot", "something went wrong selecting id from guilds", "error");
+        client.helper.log("bot", err, "error");
     });
 
     let questions = require("./util/questions")();
@@ -95,14 +95,14 @@ client.on("ready", () => {
         stats_helper(client).then(embed => {
             client.editMessage(config.edit_channel, config.stats_edit_message, {
                 "embed": embed
-            }).catch(err => util.log(err));
+            }).catch(err => client.helper.log("bot", err, "error"));
         });
         
         client.editMessage(config.edit_channel, config.shard_edit_message, {
             "embed": {
                 "description": shardinfo_helper(client)
             }
-        }).catch(err => util.log(err));
+        }).catch(err => client.helper.log("bot", err, "error"));
 
         if (config.dbots_token) dbots_post(client);
     });
@@ -115,8 +115,8 @@ client.on("messageReactionAdd", (message, emoji, userID) => {
 
     client.redis.get(`${message.id}:author_id`, (err, author_id) => {
         if (err) {
-            util.log("something went wrong getting from redis");
-            util.log("err");
+            client.helper.log("bot", "something went wrong getting from redis", "error");
+            client.helper.log("bot", err, "error");
             return;
         }
 
@@ -128,7 +128,7 @@ client.on("messageReactionAdd", (message, emoji, userID) => {
                 client.editMessage(message.channel.id, message.id, {
                     "content": has_perms ? "" : (message.content || ""),
                     "embed": JSON.parse(reply)
-                }).catch(err => util.log(err));
+                }).catch(err => client.helper.handle("bot", err, "error"));
 
                 if (has_perms) {
                     setTimeout(() => {
@@ -136,61 +136,61 @@ client.on("messageReactionAdd", (message, emoji, userID) => {
                     }, 250);
                 }
             } else if (err) {
-                util.log("something went wrong getting from redis");
-                util.log(err);
+                client.helper.log("bot", "something went wrong getting from redis", "error");
+                client.helper.log("bot", err, "error");
             }
         });
     });
 });
 
 client.on("guildCreate", guild => {
-    util.log(`${guild.id}/${guild.name}: joined guild on shard ${guild.shard.id}`);
+    client.helper.log("bot", `${guild.id}/${guild.name}: joined guild on shard ${guild.shard.id}`);
 
-    util.log("  inserting into database");
+    client.helper.log("bot", "  inserting into database");
     client.pg.query({
         "text": "INSERT INTO public.guilds (id, name, prefix, climit, mlimit) VALUES ($1, $2, $3, $4, $5);",
         "values": [guild.id, guild.name, "--", 0, 0]
     }).then(() => {
-        util.log("  inserted");
+        client.helper.log("bot", "  inserted");
     }).catch(err => {
-        util.log("  something went wrong inserting");
-        util.log(err);
+        client.helper.log("bot", "  something went wrong inserting", "error");
+        client.helper.log("bot", err, "error");
     });
 });
 
 client.on("guildUpdate", guild => {
     client.pg.query(`SELECT * FROM public.guilds WHERE id = '${guild.id}';`).then(res => {
         if (res.rows[0].name != guild.name) {
-            util.log(`${guild.id}: guild updated, modifying name`);
-            util.log(`  ${res.rows[0].name} -> ${guild.name}`);
+            client.helper.log("bot", `${guild.id}: guild updated, modifying name`);
+            client.helper.log("bot", `  ${res.rows[0].name} -> ${guild.name}`);
 
             client.pg.query({
                 "text": "UPDATE public.guilds SET name = $1 WHERE id = $2",
                 "values": [guild.name, guild.id]
             }).then(() => {
-                util.log("  updated guild successfully");
+                client.helper.log("bot", "  updated guild successfully");
             }).catch(err => {
-                util.log("  something went wrong updating");
-                util.log(err);
+                client.helper.log("bot", "  something went wrong updating", "error");
+                client.helper.log("bot", err, "error");
             });
         }
     }).catch(err => {
-        util.log(` something went wrong selecting guild ${guild.id}/${guild.name}`);
-        util.log(err);
+        client.helper.log("bot", ` something went wrong selecting guild ${guild.id}/${guild.name}`, "error");
+        client.helper.log("bot", err, "error");
     });
 });
 
 client.on("guildDelete", guild => {
-    util.log(`${guild.id}/${guild.name}: left guild`);
+    client.helper.log("bot", `${guild.id}/${guild.name}: left guild`);
 
     client.pg.query({
         "text": "DELETE FROM public.guilds WHERE id = $1",
         "values": [guild.id]
     }).then(() => {
-        util.log("  deleted guild successfully");
+        client.helper.log("bot", "  deleted guild successfully");
     }).catch(err => {
-        util.log("  something went wrong deleting");
-        util.log(err);
+        client.helper.log("bot", "  something went wrong deleting", "error");
+        client.helper.log("bot", err, "error");
     });
 });
 
@@ -198,7 +198,7 @@ sub.on("message", (channel, message) => {
     if (channel == "steam") {
         if (!client.config.steam_enabled) return;
         message = JSON.parse(message);
-        util.log(`REDIS: ${message.message}`);
+        client.helper.log("REDIS", message.message);
 
         switch(message.code) {
         case 0:
@@ -293,9 +293,10 @@ client.on("messageCreate", message => {
     if (message.author && message.author.id == client.user.id) return;
 
     if (!message.author) {
-        util.log("no author");
-        util.log(`${message.channel.guild.id}/${message.channel.guild.name}`);
-        util.log(`${message.content}`);
+        client.helper.log("bot", "no author", "error");
+        client.helper.log("bot", `${message.channel.guild.id}/${message.channel.guild.name}`, "error");
+        client.helper.log("bot", `${message.content}`, "error");
+        client.helper.log("bot", `${message.embeds[0] || "no embed"}`, "error");
         return;
     }
 
@@ -311,29 +312,29 @@ client.on("messageCreate", message => {
             message.gcfg = JSON.parse(JSON.stringify(client.gcfg[message.channel.guild.id]));
             handle(message, client);
         }).catch(err => {
-            util.log(`something went wrong with selcting ${message.channel.guild.id}/${message.channel.guild.name}`);
-            util.log(err);
+            client.helper.log("bot", `something went wrong with selcting ${message.channel.guild.id}/${message.channel.guild.name}`, "error");
+            client.helper.log("bot", err, "error");
         });
     }
 });
 
 // connect to everything in order 
 client.redis.on("ready", () => {
-    util.log("redis ready.");
+    client.helper.log("bot", "redis ready.");
     client.pg.connect((err) => {
         if (err) {
-            util.log("err conencting to client");
-            util.log(err);
+            client.helper.log("bot", "err conencting to client", "error");
+            client.helper.log("bot", err, "error");
             process.exit(1);
         }
 
-        util.log("pg ready.");
+        client.helper.log("bot", "pg ready.");
         client.connect();
     });
 });
 
 sub.on("ready", () => {
-    util.log("redis sub ready.");
+    client.helper.log("bot", "redis sub ready.");
     sub.subscribe("steam");
     sub.subscribe("__keyevent@0__:expired");
 });

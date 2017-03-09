@@ -13,7 +13,7 @@ class Trivia {
     }
 
     clean(str) {
-        return str.toString().replace(/[+\-%s\.]/g, "").trim().toLowerCase();
+        return str.toString().replace(/[+\-%s]/g, "").trim().toLowerCase();
     }
 
     notping(author) {

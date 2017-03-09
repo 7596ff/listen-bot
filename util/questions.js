@@ -23,7 +23,8 @@ module.exports = () => {
         questions.push({
             "question": `Hero Name: ${ability.name}`,
             "answer": od_heroes.find(hero => hero.name == `npc_dota_hero_${ability.hero_name}`).localized_name,
-            "category": "etc"
+            "category": "etc",
+            "name": true
         });
 
         if (ability.manacost) {
@@ -206,26 +207,30 @@ module.exports = () => {
         questions.push({
             "question": `Hero Name: ${hero.basestr} + ${hero.strgain} STR, ${hero.baseagi} + ${hero.agigain} AGI, ${hero.baseint} + ${hero.intgain} INT`,
             "answer": hero.format_name,
-            "category": "etc"
+            "category": "etc",
+            "name": true
         });
 
         questions.push({
             "question": `${hero.format_name}: Primary Attribute?`,
             "answer": fullnames[hero.mainattribute],
-            "category": "etc"
+            "category": "etc",
+            "name": true
         });
 
         if (hero.dota_name) {
             questions.push({
                 "question": `Names/Titles: ${hero.dota_name}?`,
                 "answer": hero.format_name,
-                "category": "etc"
+                "category": "etc",
+                "name": true
             });
 
             questions.push({
                 "question": `Names/Titles: ${hero.format_name}?`,
                 "answer": hero.dota_name,
-                "category": "etc"
+                "category": "etc",
+                "name": true
             });
         }
     });

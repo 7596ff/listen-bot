@@ -30,6 +30,7 @@ class Trivia {
             this.hlock[channel] = true;
             this.active_questions[channel] = ret;
             this.hints[channel] = ret.answer.replace(/[^+\-%s\. ]/g, "•");
+            if (ret.name) this.hints[channel] = this.hints[channel].replace(/[s]/g, "•");
 
             redis.set(`trivia:${channel}:hint`, true, () => {
                 redis.expire(`trivia:${channel}:hint`, 10, () => {

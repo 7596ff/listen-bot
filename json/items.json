@@ -1978,7 +1978,7 @@
             "+8 HP Regeneration",
             "+30% Spell Resistance",
             "BARRIER BLOCK: 325",
-            "BARRIER DURATION: 12.000000"
+            "BARRIER DURATION: 12"
         ],
         "lore": [
             "A furred, magic resistant headpiece that is feared by wizards."
@@ -2771,7 +2771,7 @@
             "+10 Armor",
             "+75% Mana Regeneration",
             "+25% Evasion",
-            "SHINE ALLY BONUS ARMOR: 10",
+            "SHINE ALLY BONUS ARMOR: 12",
             "SHINE ALLY EVASION: 25%",
             "SHINE ENEMY ARMOR LOSS: 10",
             "SHINE ENEMY MISS CHANCE: 25%",

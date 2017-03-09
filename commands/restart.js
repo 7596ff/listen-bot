@@ -1,7 +1,7 @@
 module.exports = (message, client, helper) => {
     if (message.author.id != client.config.owner) return;
 
-    tasks = [];
+    let tasks = [];
 
     client.shards.forEach(shard => {
         tasks.push(shard.editStatus("invisible"));
@@ -12,6 +12,8 @@ module.exports = (message, client, helper) => {
     });
 
     Promise.all(tasks).then(() => {
+        helper.log(message, `${client.shards.size} invised, ${tasks.length - client.shards.size} trivia games shut down`);
+        helper.log(message, `${tasks.length} tasks complete, restarting`);
         require("child_process").spawn("./update.sh");
     });
 };

@@ -18,18 +18,22 @@ class Helper {
     }
 
     log(message, text, type = "log") {
-        if (this.last_guild == message.channel.guild.name) {
-            if (this.last_channel == message.channel.name) {
-                this.print(`  ${text.toString().trim()}`, type);
+        if (typeof message == "object") {
+            if (this.last_guild == message.channel.guild.name) {
+                if (this.last_channel == message.channel.name) {
+                    this.print(`  ${text.toString().trim()}`, type);
+                } else {
+                    this.print(`${message.channel.name}: ${text.toString().trim()}`, type);
+                }
             } else {
-                this.print(`${message.channel.name}: ${text.toString().trim()}`, type);
+                this.print(`${message.channel.guild.name}/${message.channel.name}: ${text.toString().trim()}`, type);
             }
-        } else {
-            this.print(`${message.channel.guild.name}/${message.channel.name}: ${text.toString().trim()}`, type);
-        }
 
-        this.last_guild = message.channel.guild.name;
-        this.last_channel = message.channel.name;
+            this.last_guild = message.channel.guild.name;
+            this.last_channel = message.channel.name;
+        } else {
+            this.print(`${message.toUpperCase()}: ${text}`, type);
+        }
     }
 
     handle(message, err) {

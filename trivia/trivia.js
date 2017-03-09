@@ -1,5 +1,3 @@
-const util = require("util");
-
 class Trivia {
     constructor(questions, categories) {
         this.questions = questions;
@@ -51,30 +49,30 @@ class Trivia {
         client.createMessage(channel, `**${question.question}** (Hint: ${this.hints[channel]})`);
     }
 
-    increment_user(pg, user_id, score) {
-        pg.query({
+    increment_user(client, user_id, score) {
+        client.pg.query({
             "text": "UPDATE scores SET score = (SELECT score FROM scores WHERE id = $1) + $2 WHERE id = $1;",
             "values": [user_id, score]
-        }).catch(err => util.log(err));
+        }).catch(err => client.helper.log("postgres", err));
 
-        pg.query({
+        client.pg.query({
             "text": "INSERT INTO scores (id, score) SELECT $1, $2 WHERE NOT EXISTS (SELECT id FROM scores WHERE id = $1);",
             "values": [user_id, score]
-        }).catch(err => util.log(err));
+        }).catch(err => client.helper.log("postgres", err));
     }
 
-    store_streak(pg, user_id, streak) {
-        pg.query({
+    store_streak(client, user_id, streak) {
+        client.pg.query({
             "text": "SELECT streak FROM scores WHERE id = $1;",
             "values": [user_id]
         }).then(res => {
             if (res.rows[0].streak < streak) {
-                pg.query({
+                client.pg.query({
                     "text": "UPDATE scores SET streak = $1 WHERE id = $2;",
                     "values": [streak, user_id]
-                }).catch(err => util.log(err));
+                }).catch(err => client.helper.log("postgres", err));
             }
-        }).catch(err => util.log(err));
+        }).catch(err => client.helper.log("postgres", err));
     }
 
     handle(message, client) {
@@ -83,7 +81,7 @@ class Trivia {
         this.points[message.channel.id][message.author.id] = this.points[message.channel.id][message.author.id] || 5;
         if (this.clean(message.content) == this.clean(question.answer)) {
             let new_question = this.get_new_question(question, client.redis, message.channel.id);
-            this.increment_user(client.pg, message.author.id, this.points[message.channel.id][message.author.id]);
+            this.increment_user(client, message.author.id, this.points[message.channel.id][message.author.id]);
 
             let streakstr = "";
 
@@ -102,7 +100,7 @@ class Trivia {
                     streakstr = `${this.notping(message.author)} broke ${this.notping(client.users.get(this.streaks[message.channel.id].user))}'s streak of ${this.streaks[message.channel.id].streak}! `;
                 }
 
-                this.store_streak(client.pg, this.streaks[message.channel.id].user, this.streaks[message.channel.id].streak);
+                this.store_streak(client, this.streaks[message.channel.id].user, this.streaks[message.channel.id].streak);
 
                 this.streaks[message.channel.id] = {
                     "user": message.author.id,
@@ -143,11 +141,13 @@ class Trivia {
                     client.redis.get(`trivia:${channel}:retries`, (err, reply) => {
                         if (reply > 0) {
                             let new_question = this.get_new_question(question, client.redis, channel, reply - 1);
-                            client.createMessage(channel, `Time's up! The answer was **${question.answer}**. New question:\n\n**${new_question.question}** (Hint: ${this.hints[channel]})`).catch(err => util.log(err));
+                            client.createMessage(channel, `Time's up! The answer was **${question.answer}**. New question:\n\n**${new_question.question}** (Hint: ${this.hints[channel]})`)
+                                .catch(err => client.helper.handle("trivia", err));
                         } else {
                             this.channels.splice(this.channels.indexOf(channel), 1);
-                            client.createMessage(channel, `Time's up! The answer was **${question.answer}**. Not enough activity detected in this channel.\nUse \`--trivia start\` to start up a new game.`).catch(err => util.log(err));
-                            util.log(`${channel}: trivia timed out`);
+                            client.createMessage(channel, `Time's up! The answer was **${question.answer}**. Not enough activity detected in this channel.\nUse \`--trivia start\` to start up a new game.`)
+                                .catch(err => client.helper.handle("trivia", err));
+                            client.helper.log("trivia", `${channel}: trivia timed out`);
                         }
 
                         if (this.streaks[channel]) this.store_streak(client.pg, this.streaks[channel].user, this.streaks[channel].streak);
@@ -157,10 +157,10 @@ class Trivia {
                 } else {
                     client.redis.set(`trivia:${channel}:hint`, true);
                     client.redis.expire(`trivia:${channel}:hint`, 10);
-                    client.createMessage(channel, `Hint: ${this.hints[channel]}`).catch(err => util.log(err));
+                    client.createMessage(channel, `Hint: ${this.hints[channel]}`).catch(err => client.helper.handle("trivia", err));
                 }
             } else {
-                util.log(`lock jiggled in ${channel}`);
+                client.helper.log("trivia", `lock jiggled in ${channel}`);
             }
         }
     }

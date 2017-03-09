@@ -9,8 +9,10 @@ class Helper {
         switch (type) {
         case "error":
             console.error(now, text);
+            break;
         case "warn":
             console.warn(now, text);
+            break;
         default:
             console.log(now, text);
             break;

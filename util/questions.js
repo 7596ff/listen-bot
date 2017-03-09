@@ -51,7 +51,7 @@ module.exports = () => {
             if (!ability.manacost.match(/[ ]/g) && ability.manacost.match(/[\/]/g)) {
                 questions.push({
                     "question": "Mana Cost: ${ability.name}",
-                    "answer": clean(array[index]),
+                    "answer": clean(ability.manacost),
                     "category": "ability"
                 });
             }
@@ -81,7 +81,7 @@ module.exports = () => {
             if (!ability.cooldown.match(/[ ]/g) && ability.cooldown.match(/[\/]/g)) {
                 questions.push({
                     "question": "Cooldown: ${ability.name}",
-                    "answer": clean(array[index]),
+                    "answer": clean(ability.cooldown),
                     "category": "ability"
                 });
             }
@@ -189,7 +189,7 @@ module.exports = () => {
 
     for (let talent in talents) {
         talent = talents[talent];
-        tlist = []; tlist.push(...talent["10"], ...talent["15"], ...talent["20"], ...talent["25"]); // xd
+        let tlist = []; tlist.push(...talent["10"], ...talent["15"], ...talent["20"], ...talent["25"]); // xd
         tlist.forEach(tl => {
             tl.split(" ").forEach((item, index, array) => {
                 if (!isNaN(item.replace(/[+\-%s\.]/g, ""))) {

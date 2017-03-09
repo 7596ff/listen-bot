@@ -2,7 +2,7 @@ const help = require("./help");
 const search_members = require("../util/search_members");
 
 module.exports = (message, client, helper) => {
-    const split_content = message.content.split(" ").slice(1)
+    const split_content = message.content.split(" ").slice(1);
     const command = split_content[0];
     if (command == "start") {
         if (message.gcfg.trivia == message.channel.id) {
@@ -61,7 +61,7 @@ module.exports = (message, client, helper) => {
 
             message.channel.createMessage({
                 "embed": embed
-            }).catch(err => helper.handle(message, err)).then(res => {
+            }).catch(err => helper.handle(message, err)).then(() => {
                 helper.log(message, "sent trivia stats");
             });
         });
@@ -94,7 +94,7 @@ module.exports = (message, client, helper) => {
 
             message.channel.createMessage({
                 "embed": embed
-            }).catch(err => helper.handle(message, err)).then(res => {
+            }).catch(err => helper.handle(message, err)).then(() => {
                 helper.log(message, "sent trivia points for a user");
             });
         });

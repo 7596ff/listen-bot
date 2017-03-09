@@ -6,7 +6,8 @@ module.exports = (message, client, helper) => {
         "author": {
             "name": `Total: ${client.all_usage.all}`
         }
-    }
+    };
+    
     Object.keys(help).forEach(key => {
         embed.fields.push({
             "name": key,
@@ -16,7 +17,7 @@ module.exports = (message, client, helper) => {
     });
 
     let len = embed.fields.length % 3;
-    for (i = 0; i < 3 - len; i++) {
+    for (let i = 0; i < 3 - len; i++) {
         embed.fields.push({
             "name": "\u200b",
             "value": "\u200b",

@@ -15,7 +15,6 @@ const Trivia = require("./trivia/trivia");
 const schedule = require("node-schedule");
 const Mika = require("mika");
 
-const util = require("util");
 const fs = require("fs");
 
 client.commands = {};

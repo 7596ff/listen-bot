@@ -13,7 +13,7 @@ class Trivia {
     }
 
     clean(str) {
-        return str.toString().replace(/[+\-%s\.]/g, "").trim().toLowerCase();
+        return str.toString().replace(/[+\-%s]/g, "").trim().toLowerCase();
     }
 
     notping(author) {
@@ -29,7 +29,7 @@ class Trivia {
         if (redis && channel) {
             this.hlock[channel] = true;
             this.active_questions[channel] = ret;
-            this.hints[channel] = ret.answer.replace(/[^+\-%s\.]/g, "•");
+            this.hints[channel] = ret.answer.replace(/[^+\-%s]/g, "•");
 
             redis.set(`trivia:${channel}:hint`, true, () => {
                 redis.expire(`trivia:${channel}:hint`, 10, () => {

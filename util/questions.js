@@ -1,6 +1,14 @@
 const abilities = require("../json/abilities.json");
 const items = require("../json/items.json");
 const talents = require("../json/talents.json");
+const heroes = require("../json/heroes.json");
+const od_heroes = require("../json/od_heroes.json");
+
+const fullnames = {
+    "str": "Strength",
+    "agi": "Agility",
+    "int": "Intelligence"
+};
 
 function clean(str) {
     str = str.toString().trim();
@@ -12,6 +20,12 @@ module.exports = () => {
     let questions = [];
 
     abilities.forEach(ability => {
+        questions.push({
+            "question": `Hero Name: ${ability.name}`,
+            "answer": od_heroes.find(hero => hero.name == `npc_dota_hero_${ability.hero_name}`).localized_name,
+            "category": "etc"
+        });
+
         if (ability.manacost) {
             if (ability.manacost.match(/[ ]/g)) {
                 ability.manacost.split(" ").forEach((cost, index, array) => {
@@ -187,6 +201,28 @@ module.exports = () => {
             });
         });
     }
+
+    heroes.forEach(hero => {
+        questions.push({
+            "question": `Hero Name: ${hero.basestr} + ${hero.strgain} STR, ${hero.baseagi} + ${hero.agigain} AGI, ${hero.baseint} + ${hero.intgain} INT`,
+            "answer": hero.format_name,
+            "category": "etc"
+        });
+
+        if (hero.dota_name) {
+            questions.push({
+                "question": `Names/Titles: ${hero.dota_name}?`,
+                "answer": hero.format_name,
+                "category": "etc"
+            });
+
+            questions.push({
+                "question": `Names/Titles: ${hero.format_name}?`,
+                "answer": hero.dota_name,
+                "category": "etc"
+            });
+        }
+    });
 
     return questions;
 };

@@ -24,7 +24,8 @@
     "agigain": "3.15",
     "basearmor": "4.22",
     "attacktime": "1.7",
-    "true_name": "phantom_assassin"
+    "true_name": "phantom_assassin",
+    "dota_name": "Mortred"
 }, {
     "basedmg": "24 - 28",
     "strgain": "2.5",
@@ -51,7 +52,8 @@
     "agigain": "2.2",
     "basearmor": "1.8",
     "attacktime": "1.7",
-    "true_name": "axe"
+    "true_name": "axe",
+    "dota_name": "Mogul Khan"
 }, {
     "basedmg": "36 - 41",
     "strgain": "3",
@@ -78,7 +80,8 @@
     "agigain": "1",
     "basearmor": "3.24",
     "attacktime": "1.7",
-    "true_name": "lycan"
+    "true_name": "lycan",
+    "dota_name": "Banehallow"
 }, {
     "basedmg": "25 - 41",
     "strgain": "2.6",
@@ -105,7 +108,8 @@
     "agigain": "2.1",
     "basearmor": "2.66",
     "attacktime": "1.7",
-    "true_name": "sand_king"
+    "true_name": "sand_king",
+    "dota_name": "Crixalis"
 }, {
     "basedmg": "41 - 45",
     "strgain": "2.2",
@@ -132,7 +136,8 @@
     "agigain": "1.6",
     "basearmor": "4.52",
     "attacktime": "1.7",
-    "true_name": "beastmaster"
+    "true_name": "beastmaster",
+    "dota_name": "Karroch"
 }, {
     "basedmg": "26 - 36",
     "strgain": "2.2",
@@ -159,7 +164,8 @@
     "agigain": "1.8",
     "basearmor": "3.38",
     "attacktime": "1.8",
-    "true_name": "bristleback"
+    "true_name": "bristleback",
+    "dota_name": "Rigwarl"
 }, {
     "basedmg": "23 - 25",
     "strgain": "2.1",
@@ -186,7 +192,8 @@
     "agigain": "2.9",
     "basearmor": "1.94",
     "attacktime": "1.7",
-    "true_name": "viper"
+    "true_name": "viper",
+    "dota_name": "Netherdrake"
 }, {
     "basedmg": "19 - 27",
     "strgain": "1.2",
@@ -213,7 +220,8 @@
     "agigain": "1",
     "basearmor": "1.24",
     "attacktime": "1.7",
-    "true_name": "pugna"
+    "true_name": "pugna",
+    "dota_name": "Oblivion"
 }, {
     "basedmg": "24 - 34",
     "strgain": "2.9",
@@ -240,7 +248,8 @@
     "agigain": "1.4",
     "basearmor": "2.68",
     "attacktime": "1.7",
-    "true_name": "earthshaker"
+    "true_name": "earthshaker",
+    "dota_name": "Raigor Stonehoof"
 }, {
     "basedmg": "22 - 33",
     "strgain": "1.7",
@@ -267,7 +276,8 @@
     "agigain": "1.7",
     "basearmor": "2.08",
     "attacktime": "1.7",
-    "true_name": "puck"
+    "true_name": "puck",
+    "dota_name": "Faerie Dragon"
 }, {
     "basedmg": "27 - 33",
     "strgain": "3.2",
@@ -294,7 +304,8 @@
     "agigain": "1.5",
     "basearmor": "0.96",
     "attacktime": "1.7",
-    "true_name": "pudge"
+    "true_name": "pudge",
+    "dota_name": "Butcher"
 }, {
     "basedmg": "24 - 33",
     "strgain": "1.8",
@@ -321,7 +332,8 @@
     "agigain": "1.2",
     "basearmor": "1.54",
     "attacktime": "1.7 ",
-    "true_name": "alchemist"
+    "true_name": "alchemist",
+    "dota_name": "Razzil Darkbrew"
 }, {
     "basedmg": "22 - 32",
     "strgain": "1.5",
@@ -348,7 +360,8 @@
     "agigain": "1.8",
     "basearmor": "5.08",
     "attacktime": "1.7",
-    "true_name": "storm_spirit"
+    "true_name": "storm_spirit",
+    "dota_name": "Raijin Thunderkeg"
 }, {
     "basedmg": "14 - 18",
     "strgain": "2.4",
@@ -402,7 +415,8 @@
     "agigain": "1.9",
     "basearmor": "0.64",
     "attacktime": "1.7",
-    "true_name": "drow_ranger"
+    "true_name": "drow_ranger",
+    "dota_name": "Traxex"
 }, {
     "basedmg": "30 - 34",
     "strgain": "2",
@@ -456,7 +470,8 @@
     "agigain": "1.2",
     "basearmor": "3.82",
     "attacktime": "1.7",
-    "true_name": "tinker"
+    "true_name": "tinker",
+    "dota_name": "Boush"
 }, {
     "basedmg": "13 - 31",
     "strgain": "1.5",
@@ -483,7 +498,8 @@
     "agigain": "1.5",
     "basearmor": "1.24",
     "attacktime": "1.6",
-    "true_name": "lina"
+    "true_name": "lina",
+    "dota_name": "Slayer"
 }, {
     "basedmg": "17 - 35",
     "strgain": "2.2",
@@ -511,7 +527,8 @@
     "agigain": "2.75",
     "basearmor": "1.94",
     "attacktime": "1.7",
-    "true_name": "troll_warlord"
+    "true_name": "troll_warlord",
+    "dota_name": "Jah'rakal"
 }, {
     "basedmg": "4 - 13",
     "strgain": "2",
@@ -565,7 +582,8 @@
     "agigain": "1.4",
     "basearmor": "1.1",
     "attacktime": "1.6",
-    "true_name": "huskar"
+    "true_name": "huskar",
+    "dota_name": "Sacred Warrior"
 }, {
     "basedmg": "35 - 43",
     "strgain": "2.1",
@@ -592,7 +610,8 @@
     "agigain": "0.8",
     "basearmor": "3.4",
     "attacktime": "1.7",
-    "true_name": "undying"
+    "true_name": "undying",
+    "dota_name": "Almighty Dirge"
 }, {
     "basedmg": "7 - 9",
     "strgain": "2",
@@ -619,7 +638,8 @@
     "agigain": "1.3",
     "basearmor": "6.96",
     "attacktime": "1.7",
-    "true_name": "techies"
+    "true_name": "techies",
+    "dota_name": "Squee, Spleen, and Spoon"
 }, {
     "basedmg": "38 - 42",
     "strgain": "2.8",
@@ -646,7 +666,8 @@
     "agigain": "2.25",
     "basearmor": "5.52",
     "attacktime": "1.7",
-    "true_name": "night_stalker"
+    "true_name": "night_stalker",
+    "dota_name": "Balanar"
 }, {
     "basedmg": "22 - 34",
     "strgain": "2.5",
@@ -673,7 +694,8 @@
     "agigain": "1.4",
     "basearmor": "1.38",
     "attacktime": "1.5",
-    "true_name": "windrunner"
+    "true_name": "windrunner",
+    "dota_name": "Lyralei"
 }, {
     "basedmg": "30 - 36",
     "strgain": "2.2",
@@ -700,7 +722,8 @@
     "agigain": "3.2",
     "basearmor": "0.1",
     "attacktime": "1.7",
-    "true_name": "monkey_king"
+    "true_name": "monkey_king",
+    "dota_name": "Sun Wukong"
 }, {
     "basedmg": "24 - 38",
     "strgain": "1.8",
@@ -727,7 +750,8 @@
     "agigain": "1.9",
     "basearmor": "3.52",
     "attacktime": "1.7",
-    "true_name": "furion"
+    "true_name": "furion",
+    "dota_name": "Furion"
 }, {
     "basedmg": "33 - 39",
     "strgain": "1.8",
@@ -754,7 +778,8 @@
     "agigain": "2.65",
     "basearmor": "3.22",
     "attacktime": "1.7",
-    "true_name": "faceless_void"
+    "true_name": "faceless_void",
+    "dota_name": "Darkterror"
 }, {
     "basedmg": "23 - 27",
     "strgain": "2",
@@ -781,7 +806,8 @@
     "agigain": "1.8",
     "basearmor": "3.22",
     "attacktime": "1.7",
-    "true_name": "spectre"
+    "true_name": "spectre",
+    "dota_name": "Mercurial"
 }, {
     "basedmg": "31 - 41",
     "strgain": "2.9",
@@ -835,7 +861,8 @@
     "agigain": "2.5",
     "basearmor": "1.94",
     "attacktime": "1.7",
-    "true_name": "sniper"
+    "true_name": "sniper",
+    "dota_name": "Kardel Sharpeye"
 }, {
     "basedmg": "33 - 39",
     "strgain": "2.1",
@@ -862,7 +889,8 @@
     "agigain": "2.1",
     "basearmor": "4.08",
     "attacktime": "1.7",
-    "true_name": "bane"
+    "true_name": "bane",
+    "dota_name": "Atropos"
 }, {
     "basedmg": "24 - 36",
     "strgain": "1.9",
@@ -889,7 +917,8 @@
     "agigain": "1.4",
     "basearmor": "2.96",
     "attacktime": "1.7",
-    "true_name": "death_prophet"
+    "true_name": "death_prophet",
+    "dota_name": "Krobelus"
 }, {
     "basedmg": "19 - 29",
     "strgain": "1.4",
@@ -916,7 +945,8 @@
     "agigain": "2.2",
     "basearmor": "1.8",
     "attacktime": "1.7",
-    "true_name": "ancient_apparition"
+    "true_name": "ancient_apparition",
+    "dota_name": "Kaldr"
 }, {
     "basedmg": "29 - 59",
     "strgain": "2.9",
@@ -970,7 +1000,8 @@
     "agigain": "3.3",
     "basearmor": "3.78",
     "attacktime": "1.7",
-    "true_name": "vengefulspirit"
+    "true_name": "vengefulspirit",
+    "dota_name": "Shendelzare"
 }, {
     "basedmg": "14 - 32",
     "strgain": "1.85",
@@ -997,7 +1028,8 @@
     "agigain": "1.7",
     "basearmor": "1.94",
     "attacktime": "1.7",
-    "true_name": "dazzle"
+    "true_name": "dazzle",
+    "dota_name": "Shadow Priest"
 }, {
     "basedmg": "33 - 41",
     "strgain": "1.6",
@@ -1024,7 +1056,8 @@
     "agigain": "1.5",
     "basearmor": "1.94",
     "attacktime": "1.7",
-    "true_name": "slark"
+    "true_name": "slark",
+    "dota_name": "Nightcrawler"
 }, {
     "basedmg": "31 - 41",
     "strgain": "2.8",
@@ -1051,7 +1084,8 @@
     "agigain": "1.75",
     "basearmor": "5.1",
     "attacktime": "1.7",
-    "true_name": "omniknight"
+    "true_name": "omniknight",
+    "dota_name": "Purist Thunderwrath"
 }, {
     "basedmg": "25 - 33",
     "strgain": "2.3",
@@ -1078,7 +1112,8 @@
     "agigain": "1.2",
     "basearmor": "2.4",
     "attacktime": "1.7",
-    "true_name": "jakiro"
+    "true_name": "jakiro",
+    "dota_name": "Twin Head Dragon"
 }, {
     "basedmg": "30 - 34",
     "strgain": "2",
@@ -1105,7 +1140,8 @@
     "agigain": "1.8",
     "basearmor": "1.08",
     "attacktime": "1.7 ",
-    "true_name": "ember_spirit"
+    "true_name": "ember_spirit",
+    "dota_name": "Xin"
 }, {
     "basedmg": "32 - 42",
     "strgain": "3",
@@ -1132,7 +1168,8 @@
     "agigain": "1.9",
     "basearmor": "1.52",
     "attacktime": "1.85",
-    "true_name": "life_stealer"
+    "true_name": "life_stealer",
+    "dota_name": "N'aix"
 }, {
     "basedmg": "19 - 21",
     "strgain": "1.85",
@@ -1159,7 +1196,8 @@
     "agigain": "2.6",
     "basearmor": "3.08",
     "attacktime": "1.7",
-    "true_name": "venomancer"
+    "true_name": "venomancer",
+    "dota_name": "Lesale Deathbringer"
 }, {
     "basedmg": "18 - 29",
     "strgain": "1.85",
@@ -1186,7 +1224,8 @@
     "agigain": "3.3",
     "basearmor": "1.8",
     "attacktime": "1.7",
-    "true_name": "mirana"
+    "true_name": "mirana",
+    "dota_name": "Princess of the Moon"
 }, {
     "basedmg": "30 - 36",
     "strgain": "2.1",
@@ -1213,7 +1252,8 @@
     "agigain": "2.7",
     "basearmor": "4.22",
     "attacktime": "1.7",
-    "true_name": "templar_assassin"
+    "true_name": "templar_assassin",
+    "dota_name": "Lanaya"
 }, {
     "basedmg": "23 - 33 ",
     "strgain": "2.3",
@@ -1240,7 +1280,8 @@
     "agigain": "1.5",
     "basearmor": "2.96",
     "attacktime": "1.7",
-    "true_name": "elder_titan"
+    "true_name": "elder_titan",
+    "dota_name": "Worldsmith"
 }, {
     "basedmg": "15 - 21",
     "strgain": "1.6",
@@ -1267,7 +1308,8 @@
     "agigain": "3.3",
     "basearmor": "2.08",
     "attacktime": "1.7",
-    "true_name": "clinkz"
+    "true_name": "clinkz",
+    "dota_name": "Bone Fletcher"
 }, {
     "basedmg": "37 - 43",
     "strgain": "2.6",
@@ -1294,7 +1336,8 @@
     "agigain": "1.3",
     "basearmor": "3.68",
     "attacktime": "1.7",
-    "true_name": "abyssal_underlord"
+    "true_name": "abyssal_underlord",
+    "dota_name": "Vrogros"
 }, {
     "basedmg": "20 - 26",
     "strgain": "2.2",
@@ -1321,7 +1364,8 @@
     "agigain": "3.3",
     "basearmor": "2.52",
     "attacktime": "1.7",
-    "true_name": "luna"
+    "true_name": "luna",
+    "dota_name": "Moon Rider"
 }, {
     "basedmg": "29 - 36",
     "strgain": "2.9",
@@ -1348,7 +1392,8 @@
     "agigain": "1.95",
     "basearmor": "2.08",
     "attacktime": "1.7",
-    "true_name": "brewmaster"
+    "true_name": "brewmaster",
+    "dota_name": "Mangix"
 }, {
     "basedmg": "13 - 20",
     "strgain": "2.1",
@@ -1375,7 +1420,8 @@
     "agigain": "1.9",
     "basearmor": "1.24",
     "attacktime": "1.7",
-    "true_name": "winter_wyvern"
+    "true_name": "winter_wyvern",
+    "dota_name": "Auroth"
 }, {
     "basedmg": "15 - 21",
     "strgain": "2",
@@ -1402,7 +1448,8 @@
     "agigain": "2.9",
     "basearmor": "0.8",
     "attacktime": "1.7 ",
-    "true_name": "nevermore"
+    "true_name": "nevermore",
+    "dota_name": "Nevermore"
 }, {
     "basedmg": "13 - 23",
     "strgain": "1.8",
@@ -1429,7 +1476,8 @@
     "agigain": "2.8",
     "basearmor": "4.36",
     "attacktime": "1.7",
-    "true_name": "gyrocopter"
+    "true_name": "gyrocopter",
+    "dota_name": "Aurel Vlaicu"
 }, {
     "basedmg": "24 - 38",
     "strgain": "1.8",
@@ -1456,7 +1504,8 @@
     "agigain": "3",
     "basearmor": "5.94",
     "attacktime": "1.7",
-    "true_name": "bounty_hunter"
+    "true_name": "bounty_hunter",
+    "dota_name": "Gondar"
 }, {
     "basedmg": "22 - 32",
     "strgain": "1.5",
@@ -1483,7 +1532,8 @@
     "agigain": "2.1",
     "basearmor": "1.1",
     "attacktime": "1.7",
-    "true_name": "chen"
+    "true_name": "chen",
+    "dota_name": "Holy Knight"
 }, {
     "basedmg": "25 - 33",
     "strgain": "1.7",
@@ -1510,7 +1560,8 @@
     "agigain": "2",
     "basearmor": "1.52",
     "attacktime": "1.5",
-    "true_name": "queenofpain"
+    "true_name": "queenofpain",
+    "dota_name": "Akasha"
 }, {
     "basedmg": "22 - 26",
     "strgain": "2",
@@ -1537,7 +1588,8 @@
     "agigain": "1.2",
     "basearmor": "3.1",
     "attacktime": "1.7",
-    "true_name": "necrolyte"
+    "true_name": "necrolyte",
+    "dota_name": "Rotund'jere"
 }, {
     "basedmg": "26 - 35",
     "strgain": "1.9",
@@ -1564,7 +1616,8 @@
     "agigain": "1.6",
     "basearmor": "-0.04",
     "attacktime": "1.7",
-    "true_name": "wisp"
+    "true_name": "wisp",
+    "dota_name": "Wisp"
 }, {
     "basedmg": "31 - 41",
     "strgain": "1",
@@ -1591,7 +1644,8 @@
     "agigain": "1.8",
     "basearmor": "0.66",
     "attacktime": "1.7",
-    "true_name": "enchantress"
+    "true_name": "enchantress",
+    "dota_name": "Aiushtha"
 }, {
     "basedmg": "26 - 32",
     "strgain": "1.4",
@@ -1618,7 +1672,8 @@
     "agigain": "3.2",
     "basearmor": "10.08",
     "attacktime": "1.5",
-    "true_name": "terrorblade"
+    "true_name": "terrorblade",
+    "dota_name": "Demon Marauder"
 }, {
     "basedmg": "23 - 25",
     "strgain": "2.3",
@@ -1645,7 +1700,8 @@
     "agigain": "2",
     "basearmor": "2.08",
     "attacktime": "1.7",
-    "true_name": "razor"
+    "true_name": "razor",
+    "dota_name": "Lightning Revenant"
 }, {
     "basedmg": "26 - 30",
     "strgain": "1.8",
@@ -1672,7 +1728,8 @@
     "agigain": "1.3",
     "basearmor": "0.24",
     "attacktime": "1.7",
-    "true_name": "shredder"
+    "true_name": "shredder",
+    "dota_name": "Rizzrack"
 }, {
     "basedmg": "25 - 35",
     "strgain": "2.9",
@@ -1699,7 +1756,8 @@
     "agigain": "1.5",
     "basearmor": "3.38",
     "attacktime": "1.7",
-    "true_name": "earth_spirit"
+    "true_name": "earth_spirit",
+    "dota_name": "Kaolin"
 }, {
     "basedmg": "32 - 44",
     "strgain": "2.9",
@@ -1726,7 +1784,8 @@
     "agigain": "2.5",
     "basearmor": "4.1",
     "attacktime": "1.7",
-    "true_name": "magnataur"
+    "true_name": "magnataur",
+    "dota_name": "Magnoceros"
 }, {
     "basedmg": "32 - 34",
     "strgain": "4",
@@ -1753,7 +1812,8 @@
     "agigain": "1.6",
     "basearmor": "3.1",
     "attacktime": "1.7",
-    "true_name": "centaur"
+    "true_name": "centaur",
+    "dota_name": "Bradwarden"
 }, {
     "basedmg": "4 - 8",
     "strgain": "1.6",
@@ -1780,7 +1840,8 @@
     "agigain": "2.2",
     "basearmor": "4.76",
     "attacktime": "1.7",
-    "true_name": "riki"
+    "true_name": "riki",
+    "dota_name": "Stealth Assassin"
 }, {
     "basedmg": "21 - 29",
     "strgain": "2.3",
@@ -1807,7 +1868,8 @@
     "agigain": "1.2",
     "basearmor": "1.54",
     "attacktime": "1.7",
-    "true_name": "zuus"
+    "true_name": "zuus",
+    "dota_name": "Lord of Heaven"
 }, {
     "basedmg": "26 - 33",
     "strgain": "1.8",
@@ -1834,7 +1896,8 @@
     "agigain": "1.6",
     "basearmor": "1.24",
     "attacktime": "1.7",
-    "true_name": "shadow_shaman"
+    "true_name": "shadow_shaman",
+    "dota_name": "Rhasta"
 }, {
     "basedmg": "21 - 31",
     "strgain": "2.4",
@@ -1861,7 +1924,8 @@
     "agigain": "1.3",
     "basearmor": "-0.46",
     "attacktime": "1.7",
-    "true_name": "visage"
+    "true_name": "visage",
+    "dota_name": "Bound Form of Necro'lic"
 }, {
     "basedmg": "24 - 30",
     "strgain": "1.65",
@@ -1888,7 +1952,8 @@
     "agigain": "2.5",
     "basearmor": "1.8",
     "attacktime": "1.7",
-    "true_name": "medusa"
+    "true_name": "medusa",
+    "dota_name": "Gorgon"
 }, {
     "basedmg": "39 - 49",
     "strgain": "1.5",
@@ -1915,7 +1980,8 @@
     "agigain": "2.8",
     "basearmor": "0.96",
     "attacktime": "1.8",
-    "true_name": "weaver"
+    "true_name": "weaver",
+    "dota_name": "Skitskurr"
 }, {
     "basedmg": "62 - 70",
     "strgain": "3.3",
@@ -1942,7 +2008,8 @@
     "agigain": "2",
     "basearmor": "1.1",
     "attacktime": "1.9",
-    "true_name": "treant"
+    "true_name": "treant",
+    "dota_name": "Rooftrellen"
 }, {
     "basedmg": "16 - 22",
     "strgain": "1.9",
@@ -1969,7 +2036,8 @@
     "agigain": "1.7",
     "basearmor": "2.1",
     "attacktime": "1.4",
-    "true_name": "oracle"
+    "true_name": "oracle",
+    "dota_name": "Nerif"
 }, {
     "basedmg": "35 - 39",
     "strgain": "2.6",
@@ -1996,7 +2064,8 @@
     "agigain": "1.7",
     "basearmor": "2.52",
     "attacktime": "1.7 ",
-    "true_name": "legion_commander"
+    "true_name": "legion_commander",
+    "dota_name": "Tresdin"
 }, {
     "basedmg": "22 - 44",
     "strgain": "1.7",
@@ -2023,7 +2092,8 @@
     "agigain": "2.6",
     "basearmor": "4.06",
     "attacktime": "1.7",
-    "true_name": "phantom_lancer"
+    "true_name": "phantom_lancer",
+    "dota_name": "Azwraith"
 }, {
     "basedmg": "26 - 36",
     "strgain": "3",
@@ -2050,7 +2120,8 @@
     "agigain": "1.3",
     "basearmor": "3.96",
     "attacktime": "1.7",
-    "true_name": "kunkka"
+    "true_name": "kunkka",
+    "dota_name": "Admiral"
 }, {
     "basedmg": "18 - 32",
     "strgain": "1.8",
@@ -2077,7 +2148,8 @@
     "agigain": "1.6",
     "basearmor": "1.1",
     "attacktime": "1.7",
-    "true_name": "keeper_of_the_light"
+    "true_name": "keeper_of_the_light",
+    "dota_name": "Ezalor"
 }, {
     "basedmg": "23 - 25",
     "strgain": "2.5",
@@ -2104,7 +2176,8 @@
     "agigain": "2.75",
     "basearmor": "5.94",
     "attacktime": "1.7",
-    "true_name": "naga_siren"
+    "true_name": "naga_siren",
+    "dota_name": "Slithice"
 }, {
     "basedmg": "27 - 31",
     "strgain": "1.9",
@@ -2158,7 +2231,8 @@
     "agigain": "1.6",
     "basearmor": "0.96",
     "attacktime": "1.7",
-    "true_name": "rubick"
+    "true_name": "rubick",
+    "dota_name": "Grand Magus"
 }, {
     "basedmg": "39 - 41",
     "strgain": "2.9",
@@ -2185,7 +2259,8 @@
     "agigain": "1.7",
     "basearmor": "2.52",
     "attacktime": "1.7",
-    "true_name": "skeleton_king"
+    "true_name": "skeleton_king",
+    "dota_name": "Ostarion"
 }, {
     "basedmg": "29 - 35",
     "strgain": "2.4",
@@ -2212,7 +2287,8 @@
     "agigain": "3",
     "basearmor": "3.36",
     "attacktime": "1.7",
-    "true_name": "bloodseeker"
+    "true_name": "bloodseeker",
+    "dota_name": "Strygwyr"
 }, {
     "basedmg": "31 - 41",
     "strgain": "2.4",
@@ -2239,7 +2315,8 @@
     "agigain": "1.7",
     "basearmor": "5.38",
     "attacktime": "1.9",
-    "true_name": "spirit_breaker"
+    "true_name": "spirit_breaker",
+    "dota_name": "Barathrum"
 }, {
     "basedmg": "27 - 31",
     "strgain": "1.2",
@@ -2266,7 +2343,8 @@
     "agigain": "2.8",
     "basearmor": "2.08",
     "attacktime": "1.45",
-    "true_name": "antimage"
+    "true_name": "antimage",
+    "dota_name": "Magina"
 }, {
     "basedmg": "41 - 43",
     "strgain": "2.7",
@@ -2293,7 +2371,8 @@
     "agigain": "2",
     "basearmor": "4.94",
     "attacktime": "1.7",
-    "true_name": "sven"
+    "true_name": "sven",
+    "dota_name": "Rogue Knight"
 }, {
     "basedmg": "26 - 32",
     "strgain": "2.5",
@@ -2320,7 +2399,8 @@
     "agigain": "2.2",
     "basearmor": "2.52",
     "attacktime": "1.7",
-    "true_name": "broodmother"
+    "true_name": "broodmother",
+    "dota_name": "Black Arachnia"
 }, {
     "basedmg": "15 - 19",
     "strgain": "1.5",
@@ -2347,7 +2427,8 @@
     "agigain": "1.7",
     "basearmor": "3.22",
     "attacktime": "1.7",
-    "true_name": "leshrac"
+    "true_name": "leshrac",
+    "dota_name": "Tormented Soul"
 }, {
     "basedmg": "29 - 39",
     "strgain": "2.3",
@@ -2374,7 +2455,8 @@
     "agigain": "1.8",
     "basearmor": "0.1",
     "attacktime": "1.7",
-    "true_name": "arc_warden"
+    "true_name": "arc_warden",
+    "dota_name": "Zet"
 }, {
     "basedmg": "25 - 31",
     "strgain": "3",
@@ -2401,7 +2483,8 @@
     "agigain": "1.5",
     "basearmor": "3.1",
     "attacktime": "1.7",
-    "true_name": "tidehunter"
+    "true_name": "tidehunter",
+    "dota_name": "Leviathan"
 }, {
     "basedmg": "22 - 32",
     "strgain": "2.5",
@@ -2428,7 +2511,8 @@
     "agigain": "1",
     "basearmor": "2.4",
     "attacktime": "1.7",
-    "true_name": "warlock"
+    "true_name": "warlock",
+    "dota_name": "Demnok Lannik"
 }, {
     "basedmg": "31 - 37",
     "strgain": "2.8",
@@ -2455,7 +2539,8 @@
     "agigain": "2.2",
     "basearmor": "3.66",
     "attacktime": "1.7",
-    "true_name": "dragon_knight"
+    "true_name": "dragon_knight",
+    "dota_name": "Davion"
 }, {
     "basedmg": "31 - 33",
     "strgain": "2.9",
@@ -2482,7 +2567,8 @@
     "agigain": "2.3",
     "basearmor": "1.82",
     "attacktime": "1.7",
-    "true_name": "rattletrap"
+    "true_name": "rattletrap",
+    "dota_name": "Rattletrap"
 }, {
     "basedmg": "27 - 31",
     "strgain": "2.7",
@@ -2509,7 +2595,8 @@
     "agigain": "2.1",
     "basearmor": "5.52",
     "attacktime": "1.7",
-    "true_name": "ursa"
+    "true_name": "ursa",
+    "dota_name": "Ulfsaar"
 }, {
     "basedmg": "37 - 43",
     "strgain": "3",
@@ -2536,7 +2623,8 @@
     "agigain": "0.9",
     "basearmor": "0.26",
     "attacktime": "1.7",
-    "true_name": "tiny"
+    "true_name": "tiny",
+    "dota_name": "Stone Giant"
 }, {
     "basedmg": "41 - 47",
     "strgain": "3.2",
@@ -2563,7 +2651,8 @@
     "agigain": "1.55",
     "basearmor": "7.96",
     "attacktime": "1.7",
-    "true_name": "ogre_magi"
+    "true_name": "ogre_magi",
+    "dota_name": "Aggron Stonebreak"
 }, {
     "basedmg": "27 - 31",
     "strgain": "1.9",
@@ -2590,7 +2679,8 @@
     "agigain": "1.4",
     "basearmor": "1.1",
     "attacktime": "1.7",
-    "true_name": "disruptor"
+    "true_name": "disruptor",
+    "dota_name": "Stormcrafter"
 }, {
     "basedmg": "22 - 28",
     "strgain": "2.1",
@@ -2644,7 +2734,8 @@
     "agigain": "2.4",
     "basearmor": "5.38",
     "attacktime": "1.7",
-    "true_name": "slardar"
+    "true_name": "slardar",
+    "dota_name": "Slithereen Guard"
 }, {
     "basedmg": "27 - 43",
     "strgain": "3.2",
@@ -2670,7 +2761,8 @@
     "agigain": "0.9",
     "basearmor": "0.54",
     "attacktime": "2",
-    "true_name": "doom_bringer"
+    "true_name": "doom_bringer",
+    "dota_name": "Lucifer"
 }, {
     "basedmg": "16 - 22",
     "strgain": "1.7",
@@ -2697,7 +2789,8 @@
     "agigain": "1.6",
     "basearmor": "1.24",
     "attacktime": "1.7",
-    "true_name": "crystal_maiden"
+    "true_name": "crystal_maiden",
+    "dota_name": "Rylai"
 }, {
     "basedmg": "31 - 37",
     "strgain": "2.3",
@@ -2724,7 +2817,8 @@
     "agigain": "1.2",
     "basearmor": "6.68",
     "attacktime": "1.7",
-    "true_name": "dark_seer"
+    "true_name": "dark_seer",
+    "dota_name": "Ish'kafel"
 }, {
     "basedmg": "27 - 37",
     "strgain": "1.8",
@@ -2751,7 +2845,8 @@
     "agigain": "1.4",
     "basearmor": "0.82",
     "attacktime": "1.7",
-    "true_name": "witch_doctor"
+    "true_name": "witch_doctor",
+    "dota_name": "Zharvakko"
 }, {
     "basedmg": "12 - 22",
     "strgain": "1.5",
@@ -2778,7 +2873,8 @@
     "agigain": "0.8",
     "basearmor": "-0.18",
     "attacktime": "1.7",
-    "true_name": "skywrath_mage"
+    "true_name": "skywrath_mage",
+    "dota_name": "Dragonus"
 }, {
     "basedmg": "19 - 25",
     "strgain": "1.9",
@@ -2805,7 +2901,8 @@
     "agigain": "1.9",
     "basearmor": "0.96",
     "attacktime": "1.7",
-    "true_name": "invoker"
+    "true_name": "invoker",
+    "dota_name": "Carl"
 }, {
     "basedmg": "20-26",
     "strgain": "1.3",
@@ -2832,7 +2929,8 @@
     "agigain": "2.2",
     "basearmor": "2.22",
     "attacktime": "1.7",
-    "true_name": "meepo"
+    "true_name": "meepo",
+    "dota_name": "Geomancer"
 }, {
     "basedmg": "24 - 33",
     "strgain": "1.55",
@@ -2859,7 +2957,8 @@
     "agigain": "2",
     "basearmor": "1.1",
     "attacktime": "1.7",
-    "true_name": "lich"
+    "true_name": "lich",
+    "dota_name": "Ethreain"
 }, {
     "basedmg": "16 - 30",
     "strgain": "2.2",
@@ -2886,7 +2985,8 @@
     "agigain": "3",
     "basearmor": "2.08",
     "attacktime": "1.7",
-    "true_name": "silencer"
+    "true_name": "silencer",
+    "dota_name": "Nortrom"
 }, {
     "basedmg": "14 - 29",
     "strgain": "2.3",
@@ -2913,7 +3013,8 @@
     "agigain": "2",
     "basearmor": "3.86",
     "attacktime": "1.7",
-    "true_name": "obsidian_destroyer"
+    "true_name": "obsidian_destroyer",
+    "dota_name": "Harbinger"
 }, {
     "basedmg": "27 - 33",
     "strgain": "1.7",
@@ -2940,7 +3041,8 @@
     "agigain": "1.5",
     "basearmor": "1.1",
     "attacktime": "1.7",
-    "true_name": "lion"
+    "true_name": "lion",
+    "dota_name": "Demon Witch"
 }, {
     "basedmg": "22 - 26",
     "strgain": "1.9",
@@ -2967,7 +3069,8 @@
     "agigain": "2.4",
     "basearmor": "3.64",
     "attacktime": "1.4",
-    "true_name": "juggernaut"
+    "true_name": "juggernaut",
+    "dota_name": "Yurnero"
 }, {
     "basedmg": "32 - 42",
     "strgain": "2.7",
@@ -2994,7 +3097,8 @@
     "agigain": "1.5",
     "basearmor": "1.38",
     "attacktime": "1.7",
-    "true_name": "abaddon"
+    "true_name": "abaddon",
+    "dota_name": "Lord of Avernus"
 }, {
     "basedmg": "27 - 31",
     "strgain": "2.3",
@@ -3021,7 +3125,8 @@
     "agigain": "2.1",
     "basearmor": "3.22",
     "attacktime": "1.7",
-    "true_name": "tusk"
+    "true_name": "tusk",
+    "dota_name": "Ymir"
 }, {
     "basedmg": "22 - 26",
     "strgain": "2.1",
@@ -3048,5 +3153,6 @@
     "agigain": "2.7",
     "basearmor": "3.36",
     "attacktime": "1.7",
-    "true_name": "lone_druid"
+    "true_name": "lone_druid",
+    "dota_name": "Sylla"
 }]

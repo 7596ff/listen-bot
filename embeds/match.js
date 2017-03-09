@@ -62,7 +62,7 @@ module.exports = (match_data) => {
             player.tower_damage < 1000 ? player.tower_damage.toString() : `${(player.tower_damage / 1000).toFixed(1)}k`,
             player.gold_per_min.toString(),
             player.xp_per_min.toString(),
-            player.mention_str || player.personaname || "Unknown"
+            (player.mention_str || player.personaname || "Unknown").replace(/`/g, "'")
         ];
 
         for (let val in row) {

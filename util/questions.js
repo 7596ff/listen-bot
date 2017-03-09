@@ -3,9 +3,9 @@ const items = require("../json/items.json");
 const talents = require("../json/talents.json");
 
 function clean(str) {
-    str = str.toString();
+    str = str.toString().trim();
     if (`${parseInt(str)}.0` == str) str = str.replace(".0", "");
-    return str.trim();
+    return str;
 }
 
 module.exports = () => {

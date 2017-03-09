@@ -283,7 +283,7 @@ function handle(message, client) {
             });
         }
     } else {
-        if (client.trivia && client.trivia.channels.includes(message.channel.id) && message.gcfg.trivia == message.channel.id) client.trivia.handle(message, client, client.helper);
+        if (client.trivia && client.trivia.channels.includes(message.channel.id) && message.gcfg.trivia == message.channel.id) client.trivia.handle(message, client);
     }
 }
 

@@ -29,7 +29,7 @@ class Trivia {
         if (redis && channel) {
             this.hlock[channel] = true;
             this.active_questions[channel] = ret;
-            this.hints[channel] = ret.answer.replace(/[^+\-%s]/g, "•");
+            this.hints[channel] = ret.answer.replace(/[^+\-%s\.]/g, "•");
 
             redis.set(`trivia:${channel}:hint`, true, () => {
                 redis.expire(`trivia:${channel}:hint`, 10, () => {
@@ -102,7 +102,7 @@ class Trivia {
                 }
 
                 this.store_streak(client.pg, this.streaks[message.channel.id].user, this.streaks[message.channel.id].streak);
-
+                
                 this.streaks[message.channel.id] = {
                     "user": message.author.id,
                     "streak": 1
@@ -129,37 +129,36 @@ class Trivia {
 
     keyevent(message, client) {
         let split_content = message.split(":");
-        let channel = split_content[1],
-            code = split_content[2];
+        let channel = split_content[1], code = split_content[2];
         if (!this.channels.includes(channel)) return;
 
         if (code == "hint") {
-            if (!this.hlock[channel]) {
-                let question = this.active_questions[channel];
-                this.hints[channel] = this.replace(this.hints[channel], question.answer);
-                if (this.hints[channel].length > 10) this.replace(this.hints[channel], question.answer);
-                if (question.answer == this.hints[channel]) {
-                    client.redis.get(`trivia:${channel}:retries`, (err, reply) => {
-                        if (reply > 0) {
-                            let new_question = this.get_new_question(question, client.redis, channel, reply - 1);
-                            client.createMessage(channel, `Time's up! The answer was **${question.answer}**. New question:\n\n**${new_question.question}** (Hint: ${this.hints[channel]})`).catch(err => util.log(err));
-                        } else {
-                            this.channels.splice(this.channels.indexOf(channel), 1);
-                            client.createMessage(channel, `Time's up! The answer was **${question.answer}**. Not enough activity detected in this channel.\nUse \`--trivia start\` to start up a new game.`).catch(err => util.log(err));
-                            util.log(`${channel}: trivia timed out`);
-                        }
+            let question = this.active_questions[channel];
+            this.hints[channel] = this.replace(this.hints[channel], question.answer);
+            if (this.hints[channel].length > 10) this.replace(this.hints[channel], question.answer);
+            if (question.answer == this.hints[channel]) {
+                client.redis.get(`trivia:${channel}:retries`, (err, reply) => {
+                    if (reply > 0) {
+                        let new_question = this.get_new_question(question, client.redis, channel, reply - 1);
+                        client.createMessage(channel, `Time's up! The answer was **${question.answer}**. New question:\n\n**${new_question.question}** (Hint: ${this.hints[channel]})`).catch(err => util.log(err));
+                    } else {
+                        this.channels.splice(this.channels.indexOf(channel), 1);
+                        client.createMessage(channel, `Time's up! The answer was **${question.answer}**. Not enough activity detected in this channel.\nUse \`--trivia start\` to start up a new game.`).catch(err => util.log(err));
+                        util.log(`${channel}: trivia timed out`);
+                    }
 
-                        if (this.streaks[channel]) this.store_streak(client.pg, this.streaks[channel].user, this.streaks[channel].streak);
-                        delete this.points[channel];
-                        delete this.streaks[channel];
-                    });
-                } else {
+                    if (this.streaks[channel]) this.store_streak(client.pg, this.streaks[channel].user, this.streaks[channel].streak);
+                    delete this.points[channel];
+                    delete this.streaks[channel];
+                });
+            } else {
+                if (!this.hlock[channel]) {
                     client.redis.set(`trivia:${channel}:hint`, true);
                     client.redis.expire(`trivia:${channel}:hint`, 10);
                     client.createMessage(channel, `Hint: ${this.hints[channel]}`).catch(err => util.log(err));
+                } else {
+                    util.log(`lock jiggled in ${channel}`);
                 }
-            } else {
-                util.log(`lock jiggled in ${channel}`);
             }
         }
     }

@@ -150,7 +150,7 @@ class Trivia {
                             client.helper.log("trivia", `${channel}: trivia timed out`);
                         }
 
-                        if (this.streaks[channel]) this.store_streak(client.pg, this.streaks[channel].user, this.streaks[channel].streak);
+                        if (this.streaks[channel]) this.store_streak(client, this.streaks[channel].user, this.streaks[channel].streak);
                         delete this.points[channel];
                         delete this.streaks[channel];
                     });

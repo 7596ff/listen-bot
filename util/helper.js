@@ -1,20 +1,31 @@
-const util = require("util");
-
 class Helper {
     constructor() {
         this.last_guild = "";
         this.last_channel = "";
     }
 
-    log(message, text) {
+    print(text, type) {
+        let now = new Date().toJSON();
+        switch (type) {
+        case "error":
+            console.error(now, text);
+        case "warn":
+            console.warn(now, text);
+        default:
+            console.log(now, text);
+            break;
+        }
+    }
+
+    log(message, text, type = "log") {
         if (this.last_guild == message.channel.guild.name) {
             if (this.last_channel == message.channel.name) {
-                util.log(`  ${text.toString().trim()}`);
+                this.print(`  ${text.toString().trim()}`, type);
             } else {
-                util.log(`${message.channel.name}: ${text.toString().trim()}`);
+                this.print(`${message.channel.name}: ${text.toString().trim()}`, type);
             }
         } else {
-            util.log(`${message.channel.guild.name}/${message.channel.name}: ${text.toString().trim()}`);
+            this.print(`${message.channel.guild.name}/${message.channel.name}: ${text.toString().trim()}`, type);
         }
 
         this.last_guild = message.channel.guild.name;
@@ -24,11 +35,11 @@ class Helper {
     handle(message, err) {
         let result = err.toString().split(" ")[1];
         if (result == "400") {
-            this.log(message, "probably don't have permissions to embed here");
+            this.log(message, "probably don't have permissions to embed here", "warn");
         } else if (result == "403") {
-            this.log(message, "probably don't have permissions to send messages here");
+            this.log(message, "probably don't have permissions to send messages here", "warn");
         } else {
-            this.log(err.toString());
+            this.log(message, err, "error");
         }
     }
 }

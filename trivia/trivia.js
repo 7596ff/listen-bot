@@ -58,7 +58,7 @@ class Trivia {
             let sql = [
                 "INSERT INTO public.scores (id, score, streak, banned)",
                 "VALUES ($1, $2, 1, false) ON CONFLICT (id) DO",
-                "UPDATE SET score = (SELECT score FROM public.scores WHERE id = $1) + $2",
+                "UPDATE SET score = public.scores.score + EXCLUDED.score",
                 "WHERE scores.id = $1;"
             ].join(" ");
 

@@ -25,6 +25,8 @@
         "eval": ["eval"],
         "shardinfo": ["shardinfo"],
         "restart": ["restart"],
-        "secret": ["secret"]
+        "secret": ["secret"],
+        "ping": ["ping"],
+        "pong": ["pong"]
     }
 }

@@ -72,7 +72,7 @@ class Trivia {
     }
 
     handle(message, client) {
-        let question = this.active_questions[message.channel.iLDd];
+        let question = this.active_questions[message.channel.id];
         this.points[message.channel.id] = this.points[message.channel.id] || {};
         this.points[message.channel.id][message.author.id] = this.points[message.channel.id][message.author.id] || 5;
         if (this.clean(message.content) == this.clean(question.answer)) {

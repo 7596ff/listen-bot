@@ -51,6 +51,18 @@ async function as_(message, client, helper, as, _of) {
             helper.log(message, "something went wrong with mika");
             helper.log(message, err);
         });
+    }).catch(err => {
+        if (err.err) {
+            message.channel.createMessage(err.text || "Something went wrong.").catch(err => helper.handle(message, err));
+            helper.log(message, err.text);
+            helper.log(message, err.err);
+        } else if (err.text) {
+            message.channel.createMessage(err.text).catch(err => helper.handle(message, err));
+            helper.log(message, err.log);
+        } else {
+            message.channel.createMessage("Something went wrong.").catch(err => helper.handle(message, err));
+            helper.log(message, err);
+        }
     });
 }
 

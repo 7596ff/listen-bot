@@ -13,7 +13,7 @@ async function history(message, client, helper) {
         message.channel.createMessage("Invalid syntax.").catch(err => helper.handle(message, err));
         return;
     }
-    
+
     try {
         await message.channel.sendTyping();
     } catch (err) {

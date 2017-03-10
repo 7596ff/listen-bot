@@ -50,22 +50,17 @@ class Trivia {
     }
 
     increment_user(client, user_id, score) {
-        client.pg.query({
-            "text": "SELECT banned FROM scores WHERE id = $1",
-            "values": [user_id]
-        }).then(res => {
-            if (res.rows[0].banned) score = 1;
-            let sql = [
-                "INSERT INTO public.scores (id, score, streak, banned)",
-                "VALUES ($1, $2, 1, false) ON CONFLICT (id) DO",
-                "UPDATE SET score = public.scores.score + EXCLUDED.score",
-                "WHERE scores.id = $1;"
-            ].join(" ");
+        let sql = [
+            "INSERT INTO public.scores (id, score, streak, banned)",
+            "VALUES ($1, $2, 1, false)",
+            "ON CONFLICT (id) DO",
+            "UPDATE SET score = public.scores.score + (SELECT CASE WHEN banned IS TRUE THEN 1 ELSE EXCLUDED.score END FROM public.scores WHERE id = $1)",
+            "WHERE scores.id = $1;"
+        ].join(" ");
 
-            client.pg.query({
-                "text": sql,
-                "values": [user_id, score]
-            }).catch(err => client.helper.log("postgres", err));
+        client.pg.query({
+            "text": sql,
+            "values": [user_id, score]
         }).catch(err => client.helper.log("postgres", err));
     }
 
@@ -77,7 +72,7 @@ class Trivia {
     }
 
     handle(message, client) {
-        let question = this.active_questions[message.channel.id];
+        let question = this.active_questions[message.channel.iLDd];
         this.points[message.channel.id] = this.points[message.channel.id] || {};
         this.points[message.channel.id][message.author.id] = this.points[message.channel.id][message.author.id] || 5;
         if (this.clean(message.content) == this.clean(question.answer)) {

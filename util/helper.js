@@ -23,12 +23,12 @@ class Helper {
         if (typeof message == "object") {
             if (this.last_guild == message.channel.guild.name) {
                 if (this.last_channel == message.channel.name) {
-                    this.print(`  ${text.toString().trim()}`, type);
+                    this.print(`CMDS:  ${text.toString().trim()}`, type);
                 } else {
-                    this.print(`${message.channel.name}: ${text.toString().trim()}`, type);
+                    this.print(`CMDS: ${message.channel.name}: ${text.toString().trim()}`, type);
                 }
             } else {
-                this.print(`${message.channel.guild.name}/${message.channel.name}: ${text.toString().trim()}`, type);
+                this.print(`CMDS: ${message.channel.guild.name}/${message.channel.name}: ${text.toString().trim()}`, type);
             }
 
             this.last_guild = message.channel.guild.name;

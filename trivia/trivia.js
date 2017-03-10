@@ -51,27 +51,28 @@ class Trivia {
 
     increment_user(client, user_id, score) {
         client.pg.query({
-            "text": "UPDATE scores SET score = (SELECT score FROM scores WHERE id = $1) + $2 WHERE id = $1;",
-            "values": [user_id, score]
-        }).catch(err => client.helper.log("postgres", err));
+            "text": "SELECT banned FROM scores WHERE id = $1",
+            "values": [user_id]
+        }).then(res => {
+            if (res.rows[0].banned) score = 1;
+            let sql = [
+                "INSERT INTO public.scores (id, score, streak, banned)",
+                "VALUES ($1, $2, 1, false) ON CONFLICT (id) DO",
+                "UPDATE SET score = (SELECT score FROM public.scores WHERE id = $1) + $2",
+                "WHERE scores.id = $1;"
+            ].join(" ");
 
-        client.pg.query({
-            "text": "INSERT INTO scores (id, score) SELECT $1, $2 WHERE NOT EXISTS (SELECT id FROM scores WHERE id = $1);",
-            "values": [user_id, score]
+            client.pg.query({
+                "text": sql,
+                "values": [user_id, score]
+            }).catch(err => client.helper.log("postgres", err));
         }).catch(err => client.helper.log("postgres", err));
     }
 
     store_streak(client, user_id, streak) {
         client.pg.query({
-            "text": "SELECT streak FROM scores WHERE id = $1;",
-            "values": [user_id]
-        }).then(res => {
-            if (res.rows[0].streak < streak) {
-                client.pg.query({
-                    "text": "UPDATE scores SET streak = $1 WHERE id = $2;",
-                    "values": [streak, user_id]
-                }).catch(err => client.helper.log("postgres", err));
-            }
+            "text": "UPDATE scores SET streak = $1 WHERE id = $2 AND streak <= $1;",
+            "values": [streak, user_id]
         }).catch(err => client.helper.log("postgres", err));
     }
 

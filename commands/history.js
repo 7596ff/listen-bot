@@ -9,7 +9,7 @@ async function history(message, client, helper) {
         "of": "member"
     });
 
-    if (response.with && response.as) {
+    if ((response.with && response.as) || (!response.with && !response.as && !response.of)) {
         message.channel.createMessage("Invalid syntax.").catch(err => helper.handle(message, err));
         return;
     }

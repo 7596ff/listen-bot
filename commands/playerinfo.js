@@ -108,11 +108,7 @@ function send_message(message, client, helper, acc_id) {
 
                         client.pg.query({
                             "text": "UPDATE public.users SET scr = $1, cr = $2, sat = $3 WHERE dotaid = $4;",
-<<<<<<< HEAD
                             "values": [plist[0].solo_competitive_rank || 0, plist[0].competitive_rank || 0, Date.now(), plist[0].profile.account_id]
-=======
-                            "values": [plist[0].solo_competitive_rank || 0, plist[0].competitive_rank || 0, Date.now(), plist[0].account_id]
->>>>>>> 87e8308e4bd9985b1ece2c6d29ab9d3bf9e561c6
                         }).catch(err => {
                             helper.log("postgres", err, "err");
                         });

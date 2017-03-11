@@ -1,6 +1,6 @@
-function upsert_mmr(pg, mika, row, force = false) {
+function upsert_mmr(pg, mika, row, force) {
     return new Promise((resolve, reject) => {
-        if (!force || (row.sat && parseInt(row.sat) + 604800000 > Date.now())) {
+        if (force === true || (row.sat && parseInt(row.sat) + 604800000 > Date.now())) {
             resolve(row);
         } else {
             mika.getPlayer(row.dotaid).then(player => {

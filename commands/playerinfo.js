@@ -105,6 +105,13 @@ function send_message(message, client, helper, acc_id) {
                         embed: playerinfo_embed(plist[0])
                     }).then(() => {
                         helper.log(message, "  sent player info from api");
+
+                        client.pg.query({
+                            "text": "UPDATE public.users SET scr = $1, cr = $2, sat = $3 WHERE dotaid = $4;",
+                            "values": [plist[0].solo_competitive_rank || 0, plist[0].competitive_rank || 0, Date.now(), plist[0].account_id]
+                        }).catch(err => {
+                            helper.log("postgres", err, "err");
+                        });
                     }).catch(err => helper.handle(message, err));
 
                     client.redis.set(`playerinfo:${acc_id}`, JSON.stringify(plist[0]), (err) => {

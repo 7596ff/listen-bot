@@ -8,8 +8,8 @@ function single_mmr_embed(obj) {
             "name": obj.member.username
         },
         "description": [
-            `**Solo MMR:** ${obj.scr || "Unknwon"}`,
-            `**Party MMR:** ${obj.cr || "Unknwon"}`
+            `**Solo MMR:** ${obj.scr || "Unknown"}`,
+            `**Party MMR:** ${obj.cr || "Unknown"}`
         ].join("\n"),
         "timestamp": new Date(obj.sat ? parseInt(obj.sat) : Date.now()),
         "footer": {
@@ -101,7 +101,7 @@ async function mmr(message, client, helper) {
             "values": [id]
         });
 
-        let upserted = await upsert_mmr(client.pg, client.mika, res.rows[0]);
+        let upserted = await upsert_mmr(client.pg, client.mika, res.rows[0], true);
 
         upserted.member = message.channel.guild.members.get(id);
         let embed = single_mmr_embed(upserted);

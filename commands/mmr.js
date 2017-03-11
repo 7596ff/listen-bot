@@ -58,7 +58,7 @@ async function mmr(message, client, helper) {
             let res = await client.pg.query("SELECT * FROM public.users;");
             res.rows = res.rows.filter(row => message.channel.guild.members.get(row.id));
 
-            let queries = res.rows.map(row => upsert_mmr(client.pg, client.mika, row));
+            let queries = res.rows.map(row => upsert_mmr(client.pg, client.mika, row, false));
             let results = await Promise.all(queries);
 
             let embed = many_mmr_embed(results.sort((a, b) => { 

@@ -19,7 +19,7 @@ function single_mmr_embed(obj) {
 }
 
 function many_mmr_embed(list, members, name) {
-    let earliest = list.sort((a, b) => { return a.sat - b.sat; })[0].sat;
+    let earliest = list.slice().sort((a, b) => { return a.sat - b.sat; })[0].sat;
     return {
         "author": {
             "name": `Top 15 players sorted by Solo MMR in ${name}`

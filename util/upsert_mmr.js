@@ -1,4 +1,4 @@
-function upsert_mmr(pg, mika, row, force) {
+function upsert_mmr(pg, mika, row, force = false) {
     return new Promise((resolve, reject) => {
         if (!force || (row.sat && parseInt(row.sat) + 604800000 > Date.now())) {
             resolve(row);

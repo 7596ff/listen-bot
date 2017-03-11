@@ -124,6 +124,14 @@
         ],
         "example": "matches of alexa as ember",
         "aliases": ["matchhistory", "games"]
+    }, {
+        "name": "mmr",
+        "text": [
+            "returns mmr of a member or of the server. ",
+            "\n`--mmr`: returns your mmr.",
+            "\n`--mmr of [member]`: returns mmr of a registered member.",
+            "\n`--mmr all`: returns a leaderboard of the whole server."
+        ]
     }],
     "fun": [{
         "name": "courage", 

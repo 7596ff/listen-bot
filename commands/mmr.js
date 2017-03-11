@@ -63,7 +63,7 @@ async function mmr(message, client, helper) {
 
             let embed = many_mmr_embed(results.sort((a, b) => { 
                 return (b.scr || 0) - (a.scr || 0); 
-            }).slice(0, 10), message.channel.guild.members, message.channel.guild.name);
+            }).slice(0, 15), message.channel.guild.members, message.channel.guild.name);
 
             await msg.edit({ "embed": embed});
             helper.log(message, "sent all mmr");

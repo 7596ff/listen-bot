@@ -76,14 +76,14 @@ module.exports = (message, client, helper) => {
             let data = res.rows.find(row => row.id == found);
             let guild = res.rows.filter(row => message.channel.guild.members.get(row.id));
             if (!data) {
-                message.channel.createMessage(`${client.users.get(search).username} hasn't played trivia yet!`).catch(err => helper.handle(message, err));
+                message.channel.createMessage(`${client.users.get(found).username} hasn't played trivia yet!`).catch(err => helper.handle(message, err));
                 return;
             }
 
             let embed = {
                 "author": {
-                    "name": client.users.get(search).username,
-                    "icon_url": client.users.get(search).avatarURL
+                    "name": client.users.get(found).username,
+                    "icon_url": client.users.get(found).avatarURL
                 },
                 "description": [
                     `**Points:** ${data.score}`,

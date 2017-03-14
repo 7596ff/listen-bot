@@ -5,7 +5,11 @@ const eat = require("../util/eat");
 const od_heroes = require("../json/od_heroes.json");
 
 async function matches(message, client, helper) {
-    await message.channel.sendTyping();
+    try {
+        await message.channel.sendTyping();
+    } catch (err) {
+        helper.log(message, err);
+    }
     
     let response = await eat(message, {
         "with": "member",

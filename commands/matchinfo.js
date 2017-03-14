@@ -75,5 +75,7 @@ module.exports = (message, client, helper) => {
                 });
             }
         });
+    }).catch(err => {
+        helper.log(message, err);
     });
 };

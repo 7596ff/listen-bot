@@ -9452,7 +9452,8 @@
             "Transforms an enemy unit into a harmless creature, disabling their attacks and abilities."
         ],
         "hero_name": "shadow_shaman",
-        "name": "Hex"
+        "name": "Hex",
+        "key": "w"
     },
     {
         "stats": [

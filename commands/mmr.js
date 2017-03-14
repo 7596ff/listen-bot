@@ -84,12 +84,12 @@ async function mmr(message, client, helper) {
             }
 
             let found = await search_members(message.channel.guild.members, terms);
-            if (found.length != 1) {
+            if (Object.keys(found).length != 1) {
                 message.channel.createMessage("Couldn't find a member!").catch(err => helper.handle(message, err));
                 return;
             }
 
-            id = found[0];
+            id = found[Object.keys(found)[0]];
         } catch (err) {
             helper.log("mmr", err, "err");
         }

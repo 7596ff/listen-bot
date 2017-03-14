@@ -70,8 +70,9 @@ module.exports = (message, client, helper) => {
 
     if (command == "points") {
         client.pg.query("SELECT * FROM scores ORDER BY score DESC;").then(res => {
-            let search = search_members(message.channel.guild.members, split_content.slice(1))[0] || message.author.id;
-            let data = res.rows.find(row => row.id == search);
+            let search = search_members(message.channel.guild.members, split_content.slice(1));
+            let found = search[Object.keys(search)[0]] || message.author.id;
+            let data = res.rows.find(row => row.id == found);
             let guild = res.rows.filter(row => message.channel.guild.members.get(row.id));
             if (!data) {
                 message.channel.createMessage(`${client.users.get(search).username} hasn't played trivia yet!`).catch(err => helper.handle(message, err));

@@ -1,5 +1,5 @@
 function search_members(members, terms) {
-    let res = [];
+    let res = {};
 
     for (let i = 0; i <= terms.length; i++) {
         for (let j = 0; j <= terms.length; j++) {
@@ -10,7 +10,7 @@ function search_members(members, terms) {
                     if (member.nick && member.nick.toLowerCase() === term) return true;
                     if (member.id == term.replace(/\D/g, "")) return true;
                 });
-                if (search) res.push(search.id);
+                if (search) res[term] = search.id;
             }
         }
     }

@@ -1,6 +1,11 @@
 const search_members = require("./search_members");
 
 function eat(message, options) {
+    let found_obj = search_members(message.channel.guild.members, message.content.split(" "));
+    Object.keys(found_obj).forEach(key => {
+        message.content = message.content.replace(key, found_obj[key]);
+    });
+    
     return new Promise(resolve => {
         let searches = Object.keys(options);
         let responses = {};
@@ -25,7 +30,7 @@ function eat(message, options) {
                     responses[search] = res.join(" ");
                     break;
                 case "member":
-                    responses[search] = search_members(message.channel.guild.members, res);
+                    responses[search] = res;
                     break;
                 }
             }

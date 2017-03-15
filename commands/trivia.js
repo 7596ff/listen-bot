@@ -11,7 +11,7 @@ module.exports = (message, client, helper) => {
         } else if (message.gcfg.trivia != 0 && message.gcfg.trivia != message.channel.id) {
             message.channel.createMessage(`Try this command in the trivia channel! <#${message.gcfg.trivia}>`);
         } else {
-            message.channel.createMessage(`This server does not have a desginated trivia channel! Try \`${message.gcfg.prefix}help admin trivia\`.`);
+            message.channel.createMessage(`This server does not have a designated trivia channel! Try \`${message.gcfg.prefix}help admin trivia\`.`);
         }
         return;
     }

@@ -34,7 +34,7 @@ function eat(message, options) {
                     responses[search] = res.join(" ");
                     break;
                 case "member":
-                    responses[search] = res;
+                    responses[search] = [search_members(message.channel.guild.members, res)[res.join(" ")]];
                     break;
                 }
             }

@@ -151,6 +151,10 @@
             "\n`--trivia stats`: stats about the trivia game."
         ],
         "aliases": ["t", "challenge"]
+    }, {
+        "name": "ixmike",
+        "text": ["returns a random ixmikeism"],
+        "aliases": ["mike", "mikeism", "mikeisms"]
     }],
     "meta": [{
         "name": "info",

@@ -26,7 +26,7 @@ function many_mmr_embed(list, members, name) {
         },
         "fields": [{
             "name": "Players",
-            "value": list.map(row => members.get(row.id).username).join("\n"),
+            "value": list.map(row => members.get(row.id).username.slice(0, 40)).join("\n"),
             "inline": true
         }, {
             "name": "Solo",

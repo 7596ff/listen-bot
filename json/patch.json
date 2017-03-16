@@ -1,5 +1,6 @@
 {
     "schema": [
+        "7.03",
         "7.02",
         "7.01",
         "7.00",
@@ -35,6 +36,544 @@
         "6.79"
     ],
     "data": [
+        {
+            "heroes": {
+                "abaddon": {
+                    "changes": [
+                        "• Aphotic Shield manacost rescaled from 100/105/110/115 to 115",
+                        "• Level 25 Talent increased from +200 Aphotic Shield Health to +300"
+                    ],
+                    "true_name": "abaddon", 
+                    "format_name": "abaddon"
+                },
+                "ancient_apparition": {
+                    "changes": [
+                        "• Level 25 Talent increased from +80 Chilling Touch Damage to +100",
+                        "• Level 25 Talent increased from +3 Charges of Cold Feet to +4"
+                    ],
+                    "true_name": "ancient_apparition",
+                    "format_name": "Ancient Apparition"
+                },
+                "arc_warden": {
+                    "changes": [
+                        "• Magnetic Field manacost rescaled from 110 to 80/90/100/110",
+                        "• Tempest Double duration increased from 12/14/16 to 14/16/18",
+                        "• Level 25 Talent increased from +175 Spark Wraith Damage to +250"
+                    ],
+                    "true_name": "arc_warden",
+                    "format_name": "Arc Warden"
+                },
+                "bane": {
+                    "changes": [
+                        "• Base damage increased by 4",
+                        "• Level 25 Talent increased from +75 Movement Speed to +100"
+                    ],
+                    "format_name": "Bane",
+                    "true_name": "bane"
+                },
+                "batrider": {
+                    "changes": [
+                        "• Level 25 Talent increased from +200 Flamebreak AoE to +300"
+                    ],
+                    "format_name": "Batrider",
+                    "true_name": "batrider"
+                },
+                "beastmaster": {
+                    "changes": [
+                        "• Level 20 Talent increased from +350 Health to +400"
+                    ],
+                    "format_name": "Beastmaster",
+                    "true_name": "beastmaster"
+                },
+                "bloodseeker": {
+                    "changes": [
+                        "• Level 10 Talent increased from +200 Health to +225"
+                    ],
+                    "true_name": "bloodseeker",
+                    "format_name": "Bloodseeker"
+                },
+                "brewmaster": {
+                    "changes": [
+                        "• Level 15 Talent increased from +10% Magic Resistance to +12%"
+                    ],
+                    "true_name": "brewmaster",
+                    "format_name": "Brewmaster"
+                },
+                "bristleback": {
+                    "changes": [
+                        "• Level 10 Talent increased from +7 Strength to +8",
+                        "• Level 20 Talent increased from +45 Attack Speed to +50",
+                        "• Level 20 Talent increased from -35s Respawn Time to -40s"
+                    ],
+                    "true_name": "bristleback",
+                    "format_name": "Bristleback"
+                },
+                "broodmother": {
+                    "changes": [
+                        "• Level 15 Talent increased from +250 Health to +325",
+                        "• Level 20 Talent increased from +50 Attack Speed to +70",
+                        "• Level 20 Talent increased from +8 Spiders Attack Damage to +12"
+                    ],
+                    "format_name": "Broodmother",
+                    "true_name": "broodmother"
+                },
+                "centaur": {
+                    "changes": [
+                        "• Base armor reduced by 1",
+                        "• Scepter Stampede damage reduction reduced from 60% to 50%"
+                    ],
+                    "true_name": "centaur",
+                    "format_name": "Centaur Warrunner"
+                },
+                "crystal_maiden": {
+                    "changes": [
+                        "• Level 25 Talent increased from +250 Crystal Nova Damage to +300"
+                    ],
+                    "format_name": "Crystal Maiden",
+                    "true_name": "crystal_maiden"
+                },
+                "dark_seer": {
+                    "changes": [
+                        "• Vacuum cooldown increased from 28 to 32"
+                    ],
+                    "format_name": "Dark Seer",
+                    "true_name": "dark_seer"
+                },
+                "death_prophet": {
+                    "changes": [
+                        "• Level 10 Talent increased from +4% Spell Amplification to 5%",
+                        "• Level 10 Talent increased from +8% Magic Resistance to +10%",
+                        "• Level 20 Talent increased from +25 Movement Speed to +50",
+                        "• Level 25 Talent increased from +400 Health to +600",
+                        "• Level 25 Talent increased from +6 Exorcism Spirits to +8"
+                    ],
+                    "format_name": "Death Prophet",
+                    "true_name": "death_prophet"
+                },
+                "dragon_knight": {
+                    "changes": [
+                        "• Level 10 Talent increased from +7 Strength to +9",
+                        "• Level 10 Talent increased from +20 Attack Speed to +25",
+                        "• Level 25 Talent increased from +60 Movement Speed to +75"
+                    ],
+                    "format_name": "Dragon Knight",
+                    "true_name": "dragon_knight"
+                },
+                "earth_spirit": {
+                    "changes": [
+                        "• Base movement speed reduced from 295 to 290"
+                    ],
+                    "format_name": "Earth Spirit",
+                    "true_name": "earth_spirit"
+                },
+                "earthshaker": {
+                    "changes": [
+                        "• Aftershock damage increased from 50/75/100/125 to 75/100/125/150",
+                        "• Level 10 Talent increased from +8 Strength to +10"
+                    ],
+                    "format_name": "Earthshaker",
+                    "true_name": "earthshaker"
+                },
+                "elder_titan": {
+                    "changes": [
+                        "• Agility gain increased from 1.5 to 1.8"
+                    ],
+                    "true_name": "elder_titan",
+                    "format_name": "Elder Titan"
+                },
+                "ember_spirit": {
+                    "changes": [
+                        "• Level 10 Talent reduced from +12% Spell Amplification to 10%",
+                        "• Level 10 Talent increased from +20 Damage to +25",
+                        "• Level 20 Talent increased from +8 Armor to +10",
+                        "• Level 20 Talent changed from +15% Cooldown Reduction to +500 Flame Guard Absorption",
+                        "• Level 25 Talent changed from +500 Flame Guard Absorption to +20% Cooldown Reduction"
+                    ],
+                    "format_name": "Ember Spirit",
+                    "true_name": "ember_spirit"
+                },
+                "enchantress": {
+                    "changes": [
+                        "• Base movement speed increased from 335 to 340",
+                        "• Level 15 Talent changed from +10s Nature's Attendants Duration to +7 Nature's Attendants Wisps",
+                        "• Level 20 Talent increased from +12% Magic Resistance to +15%",
+                        "• Level 25 Talent changed from +12 Nature's Attendants Wisps to Enchant Affects Ancients"
+                    ],
+                    "format_name": "Enchantress",
+                    "true_name": "enchantress"
+                },
+                "faceless_void": {
+                    "changes": [
+                        "• Level 10 Talent increased from +7 Strength to +8"
+                    ],
+                    "format_name": "Faceless Void",
+                    "true_name": "faceless_void"
+                },
+                "gyrocopter": {
+                    "changes": [
+                        "• Level 10 Talent increased from +200 Health to +225",
+                        "• Level 15 Talent increased from +12% Magic Resistance to +15%"
+                    ],
+                    "format_name": "Gyrocopter",
+                    "true_name": "gyrocopter"
+                },
+                "huskar": {
+                    "changes": [
+                        "• Level 25 Talent increased from +400 Life Break Cast Range to +500"
+                    ],
+                    "format_name": "Huskar",
+                    "true_name": "huskar"
+                },
+                "invoker": {
+                    "changes": [
+                        "• Alacrity manacost increased from 45 to 60"
+                    ],
+                    "format_name": "Invoker",
+                    "true_name": "invoker"
+                },
+                "wisp": {
+                    "changes": [
+                        "• Relocate cooldown rescaled from 90/75/60 to 100/80/60"
+                    ],
+                    "format_name": "io",
+                    "true_name": "wisp"
+                },
+                "jakiro": {
+                    "changes": [
+                        "• Level 10 Talent increased from +20% XP Gain to +25%",
+                        "• Level 15 Talent increased from +25 Dual Breath Burn Damage to +35"
+                    ],
+                    "format_name": "Jakiro",
+                    "true_name": "jakiro"
+                },
+                "juggernaut": {
+                    "changes": [
+                        "• Healing Ward bounty increased from 25 Gold to 75 Gold and XP"
+                    ],
+                    "format_name": "Juggernaut",
+                    "true_name": "juggernaut"
+                },
+                "keeper_of_the_light": {
+                    "changes": [
+                        "• Mana Leak duration reduced from 5/6/7/8 to 4/5/6/7",
+                        "• Mana Leak manacost increased from 150 to 160"
+                    ],
+                    "format_name": "Keeper of the Light",
+                    "true_name": "keeper_of_the_light"
+                },
+                "kunkka": {
+                    "changes": [
+                        "• Level 15 Talent increased from +15 Movement Speed to +20"
+                    ],
+                    "format_name": "Kunkka",
+                    "true_name": "kunkka"
+                },
+                "legion_commander": {
+                    "changes": [
+                        "• Level 25 Talent changed from +25% Cooldown Reduction to -8s Press The Attack Cooldown"
+                    ],
+                    "format_name": "Legion Commander",
+                    "true_name": "legion_commander"
+                },
+                "leshrac": {
+                    "changes": [
+                        "• Level 25 Talent increased from +2s Lightning Storm Slow Duration to +3s"
+                    ],
+                    "format_name": "Leshrac",
+                    "true_name": "leshrac"
+                },
+                "lich": {
+                    "changes": [
+                        "• Level 10 Talent increased from +15 Movement Speed to +25",
+                        "• Level 10 Talent increased from +125 Health to +175",
+                        "• Level 15 Talent increased from -3s Frost Blast Cooldown to -4s"
+                    ],
+                    "format_name": "Lich",
+                    "true_name": "lich"
+                },
+                "life_stealer": {
+                    "changes": [
+                        "• Base damage reduced by 3"
+                    ],
+                    "format_name": "Lifestealer",
+                    "true_name": "life_stealer"
+                },
+                "lina": {
+                    "changes": [
+                        "• Level 10 Talent increased from -25s Respawn Time to -30s",
+                        "• Level 10 Talent increased from +60 Light Strike Array Damage to +80",
+                        "• Level 15 Talent increased from +40 Damage to +50",
+                        "• Level 25 Talent changed from +1 Fiery Soul Max Stacks to +40/4% Fiery Soul Per Stack"
+                    ],
+                    "true_name": "lina",
+                    "format_name": "Lina"
+                },
+                "lion": {
+                    "changes": [
+                        "• Level 10 Talent increased from -25s Respawn Time to -30s",
+                        "• Level 10 Talent increased from +45 Damage to +60"
+                    ],
+                    "true_name": "lion",
+                    "format_name": "Lion"
+                },
+                "lone_druid": {
+                    "changes": [
+                        "• Base damage reduced by 4",
+                        "• Rabid cooldown increased from 30 to 45",
+                        "• Level 15 Talent reduced from +55 Damage to +50 Damage"
+                    ],
+                    "format_name": "Lone Druid",
+                    "true_name": "lone_druid"
+                },
+                "lycan": {
+                    "changes": [
+                        "• Level 10 Talent increased from +150 Health to +175"
+                    ],
+                    "format_name": "Lycan",
+                    "true_name": "lycan"
+                },
+                "medusa": {
+                    "changes": [
+                        "• Level 25 Talent increased from +1s Stone Gaze Stun to +2s"
+                    ],
+                    "format_name": "Medusa",
+                    "true_name": "medusa"
+                },
+                "monkey_king": {
+                    "changes": [
+                        "• Added to Captains Mode",
+                        "• Jingu Mastery buff now has a max duration of 35 seconds",
+                        "• Tree Dance night vision reduced from 800 to 400",
+                        "• Wukong's Command duration rescaled from 13/14/15 to 13"
+                    ],
+                    "true_name": "monkey_king",
+                    "format_name": "Monkey King"
+                },
+                "furion": {
+                    "changes": [
+                        "• Nature's Call manacost rescaled from 160 to 130/140/150/160",
+                        "• Level 15 Talent increased from +15 Intelligence to +20",
+                        "• Level 15 Talent increased from +20 Movement Speed to +35"
+                    ],
+                    "true_name": "furion",
+                    "format_name": "Nature's Prophet"
+                },
+                "nyx_assassin": {
+                    "changes": [
+                        "• Spiked Carapace cooldown rescaled from 22/18/14/10 to 25/20/15/10"
+                    ],
+                    "format_name": "Nyx Assassin",
+                    "true_name": "nyx_assassin"
+                },
+                "ogre_magi": {
+                    "changes": [
+                        "• Base movement speed reduced from 290 to 285",
+                        "• Bloodlust manacost increased from 50 to 65"
+                    ],
+                    "format_name": "Ogre Magi",
+                    "true_name": "ogre_magi"
+                },
+                "phantom_lancer": {
+                    "changes": [
+                        "• Spirit Lance illusions now give the same constant 5 bounty as Juxtapose, rather than scaling with levels"
+                    ],
+                    "format_name": "Phantom Lancer",
+                    "true_name": "phantom_lancer"
+                },
+                "phoenix": {
+                    "changes": [
+                        "• Level 15 Talent increased from +90 Gold/Min to +120"
+                    ],
+                    "format_name": "Phoenix",
+                    "true_name": "phoenix"
+                },
+                "puck": {
+                    "changes": [
+                        "• Base damage increased by 3",
+                        "• Level 15 Talent increased from +15% Magic Resistance to +20%",
+                        "• Level 15 Talent increased from +40 Damage to +50",
+                        "• Level 25 Talent increased from +300 Gold/Min to +420"
+                    ],
+                    "format_name": "Puck",
+                    "true_name": "puck"
+                },
+                "pudge": {
+                    "changes": [
+                        "• Meat Hook speed reduced from 1600 to 1450",
+                        "• Meat Hook no longer pulls invulnerable heroes"
+                    ],
+                    "true_name": "pudge",
+                    "format_name": "Pudge"
+                },
+                "pugna": {
+                    "changes": [
+                        "• Pugna Level 10 Talent increased from +150 Health to +225",
+                        "• Pugna Level 15 Talent changed from +12 Strength to -1s Netherblast Cooldown",
+                        "• Pugna Level 15 Talent increased from -25s Respawn Time to -35s"
+                    ],
+                    "format_name": "Pugna",
+                    "true_name": "pugna"
+                },
+                "queenofpain": {
+                    "changes": [
+                        "• Level 10 Talent increased from +6 Strength to +9",
+                        "• Level 10 Talent increased from +20 Damage to +25",
+                        "• Level 20 Talent increased from +200 Health to +300",
+                        "• Level 25 Talent changed from -3s Shadow Strike Cooldown to Removed Shadow Strike Cooldown"
+                    ],
+                    "format_name": "Queen of Pain",
+                    "true_name": "queenofpain"
+                },
+                "razor": {
+                    "changes": [
+                        "• Level 10 Talent increased from +15 Movement Speed to +20",
+                        "• Level 10 Talent increased from +10 Agility to +15",
+                        "• Eye of the Storm Scepter now hits shrines instead of ignoring them"
+                    ],
+                    "format_name": "Razor",
+                    "true_name": "razor"
+                },
+                "rubick": {
+                    "changes": [
+                        "• Attack Range reduced from 600 to 550"
+                    ],
+                    "format_name": "Rubick",
+                    "true_name": "rubick"
+                },
+                "nevermore": {
+                    "changes": [
+                        "• Level 25 Talent changed from -7s Shadow Raze Cooldown to +125 Shadow Raze Damage"
+                    ],
+                    "format_name": "Shadow Fiend",
+                    "true_name": "nevermore"
+                },
+                "shadow_shaman": {
+                    "changes": [
+                        "• Base armor increased by 1",
+                        "• Base attack range reduced from 500 to 400",
+                        "• Base attack damage increased by 18",
+                        "• Level 10 Talent increased from +15 Movement Speed to +20",
+                        "• Level 10 Talent increased from +150 Health to +175"
+                    ],
+                    "format_name": "Shadow Shaman",
+                    "true_name": "shadow_shaman"
+                },
+                "slardar": {
+                    "changes": [
+                        "• Slithereen Crush stun duration reduced from 1.5/1.75/2/2.25 to 1.25/1.5/1.75/2.0",
+                        "• Corrosive Haze duration reduced from 25 to 18"
+                    ],
+                    "format_name": "Slardar",
+                    "true_name": "slardar"
+                },
+                "spectre": {
+                    "changes": [
+                        "• Level 15 Talent increased from +15 Movement Speed to +20",
+                        "• Level 15 Talent increased from +6 All Stats to +8",
+                        "• Level 20 Talent increased from +15 Strength to +20",
+                        "• Level 20 Talent increased from +25 Attack Speed to +30"
+                    ],
+                    "format_name": "Spectre",
+                    "true_name": "spectre"
+                },
+                "techies": {
+                    "changes": [
+                        "• Proximity Mines damage rescaled from 225/400/575/750 to 150/350/550/750"
+                    ],
+                    "format_name": "Techies",
+                    "true_name": "techies"
+                },
+                "tiny": {
+                    "changes": [
+                        "• Level 15 Talent increased from +20 Movement Speed to +35",
+                        "• Level 15 Talent increased from +45 Damage to +60"
+                    ],
+                    "true_name": "tiny",
+                    "format_name": "Tiny"
+                },
+                "treant": {
+                    "changes": [
+                        "• Eyes In The Forest cooldown increased from 25 to 35",
+                        "• Nature's Guise fade delay rescaled from 6/5/4/3 to 7/6/5/3"
+                    ],
+                    "format_name": "Treant Protector",
+                    "true_name": "treant"
+                },
+                "tusk": {
+                    "changes": [
+                        "• Level 10 Talent increased from +35% XP Gain to +40%"
+                    ],
+                    "format_name": "Tusk",
+                    "true_name": "tusk"
+                },
+                "undying": {
+                    "changes": [
+                        "• Level 20 Talent increased from +25 Movement Speed to +30"
+                    ],
+                    "true_name": "undying",
+                    "format_name": "Undying"
+                },
+                "venomancer": {
+                    "changes": [
+                        "• Level 10 Talent increased from +20% XP Gain to +30%",
+                        "• Level 10 Talent increased from +20 Movement Speed to +30"
+                    ],
+                    "format_name": "Venomancer",
+                    "true_name": "venomancer"
+                },
+                "viper": {
+                    "changes": [
+                        "• Level 15 Talent increased from +7 Strength to +8"
+                    ],
+                    "format_name": "Viper",
+                    "true_name": "viper"
+                },
+                "visage": {
+                    "changes": [
+                        "• Level 10 Talent increased from +25% XP Gain to +30%",
+                        "• Familiars HP rescaled from 300/500/700 to 400/550/700"
+                    ],
+                    "format_name": "Visage",
+                    "true_name": "visage"
+                },
+                "weaver": {
+                    "changes": [
+                        "• Base damage reduced by 3",
+                        "• Base movement speed reduced from 290 to 285",
+                        "• Level 25 Talent increased from +25% Magic Resistance to +35%"
+                    ],
+                    "format_name": "Weaver",
+                    "true_name": "weaver"
+                },
+                "windrunner": {
+                    "changes": [
+                        "• Windrun cooldown reduced from 13 to 12",
+                        "• Level 10 Talent increased from +25% Windrun Slow to +30%",
+                        "• Level 25 Talent increased from -6s Powershot Cooldown to -7s"
+                    ],
+                    "true_name": "windrunner",
+                    "format_name": "Windranger"
+                },
+                "winter_wyvern": {
+                    "changes": [
+                        "• Level 10 Talent increased from +6 Strength to +7"
+                    ],
+                    "format_name": "Winter Wyvern",
+                    "true_name": "winter_wyvern"
+                },
+                "zuus": {
+                    "changes": [
+                        "• Scepter CD/Duration reduced from 40 to 35",
+                        "• Level 10 Talent increased from +175 Health to +200",
+                        "• Level 25 Talent increased from +1.5% Static Field to +2%"
+                    ],
+                    "format_name": "Zeus",
+                    "true_name": "zuus"
+                }
+            },
+            "items": {},
+            "version": "7.03"
+        }
         {
             "heroes": {
                 "abaddon": {
@@ -1219,6 +1758,7 @@
                     "true_name": "windrunner",
                     "format_name": "Windranger"
                 },
+
                 "witch_doctor": {
                     "changes": [
                         "• Level 25 Talent increased from +150 Death Ward Attack Range to +175"

@@ -17,7 +17,7 @@
         "mmr": ["mmr"],
         "courage": ["courage", "divinecourage", "divine"],
         "trivia": ["trivia", "t", "challenge"],
-        "ixmike": ["ixmike", "mike", "mikeism", "mikeisms"],
+        "mike": ["mike", "ixmike", "mikeism", "mikeisms"],
         "info": ["info", "about"],
         "invite": ["invite"],
         "botstats": ["botstats"],

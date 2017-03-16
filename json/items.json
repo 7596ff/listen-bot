@@ -265,7 +265,8 @@
         "cooldown": false,
         "description": [
             "Use: Consume the Moon Shard to permanently gain 60 attack speed. Does not stack.",
-            "Passive: Shade Sight - Grants 300 bonus night vision."
+            "Passive: Shade Sight - Grants 300 bonus night vision.",
+            "Castable on aliles."
         ],
         "notes": [
             "The bonus night vision works during Night Stalker's Darkness ability."
@@ -430,7 +431,7 @@
         "true_name": "ultimate_orb",
         "id": 24,
         "format_name": "Ultimate Orb",
-        "cost": 2100,
+        "cost": 2150,
         "cooldown": false,
         "attributes": [
             "+10 All Attributes"
@@ -862,7 +863,7 @@
         "id": 46,
         "format_name": "Town Portal Scroll",
         "cost": 50,
-        "cooldown": 70,
+        "cooldown": 80,
         "description": [
             "Use: Teleport - Teleports you to a target friendly building. Double-click to teleport to your team's base fountain."
         ],
@@ -1386,7 +1387,7 @@
         "true_name": "headdress",
         "id": 94,
         "format_name": "Headdress",
-        "cost": 575,
+        "cost": 675,
         "cooldown": false,
         "description": [
             "Passive: Regeneration Aura - Restores health to allies in a 900 unit radius.",
@@ -1406,7 +1407,7 @@
         "true_name": "sheepstick",
         "id": 96,
         "format_name": "Scythe of Vyse",
-        "cost": 5650,
+        "cost": 5700,
         "cooldown": 25,
         "description": [
             "Active: Hex - Turns a target unit into a harmless critter for 3.5 seconds. Instantly destroys illusions."
@@ -1453,7 +1454,7 @@
         "id": 250,
         "format_name": "Bloodthorn",
         "cost": 7195,
-        "cooldown": 13,
+        "cooldown": 14,
         "description": [
             "Active: Silences a target for 5.0 seconds and amplifies the damage it takes by 30.0%. All attacks on the silenced target will have True Strike and land a crit on impact.",
             "Passive: Critical Strike - Grants each attack a chance to deal additional damage. Critical Strike does not work against buildings."
@@ -1484,7 +1485,7 @@
         "cost": 2650,
         "cooldown": 5,
         "description": [
-            "Passive: Causes melee attacks to attack twice in quick succession. The double attacks apply a 0.6 second 100% movement and attack speed slow on each strike."
+            "Passive: Causes melee attacks to attack twice in quick succession. The double attacks apply a 0.6 second 100% movement speed slow on each strike."
         ],
         "attributes": [
             "+10 Intelligence",
@@ -1493,7 +1494,6 @@
             "+15 Damage",
             "+75% Mana Regeneration",
             "MOVEMENT SLOW: 100%",
-            "ATTACK SLOW: 100",
             "SLOW DURATION: 0.6"
         ],
         "lore": [
@@ -1575,7 +1575,7 @@
         "id": 263,
         "format_name": "Hurricane Pike",
         "cost": 4375,
-        "cooldown": 14,
+        "cooldown": 15,
         "description": [
             "Active: When used on an enemy, it pushes you both away from each other 450 units each, and allows you to attack the target without range restrictions for 4 attacks for a maximum of 5.0 seconds. Grants 100 Attack Speed during the attacks. Works like Force Staff when used on self or allies.",
             "Passive: Increases attack range of ranged heroes by 140."
@@ -1625,7 +1625,7 @@
         "id": 106,
         "format_name": "Necronomicon",
         "cost": 2650,
-        "cooldown": 95,
+        "cooldown": 90,
         "description": [
             "Active: Demonic Summoning - Summons a Warrior and an Archer to fight for you for 40 seconds, whose strength and abilities increase as Necronomicon is upgraded. Warrior gains True Sight at level 3. Upgradable."
         ],
@@ -1824,7 +1824,7 @@
         "true_name": "sphere",
         "id": 123,
         "format_name": "Linken's Sphere",
-        "cost": 4800,
+        "cost": 4850,
         "cooldown": 13,
         "description": [
             "Passive: Spellblock - Blocks most targeted spells once every 13.0 seconds.",
@@ -1976,7 +1976,7 @@
         ],
         "attributes": [
             "+8 HP Regeneration",
-            "+30% Spell Resistance",
+            "+25% Spell Resistance",
             "BARRIER BLOCK: 325",
             "BARRIER DURATION: 12"
         ],
@@ -2082,7 +2082,7 @@
         "attributes": [
             "+76 Damage",
             "CRITICAL CHANCE: 30%",
-            "CRITICAL DAMAGE: 230%"
+            "CRITICAL DAMAGE: 235%"
         ],
         "lore": [
             "A weapon of incredible power that is difficult for even the strongest of warriors to control."
@@ -2137,7 +2137,7 @@
             "+55 Damage",
             "+6 HP Regeneration",
             "+150% Mana Regeneration",
-            "CLEAVE DAMAGE: 35%",
+            "CLEAVE DAMAGE: 40%",
             "QUELL MELEE DAMAGE: 160%",
             "QUELL RANGED DAMAGE: 125%",
             "CHOP TREE CAST RANGE: 350",
@@ -2155,7 +2155,7 @@
         "true_name": "manta",
         "id": 147,
         "format_name": "Manta Style",
-        "cost": 4950,
+        "cost": 5000,
         "cooldown": 45,
         "description": [
             "Active: Mirror Image - Creates 2 images of your hero that last 20 seconds. Melee heroes have a 30 second cooldown on this ability, while for Ranged heroes the cooldown is 45 seconds.",
@@ -2217,7 +2217,7 @@
             "Multiple instances do not stack."
         ],
         "attributes": [
-            "+13 Agility",
+            "+12 Agility",
             "+12 Strength",
             "+140 Attack Range (Ranged Only)"
         ],
@@ -2279,7 +2279,7 @@
         "true_name": "silver_edge",
         "id": 249,
         "format_name": "Silver Edge",
-        "cost": 5100,
+        "cost": 5150,
         "cooldown": 24,
         "description": [
             "Active: Shadow Walk - Makes you invisible until the duration ends, or until you attack or cast a spell. While invisible, you move 20% faster and can move through units. Attacking to end the invisibility will deal 225 bonus damage to the target, disable their passive abilities, and reduce their damage output."
@@ -2293,7 +2293,7 @@
             "+30 Attack Speed",
             "+15 All Attributes",
             "SHADOW WALK DURATION: 14",
-            "BONUS ATTACK DAMAGE: 200",
+            "BONUS ATTACK DAMAGE: 175",
             "ENEMY DAMAGE REDUCTION: 50%",
             "REDUCTION DURATION: 5"
         ],
@@ -2390,7 +2390,7 @@
         "true_name": "skadi",
         "id": 160,
         "format_name": "Eye of Skadi",
-        "cost": 5675,
+        "cost": 5775,
         "cooldown": false,
         "description": [
             "Passive: Cold Attack - Each attack slows the movement and attack speed of the target. The duration of the slow is based on whether the equipped hero is melee or ranged."
@@ -2439,7 +2439,7 @@
         "true_name": "helm_of_the_dominator",
         "id": 164,
         "format_name": "Helm of the Dominator",
-        "cost": 1800,
+        "cost": 1975,
         "cooldown": 60,
         "description": [
             "Active: Dominate - Take control of a non-hero, non-ancient target unit and sets its movement speed to 425. If a dominated creep's base health is naturally below the health minimum, its base health will be raised to the health minimum."
@@ -2450,7 +2450,7 @@
             "Dominated creeps have a bounty of 125 gold."
         ],
         "attributes": [
-            "+4 All Attributes",
+            "+2 All Attributes",
             "+10 Attack Speed",
             "AURA ATTACK SPEED: 10",
             "AURA HEALTH REGEN: 8",
@@ -2532,14 +2532,14 @@
         "cost": 1900,
         "cooldown": 20,
         "description": [
-            "Active: Berserk - Gives 100 attack speed and 17% movement speed, but reduces your armor by 5 and silences you. Lasts 8.0 seconds.",
+            "Active: Berserk - Gives 120 attack speed and 17% movement speed, but reduces your armor by 5 and silences you. Lasts 8.0 seconds.",
             "Passive: Lifesteal - Heals the attacker for a percentage of attack damage dealt.",
             "Mask of Madness is a Unique Attack Modifier, and does not stack with other Unique Attack Modifiers."
         ],
         "attributes": [
             "+15 Damage",
             "LIFESTEAL: 15%",
-            "BERSERK ATTACK SPEED: 100",
+            "BERSERK ATTACK SPEED: 120",
             "BERSERK MOVE SPEED: 17%",
             "BERSERK ARMOR REDUCTION: 5",
             "BERSERK DURATION: 8"
@@ -2711,7 +2711,7 @@
         "true_name": "ancient_janggo",
         "id": 185,
         "format_name": "Drum of Endurance",
-        "cost": 1780,
+        "cost": 1655,
         "cooldown": 30,
         "description": [
             "Active: Endurance - Gives bonus +25 attack speed and +13% movement speed to allies in a 900 radius.",
@@ -2890,7 +2890,8 @@
         "attributes": [
             "+30 Intelligence",
             "+350 Health",
-            "CRIPPLE DURATION: 2"
+            "CRIPPLE DURATION: 2",
+            "CAST RANGE: 1150"
         ],
         "lore": [
             "Atos, the Lord of Blight, has his essence stored in this deceptively simple wand."

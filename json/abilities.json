@@ -898,7 +898,7 @@
     },
     {
         "stats": [
-            "DURATION: 40.0",
+            "DURATION: 35.0",
             "LIGHTNING BOLT BASE COOLDOWN: 2.25",
             "CAST POINT: 0.2s"
         ],
@@ -907,7 +907,7 @@
             "Affects the closest enemy unit."
         ],
         "manacost": "275",
-        "cooldown": "40",
+        "cooldown": "35",
         "effects": [
             "Behavior: Point Target",
             "Damage Type: Magical",
@@ -1922,7 +1922,7 @@
             "If an allied hero is Tethered, that hero will teleported along with you. You can break the tether at any time to prevent that hero from teleporting with you."
         ],
         "manacost": "100",
-        "cooldown": "90 75 60",
+        "cooldown": "100 80 60",
         "effects": [
             "Behavior: Point Target"
         ],
@@ -2614,7 +2614,7 @@
         "description": [
             "Invoker infuses an ally with an immense surge of energy, increasing their attack speed based on the level of Wex and their damage based on the level of Exort."
         ],
-        "manacost": "45",
+        "manacost": "60",
         "hero_name": "invoker",
         "name": "Alacrity",
         "key": "eww"
@@ -3155,7 +3155,7 @@
     },
     {
         "stats": [
-            "DAMAGE: 50 / 75 / 100 / 125",
+            "DAMAGE: 75 / 100 / 125 / 150",
             "RADIUS: 300",
             "DURATION: 0.6 / 0.9 / 1.2 / 1.5"
         ],
@@ -3279,7 +3279,7 @@
     {
         "cooldown": "60 50 40",
         "stats": [
-            "DURATION: 12 / 14 / 16",
+            "DURATION: 14 / 16 / 18",
             "CAST POINT: 0.15s"
         ],
         "effects": [
@@ -3308,7 +3308,7 @@
         "description": [
             "Generates a circular distortion field of magnetic energy that protects allied heroes and buildings within it by evading attacks coming from outside the field."
         ],
-        "manacost": "110",
+        "manacost": "80 90 100 110",
         "hero_name": "arc_warden",
         "name": "Magnetic Field",
         "key": "w"
@@ -3440,7 +3440,7 @@
             "Spiked Carapace will only trigger on damage from other player controlled units."
         ],
         "manacost": "40",
-        "cooldown": "22 18 14 10",
+        "cooldown": "25 20 15 10",
         "effects": [
             "Behavior: No Target",
             "Damage Type: Pure",
@@ -4276,7 +4276,9 @@
     {
         "stats": [
             "MAX HEALTH PER SECOND: 2% / 3% / 4% / 5%",
-            "CAST POINT: 0.3s"
+            "CAST POINT: 0.3s",
+            "BOUNTY (GOLD): 25",
+            "BOUNTY (XP): 75"
         ],
         "notes": [
             "The healing ward can be controlled.",
@@ -4288,7 +4290,7 @@
             "Behavior: Point Target"
         ],
         "description": [
-            "Summons a Healing Ward which heals all nearby allied units, based on their max health. The Healing Ward moves at 420 movement speed after being summoned. Lasts 25 seconds. Has a 25 Gold bounty."
+            "Summons a Healing Ward which heals all nearby allied units, based on their max health. The Healing Ward moves at 420 movement speed after being summoned. Lasts 25 seconds. Has a 75 Gold and XP bounty."
         ],
         "hero_name": "juggernaut",
         "name": "Healing Ward",
@@ -4429,7 +4431,7 @@
             "Activating Windrun will evade incoming projectiles."
         ],
         "manacost": "75",
-        "cooldown": "13",
+        "cooldown": "12",
         "effects": [
             "Behavior: No Target",
             "Pierces Spell Immunity: No"
@@ -4931,7 +4933,7 @@
         "notes": [
             "Nature's Call can only create as many treants as there are trees in the target area."
         ],
-        "manacost": "160",
+        "manacost": "130 140 150 160",
         "cooldown": "37",
         "effects": [
             "Behavior: Point Target"
@@ -5530,7 +5532,7 @@
             "Summons dark energies around an ally unit, creating a shield that absorbs a set amount of damage before expiring. When the shield is destroyed it will burst and deal damage equal to the amount it could absorb to an area around it. Removes certain types of negative buffs and stuns on cast.",
             "DISPEL TYPE: Strong Dispel"
         ],
-        "manacost": "100 105 110 115",
+        "manacost": "115",
         "hero_name": "abaddon",
         "name": "Aphotic Shield",
         "key": "w"
@@ -6216,7 +6218,7 @@
             "Damage Type: Physical",
             "Pierces Spell Immunity: Yes"
         ],
-        "agha": "Causes faster strikes that can damage structures as well.  When striking buildings, it will only target towers, barracks, and the Ancient.",
+        "agha": "Causes faster strikes that can damage structures as well.  When striking buildings, it will only target towers, barracks, shrines, and the Ancient.",
         "description": [
             "A powerful lightning storm strikes out at enemy units with the lowest health, dealing damage and reducing their armor.",
             "Upgradable by Aghanim's Scepter."
@@ -6972,7 +6974,7 @@
             "Trees near the center of the vacuum will be destroyed."
         ],
         "manacost": "100 130 160 190",
-        "cooldown": "28.0",
+        "cooldown": "32.0",
         "effects": [
             "Behavior: Point Target",
             "Damage Type: Magical",
@@ -7100,7 +7102,8 @@
             "CAST POINT: 0.3s"
         ],
         "notes": [
-            "Nearby illusions will mimic the cast animation."
+            "Nearby illusions will mimic the cast animation.",
+            "Gives a constant 5 gold bounty."
         ],
         "cooldown": "7",
         "effects": [
@@ -7688,7 +7691,7 @@
             "STRENGTH MULTIPLIER DAMAGE: 1 / 2 / 3",
             "STOP DURATION: 1.8",
             "TRAMPLE RADIUS: 105",
-            "SCEPTER DAMAGE REDUCTION: 60%"
+            "SCEPTER DAMAGE REDUCTION: 50%"
         ],
         "notes": [
             "Doesn't affect Spell Immune units."
@@ -7873,7 +7876,7 @@
             "If the enemy has True Sight, they will be able to see which trees are enchanted."
         ],
         "manacost": "100",
-        "cooldown": "25",
+        "cooldown": "35",
         "effects": [
             "Behavior: Unit Target",
             "Damage Type: Magical"
@@ -7912,7 +7915,7 @@
     },
     {
         "stats": [
-            "FADE TIME: 6 / 5 / 4 / 3",
+            "FADE TIME: 7 / 6 / 5 / 3",
             "TREE RADIUS: 265",
             "MOVEMENT SPEED: 10% / 18% / 26% / 34%",
             "BASH DURATION: 0.4 / 1.0 / 1.6 / 2.2"
@@ -8263,7 +8266,7 @@
     {
         "stats": [
             "RADIUS: 400",
-            "DAMAGE: 225 / 400 / 575 / 750",
+            "DAMAGE: 150 / 350 / 550 / 750",
             "BUILDING DAMAGE: 25%",
             "ACTIVATION DELAY: 1.75",
             "CAST POINT: 0s",
@@ -8472,7 +8475,7 @@
     {
         "manacost": "150",
         "stats": [
-            "HP: 300 / 500 / 700",
+            "HP: 400 / 550 / 700",
             "FAMILIAR SPEED: 430",
             "FAMILIAR DAMAGE: 56 / 112 / 168",
             "DAMAGE RECHARGE TIME: 2.0",
@@ -9603,7 +9606,7 @@
     },
     {
         "stats": [
-            "LEAK DURATION: 5 / 6 / 7 / 8",
+            "LEAK DURATION: 4 / 5 / 6 / 7",
             "MANA LEAK PERCENT: 5.0%",
             "STUN DURATION: 1.5 / 2.0 / 2.5 / 3.0",
             "CAST RANGE: 550 / 700 / 850 / 1000",
@@ -9612,7 +9615,7 @@
         "notes": [
             "If the target travels over 300 distance in less than 0.1 second (by using blink skills, for example), Mana Leak will not decrease its mana for that distance."
         ],
-        "manacost": "150",
+        "manacost": "160",
         "cooldown": "16 14 12 10",
         "effects": [
             "Behavior: Unit Target",
@@ -10139,7 +10142,8 @@
             "COUNTER DURATION: 10",
             "CHARGES: 4",
             "BONUS DAMAGE: 75 / 100 / 125 / 150",
-            "BONUS LIFESTEAL: 15% / 30% / 45% / 60%"
+            "BONUS LIFESTEAL: 15% / 30% / 45% / 60%",
+            "MAX DURATION: 35"
         ],
         "notes": [
             "Hitting an enemy with Boundless Strike adds to the hit counter."
@@ -10198,7 +10202,7 @@
         "stats": [
             "BONUS DAMAGE: 50 / 70 / 90",
             "SOLDIER ATK SPEED: 2.0",
-            "DURATION: 13 / 14 / 15",
+            "DURATION: 13",
             "CAST POINT: 1.2s"
         ],
         "notes": [
@@ -10224,7 +10228,8 @@
             "DAMAGE COOLDOWN: 3.0",
             "PRIMAL SPRING DAMAGE: 100 / 180 / 260 / 340",
             "PRIMAL SPRING SLOW: 40% / 50% / 60% / 70%",
-            "CAST POINT: 0.3s"
+            "CAST POINT: 0.3s",
+            "NIGHT VISION: 400"
         ],
         "notes": [
             "Tree Dance cooldown starts upon landing.",
@@ -10290,6 +10295,7 @@
         "manacost": "110 120 130 140",
         "stats": [
             "DAMAGE: 90 / 180 / 270 / 360",
+            "PULL SPEED: 1450",
             "RANGE: 1000 / 1100 / 1200 / 1300",
             "SCEPTER COOLDOWN: 4.0",
             "SCEPTER DAMAGE: 180 / 270 / 360 / 450",
@@ -10299,7 +10305,8 @@
             "Interrupts channeling spells of the primary target if it's an enemy.",
             "Meat Hook hits invisible units.",
             "Meat Hook can go through trees, cliffs, buildings, and mechanical units.",
-            "Meat Hook can drag friendly units, but they won't be damaged."
+            "Meat Hook can drag friendly units, but they won't be damaged.",
+            "Meat Hook does not pull invulnerable heroes."
         ],
         "cooldown": "14 13 12 11",
         "effects": [
@@ -10491,7 +10498,7 @@
             "MOVEMENT SLOW: -20%",
             "ATTACK SLOW: -20",
             "SLOW DURATION: 2.0",
-            "STUN DURATION: 1.5 / 1.75 / 2 / 2.25",
+            "STUN DURATION: 1.25 / 1.5 / 1.75 / 2.0",
             "CAST POINT: 0.35s"
         ],
         "effects": [
@@ -10510,7 +10517,7 @@
     {
         "stats": [
             "ARMOR REDUCTION: -10 / -15 / -20",
-            "DURATION: 25",
+            "DURATION: 18",
             "CAST POINT: 0.35s"
         ],
         "notes": [
@@ -10928,7 +10935,7 @@
         "key": "e"
     },
     {
-        "cooldown": "30",
+        "cooldown": "45",
         "stats": [
             "ATTACK SPEED: 10 / 20 / 30 / 40",
             "MOVEMENT SPEED: 10% / 15% / 20% / 25%",

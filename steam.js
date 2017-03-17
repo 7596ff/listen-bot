@@ -31,7 +31,7 @@ steam_client.on("logOnResponse", () => {
 });
 
 steam_client.on("error", (err) => {
-    if (err.match("Error: Disconnected")) {
+    if (err.toString().match("Error: Disconnected")) {
         util.log("disconnected from steam. reconnecting in 10 seconds...");
     } else {
         util.log(err);

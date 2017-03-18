@@ -33,16 +33,11 @@ const unicode = {
 
 function react(message, keys, top_resolve) {
     return new Promise((resolve, reject) => {
-        message.addReaction(keys[0]).then(() => {
-            if (keys.length > 1) {
-                react(message, keys.slice(1), top_resolve || resolve);
-            } else {
-                top_resolve ? top_resolve() : resolve();
-            }
-        }).catch(err => {
-            reject(err);
-        });
-    });
+        for (let key in keys) {
+            message.addReaction(keys[key]);
+            if (key == keys.length - 1) resolve();
+        }
+    })
 }
 
 async function secret(message, client, helper) {

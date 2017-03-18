@@ -22,6 +22,7 @@ async function history(message, client, helper) {
 
     if (response.with) history_with(message, client, helper, response.with);
     if (response.as) history_as(message, client, helper, response.as, response.of ? client.users.get(response.of[0]) : false);
+    console.log(response);
 }
 
 module.exports = history;

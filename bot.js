@@ -27,6 +27,7 @@ client.redis = redis.createClient(config.redisconfig);
 client.pg = new pg.Client(config.pgconfig);
 client.config = config;
 client.steam_connected = false;
+client.isReady = false;
 
 for (let cmd in consts.cmds) {
     client.commands[cmd] = require(`./commands/${cmd}`);
@@ -53,6 +54,7 @@ client.pg.on("error", (err) => {
 
 client.on("ready", () => {
     client.helper.log("bot", "listen-bot ready.");
+    client.isReady = true;
 
     client.redis.publish("discord", JSON.stringify({
         "code": 4,
@@ -287,6 +289,7 @@ function handle(message, client) {
 }
 
 client.on("messageCreate", message => {
+    if (!client.isReady) return;
     if (!message.channel.guild) return;
     if (message.member && message.member.bot) return;
     if (message.author && message.author.id == client.user.id) return;
@@ -294,12 +297,12 @@ client.on("messageCreate", message => {
     if (!message.author) {
         client.helper.log("bot", "no author", "error");
         client.helper.log("bot", `${message.channel.guild.id}/${message.channel.guild.name}`, "error");
-        client.helper.log("bot", `${message.content}`, "error");
-        client.helper.log("bot", `${message.embeds[0] || "no embed"}`, "error");
+        client.helper.log("bot", message.content, "error");
+        client.helper.log("bot", message.embeds ? JSON.stringify(message.embeds[0]) : "no embed", "error");
         return;
     }
 
-    if (client.gcfg.hasOwnProperty(message.channel.guild.id)) {
+    if (client.gcfg.hasOwnProperty(message.channel.guild.id) && client.gcfg[message.channel.guild.id].expires + 3600000 > Date.now()) {
         message.gcfg = JSON.parse(JSON.stringify(client.gcfg[message.channel.guild.id]));
         handle(message, client);
     } else {
@@ -308,6 +311,7 @@ client.on("messageCreate", message => {
             "values": [message.channel.guild.id]
         }).then(res => {
             client.gcfg[message.channel.guild.id] = JSON.parse(JSON.stringify(res.rows[0]));
+            client.gcfg[message.channel.guild.id].expires = Date.now();
             message.gcfg = JSON.parse(JSON.stringify(client.gcfg[message.channel.guild.id]));
             handle(message, client);
         }).catch(err => {

@@ -293,6 +293,7 @@ client.on("messageCreate", message => {
     if (!message.channel.guild) return;
     if (message.member && message.member.bot) return;
     if (message.author && message.author.id == client.user.id) return;
+    if (message.author && message.author.id == "207496293596004353") return; // why do i have to do this
 
     if (!message.author) {
         client.helper.log("bot", "no author", "error");

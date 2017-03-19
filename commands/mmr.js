@@ -101,6 +101,8 @@ async function mmr(message, client, helper) {
             "values": [id]
         });
 
+        if (res.rowCount != 1) throw new Error("nouser");
+
         let upserted = await upsert_mmr(client.pg, client.mika, res.rows[0], true);
 
         upserted.member = message.channel.guild.members.get(id);
@@ -109,7 +111,7 @@ async function mmr(message, client, helper) {
         await message.channel.createMessage({ "embed": embed });
         helper.log(message, "sent mmr of a user");
     } catch (err) {
-        if (err == "nouser") {
+        if (err == "nouser" || err.message == "nouser") {
             message.channel.createMessage(`${message.channel.guild.members.get(id).username} has not registered yet! Try \`${message.gcfg.prefix}help register\`.`)
                 .catch(err => helper.handle(message, err));
         } else {

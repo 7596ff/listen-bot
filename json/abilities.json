@@ -5008,6 +5008,9 @@
         "effects": [
             "Behavior: Point Target"
         ],
+        "stats": [
+            "CAST POINT: 3"
+        ],
         "description": [
             "Teleports to any point on the map."
         ],

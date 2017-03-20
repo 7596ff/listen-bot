@@ -75,55 +75,59 @@ function playerinfo_embed(player) {
     };
 }
 
-function send_message(message, client, helper, acc_id) {
+async function send_message(message, client, helper, acc_id) {
     helper.log(message, `playerinfo: ${acc_id}`);
 
-    message.channel.sendTyping().then(() => {
-        client.redis.get(`playerinfo:${acc_id}`, (err, reply) => {
-            if (err) helper.log(message, err);
-            if (reply) {
+    try {
+        await message.channel.sendTyping();
+    } catch (err) {
+        helper.handle(message, err);
+    }
+
+    client.redis.get(`playerinfo:${acc_id}`, (err, reply) => {
+        if (err) helper.log(message, err);
+        if (reply) {
+            message.channel.createMessage({
+                embed: playerinfo_embed(JSON.parse(reply))
+            }).then(() => {
+                helper.log(message, "  sent player info from redis");
+            }).catch(err => helper.handle(message, err));
+        } else {
+            Promise.all([
+                client.mika.getPlayer(acc_id),
+                client.mika.getPlayerWL(acc_id),
+                client.mika.getPlayerHeroes(acc_id)
+            ]).then((plist) => {
+                plist[0].wl = plist[1];
+                plist[0].heroes = plist[2];
+
+                if (!plist[0].profile) {
+                    message.channel.createMessage("This user's account is private. ").catch(err => helper.handle(message, err));
+                    return;
+                }
+
                 message.channel.createMessage({
-                    embed: playerinfo_embed(JSON.parse(reply))
+                    embed: playerinfo_embed(plist[0])
                 }).then(() => {
-                    helper.log(message, "  sent player info from redis");
-                }).catch(err => helper.handle(message, err));
-            } else {
-                Promise.all([
-                    client.mika.getPlayer(acc_id),
-                    client.mika.getPlayerWL(acc_id),
-                    client.mika.getPlayerHeroes(acc_id)
-                ]).then((plist) => {
-                    plist[0].wl = plist[1];
-                    plist[0].heroes = plist[2];
+                    helper.log(message, "  sent player info from api");
 
-                    if (!plist[0].profile) {
-                        message.channel.createMessage("This user's account is private. ").catch(err => helper.handle(message, err));
-                        return;
-                    }
-
-                    message.channel.createMessage({
-                        embed: playerinfo_embed(plist[0])
-                    }).then(() => {
-                        helper.log(message, "  sent player info from api");
-
-                        client.pg.query({
-                            "text": "UPDATE public.users SET scr = $1, cr = $2, sat = $3 WHERE dotaid = $4;",
-                            "values": [plist[0].solo_competitive_rank || 0, plist[0].competitive_rank || 0, Date.now(), plist[0].profile.account_id]
-                        }).catch(err => {
-                            helper.log("postgres", err, "err");
-                        });
-                    }).catch(err => helper.handle(message, err));
-
-                    client.redis.set(`playerinfo:${acc_id}`, JSON.stringify(plist[0]), (err) => {
-                        if (err) helper.log(message, err);
-                        client.redis.expire(`playerinfo:${acc_id}`, 3600);
+                    client.pg.query({
+                        "text": "UPDATE public.users SET scr = $1, cr = $2, sat = $3 WHERE dotaid = $4;",
+                        "values": [plist[0].solo_competitive_rank || 0, plist[0].competitive_rank || 0, Date.now(), plist[0].profile.account_id]
+                    }).catch(err => {
+                        helper.log("postgres", err, "err");
                     });
-                }).catch(err => {
-                    helper.log(message, `mika failed with err: \n${err}`);
-                    message.channel.createMessage("Something went wrong.").catch(err => helper.handle(message, err));
+                }).catch(err => helper.handle(message, err));
+
+                client.redis.set(`playerinfo:${acc_id}`, JSON.stringify(plist[0]), (err) => {
+                    if (err) helper.log(message, err);
+                    client.redis.expire(`playerinfo:${acc_id}`, 3600);
                 });
-            }
-        });
+            }).catch(err => {
+                helper.log(message, `mika failed with err: \n${err}`);
+                message.channel.createMessage("Something went wrong.").catch(err => helper.handle(message, err));
+            });
+        }
     });
 }
 

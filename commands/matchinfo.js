@@ -21,8 +21,7 @@ function send_message(message, client, helper, match_data, origin) {
         }).then(() => {
             helper.log(message, `  sent match data from ${origin}`);
         }).catch(err => {
-            helper.log(message, "  something went wrong posting a match");
-            helper.log(message, err);
+            helper.handle(message, err)
         });
     }).catch(err => {
         helper.log(message, "  something went wrong selecting from the database");
@@ -37,7 +36,7 @@ function fix_scores(match_data, mika) {
     if (mika) mika.postByMatchId(match_data.match_id);
 }
 
-module.exports = (message, client, helper) => {
+async function matchinfo(message, client, helper) {
     let match_id = message.content.split(" ")[1];
     if (!match_id) return;
 
@@ -53,29 +52,33 @@ module.exports = (message, client, helper) => {
 
     helper.log(message, `matchinfo: ${match_id}`);
 
-    message.channel.sendTyping().then(() => {
-        client.redis.get(`matchinfo:${match_id}`, (err, reply) => {
-            if (err) helper.log(message, err);
-            if (reply) {
-                reply = JSON.parse(reply);
-                if (!reply.radiant_score && !reply.dire_score) fix_scores(reply);
-                send_message(message, client, helper, reply, "redis");
-            } else {
-                client.mika.getMatch(match_id).then(match_data => {
-                    if (!match_data.radiant_score && !match_data.dire_score) fix_scores(match_data, client.mika);
-                    send_message(message, client, helper, match_data, "api");
-                    client.redis.set(`matchinfo:${match_id}`, JSON.stringify(match_data), (err) => {
-                        if (err) helper.log(message, err);
-                        client.redis.expire(`matchinfo:${match_id}`, 604800);
-                    });
-                }).catch(err => {
-                    message.channel.createMessage("Something went wrong.").catch(err => helper.handle(message, err));
-                    helper.log(message, "  something went wrong with mika");
-                    helper.log(message, err);
+    try {
+        await message.channel.sendTyping();
+    } catch (err) {
+        helper.handle(message, err);
+    }
+
+    client.redis.get(`matchinfo:${match_id}`, (err, reply) => {
+        if (err) helper.log(message, err);
+        if (reply) {
+            reply = JSON.parse(reply);
+            if (!reply.radiant_score && !reply.dire_score) fix_scores(reply);
+            send_message(message, client, helper, reply, "redis");
+        } else {
+            client.mika.getMatch(match_id).then(match_data => {
+                if (!match_data.radiant_score && !match_data.dire_score) fix_scores(match_data, client.mika);
+                send_message(message, client, helper, match_data, "api");
+                client.redis.set(`matchinfo:${match_id}`, JSON.stringify(match_data), (err) => {
+                    if (err) helper.log(message, err);
+                    client.redis.expire(`matchinfo:${match_id}`, 604800);
                 });
-            }
-        });
-    }).catch(err => {
-        helper.log(message, err);
+            }).catch(err => {
+                message.channel.createMessage("Something went wrong.").catch(err => helper.handle(message, err));
+                helper.log(message, "  something went wrong with mika");
+                helper.log(message, err);
+            });
+        }
     });
 };
+
+module.exports = matchinfo;

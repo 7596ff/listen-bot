@@ -17,7 +17,7 @@ async function history(message, client, helper) {
     try {
         await message.channel.sendTyping();
     } catch (err) {
-        helper.log(message, err);
+        helper.handle(message, err);
     }
 
     if (response.with) history_with(message, client, helper, response.with);

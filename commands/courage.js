@@ -29,7 +29,7 @@ async function courage(message, client, helper) {
     try {
         await message.channel.sendTyping();
     } catch (err) {
-        helper.log(message, err);
+        helper.handle(message, err);
     }
 
     let hero = od_heroes[Math.floor(Math.random() * od_heroes.length)];

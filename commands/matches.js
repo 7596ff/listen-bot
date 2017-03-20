@@ -8,7 +8,7 @@ async function matches(message, client, helper) {
     try {
         await message.channel.sendTyping();
     } catch (err) {
-        helper.log(message, err);
+        helper.handle(message, err);
     }
     
     let response = await eat(message, {

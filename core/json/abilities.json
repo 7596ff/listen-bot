@@ -1122,7 +1122,7 @@
             "Total possible damage: 150/200/250/300.",
             "Deals damage every 0.8 seconds."
         ],
-        "manacost": "150",
+        "manacost": "125",
         "cooldown": "13 11 9 7",
         "effects": [
             "Behavior: Unit Target",
@@ -1528,7 +1528,7 @@
             "DODGE CHANCE: 10% / 15% / 20% / 25%",
             "CRIT CHANCE: 10% / 15% / 20% / 25%",
             "CRIT DAMAGE: 200%",
-            "CERTAIN TRIGGER TIMER: 16 / 14 / 12 / 10"
+            "CERTAIN TRIGGER TIMER: 13 / 12 / 11 / 10"
         ],
         "notes": [
             "The guaranteed critical attack and guaranteed dodge chance are on separate timers."
@@ -2273,7 +2273,7 @@
             "MOVEMENT SLOW: -20% / -30% / -40% / -50%",
             "CAST RANGE: 450 / 475 / 500 / 525",
             "DURATION: 15",
-            "CAST POINT: 0.452s"
+            "CAST POINT: 0.4s"
         ],
         "notes": [
             "The affected unit slowly regains its original movement speed every second during the duration.",
@@ -4098,7 +4098,7 @@
     },
     {
         "stats": [
-            "RADIUS: 625",
+            "RADIUS: 650",
             "QUILL BASE DAMAGE: 20 / 40 / 60 / 80",
             "QUILL STACK DAMAGE: 30 / 32 / 34 / 36",
             "STACK DURATION: 14.0",
@@ -4833,8 +4833,8 @@
     },
     {
         "stats": [
-            "BONUS DAMAGE: 60 / 90 / 120",
-            "LIFESTEAL: 60% / 90% / 120%",
+            "BONUS DAMAGE: 60 / 100 / 140",
+            "LIFESTEAL: 60% / 100% / 140%",
             "DURATION: 14",
             "CAST POINT: 0.2s"
         ],
@@ -5545,7 +5545,8 @@
         "stats": [
             "SELF DAMAGE: 75 / 100 / 125 / 150",
             "DAMAGE/HEAL: 100 / 150 / 200 / 250",
-            "CAST POINT: 0.25s"
+            "CAST POINT: 0.25s",
+            "PROJECTILE SPEED: 1600"
         ],
         "effects": [
             "Behavior: Unit Target",
@@ -6124,7 +6125,7 @@
             "Disable and pull work through spell immunity."
         ],
         "manacost": "200 250 300",
-        "cooldown": "120 110 100",
+        "cooldown": "120",
         "effects": [
             "Behavior: No Target",
             "Damage Type: Magical",
@@ -7228,7 +7229,7 @@
             "RADIUS: 700",
             "SPIRITS: 8 / 16 / 24",
             "LIFE DRAIN: 25%",
-            "SPIRIT DAMAGE: 55",
+            "SPIRIT DAMAGE: 58",
             "CAST POINT: 0.5s"
         ],
         "notes": [
@@ -7694,7 +7695,7 @@
             "STRENGTH MULTIPLIER DAMAGE: 1 / 2 / 3",
             "STOP DURATION: 1.8",
             "TRAMPLE RADIUS: 105",
-            "SCEPTER DAMAGE REDUCTION: 50%"
+            "SCEPTER DAMAGE REDUCTION: 40%"
         ],
         "notes": [
             "Doesn't affect Spell Immune units."
@@ -10166,7 +10167,7 @@
         "cooldown": "16",
         "stats": [
             "DAMAGE: 100 / 180 / 260 / 340",
-            "MOVEMENT SLOW: 40% / 50% / 60% / 70%",
+            "MOVEMENT SLOW: 30% / 45% / 60% / 75%",
             "SLOW DURATION: 4.0",
             "MAX DISTANCE: 1000",
             "CAST POINT: 0s"
@@ -10612,7 +10613,7 @@
             "Chain Frost has a movement speed of 850.",
             "Chain Frost doesn't bounce to Zombies."
         ],
-        "cooldown": "120 90 60",
+        "cooldown": "100 80 60",
         "effects": [
             "Behavior: Unit Target",
             "Affects: Enemy Units",

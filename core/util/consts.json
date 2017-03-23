@@ -1,0 +1,33 @@
+{
+    "cmds": {
+        "hero": ["hero", "abilities", "skills", "spells"],
+        "patch": ["patch", "patchnotes", "notes", "parch"],
+        "talents": ["talents", "talent"],
+        "ability": ["ability", "skill", "spell"],
+        "item": ["item"],
+        "wiki": ["wiki"],
+        "list": ["list"],
+        "register": ["register"],
+        "unregister": ["unregister"],
+        "playerinfo": ["playerinfo", "profile"],
+        "matchinfo": ["matchinfo", "gameinfo"],
+        "lastmatch": ["lastmatch", "lastgame"],
+        "matches": ["mathes", "matchhistory", "games"],
+        "history": ["history"],
+        "mmr": ["mmr"],
+        "courage": ["courage", "divinecourage", "divine"],
+        "trivia": ["trivia", "t", "challenge"],
+        "mike": ["mike", "ixmike", "mikeism", "mikeisms"],
+        "info": ["info", "about"],
+        "invite": ["invite"],
+        "botstats": ["botstats"],
+        "admin": ["admin"],
+        "help": ["help", "commands", "command"],
+        "usage": ["usage"],
+        "eval": ["eval"],
+        "shardinfo": ["shardinfo"],
+        "restart": ["restart"],
+        "ping": ["ping"],
+        "pong": ["pong"]
+    }
+}

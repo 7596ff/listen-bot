@@ -1,15 +1,12 @@
 const Eris = require("eris");
 const redis = require("redis");
 const pg = require("pg");
-const config = require("./json/config.json");
+const config = require("./config.json");
 var client = new Eris(config.token, config.options);
 var sub = redis.createClient(config.redisconfig);
 
-const consts = require("./util/consts.json");
-const stats_helper = require("./util/stats_helper");
-const shardinfo_helper = require("./util/shardinfo_helper");
 const dbots_post = require("./dbots/post");
-const Helper = require("./util/helper");
+const Helper = require("./helper");
 const Trivia = require("./trivia/trivia");
 
 const schedule = require("node-schedule");
@@ -17,10 +14,10 @@ const Mika = require("mika");
 
 const fs = require("fs");
 
-client.commands = {};
+client.core = {};
 client.watching = {};
 client.gcfg = {};
-client.all_usage = require("./json/usage.json");
+client.all_usage = require("./usage.json");
 client.usage = { "all": 0 };
 client.mika = new Mika();
 client.redis = redis.createClient(config.redisconfig);
@@ -29,23 +26,32 @@ client.config = config;
 client.steam_connected = false;
 client.isReady = false;
 
-for (let cmd in consts.cmds) {
-    client.commands[cmd] = require(`./commands/${cmd}`);
-    client.usage[cmd] = 0;
-    client.all_usage[cmd] = isNaN(client.all_usage[cmd]) ? 0 : client.all_usage[cmd];
+function load(obj, folder) {
+    let files = fs.readdirSync(folder);
+    files.forEach(file => {
+        obj[file] = {};
+        full = `${folder}/${file}`;
+        if (fs.lstatSync(full).isDirectory()) {
+            load(obj[file], full);
+        } else {
+            obj[file.split(".")[0]] = require(full);
+        }
+    });
 }
+
+load(client.core, __dirname + "/core");
 
 client.helper = new Helper();
 
 client.write_usage_stats = schedule.scheduleJob("*/10 * * * *", () => {
-    fs.writeFile("./json/usage.json", JSON.stringify(client.all_usage), (err) => {
+    fs.writeFile("./usage.json", JSON.stringify(client.all_usage), (err) => {
         if (err) client.helper.log("bot", err, "error");
     });
 });
 
 process.on("exit", (code) => {
     client.helper.log("bot", `Exiting with code ${code}`);
-    fs.writeFileSync("./json/usage.json", JSON.stringify(client.all_usage));
+    fs.writeFileSync("./usage.json", JSON.stringify(client.all_usage));
 });
 
 client.pg.on("error", (err) => {
@@ -83,7 +89,7 @@ client.on("ready", () => {
         client.helper.log("bot", err, "error");
     });
 
-    let questions = require("./util/questions")();
+    let questions = client.core.util.questions(client);
     client.trivia = new Trivia(questions, questions.map(question => question.category).filter((item, index, array) => array.indexOf(item) === index));
 
     client.shards.forEach(shard => {
@@ -93,7 +99,7 @@ client.on("ready", () => {
     });
 
     client.stats_messages = schedule.scheduleJob("*/15 * * * *", () => {
-        stats_helper(client).then(embed => {
+        client.core.templates.stats(client).then(embed => {
             client.editMessage(config.edit_channel, config.stats_edit_message, {
                 "embed": embed
             }).catch(err => client.helper.log("bot", err, "error"));
@@ -101,46 +107,11 @@ client.on("ready", () => {
         
         client.editMessage(config.edit_channel, config.shard_edit_message, {
             "embed": {
-                "description": shardinfo_helper(client)
+                "description": client.core.templates.shardinfo(client)
             }
         }).catch(err => client.helper.log("bot", err, "error"));
 
         if (config.dbots_token) dbots_post(client);
-    });
-});
-
-client.on("messageReactionAdd", (message, emoji, userID) => {
-    if (userID == client.user.id) return;
-    if (!message.author) return;
-    if (message.author.id != client.user.id) return;
-
-    client.redis.get(`${message.id}:author_id`, (err, author_id) => {
-        if (err) {
-            client.helper.log("bot", "something went wrong getting from redis", "error");
-            client.helper.log("bot", err, "error");
-            return;
-        }
-
-        if (!author_id) return;
-
-        client.redis.get(`${message.id}:${emoji.name}`, (err, reply) => {
-            if (!err && reply && JSON.parse(author_id) == userID) {
-                let has_perms = client.guilds.get(client.channelGuildMap[message.channel.id]).members.get(client.user.id).permission.has("manageMessages");
-                client.editMessage(message.channel.id, message.id, {
-                    "content": has_perms ? "" : (message.content || ""),
-                    "embed": JSON.parse(reply)
-                }).catch(err => client.helper.handle("bot", err, "error"));
-
-                if (has_perms) {
-                    setTimeout(() => {
-                        client.removeMessageReaction(message.channel.id, message.id, emoji.id ? `${emoji.name}:${emoji.id}` : emoji.name, JSON.parse(author_id));
-                    }, 250);
-                }
-            } else if (err) {
-                client.helper.log("bot", "something went wrong getting from redis", "error");
-                client.helper.log("bot", err, "error");
-            }
-        });
     });
 });
 
@@ -225,7 +196,7 @@ sub.on("message", (channel, message) => {
 });
 
 function invoke(message, client, helper, command) {
-    client.commands[command](message, client, helper);
+    client.core.commands[command](message, client, helper);
     client.usage["all"] += 1;
     client.usage[command] += 1;
     client.all_usage["all"] += 1;
@@ -246,7 +217,7 @@ function handle(message, client) {
 
         let command = message.content.split(" ").shift().toLowerCase();
 
-        for (let cmd in consts.cmds) if (consts.cmds[cmd].includes(command)) command = cmd;
+        for (let cmd in client.core.util.consts.cmds) if (client.core.util.consts.cmds[cmd].includes(command)) command = cmd;
 
         let disabled_list = message.gcfg.disabled ? message.gcfg.disabled[message.channel.id] : undefined;
         if (disabled_list && disabled_list.includes(command)) return;
@@ -254,7 +225,7 @@ function handle(message, client) {
         let climit = `climit:${message.channel.id}`;
         let mlimit = `mlimit:${message.author.id}`;
 
-        if (command in client.commands) {
+        if (command in client.core.commands) {
             client.redis.get(climit, (err, reply) => {
                 if (reply) {
                     if (reply != "1") return;

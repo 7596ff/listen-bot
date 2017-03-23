@@ -18,7 +18,7 @@ function send_message(message, client, helper, match_data, origin) {
         }).then(() => {
             helper.log(message, `  sent match data from ${origin}`);
         }).catch(err => {
-            helper.handle(message, err)
+            helper.handle(message, err);
         });
     }).catch(err => {
         helper.log(message, "  something went wrong selecting from the database");
@@ -76,6 +76,6 @@ async function matchinfo(message, client, helper) {
             });
         }
     });
-};
+}
 
 module.exports = matchinfo;

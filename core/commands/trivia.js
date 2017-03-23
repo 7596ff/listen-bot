@@ -68,7 +68,7 @@ module.exports = (message, client, helper) => {
     if (command == "points") {
         client.pg.query("SELECT * FROM scores ORDER BY score DESC;").then(res => {
             let search = client.core.util.search_members(message.channel.guild.members, split_content.slice(1));
-            search = search[Object.keys(search)[0]]
+            search = search[Object.keys(search)[0]];
             let found = search || message.author.id;
             let data = res.rows.find(row => row.id == found);
             let guild = res.rows.filter(row => message.channel.guild.members.get(row.id));

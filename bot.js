@@ -29,7 +29,7 @@ client.isReady = false;
 function load(obj, folder) {
     let files = fs.readdirSync(folder);
     files.forEach(file => {
-        full = `${folder}/${file}`;
+        let full = `${folder}/${file}`;
         if (file.match(/\./)) {
             obj[file.split(".")[0]] = require(full);
         } else {

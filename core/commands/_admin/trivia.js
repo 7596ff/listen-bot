@@ -30,7 +30,7 @@ module.exports = (message, client, helper) => {
         break;
     default:
         message.content = "help admin trivia";
-        client.commands.help(message, client, helper);
+        client.core.commands.help(message, client, helper);
         break;
     }
 };

@@ -566,7 +566,7 @@
             "+300 Health"
         ],
         "15": [
-            "+20 Movement Speed",
+            "+30 Movement Speed",
             "+15 Health Regen"
         ],
         "25": [
@@ -575,7 +575,7 @@
         ],
         "10": [
             "+40 Torrent Damage",
-            "+25 Damage"
+            "+30 Damage"
         ],
         "format_name": "Kunkka"
     },
@@ -866,7 +866,7 @@
             "+35 Attack Speed"
         ],
         "15": [
-            "+35 Movement Speed",
+            "+4 Treants Summoned",
             "+20 Intelligence"
         ],
         "25": [
@@ -874,7 +874,7 @@
             "-40s Respawn Time"
         ],
         "10": [
-            "+225 Health",
+            "+250 Health",
             "+30 Damage"
         ],
         "format_name": "Nature's Prophet"
@@ -914,7 +914,7 @@
             "+600 Health"
         ],
         "10": [
-            "+10% Magic Resistance",
+            "+12% Magic Resistance",
             "+5% Spell Amplification"
         ],
         "format_name": "Death Prophet"
@@ -986,7 +986,7 @@
             "+12 Spirit Bear Armor"
         ],
         "15": [
-            "+30 Spirit Bear Damage",
+            "+50 Spirit Bear Damage",
             "+50 Damage"
         ],
         "25": [
@@ -1182,8 +1182,8 @@
     "razor": {
         "true_name": "razor",
         "20": [
-            "+30 Attack Speed",
-            "+275 Health"
+            "+40 Attack Speed",
+            "+325 Health"
         ],
         "15": [
             "+150 Cast Range",
@@ -2126,8 +2126,8 @@
             "+10 Armor"
         ],
         "15": [
-            "+120 Gold/Min",
-            "+50 Fire Spirits DPS"
+            "+150 Gold/Min",
+            "+65 Fire Spirits DPS"
         ],
         "25": [
             "+1s Supernova Stun Duration",

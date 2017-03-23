@@ -643,7 +643,7 @@
         "id": 37,
         "format_name": "Ghost Scepter",
         "cost": 1500,
-        "cooldown": 25,
+        "cooldown": 20,
         "description": [
             "Active: Ghost Form - Enter ghost form, becoming immune to physical damage, yet unable to attack and taking 40% extra magic damage.",
             "Using a Town Portal Scroll or Boots of Travel will not dispel Ghost Form."
@@ -1574,7 +1574,7 @@
         "true_name": "hurricane_pike",
         "id": 263,
         "format_name": "Hurricane Pike",
-        "cost": 4375,
+        "cost": 4625,
         "cooldown": 15,
         "description": [
             "Active: When used on an enemy, it pushes you both away from each other 450 units each, and allows you to attack the target without range restrictions for 4 attacks for a maximum of 5.0 seconds. Grants 100 Attack Speed during the attacks. Works like Force Staff when used on self or allies.",
@@ -2279,7 +2279,7 @@
         "true_name": "silver_edge",
         "id": 249,
         "format_name": "Silver Edge",
-        "cost": 5150,
+        "cost": 5350,
         "cooldown": 24,
         "description": [
             "Active: Shadow Walk - Makes you invisible until the duration ends, or until you attack or cast a spell. While invisible, you move 20% faster and can move through units. Attacking to end the invisibility will deal 225 bonus damage to the target, disable their passive abilities, and reduce their damage output."
@@ -2319,7 +2319,7 @@
             "+16 Agility",
             "+16 Attack Speed",
             "+16% Movement Speed",
-            "MAIM CHANCE: 35%",
+            "MAIM CHANCE: 40%",
             "MOVEMENT SLOW MELEE: 26%",
             "ATTACK SLOW MELEE: 26",
             "MOVEMENT SLOW RANGED: 13%",
@@ -2962,7 +2962,7 @@
         "id": 210,
         "format_name": "Heaven's Halberd",
         "cost": 3500,
-        "cooldown": 22,
+        "cooldown": 18,
         "description": [
             "Active: Disarm - Prevents a target from attacking. Lasts 3.0 seconds on melee targets, and 5.5 seconds on ranged targets.",
             "Passive: Lesser Maim - Each attack has a chance to slow the enemy's movement and attack speed for 5.0 seconds.",

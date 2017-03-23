@@ -71,7 +71,7 @@
     "damage1": "58-63",
     "baseagi": "16",
     "armor1": "3",
-    "basestr": "22",
+    "basestr": "25",
     "basespeed": "305",
     "format_name": "Lycan",
     "hp1": "640",
@@ -251,7 +251,7 @@
     "true_name": "earthshaker",
     "dota_name": "Raigor Stonehoof"
 }, {
-    "basedmg": "22 - 33",
+    "basedmg": "25 - 36",
     "strgain": "1.7",
     "intgain": "2.4",
     "sightrange": {
@@ -264,7 +264,7 @@
     "amp1": "1.6%",
     "mana1": "350",
     "magicres": "25%",
-    "damage1": "50-61",
+    "damage1": "53-64",
     "baseagi": "22",
     "armor1": "2",
     "basestr": "15",
@@ -1143,7 +1143,7 @@
     "true_name": "ember_spirit",
     "dota_name": "Xin"
 }, {
-    "basedmg": "32 - 42",
+    "basedmg": "30 - 40",
     "strgain": "3",
     "intgain": "1.75",
     "sightrange": {
@@ -1156,7 +1156,7 @@
     "amp1": "0.9%",
     "mana1": "230",
     "magicres": "25%",
-    "damage1": "54-64",
+    "damage1": "52-62",
     "baseagi": "18",
     "armor1": "2",
     "basestr": "25",
@@ -1783,7 +1783,7 @@
     "mainattribute": "str",
     "agigain": "2.5",
     "basearmor": "4.1",
-    "attacktime": "1.7",
+    "attacktime": "1.8",
     "true_name": "magnataur",
     "dota_name": "Magnoceros"
 }, {
@@ -2139,7 +2139,7 @@
     "amp1": "1.6%",
     "mana1": "350",
     "magicres": "25%",
-    "damage1": "43-57",
+    "damage1": "43-50",
     "baseagi": "15",
     "armor1": "1",
     "basestr": "14",
@@ -2437,7 +2437,7 @@
     "dota_name": "Tormented Soul"
 }, {
     "basedmg": "29 - 39",
-    "strgain": "2.3",
+    "strgain": "2.7",
     "intgain": "2.6",
     "sightrange": {
         "Night": "800",

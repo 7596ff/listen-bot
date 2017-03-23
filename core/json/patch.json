@@ -1,5 +1,6 @@
 {
     "schema": [
+        "7.04",
         "7.03",
         "7.02",
         "7.01",
@@ -36,6 +37,168 @@
         "6.79"
     ],
     "data": [
+        {
+            "heroes": {
+                "abaddon": {
+                    "changes": [
+                        "• Strength gain reduced from 2.7 to 2.5",
+                        "• Mist Coil projectile speed reduced from 2000 to 1600"
+                    ],
+                    "true_name": "abaddon",
+                    "format_name": "abaddon"
+                },
+                "ancient_apparition": {
+                    "changes": [
+                        "• Cold Feet manacost reduced from 150 to 125"
+                    ],
+                    "true_name": "ancient_apparition",
+                    "format_name": "Ancient Apparition"
+                },
+                "arc_warden": {
+                    "changes": [
+                        "• Strength gain increased from 2.3 to 2.7"
+                    ],
+                    "true_name": "arc_warden",
+                    "format_name": "Arc Warden"
+                },
+                "brewmaster": {
+                    "changes": [
+                        "• Drunken Brawler cooldown reduced from 16/14/12/10 to 13/12/11/10"
+                    ],
+                    "true_name": "brewmaster",
+                    "format_name": "Brewmaster"
+                },
+                "bristleback": {
+                    "changes": [
+                        "• Quill Spray AoE increased from 625 to 650"
+                    ],
+                    "true_name": "bristleback",
+                    "format_name": "Bristleback"
+                },
+                "broodmother": {
+                    "changes": [
+                        "• Insatiable Hunger lifesteal increased from 60/90/120% to 60/100/140%",
+                        "• Insatiable Hunger damage increased from 60/90/120 to 60/100/140"
+                    ],
+                    "format_name": "Broodmother",
+                    "true_name": "broodmother"
+                },
+                "centaur": {
+                    "changes": [
+                        "• Scepter Stampede damage reduction reduced from 50% to 40%"
+                    ],
+                    "true_name": "centaur",
+                    "format_name": "Centaur Warrunner"
+                },
+                "death_prophet": {
+                    "changes": [
+                        "• Level 10 Talent increased from +10% Magic Resistance to +12%",
+                        "• Exorcism spirit damage increased from 55 to 58"
+                    ],
+                    "format_name": "Death Prophet",
+                    "true_name": "death_prophet"
+                },
+                "keeper_of_the_light": {
+                    "changes": [
+                        "• Base damage reduced from 43-57 to 43-50"
+                    ],
+                    "format_name": "Keeper of the Light",
+                    "true_name": "keeper_of_the_light"
+                },
+                "kunkka": {
+                    "changes": [
+                        "• Level 10 Talent increased from +25 Damage to +30",
+                        "• Level 15 Talent increased from +20 Movement Speed to +30"
+                    ],
+                    "format_name": "Kunkka",
+                    "true_name": "kunkka"
+                },
+                "lich": {
+                    "changes": [
+                        "• Chain Frost cooldown reduced from 120/90/60 to 100/80/60"
+                    ],
+                    "format_name": "Lich",
+                    "true_name": "lich"
+                },
+                "life_stealer": {
+                    "changes": [
+                        "• Base damage reduced by 2"
+                    ],
+                    "format_name": "Lifestealer",
+                    "true_name": "life_stealer"
+                },
+                "lone_druid": {
+                    "changes": [
+                        "• Level 15 Talent increased from +30 Spirit Bear Damage to +50"
+                    ],
+                    "format_name": "Lone Druid",
+                    "true_name": "lone_druid"
+                },
+                "lycan": {
+                    "changes": [
+                        "• Base strength increased by 3"
+                    ],
+                    "format_name": "Lycan",
+                    "true_name": "lycan"
+                },
+                "monkey_king": {
+                    "changes": [
+                        "• Primal Spring slow rescaled from 40/50/60/70% to 30/45/60/75%",
+                        "• Spring winding up sound effect can be heard by nearby enemies"
+                    ],
+                    "true_name": "monkey_king",
+                    "format_name": "Monkey King"
+                },
+                "furion": {
+                    "changes": [
+                        "• Level 10 Talent increased from +225 Health to +250",
+                        "• Level 15 Talent changed from +35 Movement Speed to +4 Treants Summoned"
+                    ],
+                    "true_name": "furion",
+                    "format_name": "Nature's Prophet"
+                },
+                "magnataur": {
+                    "changes": [
+                        "• Base attack time increased from 1.7 to 1.8",
+                        "• Reverse Polarity cooldown increased from 120/110/100 to 120"
+                    ],
+                    "format_name": "Magnus",
+                    "true_name": "magnataur"
+                },
+                "phoenix": {
+                    "changes": [
+                        "• Level 15 Talent increased from +120 Gold/Min to 150",
+                        "• Level 15 Talent increased from +50 Fire Spirits DPS to +65"
+                    ],
+                    "format_name": "Phoenix",
+                    "true_name": "phoenix"
+                },
+                "puck": {
+                    "changes": [
+                        "• Base damage increased by 3"
+                    ],
+                    "format_name": "Puck",
+                    "true_name": "puck"
+                },
+                "queenofpain": {
+                    "changes": [
+                        "• Shadow Strike cast point reduced from 0.452 to 0.4"
+                    ],
+                    "format_name": "Queen of Pain",
+                    "true_name": "queenofpain"
+                },
+                "razor": {
+                    "changes": [
+                        "• Level 20 Talent increased from +30 Attack Speed to +40",
+                        "• Level 20 Talent increased from +275 Health to +325"
+                    ],
+                    "format_name": "Razor",
+                    "true_name": "razor"
+                }
+            },
+            "items": {},
+            "version": "7.04"
+        },
         {
             "heroes": {
                 "abaddon": {

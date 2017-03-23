@@ -29,12 +29,12 @@ client.isReady = false;
 function load(obj, folder) {
     let files = fs.readdirSync(folder);
     files.forEach(file => {
-        obj[file] = {};
         full = `${folder}/${file}`;
-        if (fs.lstatSync(full).isDirectory()) {
-            load(obj[file], full);
-        } else {
+        if (file.match(/\./)) {
             obj[file.split(".")[0]] = require(full);
+        } else {
+            obj[file] = {};
+            load(obj[file], full);
         }
     });
 }

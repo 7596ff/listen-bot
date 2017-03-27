@@ -1,5 +1,5 @@
 const fs = require("fs");
-const help = require("../json/help.json");
+const help = require("../core/json/help.json");
 
 let bulma = ['<div class="block">',
     '<a href="https://discord.gg/qRE5aWh" class="button is-primary">Help Server</a>',

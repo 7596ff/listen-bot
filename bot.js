@@ -264,14 +264,7 @@ client.on("messageCreate", message => {
     if (!message.channel.guild) return;
     if (message.member && message.member.bot) return;
     if (message.author && message.author.id == client.user.id) return;
-
-    if (!message.author) {
-        client.helper.log("bot", "no author", "error");
-        client.helper.log("bot", `${message.channel.guild.id}/${message.channel.guild.name}`, "error");
-        client.helper.log("bot", message.content, "error");
-        client.helper.log("bot", message.embeds ? JSON.stringify(message.embeds[0]) : "no embed", "error");
-        return;
-    }
+    if (!message.author) return;
 
     if (client.gcfg.hasOwnProperty(message.channel.guild.id) && client.gcfg[message.channel.guild.id].expires + 3600000 > Date.now()) {
         message.gcfg = JSON.parse(JSON.stringify(client.gcfg[message.channel.guild.id]));

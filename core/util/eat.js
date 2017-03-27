@@ -9,10 +9,10 @@ function eat(message, options) {
             let type = options[search];
             let content = message.content.slice();
 
-            if (search == "member") {
+            if (type == "member") {
                 let found_obj = search_members(message.channel.guild.members, content.split(" "));
                 Object.keys(found_obj).forEach(key => {
-                    content = content.replace(key, found_obj[key]);
+                    content = content.toLowerCase().replace(key, found_obj[key]);
                 });
             }
 

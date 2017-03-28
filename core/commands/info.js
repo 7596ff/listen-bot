@@ -9,7 +9,7 @@ module.exports = (message, client, helper) => {
 
         let desc = client.sprintf(locale.me, me);
         let links = [":page_facing_up: [GitHub](https://github.com/bippum/listen-bot)",
-            "<:botTag:230105988211015680> [${locale.onlinehelp}](https://bots.discord.pw/bots/240209888771309568)",
+            `<:botTag:230105988211015680> [${locale.onlinehelp}](https://bots.discord.pw/bots/240209888771309568)`,
             `:link: [${locale.invitelink}](https://discordapp.com/oauth2/authorize?permissions=${client.config.permissions}&scope=bot&client_id=${client.user.id})`,
             `:information_source: [${locale.helpserver}](${client.config.discord_invite})`
         ];

@@ -24,6 +24,10 @@ module.exports = {
                 "confirmnone": ":ok_hand: В этом канале нет отключенных команд.",
                 "error": "Для начала отключи какие-нибудь команды!"
             },
+            "locale": {
+                "confirm": ":ok_hand: Language set to `%s`.",
+                "error": "Can't set to this language! Available langauges: `%s`"
+            },
             "prefix": {
                 "confirm": ":ok_hand: Префикс теперь будет `%s`."
             },
@@ -235,6 +239,9 @@ module.exports = {
                     "\n`%sadmin trivia channel here`: делает текущий канал каналом для игр.",
                     "\n`%sadmin trivia channel none`: вообще отключает игру."
                 ]
+            }, {
+                "name": "admin locale",
+                "summary": "changes language of bot on this server"
             }]
         },
         "history": {

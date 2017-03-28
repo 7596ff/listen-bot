@@ -1,4 +1,5 @@
 const needle = require("needle");
+const contributors = require("../../contributors.json");
 
 module.exports = (message, client, helper) => {
     let locale = client.core.locale[message.gcfg.locale].com.info;
@@ -19,6 +20,12 @@ module.exports = (message, client, helper) => {
             return `[\`${commit.sha.slice(0, 7)}\`](${commit.html_url}) - ${cmsg}${commit.commit.message.length > 40 ? "..." : ""}`;
         });
 
+        let contribs = [];
+
+        Object.keys(contributors).forEach(key => {
+            contribs.push(`**${key}:** ${contributors[key].join(", ")}`);
+        });
+
         message.channel.createMessage({
             "embed": {
                 "timestamp": new Date().toJSON(),
@@ -31,6 +38,10 @@ module.exports = (message, client, helper) => {
                     "name": "Links",
                     "value": links.join("\n"),
                     "inline": true
+                }, {
+                    "name": "Special Thanks",
+                    "value": contribs.join("\n"),
+                    "inline": "false"
                 }]
             }
         }).then(() => {

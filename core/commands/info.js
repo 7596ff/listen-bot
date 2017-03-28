@@ -23,7 +23,7 @@ module.exports = (message, client, helper) => {
         let contribs = [];
 
         Object.keys(contributors).forEach(key => {
-            contribs.push(`**${key}:** ${contributors[key].join(", ")}`);
+            contribs.push(`**${locale[key]}:** ${contributors[key].join(", ")}`);
         });
 
         message.channel.createMessage({
@@ -31,15 +31,15 @@ module.exports = (message, client, helper) => {
                 "timestamp": new Date().toJSON(),
                 "description": desc,
                 "fields": [{
-                    "name": "Github Log",
+                    "name": locale.githublog,
                     "value": gitlinks.join("\n"),
                     "inline": true
                 }, {
-                    "name": "Links",
+                    "name": locale.links,
                     "value": links.join("\n"),
                     "inline": true
                 }, {
-                    "name": "Special Thanks",
+                    "name": locale.specialthanks,
                     "value": contribs.join("\n"),
                     "inline": "false"
                 }]

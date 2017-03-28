@@ -4,6 +4,7 @@ function escapeRegExp(string){
 
 module.exports = (message, client, helper) => {
     if (client.trivia.channels.includes(message.channel.id)) return;
+    let locale = client.core.locale[message.gcfg.locale].com.ability;
     let abilities = client.core.json.abilities;
     let short_heroes = client.core.json.short_heroes;
     let ability_embed = client.core.embeds.ability;
@@ -52,7 +53,7 @@ module.exports = (message, client, helper) => {
     } else {
         let conflicts = abilities.filter(ability => ability.name.toLowerCase().match(options.join(" ")));
         if (conflicts.length > 1) {
-            message.channel.createMessage(`Ability not found. Possible conflicts: ${conflicts.map(conflict => conflict.name).join(", ")}`).then(new_message => {
+            message.channel.createMessage(client.sprintf(locale.conflict, conflicts.map(conflict => conflict.name).join(", "))).then(new_message => {
                 setTimeout(() => { new_message.delete(); }, 10000);
                 helper.log(message, "sent not found with conflicts");
             }).catch(err => helper.handle(message, err));
@@ -61,7 +62,7 @@ module.exports = (message, client, helper) => {
                 .then(() => helper.log(message, "sent ability embed"))
                 .catch(err => helper.handle(message, err));
         } else {
-            message.channel.createMessage("Couldn't find anything.").catch(err => helper.handle(message, err)).then(new_message => {
+            message.channel.createMessage(locale.nothing).catch(err => helper.handle(message, err)).then(new_message => {
                 setTimeout(() => { new_message.delete(); }, 10000);
                 helper.log(message, "sent not found");
             });

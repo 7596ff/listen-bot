@@ -42,6 +42,8 @@ function many_mmr_embed(list, members, name) {
 }
 
 async function mmr(message, client, helper) {
+    let locale = client.core.locale[message.gcfg.locale].com.mmr;
+
     const subcommand = message.content.split(" ").slice(1)[0];
     let id = message.author.id;
     let upsert_mmr = client.core.util.upsert_mmr;
@@ -50,7 +52,7 @@ async function mmr(message, client, helper) {
         try {
             let msg = await message.channel.createMessage({
                 "embed": {
-                    "description": "Hold tight while I grab the latest data."
+                    "description": locale.loading
                 }
             });
             let res = await client.pg.query("SELECT * FROM public.users;");
@@ -110,7 +112,7 @@ async function mmr(message, client, helper) {
         helper.log(message, "sent mmr of a user");
     } catch (err) {
         if (err == "nouser" || err.message == "nouser") {
-            message.channel.createMessage(`${message.channel.guild.members.get(id).username} has not registered yet! Try \`${message.gcfg.prefix}help register\`.`)
+            message.channel.createMessage(client.sprintf(locale.notregistered, message.channel.guild.members.get(id).username, message.gcfg.prefix))
                 .catch(err => helper.handle(message, err));
         } else {
             if (err._origin) helper.log("mmr", `error in ${err._origin}`, "error");

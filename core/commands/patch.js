@@ -1,6 +1,7 @@
 module.exports = (message, client, helper) => {
     if (client.trivia.channels.includes(message.channel.id)) return;
-    
+
+    let locale = client.core.locale[message.gcfg.locale];
     let patch_list = client.core.json.patch;
     let patch_hero = client.core.embeds.patch_hero;
     let options = message.content.split(" ").slice(1);
@@ -23,7 +24,7 @@ module.exports = (message, client, helper) => {
                     for (let hero_list in patch_list.data) {
                         if (res in patch_list.data[hero_list]["heroes"]) {
                             message.channel.createMessage({
-                                "content": "Can't find that version! Here's the latest: ",
+                                "content": locale.com.patch.noversion,
                                 "embed": patch_hero(res, hero_list, patch_list)
                             }).then(() => {
                                 helper.log(message, "  can't find that version, sent latest patch message");
@@ -34,7 +35,7 @@ module.exports = (message, client, helper) => {
                 }
             }).catch(() => {
                 helper.log(message, `patch hero: couldn't find hero ${hero}`);
-                message.channel.createMessage("Couldn't find that hero.").catch(err => helper.handle(err)).then((msg) => {
+                message.channel.createMessage(locale.generic.noheroerror).catch(err => helper.handle(err)).then((msg) => {
                     setTimeout(() => { msg.delete() }, 4000);
                 });
             });
@@ -57,7 +58,7 @@ module.exports = (message, client, helper) => {
         }
     }).catch(() => {
         helper.log(message, `patch hero: couldn't find hero ${hero}`);
-        message.channel.createMessage("Couldn't find that hero.").catch(err => helper.handle(err)).then((msg) => {
+        message.channel.createMessage(locale.generic.noheroerror).catch(err => helper.handle(err)).then((msg) => {
             setTimeout(() => { msg.delete() }, 4000);
         });
     });

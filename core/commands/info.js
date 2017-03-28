@@ -1,15 +1,17 @@
 const needle = require("needle");
 
 module.exports = (message, client, helper) => {
+    let locale = client.core.locale[message.gcfg.locale].com.info;
+
     needle.get("https://api.github.com/repos/bippum/listen-bot/commits", (err, response) => {
         let user_me = client.users.get(client.config.owner);
         let me = message.channel.guild.members.has(client.config.owner) ? `<@${client.config.owner}>` : `${user_me.username}#${user_me.discriminator}`;
 
-        let desc = `A Dota 2 related bot. Contact ${me} for support and questions!`;
+        let desc = client.sprintf(locale.me, me);
         let links = [":page_facing_up: [GitHub](https://github.com/bippum/listen-bot)",
-            "<:botTag:230105988211015680> [Online Help](https://bots.discord.pw/bots/240209888771309568)",
-            `:link: [Invite Link](https://discordapp.com/oauth2/authorize?permissions=${client.config.permissions}&scope=bot&client_id=${client.user.id})`,
-            `:information_source: [Help Server](${client.config.discord_invite})`
+            "<:botTag:230105988211015680> [${locale.onlinehelp}](https://bots.discord.pw/bots/240209888771309568)",
+            `:link: [${locale.invitelink}](https://discordapp.com/oauth2/authorize?permissions=${client.config.permissions}&scope=bot&client_id=${client.user.id})`,
+            `:information_source: [${locale.helpserver}](${client.config.discord_invite})`
         ];
 
         let gitlinks = err ? ["rip github"] : response.body.slice(0, 4).map(commit => {

@@ -73,6 +73,7 @@ function playerinfo_embed(player, od_heroes) {
 }
 
 async function send_message(message, client, helper, acc_id) {
+    let locale = client.core.locale[message.gcfg.locale].generic;
     helper.log(message, `playerinfo: ${acc_id}`);
 
     try {
@@ -99,7 +100,7 @@ async function send_message(message, client, helper, acc_id) {
                 plist[0].heroes = plist[2];
 
                 if (!plist[0].profile) {
-                    message.channel.createMessage("This user's account is private. ").catch(err => helper.handle(message, err));
+                    message.channel.createMessage(locale.privateaccount).catch(err => helper.handle(message, err));
                     return;
                 }
 
@@ -122,13 +123,14 @@ async function send_message(message, client, helper, acc_id) {
                 });
             }).catch(err => {
                 helper.log(message, `mika failed with err: \n${err}`);
-                message.channel.createMessage("Something went wrong.").catch(err => helper.handle(message, err));
+                message.channel.createMessage(locale.generic).catch(err => helper.handle(message, err));
             });
         }
     });
 }
 
 module.exports = (message, client, helper) => {
+    let locale = client.core.locale[message.gcfg.locale].com.playerinfo;
     let resolve_user = client.core.util.resolve_user;
 
     if (message.mentions.length > 0) {
@@ -136,9 +138,9 @@ module.exports = (message, client, helper) => {
             send_message(message, client, helper, acc_id);
         }).catch(err => {
             if (err == "nouser") {
-                message.channel.createMessage(`That user has not registered with me yet! Try \`${message.gcfg.prefix}help register\`.`).catch(err => helper.handle(message, err));
+                message.channel.createMessage(client.sprintf(locale.nouser, message.gcfg.prefix)).catch(err => helper.handle(message, err));
             } else {
-                message.channel.createMessage("Something went wrong selecting this user from the database.").catch(err => helper.handle(message, err));
+                helper.log(message, "database select error", "err");
                 helper.log(message, err);
             }
         });
@@ -154,9 +156,9 @@ module.exports = (message, client, helper) => {
                 send_message(message, client, helper, acc_id);
             }).catch(err => {
                 if (err == "nouser") {
-                    message.channel.createMessage(`That user has not registered with me yet! Try \`${message.gcfg.prefix}help register\`.`);
+                    message.channel.createMessage(client.sprintf(locale.nouser, message.gcfg.prefix));
                 } else {
-                    message.channel.createMessage("Something went wrong selecting this user from the database.");
+                    helper.log(message, "database select error", "err");
                     helper.log(message, err);
                 }
             });
@@ -168,9 +170,9 @@ module.exports = (message, client, helper) => {
                 send_message(message, client, helper, acc_id);
             }).catch(err => {
                 if (err == "nouser") {
-                    message.channel.createMessage(`You have not registered with me yet! Try \`${message.gcfg.prefix}help register\`.`);
+                    message.channel.createMessage(client.sprintf(locale.nouser, message.gcfg.prefix));
                 } else {
-                    message.channel.createMessage("Something went wrong selecting this user from the database.");
+                    helper.log(message, "database select error", "err");
                     helper.log(message, err);
                 }
             });
@@ -183,7 +185,7 @@ module.exports = (message, client, helper) => {
         }
 
         if (isNaN(acc_id)) {
-            message.channel.createMessage("I couldn't find an account ID in your message!").catch(err => helper.handle(message, err));
+            message.channel.createMessage(locale.noid).catch(err => helper.handle(message, err));
             return;
         }
 

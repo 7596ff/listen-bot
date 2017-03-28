@@ -1,4 +1,6 @@
 module.exports = (message, client, helper) => {
+    let locale = client.core.locale[message.gcfg.locale].com.admin.disable;
+
     let to_enable = message.content.split(" ");
     client.pg.query({
         "text": "SELECT * FROM guilds WHERE id = $1",
@@ -23,7 +25,7 @@ module.exports = (message, client, helper) => {
         }).then(() => {
             helper.log(message, `enabled some commands, new list: ${oldlist.join(" ")}`);
             let prettylist = oldlist.map(item => `\`${item}\``).join(" ");
-            prettylist = oldlist.length > 0 ? `:ok_hand: All disabled commands in this channel: ${prettylist}` : ":ok_hand: No disabled commands in this channel.";
+            prettylist = oldlist.length > 0 ? client.sprintf(locale.confirmsome, prettylist) : prettylist = locale.confirmnone;
             message.channel.createMessage(prettylist);
         }).catch(err => {
             helper.log(message, "something went wrong with updating guild with disabled list");

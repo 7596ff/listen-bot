@@ -6,7 +6,8 @@ async function history(message, client, helper) {
     });
 
     if ((response.with && response.as) || (!response.with && !response.as && !response.of)) {
-        message.channel.createMessage("Invalid syntax.").catch(err => helper.handle(message, err));
+        message.channel.createMessage(client.core.locale[message.gcfg.locale].cmd.history.main.error)
+            .catch(err => helper.handle(message, err));
         return;
     }
 

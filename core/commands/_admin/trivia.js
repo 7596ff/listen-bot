@@ -1,12 +1,15 @@
 function edit_trivia(pg, channel, message, client, helper) {
+    let locale = client.core.locale[message.gcfg.locale].com.admin.trivia;
+
     if (client.trivia.channels.includes(message.gcfg.trivia)) client.trivia.channels.splice(client.trivia.channels.indexOf(message.gcfg.trivia), 1);
 
     pg.query({
         "text": "UPDATE public.guilds SET trivia = $1 WHERE id = $2",
         "values": [channel || 0, message.channel.guild.id]
     }).then(() => {
-        let msg = channel ? `enabled in channel <#${channel}>.` : "disabled.";
-        message.channel.createMessage(`:ok_hand: Trivia ${msg}`).then(() => {
+        let msg = channel ? client.sprintf(locale.enable, channel) : locale.disable;
+
+        message.channel.createMessage(msg).then(() => {
             helper.log(message, `changed trivia channel to ${channel || "none"}`);
         }).catch(err => helper.handle(message, err));
     }).catch(err => {
@@ -24,7 +27,6 @@ module.exports = (message, client, helper) => {
         } else if (split_content.slice(1).join(" ").trim() == "here") {
             edit_trivia(client.pg, message.channel.id, message, client, helper);
         } else if (split_content.slice(1).join(" ").trim() == "none") {
-            if (client.trivia.channels.includes(message.gcfg.trivia)) client.trivia.channels.splice(client.trivia.channels.indexOf(message.gcfg.trivia), 1);
             edit_trivia(client.pg, null, message, client, helper);
         }
         break;

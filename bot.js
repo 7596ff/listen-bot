@@ -11,6 +11,7 @@ const Trivia = require("./trivia/trivia");
 
 const schedule = require("node-schedule");
 const Mika = require("mika");
+client.sprintf = require("sprintf-js").sprintf;
 
 const fs = require("fs");
 

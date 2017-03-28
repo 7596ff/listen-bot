@@ -1,4 +1,6 @@
 module.exports = (message, client, helper) => {
+    let locale = client.core.locale[message.gcfg.locale].com.admin.disable;
+
     let to = message.content.split(" ");
     let actual = [];
 
@@ -32,7 +34,8 @@ module.exports = (message, client, helper) => {
         }).then(() => {
             helper.log(message, `disabled some commands, new list: ${newlist.join(" ")}`);
             let prettylist = newlist.map(item => `\`${item}\``).join(" ");
-            prettylist = newlist.length > 0 ? `:ok_hand: All disabled commands in this channel: ${prettylist}` : "No disabled commands in this channel.";
+            prettylist = newlist.length > 0 ? client.sprintf(locale.confirmsome, prettylist) : prettylist = locale.confirmnone;
+
             message.channel.createMessage(prettylist);
         }).catch(err => {
             helper.log(message, "something went wrong with updating guild with disabled list");

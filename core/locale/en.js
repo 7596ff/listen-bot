@@ -24,6 +24,10 @@ module.exports = {
                 "confirmnone": ":ok_hand: No disabled commands in this channel.",
                 "error": "Disable some commands first!"
             },
+            "locale": {
+                "confirm": ":ok_hand: Language set to `%s`.",
+                "error": "Can't set to this language! Available langauges: `%s`"
+            },
             "prefix": {
                 "confirm": ":ok_hand: Prefix set to `%s`."
             },
@@ -235,6 +239,9 @@ module.exports = {
                     "\n`%sadmin trivia channel here`: sets the trivia channel to the current channel.",
                     "\n`%sadmin trivia channel none`: disables trivia entirely."
                 ]
+            }, {
+                "name": "admin locale",
+                "summary": "changes language of bot on this server"
             }]
         },
         "history": {
@@ -304,5 +311,10 @@ module.exports = {
         "noheroerror": "Couldn't find that hero.",
         "privateaccount": "This user's account is private.",
         "generic": "Something went wrong."
+    },
+    "resolve_dota_id": {
+        "notregistered": "%s has not registered with me yet! Try `%shelp register`.",
+        "badselect": "Something went wrong selecting this user from the database.",
+        "noid": "I couldn't find an account ID in your message!"
     }
 };

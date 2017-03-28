@@ -24,6 +24,10 @@ module.exports = {
                 "confirmnone": ":ok_hand: В этом канале нет отключенных команд.",
                 "error": "Для начала отключи какие-нибудь команды!"
             },
+            "locale": {
+                "confirm": ":ok_hand: Language set to `%s`.",
+                "error": "Can't set to this language! Available langauges: `%s`"
+            },
             "prefix": {
                 "confirm": ":ok_hand: Префикс теперь будет `%s`."
             },
@@ -160,7 +164,7 @@ module.exports = {
                 "summary": "возвращает случайно образованный набор вещей.",
             }, {
                 "name": "trivia",
-                "summary": "набор команд для игры про факты. ",
+                "summary": "набор команд для игры в викторину.",
                 "text": [
                     "\n`%strivia start`: начинает игру.",
                     "\n`%strivia stop`: останавливает её.",
@@ -229,12 +233,15 @@ module.exports = {
                 "example": "admin enable patch list wiki"
             }, {
                 "name": "admin trivia",
-                "summary": "настраивает канал в котором проходит игра про факты.",
+                "summary": "настраивает канал в котором проходит игра в викторину.",
                 "text": [
                     "\n`%sadmin trivia channel [#канал]`: задает #канал для игр.",
                     "\n`%sadmin trivia channel here`: делает текущий канал каналом для игр.",
                     "\n`%sadmin trivia channel none`: вообще отключает игру."
                 ]
+            }, {
+                "name": "admin locale",
+                "summary": "changes language of bot on this server"
             }]
         },
         "history": {
@@ -287,13 +294,13 @@ module.exports = {
             "loading": "Подождите, я загружаю последнюю информацию.",
             "nomember": "Пожалуйста задайте пользователя.",
             "cantmember": "Данный пользователь не нашелся.",
-            "notregistered": "%s еще не зарегестрировался! Попробуйте `%shelp register`."
+            "notregistered": "%s еще не зарегистрировался! Попробуйте `%shelp register`."
         },
         "patch": {
             "noversion": "Эта версия не нашлась. Вот последняя:"
         },
         "playerinfo": {
-            "nouser": "Этот пользователь еще не зарегестрировался! Попробуйте `%shelp register`.",
+            "nouser": "Этот пользователь еще не зарегистрировался! Попробуйте `%shelp register`.",
             "noid": "Я не нашел ID аккаунта в этом сообщении!"
         },
         "restart": {
@@ -304,5 +311,10 @@ module.exports = {
         "noheroerror": "Этот герой не нашелся.",
         "privateaccount": "Аккаунт этого пользователя приватен.",
         "generic": "Что-то пошло не так."
+    },
+    "resolve_dota_id": {
+        "notregistered": "%s еще не зарегистрировался! Попробуйте `%shelp register`.",
+        "badselect": "Something went wrong selecting this user from the database.",
+        "noid": "Я не нашел ID аккаунта в этом сообщении!"
     }
 };

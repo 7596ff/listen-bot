@@ -1,21 +1,21 @@
 const resolve_user = require("./resolve_user");
+const sprintf = require("sprintf-js").sprintf;
 
-function handle(reject, err, username, prefix) {
+function handle(locale, reject, err, username, prefix) {
     if (err == "nouser") {
-        let fmt = username ? `${username} has not` : "You haven't";
         reject({
-            "text": `${fmt} registered with me yet! Try \`${prefix}help register\`.`,
+            "text": sprintf(locale.notregistered, username, prefix),
             "log": "a user didn't register"
         });
     } else {
         reject({
-            "text": "Something went wrong selecting this user from the database.",
+            "text": locale.badselect,
             "err": err
         });
     }
 }
 
-module.exports = (message, from_discord) => {
+module.exports = (locale, message, from_discord) => {
     return new Promise((resolve, reject) => {
         if (from_discord) {
             let inguild = message.channel.guild.members.find(member => member.id == from_discord);
@@ -23,7 +23,7 @@ module.exports = (message, from_discord) => {
                 resolve_user(message._client, inguild.id).then(acc_id => {
                     resolve(acc_id);
                 }).catch(err => {
-                    handle(reject, err, inguild.username, message.gcfg.prefix);
+                    handle(locale, reject, err, inguild.username, message.gcfg.prefix);
                 });
             }
         } else {
@@ -31,7 +31,7 @@ module.exports = (message, from_discord) => {
                 resolve_user(message._client, message.mentions[0].id).then(acc_id => {
                     resolve(acc_id);
                 }).catch(err => {
-                    handle(reject, err, message.mentions[0].username, message.gcfg.prefix);
+                    handle(locale, reject, err, message.mentions[0].username, message.gcfg.prefix);
                 });
             } else {
                 let options = message.content.split(" ").slice(1).join(" ");
@@ -41,7 +41,7 @@ module.exports = (message, from_discord) => {
                     resolve_user(message._client, inguild.id).then(acc_id => {
                         resolve(acc_id);
                     }).catch(err => {
-                        handle(reject, err, inguild.username, message.gcfg.prefix);
+                        handle(locale, reject, err, inguild.username, message.gcfg.prefix);
                     });
                 } else {
                     if (options.length > 0) {
@@ -54,7 +54,7 @@ module.exports = (message, from_discord) => {
 
                         if (isNaN(acc_id)) {
                             reject({
-                                "text": "I couldn't find an account ID in your message!",
+                                "text": locale.noid,
                                 "log": "no account id"
                             });
                         }
@@ -64,7 +64,7 @@ module.exports = (message, from_discord) => {
                         resolve_user(message._client, message.author.id).then(acc_id => {
                             resolve(acc_id);
                         }).catch(err => {
-                            handle(reject, err, null, message.gcfg.prefix);
+                            handle(locale, reject, err, message.author.username, message.gcfg.prefix);
                         });
                     }
                 }

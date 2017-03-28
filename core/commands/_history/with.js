@@ -20,7 +20,7 @@ module.exports = (message, client, helper, _with) => {
 
     let qids = _with.length == 1 ? [message.author.id, _with[0]] : [];
 
-    Promise.all(qids.map(id => resolve_dota_id(message, id))).then(results => {
+    Promise.all(qids.map(id => resolve_dota_id(locale.resolve_dota_id, message, id))).then(results => {
         helper.log(message, `history: ${results[0]} and ${results[1]}`);
         results = results.sort();
 

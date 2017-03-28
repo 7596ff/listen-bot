@@ -269,7 +269,9 @@ module.exports = {
             "helpserver": "Help Server", // say like (EN) here or something
             "specialthanks": "Special Thanks",
             "alphatest": "Alpha Testers",
-            "translators": "Translators"
+            "translators": "Translators",
+            "githublog": "Github Log",
+            "links": "Links"
         },
         "item": {
             "noitem": "Couldn't find that item.",

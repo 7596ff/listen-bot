@@ -26,6 +26,10 @@ module.exports = {
                 "confirmnone": ":ok_hand: W tym kanale nie ma wyłączonych komend.",
                 "error": "Najpierw musisz wyłączyć jakiekolwiek komendy!"
             },
+            "locale": {
+                "confirm": ":ok_hand: Język zmieniony na `%s`.",
+                "error": "Nie można zmienić na ten język! Dostępne języki: `%s`"
+            },
             "prefix": {
                 "confirm": ":ok_hand: Prefix został zmieniony na `%s`."
             },
@@ -237,6 +241,9 @@ module.exports = {
                     "\n`%sadmin trivia channel here`: zmienia kanał zgadywanki na obecny kanał.",
                     "\n`%sadmin trivia channel none`: kompletne wyłącza zgadywankę."
                 ]
+            }, {
+                "name": "admin locale",
+                "summary": "zmienia język bota na tym serwerze"
             }]
         },
         "history": {

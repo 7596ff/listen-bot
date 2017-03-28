@@ -129,7 +129,7 @@ module.exports = {
                     "\n`as <игрок>`: добавляет фильтр по герою к первому найденному пользователю"
                 ],
                 "example": "lastmatch of Moo",
-                "aliases": ["gameinfo"]
+                "aliases": ["lastgame"]
             }, {
                 "name": "history",
                 "usage": "history [with <человеком>] OR [of <человека>] [as <герой>]",
@@ -140,7 +140,6 @@ module.exports = {
                     "\n`as <герой>`: показывает Вашу частоту побед за определенного героя"
                 ],
                 "example": "history with frosty",
-                "aliases": ["lastgame"]
             }, {
                 "name": "matches",
                 "usage": "matches [as <герой>] and/or with <человеком>] and/or [of <человека>]",

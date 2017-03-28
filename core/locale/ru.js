@@ -164,7 +164,7 @@ module.exports = {
                 "summary": "возвращает случайно образованный набор вещей.",
             }, {
                 "name": "trivia",
-                "summary": "набор команд для игры про факты. ",
+                "summary": "набор команд для игры в викторину.",
                 "text": [
                     "\n`%strivia start`: начинает игру.",
                     "\n`%strivia stop`: останавливает её.",
@@ -233,7 +233,7 @@ module.exports = {
                 "example": "admin enable patch list wiki"
             }, {
                 "name": "admin trivia",
-                "summary": "настраивает канал в котором проходит игра про факты.",
+                "summary": "настраивает канал в котором проходит игра в викторину.",
                 "text": [
                     "\n`%sadmin trivia channel [#канал]`: задает #канал для игр.",
                     "\n`%sadmin trivia channel here`: делает текущий канал каналом для игр.",

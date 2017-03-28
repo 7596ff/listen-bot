@@ -197,6 +197,8 @@ sub.on("message", (channel, message) => {
 });
 
 function invoke(message, client, helper, command) {
+    if (message.gcfg.locale === undefined) message.gcfg.locale = "en";
+
     client.core.commands[command](message, client, helper);
     client.usage["all"] += 1;
     client.usage[command] += 1;

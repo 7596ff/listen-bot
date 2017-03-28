@@ -22,7 +22,7 @@ async function as_(message, client, helper, as, _of) {
         }
     }
 
-    resolve_dota_id(message, _of.id).then(account_id => {
+    resolve_dota_id(locale.resolve_dota_id, message, _of.id).then(account_id => {
         if (account_id.length < 1) {
             message.channel.createMessage(locale.generic.privateaccount).catch(err => helper.handle(message, err));
             return;

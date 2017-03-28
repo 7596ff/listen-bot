@@ -287,13 +287,13 @@ module.exports = {
             "loading": "Подождите, я загружаю последнюю информацию.",
             "nomember": "Пожалуйста задайте пользователя.",
             "cantmember": "Данный пользователь не нашелся.",
-            "notregistered": "%s еще не зарегестрировался! Попробуйте `%shelp register`."
+            "notregistered": "%s еще не зарегистрировался! Попробуйте `%shelp register`."
         },
         "patch": {
             "noversion": "Эта версия не нашлась. Вот последняя:"
         },
         "playerinfo": {
-            "nouser": "Этот пользователь еще не зарегестрировался! Попробуйте `%shelp register`.",
+            "nouser": "Этот пользователь еще не зарегистрировался! Попробуйте `%shelp register`.",
             "noid": "Я не нашел ID аккаунта в этом сообщении!"
         },
         "restart": {
@@ -304,5 +304,10 @@ module.exports = {
         "noheroerror": "Этот герой не нашелся.",
         "privateaccount": "Аккаунт этого пользователя приватен.",
         "generic": "Что-то пошло не так."
+    },
+    "resolve_dota_id": {
+        "notregistered": "%s еще не зарегистрировался! Попробуйте `%shelp register`.",
+        "badselect": "Something went wrong selecting this user from the database.",
+        "noid": "Я не нашел ID аккаунта в этом сообщении!"
     }
 };

@@ -48,7 +48,7 @@ async function matches(message, client, helper) {
         }
     }
 
-    Promise.all(qids.map(id => client.core.util.resolve_dota_id(message, id))).then(results => {
+    Promise.all(qids.map(id => client.core.util.resolve_dota_id(locale.resolve_dota_id, message, id))).then(results => {
         results.forEach(result => {
             if (result.length < 1) {
                 message.channel.createMessage(locale.generic.privateaccount).catch(err => helper.handle(message, err));

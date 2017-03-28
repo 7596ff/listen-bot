@@ -304,5 +304,10 @@ module.exports = {
         "noheroerror": "Couldn't find that hero.",
         "privateaccount": "This user's account is private.",
         "generic": "Something went wrong."
+    },
+    "resolve_dota_id": {
+        "notregistered": "%s has not registered with me yet! Try `%shelp register`.",
+        "badselect": "Something went wrong selecting this user from the database.",
+        "noid": "I couldn't find an account ID in your message!"
     }
 };

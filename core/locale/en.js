@@ -140,7 +140,7 @@ module.exports = {
             }, {
                 "name": "matches",
                 "usage": "matches [as <hero>] and/or with <person>] and/or [of <person>]",
-                "summary": "returns the last 12 games of somoene.",
+                "summary": "returns the last 12 games of someone.",
                 "text": [
                     "filter by hero or with a person."
                 ],

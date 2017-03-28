@@ -24,6 +24,10 @@ module.exports = {
                 "confirmnone": ":ok_hand: No disabled commands in this channel.",
                 "error": "Disable some commands first!"
             },
+            "locale": {
+                "confirm": ":ok_hand: Language set to `%s`.",
+                "error": "Can't set to this language! Available langauges: `%s`"
+            },
             "prefix": {
                 "confirm": ":ok_hand: Prefix set to `%s`."
             },
@@ -235,6 +239,9 @@ module.exports = {
                     "\n`%sadmin trivia channel here`: sets the trivia channel to the current channel.",
                     "\n`%sadmin trivia channel none`: disables trivia entirely."
                 ]
+            }, {
+                "name": "admin locale",
+                "summary": "changes language of bot on this server"
             }]
         },
         "history": {

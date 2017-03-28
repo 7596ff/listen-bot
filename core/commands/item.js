@@ -3,6 +3,7 @@ const too_short = ["of", "and", "in", "the", "de"];
 module.exports = (message, client, helper) => {
     if (client.trivia.channels.includes(message.channel.id)) return;
     
+    let locale = client.core.locale[message.gcfg.locale].com.item;
     let items = client.core.json.items;
     let item_embed = client.core.embeds.item;
 
@@ -22,6 +23,7 @@ module.exports = (message, client, helper) => {
                 
                 search = items.filter(item => {
                     if (item.true_name == "sange_and_yasha" & (term.toLowerCase() == "yasha" | term.toLowerCase() == "sange")) return false;
+                    if (item.true_name == "sange" && options.join(" ").toLowerCase() == "sange and yasha") return false;
                     if (too_short.includes(item)) return false;
                     if (item.format_name.toLowerCase().match(term) && term.length > 2) return true;
                     if ((item.aliases || []).includes(term)) return true;
@@ -49,10 +51,10 @@ module.exports = (message, client, helper) => {
             helper.handle(message, err);
         });
     } else {
-        let content = "Couldn't find that item. ";
+        let content = locale.noitem;
         if (conflicts.length > 1) {
             conflicts = conflicts.filter((item, inc, newlist) => newlist.indexOf(item) === inc);
-            content += `Possible conflicts: ${conflicts.join(", ")}`;
+            content = `${content} ${client.sprintf(locale.conflicts, conflicts.join(", "))}`;
         }
 
         message.channel.createMessage(content).then(new_message => {

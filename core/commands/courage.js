@@ -7,8 +7,7 @@ const all_boots = [
     "power_treads",
     "arcane_boots",
     "tranquil_boots",
-    "guardian_greaves",
-
+    "guardian_greaves"
 ];
 
 const locations = [

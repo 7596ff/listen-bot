@@ -1,4 +1,6 @@
 async function matches(message, client, helper) {
+    let locale = client.core.locale[message.gcfg.locale];
+
     try {
         await message.channel.sendTyping();
     } catch (err) {
@@ -12,7 +14,7 @@ async function matches(message, client, helper) {
     });
 
     if (response.err) {
-        message.channel.createMessage("Something went wrong.").catch(err => helper.handle(message, err));
+        message.channel.createMessage(locale.generic.generic).catch(err => helper.handle(message, err));
         helper.log(message, response.err);
         return;
     }
@@ -41,7 +43,7 @@ async function matches(message, client, helper) {
     } catch (err) {
         if (err === false) {
             helper.log(message, `couldn't find hero ${response.as}`);
-            message.channel.createMessage("I couldn't find that hero.").catch(err => helper.handle(message, err));
+            message.channel.createMessage(locale.generic.noheroerror).catch(err => helper.handle(message, err));
             return;
         }
     }
@@ -49,7 +51,7 @@ async function matches(message, client, helper) {
     Promise.all(qids.map(id => client.core.util.resolve_dota_id(message, id))).then(results => {
         results.forEach(result => {
             if (result.length < 1) {
-                message.channel.createMessage("This user's account is private.").catch(err => helper.handle(message, err));
+                message.channel.createMessage(locale.generic.privateaccount).catch(err => helper.handle(message, err));
                 return;
             }
         });
@@ -66,7 +68,7 @@ async function matches(message, client, helper) {
         if (hero_id) mika_opt.hero_id = hero_id;
 
         client.mika.getPlayerMatches(results[0], mika_opt).then(matches => {
-            let embed = client.core.embeds.matches(matches, `Use \`${message.gcfg.prefix}matchinfo\` to get more about a specific match.`, client.core.json.od_heroes);
+            let embed = client.core.embeds.matches(matches, client.sprintf(locale.com.matches.header, message.gcfg.prefix), client.core.json.od_heroes);
             message.channel.createMessage({
                 "embed": embed
             }).then(() => {
@@ -74,18 +76,18 @@ async function matches(message, client, helper) {
             }).catch(err => helper.handle(message, err));
         }).catch(err => {
             helper.log(message, err);
-            message.channel.createMessage("Something went wrong.").catch(err => helper.handle(message, err));
+            message.channel.createMessage(locale.generic.generic).catch(err => helper.handle(message, err));
         });
     }).catch(err => {
         if (err.err) {
-            message.channel.createMessage(err.text || "Something went wrong.").catch(err => helper.handle(message, err));
+            message.channel.createMessage(err.text || locale.generic.generic).catch(err => helper.handle(message, err));
             helper.log(message, err.text);
             helper.log(message, err.err);
         } else if (err.text) {
             message.channel.createMessage(err.text).catch(err => helper.handle(message, err));
             helper.log(message, err.log);
         } else {
-            message.channel.createMessage("Something went wrong.").catch(err => helper.handle(message, err));
+            message.channel.createMessage(locale.generic.generic).catch(err => helper.handle(message, err));
             helper.log(message, err);
         }
     });

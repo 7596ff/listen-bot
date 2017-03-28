@@ -9,11 +9,12 @@ function find_player_team(match, account_id) {
 }
 
 module.exports = (message, client, helper, _with) => {
+    let locale = client.core.locale[message.gcfg.locale];
     let resolve_dota_id = client.core.util.resolve_dota_id;
     let embed_history = client.core.embeds.history;
 
     if (_with.length != 1) {
-        message.channel.createMessage("I don't have enough data for this command!").catch(err => helper.handle(message, err));
+        message.channel.createMessage(locale.com.history.with.nodata).catch(err => helper.handle(message, err));
         return;
     }
 
@@ -24,7 +25,7 @@ module.exports = (message, client, helper, _with) => {
         results = results.sort();
 
         if (results[0] == results[1]) {
-            message.channel.createMessage("I don't have enough data for this command!").catch(err => helper.handle(message, err));
+            message.channel.createMessage(locale.com.history.with.nodata).catch(err => helper.handle(message, err));
             return;
         }
 
@@ -61,28 +62,28 @@ module.exports = (message, client, helper, _with) => {
                 }
             });
 
-            embed_history(client, data).then(embed => {
+            embed_history(client, data, locale.com.history.with.embed).then(embed => {
                 message.channel.createMessage({ "embed": embed })
                     .then(() => helper.log(message, "sent history embed"))
                     .catch(err => helper.handle(message, err));
             }).catch(err => {
-                message.channel.createMessage("Something went wrong. Check the spelling of the players and try again.").catch(err => helper.handle(message, err));
+                message.channel.createMessage(locale.com.history.with.spelling).catch(err => helper.handle(message, err));
                 helper.log(message, err);
             });
         }).catch(err => {
-            message.channel.createMessage("Something went wrong.").catch(err => helper.handle(message, err));
+            message.channel.createMessage(locale.generic.generic).catch(err => helper.handle(message, err));
             helper.log(message, err);
         });
     }).catch(err => {
         if (err.err) {
-            message.channel.createMessage(err.text || "Something went wrong.").catch(err => helper.handle(message, err));
+            message.channel.createMessage(err.text || locale.generic.generic).catch(err => helper.handle(message, err));
             helper.log(message, err.text);
             helper.log(message, err.err);
         } else if (err.text) {
             message.channel.createMessage(err.text).catch(err => helper.handle(message, err));
             helper.log(message, err.log);
         } else {
-            message.channel.createMessage("Something went wrong.").catch(err => helper.handle(message, err));
+            message.channel.createMessage(locale.generic.generic).catch(err => helper.handle(message, err));
             helper.log(message, err);
         }
     });

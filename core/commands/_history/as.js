@@ -1,4 +1,6 @@
 async function as_(message, client, helper, as, _of) {
+    let locale = client.core.locale[message.gcfg.locale];
+
     let resolve_dota_id = client.core.util.resolve_dota_id;
     let find_hero = client.core.util.find_hero;
     let od_heroes = client.core.json.od_heroes;
@@ -15,14 +17,14 @@ async function as_(message, client, helper, as, _of) {
     } catch (err) {
         if (err === false) {
             helper.log(message, `couldn't find hero ${as}`);
-            message.channel.createMessage("I couldn't find that hero.").catch(err => helper.handle(message, err));
+            message.channel.createMessage(locale.generic.noheroerror).catch(err => helper.handle(message, err));
             return;
         }
     }
 
     resolve_dota_id(message, _of.id).then(account_id => {
         if (account_id.length < 1) {
-            message.channel.createMessage("This user's account is private.").catch(err => helper.handle(message, err));
+            message.channel.createMessage(locale.generic.privateaccount).catch(err => helper.handle(message, err));
             return;
         }
 
@@ -31,36 +33,38 @@ async function as_(message, client, helper, as, _of) {
             "hero_id": hero_id
         }).then(matches => {
             let wins = matches.filter(match => match.radiant_win == (match.player_slot < 5));
+            locale = locale.com.history.as.embed;
+
             message.channel.createMessage({
                 "embed": {
                     "author": {
                         "icon_url": `http://cdn.dota2.com/apps/dota2/images/heroes/${found_hero}_icon.png`,
-                        "name": `${_of.username} as ${hero_nice_name}`
+                        "name": client.sprintf(locale.title, _of.username, hero_nice_name)
                     }, 
                     "description": [
-                        `**Wins:** ${wins.length}`,
-                        `**Games:** ${matches.length}`,
-                        `**Winrate:** ${(Math.round((wins.length / matches.length) * 10000)) / 100}%`
+                        client.sprintf(locale.wins, wins.length),
+                        client.sprintf(locale.games, matches.length),
+                        client.sprintf(locale.wr, Math.round(wins.length / matches.length * 10000) / 100)
                     ].join("\n")
                 }
             }).then(() => {
                 helper.log(message, "sent history embed");
             }).catch(err => helper.handle(message, err));
         }).catch(err => {
-            message.channel.createMessage("Something went wrong.").catch(err => helper.handle(message, err));
+            message.channel.createMessage(locale.generic.generic).catch(err => helper.handle(message, err));
             helper.log(message, "something went wrong with mika");
             helper.log(message, err);
         });
     }).catch(err => {
         if (err.err) {
-            message.channel.createMessage(err.text || "Something went wrong.").catch(err => helper.handle(message, err));
+            message.channel.createMessage(err.text || locale.generic.generic).catch(err => helper.handle(message, err));
             helper.log(message, err.text);
             helper.log(message, err.err);
         } else if (err.text) {
             message.channel.createMessage(err.text).catch(err => helper.handle(message, err));
             helper.log(message, err.log);
         } else {
-            message.channel.createMessage("Something went wrong.").catch(err => helper.handle(message, err));
+            message.channel.createMessage(locale.generic.generic).catch(err => helper.handle(message, err));
             helper.log(message, err);
         }
     });

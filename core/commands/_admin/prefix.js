@@ -1,4 +1,6 @@
 module.exports = (message, client, helper) => {
+    let locale = client.core.locale[message.gcfg.locale].com.admin.prefix;
+
     if (message.content) {
         let newprefix = message.content.replace("\"", "");
 
@@ -6,7 +8,7 @@ module.exports = (message, client, helper) => {
             "text": "UPDATE public.guilds SET prefix = $1 WHERE id = $2",
             "values": [newprefix, message.channel.guild.id]
         }).then(() => {
-            message.channel.createMessage(`:ok_hand: prefix set to \`${newprefix}\``).then(() => {
+            message.channel.createMessage(client.sprintf(locale.confirm, newprefix)).then(() => {
                 helper.log(message, `changed guild prefix to ${newprefix}`);
             }).catch(err => helper.handle(message, err));
         }).catch(err => {

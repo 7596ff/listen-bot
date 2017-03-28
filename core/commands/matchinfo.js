@@ -34,6 +34,8 @@ function fix_scores(match_data, mika) {
 }
 
 async function matchinfo(message, client, helper) {
+    let locale = client.core.locale[message.gcfg.locale];
+
     let match_id = message.content.split(" ")[1];
     if (!match_id) return;
 
@@ -43,7 +45,7 @@ async function matchinfo(message, client, helper) {
     }
 
     if (isNaN(match_id)) {
-        message.channel.createMessage("I couldn't find a match ID in your message!").catch(err => helper.handle(message, err));
+        message.channel.createMessage(locale.com.matchinfo.error).catch(err => helper.handle(message, err));
         return;
     }
 
@@ -70,7 +72,7 @@ async function matchinfo(message, client, helper) {
                     client.redis.expire(`matchinfo:${match_id}`, 604800);
                 });
             }).catch(err => {
-                message.channel.createMessage("Something went wrong.").catch(err => helper.handle(message, err));
+                message.channel.createMessage(locale.generic.generic).catch(err => helper.handle(message, err));
                 helper.log(message, "  something went wrong with mika");
                 helper.log(message, err);
             });

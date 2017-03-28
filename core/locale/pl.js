@@ -131,7 +131,7 @@ module.exports = {
                     "\n`as <bohater>`: dodaje bohatera do filtrów rozgrywek"
                 ],
                 "example": "lastmatch of Moo",
-                "aliases": ["gameinfo"]
+                "aliases": ["lastgame"]
             }, {
                 "name": "history",
                 "usage": "history [with <gracz>] OR [of <gracz>] [as <bohater>]",
@@ -142,7 +142,6 @@ module.exports = {
                     "\n`as <bohater>`: pokazuje twój stosunek zwycięstw bohaterem"
                 ],
                 "example": "history with frosty",
-                "aliases": ["lastgame"]
             }, {
                 "name": "matches",
                 "usage": "matches [as <bohater>] and/or with <gracz>] and/or [of <gracz>]",

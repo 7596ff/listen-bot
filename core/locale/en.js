@@ -129,7 +129,7 @@ module.exports = {
                     "\n`as <hero>`: adds a hero filter to the first player in the search is"
                 ],
                 "example": "lastmatch of Moo",
-                "aliases": ["gameinfo"]
+                "aliases": ["lastgame"]
             }, {
                 "name": "history",
                 "usage": "history [with <person>] OR [of <person>] [as <hero>]",
@@ -139,8 +139,7 @@ module.exports = {
                     "\n`of <player> as <hero>`: shows someone's winrate on a specific hero",
                     "\n`as <hero>`: shows your winrate on a hero"
                 ],
-                "example": "history with frosty",
-                "aliases": ["lastgame"]
+                "example": "history with frosty"
             }, {
                 "name": "matches",
                 "usage": "matches [as <hero>] and/or with <person>] and/or [of <person>]",

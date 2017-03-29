@@ -270,7 +270,7 @@ module.exports = {
             }
         }, 
         "info": {
-            "me": "En Dota 2-relaterad bot. Kontakta %s for hjälp och frågor!",
+            "me": "En Dota 2-relaterad bot. Kontakta %s for hjälp och frågor! (på engelska)",
             "onlinehelp": "Hjälp online",
             "invitelink": "Inbjudningslänk",
             "helpserver": "Hjälpserver (På engelska)", // say like (EN) here or something

@@ -91,127 +91,127 @@ module.exports = {
             }],
             "dynamic": [{
                 "name": "register",
-                "usage": "register <steam profile, dotabuff link or opendota link>",
-                "summary": "register your steam profile with the bot.",
+                "usage": "register <steamprofil, länk till dotabuff eller opendota>",
+                "summary": "registrera din steamprofil med botten.",
                 "text": [
-                    "accepts a steam profile link or a dotabuff/opendota link.",
-                    "the bot account will send you a friend request on steam",
-                    "along with a direct message on discord with instructions.",
-                    "**make sure your steam account is public and you have discord set",
-                    "to accept direct messages from other users before trying this!**"
+                    "accepterar en länk till en steamprofil eller en länk till dotabuff/opendota",
+                    "bottens konto kommer att skicka en vänförfrågan till dig på steam",
+                    "samt ett direkt meddelande på discord med instruktioner.",
+                    "**se till att din steamprofil är offentlig och att du har discord inställt",
+                    "att acceptera direkta meddelanden från andra användare innan du prövar detta!**"
                 ],
                 "example": "register https://www.dotabuff.com/players/103637655"
             }, {
                 "name": "unregister",
-                "summary": "removes your account with the bot."
+                "summary": "tar bort ditt konto från botten."
             }, {
                 "name": "playerinfo",
-                "usage": "playerinfo <member>",
-                "summary": "returns some basic player info for a specified person.",
+                "usage": "playerinfo <medlem>",
+                "summary": "återger viss grundläggande information för en specificerad person.",
                 "text": [
-                    "accepts a dotabuff or opendota link, as well as a username mention (if that user",
-                    "has their profile linked.)"
+                    "accepterar en länk från dotabuff eller opendota samt nämnande av användarnamn (om den användaren",
+                    "har länkat sin profil.)"
                 ],
                 "example": "playerinfo https://www.opendota.com/players/103637655",
                 "aliases": ["profile"]
             }, {
                 "name": "matchinfo",
-                "usage": "matchinfo <link or match id>",
-                "summary": "returns information about a specific dota match.",
+                "usage": "matchinfo <länk eller matchens id>",
+                "summary": "återger information om en specifik dotamatch.",
                 "example": "matchinfo https://www.dotabuff.com/matches/2992668596",
                 "aliases": ["gameinfo"]
             }, {
                 "name": "lastmatch",
-                "summary": "looks up the last match someone played.",
+                "summary": "kollar upp den senaste matchen som någon har spelat.",
                 "text": [
-                    "\n`with <player>`: adds you to the search of players",
-                    "\n`of <player>`: only looks for the last match between these players",
-                    "\n`as <hero>`: adds a hero filter to the first player in the search is"
+                    "\n`with <spelare>`: lägger till dig sökandet av spelare",
+                    "\n`of <spelare>`: söker enbart efter den sista matchen mellan dessa spelare",
+                    "\n`as <hjälte>`: lägger till ett hjältefilter till vilken den första spelaren i sökningen är"
                 ],
                 "example": "lastmatch of Moo",
                 "aliases": ["gameinfo"]
             }, {
                 "name": "history",
-                "usage": "history [with <person>] OR [of <person>] [as <hero>]",
-                "summary": "looks up the history someone has on a hero, or history between two players. ",
+                "usage": "history [with <person>] OR [of <person>] [as <hjälte>]",
+                "summary": "kollar upp någons historik med en hjälte, eller historiken mellan två spelare. ",
                 "text": [
-                    "\n`with <player>`: shows winrate with and against you and someone else",
-                    "\n`of <player> as <hero>`: shows someone's winrate on a specific hero",
-                    "\n`as <hero>`: shows your winrate on a hero"
+                    "\n`with <spelare>`: visar hur ofta du vinner med och mot någon annan",
+                    "\n`of <spelare> as <hero>`: visar hur ofta någon vinner med en specifik hjälte",
+                    "\n`as <hjälte>`: visar hur ofta du vinner som en hjälte"
                 ],
                 "example": "history with frosty",
                 "aliases": ["lastgame"]
             }, {
                 "name": "matches",
-                "usage": "matches [as <hero>] and/or with <person>] and/or [of <person>]",
-                "summary": "returns the last 12 games of someone.",
+                "usage": "matches [as <hjälte>] and/or with <person>] and/or [of <person>]",
+                "summary": "återger någons tolv senaste matcher.",
                 "text": [
-                    "filter by hero or with a person."
+                    "filtrera för hjälte eller med en person."
                 ],
                 "example": "matches of alexa as ember",
                 "aliases": ["matchhistory", "games"]
             }, {
                 "name": "mmr",
-                "summary": "returns mmr of a member or of the server.",
+                "summary": "återger en medlem på serverns mmr.",
                 "text": [
-                    "\n`%smmr`: returns your mmr.",
-                    "\n`%smmr of [member]`: returns mmr of a registered member.",
-                    "\n`%smmr all`: returns a leaderboard of the whole server."
+                    "\n`%smmr`: återger din mmr.",
+                    "\n`%smmr of [medlem]`: återger en registrerad medlems mmr.",
+                    "\n`%smmr all`: återger en rangordning för hela servern."
                 ]
             }],
             "fun": [{
                 "name": "courage",
-                "summary": "returns an item build challenge a la divine courage.",
+                "summary": "återger en hjältestruktursutmaning a la divine courage.",
             }, {
                 "name": "trivia",
-                "summary": "set of commands for the trivia game. ",
+                "summary": "kommandon för triviaspelet. ",
                 "text": [
-                    "\n`%strivia start`: starts the game.",
-                    "\n`%strivia stop`: stops the game.",
-                    "\n`%strivia top`: leaderboard of users in this server.",
-                    "\n`%strivia top all`: leaderboard of all users.",
-                    "\n`%strivia points`: your scores.",
-                    "\n`%strivia points [member]`: scores of someone.",
-                    "\n`%strivia stats`: stats about the trivia game."
+                    "\n`%strivia start`: startar spelet.",
+                    "\n`%strivia stop`: stoppar spelet.",
+                    "\n`%strivia top`: rangordning av användarna på denna server.",
+                    "\n`%strivia top all`: rangordning av alla användare.",
+                    "\n`%strivia points`: dina poäng.",
+                    "\n`%strivia points [member]`: någons poäng.",
+                    "\n`%strivia stats`: statistik om triviaspelet."
                 ],
                 "aliases": ["t", "challenge"]
             }, {
                 "name": "mike",
-                "summary": "returns a random ixmikeism",
+                "summary": "återger en slumpmässig ixmikeism",
                 "aliases": ["ixmike", "mikeism", "mikeisms"]
             }],
             "meta": [{
                 "name": "info",
-                "summary": "returns some info about the bot.",
+                "summary": "återger viss information om botten.",
                 "aliases": ["about"]
             }, {
                 "name": "invite",
-                "summary": "invite link for the bot"
+                "summary": "inbjudningslänk för botten."
             }, {
                 "name": "botstats",
-                "summary": "returns some stats about the bot"
+                "summary": "återger viss statisik om botten."
             }, {
                 "name": "help",
                 "usage": "help [<topic>]",
-                "summary": "return list of help topics, or specific help about a topic.",
+                "summary": "återger en lista med hjälpämnen, eller specifik hjälp om ett ämne",
                 "example": "help patch"
             }],
             "admin": [{
                 "name": "admin",
-                "summary": "displays the current config for the server."
+                "summary": "visar den nuvarande konfigurationen för severn."
             }, {
                 "name": "admin prefix",
-                "usage": "admin prefix <new prefix>",
-                "summary": "change the server specific prefix (note: will still respond to `--`)",
+                "usage": "admin prefix <nytt prefix>",
+                "summary": "ändrar det serverspecifika prefixet (notera att den fortfarande kommer svara på `--`)",
                 "example": "admin prefix &&"
             }, {
                 "name": "admin cooldowns",
-                "usage": "admin cooldowns <channel or member> <time in seconds>",
-                "summary": "sets the cooldowns for the entire guild for members or channels.",
+                "usage": "admin cooldowns <kanal eller medlem> <tid i sekunder>",
+                "summary": "sätter vilotid för användare eller kanaler. sets the cooldowns for the entire guild for members or channels.",
                 "text": [
-                    "for example: if the channel cooldown is 10, 10 seconds must pass before a new command is processed.",
-                    "all commands in between the time of the first command and any new commands are ignored.", 
-                    "\n\nrecommended cooldowns: 10 seconds for member and 5 seconds for channel. \ndefault cooldowns: 0."
+                    "till exmpel: om kanalens vilotid är 10, så måste 10 sekunder gå innan ett nytt kommando behandlas.",
+                    "alla kommandon mellan tiden för det första kommandot och nya kommandon ignoreras.", 
+                    "\n\nrekomenderade vilotider: 10 sekunder för medlemmar och 5 sekunder för kanalen. \nstandard vilotid: 0."
                 ],
                 "example": "admin cooldowns member 5"
             }, {

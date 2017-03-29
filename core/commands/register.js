@@ -19,7 +19,7 @@ module.exports = (message, client, helper) => {
 
         client.mika.getPlayer(acc_id).then(res => {
             if (!res.profile) {
-                message.channel.createMessage("This steam account is private! I can't register it!").catch(err => helper.handle(message, err));
+                message.channel.createMessage("This steam account is private, or hasn't signed up for OpenDota yet! I can't register it!").catch(err => helper.handle(message, err));
                 helper.log(message, "  failed on private steam account");
                 return;
             }

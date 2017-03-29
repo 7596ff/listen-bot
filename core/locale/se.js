@@ -207,7 +207,7 @@ module.exports = {
             }, {
                 "name": "admin cooldowns",
                 "usage": "admin cooldowns <kanal eller medlem> <tid i sekunder>",
-                "summary": "sätter vilotid för användare eller kanaler. sets the cooldowns for the entire guild for members or channels.",
+                "summary": "fastställer vilotid för användare eller kanaler.",
                 "text": [
                     "till exmpel: om kanalens vilotid är 10, så måste 10 sekunder gå innan ett nytt kommando behandlas.",
                     "alla kommandon mellan tiden för det första kommandot och nya kommandon ignoreras.", 

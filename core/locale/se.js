@@ -135,9 +135,9 @@ module.exports = {
                 "usage": "history [with <person>] OR [of <person>] [as <hjälte>]",
                 "summary": "kollar upp någons historik med en hjälte, eller historiken mellan två spelare. ",
                 "text": [
-                    "\n`with <spelare>`: visar hur ofta du vinner med och mot någon annan",
-                    "\n`of <spelare> as <hero>`: visar hur ofta någon vinner med en specifik hjälte",
-                    "\n`as <hjälte>`: visar hur ofta du vinner som en hjälte"
+                    "\n`with <spelare>`: visar din vinstfrekvens med och mot någon annan",
+                    "\n`of <spelare> as <hero>`: visar någons vinstfrekvens med en specifik hjälte",
+                    "\n`as <hjälte>`: visar din vinstfrekvens med en hjälte"
                 ],
                 "example": "history with frosty",
                 "aliases": ["lastgame"]
@@ -216,105 +216,105 @@ module.exports = {
                 "example": "admin cooldowns member 5"
             }, {
                 "name": "admin disable",
-                "usage": "admin disable [commands]",
-                "summary": "disables a list of commands per channel.",
+                "usage": "admin disable [kommandon]",
+                "summary": "avaktiverar en lista av kommandon per kanal.",
                 "text": [
-                    "note: you can not disable commands from the meta or admin categories.",
-                    "use the admin command by itself to see disabled commands for a channel."
+                    "notera: du kan inte avaktivera kommandon från meta-, eller adminkategorierna.",
+                    "använd adminkommandot ensamt för att se inaktiverade kommandon för en kanal."
                 ],
                 "example": "admin disable lastmatch matchinfo"
             }, {
                 "name": "admin enable",
-                "usage": "admin enable [commands]",
-                "summary": "re enables a list of commands for a channel.",
+                "usage": "admin enable [kommandon]",
+                "summary": "återaktiverar en lista av kommandon för en kanal.",
                 "text": [
-                    "use the admin command by itself to see a list of disabled commands."
+                    "använd adminkommandot ensamt för att se en lista med avaktiverade kommandon."
                 ],
                 "example": "admin enable patch list wiki"
             }, {
                 "name": "admin trivia",
-                "summary": "configures the channel in which trivia takes place.",
+                "summary": "konfigurerar kanalen där trivia äger rum.",
                 "text": [
-                    "\n`%sadmin trivia channel [#channel]`: sets the trivia channel to #channel.",
-                    "\n`%sadmin trivia channel here`: sets the trivia channel to the current channel.",
-                    "\n`%sadmin trivia channel none`: disables trivia entirely."
+                    "\n`%sadmin trivia channel [#kanal]`: förlägger triviakanalen till #kanal.",
+                    "\n`%sadmin trivia channel here`: anger den nuvarande kanalen som triviakanal.",
+                    "\n`%sadmin trivia channel none`: avaktiverar trivia fullständigt."
                 ]
             }, {
                 "name": "admin locale",
-                "summary": "changes language of bot on this server"
+                "summary": "ändrar bottens språk på denna server"
             }]
         },
         "history": {
             "main": {
-                "error": "Invalid syntax."
+                "error": "Ogiltig syntax."
             },
             "as": {
                 "embed": {
-                    "title": "%s as %s",
-                    "wins": "**Wins:** %s",
-                    "games": "**Games:** %s",
-                    "wr": "**Winrate:** %s%%"
+                    "title": "%s som %s",
+                    "wins": "**Vinster:** %s",
+                    "games": "**Matcher:** %s",
+                    "wr": "**Vinstfrekvens:** %s%%"
                 }
             },
             "with": {
-                "spelling": "Something went wrong. Check the spelling of the players and try again.",
-                "nodata": "I don't have enough data for this command!",
+                "spelling": "Något gick fel. Kolla stavningen av spelarna och försök igen.",
+                "nodata": "Jag har inte tillräcklig data för detta kommando!",
                 "embed": {
-                    "desc": "History between <@%s> and <@%s>",
-                    "same": "Same Team",
-                    "wl": "**Win/Loss:** %s/%s (%s games)",
-                    "wr": "**Winrate:** %s%%",
-                    "diff": "Different Teams",
-                    "wins": "**<@%s>'s wins:** %s"
+                    "desc": "Historik mellan <@%s> och <@%s>",
+                    "same": "Samma lag",
+                    "wl": "**Vinst/Förlust:** %s/%s (%s matcher)",
+                    "wr": "**Vinstfrekvens:** %s%%",
+                    "diff": "Olika lag",
+                    "wins": "**<@%s>'s vinster:** %s"
                 }
             }
         }, 
         "info": {
-            "me": "A Dota 2 related bot. Contact %s for support and questions!",
-            "onlinehelp": "Online Help",
-            "invitelink": "Invite Link",
-            "helpserver": "Help Server", // say like (EN) here or something
-            "specialthanks": "Special Thanks",
-            "alphatest": "Alpha Testers",
-            "translators": "Translators",
-            "githublog": "Github Log",
-            "links": "Links"
+            "me": "En Dota 2-relaterad bot. Kontakta %s for hjälp och frågor!",
+            "onlinehelp": "Hjälp online",
+            "invitelink": "Inbjudningslänk",
+            "helpserver": "Hjälpserver (På engelska)", // say like (EN) here or something
+            "specialthanks": "Särskilda tack",
+            "alphatest": "Alfatestare",
+            "translators": "Översättare",
+            "githublog": "Github-logg",
+            "links": "Länkar"
         },
         "item": {
-            "noitem": "Couldn't find that item.",
-            "conflicts": "Possible conflicts: %s"
+            "noitem": "Kunde inte hitta det föremålet.",
+            "conflicts": "Möjliga konflikter: %s"
         },
         "matches": {
-            "header": "Use `%smatchinfo` to get more about a specific match."
+            "header": "Använd `%smatchinfo` för att få mer om en specifik match."
         },
         "matchinfo": {
-            "error": "I couldn't find a match ID in your message!"
+            "error": "Jag kunde inte hitta ett match-ID i ditt meddelande!"
         },
         "mmr": {
-            "loading": "Hold tight while I grab the latest data.",
-            "nomember": "Please specify a member!",
-            "cantmember": "Couldn't find a member.",
-            "notregistered": "%s has not registered with me yet! Try `%shelp register`."
+            "loading": "Håll i dig medan jag griper tag i den senaste datan.",
+            "nomember": "Snälla specificera en medlem!",
+            "cantmember": "Kunde inte hitta en medlem.",
+            "notregistered": "%s har inte registrerat sig hos mig än! Försök med `%shelp register`."
         },
         "patch": {
-            "noversion": "Cant find that version! Here's the latest:"
+            "noversion": "Kunde inte hitta den versionen! Här är den senaste:"
         },
         "playerinfo": {
-            "nouser": "That user has not registered with me yet! Try `%shelp register`.",
-            "noid": "I couldn't find an account ID in your message!"
+            "nouser": "Den användaren har inte registrerat sig hos mig än! Försök med `%shelp register`.",
+            "noid": "Jag kunde inte hitta ett konto-ID i ditt meddelande!"
         },
         "restart": {
-            "message": "The bot is going down for an update. Wait a few seconds and type `--trivia start` again. Sorry for the inconvenience!"
+            "message": "Botten går ner för en uppdatering. Vänta några sekunder och skriv `--trivia start` igen. Ursäkta besväret!"
         }
     },
     "generic": {
-        "noheroerror": "Couldn't find that hero.",
-        "privateaccount": "This user's account is private.",
-        "generic": "Something went wrong."
+        "noheroerror": "Kunde inte hitta den hjälten.",
+        "privateaccount": "Denna användares konto är privat.",
+        "generic": "Något gick fel."
     },
     "resolve_dota_id": {
-        "notregistered": "%s has not registered with me yet! Try `%shelp register`.",
-        "badselect": "Something went wrong selecting this user from the database.",
-        "noid": "I couldn't find an account ID in your message!"
+        "notregistered": "%s har inte registrerat sig hos mig än! Försök med `%shelp register`.",
+        "badselect": "Något gick fel med att välja denna användare från databasen.",
+        "noid": "Jag kunde inte hitta ett konto-ID i ditt meddelande!"
     }
 };

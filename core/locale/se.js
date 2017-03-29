@@ -33,7 +33,7 @@ module.exports = {
             },
             "trivia": {
                 "enable": ":ok_hand: Trivia aktiverat i <#%s>.",
-                "disable": ":ok_hand: Triviakanal inaktiverat."
+                "disable": ":ok_hand: Triviakanal inaktiverad."
             }
         },
         "help": {

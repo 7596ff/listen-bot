@@ -75,8 +75,8 @@ client.on("ready", () => {
             if (!pg_guilds.includes(guild.id)) {
                 client.helper.log("bot", "found new guild, inserting...");
                 client.pg.query({
-                    "text": "INSERT INTO public.guilds (id, name, prefix, climit, mlimit) VALUES ($1, $2, $3, $4, $5);",
-                    "values": [guild.id, guild.name, "--", 0, 0]
+                    "text": "INSERT INTO public.guilds (id, name, prefix, climit, mlimit, locale) VALUES ($1, $2, $3, $4, $5, $6);",
+                    "values": [guild.id, guild.name, "--", 0, 0, "en"]
                 }).then(() => {
                     client.helper.log("bot", "  inserted.");
                 }).catch(err => {

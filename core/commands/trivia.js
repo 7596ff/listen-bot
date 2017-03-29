@@ -2,12 +2,12 @@ module.exports = (message, client, helper) => {
     const split_content = message.content.split(" ").slice(1);
     const command = split_content[0];
     if (command == "start") {
-        if (message.gcfg.trivia == message.channel.id) {
+        if (message.gcfg.trivia == message.channel.id && !client.trivia.channels.includes(message.channel.id)) {
             client.trivia.init(client, message.channel.id);
             helper.log(message, "trivia started");
         } else if (message.gcfg.trivia != 0 && message.gcfg.trivia != message.channel.id) {
             message.channel.createMessage(`Try this command in the trivia channel! <#${message.gcfg.trivia}>`);
-        } else {
+        } else if (message.gcfg.trivia == 0 || message.gcfg.trivia == undefined) {
             message.channel.createMessage(`This server does not have a designated trivia channel! Try \`${message.gcfg.prefix}help admin trivia\`.`);
         }
         return;

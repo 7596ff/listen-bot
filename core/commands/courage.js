@@ -31,7 +31,19 @@ async function courage(message, client, helper) {
         helper.handle(message, err);
     }
 
-    let hero = od_heroes[Math.floor(Math.random() * od_heroes.length)];
+    let override = message.content.split(" ").slice(1).join(" ");
+    let heck = false;
+    if (override && override.length > 0) {
+        try {
+            heck = await client.core.util.find_hero(override);
+        } catch (err) {
+            if (err === false) {
+                heck = false;
+            }
+        }
+    }
+
+    let hero = heck ? od_heroes.find(od_hero => od_hero.name == `npc_dota_hero_${heck}`) : od_heroes[Math.floor(Math.random() * od_heroes.length)];
     let rand_boot = all_boots[Math.floor(Math.random() * all_boots.length)];
     let boots = all_items.find(item => item.true_name == rand_boot);
 

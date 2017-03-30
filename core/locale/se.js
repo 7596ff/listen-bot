@@ -198,7 +198,7 @@ module.exports = {
             }],
             "admin": [{
                 "name": "admin",
-                "summary": "visar den nuvarande konfigurationen för severn."
+                "summary": "visar den nuvarande konfigurationen för servern."
             }, {
                 "name": "admin prefix",
                 "usage": "admin prefix <nytt prefix>",

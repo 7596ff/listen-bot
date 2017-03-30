@@ -6,7 +6,7 @@ async function history(message, client, helper) {
     });
 
     if ((response.with && response.as) || (!response.with && !response.as && !response.of)) {
-        message.channel.createMessage(client.core.locale[message.gcfg.locale].cmd.history.main.error)
+        message.channel.createMessage(client.core.locale[message.gcfg.locale].com.history.main.error)
             .catch(err => helper.handle(message, err));
         return;
     }

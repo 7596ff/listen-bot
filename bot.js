@@ -121,8 +121,8 @@ client.on("guildCreate", guild => {
 
     client.helper.log("bot", "  inserting into database");
     client.pg.query({
-        "text": "INSERT INTO public.guilds (id, name, prefix, climit, mlimit) VALUES ($1, $2, $3, $4, $5);",
-        "values": [guild.id, guild.name, "--", 0, 0]
+        "text": "INSERT INTO public.guilds (id, name, prefix, climit, mlimit, locale) VALUES ($1, $2, $3, $4, $5, $6);",
+        "values": [guild.id, guild.name, "--", 0, 0, "en"]
     }).then(() => {
         client.helper.log("bot", "  inserted");
     }).catch(err => {
@@ -197,7 +197,7 @@ sub.on("message", (channel, message) => {
 });
 
 function invoke(message, client, helper, command) {
-    if (message.gcfg.locale === undefined) message.gcfg.locale = "en";
+    if (!Object.keys(client.core.locale).includes(message.gcfg.locale)) message.gcfg.locale = "en";
 
     client.core.commands[command](message, client, helper);
     client.usage["all"] += 1;

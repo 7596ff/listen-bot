@@ -13,6 +13,11 @@ async function lastmatch(message, client, helper) {
         "as": "string"
     });
 
+    if ((!response.with && !response.of && !response.as) && message.content != "lastmatch") {
+        let members = await client.core.util.search_members(message.channel.guild.members, message.content.split(" ").slice(1));
+        response.of = members[Object.keys(members)[0]]; // yikes
+    }
+
     if (response.err) {
         message.channel.createMessage(locale.generic.generic).catch(err => helper.handle(message, err));
         helper.log(message, response.err);

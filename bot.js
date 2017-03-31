@@ -269,6 +269,8 @@ client.on("messageCreate", message => {
     if (message.author && message.author.id == client.user.id) return;
     if (!message.author) return;
 
+    if (message.channel.guild.id == "137589613312081920" && message.content.match("<:ixmikeW:256896118380691466>")) message.content = `${config.default_prefix}mike`;
+
     if (client.gcfg.hasOwnProperty(message.channel.guild.id) && client.gcfg[message.channel.guild.id].expires + 3600000 > Date.now()) {
         message.gcfg = JSON.parse(JSON.stringify(client.gcfg[message.channel.guild.id]));
         handle(message, client);

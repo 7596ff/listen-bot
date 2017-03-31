@@ -177,7 +177,7 @@ module.exports = {
                 "aliases": ["t", "challenge"]
             }, {
                 "name": "mike",
-                "summary": "återger en slumpmässig ixmikeism",
+                "summary": "<:ixmikeW:256896118380691466>",
                 "aliases": ["ixmike", "mikeism", "mikeisms"]
             }],
             "meta": [{

@@ -12,7 +12,8 @@ module.exports = (matches, name, od_heroes) => {
             od_heroes.find(hero => hero.id == match.hero_id).localized_name,
             [match.kills, match.deaths, match.assists].join("/"),
             `${Math.floor(match.duration / 60)}:${("00" + match.duration % 60).substr(-2, 2)}`,
-            new Date((match.start_time + match.duration) * 1000).toDateString()
+            new Date((match.start_time + match.duration) * 1000).toDateString(),
+			`[OD](https://www.opendota.com/matches/${match.match_id}) / [DB](https://www.dotabuff.com/matches/${match.match_id})`
         ];
         
         for (let val in row) {

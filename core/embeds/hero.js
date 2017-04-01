@@ -22,9 +22,11 @@ module.exports = (client, hero) => {
     let val3 = [
         `Vision (Day): ${hero.sightrange.Day}`,
         `Vision (Night): ${hero.sightrange.Night}`,
-        `Attack Range: ${hero.attackrange.Ranged || "150"}`,
+        `Attack Range: ${hero.attackrange.Ranged || hero.attackrange.Melee}`,
         `Base MR: ${hero.magicres}`
     ];
+
+    if (hero.attackrange.Melee && hero.attackrange.Ranged) val3[2] = `Attack Range: ${hero.attackrange.Melee}/${hero.attackrange.Ranged}`;
 
     attrs[hero.mainattribute] = `__${attrs[hero.mainattribute]}__`;
 

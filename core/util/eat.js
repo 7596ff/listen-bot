@@ -11,8 +11,8 @@ function eat(message, options) {
 
             if (type == "member") {
                 let found_obj = search_members(message.channel.guild.members, content.split(" "));
-                Object.keys(found_obj).forEach(key => {
-                    content = content.toLowerCase().replace(key, found_obj[key]);
+                Object.keys(found_obj.terms).forEach(key => {
+                    content = content.toLowerCase().replace(key, found_obj.terms[key]);
                 });
             }
 
@@ -34,7 +34,7 @@ function eat(message, options) {
                     responses[search] = res.join(" ");
                     break;
                 case "member":
-                    responses[search] = [search_members(message.channel.guild.members, res)[res.join(" ")]];
+                    responses[search] = search_members(message.channel.guild.members, res).all;
                     break;
                 }
             }

@@ -14,8 +14,8 @@ async function lastmatch(message, client, helper) {
     });
 
     if ((!response.with && !response.of && !response.as) && message.content != "lastmatch") {
-        let members = await client.core.util.search_members(message.channel.guild.members, message.content.split(" ").slice(1));
-        response.of = [members[Object.keys(members)[0]]]; // yikes
+        let found_obj = await client.core.util.search_members(message.channel.guild.members, message.content.split(" ").slice(1));
+        response.of = found_obj.all;
     }
 
     if (response.err) {

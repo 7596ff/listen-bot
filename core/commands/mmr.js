@@ -83,13 +83,13 @@ async function mmr(message, client, helper) {
                 return;
             }
 
-            let found = await client.core.util.search_members(message.channel.guild.members, terms);
-            if (Object.keys(found).length != 1) {
+            let found_obj = await client.core.util.search_members(message.channel.guild.members, terms);
+            if (found_obj.all.length != 1) {
                 message.channel.createMessage("Couldn't find a member!").catch(err => helper.handle(message, err));
                 return;
             }
 
-            id = found[Object.keys(found)[0]];
+            id = found_obj.all[0];
         } catch (err) {
             helper.log("mmr", err, "err");
         }

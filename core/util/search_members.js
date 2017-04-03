@@ -1,5 +1,9 @@
 function search_members(members, terms) {
-    let res = {};
+    let res = {
+        "all": [],
+        "terms": {},
+        "found": false
+    };
 
     for (let i = 0; i <= terms.length; i++) {
         for (let j = 0; j <= terms.length; j++) {
@@ -10,7 +14,11 @@ function search_members(members, terms) {
                     if (member.nick && member.nick.toLowerCase() === term) return true;
                     if (term.split(" ").length == 1 && term.match(member.id)) return true;
                 });
-                if (search) res[term] = search.id;
+                if (search) {
+                    res.all.push(search.id);
+                    res.terms[term] = search.id;
+                    res.found = true;
+                }
             }
         }
     }

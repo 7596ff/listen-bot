@@ -5,6 +5,8 @@ const pad = require("pad");
 let subcommands = {
     "list": async function(message, client, helper) {
         try {
+            await message.channel.sendTyping();
+
             let matches = await gg.fetchMatchUrlsAsync("dota2");
 
             if (matches.length < 1) {

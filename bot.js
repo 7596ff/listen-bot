@@ -4,6 +4,9 @@ const pg = require("pg");
 const config = require("./config.json");
 var client = new Eris(config.token, config.options);
 var sub = redis.createClient(config.redisconfig);
+const bluebird = require("bluebird");
+bluebird.promisifyAll(redis.RedisClient.prototype);
+bluebird.promisifyAll(redis.Multi.prototype);
 
 const dbots_post = require("./dbots/post");
 const Helper = require("./helper");
@@ -289,6 +292,11 @@ client.on("messageCreate", message => {
             client.helper.log("bot", err, "error");
         });
     }
+});
+
+process.on("unhandledRejection", (reason, p) => {
+    console.log(reason);
+    console.log(p);
 });
 
 // connect to everything in order 

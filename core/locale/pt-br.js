@@ -164,6 +164,11 @@ module.exports = {
                 "text": [
                     "\n`%sgosu list`: lists 8 upcoming pro games"
                 ]
+            }, {
+                "name": "prommr",
+                "summary": "lists highest mmr players on valve's leaderboards",
+                "example": "prommr europe",
+                "usage": "prommr <region>"
             }],
             "fun": [{
                 "name": "courage",

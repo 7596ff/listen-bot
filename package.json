@@ -21,9 +21,11 @@
   "homepage": "https://github.com/bippum/listen-bot#readme",
   "dependencies": {
     "bignumber.js": "4.0.0",
+    "bluebird": "3.5.0",
     "canvas": "1.6.4",
     "d": "1.0.0",
     "eris": "0.6.0",
+    "gosugamers-api": "0.1.2",
     "mika": "github:bippum/mika#master",
     "needle": "1.4.5",
     "node-schedule": "1.2.0",
@@ -32,7 +34,7 @@
     "pretty-ms": "2.1.0",
     "randomstring": "1.1.5",
     "redis": "2.6.5",
-    "sprintf-js": "^1.0.3",
+    "sprintf-js": "1.0.3",
     "steam": "1.4.0"
   }
 }

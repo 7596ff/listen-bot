@@ -6,7 +6,7 @@ const util = require("util");
 
 const bignumber = require("bignumber.js");
 
-const config = require("./json/config.json");
+const config = require("../config.json");
 
 var sub = Redis.createClient(config.redisconfig);
 var redis = Redis.createClient(config.redisconfig);

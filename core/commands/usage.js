@@ -1,5 +1,5 @@
 module.exports = (message, client, helper) => {
-    let help = client.core.json.help;
+    let help = client.core.locale.en.com.help_topics;
     let embed = {
         "fields": [],
         "author": {
@@ -15,14 +15,14 @@ module.exports = (message, client, helper) => {
         });
     });
 
-    let len = embed.fields.length % 3;
-    for (let i = 0; i < 3 - len; i++) {
-        embed.fields.push({
-            "name": "\u200b",
-            "value": "\u200b",
-            "inline": true
-        });
-    }
+    // let len = embed.fields.length % 3;
+    // for (let i = 0; i < 3 - len; i++) {
+    //     embed.fields.push({
+    //         "name": "\u200b",
+    //         "value": "\u200b",
+    //         "inline": true
+    //     });
+    // }
 
     message.channel.createMessage({
         "embed": embed

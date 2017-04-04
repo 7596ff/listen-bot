@@ -89,7 +89,7 @@ module.exports = {
                 "summary": "återger en lista på alla patcher i databsen där hjälten ändrades.",
                 "example": "list beastmaster"
             }],
-            "dynamic": [{
+            "personal": [{
                 "name": "register",
                 "usage": "register <steamprofil, länk till dotabuff eller opendota>",
                 "summary": "registrera din steamprofil med botten.",
@@ -157,6 +157,13 @@ module.exports = {
                     "\n`%smmr`: återger din mmr.",
                     "\n`%smmr of [medlem]`: återger en registrerad medlems mmr.",
                     "\n`%smmr all`: återger en rangordning för hela servern."
+                ]
+            }],
+            "esports": [{
+                "name": "gosu",
+                "summary": "some commands for pro games",
+                "text": [
+                    "\n`%sgosu list`: lists 8 upcoming pro games"
                 ]
             }],
             "fun": [{

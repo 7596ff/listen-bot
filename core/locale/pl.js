@@ -91,7 +91,7 @@ module.exports = {
                 "summary": "zwraca listę wszystkich patchów w których dany bohater został zmodyfikowany.",
                 "example": "list beastmaster"
             }],
-            "dynamic": [{
+            "personal": [{
                 "name": "register",
                 "usage": "register <profil steam, link dotabuff lub opendota>",
                 "summary": "zarejestruj swój profil w bazie danych bota.",
@@ -158,6 +158,13 @@ module.exports = {
                     "\n`%smmr`: zwraca twój mmr.",
                     "\n`%smmr of [użytkownik]`: zwraca mmr zarejestrowanego użytkownika.",
                     "\n`%smmr all`: zwraca tabelę wyników tego serwera."
+                ]
+            }],
+            "esports": [{
+                "name": "gosu",
+                "summary": "some commands for pro games",
+                "text": [
+                    "\n`%sgosu list`: lists 8 upcoming pro games"
                 ]
             }],
             "fun": [{

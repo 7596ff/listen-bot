@@ -89,7 +89,7 @@ module.exports = {
                 "summary": "Retorna uma lista de todas as atualizações no banco de dados do herói que recebeu mudanças.",
                 "example": "list beastmaster"
             }],
-            "dynamic": [{
+            "personal": [{
                 "name": "register",
                 "usage": "register <steam profile, dotabuff link or opendota link>",
                 "summary": "Registre o seu perfil steam com o robô.",
@@ -156,6 +156,13 @@ module.exports = {
                     "\n`%smmr`: Mostra o seu mmr.",
                     "\n`%smmr of [member]`: mostra o mmr de um membro registrado.",
                     "\n`%smmr all`: mostra uma tabela de classificação (leaderbord) de todo o servidor."
+                ]
+            }],
+            "esports": [{
+                "name": "gosu",
+                "summary": "some commands for pro games",
+                "text": [
+                    "\n`%sgosu list`: lists 8 upcoming pro games"
                 ]
             }],
             "fun": [{

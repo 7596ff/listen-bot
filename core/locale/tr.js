@@ -89,7 +89,7 @@
                 "summary": "belirtilen kahramanın güncellendiği, veri tabanındaki tüm yamaların listesini getirir.",
                 "example": "list beastmaster"
             }],
-            "dynamic": [{
+            "personal": [{
                 "name": "register",
                 "usage": "register <steam profili, dotabuff linki veya opendota linki>",
                 "summary": "bota steam profilinizi kaydettirin.",
@@ -156,6 +156,13 @@
                     "\n`%smmr`: mmr'ınızı getirir.",
                     "\n`%smmr of [üye]`: kayıtlı üyenin mmr'ını getirir.",
                     "\n`%smmr all`: tüm sunucu için sıralama getirir."
+                ]
+            }],
+            "esports": [{
+                "name": "gosu",
+                "summary": "some commands for pro games",
+                "text": [
+                    "\n`%sgosu list`: lists 8 upcoming pro games"
                 ]
             }],
             "fun": [{

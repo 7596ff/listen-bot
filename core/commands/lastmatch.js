@@ -13,7 +13,7 @@ async function lastmatch(message, client, helper) {
         "as": "string"
     });
 
-    if ((!response.with && !response.of && !response.as) && !["lastmatch", "lm"].includes(message.content)) {
+    if ((!response.with && !response.of && !response.as) && !["lastmatch", "lastgame", "lm"].includes(message.content)) {
         let found_obj = await client.core.util.search_members(message.channel.guild.members, message.content.split(" ").slice(1));
         response.of = found_obj.all;
     }

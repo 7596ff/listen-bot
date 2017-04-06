@@ -30,7 +30,7 @@ module.exports = (message, client, helper) => {
     for (let cat in help_topics) {
         let present = help_topics[cat].find(topic => topic.name == specific_topic);
         if (present) {
-            if ((message.gcfg.disabled[message.channel.id] || []).includes(specific_topic)) return;
+            if ((message.gcfg.disabled ? message.gcfg.disabled[message.channel.id] || [] : []).includes(specific_topic)) return;
 
             message.channel.createMessage({
                 "embed": help_embed(present, message.gcfg.prefix, client.sprintf)

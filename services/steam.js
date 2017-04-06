@@ -2,8 +2,6 @@ const Steam = require("steam");
 const Redis = require("redis");
 const Postgres = require("pg");
 
-const util = require("util");
-
 const bignumber = require("bignumber.js");
 
 const config = require("../config.json");
@@ -16,14 +14,22 @@ var steam_client = new Steam.SteamClient();
 var steam_user = new Steam.SteamUser(steam_client);
 var steam_friends = new Steam.SteamFriends(steam_client);
 
+function log(str) {
+    if (typeof str == "string") {
+        console.log(`${new Date().toJSON()} [STEAM] ${str}`);
+    } else {
+        console.log(str);
+    }
+}
+
 steam_client.on("connected", () => {
-    util.log("connected to steam.");
+    log("connected to steam.");
     steam_user.logOn(config.steam_config);
 });
 
 steam_client.on("logOnResponse", () => {
     steam_friends.setPersonaState(Steam.EPersonaState.Online);
-    util.log("logged on to steam.");
+    log("logged on to steam.");
     redis.publish("steam", JSON.stringify({
         "code": 0,
         "message": "connected"
@@ -32,9 +38,9 @@ steam_client.on("logOnResponse", () => {
 
 steam_client.on("error", (err) => {
     if (err.toString().match("Error: Disconnected")) {
-        util.log("disconnected from steam. reconnecting in 10 seconds...");
+        log("disconnected from steam. reconnecting in 10 seconds...");
     } else {
-        util.log(err);
+        log(err);
     }
 
     redis.publish("steam", JSON.stringify({
@@ -43,7 +49,7 @@ steam_client.on("error", (err) => {
     }));
 
     setTimeout(() => { 
-        util.log("reconnecting to steam...");
+        log("reconnecting to steam...");
         steam_client.connect();
     }, 10000);
 });
@@ -51,12 +57,12 @@ steam_client.on("error", (err) => {
 steam_friends.on("friend", (id, relationship) => {
     if (relationship == 3) {
         steam_friends.sendMessage(id, "Please send me the code you recieved on Discord!");
-        util.log(`accepted a friend request: ${id}`);
+        log(`accepted a friend request: ${id}`);
     }
 });
 
 process.on("exit", (code) => {
-    util.log(`steam exiting with code ${code}`);
+    log(`steam exiting with code ${code}`);
     redis.publish("steam", JSON.stringify({
         "code": 1,
         "message": "disconnected from steam"
@@ -66,7 +72,7 @@ process.on("exit", (code) => {
 steam_friends.on("friendMsg", (steam_id, message) => {
     let q = `register:${steam_id}`;
     redis.get(q, (err, reply) => {
-        if (err) util.log(err);
+        if (err) log(err);
         if (!reply) return;
         reply = reply.split(":");
         let code = reply[0];
@@ -97,12 +103,12 @@ steam_friends.on("friendMsg", (steam_id, message) => {
                     }));
                     steam_friends.removeFriend(steam_id);
                 }).catch(err => {
-                    util.log("something went wrong inserting or updating a user");
-                    util.log(err);
+                    log("something went wrong inserting or updating a user");
+                    log(err);
                 });
             }).catch(err => {
-                util.log("something went wrong selecting a user");
-                util.log(err);
+                log("something went wrong selecting a user");
+                log(err);
             });
         }
     });
@@ -111,7 +117,7 @@ steam_friends.on("friendMsg", (steam_id, message) => {
 sub.on("message", (channel, message) => {
     if (channel == "discord") {
         message = JSON.parse(message);
-        util.log(`REDIS: ${message.message}`);
+        log(`REDIS: ${message.message}`);
 
         switch(message.code) {
         case 3:
@@ -128,20 +134,20 @@ sub.on("message", (channel, message) => {
 });
 
 redis.on("ready", () => {
-    util.log("redis ready.");
+    log("redis ready.");
     pg.connect((err) => {
         if (err) {
-            util.log("err conencting to client");
-            util.log(err);
+            log("err conencting to client");
+            log(err);
             process.exit(1);
         }
 
-        util.log("pg ready.");
+        log("pg ready.");
         steam_client.connect();
     });
 });
 
 sub.on("ready", () => {
-    util.log("redis sub ready.");
+    log("redis sub ready.");
     sub.subscribe("discord");
 });

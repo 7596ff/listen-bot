@@ -1,10 +1,13 @@
 async function prommr(data) {
     return {
-        "author": data.region ? {
+        "author": data.regions.includes(data.region) ? {
             "name": `Top 10 Players by Solo MMR in ${data.region}`,
             "url": `http://www.dota2.com/leaderboards/#${data.region}`
-        } : {
+        } : data.region == "all" ? {
             "name": "Top 10 Players sorted by Solo MMR in all regions",
+            "url": "http://www.dota2.com/leaderboards/"
+        } : {
+            "name": `Top 10 Players sorted by Solo MMR in ${data.region}`,
             "url": "http://www.dota2.com/leaderboards/"
         },
         "fields": [{
@@ -16,7 +19,7 @@ async function prommr(data) {
             "inline": true
         }, {
             "name": "Solo MMR",
-            "value": data.leaderboard.slice(0, 10).map((player) => player.solo_mmr).join("\n"),
+            "value": data.leaderboard.slice(0, 10).map((player) => `${player.solo_mmr}<:blank:279251926409936896>`).join("\n"),
             "inline": true
         }],
         "timestamp": new Date(data.lastupdated),

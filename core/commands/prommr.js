@@ -6,7 +6,9 @@ async function prommr(message, client, helper) {
     if (regions.includes(region)) {
         try {
             let reply = await client.redis.getAsync(`prommr:${region}`);
+            // let old reply = await client.redis.getAsync(`prommr:${region}:old`);
             reply = JSON.parse(reply);
+            // oldreply = JSON.parse(oldreply);
 
             reply.region = region;
             let embed = await client.core.embeds.prommr(reply);
@@ -21,6 +23,7 @@ async function prommr(message, client, helper) {
     } else if (region == "all") {
         try {
             let replies = await Promise.all(regions.map((region) => client.redis.getAsync(`prommr:${region}`)));
+            // let oldreplies = await Promise.all(regions.map((region) => client.redis.getAsync(`prommr:${region}:old`)));
 
             let all = {
                 "lastupdated": 0,

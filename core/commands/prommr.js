@@ -11,23 +11,33 @@ async function prommr(message, client, helper) {
             // oldreply = JSON.parse(oldreply);
 
             reply.region = region;
+            reply.regions = regions;
             let embed = await client.core.embeds.prommr(reply);
 
             message.channel.createMessage({
                 "embed": embed
-            }).catch((err) => helper.log(message, err));
+            }).catch((err) => helper.log(message, err)).then(() => {
+                helper.log(message, `sent ${region} prommr`);
+            });
         } catch (err) {
             helper.log(message, "redis err");
             helper.log(message, err);
         }
-    } else if (region == "all") {
+    } else {
         try {
+            if (!region) {
+                message.channel.createMessage(`Available regions: \`all\`, ${regions.map(region => `\`${region}\``).join(", ")}`).catch((err) => helper.handle(message, err));
+                return;
+            }
+
             let replies = await Promise.all(regions.map((region) => client.redis.getAsync(`prommr:${region}`)));
             // let oldreplies = await Promise.all(regions.map((region) => client.redis.getAsync(`prommr:${region}:old`)));
 
             let all = {
                 "lastupdated": 0,
-                "leaderboard": []
+                "leaderboard": [],
+                "region": region,
+                "regions": regions
             };
             replies.forEach((reply) => {
                 reply = JSON.parse(reply);
@@ -39,17 +49,29 @@ async function prommr(message, client, helper) {
                 return b.solo_mmr - a.solo_mmr;
             });
 
+            if (region != "all") {
+                let filtered = all.leaderboard.filter((player) => player.country == region);
+                if (filtered.length > 1) {
+                    all.leaderboard = filtered;
+                } else {
+                    message.channel.createMessage(`Available regions: \`all\`, ${regions.map(region => `\`${region}\``).join(", ")}`).catch((err) => helper.handle(message, err));
+                    return;
+                }
+            } else {
+                region = "all"
+            }
+
             let embed = await client.core.embeds.prommr(all);
 
             message.channel.createMessage({
                 "embed": embed
-            }).catch((err) => helper.handle(message, err));
+            }).catch((err) => helper.handle(message, err)).then(() => {
+                helper.log(message, `sent ${region} prommr`);
+            });
          } catch (err) {
             helper.log(message, "redis err");
             helper.log(message, err);
         }
-    } else {
-        message.channel.createMessage(`Available regions: \`all\`, ${regions.map(region => `\`${region}\``).join(", ")}`).catch((err) => helper.handle(message, err));
     }
 }
 

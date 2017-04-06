@@ -2,7 +2,7 @@ const bluebird = require("bluebird");
 const gg = bluebird.promisifyAll(require("gosugamers-api"));
 const pad = require("pad");
 
-let subcommands = {
+const subcommands = {
     "list": async function(message, client, helper) {
         try {
             await message.channel.sendTyping();

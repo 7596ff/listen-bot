@@ -15,7 +15,7 @@ module.exports = {
                 "nodisa": "В этом канале нет отключенных команд."
             },
             "cooldowns": {
-                "confirm": ":ok_hand: Задана задержка канала %1$s: %2%s секунд.", // Set [channel] limit to [3] seconds.
+                "confirm": ":ok_hand: Задана задержка канала %1$s: %2$s секунд.", // Set [channel] limit to [3] seconds.
                 "channel": "канал",
                 "member": "пользователь"
             },
@@ -169,6 +169,14 @@ module.exports = {
                 "summary": "lists highest mmr players on valve's leaderboards",
                 "example": "prommr europe",
                 "usage": "prommr <region>"
+            }, {
+                "name": "twitch",
+                "summary": "commands for twitch.tv",
+                "text": [
+                    "\n`%stwitch clip`: returns a random twitch clip from trending clips.",
+                    "\nlist updated every hour.",
+                    "\n`%stwitch list [<locale>] returns top 5 streams. optional: 2 char language code."
+                ]
             }],
             "fun": [{
                 "name": "courage",

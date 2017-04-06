@@ -42,6 +42,12 @@ module.exports = (message, client, helper) => {
             hero_obj.abilities[index] = item.replace(/[012345]/, match => reverse[match]);
         });
 
+        if (res == "troll_warlord") {
+            hero_obj.abilities.splice(1, 1);
+            hero_obj.abilities[1] = "W - Whirling Axes";
+            hero_obj.abilities[2] = "E - Fervor";
+        }
+
         message.channel.createMessage({
             "embed": hero_embed(client, hero_obj)
         }).then(() => {

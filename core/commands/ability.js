@@ -38,6 +38,9 @@ module.exports = (message, client, helper) => {
         key = key.split("").sort().join("");
     }
 
+    if (hero_name == "troll_warlord" && key == "e") key = "d";
+    if (hero_name == "troll_warlord" && key == "w" && message.content.match("melee")) key = "e";
+
     let skill = abilities.filter(ability => {
         if (hero_name) {
             if (ability.hero_name == hero_name && ability.key == key.toLowerCase()) return true;

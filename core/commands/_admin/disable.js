@@ -4,7 +4,7 @@ module.exports = (message, client, helper) => {
     let to = message.content.split(" ");
     let actual = [];
 
-    let help = client.core.json.help;
+    let help = client.core.locale.en.com.help_topics;
     var possible = [];
     for (let cat in help) {
         if (cat != "admin" && cat != "meta") {

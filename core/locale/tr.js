@@ -15,7 +15,7 @@
                 "nodisa": "Bu kanalda devredışı bir komut yok."
             },
             "cooldowns": {
-                "confirm": ":ok_hand: %1$s limiti %2%s saniye olarak ayarlandı.", // Set [channel] limit to [3] seconds.
+                "confirm": ":ok_hand: %1$s limiti %2$s saniye olarak ayarlandı.", // Set [channel] limit to [3] seconds.
                 "channel": "kanal",
                 "member": "üye"
             },
@@ -169,6 +169,14 @@
                 "summary": "lists highest mmr players on valve's leaderboards",
                 "example": "prommr europe",
                 "usage": "prommr <region>"
+            }, {
+                "name": "twitch",
+                "summary": "commands for twitch.tv",
+                "text": [
+                    "\n`%stwitch clip`: returns a random twitch clip from trending clips.",
+                    "\nlist updated every hour.",
+                    "\n`%stwitch list [<locale>] returns top 5 streams. optional: 2 char language code."
+                ]
             }],
             "fun": [{
                 "name": "courage",

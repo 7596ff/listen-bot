@@ -15,7 +15,7 @@ module.exports = {
                 "nodisa": " Inga inaktiverade kommandon i denna kanal."
             },
             "cooldowns": {
-                "confirm": ":ok_hand: Sätt %1$s begränsning till %2%s sekunder.", // Set [channel] limit to [3] seconds.
+                "confirm": ":ok_hand: Sätt %1$s begränsning till %2$s sekunder.", // Set [channel] limit to [3] seconds.
                 "channel": "kanal",
                 "member": "medlem"
             },
@@ -170,6 +170,14 @@ module.exports = {
                 "summary": "lists highest mmr players on valve's leaderboards",
                 "example": "prommr europe",
                 "usage": "prommr <region>"
+            }, {
+                "name": "twitch",
+                "summary": "commands for twitch.tv",
+                "text": [
+                    "\n`%stwitch clip`: returns a random twitch clip from trending clips.",
+                    "\nlist updated every hour.",
+                    "\n`%stwitch list [<locale>] returns top 5 streams. optional: 2 char language code."
+                ]
             }],
             "fun": [{
                 "name": "courage",

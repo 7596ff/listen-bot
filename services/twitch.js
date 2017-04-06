@@ -79,15 +79,15 @@ function getStreams() {
 
         body = JSON.stringify(body);
 
-        client.set("twitch:clips", body, (err, reply) => {
-            err ? log(err) : log("clips saved");
+        client.set("twitch:streams", body, (err, reply) => {
+            err ? log(err) : log("streams saved");
         });
     });
 }
 
 client.on("ready", () => {
     log("redis ready");
-    
+
     getClips();
     getStreams();
 

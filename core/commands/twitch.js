@@ -9,15 +9,38 @@ const subcommands = {
             message.channel.createMessage([
                 `**${clip.broadcaster.display_name}** playing **Dota 2**, clipped by **${clip.curator.display_name}**, duration **${Math.ceil(clip.duration)} seconds**`,
                 clip.url
-            ].join("\n")).catch((err) => helper.handle(err));
+            ].join("\n")).catch((err) => helper.handle(err)).then(() => {
+                helper.log(message, "sent clip");
+            });
         } catch (err) {
             helper.log(message, "redis error in clips");
             helper.log(message, err);
-            console.log(err)
         }
     },
     "streams": async function(message, client, helper) {
+        let lang = message.content.split(" ").slice(2)[0] || message.gcfg.locale;
 
+        try {
+            let streams = await client.redis.getAsync("twitch:streams");
+            streams = JSON.parse(streams).streams;
+
+            let localstreams = streams.filter((stream) => stream.channel.language == lang);
+
+            if (localstreams.length < 1) {
+                localstreams = streams.filter((stream) => stream.channel.language == "en");
+            }
+
+            let embed = await client.core.embeds.streams(localstreams.slice(0, 5));
+
+            message.channel.createMessage({
+                "embed": embed
+            }).catch((err) => helper.handle(message, err)).then(() => {
+                helper.log(message, "sent streams");
+            });
+        } catch (err) {
+            helper.log(message, "redis error in streams");
+            helper.log(message, err);
+        }
     }
 };
 

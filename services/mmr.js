@@ -85,7 +85,7 @@ this.onMessage = async function(channel, message) {
 
     let region = message.split(":")[1];
     if (regions.includes(region)) {
-        await this.sleep(10);
+        await this.sleep(60);
         await saveOldMMR.call(this, region);
         await updateMMR.call(this, region);
     }

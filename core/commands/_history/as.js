@@ -22,6 +22,11 @@ async function as_(message, client, helper, as, _of) {
         }
     }
 
+    if (found_hero == "monkey_king" && message.author.id == "201478932434780160") {
+        message.channel.createMessage("face it u fucking lost");
+        return;
+    }
+
     resolve_dota_id(locale.resolve_dota_id, message, _of.id).then(account_id => {
         if (account_id.length < 1) {
             message.channel.createMessage(locale.generic.privateaccount).catch(err => helper.handle(message, err));

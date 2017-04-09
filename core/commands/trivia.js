@@ -33,8 +33,14 @@ module.exports = (message, client, helper) => {
                 rows = rows.filter(row => message.channel.guild.members.get(row.id));
                 msg.push("Top 10 users in this server: ");
             }
+
             rows = rows.slice(0, 10);
-            msg.push(...rows.map(row => `${client.users.find(user => user.id == row.id).username}: ${row.score}`));
+
+            msg.push(...rows.map(row => {
+                let user = client.users.find(user => user.id == row.id);
+                return `${user ? user.username : "Unknwon User"}: ${row.score}`;
+            }));
+
             message.channel.createMessage(msg.join("\n"))
                 .then(() => helper.log(message, `sent trivia leaderboard ${subcommand == "all" ? "of everywhere" : "of guild"}`))
                 .catch(err => helper.handle(message, err));

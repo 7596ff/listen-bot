@@ -153,7 +153,8 @@
         ],
         "notes": [
             "Cannot carry more than one.",
-            "Chop can be used to destroy Techies' Remote Mines."
+            "Chop can be used to destroy Techies' Remote Mines.",
+            "Does not stack with Iron Talon."
         ],
         "attributes": [
             "QUELL MELEE DAMAGE: 24",
@@ -1082,7 +1083,7 @@
         ],
         "attributes": [
             "+45 Movement Speed",
-            "+9 Selected Attribute",
+            "+10 Selected Attribute",
             "+25 Attack Speed"
         ],
         "lore": [
@@ -1096,7 +1097,7 @@
         "cost": 2050,
         "cooldown": 100,
         "description": [
-            "Active: Transmute - Kills a non-hero target for 190 gold and 2.5x experience. Cannot be used on Ancient Creeps."
+            "Active: Transmute - Kills a non-hero target for 220 gold and 1.75x experience. Cannot be used on Ancient Creeps."
         ],
         "notes": [
             "The gold given is reliable gold (you do not get the normal creep bounty).",
@@ -1104,7 +1105,9 @@
         ],
         "attributes": [
             "+30 Attack Speed",
-            "TRANSMUTE CAST RANGE: 600"
+            "TRANSMUTE CAST RANGE: 600",
+            "BONUS GOLD: 220",
+            "EXP MULTIPLIER: 1.75"
         ],
         "lore": [
             "Preserved through unknown magical means, the Hand of Midas is a weapon of greed, sacrificing animals to line the owner's pockets."
@@ -2679,10 +2682,10 @@
             "Passive: Poison Attack - Poisons the target, dealing damage over time and slowing movement based on whether the equipped hero is melee or ranged."
         ],
         "attributes": [
-            "POISON DAMAGE PER SECOND: 3",
+            "POISON DAMAGE PER SECOND: 5",
             "POISON MELEE SLOW: 12%",
             "POISON RANGED SLOW: 4%",
-            "POISON DURATION: 4"
+            "POISON DURATION: 3"
         ],
         "lore": [
             "Envenoms your veapon with the venom of a venomous viper."
@@ -3023,12 +3026,11 @@
         "cost": 900,
         "cooldown": 13,
         "description": [
-            "Passive: Break - Whenever you attack or are attacked, the health regeneration and 30 Movement Speed are lost for 13 seconds."
+            "Passive: Break - Whenever you attack or are attacked, the health regeneration and 25 Movement Speed are lost for 13 seconds."
         ],
         "attributes": [
-            "+85 Movement Speed",
-            "+3 Armor",
-            "+12 HP Regeneration"
+            "+90 Movement Speed",
+            "+14 HP Regeneration"
         ],
         "lore": [
             "While they increase the longevity of the wearer, this boot is not particularly reliable."

@@ -212,7 +212,7 @@
     "baseagi": "16",
     "armor1": "1",
     "basestr": "17",
-    "basespeed": "330",
+    "basespeed": "335",
     "format_name": "Pugna",
     "hp1": "540",
     "baseint": "26",
@@ -698,7 +698,7 @@
     "dota_name": "Lyralei"
 }, {
     "basedmg": "30 - 36",
-    "strgain": "2.2",
+    "strgain": "2.5",
     "intgain": "1.8",
     "sightrange": {
         "Night": "800",
@@ -725,7 +725,7 @@
     "true_name": "monkey_king",
     "dota_name": "Sun Wukong"
 }, {
-    "basedmg": "24 - 38",
+    "basedmg": "30 - 44",
     "strgain": "1.8",
     "intgain": "2.9",
     "sightrange": {
@@ -738,7 +738,7 @@
     "amp1": "1.6%",
     "mana1": "350",
     "magicres": "25%",
-    "damage1": "49-63",
+    "damage1": "55-69",
     "baseagi": "18",
     "armor1": "4",
     "basestr": "19",
@@ -775,7 +775,7 @@
     "hp1": "660",
     "baseint": "15",
     "mainattribute": "agi",
-    "agigain": "2.65",
+    "agigain": "2.8",
     "basearmor": "3.22",
     "attacktime": "1.7",
     "true_name": "faceless_void",
@@ -822,13 +822,13 @@
     "amp1": "1.1%",
     "mana1": "266",
     "magicres": "25%",
-    "damage1": "48-58",
+    "damage1": "50-60",
     "baseagi": "12",
     "armor1": "0",
-    "basestr": "17",
+    "basestr": "19",
     "basespeed": "285",
     "format_name": "Phoenix",
-    "hp1": "540",
+    "hp1": "580",
     "baseint": "18",
     "mainattribute": "str",
     "agigain": "1.3",
@@ -893,7 +893,7 @@
     "dota_name": "Atropos"
 }, {
     "basedmg": "24 - 36",
-    "strgain": "1.9",
+    "strgain": "2.3",
     "intgain": "3",
     "sightrange": {
         "Night": "800",
@@ -1116,7 +1116,7 @@
     "dota_name": "Twin Head Dragon"
 }, {
     "basedmg": "30 - 34",
-    "strgain": "2",
+    "strgain": "1.8",
     "intgain": "1.8",
     "sightrange": {
         "Night": "800",
@@ -1621,7 +1621,7 @@
 }, {
     "basedmg": "31 - 41",
     "strgain": "1",
-    "intgain": "2.8",
+    "intgain": "3.1",
     "sightrange": {
         "Night": "800",
         "Day": "1800"
@@ -1695,7 +1695,7 @@
     "basespeed": "295",
     "format_name": "Razor",
     "hp1": "620",
-    "baseint": "19",
+    "baseint": "21",
     "mainattribute": "agi",
     "agigain": "2",
     "basearmor": "2.08",
@@ -1856,14 +1856,14 @@
     "amp1": "1.3%",
     "mana1": "290",
     "magicres": "25%",
-    "damage1": "41-49",
+    "damage1": "43-51",
     "baseagi": "11",
     "armor1": "2",
     "basestr": "19",
     "basespeed": "295",
     "format_name": "Zeus",
     "hp1": "580",
-    "baseint": "20",
+    "baseint": "22",
     "mainattribute": "int",
     "agigain": "1.2",
     "basearmor": "1.54",
@@ -2003,7 +2003,7 @@
     "baseagi": "15",
     "armor1": "1",
     "basestr": "25",
-    "basespeed": "295",
+    "basespeed": "290",
     "format_name": "Treant Protector",
     "hp1": "700",
     "baseint": "17",
@@ -2561,13 +2561,13 @@
     "amp1": "1.1%",
     "mana1": "254",
     "magicres": "25%",
-    "damage1": "55-57",
+    "damage1": "57-59",
     "baseagi": "13",
     "armor1": "2",
-    "basestr": "24",
+    "basestr": "26",
     "basespeed": "315",
     "format_name": "Clockwerk",
-    "hp1": "680",
+    "hp1": "720",
     "baseint": "17",
     "mainattribute": "str",
     "agigain": "2.3",
@@ -2604,7 +2604,7 @@
     "true_name": "ursa",
     "dota_name": "Ulfsaar"
 }, {
-    "basedmg": "37 - 43",
+    "basedmg": "40 - 46",
     "strgain": "3",
     "intgain": "1.6",
     "sightrange": {
@@ -2617,7 +2617,7 @@
     "amp1": "1.1%",
     "mana1": "254",
     "magicres": "25%",
-    "damage1": "63-69",
+    "damage1": "66-72",
     "baseagi": "9",
     "armor1": "0",
     "basestr": "26",
@@ -2871,7 +2871,7 @@
     "baseagi": "13",
     "armor1": "0",
     "basestr": "19",
-    "basespeed": "325",
+    "basespeed": "330",
     "format_name": "Skywrath Mage",
     "hp1": "580",
     "baseint": "27",
@@ -2898,10 +2898,10 @@
     "damage1": "35-41",
     "baseagi": "14",
     "armor1": "1",
-    "basestr": "17",
+    "basestr": "16",
     "basespeed": "280",
     "format_name": "Invoker",
-    "hp1": "540",
+    "hp1": "520",
     "baseint": "16",
     "mainattribute": "int",
     "agigain": "1.9",
@@ -3067,7 +3067,7 @@
     "baseagi": "26",
     "armor1": "4",
     "basestr": "20",
-    "basespeed": "305",
+    "basespeed": "300",
     "format_name": "Juggernaut",
     "hp1": "600",
     "baseint": "14",
@@ -3079,7 +3079,7 @@
     "dota_name": "Yurnero"
 }, {
     "basedmg": "32 - 42",
-    "strgain": "2.7",
+    "strgain": "2.3",
     "intgain": "2",
     "sightrange": {
         "Night": "800",

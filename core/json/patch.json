@@ -1,5 +1,6 @@
 {
     "schema": [
+        "7.05",
         "7.04",
         "7.03",
         "7.02",
@@ -37,6 +38,358 @@
         "6.79"
     ],
     "data": [
+        {
+            "heroes": {
+                "abaddon": {
+                    "changes": [
+                        "• Strength gain reduced from 2.5 to 2.3"
+                    ],
+                    "true_name": "abaddon",
+                    "format_name": "abaddon"
+                },
+                "ancient_apparition": {
+                    "changes": [
+                        "• Cold Feet damage per tick rescaled from 37.5/50/62.5/75 to 30/50/70/90",
+                        "• Cold Feet cooldown from 13/11/9/7 to 10/9/8/7"
+                    ],
+                    "true_name": "ancient_apparition",
+                    "format_name": "Ancient Apparition"
+                },
+                "alchemist": {
+                    "changes": [
+                        "• Acid Spray radius rescaled from 625 to 400/475/550/625",
+                        "• Chemical Rage cooldown increased from 45 to 55"
+                    ],
+                    "true_name": "alchemist",
+                    "format_name": "Alchemist"
+                },
+                "bane": {
+                    "changes": [
+                        "• Level 15 Talent increased from +25% XP Gain to +30%",
+                        "• Level 20 Talent increased from +75 Enfeeble Damage Reduction to +90"
+                    ],
+                    "format_name": "Bane",
+                    "true_name": "bane"
+                },
+                "brewmaster": {
+                    "changes": [
+                        "• Earth Primal Unit's Demolish now gives +90/180/270 damage vs buildings (effectively 300% of base damage, instead of 300% of total damage)",
+                        "• Earth Primal Unit's BAT reduced from 1.35 to 1.25",
+                        "• Level 15 Talent increased from +12% Magic Resistance to +15%",
+                        "• Level 20 Talent increased from -35s Respawn Time to -40s",
+                        "• Level 25 Talent increased from +75 Damage to +120",
+                        "• Level 25 Talent changed from +20 Primal Split Unit Armor to +2000 Health to Primal Split Units"
+                    ],
+                    "true_name": "brewmaster",
+                    "format_name": "Brewmaster"
+                },
+                "bristleback": {
+                    "changes": [
+                        "• Quill Spray AoE increased from 650 to 700",
+                        "• Level 15 Talent increased from +200 Health to +225",
+                        "• Level 25 Talent increased from +25 Health Regen to +30",
+                        "• Level 25 Talent increased from +20 Quill Stack Damage to +25"
+                    ],
+                    "true_name": "bristleback",
+                    "format_name": "Bristleback"
+                },
+                "broodmother": {
+                    "changes": [
+                        "• Incapacitating Bite slow increased from 14/24/34/44% to 16/26/36/46%",
+                        "• Level 15 Talent increased from +325 Health to +350",
+                        "• Level 25 Talent increased from +200 Spiders Health to +225"
+                    ],
+                    "format_name": "Broodmother",
+                    "true_name": "broodmother"
+                },
+                "chen": {
+                    "changes": [
+                        "• Level 10 Talent from +15 Movement Speed to +25",
+                        "• Level 20 Talent increased from -40s Respawn Time to -45s"
+                    ],
+                    "true_name": "chen",
+                    "format_name": "Chen"
+                },
+                "rattletrap": {
+                    "changes": [
+                        "• Base strength increased by 2"
+                    ],
+                    "format_name": "Clockwerk",
+                    "true_name": "rattletrap"
+                },
+                "death_prophet": {
+                    "changes": [
+                        "• Strength gain increased from 1.9 to 2.3",
+                        "• Level 15 Talent increased from -1s Crypt Swarm Cooldown to -1.5s",
+                        "• Level 15 Talent increased from +100 Cast Range to +150"
+                    ],
+                    "format_name": "Death Prophet",
+                    "true_name": "death_prophet"
+                },
+                "doom_bringer": {
+                    "changes": [
+                        "• Doom damage increased from 20/35/50 to 25/40/55",
+                        "• Level 10 Talent increased from +250 Health to +275",
+                        "• Level 15 Talent increased from +20 Movement Speed to +25",
+                        "• Level 20 Talent increased from +35 Doom DPS to +40",
+                        "• Level 20 Talent changed from +25 Health Regen to Devour Can Target Ancients",
+                        "• Level 25 Talent changed from Devour Can Target Ancients to +40 Health Regen"
+                    ],
+                    "format_name": "Doom",
+                    "true_name": "doom_bringer"
+                },
+                "dragon_knight": {
+                    "changes": [
+                        "• Level 10 Talent increased from +9 Strength to +10",
+                        "• Level 10 Talent increased from +25 Attack Speed to +30",
+                        "• Level 15 Talent increased from +35% XP Gain to +40%"
+                    ],
+                    "format_name": "Dragon Knight",
+                    "true_name": "dragon_knight"
+                },
+                "earth_spirit": {
+                    "changes": [
+                        "• Rolling Boulder slow duration reduced from 1.4/1.6/1.8/2.0 to 0.8/1.2/1.6/2"
+                    ],
+                    "format_name": "Earth Spirit",
+                    "true_name": "earth_spirit"
+                },
+                "ember_spirit": {
+                    "changes": [
+                        "• Strength gain reduced from 2.0 to 1.8"
+                    ],
+                    "format_name": "Ember Spirit",
+                    "true_name": "ember_spirit"
+                },
+                "enchantress": {
+                    "changes": [
+                        "• Intelligence growth increased from 2.8 to 3.1",
+                        "• Level 15 Talent increased from +7 Nature's Attendants Wisps to +8"
+                    ],
+                    "format_name": "Enchantress",
+                    "true_name": "enchantress"
+                },
+                "faceless_void": {
+                    "changes": [
+                        "• Agility gain increased from 2.65 to 2.8"
+                    ],
+                    "format_name": "Faceless Void",
+                    "true_name": "faceless_void"
+                },
+                "invoker": {
+                    "changes": [
+                        "• Base strength reduced by 1"
+                    ],
+                    "format_name": "Invoker",
+                    "true_name": "invoker"
+                },
+                "juggernaut": {
+                    "changes": [
+                        "• Base movement speed reduced by 5"
+                    ],
+                    "format_name": "Juggernaut",
+                    "true_name": "juggernaut"
+                },
+                "lich": {
+                    "changes": [
+                        "• Chain Frost slow increased from -30% to -50%",
+                        "• Chain Frost slow duration reduced from 4 to 2.5",
+                        "• Sacrifice cooldown reduced from 60/50/40/30 to 60/48/36/24"
+                    ],
+                    "format_name": "Lich",
+                    "true_name": "lich"
+                },
+                "life_stealer": {
+                    "changes": [
+                        "• Open Wounds manacost rescaled from 110 to 140/130/120/110",
+                        "• Rage attack speed from 50/60/70/80 to 40/50/60/70"
+                    ],
+                    "format_name": "Lifestealer",
+                    "true_name": "life_stealer"
+                },
+                "lina": {
+                    "changes": [
+                        "• Level 10 Talent changed from -30s Respawn Time to +125 Cast Range",
+                        "• Level 15 Talent changed from +125 Cast Range to -30s Respawn Time"
+                    ],
+                    "true_name": "lina",
+                    "format_name": "Lina"
+                },
+                "lycan": {
+                    "changes": [
+                        "• Level 10 Talent increased from +175 Health to +200",
+                        "• Shapeshift critical strike damage increased from 140/160/180 to 160/180/200%"
+                    ],
+                    "format_name": "Lycan",
+                    "true_name": "lycan"
+                },
+                "magnataur": {
+                    "changes": [
+                        "• Empower manacost increased from 30/40/50/60 to 30/50/70/90",
+                        "• Level 20 Talent reduced from +15% Empower Damage/Cleave to +10%"
+                    ],
+                    "format_name": "Magnus",
+                    "true_name": "magnataur"
+                },
+                "monkey_king": {
+                    "changes": [
+                        "• Boundless Strike stun duration reduced from 0.5/1/1.5/2.0 to 0.4/0.8/1.2/1.6",
+                        "• Primal Spring manacost rescaled from 100/110/120/130 to 130/120/110/100",
+                        "• Primal Spring slow from 30/45/60/75% to 20/40/60/80%",
+                        "• Primal Spring cooldown from 16 to 19/17/15/13",
+                        "• Strength growth from 2.2 to 2.5",
+                        "• Wukong's Command cooldown from 100/85/70 to 130/110/90"
+                    ],
+                    "true_name": "monkey_king",
+                    "format_name": "Monkey King"
+                },
+                "furion": {
+                    "changes": [
+                        "• Base damage increased by 6"
+                    ],
+                    "true_name": "furion",
+                    "format_name": "Nature's Prophet"
+                },
+                "phantom_lancer": {
+                    "changes": [
+                        "• Phantom Rush bonus agility from 6/12/18/24 to 6/14/22/30"
+                    ],
+                    "format_name": "Phantom Lancer",
+                    "true_name": "phantom_lancer"
+                },
+                "phoenix": {
+                    "changes": [
+                        "• Base strength increased by 2"
+                    ],
+                    "format_name": "Phoenix",
+                    "true_name": "phoenix"
+                },
+                "pugna": {
+                    "changes": [
+                        "• Base movement speed increased from 330 to 335",
+                        "• Level 25 Talent increased from +125 Nether Blast Damage to +150"
+                    ],
+                    "format_name": "Pugna",
+                    "true_name": "pugna"
+                },
+                "queenofpain": {
+                    "changes": [
+                        "• Level 10 Talent increased from +9 Strength to +10",
+                        "• Shadow Strike cast range from 450/475/500/525 to 450/500/550/600",
+                        "• Shadow Strike damage per tick from 30/40/50/60 to 30/45/60/75"
+                    ],
+                    "format_name": "Queen of Pain",
+                    "true_name": "queenofpain"
+                },
+                "razor": {
+                    "changes": [
+                        "• Base intelligence increased from 19 to 21",
+                        "• Level 10 Talent increased from +20 Movement Speed to +25",
+                        "• Level 15 Talent increased from +150 Cast Range to +175",
+                        "• Level 20 Talent increased from +325 Health to +400"
+                    ],
+                    "format_name": "Razor",
+                    "true_name": "razor"
+                },
+                "shadow_shaman": {
+                    "changes": [
+                        "• Level 10 Talent increased from +175 Health to +200",
+                        "• Level 10 Talent increased from +20 Movement Speed to +25",
+                        "• Level 15 Talent increased from +30% XP Gain to +35%",
+                        "• Level 20 Talent changed from +20% Magic Resistance to +3 Shackles Duration",
+                        "• Level 25 Talent changed from +3s Shackles Duration to +350 Ether Shock Damage"
+                    ],
+                    "format_name": "Shadow Shaman",
+                    "true_name": "shadow_shaman"
+                },
+                "skywrath_mage": {
+                    "changes": [
+                        "• Base movement speed increased from 325 to 330",
+                        "• Level 10 Talent increased from +125 Health to +150"
+                    ],
+                    "format_name": "Skywrath Mage",
+                    "true_name": "skywrath_mage"
+                },
+                "sven": {
+                    "changes": [
+                        "• Great Cleave distance increased from 550 to 570",
+                        "• Level 10 Talent increased from +200 Mana to +225",
+                        "• Level 20 Talent increased from +15% Evasion to +20%",
+                        "• Level 25 Talent increased from -6s Storm Hammer Cooldown to -8s"
+                    ],
+                    "format_name": "Sven",
+                    "true_name": "sven"
+                },
+                "techies": {
+                    "changes": [
+                        "• Added a sound effect when Proximity Mines are being primed to explode",
+                        "• Level 20 Talent changed from -60s Respawn Time to +400 Blast Off Damage",
+                        "• Level 25 Talent changed from +400 Blast Off Damage to -60s Respawn Time"
+                    ],
+                    "format_name": "Techies",
+                    "true_name": "techies"
+                },
+                "tiny": {
+                    "changes": [
+                        "• Base damage increased by 3",
+                        "• Level 15 Talent increased from +35 Movement Speed to +40"
+                    ],
+                    "true_name": "tiny",
+                    "format_name": "Tiny"
+                },
+                "treant": {
+                    "changes": [
+                        "• Enabled in Captains Mode",
+                        "• Leech Seed slow reduced from 22/24/26/28% to 16/20/24/28%",
+                        "• Overgrowth cooldown rescaled from 70 to 100/85/70",
+                        "• Base movement speed reduced by 5"
+                    ],
+                    "format_name": "Treant Protector",
+                    "true_name": "treant"
+                },
+                "abyssal_underlord": {
+                    "changes": [
+                        "• Level 10 Talent increased from +4 Armor to +5",
+                        "• Level 15 Talent increased from +10% Spell Amplification to +12%",
+                        "• Level 15 Talent increased from +35 Movement Speed to +40"
+                    ],
+                    "true_name": "abyssal_underlord",
+                    "format_name": "Underlord"
+                },
+                "viper": {
+                    "changes": [
+                        "• Level 10 Talent increased from +150 Health to +175",
+                        "• Level 15 Talent increased from +8 Strength to +10",
+                        "• Level 15 Talent increased from +14 Agility to +16",
+                        "• Level 20 Talent changed from +7 Armor to Poison Attack Affects Buildings",
+                        "• Level 25 Talent changed from Poison Attack Affects Buildings to +20 Armor"
+                    ],
+                    "format_name": "Viper",
+                    "true_name": "viper"
+                },
+                "winter_wyvern": {
+                    "changes": [
+                        "• Level 15 Talent increased from +40 Damage to +50",
+                        "• Level 15 Talent increased from +15 Movement Speed to +20"
+                    ],
+                    "format_name": "Winter Wyvern",
+                    "true_name": "winter_wyvern"
+                },
+                "zuus": {
+                    "changes": [
+                        "• Base intelligence increased by 2",
+                        "• Level 10 Talent changed from +200 Health to +25 Movement Speed",
+                        "• Level 15 Talent increased from +10% Magic Resistance to +15%",
+                        "• Level 15 Talent increased from +5 Armor to +7 Armor",
+                        "• Level 20 Talent changed from +35 Movement Speed to +75 Arc Lightning Damage"
+                    ],
+                    "format_name": "Zeus",
+                    "true_name": "zuus"
+                }
+            },
+            "items": {},
+            "version": "7.05"
+        },
         {
             "heroes": {
                 "abaddon": {

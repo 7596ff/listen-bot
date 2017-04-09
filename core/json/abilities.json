@@ -1112,7 +1112,7 @@
     },
     {
         "stats": [
-            "DAMAGE PER TICK: 37.5 / 50.0 / 62.5 / 75.0",
+            "DAMAGE PER TICK: 30 / 50 / 70 / 90",
             "BREAK DISTANCE: 740",
             "STUN DURATION: 1.25 / 2.0 / 2.75 / 3.5",
             "CAST RANGE: 700 / 800 / 900 / 1000",
@@ -1123,7 +1123,7 @@
             "Deals damage every 0.8 seconds."
         ],
         "manacost": "125",
-        "cooldown": "13 11 9 7",
+        "cooldown": "10 9 8 7",
         "effects": [
             "Behavior: Unit Target",
             "Affects: Enemy Units",
@@ -1787,7 +1787,7 @@
         "manacost": "150 200 250",
         "stats": [
             "DURATION: 15.0",
-            "DAMAGE PER SECOND: 20 / 35 / 50",
+            "DAMAGE PER SECOND: 25 / 40 / 55",
             "SCEPTER DURATION: 16.0",
             "CAST POINT: 0.5s"
         ],
@@ -2109,7 +2109,8 @@
     },
     {
         "stats": [
-            "CLEAVE DAMAGE: 30% / 42% / 54% / 66%"
+            "CLEAVE DAMAGE: 30% / 42% / 54% / 66%",
+            "CLEAVE DISTANCE: 570"
         ],
         "notes": [
             "Cleave damage is reduced by armor type but not by armor value.",
@@ -2269,9 +2270,9 @@
     {
         "stats": [
             "INITIAL DAMAGE: 50 / 75 / 100 / 125",
-            "DAMAGE PER TICK: 30 / 40 / 50 / 60",
+            "DAMAGE PER TICK: 30 / 45 / 60 / 75",
             "MOVEMENT SLOW: -20% / -30% / -40% / -50%",
-            "CAST RANGE: 450 / 475 / 500 / 525",
+            "CAST RANGE: 450 / 500 / 550 / 600",
             "DURATION: 15",
             "CAST POINT: 0.4s"
         ],
@@ -3829,7 +3830,7 @@
             "Open Wounds slows over 8 different steps: 70% / 70% / 60% / 50% / 30% / 10% / 10% / 10%, with the slow decreasing one step per second.",
             "Stacks additively with other sources of Lifesteal."
         ],
-        "manacost": "110",
+        "manacost": "140 130 120 110",
         "cooldown": "24 20 16 12",
         "effects": [
             "Behavior: Unit Target",
@@ -3845,7 +3846,7 @@
     },
     {
         "stats": [
-            "ATTACK SPEED BONUS: 50 / 60 / 70 / 80",
+            "ATTACK SPEED BONUS: 40 / 50 / 60 / 70",
             "DURATION: 3 / 4 / 5 / 6",
             "CAST POINT: 0s"
         ],
@@ -4098,7 +4099,7 @@
     },
     {
         "stats": [
-            "RADIUS: 650",
+            "RADIUS: 700",
             "QUILL BASE DAMAGE: 20 / 40 / 60 / 80",
             "QUILL STACK DAMAGE: 30 / 32 / 34 / 36",
             "STACK DURATION: 14.0",
@@ -4908,7 +4909,7 @@
     {
         "stats": [
             "MISS CHANCE: 30% / 40% / 50% / 60%",
-            "MOVE SLOW: -14% / -24% / -34% / -44%",
+            "MOVE SLOW: -16% / -26% / -36% / -46%",
             "DURATION: 2"
         ],
         "notes": [
@@ -5941,7 +5942,7 @@
             "BONUS NIGHT VISION: 1000",
             "TRANSFORM TIME: 1.5",
             "CRITICAL CHANCE: 40%",
-            "CRITICAL DAMAGE: 140% / 160% / 180%"
+            "CRITICAL DAMAGE: 160% / 180% / 200%"
         ],
         "notes": [
             "Hex doesn't remove Lycan's movement speed.",
@@ -6085,7 +6086,7 @@
         "key": "e"
     },
     {
-        "manacost": "30 40 50 60",
+        "manacost": "30 50 70 90",
         "stats": [
             "DURATION: 40",
             "BONUS DAMAGE: 20% / 30% / 40% / 50%",
@@ -7156,7 +7157,7 @@
         "stats": [
             "MIN RUSH DISTANCE: 250",
             "MAX RUSH DISTANCE: 600 / 700 / 800 / 900",
-            "BONUS AGILITY: 6 / 12 / 18 / 24"
+            "BONUS AGILITY: 6 / 14 / 22 / 30"
         ],
         "notes": [
             "If the attack order is cancelled, the movement speed bonus is lost.",
@@ -7324,7 +7325,7 @@
             "DISTANCE (REMNANT): 1600.0",
             "DAMAGE: 100",
             "MOVEMENT SLOW: 80%",
-            "SLOW DURATION: 1.4 / 1.6 / 1.8 / 2.0",
+            "SLOW DURATION: 0.8 / 1.2 / 1.6 / 2",
             "CAST POINT: 0.01s"
         ],
         "notes": [
@@ -7849,7 +7850,7 @@
         "cooldown": "16 13 10 7",
         "stats": [
             "DAMAGE PER PULSE: 15 / 30 / 45 / 60",
-            "MOVEMENT SLOW: -22 / -24 / -26 / -28%",
+            "MOVEMENT SLOW: -16% / -20% / -24% / -28%",
             "RADIUS: 500",
             "DURATION: 4.5",
             "CAST POINT: 0.5s"
@@ -7903,7 +7904,7 @@
             "Works on Spell Immune units, but if units gain spell immunity after the effect starts, they'll break free.",
             "Being entangled by Overgrowth through enchanted trees from Eyes of the Forest does damage. Being entangled by Overgrowth directly from Treant Protector does not."
         ],
-        "cooldown": "70",
+        "cooldown": "100 85 70",
         "effects": [
             "Behavior: No Target",
             "Damage Type: Magical",
@@ -8282,7 +8283,8 @@
             "Mines last until they explode or are destroyed.",
             "Mines are triggered by invisible units.",
             "Mines will not be triggered by some flying units.",
-            "Grants 30 gold if destroyed by an enemy hero."
+            "Grants 30 gold if destroyed by an enemy hero.",
+            "A sound effect plays before a Proximity Mine explodes."
         ],
         "manacost": "110 130 150 170",
         "cooldown": "12",
@@ -9493,7 +9495,7 @@
         "notes": [
             "Has a 0.35 second transformation time, which can be used to dodge projectiles and stuns."
         ],
-        "cooldown": "45",
+        "cooldown": "55",
         "effects": [
             "Behavior: No Target"
         ],
@@ -9536,7 +9538,7 @@
     {
         "cooldown": "22",
         "stats": [
-            "RADIUS: 625",
+            "RADIUS: 400 / 475 / 550 / 625",
             "DURATION: 16.0",
             "DAMAGE PER SECOND: 15 / 20 / 25 / 30",
             "ARMOR REDUCTION: 4 / 5 / 6 / 7",
@@ -10122,7 +10124,7 @@
     {
         "cooldown": "25",
         "stats": [
-            "STUN DURATION: 0.5 / 1.0 / 1.5 / 2.0",
+            "STUN DURATION: 0.4 / 0.8 / 1.2 / 1.6",
             "CRIT MULTIPLIER: 140% / 160% / 180% / 200%",
             "CAST POINT: 0.4s"
         ],
@@ -10164,10 +10166,10 @@
         "key": "d"
     },
     {
-        "cooldown": "16",
+        "cooldown": "19 17 15 13",
         "stats": [
             "DAMAGE: 100 / 180 / 260 / 340",
-            "MOVEMENT SLOW: 30% / 45% / 60% / 75%",
+            "MOVEMENT SLOW: 20% / 40% / 60% / 80%",
             "SLOW DURATION: 4.0",
             "MAX DISTANCE: 1000",
             "CAST POINT: 0s"
@@ -10180,7 +10182,7 @@
         "description": [
             "Monkey King springs out from his tree perch, damaging and slowing enemies in the area where he lands. Damage and slow amounts are in proportion to channel duration."
         ],
-        "manacost": "100 110 120 130",
+        "manacost": "130 120 110 100",
         "hero_name": "monkey_king",
         "name": "Primal Spring",
         "key": "e"
@@ -10214,7 +10216,7 @@
             "Does not persist through Aegis Reincarnation."
         ],
         "manacost": "100",
-        "cooldown": "100 85 70",
+        "cooldown": "130 110 90",
         "effects": [
             "Behavior: Point Target",
             "Damage Type: Physical"
@@ -10598,9 +10600,9 @@
             "DAMAGE EACH BOUNCE: 280 / 370 / 460",
             "BOUNCES: 10",
             "BOUNCE RANGE: 575",
-            "MOVEMENT SLOW: -30%",
+            "MOVEMENT SLOW: -50%",
             "ATTACK SLOW: -30",
-            "SLOW DURATION: 4",
+            "SLOW DURATION: 2.5",
             "SCEPTER DAMAGE: 370 / 460 / 550",
             "SCEPTER CAST RANGE: 850",
             "MOVEMENT SLOW: -50%",
@@ -10630,7 +10632,7 @@
         "key": "r"
     },
     {
-        "cooldown": "60 50 40 30",
+        "cooldown": "60 48 36 24",
         "stats": [
             "HEALTH CONVERSION: 30% / 50% / 70% / 90%",
             "CAST POINT: 0.4s"

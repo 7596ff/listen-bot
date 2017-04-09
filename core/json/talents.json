@@ -3,15 +3,15 @@
         "true_name": "brewmaster",
         "20": [
             "+20 Strength",
-            "-35s Respawn Time"
+            "-40s Respawn Time"
         ],
         "15": [
-            "+12% Magic Resistance",
+            "+15% Magic Resistance",
             "+75 Thunder Clap Damage"
         ],
         "25": [
-            "+20 Primal Split Unit Armor",
-            "+75 Damage"
+            "+2000 Health to Primal Split Units",
+            "+120 Damage"
         ],
         "10": [
             "+3 Mana Regen",
@@ -26,7 +26,7 @@
             "+25 Attack Speed"
         ],
         "15": [
-            "+35 Movement Speed",
+            "+40 Movement Speed",
             "+60 Damage"
         ],
         "25": [
@@ -66,7 +66,7 @@
             "+6% Spell Amplification"
         ],
         "15": [
-            "+125 Cast Range",
+            "-30s Respawn Time",
             "+50 Damage"
         ],
         "25": [
@@ -74,7 +74,7 @@
             "-4s Dragon Slave Cooldown"
         ],
         "10": [
-            "-30s Respawn Time",
+            "+125 Cast Range",
             "+80 Light Strike Array Damage"
         ],
         "format_name": "Lina"
@@ -146,12 +146,12 @@
             "+50 Attack Speed"
         ],
         "15": [
-            "+200 Health",
+            "+225 Health",
             "+4 Max Goo Stacks"
         ],
         "25": [
-            "+20 Quill Stack Damage",
-            "+25 Health Regen"
+            "+25 Quill Stack Damage",
+            "+30 Health Regen"
         ],
         "10": [
             "+2 Mana Regen",
@@ -374,7 +374,7 @@
             "+15s Shapeshift Duration"
         ],
         "10": [
-            "+175 Health",
+            "+200 Health",
             "+15 Damage"
         ],
         "format_name": "Lycan"
@@ -430,7 +430,7 @@
             "-35s Respawn Time"
         ],
         "25": [
-            "+125 Nether Blast Damage",
+            "+150 Nether Blast Damage",
             "+50% Life Drain Heal"
         ],
         "10": [
@@ -442,20 +442,20 @@
     "shadow_shaman": {
         "true_name": "shadow_shaman",
         "20": [
-            "+20% Magic Resistance",
+            "+3 Shackles Duration",
             "-30s Respawn Time"
         ],
         "15": [
-            "+30% XP Gain",
+            "+35% XP Gain",
             "+100 Cast Range"
         ],
         "25": [
-            "+3s Shackles Duration",
+            "+350 Ether Shock Damage",
             "+1 Serpent Wards Attacks HP"
         ],
         "10": [
-            "+20 Movement Speed",
-            "+175 Health"
+            "+25 Movement Speed",
+            "+200 Health"
         ],
         "format_name": "Shadow Shaman"
     },
@@ -463,18 +463,18 @@
         "true_name": "zuus",
         "20": [
             "-40s Respawn Time",
-            "+35 Movement Speed"
+            "+75 Arc Lightning Damage"
         ],
         "15": [
-            "+10% Magic Resistance",
-            "+5 Armor"
+            "+15% Magic Resistance",
+            "+7 Armor"
         ],
         "25": [
             "+2% Static Field Damage",
             "+200 Cast Range"
         ],
         "10": [
-            "+200 Health",
+            "+25 Movement Speed",
             "+2 Mana Regen"
         ],
         "format_name": "Zeus"
@@ -686,8 +686,8 @@
             "+60 Attack Speed"
         ],
         "15": [
-            "+10% Spell Amplification",
-            "+35 Movement Speed"
+            "+12% Spell Amplification",
+            "+40 Movement Speed"
         ],
         "25": [
             "+0.4s Pit of Malice Root",
@@ -763,10 +763,10 @@
         "true_name": "bane",
         "20": [
             "+175 Cast Range",
-            "+75 Enfeeble Damage Reduction"
+            "+90 Enfeeble Damage Reduction"
         ],
         "15": [
-            "+25% XP Gain",
+            "+30% XP Gain",
             "+250 Health"
         ],
         "25": [
@@ -782,7 +782,7 @@
     "sven": {
         "true_name": "sven",
         "20": [
-            "15% Evasion",
+            "20% Evasion",
             "+30 Attack Speed"
         ],
         "15": [
@@ -790,11 +790,11 @@
             "+20 Movement Speed"
         ],
         "25": [
-            "-6s Storm Hammer Cooldown",
+            "-8s Storm Hammer Cooldown",
             "+65 Damage"
         ],
         "10": [
-            "+200 Mana",
+            "+225 Mana",
             "+6 Strength"
         ],
         "format_name": "Sven"
@@ -906,8 +906,8 @@
             "10% Cooldown Reduction"
         ],
         "15": [
-            "+100 Cast Range",
-            "-1s Crypt Swarm Cooldown"
+            "+150 Cast Range",
+            "-1.5s Crypt Swarm Cooldown"
         ],
         "25": [
             "+8 Exorcism Spirits",
@@ -1042,7 +1042,7 @@
     "techies": {
         "true_name": "techies",
         "20": [
-            "-60s Respawn Time",
+            "+400 Blast Off Damage",
             "+120 Gold/Min"
         ],
         "15": [
@@ -1050,7 +1050,7 @@
             "+30% XP Gain"
         ],
         "25": [
-            "+400 Blast Off Damage",
+            "-60s Respawn Time",
             "20% Cooldown Reduction"
         ],
         "10": [
@@ -1143,18 +1143,18 @@
         "true_name": "viper",
         "20": [
             "+75 Attack Range",
-            "+7 Armor"
+            "Poison Attack Affects Buildingsr"
         ],
         "15": [
-            "+14 Agility",
-            "+8 Strength"
+            "+16 Agility",
+            "+10 Strength"
         ],
         "25": [
             "+80 Viper Strike DPS",
-            "Poison Attack Affects Buildings"
+            "+20 Armor"
         ],
         "10": [
-            "+150 Health",
+            "+175 Health",
             "+15 Damage"
         ],
         "format_name": "Viper"
@@ -1183,7 +1183,7 @@
         "true_name": "razor",
         "20": [
             "+40 Attack Speed",
-            "+325 Health"
+            "+400 Health"
         ],
         "15": [
             "+150 Cast Range",
@@ -1195,7 +1195,7 @@
         ],
         "10": [
             "+15 Agility",
-            "+20 Movement Speed"
+            "+25 Movement Speed"
         ],
         "format_name": "Razor"
     },
@@ -1206,8 +1206,8 @@
             "+120 Gold/Min"
         ],
         "15": [
-            "+40 Damage",
-            "+15 Movement Speed"
+            "+50 Damage",
+            "+20 Movement Speed"
         ],
         "25": [
             "-3s Splinter Blast Cooldown",
@@ -1367,7 +1367,7 @@
         ],
         "15": [
             "+50 Damage",
-            "+7 Nature's Attendants Wisps"
+            "+8 Nature's Attendants Wisps"
         ],
         "25": [
             "Enchant Affects Ancients",
@@ -1546,11 +1546,11 @@
             "+12 Spiders Attack Damage"
         ],
         "15": [
-            "+325 Health",
+            "+350 Health",
             "20% Cooldown Reduction"
         ],
         "25": [
-            "+200 Spiders Health",
+            "+225 Spiders Health",
             "+8 Max Webs"
         ],
         "10": [
@@ -1614,7 +1614,7 @@
             "Removed Shadow Strike Cooldown"
         ],
         "10": [
-            "+9 Strength",
+            "+10 Strength",
             "+25 Damage"
         ],
         "format_name": "Queen of Pain"
@@ -1635,7 +1635,7 @@
         ],
         "10": [
             "+7 Intelligence",
-            "+125 Health"
+            "+150 Health"
         ],
         "format_name": "Skywrath Mage"
     },
@@ -1682,20 +1682,20 @@
     "doom_bringer": {
         "true_name": "doom_bringer",
         "20": [
-            "+25 Health Regen",
-            "+35 Doom DPS"
+            "Devour Can Target Ancients",
+            "+40 Doom DPS"
         ],
         "15": [
             "+15 Scorched Earth Damage/Heal",
-            "+20 Movement Speed"
+            "+25 Movement Speed"
         ],
         "25": [
-            "Devour Can Target Ancients",
+            "+40 Health Regen",
             "+2% Infernal Blade Damage"
         ],
         "10": [
             "+80 Devour Bonus Gold",
-            "+250 Health"
+            "+275 Health"
         ],
         "format_name": "Doom"
     },
@@ -2087,15 +2087,15 @@
         ],
         "15": [
             "+40 Damage",
-            "+35% XP Gain"
+            "+40% XP Gain"
         ],
         "25": [
             "2x Dragon Blood HP Regen/Armor",
             "+75 Movement Speed"
         ],
         "10": [
-            "+25 Attack Speed",
-            "+9 Strength"
+            "+30 Attack Speed",
+            "+10 Strength"
         ],
         "format_name": "Dragon Knight"
     },
@@ -2203,7 +2203,7 @@
         "true_name": "magnataur",
         "20": [
             "+40 Movement Speed",
-            "+15% Empower Damage/Cleave"
+            "+10% Empower Damage/Cleave"
         ],
         "15": [
             "+12 Strength",

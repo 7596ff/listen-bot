@@ -214,6 +214,10 @@
                 "usage": "help [<konu>]",
                 "summary": "yardım konularını, ya da istenen konu hakkındaki yardımı getirir.",
                 "example": "help patch"
+            }, {
+                "name": "suggest",
+                "summary": "creates a suggestion in the bot's help server.",
+                "usage": "suggest <suggestion>"
             }],
             "admin": [{
                 "name": "admin",

@@ -214,6 +214,10 @@ module.exports = {
                 "usage": "help [<topic>]",
                 "summary": "Mostra uma lista de tópicos de ajuda, ou ajuda específica sobre um tópico.",
                 "example": "help patch"
+            }, {
+                "name": "suggest",
+                "summary": "creates a suggestion in the bot's help server.",
+                "usage": "suggest <suggestion>"
             }],
             "admin": [{
                 "name": "admin",

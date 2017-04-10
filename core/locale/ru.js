@@ -214,6 +214,10 @@ module.exports = {
                 "usage": "help [<тема>]",
                 "summary": "возвращает список тем команд, которые можно использовать чтобы получить специфичную информацию о теме.",
                 "example": "help patch"
+            }, {
+                "name": "suggest",
+                "summary": "creates a suggestion in the bot's help server.",
+                "usage": "suggest <suggestion>"
             }],
             "admin": [{
                 "name": "admin",

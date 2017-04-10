@@ -2,15 +2,14 @@
 // filters duplicate names fom leaderboards.
 
 const config = require("../config.json");
-const bluebird = require("bluebird");
 const redis = require("redis");
 const needle = require("needle");
-
-bluebird.promisifyAll(redis.RedisClient.prototype);
-bluebird.promisifyAll(redis.Multi.prototype);
+const schedule = require("node-schedule");
 
 const regions = ["americas", "europe", "se_asia", "china"];
 const URL = "http://www.dota2.com/webapi/ILeaderboard/GetDivisionLeaderboard/v0001?division=";
+
+const jobs = {};
 
 this.log = function(str) {
     if (typeof str == "string") {
@@ -23,79 +22,91 @@ this.log = function(str) {
 var client = redis.createClient(config.redisconfig);
 var sub = redis.createClient(config.redisconfig);
 
-this.sleep = function(seconds) {
-    return new Promise((resolve) => setTimeout(resolve, seconds * 1000));
-}
+function getNewMMR(region) {
+    return new Promise((resolve, reject) => {
+        needle.get(`${URL}${region}`, (err, response, body) => {
+            if (err) reject({
+                "message": "err retrieving new mmr from steam",
+                "err": err
+            });
 
-sub.subscribe("__keyevent@0__:expired", (err) => {
-    if (err) {
-        console.log(err);
-        process.exit(1);
-    } else {
-        this.log("subscribed to keyevent expired");
-    }
-});
+            if (response.statusCode != 200) reject({
+                "message": "err retrieving new mmr from steam",
+                "err": response.statusCode
+            });
 
-async function updateMMR(region) {
-    needle.get(`${URL}${region}`, (err, response, body) => {
-        if (err) return;
-        if (response.statusCode != 200) return;
+            let leaderboard = body.leaderboard.map((player) => {
+                return {
+                    "name": player.name,
+                    "solo_mmr": player.solo_mmr,
+                    "country": player.country
+                }
+            }).filter((item, index, array) => {
+                if (array.indexOf(array.find(_item => item.name == _item.name)) == index) return true;
+            });
 
-        let leaderboard = body.leaderboard.map((player) => {
-            return {
-                "name": player.name,
-                "solo_mmr": player.solo_mmr,
-                "country": player.country
-            }
-        }).filter((item, index, array) => {
-            if (array.indexOf(array.find(_item => item.name == _item.name)) == index) return true;
-        });
-
-        this.log(`got new leaderboard for ${region}, length ${leaderboard.length}, saving to redis`);
-
-        try {
             let data = JSON.stringify({
                 "lastupdated": body.time_posted * 1000,
                 "leaderboard": leaderboard
             });
 
-            client.setAsync(`prommr:${region}`, data);
-
-            client.setexAsync(`prommr:${region}:expire`, body.next_scheduled_post_time - Math.floor(Date.now() / 1000), true);
-        } catch (err) {
-            this.log("redis err");
-            this.log(err);
-        }
+            client.set(`prommr:${region}`, data, (err) => {
+                if (err) {
+                    reject({
+                        "message": "err setting new mmr data in redis",
+                        "err": err
+                    });
+                } else {
+                    resolve({
+                        "length": leaderboard.length,
+                        "region": region
+                    });
+                }
+            });
+        });
     });
 }
 
-async function saveOldMMR(region) {
-    try {
-        let old = await client.getAsync(`prommr:${region}`);
-        await client.setAsync(`prommr:${region}:old`, old);
-        this.log(`saved old data for ${region}`);
-    } catch (err) {
-        this.log("redis err");
-        this.log(err);
-    }
+function saveOldMMR(region) {
+    return new Promise((resolve, reject) => {
+        client.get(`prommr:${region}`, (err, reply) => {
+            if (err) {
+                reject({
+                    "message": "error getting old mmr",
+                    "err": err
+                });
+            } else {
+                client.set(`prommr:${region}`, reply, (err) => {
+                    if (err) {
+                        reject({
+                            "message": "err setting old mmr",
+                            "err": err
+                        });
+                    } else {
+                        resolve(region);
+                    }
+                });
+            }
+        });
+    });
 }
 
-this.onMessage = async function(channel, message) {
-    if (!message.startsWith("prommr")) return;
-
-    let region = message.split(":")[1];
-    if (regions.includes(region)) {
-        await this.sleep(60);
-        await saveOldMMR.call(this, region);
-        await updateMMR.call(this, region);
-    }
+function cycleMMR() {
+    Promise.all(regions.map((region) => saveOldMMR.call(this, region))).then((results) => {
+        results.forEach((result) => this.log(`saved old mmr data to redis for region ${result}`));
+        Promise.all(results.map((result) => getNewMMR.call(this, result))).then((results) => {
+            results.forEach((result) => this.log(`got new leaderboard for ${result.region}, length ${result.length}, saved to redis`));
+        });
+    });
 }
-
-sub.on("message", (channel, message) => this.onMessage.call(this, channel, message));
 
 client.on("ready", () => {
     this.log("redis ready");
-    regions.forEach(region => updateMMR.call(this, region));
+    Promise.all(regions.map((region) => getNewMMR.call(this, region))).then((results) => {
+        results.forEach((result) => this.log(`got new leaderboard for ${result.region}, length ${result.length}, saved to redis`));
+    });
+
+    jobs.mmr = schedule.scheduleJob("30 18 * * *", cycleMMR);
 });
 
 sub.on("ready", () => {

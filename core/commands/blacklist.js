@@ -1,6 +1,8 @@
 const fs = require("fs");
 
 function blacklist(message, client, helper) {
+    if (message.author.id != client.config.owner) return;
+
     const ID = message.content.split(" ")[1];
     if (ID) {
         let guild = client.guilds.get(ID);

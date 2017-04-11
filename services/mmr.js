@@ -11,7 +11,7 @@ const URL = "http://www.dota2.com/webapi/ILeaderboard/GetDivisionLeaderboard/v00
 
 const jobs = {};
 
-this.log = function(str) {
+function log(str) {
     if (typeof str == "string") {
         console.log(`${new Date().toJSON()} [L_MMR] ${str}`);
     } else {
@@ -93,22 +93,22 @@ function saveOldMMR(region) {
 
 function cycleMMR() {
     Promise.all(regions.map((region) => saveOldMMR.call(this, region))).then((results) => {
-        results.forEach((result) => this.log(`saved old mmr data to redis for region ${result}`));
+        results.forEach((result) => log(`saved old mmr data to redis for region ${result}`));
         Promise.all(results.map((result) => getNewMMR.call(this, result))).then((results) => {
-            results.forEach((result) => this.log(`got new leaderboard for ${result.region}, length ${result.length}, saved to redis`));
+            results.forEach((result) => log(`got new leaderboard for ${result.region}, length ${result.length}, saved to redis`));
         });
     });
 }
 
 client.on("ready", () => {
-    this.log("redis ready");
+    log("redis ready");
     Promise.all(regions.map((region) => getNewMMR.call(this, region))).then((results) => {
-        results.forEach((result) => this.log(`got new leaderboard for ${result.region}, length ${result.length}, saved to redis`));
+        results.forEach((result) => log(`got new leaderboard for ${result.region}, length ${result.length}, saved to redis`));
     });
 
     jobs.mmr = schedule.scheduleJob("30 18 * * *", cycleMMR);
 });
 
 sub.on("ready", () => {
-    this.log("sub ready");
+    log("sub ready");
 });

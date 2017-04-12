@@ -34,6 +34,9 @@ module.exports = {
             "trivia": {
                 "enable": ":ok_hand: Trivia aktiverat i <#%s>.",
                 "disable": ":ok_hand: Triviakanal inaktiverad."
+            },
+            "botspam": {
+                "confirm": ":ok_hand: Botspam channel set to %s."
             }
         },
         "help": {
@@ -266,6 +269,11 @@ module.exports = {
             }, {
                 "name": "admin locale",
                 "summary": "ändrar bottens språk på denna server"
+            }, {
+                "name": "admin botspam",
+                "usage": "admin prefix <botspam channel>",
+                "summary": "change the designated botspam channel (this will be immune to cooldowns)",
+                "example": "admin botspam #use-the-bots"
             }]
         },
         "history": {

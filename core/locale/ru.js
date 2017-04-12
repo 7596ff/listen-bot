@@ -34,6 +34,9 @@ module.exports = {
             "trivia": {
                 "enable": ":ok_hand: Канал для игр теперь <#%s>.",
                 "disable": ":ok_hand: Канал ля игр отключен."
+            },
+            "botspam": {
+                "confirm": ":ok_hand: Botspam channel set to %s."
             }
         },
         "help": {
@@ -265,6 +268,11 @@ module.exports = {
             }, {
                 "name": "admin locale",
                 "summary": "changes language of bot on this server"
+            }, {
+                "name": "admin botspam",
+                "usage": "admin prefix <botspam channel>",
+                "summary": "change the designated botspam channel (this will be immune to cooldowns)",
+                "example": "admin botspam #use-the-bots"
             }]
         },
         "history": {

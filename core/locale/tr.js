@@ -34,6 +34,9 @@
             "trivia": {
                 "enable": ":ok_hand: Trivia <#%s> kanalında etkinleştirildi.",
                 "disable": ":ok_hand: Trivia kanalı devredışı bırakıldı."
+            },
+            "botspam": {
+                "confirm": ":ok_hand: Botspam channel set to %s."
             }
         },
         "help": {
@@ -265,6 +268,11 @@
             }, {
                 "name": "admin locale",
                 "summary": "botun bu sunucudaki dilini değiştirir"
+            }, {
+                "name": "admin botspam",
+                "usage": "admin prefix <botspam channel>",
+                "summary": "change the designated botspam channel (this will be immune to cooldowns)",
+                "example": "admin botspam #use-the-bots"
             }]
         },
         "history": {

@@ -36,6 +36,9 @@ module.exports = {
             "trivia": {
                 "enable": ":ok_hand: Zgadywanka włączona w kanale <#%s>.",
                 "disable": ":ok_hand: Kanał zgadywanki został wyłączony."
+            },
+            "botspam": {
+                "confirm": ":ok_hand: Botspam channel set to %s."
             }
         },
         "help": {
@@ -267,6 +270,11 @@ module.exports = {
             }, {
                 "name": "admin locale",
                 "summary": "zmienia język bota na tym serwerze"
+            }, {
+                "name": "admin botspam",
+                "usage": "admin prefix <botspam channel>",
+                "summary": "change the designated botspam channel (this will be immune to cooldowns)",
+                "example": "admin botspam #use-the-bots"
             }]
         },
         "history": {

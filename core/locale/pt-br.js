@@ -34,6 +34,9 @@ module.exports = {
             "trivia": {
                 "enable": ":ok_hand: Curiosidades habilitada em <#%s>.",
                 "disable": ":ok_hand: Canal de Curiosidades desabilitado."
+            },
+            "botspam": {
+                "confirm": ":ok_hand: Botspam channel set to %s."
             }
         },
         "help": {
@@ -265,6 +268,11 @@ module.exports = {
             }, {
                 "name": "admin locale",
                 "summary": "Altera o idioma do robô neste servidor"
+            }, {
+                "name": "admin botspam",
+                "usage": "admin prefix <botspam channel>",
+                "summary": "change the designated botspam channel (this will be immune to cooldowns)",
+                "example": "admin botspam #use-the-bots"
             }]
         },
         "history": {

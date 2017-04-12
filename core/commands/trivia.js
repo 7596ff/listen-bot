@@ -38,7 +38,7 @@ module.exports = (message, client, helper) => {
 
             msg.push(...rows.map(row => {
                 let user = client.users.find(user => user.id == row.id);
-                return `${user ? user.username : "Unknwon User"}: ${row.score}`;
+                return `${user ? user.username : "Unknown User"}: ${row.score}`;
             }));
 
             message.channel.createMessage(msg.join("\n"))
@@ -53,11 +53,12 @@ module.exports = (message, client, helper) => {
 
     if (command == "stats") {
         client.pg.query("SELECT * FROM scores ORDER BY score DESC;").then(res => {
+            let user = client.users.find(user => user.id == res.rows[0].id);
             let embed = {
                 "description": [
                     `**Current trivia games running:** ${client.trivia.channels.length}`,
                     `**Total questions:** ${client.trivia.questions.length}`,
-                    `**First place:** ${client.users.find(user => user.id == res.rows[0].id).username} - ${res.rows[0].score}`
+                    `**First place:** ${user ? user.username : "Unknown user"} - ${res.rows[0].score}`
                 ].join("\n"),
                 "timestamp": new Date()
             };

@@ -14,7 +14,8 @@ async function prommr(data) {
             "name": "Name",
             "value": data.leaderboard.slice(0, 10).map((player) => {
                 let flag = player.country ? `:flag_${player.country}:` : ":grey_question:";
-                return `${flag} ${player.name}`;
+                let str = `${flag} ${player.name}`;
+                return str.replace(/`/g, "'");
             }).join("\n"),
             "inline": true
         }, {

@@ -212,6 +212,8 @@ sub.on("message", (channel, message) => {
 function invoke(message, client, helper, command) {
     if (!Object.keys(client.core.locale).includes(message.gcfg.locale)) message.gcfg.locale = "en";
 
+    if (!client.core.commands.hasOwnProperty(command)) return;
+
     client.core.commands[command](message, client, helper);
     client.usage["all"] += 1;
     client.usage[command] += 1;

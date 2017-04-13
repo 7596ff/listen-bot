@@ -290,6 +290,8 @@ client.on("messageCreate", message => {
     if (!message.author) return;
 
     if (message.channel.guild.id == "137589613312081920" && message.content.match("<:ixmikeW:256896118380691466>")) message.content = `${config.default_prefix}mike`;
+    if (message.channel.guild.id == "137589613312081920" && message.content.match("<:rtzW:302222677991620608>")) message.content = `${config.default_prefix}arteezy`;
+    if (message.channel.guild.id == "137589613312081920" && message.content.match("<:jackyW:256527304576991243>")) message.content = `${config.default_prefix}envy`;
 
     if (client.gcfg.hasOwnProperty(message.channel.guild.id) && client.gcfg[message.channel.guild.id].expires + 3600000 > Date.now()) {
         message.gcfg = JSON.parse(JSON.stringify(client.gcfg[message.channel.guild.id]));

@@ -201,6 +201,9 @@
                 "name": "mike",
                 "summary": "<:ixmikeW:256896118380691466>",
                 "aliases": ["ixmike", "mikeism", "mikeisms"]
+            }, {
+                "name": "arteezy",
+                "summary": "<:rtzW:298509964203393024>"
             }],
             "meta": [{
                 "name": "info",

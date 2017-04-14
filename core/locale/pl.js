@@ -38,7 +38,7 @@ module.exports = {
                 "disable": ":ok_hand: Kanał zgadywanki został wyłączony."
             },
             "botspam": {
-                "confirm": ":ok_hand: Botspam channel set to %s."
+                "confirm": ":ok_hand: Kanał %s ustawiony jako botspam."
             }
         },
         "help": {
@@ -165,9 +165,9 @@ module.exports = {
             }],
             "esports": [{
                 "name": "gosu",
-                "summary": "some commands for pro games",
+                "summary": "komendy dla rozgrywek pro games",
                 "text": [
-                    "\n`%sgosu list`: lists 8 upcoming pro games"
+                    "\n`%sgosu list`: wyświetla 8 nadchodzących rozgrywek pro games"
                 ]
             }, {
                 "name": "prommr",
@@ -176,11 +176,11 @@ module.exports = {
                 "usage": "prommr <region>"
             }, {
                 "name": "twitch",
-                "summary": "commands for twitch.tv",
+                "summary": "komendy dla twitch.tv",
                 "text": [
-                    "\n`%stwitch clip`: returns a random twitch clip from trending clips.",
-                    "\nlist updated every hour.",
-                    "\n`%stwitch list [<locale>]`: returns top 5 streams. optional: 2 char language code."
+                    "\n`%stwitch clip`: zwraca losowy klip z listy obecnie trendujących na twitch.tv.",
+                    "\nlista jest aktualizowana co godzinę.",
+                    "\n`%stwitch list [<język>]`: zwraca 5 losowych streamów. opcjonalnie: 2-znakowy kod kraju."
                 ]
             }],
             "fun": [{
@@ -224,8 +224,8 @@ module.exports = {
                 "example": "help patch"
             }, {
                 "name": "suggest",
-                "summary": "creates a suggestion in the bot's help server.",
-                "usage": "suggest <suggestion>"
+                "summary": "tworzy sugestię na serwerze bota (tylko język angielski).",
+                "usage": "suggest <sugestia>"
             }],
             "admin": [{
                 "name": "admin",
@@ -275,8 +275,8 @@ module.exports = {
                 "summary": "zmienia język bota na tym serwerze"
             }, {
                 "name": "admin botspam",
-                "usage": "admin prefix <botspam channel>",
-                "summary": "change the designated botspam channel (this will be immune to cooldowns)",
+                "usage": "admin prefix <kanał botspam>",
+                "summary": "zmienia kanał botspam (ten kanał będzie ignorował czas odpoczynku dla komend)",
                 "example": "admin botspam #use-the-bots"
             }]
         },

@@ -9,7 +9,7 @@ const subcommands = {
             message.channel.createMessage([
                 `**${clip.broadcaster.display_name}** playing **Dota 2**, clipped by **${clip.curator.display_name}**, duration **${Math.ceil(clip.duration)} seconds**`,
                 clip.url
-            ].join("\n")).catch((err) => helper.handle(err)).then(() => {
+            ].join("\n")).catch((err) => helper.handle(message, err)).then(() => {
                 helper.log(message, "sent clip");
             });
         } catch (err) {

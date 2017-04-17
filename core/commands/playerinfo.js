@@ -42,6 +42,7 @@ function playerinfo_embed(player, od_heroes) {
 
     let dotabuff_link = `https://www.dotabuff.com/players/${player.profile.account_id}`;
     let opendota_link = `https://www.opendota.com/players/${player.profile.account_id}`;
+    let stratz_link = `https://stratz.com/player/${player.profile.account_id}`;
 
     return {
         "title": `Player Stats for ${player.profile.personaname}`,
@@ -59,7 +60,7 @@ function playerinfo_embed(player, od_heroes) {
             "inline": true
         }, {
             "name": "Links",
-            "value": `[DB](${dotabuff_link}) / [OD](${opendota_link}) / [Steam](${player.profile.profileurl})`,
+            "value": `[DB](${dotabuff_link}) / [OD](${opendota_link}) / [Stratz](${stratz_link}) / [Steam](${player.profile.profileurl})`,
             "inline": true
         }, {
             "name": "Top 5 Heroes",

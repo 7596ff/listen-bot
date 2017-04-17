@@ -86,6 +86,10 @@ module.exports = (od_heroes, match_data) => {
     let ptime = `${Math.floor(match_data.duration / 60)}:${("00" + match_data.duration % 60).substr(-2, 2)}`;
     let skill = match_data.skill ? skills[match_data.skill] : skills[0];
 
+    let od_link = `https://www.opendota.com/matches/${match_data.match_id}`;
+    let db_link = `https://www.dotabuff.com/matches/${match_data.match_id}`;
+    let st_link = `https://stratz.com/match/${match_data.match_id}`;
+
     return {
         "title": victory,
         "footer": {
@@ -102,7 +106,7 @@ module.exports = (od_heroes, match_data) => {
             "inline": true
         }, {
             "name": `${skill} Skill`,
-            "value": `[OD](https://www.opendota.com/matches/${match_data.match_id}) / [DB](https://www.dotabuff.com/matches/${match_data.match_id})`,
+            "value": `[OD](${od_link}) / [DB](${db_link}) / [Stratz](${st_link})`,
             "inline": true
         }, {
             "name": "Radiant",

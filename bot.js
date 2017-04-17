@@ -243,7 +243,19 @@ function handle(message, client) {
         }
 
         let disabled_list = message.gcfg.disabled ? message.gcfg.disabled[message.channel.id] : undefined;
-        if (disabled_list && disabled_list.includes(command)) return;
+        if (disabled_list && disabled_list.includes(command)) {
+            let content = "This command is disabled here!";
+            if (message.gcfg.botspam && message.gcfg.botspam != "0") {
+                content += ` Try using it in <#${message.gcfg.botspam}>.`;
+            }
+            message.channel.createMessage(content).catch((err) => client.helper.handle(message, err)).then((msg) => {
+                setTimeout(function() {
+                    client.deleteMessage(msg.channel.id, msg.id);
+                }, 10000);
+            });
+
+            return;
+        };
 
         let climit = `climit:${message.channel.id}`;
         let mlimit = `mlimit:${message.author.id}`;

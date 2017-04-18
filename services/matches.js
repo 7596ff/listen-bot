@@ -39,7 +39,7 @@ function getLastMatch(dotaID) {
                 if (err) console.log(err);
             });
 
-            if (reply && matchID != reply) {
+            if (matchID != reply) {
                 log(`new match ${dotaID}/${matchID}`);
                 redis.publish("listen:matches:out", JSON.stringify({
                     "type": "dotaid",

@@ -180,6 +180,26 @@ client.on("guildDelete", guild => {
     });
 });
 
+function postSubGames(matchID, rows, type, data) {
+    rows.forEach((row) => {
+        let channelID = row.channelid;
+        if (!channelID || !client.channelGuildMap[channelID]) return;
+        let key = `listen:matches:channels:${channelID}:sent:${matchID}`;
+
+        client.redis.get(key, (err, reply) => {
+            if (reply) return;
+
+            let message = "";
+            if (type == "dotaid") {
+                message = `<@${data.id}> just completed a match https://www.dotabuff.com/matches/${matchID}`;
+            }
+
+            client.createMessage(channelID, message).catch((err) => client.helper.handle(err));
+            client.redis.set(key, true);
+        });
+    });
+}
+
 sub.on("message", (channel, message) => {
     if (channel == "steam") {
         if (!client.config.steam_enabled) return;
@@ -207,6 +227,24 @@ sub.on("message", (channel, message) => {
     }
 
     if (channel == "__keyevent@0__:expired" && message.startsWith("trivia") && client.trivia) client.trivia.keyevent(message, client);
+
+    if (channel == "listen:matches:out") {
+        message = JSON.parse(message);
+
+        if (message.type == "dotaid") {
+            client.pg.query({
+                "text": "SELECT * FROM subs WHERE dotaid = $1;",
+                "values": [message.id]
+            }).catch((err) => console.error(err)).then((res) => {
+                client.pg.query({
+                    "text": "SELECT * FROM users WHERE dotaid = $1;",
+                    "values": [message.id]
+                }).catch((err) => console.error(err)).then((res2) => {
+                    if (res2.rows.length > 0) postSubGames(message.matchid, res.rows, "dotaid", res2.rows[0]);
+                });
+            });
+        }
+    }
 });
 
 function invoke(message, client, helper, command) {
@@ -358,4 +396,5 @@ sub.on("ready", () => {
     client.helper.log("bot", "redis sub ready.");
     sub.subscribe("steam");
     sub.subscribe("__keyevent@0__:expired");
+    sub.subscribe("listen:matches:out");
 });

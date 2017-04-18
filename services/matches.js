@@ -43,7 +43,7 @@ function getLastMatch(dotaID) {
                 log(`new match ${dotaID}/${matchID}`);
                 redis.publish("listen:matches:out", JSON.stringify({
                     "type": "dotaid",
-                    "dotaid": dotaID,
+                    "id": dotaID,
                     "matchid": matchID
                 }));
             }
@@ -67,9 +67,9 @@ function unsubDotaId(dotaID) {
 
 sub.on("message", (channel, message) => {
     if (channel == "__keyevent@0__:expired") {
-        if (!message.startsWith("listen:matches:in")) return;
+        if (!message.startsWith("listen:matches")) return;
         if (!message.endsWith("expire")) return;
-        message = message.content.split(":");
+        message = message.split(":");
         const type = message[2];
         const id = message[3];
 
@@ -78,20 +78,20 @@ sub.on("message", (channel, message) => {
 
     if (channel == "listen:matches:in") {
         message = JSON.parse(message);
-        if (message.type == "dotaid") getLastMatch(message.dotaid);
+        if (message.type == "dotaid") getLastMatch(message.id);
     }
 
     if (channel == "listen:matches:new") {
         message = JSON.parse(message);
         if (message.action == "add") {
             if (message.type == "dotaid") {
-                log(`subbed to ${message.dotaid}`);
-                getLastMatch(message.dotaid);
+                log(`subbed to ${message.id}`);
+                getLastMatch(message.id);
             }
         }
 
         if (message.action == "remove") {
-            if (message.type == "dotaid") unsubDotaId(message.dotaid);
+            if (message.type == "dotaid") unsubDotaId(message.id);
         }
     }
 });
@@ -108,16 +108,16 @@ pg.connect((err) => {
         console.log(err);
         process.exit(1);
     }).then((res) => {
-        if !(res.rows.length) return;
+        if (!res.rows.length) return;
 
         let dotaidrows = res.rows.filter((row) => row.dotaid);
         if (!dotaidrows.length) return;
 
-        log(`rescheduling sub sequcnce for ${dotaidrows.length}`);
+        log(`rescheduling sub sequcnce for ${dotaidrows.length} dota rows`);
         dotaidrows.forEach((row) => {
             redis.publish("listen:matches:in", JSON.stringify({
                 "type": "dotaid",
-                "dotaid": row.dotaid
+                "id": row.dotaid
             }));
         });
     });

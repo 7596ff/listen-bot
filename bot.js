@@ -189,12 +189,14 @@ function postSubGames(matchID, rows, type, data) {
         client.redis.get(key, (err, reply) => {
             if (reply) return;
 
-            let message = "";
             if (type == "dotaid") {
-                message = `<@${data.id}> just completed a match https://www.dotabuff.com/matches/${matchID}`;
+                client.mika.getMatch(matchID).then((match) => {
+                    if ((match.start_time + 86400) * 1000 < Date.now()) return;
+                    client.createMessage(channelID, { "embed": client.core.embeds.match(client.core.json.od_heroes, match)})
+                        .catch((err) => helper.handle(message, err));
+                }).catch((err) => helper.log(message, err, "err"));
             }
 
-            client.createMessage(channelID, message).catch((err) => client.helper.handle(err));
             client.redis.set(key, true);
         });
     });

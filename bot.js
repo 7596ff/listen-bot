@@ -380,16 +380,6 @@ client.redis.on("ready", () => {
         }
 
         client.helper.log("bot", "pg ready.");
-
-        if (config.steam_enabled) {
-            client.helper.log("bot", "starting services...");
-            fs.readdir("./services", (err, files) => {
-                files.forEach((file) => {
-                    spawn("pm2", ["restart", `l_${file.split(".")[0]}`]);
-                });
-            });
-        }
-
         client.connect();
     });
 });

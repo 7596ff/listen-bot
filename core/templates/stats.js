@@ -47,7 +47,7 @@ module.exports = (client) => {
                     "inline": true
                 }, {
                     "name": "Cmds (session/all time)",
-                    "value": `${client.usage.all}/${client.all_usage.all}`,
+                    "value": `${client.usage.stats.all}/${client.all_usage.stats.all}`,
                     "inline": true
                 }],
                 "timestamp": new Date().toJSON()

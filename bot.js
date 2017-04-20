@@ -50,14 +50,14 @@ client.all_usage = new client.core.util.usage(require("./usage.json"));
 client.usage = new client.core.util.usage();
 
 client.write_usage_stats = schedule.scheduleJob("*/10 * * * *", () => {
-    fs.writeFile("./usage.json", JSON.stringify(client.all_usage), (err) => {
+    fs.writeFile("./usage.json", JSON.stringify(client.all_usage.stats), (err) => {
         if (err) client.helper.log("bot", err, "error");
     });
 });
 
 process.on("exit", (code) => {
     client.helper.log("bot", `Exiting with code ${code}`);
-    fs.writeFileSync("./usage.json", JSON.stringify(client.all_usage));
+    fs.writeFileSync("./usage.json", JSON.stringify(client.all_usage.stats));
 });
 
 client.pg.on("error", (err) => {

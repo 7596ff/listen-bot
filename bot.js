@@ -22,6 +22,7 @@ const spawn = require("child_process").spawn;
 client.core = {};
 client.watching = {};
 client.gcfg = {};
+client.cooldowns = {};
 client.all_usage = require("./usage.json");
 client.usage = { "all": 0 };
 client.mika = new Mika();
@@ -260,11 +261,19 @@ function invoke(message, client, helper, command) {
     client.all_usage["all"] += 1;
     client.all_usage[command] += 1;
 
-    client.redis.set(`climit:${message.channel.id}`, "1");
-    client.redis.set(`mlimit:${message.author.id}`, "1");
+    if (message.gcfg.climit > 0) {
+        client.cooldowns[`climit:${message.channel.id}`] = message.timestamp;
+        setTimeout(() => {
+            client.cooldowns[`climit:${message.channel.id}`] = 0;
+        }, message.gcfg.climit * 1000);
+    }
 
-    client.redis.expire(`climit:${message.channel.id}`, message.gcfg.climit);
-    client.redis.expire(`mlimit:${message.author.id}`, message.gcfg.mlimit);
+    if (message.gcfg.mlimit > 0) {
+        client.cooldowns[`mlimit:${message.author.id}`] = message.timestamp;
+        setTimeout(() => {
+            client.cooldowns[`mlimit:${message.author.id}`] = 0;
+        }, message.gcfg.mlimit * 1000);
+    }
 }
 
 function handle(message, client) {
@@ -297,37 +306,29 @@ function handle(message, client) {
             return;
         };
 
+        if (!client.core.commands.hasOwnProperty(command)) return;
+
         let climit = `climit:${message.channel.id}`;
         let mlimit = `mlimit:${message.author.id}`;
 
-        if (command in client.core.commands) {
-            client.redis.get(climit, (err, reply) => {
-                if (reply) {
-                    if (reply != "1") return;
-                    client.redis.ttl(climit, (err, reply) => {
-                        message.channel.createMessage(`${message.channel.mention}, please cool down! ${reply} seconds left.`).then(new_message => {
-                            setTimeout(() => { new_message.delete(); }, reply * 1000);
-                        }).catch(err => client.helper.handle(message, err));
-                        client.redis.set(climit, "2");
-                        client.redis.expire(climit, reply);
-                    });
-                } else {
-                    client.redis.get(mlimit, (err, reply) => {
-                        if (reply) {
-                            if (reply != "1") return;
-                            client.redis.ttl(mlimit, (err, reply) => {
-                                message.channel.createMessage(`${message.author.mention}, please cool down! ${reply} seconds left.`).then(new_message => {
-                                    setTimeout(() => { new_message.delete(); }, reply * 1000);
-                                }).catch(err => client.helper.handle(message, err));
-                                client.redis.set(mlimit, "2");
-                                client.redis.expire(mlimit, reply);
-                            });
-                        } else {
-                            invoke(message, client, client.helper, command);
-                        }
-                    });
-                }
-            });
+        if (client.cooldowns[climit] > 0) {
+            if (client.cooldowns[climit] == 1) return;
+            let timeleft = Math.floor((message.timestamp - client.cooldowns[climit]) / 1000);
+                message.channel.createMessage(`${message.channel.mention}, please cool down! ${message.gcfg.climit - timeleft} seconds left.`).then(new_message => {
+                    client.cooldowns[climit] = 1;
+                    setTimeout(() => { new_message.delete() }, 8000);
+                }).catch((err) => client.helper.handle(message, err));
+        } else {
+            if (client.cooldowns[mlimit] > 0) {
+                if (client.cooldowns[mlimit] == 1) return;
+                let timeleft = Math.floor((message.timestamp - client.cooldowns[mlimit]) / 1000);
+                message.channel.createMessage(`${message.author.mention}, please cool down! ${message.gcfg.mlimit - timeleft} seconds left.`).then(new_message => {
+                    client.cooldowns[mlimit] = 1;
+                    setTimeout(() => { new_message.delete() }, 8000);
+                }).catch((err) => client.helper.handle(message, err));
+            } else {
+                invoke(message, client, client.helper, command);
+            }
         }
     } else {
         if (client.trivia && client.trivia.channels.includes(message.channel.id) && message.gcfg.trivia == message.channel.id) client.trivia.handle(message, client);

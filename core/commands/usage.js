@@ -3,14 +3,14 @@ module.exports = (message, client, helper) => {
     let embed = {
         "fields": [],
         "author": {
-            "name": `Total: ${client.all_usage.all}`
+            "name": `Total: ${client.all_usage.stats.all}`
         }
     };
     
     Object.keys(help).forEach(key => {
         embed.fields.push({
             "name": key,
-            "value": help[key].filter(topic => topic.name.split(" ").length === 1).map(topic => `\`${topic.name}\`: ${client.all_usage[topic.name] || 0}`).join("\n"), 
+            "value": help[key].filter(topic => topic.name.split(" ").length === 1).map(topic => `\`${topic.name}\`: ${client.all_usage.stats[topic.name] || 0}`).join("\n"),
             "inline": true
         });
     });

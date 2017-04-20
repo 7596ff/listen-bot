@@ -19,10 +19,24 @@ module.exports = (message, client, helper) => {
             }
             patch_seq_num++;
         }
-        message.channel.createMessage(`${format_name} has changed in ${patches.join(", ")}`).then(() => {
+
+        let map = patches.reverse().map((patch) => {
+            return {
+                "content": `${format_name} has changed in ${patches.join(", ")}\nUse ◀ and ▶ to scroll between patches.`,
+                "embed": client.core.embeds.patch_hero(res, patch_list.schema.indexOf(patch), patch_list)
+            }
+        });
+
+        let perms = message.channel.guild.members.get(client.user.id).permission.has("manageMessages");
+
+        message.channel.createMessage(perms ? map[patches.length - 1] : `${format_name} has changed in ${patches.join(", ")}`).then((new_message) => {
             helper.log(message, `listed hero (${res})`);
+            if (perms) {
+                client.watchers[new_message.id] = new client.core.util.watcher(client, new_message, message.author.id, "p/n", map);
+                helper.log(message, "started watching it too");
+            }
         }).catch(err => helper.handle(message, err));
-    }).catch(() => {
+    }).catch((err) => {
         helper.log(message, `list: couldn't find hero ${hero}`);
     });
 };

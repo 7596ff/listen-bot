@@ -23,8 +23,6 @@ client.core = {};
 client.watching = {};
 client.gcfg = {};
 client.cooldowns = {};
-client.all_usage = require("./usage.json");
-client.usage = { "all": 0 };
 client.mika = new Mika();
 client.redis = redis.createClient(config.redisconfig);
 client.pg = new pg.Client(config.pgconfig);
@@ -48,6 +46,8 @@ function load(obj, folder) {
 load(client.core, __dirname + "/core");
 
 client.helper = new Helper();
+client.all_usage = new client.core.util.usage(require("./usage.json"));
+client.usage = new client.core.util.usage();
 
 client.write_usage_stats = schedule.scheduleJob("*/10 * * * *", () => {
     fs.writeFile("./usage.json", JSON.stringify(client.all_usage), (err) => {
@@ -256,10 +256,9 @@ function invoke(message, client, helper, command) {
     if (!client.core.commands.hasOwnProperty(command)) return;
 
     client.core.commands[command](message, client, helper);
-    client.usage["all"] += 1;
-    client.usage[command] += 1;
-    client.all_usage["all"] += 1;
-    client.all_usage[command] += 1;
+
+    client.all_usage.increment(command);
+    client.usage.increment(command);
 
     if (message.gcfg.climit > 0) {
         client.cooldowns[`climit:${message.channel.id}`] = message.timestamp;

@@ -20,7 +20,7 @@ const fs = require("fs");
 const spawn = require("child_process").spawn;
 
 client.core = {};
-client.watching = {};
+client.watchers = {};
 client.gcfg = {};
 client.cooldowns = {};
 client.mika = new Mika();
@@ -179,6 +179,13 @@ client.on("guildDelete", guild => {
         client.helper.log("bot", "  something went wrong deleting", "error");
         client.helper.log("bot", err, "error");
     });
+});
+
+client.on("messageReactionAdd", (message, emoji, userID) => {
+    if (userID == client.user.id) return;
+    for (watcher in client.watchers) {
+        client.watchers[watcher].handle(message, emoji, userID);
+    }
 });
 
 function postSubGames(matchID, rows, type, data) {

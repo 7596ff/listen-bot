@@ -183,9 +183,8 @@ client.on("guildDelete", guild => {
 
 client.on("messageReactionAdd", (message, emoji, userID) => {
     if (userID == client.user.id) return;
-    for (watcher in client.watchers) {
-        client.watchers[watcher].handle(message, emoji, userID);
-    }
+    let watcher = client.watchers[message.id];
+    if (watcher) watcher.handle(message, emoji, userID);
 });
 
 function postSubGames(matchID, rows, type, data) {

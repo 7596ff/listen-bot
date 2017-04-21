@@ -8,16 +8,19 @@ class Watcher {
         this.behavior = behavior;
         this.map = map;
         this.delete = setTimeout(() => {
+            this.client.helper.log(this.message, `stopped watching ${this.messageID}`);
             delete client.watchers[this.messageID];
         }, 600000);
 
-        if (behavior == "p/n") {
+        if (this.behavior == "p/n") {
             this.position = map.length - 1;
             this.previousEmoji = "◀";
             this.nextEmoji = "▶";
             this.client.addMessageReaction(this.channelID, this.messageID, this.previousEmoji);
             this.client.addMessageReaction(this.channelID, this.messageID, this.nextEmoji);
         }
+
+        this.client.helper.log(this.message, `started watching ${this.messageID}`);
     }
 
     sleep(ms) {
@@ -34,7 +37,6 @@ class Watcher {
     }
 
     handle(message, emoji, userID) {
-        if (message.id !== this.messageID) return;
         if (userID !== this.userID) return;
         emoji = emoji.id ? `${emoji.name}:${emoji.id}` : emoji.name;
 

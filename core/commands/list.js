@@ -31,10 +31,7 @@ module.exports = (message, client, helper) => {
 
         message.channel.createMessage(perms ? map[patches.length - 1] : `${format_name} has changed in ${patches.join(", ")}`).then((new_message) => {
             helper.log(message, `listed hero (${res})`);
-            if (perms) {
-                client.watchers[new_message.id] = new client.core.util.watcher(client, new_message, message.author.id, "p/n", map);
-                helper.log(message, "started watching it too");
-            }
+            if (perms) client.watchers[new_message.id] = new client.core.util.watcher(client, new_message, message.author.id, "p/n", map);
         }).catch(err => helper.handle(message, err));
     }).catch((err) => {
         helper.log(message, `list: couldn't find hero ${hero}`);

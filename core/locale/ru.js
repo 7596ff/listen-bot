@@ -91,6 +91,11 @@ module.exports = {
                 "usage": "list <имя героя>",
                 "summary": "выдает список всех патчей из базы данных в которых герой получил изменения.",
                 "example": "list beastmaster"
+            }, {
+                "name": "guide",
+                "usage": "guide <hero name>",
+                "summary": "returns a torte de lini guide for a hero. still in beta",
+                "example": "guide phoenix"
             }],
             "personal": [{
                 "name": "register",

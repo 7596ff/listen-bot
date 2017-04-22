@@ -91,6 +91,11 @@
                 "usage": "list <kahraman adı>",
                 "summary": "belirtilen kahramanın güncellendiği, veri tabanındaki tüm yamaların listesini getirir.",
                 "example": "list beastmaster"
+            }, {
+                "name": "guide",
+                "usage": "guide <hero name>",
+                "summary": "returns a torte de lini guide for a hero. still in beta",
+                "example": "guide phoenix"
             }],
             "personal": [{
                 "name": "register",

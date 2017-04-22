@@ -93,6 +93,11 @@ module.exports = {
                 "usage": "list <nazwa bohatera>",
                 "summary": "zwraca listę wszystkich patchów w których dany bohater został zmodyfikowany.",
                 "example": "list beastmaster"
+            }, {
+                "name": "guide",
+                "usage": "guide <hero name>",
+                "summary": "returns a torte de lini guide for a hero. still in beta",
+                "example": "guide phoenix"
             }],
             "personal": [{
                 "name": "register",

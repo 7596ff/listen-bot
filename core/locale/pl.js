@@ -54,14 +54,10 @@ module.exports = {
                 "example": "hero sf"
             }, {
                 "name": "patch",
-                "usage": "patch [<wersja>] <nazwa bohatera>",
+                "usage": "patch <nazwa bohatera>",
                 "summary": "zwraca informacje o najnowszych zmianach dla danego bohatera z najnowszego patcha balansującego.",
-                "text": [
-                    "\n`%spatch <nazwa bohatera>`: zmiany dla danego bohatera z ostatniego patcha balansującego.",
-                    "\n`%spatch <wersja> <nazwa bohatera>`: zmiany dla bohatera z podanej wersji."
-                ],
                 "aliases": ["patchnotes", "notes"],
-                "example": "patch 7.01 monkey king"
+                "example": "patch monkey king"
             }, {
                 "name": "talents",
                 "usage": "talents <bohater>",
@@ -88,11 +84,6 @@ module.exports = {
                 "usage": "wiki <nazwa bohatera>",
                 "summary": "zwraca link do artykułu o bohaterze na wiki Doty 2.",
                 "example": "wiki techies"
-            }, {
-                "name": "list",
-                "usage": "list <nazwa bohatera>",
-                "summary": "zwraca listę wszystkich patchów w których dany bohater został zmodyfikowany.",
-                "example": "list beastmaster"
             }, {
                 "name": "guide",
                 "usage": "guide <hero name>",

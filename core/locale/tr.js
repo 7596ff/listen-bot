@@ -52,14 +52,10 @@
                 "example": "hero sf"
             }, {
                 "name": "patch",
-                "usage": "patch [<versiyon>] <kahraman adı>",
+                "usage": "patch <kahraman adı>",
                 "summary": "son dengeleme yamasında kahramana gelen güncellemeleri getirir.",
-                "text": [
-                    "\n`%spatch <kahraman adı>`: kahraman için son dengeleme yaması.",
-                    "\n`%spatch <versiyon> <kahraman adı>`: kahraman için bir versiyondaki değişiklikler."
-                ],
                 "aliases": ["patchnotes", "notes"],
-                "example": "patch 7.01 monkey king"
+                "example": "patch monkey king"
             }, {
                 "name": "talents",
                 "usage": "talents <kahraman>",
@@ -86,11 +82,6 @@
                 "usage": "wiki <kahraman adı>",
                 "summary": "belirtilen dota 2 kahramanı için wiki linki getirir.",
                 "example": "wiki techies"
-            }, {
-                "name": "list",
-                "usage": "list <kahraman adı>",
-                "summary": "belirtilen kahramanın güncellendiği, veri tabanındaki tüm yamaların listesini getirir.",
-                "example": "list beastmaster"
             }, {
                 "name": "guide",
                 "usage": "guide <hero name>",

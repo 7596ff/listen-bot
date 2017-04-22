@@ -52,14 +52,10 @@ module.exports = {
                 "example": "hero sf"
             }, {
                 "name": "patch",
-                "usage": "patch [<версия>] <имя героя>",
+                "usage": "patch <имя героя>",
                 "summary": "выдает последние изменения над героем в доте из последнего балансирующего патча.",
-                "text": [
-                    "\n`%spatch <имя героя>`: последний балансирующий патч для героя.",
-                    "\n`%spatch <версия> <имя героя>`: патч для героя из определенной версии."
-                ],
                 "aliases": ["patchnotes", "notes"],
-                "example": "patch 7.01 monkey king"
+                "example": "patch monkey king"
             }, {
                 "name": "talents",
                 "usage": "talents <герой>",
@@ -86,11 +82,6 @@ module.exports = {
                 "usage": "wiki <имя героя>",
                 "summary": "выдает ссылку на определенного героя в dota 2 вики.",
                 "example": "wiki techies"
-            }, {
-                "name": "list",
-                "usage": "list <имя героя>",
-                "summary": "выдает список всех патчей из базы данных в которых герой получил изменения.",
-                "example": "list beastmaster"
             }, {
                 "name": "guide",
                 "usage": "guide <hero name>",

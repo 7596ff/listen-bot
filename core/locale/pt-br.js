@@ -52,14 +52,10 @@ module.exports = {
                 "example": "hero sf"
             }, {
                 "name": "patch",
-                "usage": "patch [<versão>] <nome do herói>",
+                "usage": "patch <nome do herói>",
                 "summary": "Retorna a última mudança feita em um herói do Dota de uma última atualização de balanceamento.",
-                "text": [
-                    "\n`%spatch <Nome do Herói>`: Última atualização de balanceamento para um herói.",
-                    "\n`%spatch <versão> <hero name>`: Atualização para um herói de uma versão."
-                ],
                 "aliases": ["patchnotes", "notes"],
-                "example": "patch 7.01 monkey king"
+                "example": "patch monkey king"
             }, {
                 "name": "talents",
                 "usage": "talents <herói>",
@@ -86,11 +82,6 @@ module.exports = {
                 "usage": "wiki <nome do herói>",
                 "summary": "Retorna o link do Dota2 wiki para um herói específico.",
                 "example": "wiki techies"
-            }, {
-                "name": "list",
-                "usage": "list <nome do herói>",
-                "summary": "Retorna uma lista de todas as atualizações no banco de dados do herói que recebeu mudanças.",
-                "example": "list beastmaster"
             }, {
                 "name": "guide",
                 "usage": "guide <hero name>",

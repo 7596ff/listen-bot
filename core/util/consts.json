@@ -6,7 +6,6 @@
         "ability": ["ability", "skill", "spell"],
         "item": ["item"],
         "wiki": ["wiki"],
-        "list": ["list"],
         "register": ["register"],
         "unregister": ["unregister"],
         "playerinfo": ["playerinfo", "profile", "p"],

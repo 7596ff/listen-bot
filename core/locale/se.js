@@ -52,14 +52,10 @@ module.exports = {
                 "example": "hero sf"
             }, {
                 "name": "patch",
-                "usage": "patch [<version>] <hjältens namn>",
+                "usage": "patch <hjältens namn>",
                 "summary": "återger de senaste ändringarna till en dotahjälte från den senaste balanspatchen.",
-                "text": [
-                    "\n`%spatch <hjältens namn>`: senaste balanspatchen för en hjälte.",
-                    "\n`%spatch <version> <hjältens namn>`:  patch för en hjälte från en version."
-                ],
                 "aliases": ["patchnotes", "notes"],
-                "example": "patch 7.01 monkey king"
+                "example": "patch monkey king"
             }, {
                 "name": "talents",
                 "usage": "talents <hjälte>",
@@ -86,11 +82,6 @@ module.exports = {
                 "usage": "wiki <hjältens namn>",
                 "summary": "återger en länk till dota 2-wikin för den specificerade hjälten",
                 "example": "wiki techies"
-            }, {
-                "name": "list",
-                "usage": "list <hjältens namn>",
-                "summary": "återger en lista på alla patcher i databsen där hjälten ändrades.",
-                "example": "list beastmaster"
             }, {
                 "name": "guide",
                 "usage": "guide <hero name>",

@@ -1,65 +1,39 @@
 module.exports = (message, client, helper) => {
     if (client.trivia.channels.includes(message.channel.id)) return;
 
-    let locale = client.core.locale[message.gcfg.locale];
     let patch_list = client.core.json.patch;
-    let patch_hero = client.core.embeds.patch_hero;
-    let options = message.content.split(" ").slice(1);
-  
-    for (let arg in options) {
-        if (client.core.json.patch.schema.includes(options[arg])) {
-            let version = options[arg];
-            options.splice(options.indexOf(version), 1);
-            let hero = options.join(" ");
+    let hero = message.content.split(" ").slice(1).join(" ").toLowerCase();
 
-            client.core.util.find_hero(hero).then(res => {
-                helper.log(message, `patch: version (${version}) and hero name (${res})`);
-                if (patch_list.data[patch_list.schema.indexOf(version)]["heroes"][res]) {
-                    message.channel.createMessage({
-                        "embed": patch_hero(res, patch_list.schema.indexOf(version), patch_list)
-                    }).then(() => {
-                        helper.log(message, "  sent patch message");
-                    }).catch(err => helper.handle(message, err));
-                } else {
-                    for (let hero_list in patch_list.data) {
-                        if (res in patch_list.data[hero_list]["heroes"]) {
-                            message.channel.createMessage({
-                                "content": locale.com.patch.noversion,
-                                "embed": patch_hero(res, hero_list, patch_list)
-                            }).then(() => {
-                                helper.log(message, "  can't find that version, sent latest patch message");
-                            }).catch(err => helper.handle(message, err));
-                            return;
-                        }
-                    }
-                }
-            }).catch(() => {
-                helper.log(message, `patch hero: couldn't find hero ${hero}`);
-                message.channel.createMessage(locale.generic.noheroerror).catch(err => helper.handle(err)).then((msg) => {
-                    setTimeout(() => { msg.delete() }, 4000);
-                });
-            });
-            return;
-        }
-    }
-
-    let hero = options.join(" ");
     client.core.util.find_hero(hero).then(res => {
-        helper.log(message, `patch: hero name (${res})`);
-        for (let hero_list in patch_list.data) {
-            if (res in patch_list.data[hero_list]["heroes"]) {
-                message.channel.createMessage({
-                    "embed": patch_hero(res, hero_list, patch_list)
-                }).then(() => {
-                    helper.log(message, "  sent latest patch message");
-                }).catch(err => helper.handle(message, err));
-                return;
+        let format_name = client.core.json.od_heroes.find(od_hero => od_hero.name == `npc_dota_hero_${res}`).localized_name;
+        let patches = [];
+        let found = false;
+        let patch_seq_num = 0;
+        while (!found) {
+            if (patch_list.data[patch_seq_num]) {
+                if (patch_list.data[patch_seq_num].heroes[res]) {
+                    patches.push(patch_list.data[patch_seq_num].version);
+                }
+            } else {
+                found = true;
             }
+            patch_seq_num++;
         }
-    }).catch(() => {
-        helper.log(message, `patch hero: couldn't find hero ${hero}`);
-        message.channel.createMessage(locale.generic.noheroerror).catch(err => helper.handle(err)).then((msg) => {
-            setTimeout(() => { msg.delete() }, 4000);
+
+        let map = patches.reverse().map((patch) => {
+            return {
+                "content": `${format_name} has changed in ${patches.join(", ")}\nUse ◀ and ▶ to scroll between patches.`,
+                "embed": client.core.embeds.patch_hero(res, patch_list.schema.indexOf(patch), patch_list)
+            }
         });
+
+        let perms = message.channel.guild.members.get(client.user.id).permission.has("manageMessages");
+
+        message.channel.createMessage(perms ? map[patches.length - 1] : `${format_name} has changed in ${patches.join(", ")}\nMissing patch notes? Reinvite the bot with \`${message.gcfg.prefix}invite\`.`).then((new_message) => {
+            helper.log(message, `listed hero (${res})`);
+            if (perms) client.watchers[new_message.id] = new client.core.util.watcher(client, new_message, message.author.id, "p/n", map, map.length - 1);
+        }).catch(err => helper.handle(message, err));
+    }).catch((err) => {
+        helper.log(message, `list: couldn't find hero ${hero}`);
     });
 };

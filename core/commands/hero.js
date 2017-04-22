@@ -58,7 +58,7 @@ module.exports = (message, client, helper) => {
     }).catch(err => {
         if (!err) {
             message.channel.createMessage(client.core.locale[message.gcfg.locale].generic.noheroerror)
-                .catch((err) => helper.handle(err));
+                .catch((err) => helper.handle(message, err));
             helper.log(message, `hero: couldn't find ${alias}`);
         } else {
             helper.log(message, err.toString());

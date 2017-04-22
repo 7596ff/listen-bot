@@ -1,5 +1,5 @@
 class Watcher {
-    constructor(client, message, userID, behavior, map) {
+    constructor(client, message, userID, behavior, map, start) {
         this.client = client;
         this.message = message;
         this.channelID = message.channel.id;
@@ -13,7 +13,7 @@ class Watcher {
         }, 600000);
 
         if (this.behavior == "p/n") {
-            this.position = map.length - 1;
+            this.position = start;
             this.previousEmoji = "◀";
             this.nextEmoji = "▶";
             this.client.addMessageReaction(this.channelID, this.messageID, this.previousEmoji);

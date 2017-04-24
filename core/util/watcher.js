@@ -7,6 +7,7 @@ class Watcher {
         this.userID = userID;
         this.behavior = behavior;
         this.map = map;
+        this.working = true;
         this.delete = setTimeout(() => {
             this.client.helper.log(this.message, `stopped watching ${this.messageID}`);
             delete client.watchers[this.messageID];
@@ -16,8 +17,14 @@ class Watcher {
             this.position = start;
             this.previousEmoji = "◀";
             this.nextEmoji = "▶";
-            this.client.addMessageReaction(this.channelID, this.messageID, this.previousEmoji);
-            this.client.addMessageReaction(this.channelID, this.messageID, this.nextEmoji);
+
+            Promise.all([
+                this.client.addMessageReaction(this.channelID, this.messageID, this.previousEmoji),
+                this.client.addMessageReaction(this.channelID, this.messageID, this.nextEmoji)
+            ]).catch((err) => {
+                this.client.helper.log(`couldn't add reaction to ${this.messageID}`);
+                this.working = false;
+            });
         }
 
         this.client.helper.log(this.message, `started watching ${this.messageID}`);
@@ -28,6 +35,8 @@ class Watcher {
     }
 
     edit(emoji, userID) {
+        if (this.working === false) return;
+
         this.client.removeMessageReaction(this.channelID, this.messageID, emoji, userID).catch((err) => {
             this.client.helper.log(this.message, err);
         });

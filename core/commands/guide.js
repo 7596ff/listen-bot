@@ -39,7 +39,7 @@ async function parseGuide(id) {
                     section.items.push($(element).attr("itemname"));
                 });
 
-                if (section.name.toLowerCase() != "patreon.com/torte") sections.push(section);
+                if (section.items.length > 0) sections.push(section);
             }
         });
 
@@ -265,6 +265,7 @@ async function guide(message, client, helper) {
         helper.log(message, `sent guide to ${hero}`);
         if (perms) client.watchers[sent.id] = new client.core.util.watcher(client, sent, message.author.id, "p/n", msg.contents, 0);
     } catch (err) {
+        console.log(msg.contents[0].embed.fields)
         await message.channel.createMessage(backup);
     }
 }

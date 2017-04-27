@@ -29,6 +29,7 @@ async function consumeResponse(feed, body) {
         });
     } else if (feed.action === "publish") {
         let post = {};
+        post.author = feed.name;
 
         if (feed.key === "listen:rss:blog") {
             post.title = body.rss.channel.item[0].title;
@@ -83,9 +84,9 @@ function executeJob(feed) {
 
     needle.get(url, { headers }, (err, response, body) => {
         if (err || response.statusCode !== 200) {
-            console.error(`something wrong with ${feed.name}. ${err && "err:"}`);
-            err && console.error(err);
-            response.statsuCode && console.error(`status code: ${response.statusCode}`);
+            console.error(`something wrong with ${feed.name}.`);
+            console.error(err);
+            console.error(`status code: ${response.statusCode}`);
         } else {
             consumeResponse(feed, body);
         }

@@ -20,14 +20,14 @@
 }, {
     "name": "Sir Belvedere Updates",
     "key": "listen:rss:belvedere",
-    "url": "https://www.reddit.com/user/SirBelvedere/.rss",
+    "url": "https://www.reddit.com/user/SirBelvedere/submitted/.rss",
     "type": "rss",
     "cron": "*/5 * *  *",
     "action": "publish"
 }, {
     "name": "Cyborgmatt Updates",
     "key": "listen:rss:cyborgmatt",
-    "url": "https://www.reddit.com/user/Cyborgmatt/.rss",
+    "url": "https://www.reddit.com/user/Cyborgmatt/submitted/.rss",
     "type": "rss",
     "cron": "*/5 * * * *",
     "action": "publish"

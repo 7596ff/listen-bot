@@ -1,0 +1,105 @@
+[{
+    "name": "Dota 2 Blog",
+    "key": "listen:rss:blog",
+    "url": "http://blog.dota2.com/feed/",
+    "type": "rss",
+    "cron": "*/5 * * * *",
+    "action": "publish"
+}, {
+    "name": "Steam News Feed",
+    "key": "listen:rss:steamnews",
+    "url": "http://api.steampowered.com/ISteamNews/GetNewsForApp/v0002/",
+    "querystring": {
+        "appid": 570,
+        "maxlength": 300,
+        "format": "json"
+    },
+    "type": "json",
+    "cron": "*/5 * * * *",
+    "action": "publish"
+}, {
+    "name": "Sir Belvedere Updates",
+    "key": "listen:rss:belvedere",
+    "url": "https://www.reddit.com/user/SirBelvedere/.rss",
+    "type": "rss",
+    "cron": "*/5 * *  *",
+    "action": "publish"
+}, {
+    "name": "Cyborgmatt Updates",
+    "key": "listen:rss:cyborgmatt",
+    "url": "https://www.reddit.com/user/Cyborgmatt/.rss",
+    "type": "rss",
+    "cron": "*/5 * * * *",
+    "action": "publish"
+}, {
+    "name": "Pro MMR: Americas",
+    "key": "prommr:americas",
+    "url": "http://www.dota2.com/webapi/ILeaderboard/GetDivisionLeaderboard/v0001",
+    "querystring": {
+        "division": "americas"
+    },
+    "type": "json",
+    "cron": "30 18 * * *",
+    "action": "store"
+}, {
+    "name": "Pro MMR: Europe",
+    "key": "prommr:europe",
+    "url": "http://www.dota2.com/webapi/ILeaderboard/GetDivisionLeaderboard/v0001",
+    "querystring": {
+        "division": "europe"
+    },
+    "type": "json",
+    "cron": "30 18 * * *",
+    "action": "store"
+}, {
+    "name": "Pro MMR: South East Asia",
+    "key": "prommr:se_asia",
+    "url": "http://www.dota2.com/webapi/ILeaderboard/GetDivisionLeaderboard/v0001",
+    "querystring": {
+        "division": "se_asia"
+    },
+    "type": "json",
+    "cron": "30 18 * * *",
+    "action": "store"
+}, {
+    "name": "Pro MMR: China",
+    "key": "prommr:china",
+    "url": "http://www.dota2.com/webapi/ILeaderboard/GetDivisionLeaderboard/v0001",
+    "querystring": {
+        "division": "china"
+    },
+    "type": "json",
+    "cron": "30 18 * * *",
+    "action": "store"
+}, {
+    "name": "Twitch Clips",
+    "key": "twitch:clips",
+    "url": "https://api.twitch.tv/kraken/clips/top",
+    "querystring": {
+        "game": "Dota 2",
+        "period": "day",
+        "limit": 20
+    },
+    "headers": {
+        "Accept": "application/vnd.twitchtv.v4+json"
+    },
+    "authtype": "twitch",
+    "type": "json",
+    "cron": "*/60 * * * *",
+    "action": "store"
+}, {
+    "name": "Twitch Streams",
+    "key": "twitch:streams",
+    "url": "https://api.twitch.tv/kraken/streams",
+    "querystring": {
+        "game": "Dota 2",
+        "limit": 100
+    },
+    "headers": {
+        "Accept": "application/vnd.twitchtv.v5+json"
+    },
+    "authtype": "twitch",
+    "type": "json",
+    "cron": "*/10 * * * *",
+    "action": "store"
+}]

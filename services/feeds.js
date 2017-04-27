@@ -37,10 +37,11 @@ async function consumeResponse(feed, body) {
             post.guid = body.rss.channel.item[0].guid._;
         }
 
-        if (feed.key === "listen:rss:steamnews" && body.appnews.newsitems[0].is_external_url === false) {
-            post.title = body.appnews.newsitems[0].title;
-            post.link = body.appnews.newsitems[0].url;
-            post.guid = body.appnews.newsitems[0].gid;
+        if (feed.key === "listen:rss:steamnews") {
+            let newsItem = body.appnews.newsitems[0].filter((item) => item.is_external_url === false)[0]
+            post.title = newsItem.title;
+            post.link = newsItem.url;
+            post.guid = newsItem.gid;
         }
 
         if (feed.key === "listen:rss:belvedere" || feed.key === "listen:rss:cyborgmatt") {

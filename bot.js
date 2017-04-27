@@ -210,9 +210,14 @@ function postSubGames(matchID, rows, type, data) {
 }
 
 sub.on("message", (channel, message) => {
+    try {
+        message = JSON.parse(message);
+    } catch (err) {
+        return;
+    }
+
     if (channel == "steam") {
         if (!client.config.steam_enabled) return;
-        message = JSON.parse(message);
         client.helper.log("REDIS", message.message);
 
         switch(message.code) {
@@ -238,8 +243,6 @@ sub.on("message", (channel, message) => {
     if (channel == "__keyevent@0__:expired" && message.startsWith("trivia") && client.trivia) client.trivia.keyevent(message, client);
 
     if (channel == "listen:matches:out") {
-        message = JSON.parse(message);
-
         if (message.type == "dotaid") {
             client.pg.query({
                 "text": "SELECT * FROM subs WHERE dotaid = $1;",
@@ -253,6 +256,22 @@ sub.on("message", (channel, message) => {
                 });
             });
         }
+    }
+
+    if (channel.includes("listen:rss")) {
+        let feed = channel.split(":")[2];
+        client.pg.query({
+            "text": "SELECT channel FROM subs WHERE value = $1;",
+            "values": [feed]
+        }).catch((err) => console.error(err)).then((res) => {
+            let msg = [
+                `New Feed post from ${message.author}: **${message.title}**`,
+                `<${message.link}>`
+            ].join("\n");
+            res.rows.forEach((row) => {
+                client.createMessage(row.channel, msg).catch((err) => console.error(err));
+            });
+        });
     }
 });
 
@@ -402,4 +421,8 @@ sub.on("ready", () => {
     sub.subscribe("steam");
     sub.subscribe("__keyevent@0__:expired");
     sub.subscribe("listen:matches:out");
+    sub.subscribe("listen:rss:blog");
+    sub.subscribe("listen:rss:steamnews");
+    sub.subscribe("listen:rss:belvedere");
+    sub.subscribe("listen:rss:cyborgmatt");
 });

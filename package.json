@@ -25,8 +25,9 @@
     "canvas": "1.6.4",
     "cheerio": "^0.22.0",
     "d": "1.0.0",
-    "dotaconstants": "^4.18.0",
+    "dotaconstants": "5.0.0",
     "eris": "0.6.0",
+    "erlpack": "0.1.2",
     "gosugamers-api": "0.1.2",
     "mika": "github:bippum/mika#master",
     "needle": "1.4.5",
@@ -36,8 +37,11 @@
     "pretty-ms": "2.1.0",
     "randomstring": "1.1.5",
     "redis": "2.6.5",
-    "rss-parser": "^2.7.0",
     "sprintf-js": "1.0.3",
-    "steam": "1.4.0"
+    "steam": "1.4.0",
+    "xml2js": "0.4.17"
+  },
+  "devDependencies": {
+    "eslint": ""
   }
 }

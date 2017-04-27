@@ -38,7 +38,7 @@ async function consumeResponse(feed, body) {
         }
 
         if (feed.key === "listen:rss:steamnews") {
-            let newsItem = body.appnews.newsitems[0].filter((item) => item.is_external_url === false)[0]
+            let newsItem = body.appnews.newsitems.filter((item) => item.is_external_url === false)[0]
             post.title = newsItem.title;
             post.link = newsItem.url;
             post.guid = newsItem.gid;
@@ -46,7 +46,7 @@ async function consumeResponse(feed, body) {
 
         if (feed.key === "listen:rss:belvedere" || feed.key === "listen:rss:cyborgmatt") {
             post.title = body.feed.entry[0].title;
-            post.link = `https://www.reddit.com${body.feed.entry[0].link.$.href}`;
+            post.link = body.feed.entry[0].link.$.href;
             post.guid = body.feed.entry[0].id;
         }
 

@@ -21,6 +21,7 @@ const spawn = require("child_process").spawn;
 
 client.core = {};
 client.watchers = {};
+client.unwatchers = {};
 client.gcfg = {};
 client.cooldowns = {};
 client.mika = new Mika();
@@ -355,7 +356,19 @@ function handle(message, client) {
             }
         }
     } else {
-        if (client.trivia && client.trivia.channels.includes(message.channel.id) && message.gcfg.trivia == message.channel.id) client.trivia.handle(message, client);
+        let triviaChecks = [
+            client.trivia,
+            client.trivia.channels.includes(message.channel.id),
+            message.gcfg.trivia == message.channel.id
+        ];
+        if (triviaChecks.every((a) => a)) client.trivia.handle(message, client);
+
+        let unwatcherChecks = [
+            client.unwatchers.hasOwnProperty(`${message.channel.id}:${message.author.id}`),
+            !isNaN(message.content)
+        ];
+
+        if (unwatcherChecks.every((a) => a)) client.unwatchers[`${message.channel.id}:${message.author.id}`].handle(message.content);
     }
 }
 

@@ -214,7 +214,7 @@ sub.on("message", (channel, message) => {
     try {
         message = JSON.parse(message);
     } catch (err) {
-        return;
+        // heck;
     }
 
     if (channel == "steam") {
@@ -266,7 +266,7 @@ sub.on("message", (channel, message) => {
             "values": [feed]
         }).catch((err) => console.error(err)).then((res) => {
             let msg = [
-                `New Feed post from ${message.author}: **${message.title}**`,
+                `New feed post from ${message.author}: **${message.title}**`,
                 `<${message.link}>`
             ].join("\n");
             res.rows.forEach((row) => {

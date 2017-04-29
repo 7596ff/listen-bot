@@ -48,8 +48,15 @@ pg.connect((err) => {
     }
 
     log("pg ready");
-
     client.connect();
+});
+
+client.on("match", (match, found, origin) => {
+    if (origin !== "scanner") return;
+    redis.publish("listen:matches:out", JSON.stringify({
+        match,
+        found
+    }));
 });
 
 client.on("ready", () => {

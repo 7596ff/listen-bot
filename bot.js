@@ -324,7 +324,7 @@ function handle(message, client) {
             }
             message.channel.createMessage(content).catch((err) => client.helper.handle(message, err)).then((msg) => {
                 setTimeout(function() {
-                    client.deleteMessage(msg.channel.id, msg.id);
+                    if (msg) client.deleteMessage(msg.channel.id, msg.id);
                 }, 10000);
             });
 

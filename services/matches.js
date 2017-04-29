@@ -1,18 +1,17 @@
-// checks last matches of players based on database 
-// stores them in redis and publishes them as well
+// subscribes to live match updates for players
 
 const config = require("../config.json");
 const Redis = require("redis");
 const Postgres = require("pg");
-const Mika = require("mika");
+const FeedClient = require("mika").FeedClient;
+var client = new FeedClient();
 
 const redis = Redis.createClient();
 const sub = Redis.createClient();
 const pg = new Postgres.Client(config.pgconfig);
-const mika = new Mika(2);
 
-sub.subscribe("__keyevent@0__:expired");
-sub.subscribe("listen:matches:in");
+const types = ["player", "team", "league"];
+
 sub.subscribe("listen:matches:new");
 
 function log(str) {
@@ -23,76 +22,22 @@ function log(str) {
     }
 }
 
-function getLastMatch(dotaID) {
-    let key = `listen:matches:dotaid:${dotaID}`;
-
-    redis.get(key, (err, reply) => {
-        mika.getPlayerMatches(dotaID, {
-            "limit": 1
-        }).catch((err) => console.log(err)).then((res) => {
-            let matchID = res[0] && res[0].match_id;
-
-            redis.set(key, matchID, (err, reply) => {
-                if (err) console.log(err);
-            });
-            redis.setex(`${key}:expire`, 1200, true, (err, reply) => {
-                if (err) console.log(err);
-            });
-
-            if (matchID != reply) {
-                log(`new match ${dotaID}/${matchID}`);
-                redis.publish("listen:matches:out", JSON.stringify({
-                    "type": "dotaid",
-                    "id": dotaID,
-                    "matchid": matchID
-                }));
-            }
-        });
-    });
-}
-
-function unsubDotaId(dotaID) {
-    let error = false;
-
-    redis.del(`listen:matches:dotaid:${dotaID}`, (err, reply) => {
-        if (err) error = err;
-    });
-
-    redis.del(`listen:matches:dotaid:${dotaID}:expire`, (err, reply) => {
-        if (err) error = err;
-    });
-
-    log(error || `unsubbed from ${dotaID}`);
-}
-
 sub.on("message", (channel, message) => {
-    if (channel == "__keyevent@0__:expired") {
-        if (!message.startsWith("listen:matches")) return;
-        if (!message.endsWith("expire")) return;
-        message = message.split(":");
-        const type = message[2];
-        const id = message[3];
-
-        if (type == "dotaid") getLastMatch(id);
+    try {
+        message = JSON.parse(message);
+    } catch (err) {
+        console.log(err);
+        return;
     }
 
-    if (channel == "listen:matches:in") {
-        message = JSON.parse(message);
-        if (message.type == "dotaid") getLastMatch(message.id);
-    }
-
-    if (channel == "listen:matches:new") {
-        message = JSON.parse(message);
-        if (message.action == "add") {
-            if (message.type == "dotaid") {
-                log(`subbed to ${message.id}`);
-                getLastMatch(message.id);
-            }
-        }
-
-        if (message.action == "remove") {
-            if (message.type == "dotaid") unsubDotaId(message.id);
-        }
+    if (message.action == "add") {
+        client.subscribe(message.type, message.ids).catch((err) => console.error(err)).then((res) => {
+            log(`added some ids of type ${res.type}, new length ${res.ids.length}`);
+        });
+    } else if (message.action == "remove") {
+        client.unsubscribe(message.type, message.ids).catch((err) => console.error(err)).then((res) => {
+            log(`removed some ids of type ${res.type}, amount removed ${res.ids.length}`);
+        });
     }
 });
 
@@ -104,21 +49,22 @@ pg.connect((err) => {
 
     log("pg ready");
 
-    pg.query("SELECT * from subs;").catch((err) => {
-        console.log(err);
-        process.exit(1);
-    }).then((res) => {
-        if (!res.rows.length) return;
+    client.connect();
+});
 
-        let dotaidrows = res.rows.filter((row) => row.dotaid);
-        if (!dotaidrows.length) return;
-
-        log(`rescheduling sub sequcnce for ${dotaidrows.length} dota rows`);
-        dotaidrows.forEach((row) => {
-            redis.publish("listen:matches:in", JSON.stringify({
-                "type": "dotaid",
-                "id": row.dotaid
-            }));
+client.on("ready", () => {
+    log("feed client ready");
+    pg.query("SELECT * FROM subs;").catch((err) => console.error(err)).then((res) => {
+        let rows = res.rows.filter((row) => types.includes(row.type));
+        types.forEach((type) => {
+            let ids = rows.filter((row) => row.type === type);
+            if (ids.length > 0) {
+                client.subscribe(type, ids).catch((err) => console.error(err)).then((res) => {
+                    log(`subscribed to ${res.ids.length} ids of type ${type}`);
+                });
+            } else {
+                log(`couldn't find ids for type ${type}`);
+            }
         });
     });
 });

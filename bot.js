@@ -262,7 +262,7 @@ async function publishMatches(data) {
                 }
             }
 
-            let embed = client.core.embeds.match(client.core.json.od_heroes, match || data.match)
+            let embed = await client.core.embeds.match(client.core.json.od_heroes, match || data.match, client, client.guilds.get(client.channelGuildMap[channel]));
             client.createMessage(channel, { embed }).catch((err) => console.error(err));
         }
     } catch (err) {

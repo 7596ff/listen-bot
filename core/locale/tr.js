@@ -174,7 +174,7 @@
                 "text": [
                     "\n`%stwitch clip`: returns a random twitch clip from trending clips.",
                     "\nlist updated every hour.",
-                    "\n`%stwitch list [<locale>]`: returns top 5 streams. optional: 2 char language code."
+                    "\n`%stwitch streams [<locale>]`: returns top 5 streams. optional: 2 char language code."
                 ]
             }],
             "fun": [{

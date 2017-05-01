@@ -218,10 +218,10 @@ async function publishMatches(data) {
         let channels = [];
         let res = await client.pg.query("SELECT * FROM subs;");
 
-        types.forEach((type) => {
+        for (type of types) {
             if (data.found[type].length) {
                 let rows = res.rows.filter((row) => row.type == type && data.found[type].includes(Number(row.value)));
-                rows.forEach((row) => {
+                for (row of rows) {
                     let guild = client.channelGuildMap[row.channel];
                     if (!guild) return;
                     if (row.owner == guild) {
@@ -237,15 +237,13 @@ async function publishMatches(data) {
                     } else {
                         channels.push(row.channel);
                     }
-                });
+                }
             }
-        });
+        }
 
         if (!channels.length) return;
 
         channels = channels.filter((item, index, array) => array.indexOf(item) === index);
-
-        console.log(data.match)
 
         for (channel of channels) {
             let key = `p${channel}${data.match.match_id}`;

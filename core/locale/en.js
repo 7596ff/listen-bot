@@ -183,7 +183,7 @@ module.exports = {
                     "\n`%ssub player <username mention>`: if a player is registered, their matches will post to this channel",
                     "\n`%ssub team <team id>`: subscribe to a team ID and have all their new games posted to this channel",
                     "\n`%ssub league <league id>`: subscribe to a league ID",
-                    "\n`%ssub newsfeed <feed name>: subscribe to news feeds from various sources. use `%ssub newsfeed` to see what feeds are available."
+                    "\n`%ssub newsfeed <feed name>`: subscribe to news feeds from various sources. use `%ssub newsfeed` to see what feeds are available."
                 ]
             }, {
                 "name": "unsub",

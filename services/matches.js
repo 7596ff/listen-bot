@@ -59,6 +59,11 @@ client.on("match", (match, found, origin) => {
     }));
 });
 
+client.on("error", (err) => {
+    console.error(err)
+    process.exit(1);
+});
+
 client.on("ready", () => {
     log("feed client ready");
     pg.query("SELECT * FROM subs;").catch((err) => console.error(err)).then((res) => {

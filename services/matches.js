@@ -64,7 +64,7 @@ client.on("ready", () => {
     pg.query("SELECT * FROM subs;").catch((err) => console.error(err)).then((res) => {
         let rows = res.rows.filter((row) => types.includes(row.type));
         types.forEach((type) => {
-            let ids = rows.filter((row) => row.type === type);
+            let ids = rows.filter((row) => row.type == type).map((id) => id.value);
             if (ids.length > 0) {
                 client.subscribe(type, ids).catch((err) => console.error(err)).then((res) => {
                     log(`subscribed to ${res.ids.length} ids of type ${type}`);

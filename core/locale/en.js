@@ -174,8 +174,19 @@ module.exports = {
                 "text": [
                     "\n`%stwitch clip`: returns a random twitch clip from trending clips.",
                     "\nlist updated every hour.",
-                    "\n`%stwitch list [<locale>]`: returns top 5 streams. optional: 2 char language code."
+                    "\n`%stwitch streams [<locale>]`: returns top 5 streams. optional: 2 char language code."
                 ]
+            }, {
+                "name": "sub",
+                "summary": "subscribes and unsubscribes from match feeds for players/teams/leagues/news feeds",
+                "text": [
+                    "\n`%ssub player <username mention>`: if a player is registered, their matches will post to this channel",
+                    "\n`%ssub team <team id>`: subscribe to a team ID and have all their new games posted to this channel",
+                    "\n`%ssub league <league id>`: subscribe to a league ID"
+                ]
+            }, {
+                "name": "unsub",
+                "summary": "interactively remove your subscriptions from this channel"
             }],
             "fun": [{
                 "name": "courage",

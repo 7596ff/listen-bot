@@ -176,7 +176,7 @@ module.exports = {
                 "text": [
                     "\n`%stwitch clip`: zwraca losowy klip z listy obecnie trendujących na twitch.tv.",
                     "\nlista jest aktualizowana co godzinę.",
-                    "\n`%stwitch list [<język>]`: zwraca 5 losowych streamów. opcjonalnie: 2-znakowy kod kraju."
+                    "\n`%stwitch streams [<język>]`: zwraca 5 losowych streamów. opcjonalnie: 2-znakowy kod kraju."
                 ]
             }],
             "fun": [{

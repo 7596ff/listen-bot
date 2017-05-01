@@ -1,19 +1,7 @@
 function send_message(message, client, helper, match_data, origin) {
-    let queries = [];
-
-    match_data.players.forEach(player => {
-        queries.push(client.core.util.check_if_registered(client, player.account_id));
-    });
-
-    Promise.all(queries).then(results => {
-        for (let player in match_data.players) {
-            if (results[player] && match_data.players[player].account_id == results[player].dota_id && message.channel.guild.members.find(member => member.id == results[player].discord_id)) {
-                match_data.players[player]["mention_str"] = `<@${results[player].discord_id}>`;
-            }
-        }
-
+    client.core.embeds.match(client.core.json.od_heroes, match_data, client, message.channel.guild).then((embed) => {
         message.channel.createMessage({
-            "embed": client.core.embeds.match(client.core.json.od_heroes, match_data),
+            "embed": embed,
             "content": message.header || ""
         }).then(() => {
             helper.log(message, `  sent match data from ${origin}`);

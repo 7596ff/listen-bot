@@ -19,6 +19,11 @@ class Unwatcher {
                 "values": [this._message.author.id, split[0], split[1]]
             }).catch((err) => console.error(err)).then((res) => {
                 let gone = this._list.splice(index)[0];
+                this._client.redis.publish("listen:matches:new", JSON.stringify({
+                    "action": "remove",
+                    "type": gone.split(":")[0],
+                    "ids": gone.split(":")[1]
+                }));
                 this._message.channel.createMessage(`:white_check_mark: Unsubscribed from feed \`${gone}\`.`)
                     .catch((err) => this._helper.log(this._message, err))
                     .then(() => {

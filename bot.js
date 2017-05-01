@@ -16,6 +16,8 @@ const schedule = require("node-schedule");
 const Mika = require("mika");
 client.sprintf = require("sprintf-js").sprintf;
 
+const types = ["player", "team", "league"];
+
 const fs = require("fs");
 const spawn = require("child_process").spawn;
 
@@ -210,6 +212,67 @@ function postSubGames(matchID, rows, type, data) {
     });
 }
 
+async function publishMatches(data) {
+    console.log(data.found)
+    try {
+        let channels = [];
+        let res = await client.pg.query("SELECT * FROM subs;");
+
+        types.forEach((type) => {
+            if (data.found[type].length) {
+                let rows = res.rows.filter((row) => row.type == type && data.found[type].includes(Number(row.value)));
+                rows.forEach((row) => {
+                    let guild = client.channelGuildMap[row.channel];
+                    if (!guild) return;
+                    if (row.owner == guild) {
+                        if (data.found[type].length < 5) return;
+                        let sum = data.match.players
+                            .filter((player) => data.found[type].includes(player.account_id))
+                            .map((player) => player.player_slot)
+                            .reduce((a, b) => { return a + b });
+
+                        if (sum < 100 == match.radiant_win) {
+                            channels.push(row.channel);
+                        }
+                    } else {
+                        channels.push(row.channel);
+                    }
+                });
+            }
+        });
+
+        if (!channels.length) return;
+
+        channels = channels.filter((item, index, array) => array.indexOf(item) === index);
+
+        console.log(data.match)
+
+        for (channel of channels) {
+            let key = `p${channel}${data.match.match_id}`;
+            let res = await client.redis.getAsync(key);
+            if (res) continue;
+
+            await client.redis.set(key, true);
+
+            let match = false;
+            let retries = 0;
+            while (!match || retries < 3) {
+                try {
+                    match = await client.mika.getMatch(data.match.match_id);
+                } catch (err) {
+                    retries += 1;
+                }
+            }
+
+            let embed = client.core.embeds.match(client.core.json.od_heroes, match || data.match)
+            client.createMessage(channel, { embed }).catch((err) => console.error(err));
+        }
+    } catch (err) {
+        console.error("err parsing/posting subscribed match");
+        console.error(err);
+    }
+}
+
 sub.on("message", (channel, message) => {
     try {
         message = JSON.parse(message);
@@ -243,21 +306,7 @@ sub.on("message", (channel, message) => {
 
     if (channel == "__keyevent@0__:expired" && message.startsWith("trivia") && client.trivia) client.trivia.keyevent(message, client);
 
-    if (channel == "listen:matches:out") {
-        if (message.type == "dotaid") {
-            client.pg.query({
-                "text": "SELECT * FROM subs WHERE dotaid = $1;",
-                "values": [message.id]
-            }).catch((err) => console.error(err)).then((res) => {
-                client.pg.query({
-                    "text": "SELECT * FROM users WHERE dotaid = $1;",
-                    "values": [message.id]
-                }).catch((err) => console.error(err)).then((res2) => {
-                    if (res2.rows.length > 0) postSubGames(message.matchid, res.rows, "dotaid", res2.rows[0]);
-                });
-            });
-        }
-    }
+    if (channel == "listen:matches:out") publishMatches(message);
 
     if (channel.includes("listen:rss")) {
         let feed = channel.split(":")[2];

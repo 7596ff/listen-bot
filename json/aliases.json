@@ -1,0 +1,566 @@
+[{
+    "name": "antimage",
+    "id": 1,
+    "local": "Anti-Mage",
+    "aliases": ["anti-mage", "antimage", "anti mage", "am", "magina"]
+}, {
+    "name": "axe",
+    "id": 2,
+    "local": "Axe",
+    "aliases": ["axe"]
+}, {
+    "name": "bane",
+    "id": 3,
+    "local": "Bane",
+    "aliases": ["bane", "bane elemental"]
+}, {
+    "name": "bloodseeker",
+    "id": 4,
+    "local": "Bloodseeker",
+    "aliases": ["bloodseeker", "bs", "strygwyr"]
+}, {
+    "name": "crystal_maiden",
+    "id": 5,
+    "local": "Crystal Maiden",
+    "aliases": ["crystal maiden", "maiden", "cm", "crystal_maiden", "rylai"]
+}, {
+    "name": "drow_ranger",
+    "id": 6,
+    "local": "Drow Ranger",
+    "aliases": ["drow ranger", "drow", "traxex", "ranged creep", "drow_ranger"]
+}, {
+    "name": "earthshaker",
+    "id": 7,
+    "local": "Earthshaker",
+    "aliases": ["earthshaker", "shaker"]
+}, {
+    "name": "juggernaut",
+    "id": 8,
+    "local": "Juggernaut",
+    "aliases": ["juggernaut", "jugg", "jug", "yurnero"]
+}, {
+    "name": "mirana",
+    "id": 9,
+    "local": "Mirana",
+    "aliases": ["mirana", "potm"]
+}, {
+    "name": "morphling",
+    "id": 10,
+    "local": "Morphling",
+    "aliases": ["morphling", "morph", "waterman"]
+}, {
+    "name": "nevermore",
+    "id": 11,
+    "local": "Shadow Fiend",
+    "aliases": ["shadow fiend", "sf", "nevermore"]
+}, {
+    "name": "phantom_lancer",
+    "id": 12,
+    "local": "Phantom Lancer",
+    "aliases": ["phantom lancer", "pl", "cancer lancer", "phantom_lancer"]
+}, {
+    "name": "puck",
+    "id": 13,
+    "local": "Puck",
+    "aliases": ["puck"]
+}, {
+    "name": "pudge",
+    "id": 14,
+    "local": "Pudge",
+    "aliases": ["pudge", "butcher"]
+}, {
+    "name": "razor",
+    "id": 15,
+    "local": "Razor",
+    "aliases": ["razor"]
+}, {
+    "name": "sand_king",
+    "id": 16,
+    "local": "Sand King",
+    "aliases": ["sand king", "sand_king"]
+}, {
+    "name": "storm_spirit",
+    "id": 17,
+    "local": "Storm Spirit",
+    "aliases": ["storm spirit", "storm", "storm_spirit"]
+}, {
+    "name": "sven",
+    "id": 18,
+    "local": "Sven",
+    "aliases": ["sven", "rogue knight"]
+}, {
+    "name": "tiny",
+    "id": 19,
+    "local": "Tiny",
+    "aliases": ["tiny", "tony"]
+}, {
+    "name": "vengefulspirit",
+    "id": 20,
+    "local": "Vengeful Spirit",
+    "aliases": ["vengeful spirit", "venge", "vengeful", "vengefulspirit"]
+}, {
+    "name": "windrunner",
+    "id": 21,
+    "local": "Windranger",
+    "aliases": ["windranger", "windrunner", "wr", "windrunger"]
+}, {
+    "name": "zuus",
+    "id": 22,
+    "local": "Zeus",
+    "aliases": ["zeus", "zuus"]
+}, {
+    "name": "kunkka",
+    "id": 23,
+    "local": "Kunkka",
+    "aliases": ["kunkka", "admiral"]
+}, {
+    "name": "lina",
+    "id": 25,
+    "local": "Lina",
+    "aliases": ["lina"]
+}, {
+    "name": "lion",
+    "id": 26,
+    "local": "Lion",
+    "aliases": ["lion"]
+}, {
+    "name": "shadow_shaman",
+    "id": 27,
+    "local": "Shadow Shaman",
+    "aliases": ["shadow shaman", "shaman", "rhasta", "shadow_shaman"]
+}, {
+    "name": "slardar",
+    "id": 28,
+    "local": "Slardar",
+    "aliases": ["slardar"]
+}, {
+    "name": "tidehunter",
+    "id": 29,
+    "local": "Tidehunter",
+    "aliases": ["tidehunter", "tide"]
+}, {
+    "name": "witch_doctor",
+    "id": 30,
+    "local": "Witch Doctor",
+    "aliases": ["witch doctor", "wd", "capri sun and gun", "witch_doctor"]
+}, {
+    "name": "lich",
+    "id": 31,
+    "local": "Lich",
+    "aliases": ["lich", "kt", "kelthuzad"]
+}, {
+    "name": "riki",
+    "id": 32,
+    "local": "Riki",
+    "aliases": ["riki"]
+}, {
+    "name": "enigma",
+    "id": 33,
+    "local": "Enigma",
+    "aliases": ["enigma"]
+}, {
+    "name": "tinker",
+    "id": 34,
+    "local": "Tinker",
+    "aliases": ["tinker"]
+}, {
+    "name": "sniper",
+    "id": 35,
+    "local": "Sniper",
+    "aliases": ["sniper", "kardel", "kardel sharpeye"]
+}, {
+    "name": "necrolyte",
+    "id": 36,
+    "local": "Necrophos",
+    "aliases": ["necrophos", "necrolyte", "necro", "rotund'jere"]
+}, {
+    "name": "warlock",
+    "id": 37,
+    "local": "Warlock",
+    "aliases": ["warlock"]
+}, {
+    "name": "beastmaster",
+    "id": 38,
+    "local": "Beastmaster",
+    "aliases": ["beastmaster", "bm", "rexxar"]
+}, {
+    "name": "queenofpain",
+    "id": 39,
+    "local": "Queen of Pain",
+    "aliases": ["queen of pain", "queen", "qop", "queenofpain"]
+}, {
+    "name": "venomancer",
+    "id": 40,
+    "local": "Venomancer",
+    "aliases": ["venomancer", "veno", "lesale deathbringer"]
+}, {
+    "name": "faceless_void",
+    "id": 41,
+    "local": "Faceless Void",
+    "aliases": ["faceless void", "fv", "void", "faceless_void", "darkterror"]
+}, {
+    "name": "skeleton_king",
+    "id": 42,
+    "local": "Wraith King",
+    "aliases": ["wraith king", "wk", "sk", "leoric", "skeleton_king"]
+}, {
+    "name": "death_prophet",
+    "id": 43,
+    "local": "Death Prophet",
+    "aliases": ["death prophet", "dp", "death_prophet", "krob", "krobelus"]
+}, {
+    "name": "phantom_assassin",
+    "id": 44,
+    "local": "Phantom Assassin",
+    "aliases": ["phantom assassin", "pa", "phantom_assassin"]
+}, {
+    "name": "pugna",
+    "id": 45,
+    "local": "Pugna",
+    "aliases": ["pugna", "loli"]
+}, {
+    "name": "templar_assassin",
+    "id": 46,
+    "local": "Templar Assassin",
+    "aliases": ["templar assassin", "ta", "templar", "templar_assassin", "lanaya"]
+}, {
+    "name": "viper",
+    "id": 47,
+    "local": "Viper",
+    "aliases": ["viper", "netherdrake"]
+}, {
+    "name": "luna",
+    "id": 48,
+    "local": "Luna",
+    "aliases": ["luna"]
+}, {
+    "name": "dragon_knight",
+    "id": 49,
+    "local": "Dragon Knight",
+    "aliases": ["dragon knight", "dk", "dragon_knight"]
+}, {
+    "name": "dazzle",
+    "id": 50,
+    "local": "Dazzle",
+    "aliases": ["dazzle", "shadow priest"]
+}, {
+    "name": "rattletrap",
+    "id": 51,
+    "local": "Clockwerk",
+    "aliases": ["clockwerk", "clock", "rattletrap", "rt"]
+}, {
+    "name": "leshrac",
+    "id": 52,
+    "local": "Leshrac",
+    "aliases": ["leshrac", "lesh"]
+}, {
+    "name": "furion",
+    "id": 53,
+    "local": "Nature's Prophet",
+    "aliases": ["nature's prophet", "furion", "np", "tequoia"]
+}, {
+    "name": "life_stealer",
+    "id": 54,
+    "local": "Lifestealer",
+    "aliases": ["lifestealer", "ls", "naix", "life_stealer"]
+}, {
+    "name": "dark_seer",
+    "id": 55,
+    "local": "Dark Seer",
+    "aliases": ["dark seer", "seer", "dark_seer"]
+}, {
+    "name": "clinkz",
+    "id": 56,
+    "local": "Clinkz",
+    "aliases": ["clinkz"]
+}, {
+    "name": "omniknight",
+    "id": 57,
+    "local": "Omniknight",
+    "aliases": ["omniknight", "omni", "holy knight"]
+}, {
+    "name": "enchantress",
+    "id": 58,
+    "local": "Enchantress",
+    "aliases": ["enchantress", "ench", "bambi"]
+}, {
+    "name": "huskar",
+    "id": 59,
+    "local": "Huskar",
+    "aliases": ["huskar"]
+}, {
+    "name": "night_stalker",
+    "id": 60,
+    "local": "Night Stalker",
+    "aliases": ["night stalker", "ns", "night_stalker", "balanar"]
+}, {
+    "name": "broodmother",
+    "id": 61,
+    "local": "Broodmother",
+    "aliases": ["broodmother", "brood"]
+}, {
+    "name": "bounty_hunter",
+    "id": 62,
+    "local": "Bounty Hunter",
+    "aliases": ["bounty hunter", "bh", "bounty", "bounty_hunter", "gondar"]
+}, {
+    "name": "weaver",
+    "id": 63,
+    "local": "Weaver",
+    "aliases": ["weaver", "mtn"]
+}, {
+    "name": "jakiro",
+    "id": 64,
+    "local": "Jakiro",
+    "aliases": ["jakiro"]
+}, {
+    "name": "batrider",
+    "id": 65,
+    "local": "Batrider",
+    "aliases": ["batrider", "bat"]
+}, {
+    "name": "chen",
+    "id": 66,
+    "local": "Chen",
+    "aliases": ["chen"]
+}, {
+    "name": "spectre",
+    "id": 67,
+    "local": "Spectre",
+    "aliases": ["spectre"]
+}, {
+    "name": "ancient_apparition",
+    "id": 68,
+    "local": "Ancient Apparition",
+    "aliases": ["ancient apparition", "aa", "ancient_apparition"]
+}, {
+    "name": "doom_bringer",
+    "id": 69,
+    "local": "Doom",
+    "aliases": ["doom", "doom_bringer", "lucifer"]
+}, {
+    "name": "ursa",
+    "id": 70,
+    "local": "Ursa",
+    "aliases": ["ursa"]
+}, {
+    "name": "spirit_breaker",
+    "id": 71,
+    "local": "Spirit Breaker",
+    "aliases": ["spirit breaker", "sb", "borked", "bara", "spirit_breaker", "cow", "space cow"]
+}, {
+    "name": "gyrocopter",
+    "id": 72,
+    "local": "Gyrocopter",
+    "aliases": ["gyrocopter", "gyro"]
+}, {
+    "name": "alchemist",
+    "id": 73,
+    "local": "Alchemist",
+    "aliases": ["alchemist", "alch", "aghs machine", "gambler"]
+}, {
+    "name": "invoker",
+    "id": 74,
+    "local": "Invoker",
+    "aliases": ["invoker", "kael"]
+}, {
+    "name": "silencer",
+    "id": 75,
+    "local": "Silencer",
+    "aliases": ["silencer"]
+}, {
+    "name": "obsidian_destroyer",
+    "id": 76,
+    "local": "Outworld Devourer",
+    "aliases": ["od", "outworld devourer", "obsidian_destroyer"]
+}, {
+    "name": "lycan",
+    "id": 77,
+    "local": "Lycan",
+    "aliases": ["lycan", "dog", "banehallow"]
+}, {
+    "name": "brewmaster",
+    "id": 78,
+    "local": "Brewmaster",
+    "aliases": ["brewmaster", "brew", "mangix", "panda", "pandaren"]
+}, {
+    "name": "shadow_demon",
+    "id": 79,
+    "local": "Shadow Demon",
+    "aliases": ["shadow demon", "sd", "shadow_demon"]
+}, {
+    "name": "lone_druid",
+    "id": 80,
+    "local": "Lone Druid",
+    "aliases": ["lone druid", "ld", "druid", "sylla", "syllabear", "lone_druid"]
+}, {
+    "name": "chaos_knight",
+    "id": 81,
+    "local": "Chaos Knight",
+    "aliases": ["chaos knight", "ck", "chaos_knight"]
+}, {
+    "name": "meepo",
+    "id": 82,
+    "local": "Meepo",
+    "aliases": ["meepo"]
+}, {
+    "name": "treant",
+    "id": 83,
+    "local": "Treant Protector",
+    "aliases": ["treant protector", "treant", "tree"]
+}, {
+    "name": "ogre_magi",
+    "id": 84,
+    "local": "Ogre Magi",
+    "aliases": ["ogre magi", "ogre", "bloodlust", "ogre_magi", "aggron stonebreak"]
+}, {
+    "name": "undying",
+    "id": 85,
+    "local": "Undying",
+    "aliases": ["undying", "zombie", "dirge"]
+}, {
+    "name": "rubick",
+    "id": 86,
+    "local": "Rubick",
+    "aliases": ["rubick", "grand magus"]
+}, {
+    "name": "disruptor",
+    "id": 87,
+    "local": "Disruptor",
+    "aliases": ["disruptor", "thrall"]
+}, {
+    "name": "nyx_assassin",
+    "id": 88,
+    "local": "Nyx Assassin",
+    "aliases": ["nyx assassin", "nyx", "nyx_assassin"]
+}, {
+    "name": "naga_siren",
+    "id": 89,
+    "local": "Naga Siren",
+    "aliases": ["naga siren", "naga", "naga_siren", "slithice"]
+}, {
+    "name": "keeper_of_the_light",
+    "id": 90,
+    "local": "Keeper of the Light",
+    "aliases": ["keeper of the light", "keeper", "kotl", "ezalor", "keeper_of_the_light", "ezavor"]
+}, {
+    "name": "wisp",
+    "id": 91,
+    "local": "Io",
+    "aliases": ["io", "wisp"]
+}, {
+    "name": "visage",
+    "id": 92,
+    "local": "Visage",
+    "aliases": ["visage"]
+}, {
+    "name": "slark",
+    "id": 93,
+    "local": "Slark",
+    "aliases": ["slark"]
+}, {
+    "name": "medusa",
+    "id": 94,
+    "local": "Medusa",
+    "aliases": ["medusa", "dusa"]
+}, {
+    "name": "troll_warlord",
+    "id": 95,
+    "local": "Troll Warlord",
+    "aliases": ["troll warlord", "troll", "troll_warlord"]
+}, {
+    "name": "centaur",
+    "id": 96,
+    "local": "Centaur Warrunner",
+    "aliases": ["centaur warrunner", "centaur", "cent", "bradwarden", "tauren chieftan", "tc"]
+}, {
+    "name": "magnataur",
+    "id": 97,
+    "local": "Magnus",
+    "aliases": ["magnus", "mag", "magnataur"]
+}, {
+    "name": "shredder",
+    "id": 98,
+    "local": "Timbersaw",
+    "aliases": ["timbersaw", "timber", "shredder"]
+}, {
+    "name": "bristleback",
+    "id": 99,
+    "local": "Bristleback",
+    "aliases": ["bristleback", "bristle"]
+}, {
+    "name": "tusk",
+    "id": 100,
+    "local": "Tusk",
+    "aliases": ["tusk", "tuskarr", "ymir"]
+}, {
+    "name": "skywrath_mage",
+    "id": 101,
+    "local": "Skywrath Mage",
+    "aliases": ["skywrath mage", "skywrath", "bird person", "skywrath_mage", "sky"]
+}, {
+    "name": "abaddon",
+    "id": 102,
+    "local": "Abaddon",
+    "aliases": ["abaddon", "abba"]
+}, {
+    "name": "elder_titan",
+    "id": 103,
+    "local": "Elder Titan",
+    "aliases": ["elder titan", "et", "elder_titan"]
+}, {
+    "name": "legion_commander",
+    "id": 104,
+    "local": "Legion Commander",
+    "aliases": ["legion commander", "lc", "legion", "legion_commander", "tresdin"]
+}, {
+    "name": "techies",
+    "id": 105,
+    "local": "Techies",
+    "aliases": ["techies"]
+}, {
+    "name": "ember_spirit",
+    "id": 106,
+    "local": "Ember Spirit",
+    "aliases": ["ember spirit", "ember", "yasuo", "ember_spirit"]
+}, {
+    "name": "earth_spirit",
+    "id": 107,
+    "local": "Earth Spirit",
+    "aliases": ["earth spirit", "earth_spirit"]
+}, {
+    "name": "abyssal_underlord",
+    "id": 108,
+    "local": "Underlord",
+    "aliases": ["underlord", "azgalor", "pitlord", "abyssal_underlord"]
+}, {
+    "name": "terrorblade",
+    "id": 109,
+    "local": "Terrorblade",
+    "aliases": ["terrorblade", "terribleblade", "tb"]
+}, {
+    "name": "phoenix",
+    "id": 110,
+    "local": "Phoenix",
+    "aliases": ["phoenix", "pidge", "bird"]
+}, {
+    "name": "oracle",
+    "id": 111,
+    "local": "Oracle",
+    "aliases": ["oracle"]
+}, {
+    "name": "winter_wyvern",
+    "id": 112,
+    "local": "Winter Wyvern",
+    "aliases": ["winter wyvern", "wyvern", "ww", "winter_wyvern", "auroth"]
+}, {
+    "name": "arc_warden",
+    "id": 113,
+    "local": "Arc Warden",
+    "aliases": ["arc warden", "arc", "aw", "arc_warden"]
+}, {
+    "name": "monkey_king",
+    "id": 114,
+    "local": "Monkey King",
+    "aliases": ["monkey king", "mk", "moo", "monkey_king"]
+}]

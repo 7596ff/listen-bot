@@ -9,19 +9,22 @@ bluebird.promisifyAll(redis.RedisClient.prototype);
 bluebird.promisifyAll(redis.Multi.prototype);
 
 const dbots_post = require("./dbots/post");
+const statsTemplate = require("./templates/stats");
+const shardinfoTemplate = require("./templates/shardinfo");
 const Helper = require("./helper");
-const Trivia = require("./trivia/trivia");
+const Trivia = require("./classes/trivia");
+const Usage = require("./classes/usage");
+const questions = require("./util/genQuestions");
 
 const schedule = require("node-schedule");
 const Mika = require("mika");
-client.sprintf = require("sprintf-js").sprintf;
 
 const types = ["player", "team", "league"];
 
 const fs = require("fs");
 const spawn = require("child_process").spawn;
 
-client.core = {};
+client.commands = {};
 client.watchers = {};
 client.unwatchers = {};
 client.gcfg = {};
@@ -33,24 +36,32 @@ client.config = config;
 client.steam_connected = false;
 client.isReady = false;
 
-function load(obj, folder) {
+function load(obj, folder, flatten) {
+    let length = 0;
     let files = fs.readdirSync(folder);
-    files.forEach(file => {
+    for (file of files) {
         let full = `${folder}/${file}`;
         if (file.match(/\./)) {
             obj[file.split(".")[0]] = require(full);
+            length += 1;
         } else {
-            obj[file] = {};
-            load(obj[file], full);
+            if (flatten) {
+                length += load(obj, full);
+            } else {
+                obj[file] = {};
+                length += load(obj[file], full);
+            }
         }
-    });
+    }
+    return length;
 }
 
-load(client.core, __dirname + "/core");
+let loaded = load(client.commands, __dirname + "/commands", true);
+console.log(`${new Date().toJSON()} BOT: loaded ${loaded} commands`);
 
 client.helper = new Helper();
-client.all_usage = new client.core.util.usage(require("./usage.json"));
-client.usage = new client.core.util.usage();
+client.all_usage = new Usage(require("./usage.json"));
+client.usage = new Usage();
 
 client.write_usage_stats = schedule.scheduleJob("*/10 * * * *", () => {
     fs.writeFile("./usage.json", JSON.stringify(client.all_usage.stats), (err) => {
@@ -98,7 +109,6 @@ client.on("ready", () => {
         client.helper.log("bot", err, "error");
     });
 
-    let questions = client.core.util.questions(client);
     client.trivia = new Trivia(questions, questions.map(question => question.category).filter((item, index, array) => array.indexOf(item) === index));
 
     client.shards.forEach(shard => {
@@ -108,7 +118,7 @@ client.on("ready", () => {
     });
 
     client.stats_messages = schedule.scheduleJob("*/15 * * * *", () => {
-        client.core.templates.stats(client).then(embed => {
+        statsTemplate(client).then(embed => {
             client.editMessage(config.edit_channel, config.stats_edit_message, {
                 "embed": embed
             }).catch(err => client.helper.log("bot", err, "error"));
@@ -116,7 +126,7 @@ client.on("ready", () => {
         
         client.editMessage(config.edit_channel, config.shard_edit_message, {
             "embed": {
-                "description": client.core.templates.shardinfo(client)
+                "description": shardinfoTemplate(client)
             }
         }).catch(err => client.helper.log("bot", err, "error"));
 
@@ -190,28 +200,6 @@ client.on("messageReactionAdd", (message, emoji, userID) => {
     if (watcher) watcher.handle(message, emoji, userID);
 });
 
-function postSubGames(matchID, rows, type, data) {
-    rows.forEach((row) => {
-        let channelID = row.channelid;
-        if (!channelID || !client.channelGuildMap[channelID]) return;
-        let key = `listen:matches:channels:${channelID}:sent:${matchID}`;
-
-        client.redis.get(key, (err, reply) => {
-            if (reply) return;
-
-            if (type == "dotaid") {
-                client.mika.getMatch(matchID).then((match) => {
-                    if ((match.start_time + 86400) * 1000 < Date.now()) return;
-                    client.createMessage(channelID, { "embed": client.core.embeds.match(client.core.json.od_heroes, match)})
-                        .catch((err) => helper.handle(message, err));
-                }).catch((err) => helper.log(message, err, "err"));
-            }
-
-            client.redis.set(key, true);
-        });
-    });
-}
-
 async function publishMatches(data) {
     console.log(data.found)
     try {
@@ -245,6 +233,18 @@ async function publishMatches(data) {
 
         channels = channels.filter((item, index, array) => array.indexOf(item) === index);
 
+        let match = false;
+        let retries = 0;
+        while (!match || retries < 3) {
+            try {
+                //match = await client.mika.getMatch(data.match.match_id);
+                throw new Error();
+            } catch (err) {
+                console.log("heck");
+                retries += 1;
+            }
+        }
+
         for (channel of channels) {
             let key = `p${channel}${data.match.match_id}`;
             let res = await client.redis.getAsync(key);
@@ -252,19 +252,11 @@ async function publishMatches(data) {
 
             await client.redis.set(key, true);
 
-            let match = false;
-            let retries = 0;
-            while (!match || retries < 3) {
-                try {
-                    match = await client.mika.getMatch(data.match.match_id);
-                } catch (err) {
-                    retries += 1;
-                }
-            }
-
-            let embed = await client.core.embeds.match(client.core.json.od_heroes, match || data.match, client, client.guilds.get(client.channelGuildMap[channel]));
-            client.createMessage(channel, { embed }).catch((err) => console.error(err));
+            //let embed = await client.core.embeds.match(client.core.json.od_heroes, match || data.match, client, client.guilds.get(client.channelGuildMap[channel]));
+            //await client.createMessage(channel, { embed }).catch((err) => console.error(err));
         }
+
+        delete match;
     } catch (err) {
         console.error("err parsing/posting subscribed match");
         console.error(err);
@@ -323,15 +315,23 @@ sub.on("message", (channel, message) => {
     }
 });
 
-function invoke(message, client, helper, command) {
-    if (!Object.keys(client.core.locale).includes(message.gcfg.locale)) message.gcfg.locale = "en";
+async function invoke(message, client, helper, cmd) {    
+    if (cmd.checks) {
+        let check = await cmd.checks(client, message.member);
+        if (!check) {
+            try {
+                await message.channel.createMessage("You do not have permission to use this command.");
+                return;
+            } catch (err) {}
+        }
+    }
 
-    if (!client.core.commands.hasOwnProperty(command)) return;
+    if (cmd.triviaCheat && client.trivia.channels.includes(message.channel.id)) return;
 
-    client.core.commands[command](message, client, helper);
+    //if (!Object.keys(client.core.locale).includes(message.gcfg.locale)) message.gcfg.locale = "en";
 
-    client.all_usage.increment(command);
-    client.usage.increment(command);
+    client.all_usage.increment(cmd.name);
+    client.usage.increment(cmd.name);
 
     if (message.gcfg.climit > 0) {
         client.cooldowns[`climit:${message.channel.id}`] = message.timestamp;
@@ -346,6 +346,38 @@ function invoke(message, client, helper, command) {
             client.cooldowns[`mlimit:${message.author.id}`] = 0;
         }, message.gcfg.mlimit * 1000);
     }
+
+    try {
+        let ctx = {};
+
+        ctx.message = message;
+        ctx.client = client;
+        ctx.helper = helper;
+
+        ctx.content = message.content;
+        ctx.options = ctx.content.split(" ").slice(1);
+
+        ctx.channel = message.channel;
+        ctx.member = message.member;
+        ctx.author = message.author;
+        ctx.guild = message.channel.guild;
+        ctx.gcfg = message.gcfg;
+
+        ctx.send = async function() {
+            return this.message.channel.createMessage(...arguments);
+        }.bind(ctx);
+
+        ctx.embed = async function() {
+            return this.message.channel.createMessage({ embed: arguments[0] })
+        }.bind(ctx);
+
+        ctx.helper.log(message, `${cmd.name} (${ctx.options.join("|")})`);
+        if (cmd.typing) await message.channel.sendTyping();
+        await cmd.exec(ctx);
+    } catch (err) {
+        console.error(err.message);
+        console.error(`content: ${message.content}`);
+    }
 }
 
 function handle(message, client) {
@@ -356,9 +388,16 @@ function handle(message, client) {
 
         let command = message.content.split(" ").shift().toLowerCase();
 
-        for (let cmd in client.core.util.consts.cmds) if (client.core.util.consts.cmds[cmd].includes(command)) command = cmd;
+        for (let cmd in client.commands) {
+            if (client.commands[cmd].aliases && client.commands[cmd].aliases.includes(command)) {
+                command = client.commands[cmd].name;
+            }
+        }
 
-        if (message.gcfg.botspam == message.channel.id) {
+        command = client.commands[command];
+        if (!command) return;
+
+        if (message.gcfg.botspam == message.channel.id || command.ignoreCooldowns) {
             invoke(message, client, client.helper, command);
             return;
         }
@@ -377,8 +416,6 @@ function handle(message, client) {
 
             return;
         };
-
-        if (!client.core.commands.hasOwnProperty(command)) return;
 
         let climit = `climit:${message.channel.id}`;
         let mlimit = `mlimit:${message.author.id}`;

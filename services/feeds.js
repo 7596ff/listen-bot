@@ -1,10 +1,10 @@
 const config = require("../config.json");
-const feeds = require("../core/json/feeds.json");
+const feeds = require("../json/feeds.json");
 
 const Redis = require("redis");
 const schedule = require("node-schedule");
 const needle = require("needle");
-const querystring = require("../core/util/query_string");
+const queryString = require("../util/queryString");
 
 const redis = Redis.createClient();
 const jobs = {};
@@ -18,7 +18,7 @@ function log(str) {
 }
 
 function encodeURL(url, qs) {
-    if (qs) url += querystring(qs);
+    if (qs) url += queryString(qs);
     return url;
 }
 

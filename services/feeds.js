@@ -38,10 +38,12 @@ async function consumeResponse(feed, body) {
         }
 
         if (feed.key === "listen:rss:steamnews") {
-            let newsItem = body.appnews.newsitems.filter((item) => item.is_external_url === false)[0]
-            post.title = newsItem.title;
-            post.link = newsItem.url;
-            post.guid = newsItem.gid;
+            let newsItem = body.appnews.newsitems.filter((item) => item.feedname === "steam_updates" || item.feedname === "steam_community_announcements")[0];
+            if (newsItem.date * 1000 > Date.now() - 3600000) {
+                post.title = newsItem.title;
+                post.link = newsItem.url;
+                post.guid = newsItem.gid;
+            }
         }
 
         if (feed.key === "listen:rss:belvedere" || feed.key === "listen:rss:cyborgmatt") {

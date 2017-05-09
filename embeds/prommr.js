@@ -1,17 +1,24 @@
 function prommr(data) {
+    let name = "";
+    let url = "";
+    if (data.regions.includes(data.region)) {
+        name = data.region;
+        url = data.region;
+    } else {
+        if (data.region == "all") {
+            name = "all regions";
+        } else {
+            name = data.region;
+        }
+    }
+
     return {
-        "author": data.regions.includes(data.region) ? {
-            "name": `Top 10 Players by Solo MMR in ${data.region}`,
-            "url": `http://www.dota2.com/leaderboards/#${data.region}`
-        } : data.region == "all" ? {
-            "name": "Top 10 Players sorted by Solo MMR in all regions",
-            "url": "http://www.dota2.com/leaderboards/"
-        } : {
-            "name": `Top 10 Players sorted by Solo MMR in ${data.region}`,
-            "url": "http://www.dota2.com/leaderboards/"
+        "author": {
+            "name": this.get("prommr_header", name),
+            "url": `http://www.dota2.com/leaderboards/#${url}`
         },
         "fields": [{
-            "name": "Name",
+            "name": this.get("prommr_name"),
             "value": data.leaderboard.slice(0, 10).map((player) => {
                 let flag = player.country ? `:flag_${player.country}:` : ":grey_question:";
                 let str = `${flag} ${player.name}`;
@@ -25,7 +32,7 @@ function prommr(data) {
         }],
         "timestamp": new Date(data.time_posted * 1000),
         "footer": {
-            "text": "Last Updated"
+            "text": this.get("prommr_last_updated")
         }
     };
 }

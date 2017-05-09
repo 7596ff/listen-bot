@@ -5,6 +5,20 @@ async function checks(client, member) {
 }
 
 async function exec(ctx) {
+    if (ctx.options[0] == "nuke") {
+        try {
+            let res = await ctx.client.pg.query({
+                text: "DELETE FROM subs WHERE channel = $1;",
+                values: [ctx.channel.id]
+            });
+
+            return ctx.success(ctx.strings.get("unsub_nuke_success", res.rowCount, ctx.channel.mention));
+        } catch (err) {
+            console.error(err);
+            return ctx.failure(ctx.strings.get("bot_generic_error"));
+        }
+    }
+
     try {
         let res = await ctx.client.pg.query({
             "text": "SELECT * FROM subs WHERE channel = $1;",
@@ -22,20 +36,23 @@ async function exec(ctx) {
         if (currentSubs.length) {
             let submap = currentSubs.map((sub, index) => `${index}: \`${sub}\``).join(", ");
             let msg = [
-                `Current subscriptions in this channel owned by ${ctx.author.mention}:`,
+                ctx.strings.get("unsub_message_1", ctx.author.mention),
+                "",
                 submap,
-                "To unsubscribe from a subscription, type the number associated with the subscription. This will time out in 60 seconds."
+                "",
+                ctx.strings.get("unsub_message_3"),
+                ctx.strings.get("unsub_message_4", ctx.gcfg.prefix)
             ].join("\n");
             
             await ctx.send(msg);
-            ctx.client.unwatchers[`${ctx.channel.id}:${ctx.author.id}`] = new Unwatcher(ctx.message, ctx.client, ctx.helper, currentSubs);
+            ctx.client.unwatchers[`${ctx.channel.id}:${ctx.author.id}`] = new Unwatcher(ctx, currentSubs);
             return Promise.resolve();
         } else {
-            return ctx.send(`:x: ${ctx.author.mention} has no feeds subscribed to in this channel.`);
+            return ctx.failure(ctx.strings.get("unsub_no_feeds", ctx.author.mention));
         }
     } catch (err) {
         console.error(err);
-        return ctx.send(":x: Something went wrong. The error has been logged.");
+        return ctx.failure(ctx.strings.get("bot_generic_error"));
     }
 }
 

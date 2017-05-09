@@ -1,15 +1,15 @@
 function historyWithEmbed(data) {
     return {
-        title: `History between ${data.p1_name} and ${data.p2_name}`,
+        title: this.get("history_with_title", data.p1_name, data.p2_name),
         fields: [{
-            name: "With",
+            name: this.get("history_with_with"),
             value: [
-                `**Win/Loss:** ${data.winwith}/${data.with - data.winwith} (${data.with} games)`,
-                `**Winrate:** ${Math.round(data.winwith / data.with * 10000) / 100}%`
+                `**${this.get("history_with_winloss")}** ${data.winwith}/${data.with - data.winwith} (${data.with} games)`,
+                `**${this.get("history_as_winrate")}:** ${Math.round(data.winwith / data.with * 10000) / 100}%`
             ].join("\n"),
             inline: true
         }, {
-            name: "Against",
+            name: this.get("history_with_against"),
             value: [
                 `**${data.p1_name}'s wins:** ${data.against[data.p1]}`,
                 `**${data.p2_name}'s wins:** ${data.against[data.p2]}`

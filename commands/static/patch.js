@@ -6,7 +6,7 @@ const Watcher = require("../../classes/watcher");
 async function exec(ctx) {
     let hero = findHero(ctx.options.join(" "));
     if (!hero) {
-        return ctx.send("Couldn't find that hero.");
+        return ctx.failure(ctx.strings.get("bot_no_hero_error"));
     }
 
     let changes = patch.filter((v) => v.heroes[hero.name]);
@@ -15,7 +15,7 @@ async function exec(ctx) {
         .map((v) => v.heroes[hero.name])
         .map((notes, index) => {
             return {
-                content: `${hero.local} has changed in ${versions.join(", ")}.\nUse ◀ and ▶ to scroll between patches.`,
+                content: ctx.strings.all("patch_message", "\n", hero.local, versions.join(", ")),
                 embed: patchEmbed(notes, versions[index])
             };
         });

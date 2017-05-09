@@ -1,6 +1,4 @@
 async function edit_trivia(pg, channel, ctx) {
-    let locale = ctx.client.core.locale[ctx.gcfg.locale].com.admin.trivia;
-
     if (ctx.client.trivia.channels.includes(ctx.gcfg.trivia)) ctx.client.trivia.channels.splice(ctx.client.trivia.channels.indexOf(ctx.gcfg.trivia), 1);
 
     try {
@@ -9,8 +7,8 @@ async function edit_trivia(pg, channel, ctx) {
             "values": [channel || 0, ctx.guild.id]
         });
 
-        let msg = channel ? ctx.client.sprintf(locale.enable, channel) : locale.disable;
-        return ctx.send(msg);
+        let msg = channel ? ctx.strings.get("admin_trivia_enable", channel) : ctx.strings.get("admin_trivia_disable");
+        return ctx.success(msg);
     } catch (err) {
         ctx.helper.log(ctx.message, "something went wrong with updating trivia channel");
         ctx.helper.log(ctx.message, err);
@@ -19,8 +17,6 @@ async function edit_trivia(pg, channel, ctx) {
 
 const subcommands = {
     botspam: async function(ctx) {
-        let locale = ctx.client.core.locale[ctx.gcfg.locale].com.admin.botspam;
-
         if (ctx.content) {
             let channel = ctx.message.channelMentions.length ? ctx.message.channelMentions[0] : 0;
 
@@ -31,18 +27,16 @@ const subcommands = {
                 });
 
                 channel = channel == 0 ? "`none`" : `<#${channel}>`;
-                return ctx.send(ctx.client.sprintf(locale.confirm, channel));
+                return ctx.success(ctx.strings.get("admin_botspam_change", channel));
             } catch (err) {
                 ctx.helper.log(ctx.message, "something went wrong with updating botspam channel");
                 ctx.helper.log(ctx.message, err);
             }
         } else {
-            return ctx.send("Incorrect syntax.");
+            return ctx.failure(ctx.strings.get("bot_bad_syntax"));
         }
     },
     cooldowns: async function(ctx) {
-        let locale = ctx.client.core.locale[ctx.gcfg.locale].com.admin.cooldowns;
-
         if (ctx.content) {
             let options = ctx.content.split(" ");
             if (["channel", "member"].indexOf(options[0]) != -1 && !isNaN(options[1])) {
@@ -54,22 +48,19 @@ const subcommands = {
                         "values": [limit, ctx.guild.id]
                     });
 
-                    return ctx.send(ctx.client.sprintf(locale.confirm, locale[options[0]], options[1]));
+                    return ctx.success(ctx.strings.get("admin_cooldowns_set", options[0], options[1]))
                 } catch (err) {
                     ctx.helper.log(ctx.message, "something went wrong updating a config");
                     ctx.helper.log(ctx.message, err);
                 }
             }
         } else {
-            return ctx.send("Incorrect syntax.");
+            return ctx.failure(ctx.strings.get("bot_bad_syntax"));
         }
     },
-    disable: async function(ctx) {
-        let locale = ctx.client.core.locale[ctx.gcfg.locale].com.admin.disable;
-
+    /*disable: async function(ctx) {
         let actual = [];
 
-        let help = ctx.client.core.locale.en.com.help_topics;
         var possible = [];
         for (let cat in help) {
             if (cat != "admin" && cat != "meta") {
@@ -144,12 +135,10 @@ const subcommands = {
             ctx.helper.log(ctx.message, "something went wrong with selecting guild from DB inside admin");
             ctx.helper.log(ctx.message, err);
         }
-    },
+    },*/
     locale: async function(ctx) {
-        let locale = ctx.client.core.locale[ctx.gcfg.locale].com.admin.locale;
-
         if (ctx.content) {
-            let available = Object.keys(ctx.client.core.locale);
+            let available = Object.keys(ctx.client.locale);
             if (available.includes(ctx.content)) {
 
                 try {
@@ -158,21 +147,19 @@ const subcommands = {
                         "values": [ctx.content, ctx.guild.id]
                     });
 
-                    return ctx.send(ctx.client.sprintf(locale.confirm, ctx.content));
+                    return ctx.success(ctx.strings.get("admin_locale_change", ctx.content));
                 } catch (err) {
                     ctx.helper.log(ctx.message, "something went wrong with updating locale");
                     ctx.helper.log(ctx.message, err);
                 }
             } else {
-                return ctx.send(ctx.client.sprintf(locale.error, available.join(", ")));
+                return ctx.failure(ctx.strings.get("admin_locale_failure", available.join(", ")));
             }
         } else {
-            return ctx.send("Invalid syntax.");
+            return ctx.failure(ctx.strings.get("bot_bad_syntax"));
         }
     },
     prefix: async function(ctx) {
-        let locale = ctx.client.core.locale[ctx.gcfg.locale].com.admin.prefix;
-
         if (ctx.content) {
             try {
                 let res = await ctx.client.pg.query({
@@ -180,7 +167,7 @@ const subcommands = {
                     "values": [ctx.content, ctx.guild.id]
                 });
 
-                return ctx.send(ctx.client.sprintf(locale.confirm, ctx.content));
+                return ctx.success(ctx.strings.get("admin_prefix_change", ctx.content));
             } catch (err) {
                 ctx.helper.log(ctx.message, "something went wrong with updating prefix");
                 ctx.helper.log(ctx.message, err);
@@ -190,20 +177,21 @@ const subcommands = {
         }
     },
     trivia: async function(ctx) {
-        switch(ctx.options[0]) {
-        case "channel":
-            if (message.channelMentions.length > 0) {
+        if (ctx.options[0] == "channel") {
+            if (ctx.message.channelMentions.length > 0) {
                 return edit_trivia(ctx.client.pg, ctx.message.channelMentions[0], ctx);
             } else if (ctx.options.slice(1).join(" ").trim() == "here") {
                 return edit_trivia(ctx.client.pg, ctx.channel.id, ctx);
             } else if (ctx.options.slice(1).join(" ").trim() == "none") {
                 return edit_trivia(ctx.client.pg, null, ctx);
+            } else {
+                ctx.options = ["admin", "trivia"];
+                return ctx.send("heck2");
             }
-            break;
-        default:
-            ctx.content = "help admin trivia";
-            return ctx.client.core.commands.help.exec(ctx);
-            break;
+        } else {
+            ctx.options = ["admin", "trivia"];
+            return ctx.send("heck2")
+            // return ctx.client.core.commands.help.exec(ctx);
         }
     }
 }
@@ -213,25 +201,23 @@ async function checks(client, member) {
 }
 
 async function exec(ctx) {
-    let locale = ctx.client.core.locale[ctx.gcfg.locale].com.admin.main;
-
     delete ctx.client.gcfg[ctx.guild.id];
-    let options = ctx.content.split(" ");
-    const command = options.slice(1, options.length)[0];
-    ctx.content = options.slice(2).join(" ");
-    if (subcommands.hasOwnProperty(command)) {
-        return subcommands[command](ctx);
+    const subcommand = ctx.options[0];
+    if (subcommands.hasOwnProperty(subcommand)) {
+        ctx.content = ctx.options.slice(1).join(" ");
+        ctx.options = ctx.options.slice(1);
+        return subcommands[subcommand](ctx);
     } else {
         let disabled_list = ctx.gcfg.disabled ? ctx.gcfg.disabled[ctx.channel.id] : undefined;
         let prettylist = disabled_list ? disabled_list.map(item => `\`${item}\``).join(" ") : "";
-        prettylist = prettylist.length > 0 ? ctx.client.sprintf(locale.disa, prettylist) : locale.nodisa;
+        prettylist = prettylist.length > 0 ? ctx.strings.get("admin_display_disabled_commands", prettylist) : ctx.strings.get("admin_display_disabled_commands_none");
         return ctx.send({
             "embed": {
                 "description": [
-                    ctx.client.sprintf(locale.cspcd, ctx.gcfg.climit),
-                    ctx.client.sprintf(locale.mspcd, ctx.gcfg.mlimit),
-                    ctx.client.sprintf(locale.cuspre, ctx.gcfg.prefix),
-                    ctx.client.sprintf(locale.tricha, ctx.gcfg.trivia == 0 ? "none" : "<#" + ctx.gcfg.trivia + ">"),
+                    ctx.strings.get("admin_display_channel_specific_cooldowns", ctx.gcfg.climit),
+                    ctx.strings.get("admin_display_member_specific_cooldowns", ctx.gcfg.mlimit),
+                    ctx.strings.get("admin_display_custom_prefix", ctx.gcfg.prefix),
+                    ctx.strings.get("admin_display_trivia_channel", ctx.gcfg.trivia == 0 ? "none" : `<#${ctx.gcfg.trivia}>`),
                     prettylist
                 ].join("\n")
             }

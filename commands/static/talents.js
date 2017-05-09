@@ -5,7 +5,9 @@ const abilities = require("dotaconstants").abilities;
 
 async function exec(ctx) {
     let hero = findHero(ctx.options.join(" "));
-    if (!hero) return ctx.send("Couldn't find that hero.");
+    if (!hero) {
+        return ctx.failure(ctx.strings.get("bot_no_hero_error"));
+    }
 
     let data = {};
     data.hero = hero;

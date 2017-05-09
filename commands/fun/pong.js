@@ -1,5 +1,5 @@
 async function exec(ctx) {
-    return ctx.send(`:ping_pong: Shard latency: \`${ctx.guild.shard.latency} ms\``);
+    return ctx.send(ctx.strings.get("pong", ctx.guild.shard.latency));
 }
 
 module.exports = {

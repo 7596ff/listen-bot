@@ -16,7 +16,9 @@ const qwedfr = {
 async function exec(ctx) {   
     let alias = ctx.options.join(" ").toLowerCase();
     let res = findHero(alias);
-    if (!res) return ctx.send(ctx.client.core.locale[ctx.gcfg.locale].generic.noheroerror);
+    if (!res) {
+        return ctx.failure(ctx.strings.get("bot_no_hero_error"));
+    }
 
     let hero_obj = heroes.find((hero) => hero.true_name == res.name);
     hero_obj.abilities = abilities
@@ -37,5 +39,6 @@ module.exports = {
     name: "hero",
     category: "static",
     triviaCheat: true,
+    aliases: ["skills", "abilities"],
     exec
 };

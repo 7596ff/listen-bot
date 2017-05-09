@@ -15,11 +15,11 @@ function findPlayerTeam(match, account_id) {
 
 async function historyWith(ctx, _with) {
     if (!_with.found) {
-        return ctx.send("Couldn't find a member.");
+        return ctx.failure(ctx.strings.get("bot_no_member"));
     }
 
     if (_with.all.length !== 1) {
-        return ctx.send("Not enough or too much data for this command!");
+        return ctx.failure(ctx.strings.get("history_with_wrong_data"));
     }
 
     _with.all.push(ctx.author.id);
@@ -29,7 +29,7 @@ async function historyWith(ctx, _with) {
         results = await Promise.all(_with.all.map((id) => checkDiscordID(ctx.client.pg, id)));
     } catch (err) {
         console.error(err);
-        return ctx.send("Something went wrong, and the error has been logged.");
+        return ctx.failure(ctx.strings.get("bot_generic_error"));
     }
 
     let constraints = results.length == 2 ? {
@@ -41,7 +41,7 @@ async function historyWith(ctx, _with) {
         matches = await ctx.client.mika.getPlayerMatches(results[0], constraints);
     } catch (err) {
         console.error(err);
-        return ctx.send("Something went wrong.");
+        return ctx.failure(ctx.strings.get("bot_mika_error"));
     }
 
     
@@ -75,7 +75,7 @@ async function historyWith(ctx, _with) {
         }
     });
 
-    let embed = historyWithEmbed(data);
+    let embed = historyWithEmbed.call(ctx.strings, data);
     return ctx.embed(embed);
 }
 
@@ -84,7 +84,7 @@ async function historyAs(ctx, _as, _of) {
 
     let hero = findHero(_as);
     if (!hero) {
-        return ctx.send("Couldn't find that hero.");
+        return ctx.failure(ctx.strings.get("bot_no_hero_error"));
     }
 
     let result;
@@ -92,7 +92,7 @@ async function historyAs(ctx, _as, _of) {
         result = await checkDiscordID(ctx.client.pg, _of);
     } catch (err) {
         console.error(err);
-        return ctx.send("Something went wrong.");
+        return ctx.failure(ctx.strings.get("bot_generic_error"));
     }
 
     let matches;
@@ -102,7 +102,7 @@ async function historyAs(ctx, _as, _of) {
         });
     } catch (err) {
         console.error(err);
-        return ctx.send("Somethign went wrong.");
+        return ctx.failure(ctx.strings.get("bot_mika_error"));
     }
 
     let wins = matches.filter(match => match.radiant_win == (match.player_slot < 5));
@@ -113,9 +113,9 @@ async function historyAs(ctx, _as, _of) {
             "name": `${ctx.guild.members.get(_of).username} as ${hero.local}`
         }, 
         "description": [
-            `**Wins:** ${wins.length}`,
-            `**Games:** ${matches.length}`,
-            `**Winrate:** ${Math.round(wins.length / matches.length * 10000) / 100}%`
+            `**${ctx.strings.get("history_as_wins")}:** ${wins.length}`,
+            `**${ctx.strings.get("history_as_games")}:** ${matches.length}`,
+            `**${ctx.strings.get("history_as_winrate")}:** ${Math.round(wins.length / matches.length * 10000) / 100}%`
         ].join("\n")
     };
 
@@ -130,7 +130,7 @@ async function exec(ctx) {
     }, ctx.guild.members);
 
     if (!Object.keys(response).length) {
-        return ctx.send("Not enough data for this command!");
+        return ctx.failure(ctx.strings.get("bot_wrong_data"));
     }
 
     if (response.with) return historyWith(ctx, response.with);
@@ -141,5 +141,6 @@ module.exports = {
     name: "history",
     category: "personal",
     typing: true,
+    aliases: ["h"],
     exec
 };

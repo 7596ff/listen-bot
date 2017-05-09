@@ -43,21 +43,25 @@ async function exec(ctx) {
         let members;
         if (ctx.options.length) {
             members = await searchMembers(ctx.guild.members, ctx.options);
-            if (!members.found) return ctx.send("Couldn't find any members!");
+            if (!members.found) return ctx.failure(ctx.strings.get("bot_no_member"));
         } else {
             members = false;
         }
 
-        let id = await checkDiscordID(ctx.client.pg, members ? members.all[0] : ctx.author.id);
-        if (!id) return ctx.send(`${ctx.guild.members.get(members.all[0]).username} has not registered with me yet! Try \`${ctx.gcfg.prefix}help register\`.`);
+        let ID = members ? members.all[0] : ctx.author.id;
+        let member = await checkDiscordID(ctx.client.pg, ID);
 
-        let profile = await cacheProfile(ctx, id);
+        if (!member) {
+            return ctx.failure(ctx.strings.get("bot_not_registered", ctx.guild.members.get(ID).username, ctx.gcfg.prefix));
+        }
+
+        let profile = await cacheProfile(ctx, member);
 
         let embed = playerinfoEmbed(profile);
         return ctx.embed(embed);
     } catch (err) {
         console.error(err);
-        return ctx.send("Something went wrong.");
+        return ctx.failure(ctx.strings.get("bot_generic_error"));
     }
 }
 

@@ -122,7 +122,7 @@ for (item_name in dc.items) {
         });
     }
 
-    if (item.created) {
+    /*if (item.created) {
         let list = item.components.slice();
 
         if (Object.keys(dc.items).includes(`recipe_${item_name}`)) {
@@ -144,7 +144,7 @@ for (item_name in dc.items) {
                 category: "items"
             });
         })
-    }
+    }*/
 }
 
 module.exports = questions;

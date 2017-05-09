@@ -4,8 +4,6 @@ const findHero = require("../../util/findHero");
 const checkDiscordID = require("../../util/checkDiscordID");
 
 async function exec(ctx) {
-    let locale = ctx.client.core.locale[ctx.gcfg.locale];
-
     let result = await eat(ctx.content, {
         of: "member",
         as: "string",
@@ -50,7 +48,7 @@ async function exec(ctx) {
         if (hero) {
             mikaOpts.hero_id = hero.id;
         } else {
-            return ctx.send("Couldn't find that hero.");
+            return ctx.failure(ctx.strings.get("bot_no_hero_error"));
         }
     }
 
@@ -60,7 +58,7 @@ async function exec(ctx) {
         results = await Promise.all(promises);
     } catch (err) {
         console.error(err);
-        return ctx.send("Something went wrong, and the error has been logged.");
+        return ctx.failure(ctx.strings.get("bot_generic_error"));
     }
 
     results = results.map((result, index) => {
@@ -73,7 +71,7 @@ async function exec(ctx) {
     let nullcheck = results.find((result) => result.dotaID === null);
     if (nullcheck) {
         let username = ctx.client.users.get(nullcheck.discordID).username;
-        return ctx.send(`${username} has not registered with me yet! Try \`${ctx.gcfg.prefix}help register\`.`);
+        return ctx.failure(ctx.strings.get("bot_not_registered", username, ctx.gcfg.prefix));
     }
 
     if (results.length > 1) {
@@ -86,11 +84,11 @@ async function exec(ctx) {
         if (match.length) {
             match = match[0];
         } else {
-            return ctx.send("Couldn't find a match with these paramaters.");
+            return ctx.failure(ctx.strings.get("lastmatch_no_match"));
         }
     } catch (err) {
         console.error(err);
-        return ctx.send("Something went wrong while getting the match data from OpenDota, try again.");
+        return ctx.failure(ctx.strings.get("bot_mika_error"));
     }
 
     ctx.match_id = match.match_id;

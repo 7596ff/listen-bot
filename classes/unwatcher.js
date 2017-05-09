@@ -1,12 +1,10 @@
 class Unwatcher {
-    constructor(message, client, helper, list) {
-        this._message = message;
-        this._client = client;
-        this._helper = helper;
+    constructor(ctx, list) {
+        this._ctx = ctx;
         this._list = list;
         this.timeout = setTimeout(() => {
-            this._message.channel.createMessage(":x: No response detected, exiting.");
-            delete this._client.unwatchers[`${message.channel.id}:${message.author.id}`];
+            this._ctx.failure(this._ctx.strings.get("unsub_timeout"));
+            delete this._ctx.client.unwatchers[`${ctx.channel.id}:${ctx.author.id}`];
         }, 60000);
     }
 
@@ -14,27 +12,25 @@ class Unwatcher {
         let index = parseInt(string);
         if (this._list[index] !== undefined) {
             let split = this._list[index].split(":");
-            this._client.pg.query({
+            this._ctx.client.pg.query({
                 "text": "DELETE FROM subs WHERE owner = $1 AND type = $2 AND value = $3;",
-                "values": [this._message.author.id, split[0], split[1]]
+                "values": [this._ctx.author.id, split[0], split[1]]
             }).catch((err) => console.error(err)).then((res) => {
                 let gone = this._list.splice(index)[0];
-                this._client.redis.publish("listen:matches:new", JSON.stringify({
+                this._ctx.client.redis.publish("listen:matches:new", JSON.stringify({
                     "action": "remove",
                     "type": gone.split(":")[0],
                     "ids": gone.split(":")[1]
                 }));
-                this._message.channel.createMessage(`:white_check_mark: Unsubscribed from feed \`${gone}\`.`)
-                    .catch((err) => this._helper.log(this._message, err))
+                this._ctx.success(this._ctx.strings.get("unsub_success", gone))
+                    .catch((err) => console.log(err))
                     .then(() => {
-                        this._helper.log(this._message, "unsubscribed from something");
                         clearTimeout(this.timeout);
-                        delete this._client.unwatchers[`${this._message.channel.id}:${this._message.author.id}`];
+                        delete this._ctx.client.unwatchers[`${this._message.channel.id}:${this._message.author.id}`];
                     });
             });
         } else {
-            this._message.channel.createMessage(`:x: Index out of range. Try a different number.`)
-                .catch((err) => this._helper.handle(this._message, err));
+            this._ctx.faliure(this._ctx.strings.get("unsub_out_of_range")).catch((err) => console.error(err));
         }
     }
 }

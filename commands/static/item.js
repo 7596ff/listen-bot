@@ -4,8 +4,6 @@ const items = require("../../json/items");
 const itemEmbed = require("../../embeds/item");
 
 async function exec(ctx) {
-    let locale = ctx.client.core.locale[ctx.gcfg.locale].com.item;
-
     let options = ctx.content.toLowerCase().split(" ").slice(1);
 
     let result = false;
@@ -44,10 +42,10 @@ async function exec(ctx) {
         let embed = itemEmbed(result, items);
         return ctx.embed(embed);
     } else {
-        let content = locale.noitem;
+        let content = ctx.strings.get("item_not_found");
         let reduced = conflicts.filter((item, inc, newlist) => newlist.indexOf(item) === inc);
         if (reduced.length > 1) {
-            content = `${content} ${ctx.client.sprintf(locale.conflicts, reduced.join(", "))}`;
+            content = ctx.strings.get("item_not_found_conflicts", reduced.join(", "));
         } else if (reduced.length == 1) {
             let embed = itemEmbed(items.find((item) => item.dname == conflicts[0]), items);
             return ctx.embed(embed);

@@ -7,6 +7,7 @@ const keys = ["q", "w", "e", "d", "f"];
 const fs = require("bluebird").promisifyAll(require("fs"));
 const Watcher = require("../../classes/watcher");
 const findHero = require("../../util/findHero");
+const getBuffer = require("../../util/getBuffer");
 
 var Canvas = require("canvas");
 var Image = Canvas.Image;
@@ -115,7 +116,7 @@ async function drawBuildImage(grid, images) {
     });
 }
 
-async function createBuildImage(getBuffer, hero, data) {
+async function createBuildImage(hero, data) {
     return new Promise(async function(resolve, reject) {
         try {
             let abilities = data.filter((item) => item !== "none" && !item.startsWith("special_bonus")).filter((item, index, array) => array.indexOf(item) === index);
@@ -153,10 +154,10 @@ async function createBuildImage(getBuffer, hero, data) {
     });
 }
 
-async function generateMessage(getBuffer, hero, guide, sections, abilityBuild, itemSummaries, abilitySummaries) {
+async function generateMessage(hero, guide, sections, abilityBuild, itemSummaries, abilitySummaries) {
     return new Promise(async function(resolve, reject) {
         try {
-            let buildImage = await createBuildImage(getBuffer, hero, abilityBuild);
+            let buildImage = await createBuildImage(hero, abilityBuild);
             
             let contents = [{
                 "embed": {
@@ -224,10 +225,10 @@ async function generateMessage(getBuffer, hero, guide, sections, abilityBuild, i
 
 async function exec(ctx) {
     let hero = findHero(ctx.options.join(" "));
-    if (!hero) return ctx.send("Couldn't find that hero.");
+    if (!hero) return ctx.failure(ctx.strings.get("bot_no_hero_error"));
 
     let guides = torte.filter((guide) => guide.hero == hero.local);
-    if (!guides.length) return ctx.send("No guides found for this hero.");
+    if (!guides.length) return ctx.failure(ctx.strings.get("guide_no_guides"));
 
     let guide = guides[Math.floor(Math.random() * guides.length)];
     let backup = `${guide.title} ${guide.link}`;
@@ -244,7 +245,7 @@ async function exec(ctx) {
             guideData = JSON.parse(reply);
         }
 
-        msg = await generateMessage(ctx.client.core.util.get_buffer, hero, guide, ...guideData);
+        msg = await generateMessage(hero, guide, ...guideData);
     } catch (err) {
         console.error(err);
         msg = backup;
@@ -269,4 +270,4 @@ module.exports = {
     typing: true,
     triviaCheat: true,
     exec
-}
+};

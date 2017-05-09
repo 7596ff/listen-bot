@@ -14,6 +14,7 @@ const shardinfoTemplate = require("./templates/shardinfo");
 const Helper = require("./helper");
 const Trivia = require("./classes/trivia");
 const Usage = require("./classes/usage");
+const Strings = require("./classes/strings");
 const questions = require("./util/genQuestions");
 
 const schedule = require("node-schedule");
@@ -29,6 +30,8 @@ client.watchers = {};
 client.unwatchers = {};
 client.gcfg = {};
 client.cooldowns = {};
+client.locale = {};
+client.strings = {};
 client.mika = new Mika();
 client.redis = redis.createClient(config.redisconfig);
 client.pg = new pg.Client(config.pgconfig);
@@ -56,8 +59,14 @@ function load(obj, folder, flatten) {
     return length;
 }
 
-let loaded = load(client.commands, __dirname + "/commands", true);
-console.log(`${new Date().toJSON()} BOT: loaded ${loaded} commands`);
+let cmdsLoaded = load(client.commands, __dirname + "/commands", true);
+console.log(`${new Date().toJSON()} BOT: loaded ${cmdsLoaded} commands`);
+
+let localesLoaded = load(client.locale, __dirname + "/locale", true);
+for (name in client.locale) {
+    client.strings[name] = new Strings(client.locale[name]);
+}
+console.log(`${new Date().toJSON()} BOT: loaded ${localesLoaded} locales`);
 
 client.helper = new Helper();
 client.all_usage = new Usage(require("./usage.json"));
@@ -200,68 +209,68 @@ client.on("messageReactionAdd", (message, emoji, userID) => {
     if (watcher) watcher.handle(message, emoji, userID);
 });
 
-async function publishMatches(data) {
-    console.log(data.found)
-    try {
-        let channels = [];
-        let res = await client.pg.query("SELECT * FROM subs;");
+// async function publishMatches(data) {
+//     console.log(data.found)
+//     try {
+//         let channels = [];
+//         let res = await client.pg.query("SELECT * FROM subs;");
 
-        for (type of types) {
-            if (data.found[type].length) {
-                let rows = res.rows.filter((row) => row.type == type && data.found[type].includes(Number(row.value)));
-                for (row of rows) {
-                    let guild = client.channelGuildMap[row.channel];
-                    if (!guild) return;
-                    if (row.owner == guild) {
-                        if (data.found[type].length < 5) return;
-                        let sum = data.match.players
-                            .filter((player) => data.found[type].includes(player.account_id))
-                            .map((player) => player.player_slot)
-                            .reduce((a, b) => { return a + b });
+//         for (type of types) {
+//             if (data.found[type].length) {
+//                 let rows = res.rows.filter((row) => row.type == type && data.found[type].includes(Number(row.value)));
+//                 for (row of rows) {
+//                     let guild = client.channelGuildMap[row.channel];
+//                     if (!guild) return;
+//                     if (row.owner == guild) {
+//                         if (data.found[type].length < 5) return;
+//                         let sum = data.match.players
+//                             .filter((player) => data.found[type].includes(player.account_id))
+//                             .map((player) => player.player_slot)
+//                             .reduce((a, b) => { return a + b });
 
-                        if (sum < 100 == match.radiant_win) {
-                            channels.push(row.channel);
-                        }
-                    } else {
-                        channels.push(row.channel);
-                    }
-                }
-            }
-        }
+//                         if (sum < 100 == match.radiant_win) {
+//                             channels.push(row.channel);
+//                         }
+//                     } else {
+//                         channels.push(row.channel);
+//                     }
+//                 }
+//             }
+//         }
 
-        if (!channels.length) return;
+//         if (!channels.length) return;
 
-        channels = channels.filter((item, index, array) => array.indexOf(item) === index);
+//         channels = channels.filter((item, index, array) => array.indexOf(item) === index);
 
-        let match = false;
-        let retries = 0;
-        while (!match || retries < 3) {
-            try {
-                //match = await client.mika.getMatch(data.match.match_id);
-                throw new Error();
-            } catch (err) {
-                console.log("heck");
-                retries += 1;
-            }
-        }
+//         let match = false;
+//         let retries = 0;
+//         while (!match || retries < 3) {
+//             try {
+//                 //match = await client.mika.getMatch(data.match.match_id);
+//                 throw new Error();
+//             } catch (err) {
+//                 console.log("heck");
+//                 retries += 1;
+//             }
+//         }
 
-        for (channel of channels) {
-            let key = `p${channel}${data.match.match_id}`;
-            let res = await client.redis.getAsync(key);
-            if (res) continue;
+//         for (channel of channels) {
+//             let key = `p${channel}${data.match.match_id}`;
+//             let res = await client.redis.getAsync(key);
+//             if (res) continue;
 
-            await client.redis.set(key, true);
+//             await client.redis.set(key, true);
 
-            //let embed = await client.core.embeds.match(client.core.json.od_heroes, match || data.match, client, client.guilds.get(client.channelGuildMap[channel]));
-            //await client.createMessage(channel, { embed }).catch((err) => console.error(err));
-        }
+//             //let embed = await client.core.embeds.match(client.core.json.od_heroes, match || data.match, client, client.guilds.get(client.channelGuildMap[channel]));
+//             //await client.createMessage(channel, { embed }).catch((err) => console.error(err));
+//         }
 
-        delete match;
-    } catch (err) {
-        console.error("err parsing/posting subscribed match");
-        console.error(err);
-    }
-}
+//         delete match;
+//     } catch (err) {
+//         console.error("err parsing/posting subscribed match");
+//         console.error(err);
+//     }
+// }
 
 sub.on("message", (channel, message) => {
     try {
@@ -296,7 +305,7 @@ sub.on("message", (channel, message) => {
 
     if (channel == "__keyevent@0__:expired" && message.startsWith("trivia") && client.trivia) client.trivia.keyevent(message, client);
 
-    if (channel == "listen:matches:out") publishMatches(message);
+    //if (channel == "listen:matches:out") publishMatches(message);
 
     if (channel.includes("listen:rss")) {
         let feed = channel.split(":")[2];
@@ -315,20 +324,18 @@ sub.on("message", (channel, message) => {
     }
 });
 
-async function invoke(message, client, helper, cmd) {    
+async function invoke(message, client, helper, cmd) {
     if (cmd.checks) {
         let check = await cmd.checks(client, message.member);
         if (!check) {
             try {
-                await message.channel.createMessage("You do not have permission to use this command.");
+                await message.channel.createMessage(client.strings[message.gcfg.locale].get("bot_no_permission"));
                 return;
             } catch (err) {}
         }
     }
 
     if (cmd.triviaCheat && client.trivia.channels.includes(message.channel.id)) return;
-
-    //if (!Object.keys(client.core.locale).includes(message.gcfg.locale)) message.gcfg.locale = "en";
 
     client.all_usage.increment(cmd.name);
     client.usage.increment(cmd.name);
@@ -363,15 +370,25 @@ async function invoke(message, client, helper, cmd) {
         ctx.guild = message.channel.guild;
         ctx.gcfg = message.gcfg;
 
+        ctx.strings = client.strings[ctx.gcfg.locale || "en"];
+
         ctx.send = async function() {
             return this.message.channel.createMessage(...arguments);
         }.bind(ctx);
 
-        ctx.embed = async function() {
-            return this.message.channel.createMessage({ embed: arguments[0] })
+        ctx.embed = async function(embed) {
+            return this.message.channel.createMessage({ embed })
         }.bind(ctx);
 
-        ctx.helper.log(message, `${cmd.name} (${ctx.options.join("|")})`);
+        ctx.success = async function(str) {
+            return this.message.channel.createMessage(`✅ ${str}`);
+        }.bind(ctx);
+
+        ctx.failure = async function(str) {
+            return this.message.channel.createMessage(`❌ ${str}`);
+        }.bind(ctx);
+
+        ctx.helper.log(message, `${cmd.name} (${ctx.options.join(" ")})`);
         if (cmd.typing) await message.channel.sendTyping();
         await cmd.exec(ctx);
     } catch (err) {
@@ -404,10 +421,12 @@ function handle(message, client) {
 
         let disabled_list = message.gcfg.disabled ? message.gcfg.disabled[message.channel.id] : undefined;
         if (disabled_list && disabled_list.includes(command)) {
-            let content = "This command is disabled here!";
-            if (message.gcfg.botspam && message.gcfg.botspam != "0") {
-                content += ` Try using it in <#${message.gcfg.botspam}>.`;
+            let content = client.strings[message.gcfg.locale || "en"].get("bot_botspam");
+
+            if (message.gcfg.botspam) {
+                content = client.strings[message.gcfg.locale || "en"].get("bot_botspam_redirect", message.gcfg.botspam);
             }
+
             message.channel.createMessage(content).catch((err) => client.helper.handle(message, err)).then((msg) => {
                 setTimeout(function() {
                     if (msg) client.deleteMessage(msg.channel.id, msg.id);
@@ -423,15 +442,17 @@ function handle(message, client) {
         if (client.cooldowns[climit] > 0) {
             if (client.cooldowns[climit] == 1) return;
             let timeleft = Math.floor((message.timestamp - client.cooldowns[climit]) / 1000);
-                message.channel.createMessage(`${message.channel.mention}, please cool down! ${message.gcfg.climit - timeleft} seconds left.`).then(new_message => {
-                    client.cooldowns[climit] = 1;
-                    setTimeout(() => { new_message.delete() }, 8000);
-                }).catch((err) => client.helper.handle(message, err));
+            let msg = client.strings[message.gcfg.locale || "en"].get("bot_cooldown_redirect", message.channel.mention, message.gcfg.climit - timeleft);
+            message.channel.createMessage(msg).then(new_message => {
+                client.cooldowns[climit] = 1;
+                setTimeout(() => { new_message.delete() }, 8000);
+            }).catch((err) => client.helper.handle(message, err));
         } else {
             if (client.cooldowns[mlimit] > 0) {
                 if (client.cooldowns[mlimit] == 1) return;
                 let timeleft = Math.floor((message.timestamp - client.cooldowns[mlimit]) / 1000);
-                message.channel.createMessage(`${message.author.mention}, please cool down! ${message.gcfg.mlimit - timeleft} seconds left.`).then(new_message => {
+                let msg = client.strings[message.gcfg.locale || "en"].get("bot_cooldown_redirect", message.author.mention, message.gcfg.climit - timeleft);
+                message.channel.createMessage(msg).then(new_message => {
                     client.cooldowns[mlimit] = 1;
                     setTimeout(() => { new_message.delete() }, 8000);
                 }).catch((err) => client.helper.handle(message, err));

@@ -16,7 +16,7 @@ async function query(pg, values) {
 const subcommands = {
     player: async function(ctx, type, item) {
         if (ctx.message.mentions.length != 1) {
-            return ctx.send(":x: Please mention one player to subscribe to.");
+            return ctx.failure(ctx.strings.get("sub_invalid_syntax"));
         }
 
         let dotaID;
@@ -24,7 +24,7 @@ const subcommands = {
             dotaID = await checkDiscordID(ctx.client.pg, ctx.message.mentions[0].id);
         } catch (err) {
             console.error(err);
-            return ctx.send("not registered placeholder");
+            return ctx.failure(ctx.strings.get("bot_not_registered", ctx.message.mentions[0].username), ctx.gcfg.prefix);
         }
 
         try {
@@ -36,15 +36,15 @@ const subcommands = {
                 "ids": dotaID
             }));
 
-            return ctx.send(":white_check_mark: This subscription has been added.");
+            return ctx.success(ctx.strings.get("sub_success"));
         } catch (err) {
             console.error(err);
-            return ctx.send(":x: Something went wrong inserting this subscription. The error has been logged.")
+            return ctx.failure(ctx.strings.get("sub_failure"));
         }
     },
     team: async function(ctx, type, item) {
         if (!item || isNaN(item)) {
-            return ctx.send("Please provide a team ID. Check out <https://www.dotabuff.com/esports/teams> for a list of teams.");
+            return ctx.failure(ctx.strings.get("sub_team_id"));
         }
 
         try {
@@ -56,15 +56,15 @@ const subcommands = {
                 "ids": item
             }));
 
-            return ctx.send(":white_check_mark: This subscription has been added.");
+            return ctx.success(ctx.strings.get("sub_success"));
         } catch (err) {
             console.error(err);
-            return ctx.send(":x: Something went wrong inserting this subscription. The error has been logged.");
+            return ctx.failure(ctx.strings.get("sub_failure"));
         }
     },
     league: async function(ctx, type, item) {
         if (!item || isNaN(item)) {
-            return ctx.send("Please provide a league ID. Check out <https://www.dotabuff.com/esports/leagues> for a list of leagues.").catch((err) => helper.handle(message, err));
+            return ctx.failure(ctx.strings.get("sub_league_id"));
         }
 
         try {
@@ -76,23 +76,23 @@ const subcommands = {
                 "ids": item
             }));
 
-            return ctx.send(":white_check_mark: This subscription has been added.");
+            return ctx.success(ctx.strings.get("sub_success"));
         } catch (err) {
             console.error(err);
-            return ctx.send(":x: Something went wrong inserting this subscription. The error has been logged.");
+            return ctx.failure(ctx.strings.get("sub_failure"));
         }
     },
     newsfeed: async function(ctx, type, item) {
         if (!newsfeeds.includes(item)) {
-            return ctx.send(`:x: This newsfeed subscription is not available. Available newsfeed subscriptions: ${newsmap}`);
+            return ctx.failure(ctx.strings.get("sub_wrong_newsfeed", newsmap));
         } else {
             try {
                 let res = await query(ctx.client.pg, [`${ctx.channel.id}:${type}:${item}`, ctx.author.id, ctx.channel.id, type, item]);
 
-                return ctx.send(":white_check_mark: This subscription has been added.")
+                return ctx.success(ctx.strings.get("sub_success"));
             } catch (err) {
                 console.error(err);
-                return ctx.send(":x: Something went wrong inserting this subscription. The error has been logged.");
+                return ctx.failure(ctx.strings.get("sub_failure"));
             }
         }
     }
@@ -108,14 +108,14 @@ async function exec(ctx) {
     const type = ctx.options[0];
 
     if (!type) {
-        return ctx.send(`:x: Type is a required argument that is missing. Currently available type(s): ${map}`);
+        return ctx.failure(ctx.strings.get("sub_no_type", map));
     }
 
     if (subcommands.hasOwnProperty(type)) {
         const item = ctx.options[1];
         return subcommands[type](ctx, type, item);
     } else {
-        return ctx.send(`:x: This type of subscription is not supported. Currently available type(s): ${map}`);
+        return ctx.failure(ctx.strings.get("sub_wrong_type"));
     }
 }
 
@@ -124,4 +124,4 @@ module.exports = {
     category: "esports",
     checks,
     exec
-}
+};

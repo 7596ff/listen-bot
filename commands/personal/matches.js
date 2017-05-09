@@ -5,8 +5,6 @@ const checkDiscordID = require("../../util/checkDiscordID");
 const matchesEmbed = require("../../embeds/matches");
 
 async function exec(ctx) {
-    let locale = ctx.client.core.locale[ctx.gcfg.locale];
-
     let result = await eat(ctx.content, {
         of: "member",
         as: "string",
@@ -51,7 +49,7 @@ async function exec(ctx) {
         if (hero) {
             mikaOpts.hero_id = hero.id;
         } else {
-            return ctx.send("Couldn't find that hero.");
+            return ctx.failure(ctx.strings.get("bot_no_hero_error"));
         }
     }
 
@@ -61,7 +59,7 @@ async function exec(ctx) {
         results = await Promise.all(promises);
     } catch (err) {
         console.error(err);
-        return ctx.send("Something went wrong, and the error has been logged.");
+        return ctx.failure(ctx.strings.get("bot_generic_error"));
     }
 
     results = results.map((result, index) => {
@@ -74,7 +72,7 @@ async function exec(ctx) {
     let nullcheck = results.find((result) => result.dotaID === null);
     if (nullcheck) {
         let username = ctx.client.users.get(nullcheck.discordID).username;
-        return ctx.send(`${username} has not registered with me yet! Try \`${ctx.gcfg.prefix}help register\`.`);
+        return ctx.failure(ctx.strings.get("bot_not_registered", username, ctx.gcfg.prefix));
     }
 
     if (results.length > 1) {
@@ -85,15 +83,15 @@ async function exec(ctx) {
     try {
         matches = await ctx.client.mika.getPlayerMatches(results[0].dotaID, mikaOpts);
         if (!matches.length) {
-            return ctx.send("Couldn't find any matches with these paramaters.");
+            return ctx.failure(ctx.strings.get("lastmatch_no_match"));
         }
     } catch (err) {
         console.error(err);
-        return ctx.send("Something went wrong while getting the match data from OpenDota, try again.");
+        return ctx.failure(ctx.strings.get("bot_mika_error"));
     }
 
-    let embed = matchesEmbed(ctx, matches);
-    return ctx.embed(embed);
+    let text = matchesEmbed.call(ctx.strings, ctx, matches);
+    return ctx.send(text);
 }
 
 module.exports = {

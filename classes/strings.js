@@ -1,24 +1,38 @@
 const sprintf = require("sprintf-js").sprintf;
 
 class Strings {
-    constructor(strings, base) {
+    constructor(strings) {
         this._strings = strings;
         this._keys = Object.keys(strings);
-        this._base = base;
     }
 
     get(str) {
-        if (this._keys.includes(str)) {
+        if (~this._keys.indexOf(str)) {
             if (arguments.length > 1) {
-                return sprintf(str, ...arguments.slice(1));
+                return sprintf(this._strings[str], ...Array.from(arguments).slice(1));
             } else {
-                return str;
+                return this._strings[str];
             }
+        } else {
+            return str;
         }
+    }
 
-        let filtered = this._keys.filter((key) => key.includes(str));
-        if (filtered.length) {
-            return filtered.map((key) => this._strings[key]);
+    all(str, delim) {
+        let res = this._keys.filter((item) => item.includes(str));
+
+        if (res) {
+            res = res
+                .map((item) => this._strings[item])
+                .join(delim || "\n");
+
+            if (arguments.length > 2) {
+                return sprintf(res, ...Array.from(arguments).slice(2));
+            } else {
+                return res;
+            }
+        } else {
+            return res;
         }
     }
 }

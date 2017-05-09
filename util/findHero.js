@@ -10,7 +10,7 @@ function findHero(string) {
     if (exact) return exact;
 
     let match = fuzzy.get(string);
-    if (match) return aliases.find((hero) => ~hero.aliases.indexOf(match[0][1]));
+    if (match && match[0] && match[0][0] >= 0.5) return aliases.find((hero) => ~hero.aliases.indexOf(match[0][1]));
 
     return false;
 }

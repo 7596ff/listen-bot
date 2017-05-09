@@ -10,8 +10,6 @@ function escapeRegExp(string){
 }
 
 async function exec(ctx) {
-    let locale = ctx.client.core.locale[ctx.gcfg.locale].com.ability;
-
     let hero_name = false;
 
     let key = ctx.options.find((option) => {
@@ -21,8 +19,9 @@ async function exec(ctx) {
     if (key) ctx.options.splice(ctx.options.indexOf(key), 1);
 
     if (key && key.length == 1) {
+
         hero_name = findHero(ctx.options.join(" "));
-        hero_name = hero_name || hero_name.name;
+        hero_name = hero_name && hero_name.name;
     } else if (key && key.length == 3) {
         hero_name = "invoker";
         if (key == "emp") key = "www";
@@ -46,13 +45,13 @@ async function exec(ctx) {
     } else {
         let conflicts = abilities.filter((ability) => ability.dname && ability.dname.toLowerCase().match(ctx.options.join(" ")));
         if (conflicts.length > 1) {
-            return ctx.send(ctx.client.sprintf(locale.conflict, conflicts.map(conflict => conflict.dname).join(", "))).then(new_message => {
+            return ctx.send(ctx.strings.get("ability_not_found_conflicts", conflicts.map(conflict => conflict.dname).join(", "))).then(new_message => {
                 setTimeout(function() { this.delete(); }.bind(new_message), 10000);
             });
         } else if (conflicts.length == 1) {
             return ctx.embed(abilityEmbed(conflicts[0]));
         } else {
-            return ctx.send(locale.nothing).then(new_message => {
+            return ctx.send(ctx.strings.get("ability_not_found")).then(new_message => {
                 setTimeout(() => { new_message.delete(); }, 10000);
             });
         }

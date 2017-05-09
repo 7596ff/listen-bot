@@ -1,25 +1,25 @@
 function allMmr(list, members, name) {
-    let earliest = list.slice().sort((a, b) => { return a.sat - b.sat; })[0].sat;
+    let earliest = list.slice().sort((a, b) => a.sat - b.sat)[0].sat;
     return {
         "author": {
-            "name": `Top 15 players sorted by Solo MMR in ${name}`
+            "name": this.get("mmr_all_title", name)
         },
         "fields": [{
-            "name": "Players",
+            "name": this.get("mmr_all_players"),
             "value": list.map(row => members.get(row.id).username.slice(0, 16)).join("\n"),
             "inline": true
         }, {
             "name": "Solo",
-            "value": list.map(row => row.scr || "Unknown").join("\n"),
+            "value": list.map(row => row.scr || this.get("matchinfo_match_unknown_player")).join("\n"),
             "inline": true
         }, {
             "name": "Party",
-            "value": list.map(row => row.cr || "Unknown").join("\n"),
+            "value": list.map(row => row.cr || this.get("matchinfo_match_unknown_player")).join("\n"),
             "inline": true
         }],
         "timestamp": new Date(parseInt(earliest)),
         "footer": {
-            "text": "Last updated"
+            "text": this.get("prommr_last_updated")
         }
     };
 }

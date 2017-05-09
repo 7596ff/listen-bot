@@ -11,9 +11,9 @@ async function exec(ctx) {
                 values: [ctx.author.id]
             });
 
-            return ctx.send(":white_check_mark: Deleted. Sorry to see you go... 😢");
+            return ctx.success(ctx.strings.get("unregister_success"));
         } else {
-            return ctx.send("You don't have an account with me.");
+            return ctx.failure(ctx.strings.get("unregister_no_account"));
         }
     } catch (err) {
         console.error(err);
@@ -25,4 +25,4 @@ module.exports = {
     name: "unregister",
     category: "personal",
     exec
-}
+};

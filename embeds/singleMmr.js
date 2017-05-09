@@ -5,12 +5,12 @@ function singleMmr(obj) {
             "name": obj.member.username
         },
         "description": [
-            `**Solo MMR:** ${obj.scr || "Unknown"}`,
-            `**Party MMR:** ${obj.cr || "Unknown"}`
+            `**Solo MMR:** ${obj.scr || this.get("matchinfo_match_unknown_player")}`,
+            `**Party MMR:** ${obj.cr || this.get("matchinfo_match_unknown_player")}`
         ].join("\n"),
         "timestamp": new Date(obj.sat ? parseInt(obj.sat) : Date.now()),
         "footer": {
-            "text": "Last updated"
+            "text": this.get("prommr_last_updated")
         }
     };
 }

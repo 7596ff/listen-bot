@@ -10,11 +10,11 @@ async function exec(ctx) {
             reply.region = ctx.options[0];
             reply.regions = regions;
 
-            let embed = prommrEmbed(reply);
+            let embed = prommrEmbed.call(ctx.strings, reply);
             return ctx.embed(embed);
         } catch (err) {
             console.error(err);
-            return ctx.send("Something went wrong.");
+            return ctx.failure(ctx.strings.get("bot_generic_error"));
         }
     } else {
         let promises = regions.map((region) => ctx.client.redis.getAsync(`prommr:${region}`));
@@ -48,7 +48,7 @@ async function exec(ctx) {
 
         if (filtered.length) {
             all.leaderboard = filtered;
-            let embed = prommrEmbed(all);
+            let embed = prommrEmbed.call(ctx.strings, all);
             return ctx.embed(embed);
         } else {
             let regionsmap = regions.map((region) => `\`${region}\``).join(", ");
@@ -64,7 +64,7 @@ async function exec(ctx) {
             }
 
             text = [
-                `Available regions: ${regionsmap}. Or filter by country:`,
+                ctx.strings.get("prommr_success", regionsmap),
                 rows.map((row) => row.join(" ")).join("\n")
             ].join("\n");
             return ctx.send(text);

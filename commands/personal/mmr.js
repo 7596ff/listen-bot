@@ -2,14 +2,15 @@ const upsertMmr = require("../../util/upsertMmr");
 const searchMembers = require("../../util/searchMembers");
 const allMmrEmbed = require("../../embeds/allMmr");
 const singleMmrEmbed = require("../../embeds/singleMmr");
+const prettyMs = require("pretty-ms");
 
 async function all(ctx) {
     let msg = false;
     try {
-        msg = await ctx.send("Gathering MMR data. This could take a while.");
-
         let res = await ctx.client.pg.query("SELECT * FROM public.users;");
         let rows = res.rows.filter((row) => ctx.guild.members.get(row.id));
+
+        msg = await ctx.send(ctx.strings.get("mmr_in_progress", prettyMs(rows.length * 1000, { verbose: true })));
 
         let queries = rows.map((row) => upsertMmr(ctx.client.pg, ctx.client.mika, row, false));
         let results = await Promise.all(queries);
@@ -18,12 +19,12 @@ async function all(ctx) {
             .sort((a, b) => (b.scr || 0) - (a.scr || 0))
             .slice(0, 15);
 
-        let embed = allMmrEmbed(results, ctx.guild.members, ctx.guild.name);
+        let embed = allMmrEmbed.call(ctx.strings, results, ctx.guild.members, ctx.guild.name);
         return msg.edit({ embed });
     } catch (err) {
         console.error(err);
-        if (msg) return msg.edit("Something went wrong.");
-        return ctx.send("Something went wrong.");
+        if (msg) return msg.edit(":x: " + ctx.strings.get("bot_generic_error"));
+        return ctx.failure(ctx.strings.get("bot_generic_error"));
     }
 }
 
@@ -34,7 +35,7 @@ async function exec(ctx) {
         let ID = ctx.author.id;
         if (ctx.options.length) {
             let members = await searchMembers(ctx.guild.members, ctx.options);
-            if (!members.found) return ctx.send("Couldn't find a member!");
+            if (!members.found) return ctx.failure(ctx.strings.get("bot_no_member"));
             ID = members.all[0];
         }
 
@@ -45,17 +46,17 @@ async function exec(ctx) {
         });
         
         if (!res.rows.length) {
-            return ctx.send(`${member.username} has not registered with me yet! Try \`${ctx.gcfg.prefix}help register\`.`);
+            return ctx.failure(ctx.strings.get("bot_not_registered", member.username, ctx.gcfg.prefix));
         }
 
         let upserted = await upsertMmr(ctx.client.pg, ctx.client.mika, res.rows[0], true);
         upserted.member = member;
 
-        let embed = singleMmrEmbed(upserted);
+        let embed = singleMmrEmbed.call(ctx.strings, upserted);
         return ctx.embed(embed);
     } catch (err) {
         console.error(err);
-        return ctx.send("Something went wrong.");
+        return ctx.failure(ctx.strings.get("bot_generic_error"));
     }
 }
 

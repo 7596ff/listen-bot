@@ -12,7 +12,7 @@ async function exec(ctx) {
     });
 
     ctx.client.trivia.channels.forEach(channel => {
-        tasks.push(client.createMessage(channel, "The bot is going down for an update. Wait a few seconds and type `--trivia start` again. Sorry for the inconvenience!"));
+        tasks.push(client.createMessage(channel, ctx.strings.get("restart_trivia_message")));
     });
 
     await Promise.all(tasks);

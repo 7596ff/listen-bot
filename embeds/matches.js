@@ -32,12 +32,15 @@ function matchesEmbed(ctx, matches) {
         fmatchlist.push(row);
     });
 
-    return {
-        "fields": [{
-            "name": `Use \`${ctx.gcfg.prefix}matchinfo\` to get more information on a specific match.`,
-            "value": fmatchlist.map(row => `\`${row.slice(0, -1).join(" ")}\` ${row[row.length - 1]}`).join("\n")
-        }]
-    };
+    fmatchlist = fmatchlist
+        .map((row) => `\`${row.slice(0, -1).join(" ")}\` ${row[row.length - 1]}`)
+        .join("\n");
+
+    return [
+        ctx.strings.get("matches_embed_title", ctx.gcfg.prefix),
+        "",
+        fmatchlist
+    ].join("\n");
 }
 
 module.exports = matchesEmbed;

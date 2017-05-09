@@ -1,9 +1,9 @@
-async function exec(ctx) {
-    let locale = ctx.client.core.locale[ctx.gcfg.locale];
+const matchEmbed = require("../../embeds/match");
 
+async function exec(ctx) {
     let match_id = String(ctx.match_id || ctx.options[0]);
     if (!match_id) {
-        return ctx.send("Couldn't find a match ID.");
+        return ctx.failure(ctx.strings.get("matchinfo_no_matchid"));
     }
 
     if (match_id.includes("dotabuff") || match_id.includes("opendota")) {
@@ -11,7 +11,7 @@ async function exec(ctx) {
     }
 
     if (isNaN(match_id)) {
-        return ctx.send("Invalid match ID provided.");
+        return ctx.failure(ctx.strings.get("matchinfo_bad_matchid"));
     }
 
     try {
@@ -29,11 +29,11 @@ async function exec(ctx) {
         match.radiant_score = match.players.slice(0, 5).map(player => player.kills).reduce((a, b) => a + b, 0);
         match.dire_score = match.players.slice(5, 10).map(player => player.kills).reduce((a, b) => a + b, 0);
 
-        let embed = await ctx.client.core.embeds.match(ctx.client.core.json.od_heroes, match, ctx.client, ctx.guild);
+        let embed = await matchEmbed.call(ctx.strings, ctx, match);
         return ctx.embed(embed);
     } catch (err) {
         console.error(err);
-        return ctx.send(locale.generic.generic);
+        return ctx.failure(ctx.strings.get("bot_generic_error"));
     }
 }
 

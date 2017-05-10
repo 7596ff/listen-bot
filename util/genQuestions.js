@@ -9,7 +9,7 @@ const fullnames = {
 };
 
 function clean(str) {
-    return str.toString().toLowerCase().trim().replace(/[+\-%s\.]/g, "");
+    return str.toString().toLowerCase().trim(); // .replace(/[+\-%s\.]/g, "");
 }
 
 function formatAttribute(name, attribute, index, category) {

@@ -22,7 +22,7 @@ class Trivia {
         let cat = this.categories[Math.floor(Math.random() * this.categories.length)];
         let fil = this.questions.filter(question => question.category == cat);
         let res = fil[Math.floor(Math.random() * fil.length)];
-        let ret = old_question.question != "new" && old_question.question == res.question && res.question.answer ? this.get_new_question(old_question) : res;
+        let ret = old_question.question != "new" && old_question.question == res.question ? this.get_new_question(old_question) : res;
 
         ret.answer = ret.answer.toString();
 

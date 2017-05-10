@@ -185,4 +185,8 @@ for (item_name in dc.items) {
     }
 }
 
+questions = questions
+    .filter((q) => q.answer)
+    .filter((q) => !q.question.includes("undefined"));
+
 module.exports = questions;

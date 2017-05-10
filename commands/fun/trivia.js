@@ -2,6 +2,8 @@ const searchMembers = require("../../util/searchMembers");
 
 const subcommands = {
     start: async function(ctx) {
+        return ctx.failure("Trivia is DED sorry.");
+
         if (ctx.gcfg.trivia == ctx.channel.id && !ctx.client.trivia.channels.includes(ctx.channel.id)) {
             ctx.client.trivia.init(ctx.client, ctx.channel.id);
             return Promise.resolve();

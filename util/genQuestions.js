@@ -32,7 +32,7 @@ function formatTalent(hero, dname) {
             if (!isNaN(item.replace(/[+\-%s\.]/g, ""))) {
                 return {
                     "question": `Talents: ${hero}: ${array.slice(0, index).join(" ")} ${Array(item.length).join("•")} ${array.slice(index + 1).join(" ")}`,
-                    "answer": item,
+                    "answer": clean(item),
                     "category": "talents"
                 };
             }

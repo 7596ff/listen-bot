@@ -12,7 +12,7 @@ async function exec(ctx) {
     });
 
     ctx.client.trivia.channels.forEach(channel => {
-        tasks.push(client.createMessage(channel, ctx.strings.get("restart_trivia_message")));
+        tasks.push(ctx.client.createMessage(channel, ctx.strings.get("restart_trivia_message")));
     });
 
     await Promise.all(tasks);

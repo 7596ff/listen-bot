@@ -2,8 +2,6 @@ const searchMembers = require("../../util/searchMembers");
 
 const subcommands = {
     start: async function(ctx) {
-        return ctx.failure("Trivia is DED sorry.");
-
         if (ctx.gcfg.trivia == ctx.channel.id && !ctx.client.trivia.channels.includes(ctx.channel.id)) {
             ctx.client.trivia.init(ctx.client, ctx.channel.id);
             return Promise.resolve();
@@ -32,7 +30,7 @@ const subcommands = {
 
         let msg = [];
         let rows = res.rows;
-        if (ctx.options[1] == "all") {
+        if (ctx.options[0] == "all") {
             msg.push(ctx.strings.get("trivia_top_ten_bot"));
         } else {
             msg.push(ctx.strings.get("trivia_top_ten_server"));
@@ -41,7 +39,7 @@ const subcommands = {
 
         rows = rows.slice(0, 10);
 
-        msg.concat(rows.map((row) => {
+        msg = msg.concat(rows.map((row) => {
             let user = ctx.client.users.find((user) => user.id == row.id);
             return `${user ? user.username : ctx.strings.get("trivia_unkown_user")}: ${row.score}`;
         }));

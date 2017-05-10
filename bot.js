@@ -497,7 +497,6 @@ client.on("messageCreate", async function(message) {
 
     if (client.gcfg.hasOwnProperty(message.channel.guild.id) && client.gcfg[message.channel.guild.id].expires + 3600000 > Date.now()) {
         message.gcfg = JSON.parse(JSON.stringify(client.gcfg[message.channel.guild.id]));
-        message.gcfg.locale = "en";
         handle(message, client);
     } else {
         client.pg.query({
@@ -507,7 +506,6 @@ client.on("messageCreate", async function(message) {
             client.gcfg[message.channel.guild.id] = JSON.parse(JSON.stringify(res.rows[0]));
             client.gcfg[message.channel.guild.id].expires = Date.now();
             message.gcfg = JSON.parse(JSON.stringify(client.gcfg[message.channel.guild.id]));
-            message.gcfg.locale = "en";
             handle(message, client);
         }).catch(err => {
             client.helper.log("bot", `something went wrong with selcting ${message.channel.guild.id}/${message.channel.guild.name}`, "error");

@@ -10,11 +10,11 @@ function allMmr(list, members, name) {
             "inline": true
         }, {
             "name": "Solo",
-            "value": list.map(row => row.scr || this.get("matchinfo_match_unknown_player")).join("\n"),
+            "value": list.map(row => row.scr || this.get("matches_match_unknown_player")).join("\n"),
             "inline": true
         }, {
             "name": "Party",
-            "value": list.map(row => row.cr || this.get("matchinfo_match_unknown_player")).join("\n"),
+            "value": list.map(row => row.cr || this.get("matches_match_unknown_player")).join("\n"),
             "inline": true
         }],
         "timestamp": new Date(parseInt(earliest)),

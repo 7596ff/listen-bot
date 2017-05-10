@@ -5,8 +5,8 @@ function singleMmr(obj) {
             "name": obj.member.username
         },
         "description": [
-            `**Solo MMR:** ${obj.scr || this.get("matchinfo_match_unknown_player")}`,
-            `**Party MMR:** ${obj.cr || this.get("matchinfo_match_unknown_player")}`
+            `**Solo MMR:** ${obj.scr || this.get("matches_match_unknown_player")}`,
+            `**Party MMR:** ${obj.cr || this.get("matches_match_unknown_player")}`
         ].join("\n"),
         "timestamp": new Date(obj.sat ? parseInt(obj.sat) : Date.now()),
         "footer": {

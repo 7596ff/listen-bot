@@ -16,7 +16,12 @@ async function exec(ctx) {
     }
 
     if (search.includes("steamcommunity.com/profiles/")) {
-        ID = new Bignumber(search.split("/").slice(-1)[0]).minus(steamconst);
+        let search = search.split("/").slice(-1)[0];
+        if (isNaN(search)) {
+            ID = false;
+        } else {
+            ID = new Bignumber().minus(steamconst);
+        }
     }
 
     if (search.includes("steamcommunity.com/id/")) {

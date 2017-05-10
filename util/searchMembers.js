@@ -22,10 +22,10 @@ async function searchMembers(members, terms, exact) {
                     if (member.nick && member.nick.toLowerCase() == term) return true;
 
                     let un = usernames.get(term);
-                    if (!exact && un && un[0][1] == member.username) return true;
+                    if (!exact && un && un[0][0] >= 0.75 && un[0][1] == member.username) return true;
 
                     let nn = nicknames.get(term);
-                    if (!exact && nn && nn[0][1] == member.nick) return true;
+                    if (!exact && nn && un[0][0] >= 0.75 && nn[0][1] == member.nick) return true;
                 });
 
                 if (search) {

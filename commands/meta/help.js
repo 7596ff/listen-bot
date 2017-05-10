@@ -49,7 +49,7 @@ async function exec(ctx) {
             if (!res) continue;
         }
 
-        if (ctx.gcfg.disabled[ctx.channel.id] && ctx.gcfg.disabled[ctx.channel.id].includes(command.name)) continue;
+        if (ctx.gcfg.disabled && ctx.gcfg.disabled[ctx.channel.id] && ctx.gcfg.disabled[ctx.channel.id].includes(command.name)) continue;
 
         if (command.category) {
             if (!cmds[command.category]) cmds[command.category] = [];

@@ -22,17 +22,22 @@ class Strings {
         let res = this._keys.filter((item) => item.includes(str));
 
         if (res) {
-            res = res
-                .map((item) => this._strings[item])
-                .join(delim || "\n");
+            res = res.map((item) => this._strings[item]);
+            if (delim !== "array") res = res.join(delim || "\n");
 
             if (arguments.length > 2) {
-                return sprintf(res, ...Array.from(arguments).slice(2));
+                if (Array.isArray(res)) {
+                    let temp = res.join("\n");
+                    temp = sprintf(temp, ...Array.from(arguments).slice(2));
+                    return temp.split("\n");
+                } else {
+                    return sprintf(res, ...Array.from(arguments).slice(2));
+                }
             } else {
                 return res;
             }
         } else {
-            return res;
+            return false;
         }
     }
 }

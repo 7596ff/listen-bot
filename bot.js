@@ -392,7 +392,7 @@ async function invoke(message, client, helper, cmd) {
         if (cmd.typing) await message.channel.sendTyping();
         await cmd.exec(ctx);
     } catch (err) {
-        console.error(err.message);
+        console.error(err.response ? JSON.parse(err.response) : err);
         console.error(`content: ${message.content}`);
     }
 }

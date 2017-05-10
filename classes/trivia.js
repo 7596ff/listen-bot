@@ -24,6 +24,8 @@ class Trivia {
         let res = fil[Math.floor(Math.random() * fil.length)];
         let ret = old_question.question != "new" && old_question.question == res.question ? this.get_new_question(old_question) : res;
 
+        ret.answer = ret.answer.toString();
+
         if (redis && channel) {
             this.hlock[channel] = true;
             this.active_questions[channel] = ret;

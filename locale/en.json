@@ -22,7 +22,7 @@
     "admin_cooldowns_set": "Set %s limit to %s seconds.",
     "admin_disable_list": "All disabled commands in this channel: %s",
     "admin_disable_none": "No disabled commands in this channel.",
-    "admin_disable_error": "Disable some commands first!",
+    "admin_enable_error": "Disable some commands first!",
     "admin_locale_change": "Language set to `%s`.",
     "admin_locale_failure": "Can't set to this language! Available langauges: %s",
     "admin_prefix_change": "Prefix set to `%s`.",

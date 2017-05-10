@@ -21,7 +21,7 @@ async function formatHelp(ctx, command) {
     }
 
     if (command.aliases) {
-        rows.push("", `**${ctx.strings.get("help_aliases")}** ${command.aliases.join(", ")}`);
+        rows.push("", `**${ctx.strings.get("help_aliases")}:** ${command.aliases.map((a) => `\`${a}\``).join(", ")}`);
     }
 
     let filters = ctx.strings.all(searchString + "filters", "array");

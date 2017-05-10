@@ -10,8 +10,8 @@ async function edit_trivia(pg, channel, ctx) {
         let msg = channel ? ctx.strings.get("admin_trivia_enable", channel) : ctx.strings.get("admin_trivia_disable");
         return ctx.success(msg);
     } catch (err) {
-        ctx.helper.log(ctx.message, "something went wrong with updating trivia channel");
-        ctx.helper.log(ctx.message, err);
+        console.error(err);
+        return ctx.failure(ctx.strings.get("bot_generic_error"));
     }
 }
 
@@ -29,8 +29,8 @@ const subcommands = {
                 channel = channel == 0 ? "`none`" : `<#${channel}>`;
                 return ctx.success(ctx.strings.get("admin_botspam_change", channel));
             } catch (err) {
-                ctx.helper.log(ctx.message, "something went wrong with updating botspam channel");
-                ctx.helper.log(ctx.message, err);
+                console.error(err);
+                return ctx.failure(ctx.strings.get("bot_generic_error"));
             }
         } else {
             return ctx.failure(ctx.strings.get("bot_bad_syntax"));
@@ -50,28 +50,22 @@ const subcommands = {
 
                     return ctx.success(ctx.strings.get("admin_cooldowns_set", options[0], options[1]))
                 } catch (err) {
-                    ctx.helper.log(ctx.message, "something went wrong updating a config");
-                    ctx.helper.log(ctx.message, err);
+                    console.error(err);
+                    return ctx.failure(ctx.strings.get("bot_generic_error"));
                 }
             }
         } else {
             return ctx.failure(ctx.strings.get("bot_bad_syntax"));
         }
     },
-    /*disable: async function(ctx) {
-        let actual = [];
+    disable: async function(ctx) {
+        let allowed = [];
 
-        var possible = [];
-        for (let cat in help) {
-            if (cat != "admin" && cat != "meta") {
-                for (let cmd in help[cat]) {
-                    possible.push(help[cat][cmd].name);
-                }
-            }
-        }
+        for (let command in ctx.client.commands) {
+            command = ctx.client.commands[command];
+            if (["admin", "owner", "meta"].includes(command.category)) continue;
 
-        for (let candidate in ctx.options) {
-            if (possible.includes(ctx.options[candidate])) actual.push(ctx.options[candidate]);
+            allowed.push(command.name);
         }
 
         try {
@@ -82,8 +76,11 @@ const subcommands = {
 
             let disabled = res.rows[0].disabled || {};
             let oldlist = disabled[ctx.channel.id] || [];
-            for (let item in actual) oldlist.push(actual[item]);
-            let newlist = oldlist.filter((item, inc, newlist) => newlist.indexOf(item) === inc);
+
+            let toDisable = ctx.options.filter((cmd) => allowed.includes(cmd));
+            oldlist = oldlist.concat(toDisable);
+
+            let newlist = oldlist.filter((item, index, array) => array.indexOf(item) === index);
             disabled[ctx.channel.id] = newlist;
 
             await ctx.client.pg.query({
@@ -91,19 +88,19 @@ const subcommands = {
                 "values": [disabled, ctx.guild.id]
             });
 
-            ctx.helper.log(ctx.message, `disabled some commands, new list: ${newlist.join(" ")}`);
             let prettylist = newlist.map(item => `\`${item}\``).join(" ");
-            prettylist = newlist.length > 0 ? ctx.client.sprintf(locale.confirmsome, prettylist) : prettylist = locale.confirmnone;
 
-            return ctx.send(prettylist);
+            if (newlist.length) {
+                return ctx.success(ctx.strings.get("admin_disable_list", prettylist));
+            } else {
+                return ctx.success(ctx.strings.get("admin_disable_none"));
+            }
         } catch (err) {
-            ctx.helper.log(ctx.message, "something went wrong with inside admin");
-            ctx.helper.log(ctx.message, err);
+            console.error(err);
+            return ctx.failure(ctx.strings.get("bot_generic_error"));
         }
     },
     enable: async function(ctx) {
-        let locale = ctx.client.core.locale[ctx.gcfg.locale].com.admin.disable;
-
         try {
             let res = await ctx.client.pg.query({
                 "text": "SELECT * FROM guilds WHERE id = $1",
@@ -114,12 +111,13 @@ const subcommands = {
             let oldlist = disabled[ctx.channel.id];
 
             if (!disabled || !oldlist) {
-                return ctx.send("Disable some commands first!");
+                return ctx.failure(ctx.strings.get("admin_enable_error"));
             }
 
             for (let val of ctx.options) {
-                let index = oldlist.indexOf(val);
-                if (index > -1) oldlist.splice(index, 1);
+                if (oldlist.includes(val)) {
+                    oldlist.splice(oldlist.indexOf(val), 1);
+                }
             }
 
             await ctx.client.pg.query({
@@ -127,15 +125,18 @@ const subcommands = {
                 "values": [disabled, ctx.guild.id]
             });
 
-            ctx.helper.log(ctx.message, `enabled some commands, new list: ${oldlist.join(" ")}`);
             let prettylist = oldlist.map(item => `\`${item}\``).join(" ");
-            prettylist = oldlist.length > 0 ? ctx.client.sprintf(locale.confirmsome, prettylist) : prettylist = locale.confirmnone;
-            return ctx.send(prettylist);
+
+            if (oldlist.length > 0) {
+                return ctx.success(ctx.strings.get("admin_disable_list", prettylist));
+            } else {
+                return ctx.success(ctx.strings.get("admin_disable_none"));
+            }
         } catch (err) {
-            ctx.helper.log(ctx.message, "something went wrong with selecting guild from DB inside admin");
-            ctx.helper.log(ctx.message, err);
+            console.error(err);
+            return ctx.failure(ctx.strings.get("bot_generic_error"));
         }
-    },*/
+    },
     locale: async function(ctx) {
         if (ctx.content) {
             let available = Object.keys(ctx.client.locale);
@@ -149,8 +150,8 @@ const subcommands = {
 
                     return ctx.success(ctx.strings.get("admin_locale_change", ctx.content));
                 } catch (err) {
-                    ctx.helper.log(ctx.message, "something went wrong with updating locale");
-                    ctx.helper.log(ctx.message, err);
+                    console.error(err);
+                    return ctx.failure(ctx.strings.get("bot_generic_error"));
                 }
             } else {
                 return ctx.failure(ctx.strings.get("admin_locale_failure", available.join(", ")));
@@ -169,8 +170,8 @@ const subcommands = {
 
                 return ctx.success(ctx.strings.get("admin_prefix_change", ctx.content));
             } catch (err) {
-                ctx.helper.log(ctx.message, "something went wrong with updating prefix");
-                ctx.helper.log(ctx.message, err);
+                console.error(err);
+                return ctx.failure(ctx.strings.get("bot_generic_error"));
             }
         } else {
             return ctx.send("Invalid syntax.");
@@ -185,13 +186,11 @@ const subcommands = {
             } else if (ctx.options.slice(1).join(" ").trim() == "none") {
                 return edit_trivia(ctx.client.pg, null, ctx);
             } else {
-                ctx.options = ["admin", "trivia"];
-                return ctx.send("heck2");
+                return ctx.failure(ctx.strings.get("admin_trivia_bad_syntax"))
             }
         } else {
             ctx.options = ["admin", "trivia"];
-            return ctx.send("heck2")
-            // return ctx.client.core.commands.help.exec(ctx);
+            return ctx.client.core.commands.help.exec(ctx);
         }
     }
 }

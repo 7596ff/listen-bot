@@ -12,6 +12,7 @@ function resolveVanityURL(name) {
         needle.get(`http://api.steampowered.com/ISteamUser/ResolveVanityURL/v0001/${queryString(options)}`, (err, response) => {
             if (err) reject(err);
             let body = response.body.response; // thanks gabe
+            if (!body) reject("what");
             if (body.success == 1) {
                 resolve(body.steamid);
             } else {

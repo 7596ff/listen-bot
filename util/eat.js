@@ -22,8 +22,8 @@ async function eat(content, options, members) {
 
         let isThereOtherFlag = otherFlags.find((flag) => flag);
         if (isThereOtherFlag) {
-            let lastIndex = otherFlags.indexOf();
-            if (lastIndex) match = match.slice(0, lastIndex - 1);   
+            let lastIndex = otherFlags.indexOf(isThereOtherFlag);
+            if (lastIndex) match = match.slice(0, lastIndex);
         }
 
         if (options[flag] === "string") {

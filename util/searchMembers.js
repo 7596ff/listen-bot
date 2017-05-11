@@ -32,8 +32,10 @@ async function searchMembers(members, terms, exact) {
     }
 
     if (!exact) {
+        let threshold = 0.5;
+
         let matchedUsername = usernames.get(terms.join(" "));
-        if (matchedUsername && matchedUsername[0][0] >= 0.6 && matchedUsername[0][1]) {
+        if (matchedUsername && matchedUsername[0][0] >= threshold && matchedUsername[0][1]) {
             let member = members.find((member) => member.username == matchedUsername[0][1]);
             res.all.push(member.id);
             res.terms[terms.join(" ")] = member.id;
@@ -41,7 +43,7 @@ async function searchMembers(members, terms, exact) {
         }
 
         let matchedNickname = nicknames.get(terms.join(" "));
-        if (matchedNickname && matchedNickname[0][0] >= 0.6 && matchedNickname[0][1]) {
+        if (matchedNickname && matchedNickname[0][0] >= threshold && matchedNickname[0][1]) {
             let member = members.find((member) => member.nick == matchedNickname[0][1]);
             if (!~res.all.indexOf(member.id)) {
                 res.all.push(member.id);

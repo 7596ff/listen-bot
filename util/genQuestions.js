@@ -84,8 +84,8 @@ for (hero_name in dc.hero_abilities) {
 
         if (ability.bkbpierce) {
             questions.push({
-                question: `Yes or No: ${ability.dname} pierces BKB`,
-                answer: ability.bkbpierce.toLowerCase(),
+                question: `y/n: ${ability.dname} pierces BKB`,
+                answer: ability.bkbpierce.charAt(0).toLowerCase(),
                 category: "abilities_stats"
             });
         }
@@ -110,16 +110,18 @@ for (hero_name in dc.hero_abilities) {
 
     let oldname = heroes.find((hero) => hero.true_name == ahero.name).dota_name;
 
-    questions.push({
-        question: `New name: ${oldname}?`,
-        answer: ahero.local,
-        category: "hero_names"
-    });
-    questions.push({
-        question: `Old name: ${ahero.local}?`,
-        answer: oldname,
-        category: "hero_names"
-    });
+    if (oldname) {
+        questions.push({
+            question: `Names/Titles: ${oldname}?`,
+            answer: ahero.local,
+            category: "hero_names"
+        });
+        questions.push({
+            question: `Names/Titles: ${ahero.local}?`,
+            answer: oldname,
+            category: "hero_names"
+        });
+    }
 }
 
 for (item_name in dc.items) {

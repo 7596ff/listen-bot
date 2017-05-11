@@ -90,7 +90,7 @@ const subcommands = {
         let embed = {
             author: {
                 name: user.username,
-                icon_url: user.iconURL
+                icon_url: user.avatarURL
             },
             description: [
                 `**${ctx.strings.get("trivia_points")}** ${row.score}`,

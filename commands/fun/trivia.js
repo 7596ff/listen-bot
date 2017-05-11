@@ -95,8 +95,8 @@ const subcommands = {
             description: [
                 `**${ctx.strings.get("trivia_points")}** ${row.score}`,
                 `**${ctx.strings.get("trivia_highest_streak")}** ${row.streak}`,
-                `**${ctx.strings.get("trivia_server_rank")}** ${guild.indexOf(data) + 1}/${guild.length}`,
-                `**${ctx.strings.get("trivia_global_rank")}** ${res.rows.indexOf(data) + 1}/${res.rows.length}`
+                `**${ctx.strings.get("trivia_server_rank")}** ${guild.indexOf(row) + 1}/${guild.length}`,
+                `**${ctx.strings.get("trivia_global_rank")}** ${res.rows.indexOf(row) + 1}/${res.rows.length}`
             ].join("\n")
         }
 

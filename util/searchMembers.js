@@ -49,13 +49,13 @@ async function searchMembers(members, terms, exact) {
         let matchedNickname = nicknames.get(terms.join(" "));
         if (matchedNickname && matchedNickname[0][0] >= threshold && matchedNickname[0][1]) {
             let member = members.find((member) => member.nick == matchedNickname[0][1]);
-            if (!~res.all.indexOf(member.id)) {
-                res.all.push(member.id);
-                res.terms[terms.join(" ")] = member.id;
-                res.found = true;
-            }
+            res.all.push(member.id);
+            res.terms[terms.join(" ")] = member.id;
+            res.found = true;
         }
     }
+
+    res.all = res.all.filter((item, index, array) => array.indexOf(item) === index);
 
     return res;
 }

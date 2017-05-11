@@ -10,18 +10,30 @@ function itemEmbed(item, items) {
     if (item.desc) desc.push(item.desc);
     if (item.notes) desc.push(item.notes);
 
-    if (item.created) {
-        let comp = item.components.map((component) => items.find((item) => item.name == component).dname);
-        desc.push(`Built from: ${comp.join(", ")}`)
-    }
+    let attributes = item.attrib && item.attrib
+        .filter((attrib) => !attrib.header.includes("TOOLTIP"))
+        .map((attrib) => {
+            if (attrib.footer) {
+                return `**${attrib.header}${Array.isArray(attrib.value) ? attrib.value.join(" / ") : attrib.value}** ${attrib.footer}`;
+            } else {
+                return `**${attrib.header}** ${Array.isArray(attrib.value) ? attrib.value.join(" / ") : attrib.value}`;
+            }
+        });
 
-    let attributes = item.attrib && item.attrib.map((attrib) => {
-        if (attrib.footer) {
-            return `**${attrib.header}${attrib.value}** ${attrib.footer}`;
-        } else {
-            return `**${attrib.header}** ${Array.isArray(attrib.value) ? attrib.value.join(" / ") : attrib.value}`;
-        }
-    });
+    let fields = [{
+        name: costs.length ? costs.join("   ") : "\u200b",
+        value: attributes ? attributes.join("\n") : "Nothing special.",
+        inline: true
+    }];
+
+    if (item.created) {
+        let comp = item.components.map((component) => items.find((item) => item.name == component));
+        fields.push({
+            name: "Components",
+            value: comp.map((component) => `<:gold:281572294030131200> ${component.cost} - **${component.dname}**`).join("\n"),
+            inline: true
+        });
+    }
 
     return {
         "author": {
@@ -29,11 +41,7 @@ function itemEmbed(item, items) {
             "url": `http://dota2.gamepedia.com/${item.dname.replace(/ /g, "_")}`,
             "icon_url": `http://cdn.dota2.com${item.img}`
         },
-        "fields": [{
-            "name": costs.join("   "),
-            "value": attributes ? attributes.join("\n") : "Nothing special.",
-            "inline": true
-        }],
+        fields,
         "description": desc.join("\n\n"),
         "footer": {
             "text": item.lore

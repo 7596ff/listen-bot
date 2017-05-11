@@ -27,6 +27,7 @@ async function exec(ctx) {
     if (search.includes("steamcommunity.com/id/")) {
         try {
             ID = search.split("/").slice(-1)[0];
+            if (!ID) ID = search.split(("/").slice(-2)[0];
             ID = await resolveVanityURL(ID);
             ID = new Bignumber(ID).minus(steamconst);
         } catch (err) {

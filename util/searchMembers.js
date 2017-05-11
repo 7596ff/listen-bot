@@ -20,12 +20,6 @@ async function searchMembers(members, terms, exact) {
 
                     if (member.username.toLowerCase() == term) return true;
                     if (member.nick && member.nick.toLowerCase() == term) return true;
-
-                    let un = usernames.get(term);
-                    if (!exact && un && un[0][0] >= 0.75 && un[0][1] == member.username) return true;
-
-                    let nn = nicknames.get(term);
-                    if (!exact && nn && un[0][0] >= 0.75 && nn[0][1] == member.nick) return true;
                 });
 
                 if (search) {
@@ -33,6 +27,26 @@ async function searchMembers(members, terms, exact) {
                     res.terms[term] = search.id;
                     res.found = true;
                 }
+            }
+        }
+    }
+
+    if (!exact) {
+        let matchedUsername = usernames.get(terms.join(" "));
+        if (matchedUsername && matchedUsername[0][0] >= 0.6 && matchedUsername[0][1]) {
+            let member = members.find((member) => member.username == matchedUsername[0][1]);
+            res.all.push(member.id);
+            res.terms[terms.join(" ")] = member.id;
+            res.found = true;
+        }
+
+        let matchedNickname = nicknames.get(terms.join(" "));
+        if (matchedNickname && matchedNickname[0][0] >= 0.6 && matchedNickname[0][1]) {
+            let member = members.find((member) => member.nick == matchedNickname[0][1]);
+            if (!~res.all.indexOf(member.id)) {
+                res.all.push(member.id);
+                res.terms[terms.join(" ")] = member.id;
+                res.found = true;
             }
         }
     }

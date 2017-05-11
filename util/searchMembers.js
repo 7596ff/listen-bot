@@ -32,7 +32,11 @@ async function searchMembers(members, terms, exact) {
     }
 
     if (!exact) {
-        let threshold = 0.5;
+        let threshold = 0.8;
+
+        if (members.size < 5000) {
+            threshold = members.size / 5000 * 0.3 + 0.5;
+        }
 
         let matchedUsername = usernames.get(terms.join(" "));
         if (matchedUsername && matchedUsername[0][0] >= threshold && matchedUsername[0][1]) {

@@ -388,6 +388,15 @@ async function invoke(message, client, helper, cmd) {
             return this.message.channel.createMessage(`❌ ${str}`);
         }.bind(ctx);
 
+        ctx.delete = async function() {
+            let args = Array.from(arguments);
+            return this.message.channel.createMessage(...args.slice(1)).then((msg) => {
+                setTimeout(() => {
+                    msg.delete();
+                }, args[0]);
+            });
+        }.bind(ctx);
+
         ctx.helper.log(message, `${cmd.name} (${ctx.options.join(" ")})`);
         if (cmd.typing) await message.channel.sendTyping();
         await cmd.exec(ctx);

@@ -1,25 +1,21 @@
 const abilities = require("../../json/abilities");
 const abilityEmbed = require("../../embeds/ability");
 const findHero = require("../../util/findHero");
+const ReactionChooser = require("../../classes/reactionChooser");
 
 const FuzzySet = require("fuzzyset.js");
 const fuzzy = FuzzySet(abilities.filter((a) => a.dname).map((a) => a.dname));
-
-function escapeRegExp(string){
-    return string.replace(/([.*+?^=!:${}()|\[\]\/\\])/g, "\\$1");
-}
 
 async function exec(ctx) {
     let hero_name = false;
 
     let key = ctx.options.find((option) => {
         if (["q", "w", "e", "d", "f", "r"].includes(option.toLowerCase())) return true;
-        if (option.toLowerCase().match(/[qwe][qwe][qwe]/) || option.toLowerCase() == "emp") return true;
+        if ((option.length == 3 && option.toLowerCase().match(/[qwe][qwe][qwe]/)) || option.toLowerCase() == "emp") return true;
     });
     if (key) ctx.options.splice(ctx.options.indexOf(key), 1);
 
     if (key && key.length == 1) {
-
         hero_name = findHero(ctx.options.join(" "));
         hero_name = hero_name && hero_name.name;
     } else if (key && key.length == 3) {
@@ -44,16 +40,22 @@ async function exec(ctx) {
         return ctx.embed(abilityEmbed(skill[0]));
     } else {
         let conflicts = abilities.filter((ability) => ability.dname && ability.dname.toLowerCase().match(ctx.options.join(" ")));
-        if (conflicts.length > 1) {
-            return ctx.send(ctx.strings.get("ability_not_found_conflicts", conflicts.map(conflict => conflict.dname).join(", "))).then(new_message => {
-                setTimeout(function() { this.delete(); }.bind(new_message), 10000);
-            });
+
+        if (conflicts.length > 10) {
+            return ctx.delete(10000, `:x: ${ctx.strings.get("ability_not_found_conflicts", conflicts.map((conflict) => conflict.dname).join(", "))}`);
         } else if (conflicts.length == 1) {
             return ctx.embed(abilityEmbed(conflicts[0]));
-        } else {
-            return ctx.send(ctx.strings.get("ability_not_found")).then(new_message => {
-                setTimeout(() => { new_message.delete(); }, 10000);
+        } else if (conflicts.length) {
+            let map = conflicts.map((item, index) => `${index}\u20e3 ${item.dname}`);
+            map.unshift("Multiple conflicts found. React with a number to choose an ability.", "");
+            let msg = await ctx.embed({
+                description: map.join("\n")
             });
+
+            ctx.client.watchers[msg.id] = new ReactionChooser(ctx, msg, conflicts.map((conflict) => abilityEmbed(conflict)));
+            return Promise.resolve();
+        } else {
+            return ctx.delete(10000, `:x: ${ctx.strings.get("ability_not_found")}`);
         }
     }
 }

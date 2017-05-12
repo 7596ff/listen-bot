@@ -157,7 +157,7 @@ const subcommands = {
                 return ctx.failure(ctx.strings.get("admin_locale_failure", available.join(", ")));
             }
         } else {
-            return ctx.failure(ctx.strings.get("bot_bad_syntax"));
+            return ctx.failure(ctx.strings.get("admin_locale_failure", available.join(", ")));
         }
     },
     prefix: async function(ctx) {

@@ -17,6 +17,7 @@ async function exec(ctx) {
 
     if (search.includes("steamcommunity.com/profiles/")) {
         let search2 = search.split("/").slice(-1)[0];
+        if (!search2) search2 = search.split("/").slice(-2)[0];
         if (isNaN(search2)) {
             ID = false;
         } else {

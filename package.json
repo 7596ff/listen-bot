@@ -26,7 +26,7 @@
     "cheerio": "^0.22.0",
     "d": "1.0.0",
     "dotaconstants": "5.4.0",
-    "eris": "0.6.0",
+    "eris": "0.7.0",
     "erlpack": "0.1.2",
     "fuzzyset.js": "0.0.1",
     "gosugamers-api": "0.1.2",

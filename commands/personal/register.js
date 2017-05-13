@@ -15,26 +15,24 @@ async function exec(ctx) {
         ID = search.split("/").slice(-1)[0];
     }
 
-    if (search.includes("steamcommunity.com/profiles/")) {
-        let search2 = search.split("/").slice(-1)[0];
-        if (!search2) search2 = search.split("/").slice(-2)[0];
-        if (isNaN(search2)) {
-            ID = false;
-        } else {
-            ID = new Bignumber().minus(steamconst);
-        }
-    }
+    if (search.includes("steamcommunity.com/")) {
+        let split = search.split("/").reverse();
+        ID = split[0] || split[1];
 
-    if (search.includes("steamcommunity.com/id/")) {
-        try {
-            ID = search.split("/").slice(-1)[0];
-            if (!ID) ID = search.split("/").slice(-2)[0];
-            ID = await resolveVanityURL(ID);
-            ID = new Bignumber(ID).minus(steamconst);
-        } catch (err) {
-            console.error(err);
-            return ctx.failure(ctx.strings.get("register_bad_vanity"));
+        if (!ID) {
+            return ctx.failure(ctx.strings.get("register_no_id"));
         }
+
+        if (isNaN(ID) || search.includes("/id/")) {
+            try {
+                ID = await resolveVanityURL(ID);
+            } catch (err) {
+                console.error(err);
+                return ctx.failure(ctx.strings.get("register_bad_vanity"));
+            }
+        }
+
+        ID = new Bignumber(ID).minus(steamconst);
     }
 
     if (ID === false || isNaN(ID)) {

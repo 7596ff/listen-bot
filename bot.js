@@ -406,6 +406,14 @@ async function invoke(message, client, helper, cmd) {
     }
 }
 
+function checkDisabed(gcfg, channel, command) {
+    if (!gcfg.disabled) return false;
+    if (!gcfg.disabled[channel]) return false;
+    if (!gcfg.disabled[channel].includes(command)) return false;
+
+    return true;
+}
+
 function handle(message, client) {
     if (message.content.startsWith(message.gcfg.prefix) || message.content.startsWith(config.default_prefix)) {
         if (message.content.startsWith(config.default_prefix)) message.content = message.content.replace(config.default_prefix, "");
@@ -428,22 +436,15 @@ function handle(message, client) {
             return;
         }
 
-        let disabled_list = message.gcfg.disabled ? message.gcfg.disabled[message.channel.id] : undefined;
-        if (disabled_list && disabled_list.includes(command)) {
-            let content = client.strings[message.gcfg.locale || "en"].get("bot_botspam");
-
-            if (message.gcfg.botspam) {
-                content = client.strings[message.gcfg.locale || "en"].get("bot_botspam_redirect", message.gcfg.botspam);
+        if (checkDisabed(message.gcfg, message.channel.id, command.name)) {
+            if (message.gcfg.botspam > 0) {
+                return message.channel.createMessage(client.strings[message.gcfg.locale || "en"].get("bot_botspam_redirect", message.gcfg.botspam))
+                    .catch((err) => console.error("couldn't send botspam redirect"));
+            } else {
+                return message.channel.createMessage(client.strings[message.gcfg.locale || "en"].get("bot_botspam", message.gcfg.botspam))
+                    .catch((err) => console.error("couldn't send botspam redirect"));
             }
-
-            message.channel.createMessage(content).catch((err) => client.helper.handle(message, err)).then((msg) => {
-                setTimeout(function() {
-                    if (msg) client.deleteMessage(msg.channel.id, msg.id);
-                }, 10000);
-            });
-
-            return;
-        };
+        }
 
         let climit = `climit:${message.channel.id}`;
         let mlimit = `mlimit:${message.author.id}`;

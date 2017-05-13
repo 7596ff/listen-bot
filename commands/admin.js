@@ -178,19 +178,14 @@ const subcommands = {
         }
     },
     trivia: async function(ctx) {
-        if (ctx.options[0] == "channel") {
-            if (ctx.message.channelMentions.length > 0) {
-                return edit_trivia(ctx.client.pg, ctx.message.channelMentions[0], ctx);
-            } else if (ctx.options.slice(1).join(" ").trim() == "here") {
-                return edit_trivia(ctx.client.pg, ctx.channel.id, ctx);
-            } else if (ctx.options.slice(1).join(" ").trim() == "none") {
-                return edit_trivia(ctx.client.pg, null, ctx);
-            } else {
-                return ctx.failure(ctx.strings.get("admin_trivia_bad_syntax"))
-            }
+        if (ctx.message.channelMentions.length > 0) {
+            return edit_trivia(ctx.client.pg, ctx.message.channelMentions[0], ctx);
+        } else if (ctx.options.join(" ").trim() == "here") {
+            return edit_trivia(ctx.client.pg, ctx.channel.id, ctx);
+        } else if (ctx.options.join(" ").trim() == "none") {
+            return edit_trivia(ctx.client.pg, null, ctx);
         } else {
-            ctx.options = ["admin", "trivia"];
-            return ctx.client.core.commands.help.exec(ctx);
+            return ctx.failure(ctx.strings.get("admin_trivia_bad_syntax"))
         }
     }
 }

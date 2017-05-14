@@ -14,8 +14,10 @@ async function exec(ctx) {
     data.talents = [];
 
     hero_abilities[`npc_dota_hero_${hero.name}`].talents.forEach((talent) => {
-        talent.dname = abilities[talent.name].dname;
-        data.talents.push(talent);
+        if (talent.name.startsWith("special_bonus")) {
+            talent.dname = abilities[talent.name] ? abilities[talent.name].dname : "?";
+            data.talents.push(talent);
+        }
     });
 
     let embed = talentsEmbed(data);

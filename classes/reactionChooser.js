@@ -12,7 +12,7 @@ class ReactionChooser {
 
         this.delete = setTimeout(() => {
             this.ctx.helper.log(this.ctx.message, `stopped watching ${this.msg.id}`);
-            delete cyx.client.watchers[this.msg.id];
+            delete ctx.client.watchers[this.msg.id];
         }, 600000);
 
         this.ctx.helper.log(this.ctx.message, `started watching ${this.msg.id}`);

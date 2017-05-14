@@ -450,20 +450,16 @@ function handle(message, client) {
         let mlimit = `mlimit:${message.author.id}`;
 
         if (client.cooldowns[climit] > 0) {
-            if (client.cooldowns[climit] == 1) return;
             let timeleft = Math.floor((message.timestamp - client.cooldowns[climit]) / 1000);
             let msg = client.strings[message.gcfg.locale || "en"].get("bot_cooldown_redirect", message.channel.mention, message.gcfg.climit - timeleft);
             message.channel.createMessage(msg).then(new_message => {
-                client.cooldowns[climit] = 1;
                 setTimeout(() => { new_message.delete() }, 8000);
             }).catch((err) => client.helper.handle(message, err));
         } else {
             if (client.cooldowns[mlimit] > 0) {
-                if (client.cooldowns[mlimit] == 1) return;
                 let timeleft = Math.floor((message.timestamp - client.cooldowns[mlimit]) / 1000);
                 let msg = client.strings[message.gcfg.locale || "en"].get("bot_cooldown_redirect", message.author.mention, message.gcfg.climit - timeleft);
                 message.channel.createMessage(msg).then(new_message => {
-                    client.cooldowns[mlimit] = 1;
                     setTimeout(() => { new_message.delete() }, 8000);
                 }).catch((err) => client.helper.handle(message, err));
             } else {

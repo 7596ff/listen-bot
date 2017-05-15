@@ -1,5 +1,719 @@
 [{
     "heroes": {
+        "alchemist": {
+            "changes": [
+                "• Unstable Concoction cooldown increased from 16 to 22/20/18/16",
+                "• Unstable Concoction AoE increased from 175 to 200",
+                "• Greevil's Greed base bonus gold reduced from 6/8/10/12 to 4",
+                "• Greevil's Greed bonus per stack increased from 3 to 4",
+                "• Greevil's Greed bonus cap rescaled from 12/20/28/36 to 16/20/24/28"
+            ],
+            "true_name": "alchemist",
+            "format_name": "Alchemist"
+        },
+        "ancient_apparition": {
+            "changes": [
+                "• Attack range increased from 600 to 675",
+                "• Ice Vortex movement modifier has a positive effect on Ancient Apparition",
+                "• Replaced Respawn Talent: +8% Ice Vortex Slow/Resistance (Level 20)"
+            ],
+            "true_name": "ancient_apparition",
+            "format_name": "Ancient Apparition"
+        },
+        "axe": {
+            "changes": [
+                "• Reworked Scepter on Axe. Causes Battle Hunger to reduce enemy total damage output by 30%. Applies Battle Hunger on enemy heroes within a 700 AoE after a successful Culling Blade."
+            ],
+            "format_name": "Axe",
+            "true_name": "axe"
+        },
+        "bane": {
+            "changes": [
+                "• Reworked Bane's Scepter. Causes Brain Sap to have a 1.5 second cooldown. Pierces Spell Immunity.",
+                "• Bane Agi/Int growth increased by 0.3, matching new strength growth",
+                "• Fiend's Grip deals damage every 0.5 seconds instead of every 1.0"
+            ],
+            "format_name": "Bane",
+            "true_name": "bane"
+        },
+        "beastmaster": {
+            "changes": [
+                "• Wild Axes cast range increased from 1300 to 1500",
+                "• Wild Axes manacost rescaled from 120 to 105/110/115/120",
+                "• Replaced Respawn Talent: +1 Boar Summoned (Level 15)"
+            ],
+            "format_name": "Beastmaster",
+            "true_name": "beastmaster"
+        },
+        "bloodseeker": {
+            "changes": [
+                "• Bloodrite cooldown from 25/21/17/13 to 18/16/14/12",
+                "• Bloodrite cast point reduced from 0.4 to 0.3"
+            ],
+            "true_name": "bloodseeker",
+            "format_name": "Bloodseeker"
+        },
+        "bounty_hunter": {
+            "changes": [
+                "• Fixed Shuriken Toss Scepter interrupting the chain if one of the targets is Spell Immune"
+            ],
+            "true_name": "bounty_hunter",
+            "format_name": "Bounty Hunter"
+        },
+        "brewmaster": {
+            "changes": [
+                "• Drunken Haze cast point reduced from 0.3 to 0.2",
+                "• Drunken Haze duration increased from 4 to 4.5",
+                "• Hurl Boulder cast point reduced from 0.4 to 0.25",
+                "• Drunken Brawler crit increased from 200% to 230%",
+                "• Replaced Respawn Talent: +2s Thunderlap Slow (Level 20)"
+            ],
+            "true_name": "brewmaster",
+            "format_name": "Brewmaster"
+        },
+        "bristleback": {
+            "changes": [
+                "• Replaced Respawn Talent: +10% Spell Lifesteal (Level 20)"
+            ],
+            "true_name": "bristleback",
+            "format_name": "Bristleback"
+        },
+        "chaos_knight": {
+            "changes": [
+                "• Reality Rift cast point reduced from 0.4 to 0.3",
+                "• Reality Rift cooldown from 24/18/12/6 to 18/14/10/6",
+                "• Chaos Strike lifesteal from 65% to 75%",
+                "• Phantasm Illusion damage taken from 200% to 260%"
+            ],
+            "true_name": "chaos_knight",
+            "format_name": "Chaos Knight"
+        },
+        "chen": {
+            "changes": [
+                "• Holy Persuasion cooldown reduced from 30/26/22/18 to 10",
+                "• Replaced Respawn Talent: +1000 Creep Health (Level 20)"
+            ],
+            "true_name": "chen",
+            "format_name": "Chen"
+        },
+        "clinkz": {
+            "changes": [
+                "• Death Pact cooldown increased from 45/30/15 to 85",
+                "• Death Pact duration increased from 35 to 65"
+            ],
+            "true_name": "clinkz",
+            "format_name": "Clinkz"
+        },
+        "rattletrap": {
+            "changes": [
+                "• Replaced Respawn Talent: +40 Battery Assault Damage (Level 20)"
+            ],
+            "format_name": "Clockwerk",
+            "true_name": "rattletrap"
+        },
+        "crystal_maiden": {
+            "changes": [
+                "• Freezing Field cooldown rescaled from 90 to 110/100/90",
+                "• Fixed Scepter Freezing Field not interrupting targets",
+                "• Replaced Respawn Talent: +50 Freezing Field Damage (Level 20)"
+            ],
+            "format_name": "Crystal Maiden",
+            "true_name": "crystal_maiden"
+        },
+        "dark_seer": {
+            "changes": [
+                "• Wall of Replica slow rescaled from 1 second to 0.6/0.8/1.0"
+            ],
+            "format_name": "Dark Seer",
+            "true_name": "dark_seer"
+        },
+        "dazzle": {
+            "changes": [
+                "• Reworked Dazzle's Scepter. Causes Shallow Grave to be a 450 AoE spell.",
+                "• Replaced Respawn Talent: +25 Poison Touch DPS (Level 20)"
+            ],
+            "format_name": "Dazzle",
+            "true_name": "dazzle"
+        },
+        "disruptor": {
+            "changes": [
+                "• Replaced Respawn Talent: +40 Thunder Strike Damage (Level 15)"
+            ],
+            "format_name": "Disruptor",
+            "true_name": "disruptor"
+        },
+        "doom_bringer": {
+            "changes": [
+                "• Scorched Earth healing/damage rescaled from 10/20/30/40 to 16/24/32/40",
+                "• Devour manacost rescaled from 60 to 40/50/60/70",
+                "• Removed critical strike from the small wolves in the jungle, attack damage increased by the same amount"
+            ],
+            "format_name": "Doom",
+            "true_name": "doom_bringer"
+        },
+        "dragon_knight": {
+            "changes": [
+                "• Elder Dragon Form Frost attack slow increased from -20% to -30%"
+            ],
+            "format_name": "Dragon Knight",
+            "true_name": "dragon_knight"
+        },
+        "drow_ranger": {
+            "changes": [
+                "• Frost Arrows are no longer a Unique Attack Modifier"
+            ],
+            "format_name": "Drow Ranger",
+            "true_name": "drow_ranger"
+        },
+        "earth_spirit": {
+            "changes": [
+                "• Replaced Respawn Talent: Geomagnetic Grip Targets Allies"
+            ],
+            "format_name": "Earth Spirit",
+            "true_name": "earth_spirit"
+        },
+        "earthshaker": {
+            "changes": [
+                "• Enchant Totem has True Strike",
+                "• Replaced Respawn Talent: +350 Fissure Range (Level 20)"
+            ],
+            "format_name": "Earthshaker",
+            "true_name": "earthshaker"
+        },
+        "elder_titan": {
+            "changes": [
+                "• Astral Spirit hero bonus damage increased from 12/24/36/48 to 15/30/45/60",
+                "• Earth Splitter radius increased from 300 to 315",
+                "• Replaced Respawn Talent: +200 Mana (Level 10)"
+            ],
+            "true_name": "elder_titan",
+            "format_name": "Elder Titan"
+        },
+        "enchantress": {
+            "changes": [
+                "• Base Intelligence increased by 2",
+                "• Enchant slow duration from 5.5 seconds to 2.25/3.5/4.75/6",
+                "• Enchant slow from 20/30/40/50% to 55%",
+                "• Replaced Respawn Talent: +6% Impetus Damage (Level 25)"
+            ],
+            "format_name": "Enchantress",
+            "true_name": "enchantress"
+        },
+        "enigma": {
+            "changes": [
+                "• Replaced Respawn Talent: +1 Malefice Instance (Level 20)"
+            ],
+            "format_name": "Enigma",
+            "true_name": "enigma"
+        },
+        "faceless_void": {
+            "changes": [
+                "• Time Dilation slow per affected cooldown increased from 10% to 14%"
+            ],
+            "format_name": "Faceless Void",
+            "true_name": "faceless_void"
+        },
+        "gyrocopter": {
+            "changes": [
+                "• Movement speed increased from 315 to 320",
+                "• Homing Missile initial delay reduced from 3 to 2.5 seconds"
+            ],
+            "format_name": "Gyrocopter",
+            "true_name": "gyrocopter"
+        },
+        "huskar": {
+            "changes": [
+                "• Life Break leap speed increased from 1000 to 1200",
+                "• Life Break Damage dealt/taken from 35% to 34/38/42%"
+            ],
+            "format_name": "Huskar",
+            "true_name": "huskar"
+        },
+        "wisp": {
+            "changes": [
+                "• Replaced Respawn Talent: Tether Stuns (Level 25)"
+            ],
+            "format_name": "io",
+            "true_name": "wisp"
+        },
+        "jakiro": {
+            "changes": [
+                "• Dual Breath start radius increased from 200 to 225",
+                "• Dual Breath end radius increased from 250 to 275",
+                "• Replaced Respawn Talent: Macropyre Pure and Pierces Immunity (Level 25)"
+            ],
+            "format_name": "Jakiro",
+            "true_name": "jakiro"
+        },
+        "keeper_of_the_light": {
+            "changes": [
+                "• Replaced Respawn Talent: +300 Chakra Magic Mana (Level 15)"
+            ],
+            "format_name": "Keeper of the Light",
+            "true_name": "keeper_of_the_light"
+        },
+        "kunkka": {
+            "changes": [
+                "• Ghost Ship now always crashes where Kunkka targets it"
+            ],
+            "format_name": "Kunkka",
+            "true_name": "kunkka"
+        },
+        "legion_commander": {
+            "changes": [
+                "• Overwhelming Odds manacost from 100 to 100/110/120/130",
+                "• Duel Scepter now additionally grants Spell Immunity to your hero during Duel",
+                "• Replaced Respawn Talent: +10% Moment Proc Chance (Level 20)"
+            ],
+            "format_name": "Legion Commander",
+            "true_name": "legion_commander"
+        },
+        "leshrac": {
+            "changes": [
+                "• Reworked Leshrac's Scepter. While Pulse Nova is active, every 1.75 seconds Lightning Storm will hit one random unit within 750 AoE. Prioritizes heroes."
+            ],
+            "format_name": "Leshrac",
+            "true_name": "leshrac"
+        },
+        "lich": {
+            "changes": [
+                "• Chain Frost slow increased from 50% to 65%"
+            ],
+            "format_name": "Lich",
+            "true_name": "lich"
+        },
+        "lina": {
+            "changes": [
+                "• Replaced Respawn Talent: +40 Movement Speed (Level 15)"
+            ],
+            "format_name": "Lina",
+            "true_name": "lina"
+        },
+        "lion": {
+            "changes": [
+                "• Replaced Respawn Talent: +75 Cast Range (Level 10)"
+            ],
+            "true_name": "lion",
+            "format_name": "Lion"
+        },
+        "lone_druid": {
+            "changes": [
+                "• Rabid attack speed increased from 10/20/30/40 to 20/30/40/50",
+                "• Rabid duration rescaled from 18/22/26/30 to 25",
+                "• Rabid cooldown reduced from 45 to 35",
+                "• Replaced Respawn Talent: +50% Spirit Bear Magic Resistance (Level 20)"
+            ],
+            "format_name": "Lone Druid",
+            "true_name": "lone_druid"
+        },
+        "luna": {
+            "changes": [
+                "• Lucent Beam cast animation reduced from 0.6 to 0.5"
+            ],
+            "true_name": "luna",
+            "format_name": "Luna"
+        },
+        "lycan": {
+            "changes": [
+                "• Replaced Respawn Talent: +12 Feral HP Regen (Level 15)"
+            ],
+            "format_name": "Lycan",
+            "true_name": "lycan"
+        },
+        "magnataur": {
+            "changes": [
+                "• Movement speed reduced from 315 to 310",
+                "• Reworked Magnus's Scepter. Shockwave comes back, hitting units a second time and applying a 60% slow for 2 seconds. Distance and travel speed are increased by 50%. Return wave deals half damage to creeps.",
+                "• Reverse Polarity no longer lasts an extra 0.75/1/1.25 seconds on creeps",
+                "• Replaced Respawn Talent: +500 Skewer Range (Level 25)",
+                "• Level 25 Talent from -4s Shockwave Cooldown to +15 Armor"
+            ],
+            "format_name": "Magnus",
+            "true_name": "magnataur"
+        },
+        "medusa": {
+            "changes": [
+                "• Added Scepter for Medusa. Causes Mystic Snake to turn enemies into stone for 1 second. Increases by 0.2 seconds per bounce."
+            ],
+            "format_name": "Medusa",
+            "true_name": "medusa"
+        },
+        "mirana": {
+            "changes": [
+                "• Mirana base damage increased by 3",
+                "• Starstorm second impact delay reduced from 1 to 0.8",
+                "• Leap speed bonus reduced from 10 seconds to 5",
+                "• Leap attack speed bonus increased from 8/16/24/32 to 16/32/48/64"
+            ],
+            "true_name": "mirana",
+            "format_name": "Mirana"
+        },
+        "monkey_king": {
+            "changes": [
+                "• Wukong's Command no longer provides 50/70/90 bonus damage",
+                "• Wukong's Command provides you with 8/14/20 bonus armor",
+                "• Wukong's Command army no longer copy Basher/Abyssal",
+                "• Wukong's Command attack rate improved from 2.0 to 1.7",
+                "• Fixed Monkey King carrying Urn of Shadows sometimes wasting charges while Wukong's Command is ongoing",
+                "• Fixed Tree Jump causing Monkey King to temporarily have bigger vision than the defined day/night values"
+            ],
+            "true_name": "monkey_king",
+            "format_name": "Monkey King"
+        },
+        "morphling": {
+            "changes": [
+                "• Adaptive Strike manacost rescaled from 100/90/80/70 to 80"
+            ],
+            "format_name": "Morphling",
+            "true_name": "morphling"
+        },
+        "naga_siren": {
+            "changes": [
+                "• Song of the Siren cast time increased from 0.8 to 1.0",
+                "• Song of the Siren cooldown rescaled from 180/120/60 to 160/120/80",
+                "• Song of the Siren range rescaled from 1250 to 1000/1200/1400",
+                "• Mirror Image Illusion damage taken rescaled from 600/500/400/300% to 550/500/450/400%",
+                "• Rip Tide damage increased from 100/140/180/220 to 120/160/200/240",
+                "• Ensnare cast point reduced from 0.65 to 0.6",
+                "• Ensnare manacost rescaled from 90/100/110/120 to 100"
+            ],
+            "format_name": "Naga Siren",
+            "true_name": "naga_siren"
+        },
+        "furion": {
+            "changes": [
+                "• Replaced Respawn Talent: Removed Teleportation Cooldown (Level 25)"
+            ],
+            "true_name": "furion",
+            "format_name": "Nature's Prophet"
+        },
+        "necrolyte": {
+            "changes": [
+                "• Ghost Shroud heal amplification increased from 50% to 75%"
+            ],
+            "format_name": "Necrophos",
+            "true_name": "necrolyte"
+        },
+        "night_stalker": {
+            "changes": [
+                "• Hunter in the Night can now be activated during the night to grant Night Stalker flying movement for 2 seconds. Cooldown 26/22/18/14. Mana cost 50. 1200 Vision."
+            ],
+            "format_name": "Night Stalker",
+            "true_name": "night_stalker"
+        },
+        "oracle": {
+            "changes": [
+                "• Fortune's End is now a root rather than a slow that sets the target to 0 movement speed",
+                "• Replaced Respawn Talent: +0.75s Fortune's End Max Duration (Level 10)",
+                "• Fortune's End projectile speed from 1200 to 1000",
+                "• Purifying Flames cast range from 800 to 850"
+            ],
+            "format_name": "Oracle",
+            "true_name": "oracle"
+        },
+        "obsidian_destroyer": {
+            "changes": [
+                "• Reworked Outworld Devourer's Scepter. Grants 2 charges to Astral Imprisonment and increases cast range by 300. Damage areas stack. Replenish Time: 12"
+            ],
+            "format_name": "Outworld Devourer",
+            "true_name": "obsidian_destroyer"
+        },
+        "phantom_lancer": {
+            "changes": [
+                "• Fixed Doppleganger Illusions lasting one second less than intended",
+                "• Phantom Rush agility bonus is now granted before the first hit lands, rather than after",
+                "• Juxtapose max illusions increased from 5/7/9 to 6/8/10"
+            ],
+            "format_name": "Phantom Lancer",
+            "true_name": "phantom_lancer"
+        },
+        "phoenix": {
+            "changes": [
+                "• Fire Spirits duration increased from 16 to 20",
+                "• Replaced Respawn Talent: +20% XP Gain (Level 10)"
+            ],
+            "format_name": "Phoenix",
+            "true_name": "phoenix"
+        },
+        "pudge": {
+            "changes": [
+                "• Replaced Respawn Talent: +1s Dismember Duration (Level 20)"
+            ],
+            "format_name": "Pudge",
+            "true_name": "pudge"
+        },
+        "pugna": {
+            "changes": [
+                "• Life Drain now grants truesight vision over the target",
+                "• Life Drain cast range reduced from 900/1050/1200 to 800",
+                "• Life Drain now has a 100 range break buffer",
+                "• Replaced Respawn Talent: +1s Decrepify Duration (Level 15)"
+            ],
+            "format_name": "Pugna",
+            "true_name": "pugna"
+        },
+        "queenofpain": {
+            "changes": [
+                "• Queen of Pain Level 25 Talent from No Shadow Strike cooldown to 550 AoE Shadow Strike"
+            ],
+            "format_name": "Queen of Pain",
+            "true_name": "queenofpain"
+        },
+        "razor": {
+            "changes": [
+                "• Eye of the Storm prioritizes striking static linked heroes",
+                "• Eye of the Storm no longer has a cast point"
+            ],
+            "format_name": "Razor",
+            "true_name": "razor"
+        },
+        "riki": {
+            "changes": [
+                "• Base movement speed reduced by 5"
+            ],
+            "format_name": "Riki",
+            "true_name": "riki"
+        },
+        "sand_king": {
+            "changes": [
+                "• Caustic Finale is no longer a Unique Attack Modifier",
+                "• Sand Storm invisbility linger duration rescaled from 1.5 to 0.9/1.1/1.3/1.5",
+                "• Sand Storm DPS rescaled from 25/50/75/100 to 40/60/80/100",
+                "• Replaced Respawn Talent: -50 Epicenter Attack Slow (Level 15)"
+            ],
+            "format_name": "Sand King",
+            "true_name": "sand_king"
+        },
+        "shadow_demon": {
+            "changes": [
+                "• Shadow Poison manacost reduced from 55 to 50",
+                "• Soul Catcher now spreads its amplification evenly among all the enemies in the AoE",
+                "• Replaced Respawn Talent: -1.5s Shadow Poison Cooldown (Level 20)"
+            ],
+            "format_name": "Shadow Demon",
+            "true_name": "shadow_demon"
+        },
+        "nevermore": {
+            "changes": [
+                "• Shadow Fiend Level 25 Talent from +125 Shadowraze Damage to +150"
+            ],
+            "format_name": "Shadow Fiend",
+            "true_name": "nevermore"
+        },
+        "shadow_shaman": {
+            "changes": [
+                "• Base damage increased by 6",
+                "• Mass Serpent Wards base attack range increased by 50",
+                "• Replaced Respawn Talent: +4 Wards Summoned (Level 20)"
+            ],
+            "format_name": "Shadow Shaman",
+            "true_name": "shadow_shaman"
+        },
+        "silencer": {
+            "changes": [
+                "• Reworked Silencer's Scepter. Glaives now Pierce Spell Immunity and deal 100% more damage against Silenced units."
+            ],
+            "format_name": "Silencer",
+            "true_name": "silencer"
+        },
+        "skywrath_mage": {
+            "changes": [
+                "• Level 15 Talent from +75 Damage to +10% Spell Lifesteal."
+            ],
+            "format_name": "Skywrath Mage",
+            "true_name": "skywrath_mage"
+        },
+        "slark": {
+            "changes": [
+                "• Intelligence gain reduced from 1.9 to 1.7"
+            ],
+            "true_name": "slark",
+            "format_name": "Slark"
+        },
+        "spectre": {
+            "changes": [
+                "• Haunt cooldown rescaled from 140/130/120 to 180/150/120"
+            ],
+            "format_name": "Spectre",
+            "true_name": "spectre"
+        },
+        "spirit_breaker": {
+            "changes": [
+                "• Replaced Respawn Talent: +30% Greater Bash Damage (Level 20)"
+            ],
+            "format_name": "Spirit Breaker",
+            "true_name": "spirit_breaker"
+        },
+        "sven": {
+            "changes": [
+                "• God's Strength now grants a bonus 16/28/40 Strength when activated",
+                "• God's Strength attack bonus reduced from 100/150/200% to 80/120/160%"
+            ],
+            "format_name": "Sven",
+            "true_name": "sven"
+        },
+        "techies": {
+            "changes": [
+                "• Replaced Respawn Talent: +250 Attack Damage (Level 25)"
+            ],
+            "format_name": "Techies",
+            "true_name": "techies"
+        },
+        "templar_assassin": {
+            "changes": [
+                "• Agility gain reduced from 2.7 to 2.3",
+                "• Replaced Respawn Talent: -8 Meld Armor Reduction (Level 25)"
+            ],
+            "format_name": "Templar Assassin",
+            "true_name": "templar_assassin"
+        },
+        "terrorblade": {
+            "changes": [
+                "• Metamorphosis Movement Speed Loss increased from 25 to 30"
+            ],
+            "true_name": "terrorblade",
+            "format_name": "Terrorblade"
+        },
+        "tidehunter": {
+            "changes": [
+                "• Gush manacost rescaled from 120 to 90/100/110/120",
+                "• Aghanim's Gush now does a small ground reveal on units that are hit"
+            ],
+            "format_name": "Tidehunter",
+            "true_name": "tidehunter"
+        },
+        "tiny": {
+            "changes": [
+                "• Base damage increased by 4",
+                "• Grow increases Craggy Exterior chance by 6/8/10%"
+            ],
+            "true_name": "tiny",
+            "format_name": "Tiny"
+        },
+        "treant": {
+            "changes": [
+                "• Nature's Guise now applies a full disarming root, rather than a bash, on attack",
+                "• Replaced Respawn Talent: +40 Leech Seed Damage/Heal (Level 25)"
+            ],
+            "format_name": "Treant Protector",
+            "true_name": "treant"
+        },
+        "tusk": {
+            "changes": [
+                "• Improved consistency of Ice Shard when pushing units in/out of the shards on impact",
+                "• Ice Shards now starts the blockers at the cast location, rather than centering the blockers around the cast location",
+                "• Ice Shards cast range increased by 200",
+                "• Ice Shards speed increased from 1100 to 1200"
+            ],
+            "format_name": "Tusk",
+            "true_name": "tusk"
+        },
+        "abyssal_underlord": {
+            "changes": [
+                "• Atrophy Aura damage reduction rescaled from 4/16/28/40 to 7/18/29/40%",
+                "• Atrophy Aura counter now lingers through death",
+                "• Added Underlord Scepter. Atrophy Aura's bonus damage is now granted to nearby allied heroes for half of the bonuses. Increases bonus damage duration by 40 seconds."
+            ],
+            "true_name": "abyssal_underlord",
+            "format_name": "Underlord"
+        },
+        "undying": {
+            "changes": [
+                "• Replaced Respawn Talent: +15 Health Regeneration (Level 10)"
+            ],
+            "true_name": "undying",
+            "format_name": "Undying"
+        },
+        "ursa": {
+            "changes": [
+                "• Base damage reduced by 3"
+            ],
+            "format_name": "Ursa",
+            "true_name": "ursa"
+        },
+        "vengefulspirit": {
+            "changes": [
+                "• Wave of Terror cooldown rescaled from 20 to 22/20/18/16",
+                "• Vengeance Aura reduced from 12/20/28/36% to 10/18/26/34%"
+            ],
+            "true_name": "vengefulspirit",
+            "format_name": "Vengeful Spirit"
+        },
+        "venomancer": {
+            "changes": [
+                "• Replaced Respawn Talent: +14% Poison Sting Slow (Level 25)"
+            ],
+            "format_name": "Venomancer",
+            "true_name": "venomancer"
+        },
+        "viper": {
+            "changes": [
+                "• Viper Strike now deals its first tick of damage immediately",
+                "• Viper Strike cooldown rescaled from 70/50/30 to 60/45/30"
+            ],
+            "format_name": "Viper",
+            "true_name": "viper"
+        },
+        "visage": {
+            "changes": [
+                "• Grave Chill duration increased from 3/4/5/6 to 3.25/4.5/5.75/7",
+                "• Replaced Respawn Talent: Soul Assumption Double Strike"
+            ],
+            "format_name": "Visage",
+            "true_name": "visage"
+        },
+        "warlock": {
+            "changes": [
+                "• Chaotic Offering manacost increased from 200/300/400 to 250/350/450",
+                "• Replaced Respawn Talent: Summons a Golem on death (Level 20)"
+            ],
+            "format_name": "Warlock",
+            "true_name": "warlock"
+        },
+        "windrunner": {
+            "changes": [
+                "• Windranger Level 20 Talents are now: Windrun grants invisibility // +120 Powershot Damage",
+                "• Windranger Level 25 Talents are now: +30% Cooldown Reduction // +150 Attack Range"
+            ],
+            "true_name": "windrunner",
+            "format_name": "Windranger"
+        },
+        "winter_wyvern": {
+            "changes": [
+                "• Winter's Curse attack speed from 70 to 85",
+                "• Replaced Respawn Talent: +1s Cold Embrace Duration (Level 20)"
+            ],
+            "format_name": "Winter Wyvern",
+            "true_name": "winter_wyvern"
+        },
+        "witch_doctor": {
+            "changes": [
+                "• Scepter now additionally provides True Strike to Death Ward",
+                "• Replaced Respawn Talent: +2 Cask Bounces (Level 15)"
+            ],
+            "format_name": "Witch Doctor",
+            "true_name": "witch_doctor"
+        },
+        "skeleton_king": {
+            "changes": [
+                "• Level 20 Talent from +20 Strength to +10% Vampiric Aura Lifesteal",
+                "• Level 25 Talent from +20% Vampiric Aura Lifesteal to Reincarnation Casts Wraithfire Blast"
+            ],
+            "format_name": "Wraith King",
+            "true_name": "skeleton_king"
+        },
+        "zuus": {
+            "changes": [
+                "• Replaced Respawn Talent: +0.5s Lightning Bolt Ministun (Level 20)"
+            ],
+            "true_name": "zuus",
+            "format_name": "Zeus"
+        }
+    },
+    "items": {},
+    "version": "7.06"
+}, {
+    "heroes": {
         "abaddon": {
             "changes": [
                 "• Strength gain reduced from 2.5 to 2.3"
@@ -2723,13 +3437,6 @@
             ],
             "true_name": "templar_assassin",
             "format_name": "Templar Assassin"
-        },
-        "terrorblade": {
-            "changes": [
-                "No changes."
-            ],
-            "true_name": "terrorblade",
-            "format_name": "Terrorblade"
         },
         "tidehunter": {
             "changes": [

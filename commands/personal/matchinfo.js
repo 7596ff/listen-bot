@@ -40,6 +40,7 @@ async function exec(ctx) {
 module.exports = {
     name: "matchinfo",
     category: "personal",
+    aliases: ["mi", "match"],
     typing: true,
     exec
 };

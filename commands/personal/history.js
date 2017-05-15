@@ -32,6 +32,11 @@ async function historyWith(ctx, _with) {
         return ctx.failure(ctx.strings.get("bot_generic_error"));
     }
 
+    let nullcheck = results.indexOf(null);
+    if (~nullcheck) {
+        return ctx.failure(ctx.strings.get("bot_not_registered", ctx.client.users.get(_with.all[nullcheck]).username, ctx.gcfg.prefix));
+    }
+
     let constraints = results.length == 2 ? {
         "included_account_id": results[1]
     } : {};
@@ -93,6 +98,10 @@ async function historyAs(ctx, _as, _of) {
     } catch (err) {
         console.error(err);
         return ctx.failure(ctx.strings.get("bot_generic_error"));
+    }
+
+    if (result === null) {
+        return ctx.failure(ctx.strings.get("bot_not_registered", ctx.client.users.get(_of).username, ctx.gcfg.prefix));
     }
 
     let matches;

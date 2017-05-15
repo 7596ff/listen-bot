@@ -31,8 +31,8 @@ async function exec(ctx) {
     }
 
     if (result.with && result.with.found) {
-        discordIDs.push(...result.with.all);
         discordIDs.push(ctx.author.id);
+        discordIDs.push(...result.with.all);
     }
 
     if (result.of && result.with) {

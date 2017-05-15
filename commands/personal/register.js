@@ -35,6 +35,10 @@ async function exec(ctx) {
         ID = new Bignumber(ID).minus(steamconst);
     }
 
+    if (!isNaN(search)) {
+        ID = search;
+    }
+
     if (ID === false || isNaN(ID)) {
         return ctx.failure(ctx.strings.get("register_no_id"));
     }

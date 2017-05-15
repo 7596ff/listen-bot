@@ -203,7 +203,7 @@
     "help_cmd_playerinfo_usage": "%splayerinfo [<member>]",
     "help_cmd_playerinfo_args_0": "`member`: *optional* A registered member.",
     "help_cmd_playerinfo_desc": "Show a summary of a player's profile. Can be used without arguments to find your own.",
-    "help_cmd_register_usage": "%sregister <friend ID, OpenDota link, Dotabuff link>",
+    "help_cmd_register_usage": "%sregister <friend ID OR OpenDota link OR Dotabuff link OR Steam link>",
     "help_cmd_register_desc": "Accepts a steam profile link or a Dotabuff/OpenDota link. The bot account will send you a friend request on steam along with a direct message on discord with instructions. **Make sure your steam account is public and you have discord set to accept direct messages from other users before trying this!**",
     "help_cmd_unregister_usage": "%sunregister",
     "help_cmd_unregister_desc": "Removes your account with the bot.",

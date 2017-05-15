@@ -203,7 +203,7 @@
     "help_cmd_playerinfo_usage": "%splayerinfo [<member>]",
     "help_cmd_playerinfo_args_0": "`member`: *optional* A registered scallywag.",
     "help_cmd_playerinfo_desc": "Show a summary o' a scallywag's profile. Can be used without arguments t' find yer own.",
-    "help_cmd_register_usage": "%sregister <friend ID, opendota link, dotabuff link>",
+    "help_cmd_register_usage": "%sregister <friend ID OR OpenDota link OR Dotabuff link OR Steam link>",
     "help_cmd_register_desc": "Accepts a steam profile link or a dotabuff/opendota link. The bot account be sendin' ye a friend request on steam along with a direct message on discord with instructions. **Make sure yer steam account is public fer all t' see and ye have discord set t' accept direct messages from other scallywags before trying this!**",
     "help_cmd_unregister_usage": "%sunregister",
     "help_cmd_unregister_desc": "Removes yer account with the bot.",

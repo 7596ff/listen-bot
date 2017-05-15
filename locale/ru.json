@@ -203,7 +203,7 @@
     "help_cmd_playerinfo_usage": "%splayerinfo [<пользователь>]",
     "help_cmd_playerinfo_args_0": "`пользователь`: *не обязательно*: Зарегистрированный пользователь.",
     "help_cmd_playerinfo_desc": "Краткая информация о профиле пользователя. Без аргументов покажет Ваш профиль.",
-    "help_cmd_register_usage": "%sregister <идентификатор друга, ссылка opendota/dotabuff>",
+    "help_cmd_register_usage": "%sregister <идентификатор друга или ссылка на OpenDota, Dotabuff или Steam>",
     "help_cmd_register_desc": "Принимает ссылку на профиль в steam или dotabuff/opendota. Бот отправит Вам запрос в друзья в Steam и личное сообщение в Discord. **Не забудьте, что ваш Steam профиль должен быть публичен и у Вас не должны быть выключены ЛС в Discord**",
     "help_cmd_unregister_usage": "%sunregister",
     "help_cmd_unregister_desc": "Удаляет Ваш аккаунт из бота.",

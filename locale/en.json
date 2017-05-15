@@ -92,7 +92,7 @@
     "matches_match_radiant_victory": "Radiant Victory!",
     "matches_match_dire_victory": "Dire Victory!",
     "matches_match_completed": "Completed",
-    "matches_embed_title": "Use `%smatches` to check on a specific match.",
+    "matches_embed_title": "Use `%smatchinfo` to check on a specific match.",
     "matchinfo_match_radiant_victory": "Radiant Victory!",
     "matchinfo_match_dire_victory": "Dire Victory!",
     "matchinfo_match_completed": "Completed",

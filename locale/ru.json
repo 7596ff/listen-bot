@@ -92,7 +92,7 @@
     "matches_match_radiant_victory": "Победа Силы Света!",
     "matches_match_dire_victory": "Победа Силы Тьмы!",
     "matches_match_completed": "Закончено",
-    "matches_embed_title": "Используйте `%smatches` чтобы просмотреть отдельный матч.",
+    "matches_embed_title": "Используйте `%smatchinfo` чтобы просмотреть отдельный матч.",
     "matchinfo_match_radiant_victory": "Победа Силы Света!",
     "matchinfo_match_dire_victory": "Победа Силы Тьмы!",
     "matchinfo_match_completed": "Закончено",

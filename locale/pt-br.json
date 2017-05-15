@@ -92,7 +92,7 @@
     "matches_match_radiant_victory": "Vitória dos Iluminados!",
     "matches_match_dire_victory": "Vitória dos Temidos!",
     "matches_match_completed": "Completo",
-    "matches_embed_title": "Use `%smatches` para checar uma partida específica.",
+    "matches_embed_title": "Use `%smatchinfo` para checar uma partida específica.",
     "matchinfo_match_radiant_victory": "Vitória dos Iluminados!",
     "matchinfo_match_dire_victory": "Vitória dos Temidos!",
     "matchinfo_match_completed": "Completo",

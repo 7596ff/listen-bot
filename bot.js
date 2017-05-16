@@ -11,6 +11,8 @@ bluebird.promisifyAll(redis.Multi.prototype);
 const dbots_post = require("./dbots/post");
 const statsTemplate = require("./templates/stats");
 const shardinfoTemplate = require("./templates/shardinfo");
+const matchEmbed = require("./embeds/match");
+const checkDiscordID = require("./util/checkDiscordID");
 const Helper = require("./helper");
 const Trivia = require("./classes/trivia");
 const Usage = require("./classes/usage");
@@ -189,18 +191,29 @@ client.on("guildUpdate", guild => {
     });
 });
 
-client.on("guildDelete", guild => {
+client.on("guildDelete", async function(guild) {
     client.helper.log("bot", `${guild.id}/${guild.name}: left guild`);
 
-    client.pg.query({
-        "text": "DELETE FROM public.guilds WHERE id = $1",
-        "values": [guild.id]
-    }).then(() => {
+    try {
+        await client.pg.query({
+            text: "DELETE FROM public.guilds WHERE id = $1;",
+            values: [guild.id]
+        });
+
+        await client.pg.query({
+            text: "DELETE FROM public.subs WHERE owner = $1;",
+            values: [guild.id]
+        });
+
+        client.redis.publish("listen:matches:new", JSON.stringify({
+            action: "refresh"
+        }));
+
         client.helper.log("bot", "  deleted guild successfully");
-    }).catch(err => {
+    } catch (err) {
         client.helper.log("bot", "  something went wrong deleting", "error");
         client.helper.log("bot", err, "error");
-    });
+    }
 });
 
 client.on("messageReactionAdd", (message, emoji, userID) => {
@@ -209,68 +222,187 @@ client.on("messageReactionAdd", (message, emoji, userID) => {
     if (watcher) watcher.handle(message, emoji, userID);
 });
 
-// async function publishMatches(data) {
-//     console.log(data.found)
-//     try {
-//         let channels = [];
-//         let res = await client.pg.query("SELECT * FROM subs;");
+client.on("guildMemberAdd", async function(guild, member) {
+    try {
+        let channel = await checkIfStacks(guild.id);
+        if (!channel) return;
 
-//         for (type of types) {
-//             if (data.found[type].length) {
-//                 let rows = res.rows.filter((row) => row.type == type && data.found[type].includes(Number(row.value)));
-//                 for (row of rows) {
-//                     let guild = client.channelGuildMap[row.channel];
-//                     if (!guild) return;
-//                     if (row.owner == guild) {
-//                         if (data.found[type].length < 5) return;
-//                         let sum = data.match.players
-//                             .filter((player) => data.found[type].includes(player.account_id))
-//                             .map((player) => player.player_slot)
-//                             .reduce((a, b) => { return a + b });
+        let dota_id = await checkDiscordID(client.pg, member.id);
+        if (!dota_id) return;
 
-//                         if (sum < 100 == match.radiant_win) {
-//                             channels.push(row.channel);
-//                         }
-//                     } else {
-//                         channels.push(row.channel);
-//                     }
-//                 }
-//             }
-//         }
+        await client.pg.query({
+            text: "INSERT INTO subs VALUES ($1, $2, $3, $4, $5);",
+            values: [`${channel}:player:${dota_id}`, guild.id, channel, "player", dota_id]
+        });
 
-//         if (!channels.length) return;
+        client.redis.publish("listen:matches:new", JSON.stringify({
+            action: "refresh"
+        }));
 
-//         channels = channels.filter((item, index, array) => array.indexOf(item) === index);
+        console.log(`${new Date().toJSON()} BOT: added ${member.user.username} to ${guild.name} stacks`);
+    } catch (err) {
+        console.error(err);
+    }
+});
 
-//         let match = false;
-//         let retries = 0;
-//         while (!match || retries < 3) {
-//             try {
-//                 //match = await client.mika.getMatch(data.match.match_id);
-//                 throw new Error();
-//             } catch (err) {
-//                 console.log("heck");
-//                 retries += 1;
-//             }
-//         }
+client.on("guildMemberRemove", async function(guild, member) {
+    try {
+        let dota_id = await checkDiscordID(client.pg, member.id);
+        if (!dota_id) return;
 
-//         for (channel of channels) {
-//             let key = `p${channel}${data.match.match_id}`;
-//             let res = await client.redis.getAsync(key);
-//             if (res) continue;
+        await client.pg.query({
+            text: "DELETE FROM subs WHERE owner = $1 AND value = $2;",
+            values: [guild.id, dota_id]
+        });
 
-//             await client.redis.set(key, true);
+        client.redis.publish("listen:matches:new", JSON.stringify({
+            action: "refresh"
+        }));
 
-//             //let embed = await client.core.embeds.match(client.core.json.od_heroes, match || data.match, client, client.guilds.get(client.channelGuildMap[channel]));
-//             //await client.createMessage(channel, { embed }).catch((err) => console.error(err));
-//         }
+        console.log(`${new Date().toJSON()} BOT: removed ${member.user.username} from ${guild.name} stacks`);
+    } catch (err) {
+        console.error(err);
+    }
+});
 
-//         delete match;
-//     } catch (err) {
-//         console.error("err parsing/posting subscribed match");
-//         console.error(err);
-//     }
-// }
+function sleep(seconds) {
+    return new Promise((resolve) => setTimeout(resolve, seconds * 1000));
+}
+
+async function publishMatch(channel, match) {
+    let guildID = client.channelGuildMap[channel];
+
+    let res = await client.pg.query({
+        text: "SELECT * FROM guilds WHERE id = $1;",
+        values: [guildID]
+    });
+
+    let gcfg = res.rows[0];
+    let strings = client.strings[gcfg.locale || "en"];
+
+    let guild = client.guilds.get(guildID);
+
+    let embed = await matchEmbed({
+        client,
+        strings,
+        guild
+    }, match);
+
+    return client.createMessage(channel, { embed });
+}
+
+async function publishMatches(data) {
+    if (!client.isReady) return;
+    await sleep(10); // lol
+
+    let match;
+    try {
+        match = await client.mika.getMatch(data.id);
+    } catch (err) {
+        console.error(err);
+        return;
+    }
+
+    let res;
+    try {
+        res = await client.pg.query("SELECT * FROM subs;");
+    } catch (err) {
+        console.error(err);
+        return;
+    }
+
+    let allRows = [];
+
+    allRows.push(...res.rows.filter((row) => row.type == "player" && data.found.player.includes(parseInt(row.value))))
+    allRows.push(...res.rows.filter((row) => row.type == "team" && data.found.team.includes(parseInt(row.value))))
+    allRows.push(...res.rows.filter((row) => row.type == "league" && data.found.league.includes(parseInt(row.value))));
+
+    let allChannels = allRows
+        .filter((row) => {
+            let guild = client.guilds.get(row.owner);
+            if (guild) return false;
+        })
+        .map((row) => row.channel);
+
+    let allStacks = allRows.filter((row) => client.guilds.get(row.owner));
+
+    let stacks = {};
+
+    allStacks.forEach((row) => {
+        if (!stacks[row.owner]) stacks[row.owner] = [];
+        stacks[row.owner].push(parseInt(row.value));
+    });
+
+    for (guildID in stacks) {
+        let players = stacks[guildID];
+        if (players.length < 5) continue;
+
+        if (data.found.player.every((id) => players.includes(parseInt(id)))) {
+            allChannels.push(allRows.find((row) => row.owner === guildID).channel);
+        }
+    }
+
+    allChannels = allChannels.filter((item, index, array) => array.indexOf(item) === index);
+
+    let finished = [];
+
+    for (channel of allChannels) {
+        let key = `listen:posted:${channel}:${data.id}`;
+
+        try {
+            let posted = await client.redis.getAsync(key);
+            if (posted) continue;
+
+            await publishMatch(channel, match);
+            await client.redis.setAsync(key, true);
+            finished.push(channel);
+        } catch (err) {
+            console.error(err.message ? JSON.parse(err.message) : err);
+            continue;
+        }
+    }
+
+    console.log(`${new Date().toJSON()} FEED: published ${data.id} to ${finished.length} channel(s)`);
+}
+
+async function checkIfStacks(guildID) {
+    try {
+        let res = await client.pg.query({
+            text: "SELECT * FROM subs WHERE owner = $1;",
+            values: [guildID]
+        });
+
+        return res.rows.length ? res.rows[0].channel : false;
+    } catch (err) {
+        throw err;
+    }
+}
+
+async function addUser(discord_id, dota_id) {
+    let mutualIDs = client.guilds.filter((guild) => guild.members.get(discord_id));
+
+    try {
+        let promises = mutualIDs.map((id) => checkIfStacks(id));
+        let results = await Promise.all(promises);
+
+        for (index in results) {
+            if (results[index] !== false) {
+                await client.pg.query({
+                    text: "INSERT INTO subs VALUES ($1, $2, $3, $4, $5) ON CONFLICT (mess) DO NOTHING",
+                    values: [`${results[index]}:player:${dota_id}`, mutualIDs[index], results[index], "player", dota_id]
+                });
+            }
+        }
+
+        if (results.find((a) => a)) {
+            client.redis.publish("listen:matches:new", JSON.stringify({
+                action: "refresh"
+            }));
+        }
+    } catch (err) {
+        console.error(err);
+    }
+}
 
 sub.on("message", (channel, message) => {
     try {
@@ -295,6 +427,7 @@ sub.on("message", (channel, message) => {
                 let dm = `All set! Dota ID ${message.dota_id} associated with Discord ID ${message.discord_id} (<@${message.discord_id}>).`;
                 dm_channel.createMessage(dm);
                 client.redis.expire(`register:${message.steam_id}`, 0);
+                addUser(message.discord_id, message.dota_id);
             });
             break;
         case 4:
@@ -305,7 +438,7 @@ sub.on("message", (channel, message) => {
 
     if (channel == "__keyevent@0__:expired" && message.startsWith("trivia") && client.trivia) client.trivia.keyevent(message, client);
 
-    //if (channel == "listen:matches:out") publishMatches(message);
+    if (channel == "listen:matches:out") publishMatches(message);
 
     if (channel.includes("listen:rss")) {
         let feed = channel.split(":")[2];

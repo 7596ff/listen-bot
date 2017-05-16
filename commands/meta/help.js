@@ -40,6 +40,7 @@ async function formatHelp(ctx, command) {
 async function exec(ctx) {
     let cmds = {};
     let aliases = {};
+    let disabled = [];
 
     for (let command in ctx.client.commands) {
         command = ctx.client.commands[command];
@@ -49,7 +50,11 @@ async function exec(ctx) {
             if (!res) continue;
         }
 
-        if (ctx.gcfg.disabled && ctx.gcfg.disabled[ctx.channel.id] && ctx.gcfg.disabled[ctx.channel.id].includes(command.name)) continue;
+        if (ctx.gcfg.disabled && ctx.gcfg.disabled[ctx.channel.id] && ctx.gcfg.disabled[ctx.channel.id].includes(command.name)) {
+            disabled.push(command.name);
+            if (command.aliases) disabled.push(...command.aliases);
+            continue;
+        }
 
         if (command.category) {
             if (!cmds[command.category]) cmds[command.category] = [];
@@ -103,6 +108,12 @@ async function exec(ctx) {
         ].join("\n");
 
         return ctx.send(msg);
+    } else if (disabled.includes(ctx.options[0])) {
+        if (ctx.gcfg.botspam > 0) {
+            return ctx.failure(ctx.strings.get("bot_botspam_redirect", ctx.gcfg.botspam));
+        } else {
+            return ctx.failure(ctx.strings.get("bot_botspam"));
+        }
     } else {
         return ctx.failure(ctx.strings.get("help_cant_find", ctx.options.join(" ")));
     }

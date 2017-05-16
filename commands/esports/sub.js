@@ -95,6 +95,30 @@ const subcommands = {
                 return ctx.failure(ctx.strings.get("sub_failure"));
             }
         }
+    },
+    stacks: async function(ctx, type) {
+        try {
+            await ctx.client.pg.query({
+                text: "DELETE FROM subs WHERE owner = $1;",
+                values: [ctx.guild.id]
+            });
+
+            let users = await ctx.client.pg.query("SELECT * FROM public.users;");
+            users = users.rows.filter((user) => ctx.guild.members.get(user.id));
+            users.push({ dotaid: 1 });
+
+            let promises = users.map((user) => query(ctx.client.pg, [`${ctx.channel.id}:player:${user.dotaid}`, ctx.guild.id, ctx.channel.id, "player", user.dotaid]));
+            let results = await Promise.all(promises);
+
+            ctx.client.redis.publish("listen:matches:new", JSON.stringify({
+                action: "refresh"
+            }));
+
+            return ctx.success(ctx.strings.get("sub_success"));
+        } catch (err) {
+            console.error(err);
+            return ctx.failure(ctx.strings.get("sub_failure"));
+        }
     }
 }
 

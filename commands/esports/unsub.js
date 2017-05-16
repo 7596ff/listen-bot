@@ -12,7 +12,29 @@ async function exec(ctx) {
                 values: [ctx.channel.id]
             });
 
+            ctx.client.redis.publish("listen:matches:new", JSON.stringify({
+                action: "refresh"
+            }));
+
             return ctx.success(ctx.strings.get("unsub_nuke_success", res.rowCount, ctx.channel.mention));
+        } catch (err) {
+            console.error(err);
+            return ctx.failure(ctx.strings.get("bot_generic_error"));
+        }
+    }
+
+    if (ctx.options[0] == "stacks") {
+        try {
+            let res = await ctx.client.pg.query({
+                text: "DELETE FROM subs WHERE owner = $1;",
+                values: [ctx.guild.id]
+            });
+
+            ctx.client.redis.publish("listen:matches:new", JSON.stringify({
+                action: "refresh"
+            }));
+
+            return ctx.success(ctx.strings.get("unsub_success", "stacks"));
         } catch (err) {
             console.error(err);
             return ctx.failure(ctx.strings.get("bot_generic_error"));

@@ -26,7 +26,7 @@ class Unwatcher {
                     .catch((err) => console.log(err))
                     .then(() => {
                         clearTimeout(this.timeout);
-                        delete this._ctx.client.unwatchers[`${this._message.channel.id}:${this._message.author.id}`];
+                        delete this._ctx.client.unwatchers[`${this._ctx.channel.id}:${this._ctx.author.id}`];
                     });
             });
         } else {

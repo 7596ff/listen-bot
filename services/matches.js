@@ -38,7 +38,7 @@ async function refresh() {
         let all = await client.subscribe("player", toAdd);
         let removed = await client.unsubscribe("player", toRemove);
 
-        log(`added ${toAdd.length || 0}, removed ${removed.ids.length || 0}, new count: ${all.ids.length || 0}`);
+        log(`added ${toAdd.length || 0}, removed ${removed.ids.length || 0}, new count: ${all.ids.length || 0 - removed.ids.length || 0}`);
     } catch (err) {
         console.error(err);
         process.exit(1);

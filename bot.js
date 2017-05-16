@@ -379,7 +379,7 @@ async function checkIfStacks(guildID) {
 }
 
 async function addUser(discord_id, dota_id) {
-    let mutualIDs = client.guilds.filter((guild) => guild.members.get(discord_id));
+    let mutualIDs = client.guilds.filter((guild) => guild.members.get(discord_id) ? true : false).map((guild) => guild.id);
 
     try {
         let promises = mutualIDs.map((id) => checkIfStacks(id));

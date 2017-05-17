@@ -288,7 +288,10 @@ async function publishMatch(channel, match) {
         guild
     }, match);
 
-    return client.createMessage(channel, { embed });
+    return client.createMessage(channel, {
+        content: "New match found from scanner!",
+        embed
+    });
 }
 
 async function publishMatches(data) {

@@ -6,8 +6,8 @@ const newsmap = newsfeeds.map((type) => `\`${type}\``).join(", ");
 async function query(pg, values) {
     return pg.query({
         text: [
-            "INSERT INTO public.subs (mess, owner, channel, type, value) VALUES ($1, $2, $3, $4, $5)",
-            "ON CONFLICT (mess) DO NOTHING;"
+            "INSERT INTO public.subs (owner, channel, type, value) VALUES ($1, $2, $3, $4)",
+            "ON CONFLICT DO NOTHING;"
         ].join(" "),
         values: values
     });
@@ -28,7 +28,7 @@ const subcommands = {
         }
 
         try {
-            let res = await query(ctx.client.pg, [`${ctx.channel.id}:player:${dotaID}`, ctx.author.id, ctx.channel.id, "player", dotaID]);
+            let res = await query(ctx.client.pg, [ctx.author.id, ctx.channel.id, "player", dotaID]);
 
             ctx.client.redis.publish("listen:matches:new", JSON.stringify({
                 "action": "add",
@@ -48,7 +48,7 @@ const subcommands = {
         }
 
         try {
-            let res = await query(ctx.client.pg, [`${ctx.channel.id}:${type}:${item}`, ctx.author.id, ctx.channel.id, type, item]);
+            let res = await query(ctx.client.pg, [ctx.author.id, ctx.channel.id, type, item]);
 
             ctx.client.redis.publish("listen:matches:new", JSON.stringify({
                 "action": "add",
@@ -68,7 +68,7 @@ const subcommands = {
         }
 
         try {
-            let res = await query(ctx.client.pg, [`${ctx.channel.id}:${type}:${item}`, ctx.author.id, ctx.channel.id, type, item]);
+            let res = await query(ctx.client.pg, [ctx.author.id, ctx.channel.id, type, item]);
 
             ctx.client.redis.publish("listen:matches:new", JSON.stringify({
                 "action": "add",
@@ -87,7 +87,7 @@ const subcommands = {
             return ctx.failure(ctx.strings.get("sub_wrong_newsfeed", newsmap));
         } else {
             try {
-                let res = await query(ctx.client.pg, [`${ctx.channel.id}:${type}:${item}`, ctx.author.id, ctx.channel.id, type, item]);
+                let res = await query(ctx.client.pg, [ctx.author.id, ctx.channel.id, type, item]);
 
                 return ctx.success(ctx.strings.get("sub_success"));
             } catch (err) {
@@ -107,7 +107,7 @@ const subcommands = {
             users = users.rows.filter((user) => ctx.guild.members.get(user.id));
             users.push({ dotaid: 1 });
 
-            let promises = users.map((user) => query(ctx.client.pg, [`${ctx.channel.id}:player:${user.dotaid}`, ctx.guild.id, ctx.channel.id, "player", user.dotaid]));
+            let promises = users.map((user) => query(ctx.client.pg, [ctx.guild.id, ctx.channel.id, "player", user.dotaid]));
             let results = await Promise.all(promises);
 
             ctx.client.redis.publish("listen:matches:new", JSON.stringify({

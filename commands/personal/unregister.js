@@ -11,6 +11,11 @@ async function exec(ctx) {
                 values: [ctx.author.id]
             });
 
+            await ctx.client.pg.query({
+                text: "DELETE FROM subs WHERE value = $1;",
+                values: [res.rows[0].dotaid]
+            });
+
             return ctx.success(ctx.strings.get("unregister_success"));
         } else {
             return ctx.failure(ctx.strings.get("unregister_no_account"));

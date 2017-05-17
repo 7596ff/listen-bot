@@ -231,8 +231,8 @@ client.on("guildMemberAdd", async function(guild, member) {
         if (!dota_id) return;
 
         await client.pg.query({
-            text: "INSERT INTO subs VALUES ($1, $2, $3, $4, $5);",
-            values: [`${channel}:player:${dota_id}`, guild.id, channel, "player", dota_id]
+            text: "INSERT INTO subs VALUES ($1, $2, $3, $4) ON CONFLICT DO NOTHING;",
+            values: [guild.id, channel, "player", dota_id]
         });
 
         client.redis.publish("listen:matches:new", JSON.stringify({
@@ -391,8 +391,8 @@ async function addUser(discord_id, dota_id) {
         for (index in results) {
             if (results[index] !== false) {
                 await client.pg.query({
-                    text: "INSERT INTO subs VALUES ($1, $2, $3, $4, $5) ON CONFLICT (mess) DO NOTHING",
-                    values: [`${results[index]}:player:${dota_id}`, mutualIDs[index], results[index], "player", dota_id]
+                    text: "INSERT INTO subs VALUES ($1, $2, $3, $4) ON CONFLICT DO NOTHING;",
+                    values: [mutualIDs[index], results[index], "player", dota_id]
                 });
             }
         }

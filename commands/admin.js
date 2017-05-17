@@ -187,6 +187,24 @@ const subcommands = {
         } else {
             return ctx.failure(ctx.strings.get("admin_trivia_bad_syntax"))
         }
+    },
+    threshold: async function(ctx) {
+        let count = parseInt(ctx.options.join(" "));
+        if (!isNaN(count) && count > 0 && count < 6) {
+            try {
+                let res = await ctx.client.pg.query({
+                    text: "UPDATE public.guilds SET threshold = $1 WHERE id = $2;",
+                    values: [count, ctx.guild.id]
+                });
+            } catch (err) {
+                console.error(err);
+                return ctx.failure(ctx.strings.get("bot_generic_error"));
+            }
+
+            return ctx.success("Stack threshold updated.");
+        } else {
+            return ctx.failure("Please provide a threshold between 1 and 5.");
+        }
     }
 }
 

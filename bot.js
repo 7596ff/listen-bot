@@ -265,6 +265,26 @@ client.on("guildMemberRemove", async function(guild, member) {
     }
 });
 
+async function cacheGcfg(id) {
+    if (client.gcfg.hasOwnProperty(id) && client.gcfg[id].expires + 3600000 > Date.now()) {
+        return JSON.parse(JSON.stringify(client.gcfg[id]));
+    } else {
+        try {
+            let res = await client.pg.query({
+                text: "SELECT * FROM public.guilds WHERE id = $1;",
+                values: [id]
+            });
+
+            client.gcfg[id] = JSON.parse(JSON.stringify(res.rows[0]));
+            client.gcfg[id].expires = Date.now();
+            return JSON.parse(JSON.stringify(client.gcfg[id]));
+        } catch (err) {
+            console.error(err);
+            console.error(`couldn't cache guild ${id}`);
+        }
+    }
+}
+
 function sleep(seconds) {
     return new Promise((resolve) => setTimeout(resolve, seconds * 1000));
 }
@@ -338,7 +358,8 @@ async function publishMatches(data) {
 
     for (guildID in stacks) {
         let players = stacks[guildID];
-        if (players.length < 5) continue;
+        let gcfg = await cacheGcfg(guildID);
+        if (players.length < gcfg.threshold || 5) continue;
 
         if (data.found.player.every((id) => players.includes(parseInt(id)))) {
             allChannels.push(allRows.find((row) => row.owner === guildID).channel);
@@ -637,23 +658,8 @@ client.on("messageCreate", async function(message) {
     if (message.channel.guild.id == "137589613312081920" && message.content.match("<:rtzW:302222677991620608>")) message.content = `${config.default_prefix}arteezy`;
     if (message.channel.guild.id == "137589613312081920" && message.content.match("<:jackyW:256527304576991243>")) message.content = `${config.default_prefix}envy`;
 
-    if (client.gcfg.hasOwnProperty(message.channel.guild.id) && client.gcfg[message.channel.guild.id].expires + 3600000 > Date.now()) {
-        message.gcfg = JSON.parse(JSON.stringify(client.gcfg[message.channel.guild.id]));
-        handle(message, client);
-    } else {
-        client.pg.query({
-            "text": "SELECT * FROM public.guilds WHERE id = $1;",
-            "values": [message.channel.guild.id]
-        }).then(res => {
-            client.gcfg[message.channel.guild.id] = JSON.parse(JSON.stringify(res.rows[0]));
-            client.gcfg[message.channel.guild.id].expires = Date.now();
-            message.gcfg = JSON.parse(JSON.stringify(client.gcfg[message.channel.guild.id]));
-            handle(message, client);
-        }).catch(err => {
-            client.helper.log("bot", `something went wrong with selcting ${message.channel.guild.id}/${message.channel.guild.name}`, "error");
-            client.helper.log("bot", err, "error");
-        });
-    }
+    message.gcfg = await cacheGcfg(message.channel.guild.id);
+    handle(message, client);
 });
 
 process.on("unhandledRejection", (reason, p) => {

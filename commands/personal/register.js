@@ -39,7 +39,7 @@ async function exec(ctx) {
         ID = search;
     }
 
-    if (ID === false || isNaN(ID)) {
+    if (!ID || isNaN(ID)) {
         return ctx.failure(ctx.strings.get("register_no_id"));
     }
 

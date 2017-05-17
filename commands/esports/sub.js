@@ -24,7 +24,11 @@ const subcommands = {
             dotaID = await checkDiscordID(ctx.client.pg, ctx.message.mentions[0].id);
         } catch (err) {
             console.error(err);
-            return ctx.failure(ctx.strings.get("bot_not_registered", ctx.message.mentions[0].username), ctx.gcfg.prefix);
+            return ctx.failure(ctx.strings.get("sub_failure"));
+        }
+
+        if (!dotaID) {
+            return ctx.failure(ctx.strings.get("bot_not_registered", ctx.message.mentions[0].username, ctx.gcfg.prefix));
         }
 
         try {

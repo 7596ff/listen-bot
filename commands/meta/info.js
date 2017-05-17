@@ -13,7 +13,7 @@ async function exec(ctx) {
             "https://bots.discord.pw/bots/240209888771309568",
             `https://discordapp.com/oauth2/authorize?permissions=${ctx.client.config.permissions}&scope=bot&client_id=${ctx.client.user.id}`,
             ctx.client.config.discord_invite
-        ].map((item, index) => ctx.strings.get(`info_links_${index}`));
+        ].map((item, index) => ctx.strings.get(`info_links_${index}`, item));
 
         let gitlinks = err ? ["rip github"] : response.body.slice(0, 4).map((commit) => {
             let cmsg = commit.commit.message.slice(0, 40).split("\n")[0];

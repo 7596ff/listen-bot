@@ -4,7 +4,8 @@ async function exec(ctx) {
             .filter((message) => message.author.id == ctx.client.user.id)
             .map((message) => message.id);
 
-        await ctx.channel.deleteMessages(ids);
+        let promises = ids.map((id) => ctx.client.deleteMessage(ctx.channel.id, id));
+        await Promise.all(promises);
         return ctx.delete(5000, ":white_check_mark:");
     } catch (err) {
         console.error(err);

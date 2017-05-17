@@ -341,10 +341,7 @@ async function publishMatches(data) {
     allRows.push(...res.rows.filter((row) => row.type == "league" && data.found.league.includes(parseInt(row.value))));
 
     let allChannels = allRows
-        .filter((row) => {
-            let guild = client.guilds.get(row.owner);
-            if (guild) return false;
-        })
+        .filter((row) => !client.guilds.get(row.owner))
         .map((row) => row.channel);
 
     let allStacks = allRows.filter((row) => client.guilds.get(row.owner));

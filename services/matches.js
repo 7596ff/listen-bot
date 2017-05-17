@@ -28,7 +28,7 @@ async function refresh() {
         let res = await pg.query("SELECT * FROM subs WHERE type = 'player';");
 
         let oldplayers = subs.player;
-        let newplayers = res.rows.filter((row) => row.value != "1").map((row) => parseInt(row.value));
+        let newplayers = res.rows.filter((row) => row.value != "1").map((row) => parseInt(row.value)).filter((item, index, array) => array.indexOf(item) === index);
 
         let toAdd = newplayers.filter((player) => !~oldplayers.indexOf(player));
         let toRemove = oldplayers.filter((player) => !~newplayers.indexOf(player));

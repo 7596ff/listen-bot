@@ -378,7 +378,7 @@ async function publishMatches(data) {
             await client.redis.setAsync(key, true);
             finished.push(channel);
         } catch (err) {
-            console.error(err.message ? JSON.parse(err.message) : err);
+            console.error(err.message || err);
             continue;
         }
     }

@@ -15,7 +15,7 @@ function playerinfoEmbed(player) {
     if (player.competitive_rank) mmr.party = player.competitive_rank;
     if (player.mmr_estimate.estimate) mmr["est."] = player.mmr_estimate.estimate;
 
-    if (!Object.keys(mmr).length) mmr = "No mmr data found.";
+    if (!Object.keys(mmr).length) mmr["\u200b"] = "No mmr data found.";
 
     let display_heroes = player.heroes
         .slice(0, 5)

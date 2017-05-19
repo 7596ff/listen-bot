@@ -356,8 +356,9 @@ async function publishMatches(data) {
     for (guildID in stacks) {
         let players = stacks[guildID];
         let gcfg = await cacheGcfg(guildID);
+        let idsInGuild = data.found.player.filter((id) => players.includes(parseInt(id)));
 
-        if (players.length >= (gcfg.threshold || 5) && data.found.player.find((id) => players.includes(parseInt(id)))) {
+        if (idsInGuild.length >= (gcfg.threshold || 5)) {
             allChannels.push(allRows.find((row) => row.owner === guildID).channel);
         }
     }

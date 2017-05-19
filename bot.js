@@ -230,7 +230,7 @@ client.on("guildMemberAdd", async function(guild, member) {
         let dota_id = await checkDiscordID(client.pg, member.id);
         if (!dota_id) return;
 
-        await client.pg.query({
+        let res = await client.pg.query({
             text: "INSERT INTO subs VALUES ($1, $2, $3, $4) ON CONFLICT DO NOTHING;",
             values: [guild.id, channel, "player", dota_id]
         });
@@ -239,7 +239,7 @@ client.on("guildMemberAdd", async function(guild, member) {
             action: "refresh"
         }));
 
-        console.log(`${new Date().toJSON()} BOT: added ${member.user.username} to ${guild.name} stacks`);
+        console.log(`${new Date().toJSON()} BOT: added ${member.user.username} to ${guild.name} stacks (${res.rowCount})`);
     } catch (err) {
         console.error(err);
     }
@@ -250,16 +250,16 @@ client.on("guildMemberRemove", async function(guild, member) {
         let dota_id = await checkDiscordID(client.pg, member.id);
         if (!dota_id) return;
 
-        await client.pg.query({
+        let res = await client.pg.query({
             text: "DELETE FROM subs WHERE owner = $1 AND value = $2;",
-            values: [guild.id, dota_id]
+            values: [guild.id, dota_id.toString()]
         });
 
         client.redis.publish("listen:matches:new", JSON.stringify({
             action: "refresh"
         }));
 
-        console.log(`${new Date().toJSON()} BOT: removed ${member.user.username} from ${guild.name} stacks`);
+        console.log(`${new Date().toJSON()} BOT: removed ${member.user.username} from ${guild.name} stacks (${res.rowCount})`);
     } catch (err) {
         console.error(err);
     }
@@ -389,7 +389,7 @@ async function publishMatches(data) {
 async function checkIfStacks(guildID) {
     try {
         let res = await client.pg.query({
-            text: "SELECT * FROM subs WHERE owner = $1;",
+            text: "SELECT * FROM subs WHERE owner = $1 AND value = '1';",
             values: [guildID]
         });
 

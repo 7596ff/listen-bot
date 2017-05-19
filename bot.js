@@ -373,7 +373,7 @@ async function publishMatches(data) {
             let posted = await client.redis.getAsync(key);
             if (posted) continue;
 
-            await publishMatch(channel, match);
+            await publishMatch(channel, JSON.parse(JSON.stringify(match)));
             await client.redis.setAsync(key, true);
             finished.push(channel);
         } catch (err) {

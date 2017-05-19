@@ -447,7 +447,7 @@
     "name": "wisp",
     "id": 91,
     "local": "Io",
-    "aliases": ["io", "wisp"]
+    "aliases": ["io", "wisp", "cube"]
 }, {
     "name": "visage",
     "id": 92,

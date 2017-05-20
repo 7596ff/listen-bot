@@ -383,7 +383,7 @@ async function publishMatches(data) {
         }
     }
 
-    console.log(`${new Date().toJSON()} FEED: published ${data.id} to ${finished.length} channel(s)`);
+    finished.length && console.log(`${new Date().toJSON()} FEED: published ${data.id} to ${finished.length} channel(s)`);
 }
 
 async function checkIfStacks(guildID) {

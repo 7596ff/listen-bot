@@ -502,7 +502,7 @@ async function invoke(message, client, helper, cmd) {
     }
 
     if (message.gcfg.mlimit > 0) {
-        client.cooldowns[`mlimit:${message.author.id}`] = message.timestamp;
+        client.cooldowns[`mlimit:${message.channel.guild.id}:${message.author.id}`] = message.timestamp;
         setTimeout(() => {
             client.cooldowns[`mlimit:${message.author.id}`] = 0;
         }, message.gcfg.mlimit * 1000);
@@ -601,7 +601,7 @@ function handle(message, client) {
         }
 
         let climit = `climit:${message.channel.id}`;
-        let mlimit = `mlimit:${message.author.id}`;
+        let mlimit = `mlimit:${message.channel.guild.id}:${message.author.id}`;
 
         if (client.cooldowns[climit] > 0) {
             let timeleft = Math.floor((message.timestamp - client.cooldowns[climit]) / 1000);

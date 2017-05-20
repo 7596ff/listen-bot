@@ -48,6 +48,16 @@ const subcommands = {
                         "values": [limit, ctx.guild.id]
                     });
 
+                    ctx.guild.members.forEach((member) => {
+                        let cd = `mlimit:${ctx.guild.id}:${member.id}`;
+                        if (ctx.client.cooldowns[cd]) ctx.client.cooldowns[cd] = 0;
+                    });
+
+                    ctx.guild.channels.forEach((channels) => {
+                        let cd = `climit:${channels.id}`;
+                        if (ctx.client.cooldowns[cd]) ctx.client.cooldowns[cd] = 0;
+                    });
+
                     return ctx.success(ctx.strings.get("admin_cooldowns_set", options[0], options[1]))
                 } catch (err) {
                     console.error(err);

@@ -21,6 +21,7 @@ const questions = require("./util/genQuestions");
 
 const schedule = require("node-schedule");
 const Mika = require("mika");
+const prettyms = require("pretty-ms");
 
 const types = ["player", "team", "league"];
 
@@ -494,19 +495,8 @@ async function invoke(message, client, helper, cmd) {
     client.all_usage.increment(cmd.name);
     client.usage.increment(cmd.name);
 
-    if (message.gcfg.climit > 0) {
-        client.cooldowns[`climit:${message.channel.id}`] = message.timestamp;
-        setTimeout(() => {
-            client.cooldowns[`climit:${message.channel.id}`] = 0;
-        }, message.gcfg.climit * 1000);
-    }
-
-    if (message.gcfg.mlimit > 0) {
-        client.cooldowns[`mlimit:${message.channel.guild.id}:${message.author.id}`] = message.timestamp;
-        setTimeout(() => {
-            client.cooldowns[`mlimit:${message.author.id}`] = 0;
-        }, message.gcfg.mlimit * 1000);
-    }
+    client.cooldowns[`climit:${message.channel.id}`] = message.timestamp;
+    client.cooldowns[`mlimit:${message.channel.guild.id}:${message.author.id}`] = message.timestamp;
 
     try {
         let ctx = {};
@@ -603,16 +593,14 @@ function handle(message, client) {
         let climit = `climit:${message.channel.id}`;
         let mlimit = `mlimit:${message.channel.guild.id}:${message.author.id}`;
 
-        if (client.cooldowns[climit] > 0) {
-            let timeleft = Math.floor((message.timestamp - client.cooldowns[climit]) / 1000);
-            let msg = client.strings[message.gcfg.locale || "en"].get("bot_cooldown_redirect", message.channel.mention, message.gcfg.climit - timeleft);
+        if (message.gcfg.climit && (client.cooldowns[climit] || 0) + (message.gcfg.climit * 1000) > message.timestamp) {
+            let msg = client.strings[message.gcfg.locale || "en"].get("bot_cooldown_redirect", message.channel.mention, prettyms((message.gcfg.climit * 1000) - (message.timestamp - client.cooldowns[climit])));
             message.channel.createMessage(msg).then(new_message => {
                 setTimeout(() => { new_message.delete() }, 8000);
             }).catch((err) => client.helper.handle(message, err));
         } else {
-            if (client.cooldowns[mlimit] > 0) {
-                let timeleft = Math.floor((message.timestamp - client.cooldowns[mlimit]) / 1000);
-                let msg = client.strings[message.gcfg.locale || "en"].get("bot_cooldown_redirect", message.author.mention, message.gcfg.climit - timeleft);
+            if (message.gcfg.mlimit && (client.cooldowns[mlimit] || 0) + (message.gcfg.mlimit * 1000) > message.timestamp) {
+                let msg = client.strings[message.gcfg.locale || "en"].get("bot_cooldown_redirect", message.author.mention, prettyms((message.gcfg.mlimit * 1000) - (message.timestamp - client.cooldowns[mlimit])));
                 message.channel.createMessage(msg).then(new_message => {
                     setTimeout(() => { new_message.delete() }, 8000);
                 }).catch((err) => client.helper.handle(message, err));

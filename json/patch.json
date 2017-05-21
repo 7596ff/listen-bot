@@ -1,5 +1,39 @@
 [{
     "heroes": {
+        "sven": {
+            "changes": [
+                "• God's Strength bonus strength reduced from 16/28/40 to 12/24/36",
+                "• Base Attack Time increased from 1.7 to 1.8"
+            ],
+            "format_name": "Sven",
+            "true_name": "sven"
+        },
+        "troll_warlord": {
+            "changes": [
+                "• Agility gain reduced from 2.75 to 2.5"
+            ],
+            "format_name": "Troll Warlord",
+            "true_name": "troll_warlord"
+        },
+        "broodmother": {
+            "changes": [
+                "• Spin Web HP Regeneration increased from 2/4/6/8 to 3/5/7/9"
+            ],
+            "format_name": "Broodmother",
+            "true_name": "broodmother"
+        },
+        "monkey_king": {
+            "changes": [
+                "• Wukong's Command attack cooldown improved from 1.7 to 1.6"
+            ],
+            "true_name": "monkey_king",
+            "format_name": "Monkey King"
+        }
+    },
+    "items": {},
+    "version": "7.06b"
+},{
+    "heroes": {
         "alchemist": {
             "changes": [
                 "• Unstable Concoction cooldown increased from 16 to 22/20/18/16",

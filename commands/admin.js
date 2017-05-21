@@ -148,10 +148,9 @@ const subcommands = {
         }
     },
     locale: async function(ctx) {
+        let available = Object.keys(ctx.client.locale);
         if (ctx.content) {
-            let available = Object.keys(ctx.client.locale);
             if (available.includes(ctx.content)) {
-
                 try {
                     let res = await ctx.client.pg.query({
                         "text": "UPDATE public.guilds SET locale = $1 WHERE id = $2",

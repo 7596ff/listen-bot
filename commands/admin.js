@@ -63,9 +63,9 @@ const subcommands = {
                     console.error(err);
                     return ctx.failure(ctx.strings.get("bot_generic_error"));
                 }
+            }  else {
+                return ctx.failure(ctx.strings.get("bot_bad_syntax"));
             }
-        } else {
-            return ctx.failure(ctx.strings.get("bot_bad_syntax"));
         }
     },
     disable: async function(ctx) {

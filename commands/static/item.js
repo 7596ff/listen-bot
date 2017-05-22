@@ -2,6 +2,7 @@ const too_short = ["of", "and", "in", "the", "de"];
 
 const items = require("../../json/items");
 const itemEmbed = require("../../embeds/item");
+const ReactionChooser = require("../../classes/reactionChooser");
 
 async function exec(ctx) {
     let options = ctx.content.toLowerCase().split(" ").slice(1);
@@ -31,8 +32,7 @@ async function exec(ctx) {
                     result = search[0];
                     break loop1;
                 } else if (search.length > 1) {
-                    let conf = search.map(item => item.dname);
-                    for (let item in conf) conflicts.push(conf[item]);
+                    conflicts.push(...search);
                 }
             }
         }
@@ -45,7 +45,14 @@ async function exec(ctx) {
         let content = ctx.strings.get("item_not_found");
         let reduced = conflicts.filter((item, inc, newlist) => newlist.indexOf(item) === inc);
         if (reduced.length > 1) {
-            content = ctx.strings.get("item_not_found_conflicts", reduced.join(", "));
+            let map = reduced.map((item, index) => `${index}\u20e3 ${item.dname}`);
+            map.unshift("Multiple conflicts found. React with a number to choose an ability.", "");
+            let msg = await ctx.embed({
+                description: map.join("\n")
+            });
+
+            ctx.client.watchers[msg.id] = new ReactionChooser(ctx, msg, reduced.map((conflict) => itemEmbed(conflict, items)));
+            return Promise.resolve();
         } else if (reduced.length == 1) {
             let embed = itemEmbed(items.find((item) => item.dname == conflicts[0]), items);
             return ctx.embed(embed);

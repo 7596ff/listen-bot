@@ -219,5 +219,5 @@
     "help_cmd_patch_usage": "%spatch <heltnavn>",
     "help_cmd_patch_desc": "Returnerer en interaktiv liste av patch notes for en helt.",
     "help_cmd_talents_usage": "%stalents <heltnavn>",
-    "help_cmd_talents_desc": "Returnerer talentene til en spesifik helt.",
+    "help_cmd_talents_desc": "Returnerer talentene til en spesifik helt."
 }

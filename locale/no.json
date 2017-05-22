@@ -33,7 +33,7 @@
     "prommr_all": "alle regioner",
     "prommr_name": "Navn",
     "prommr_last_updated": "Sist Oppdatert",
-    "sub_invalid_syntax": "Nevn en spiller å abonner på.",
+    "sub_invalid_syntax": "Nevn en spiller å abonnere på.",
     "sub_success": "Dette abonnementet har blitt lagt til.",
     "sub_failure": "Noe gikk galt med å sette inn dette abonnementet. Feilen har blitt loggført.",
     "sub_team_id": "Vennligst gi en lag-ID. Sjekk ut <https://www.dotabuff.com/esports/teams> for en liste av lag.",

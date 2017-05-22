@@ -256,11 +256,13 @@ client.on("guildMemberRemove", async function(guild, member) {
             values: [guild.id, dota_id.toString()]
         });
 
-        client.redis.publish("listen:matches:new", JSON.stringify({
-            action: "refresh"
-        }));
+        if (res.rowCount) {
+            client.redis.publish("listen:matches:new", JSON.stringify({
+                action: "refresh"
+            }));
 
-        console.log(`${new Date().toJSON()} BOT: removed ${member.user.username} from ${guild.name} stacks (${res.rowCount})`);
+            console.log(`${new Date().toJSON()} BOT: removed ${member.user.username} from ${guild.name} stacks`);
+        }
     } catch (err) {
         console.error(err);
     }

@@ -223,6 +223,19 @@ const subcommands = {
         let match = roles.get(ctx.options.join(" "));
         if (match && match[0][0] > 0.8) {
             try {
+                let oldsubrole = await ctx.client.pg.query({
+                    text: "SELECT subrole FROM guilds WHERE id = $1;",
+                    values: [ctx.guild.id]
+                });
+                oldsubrole = oldsubrole.rows[0].subrole;
+
+                if (oldsubrole) {
+                    await ctx.client.pg.query({
+                        text: "DELETE FROM subs WHERE owner = $1;",
+                        values: [oldsubrole]
+                    });
+                }
+
                 let role = ctx.guild.roles.find((role) => role.name == match[0][1]);
 
                 await ctx.client.pg.query({
@@ -239,7 +252,7 @@ const subcommands = {
                 results.unshift(1);
 
                 await Promise.all(results.map((id) => ctx.client.pg.query({
-                    text: "INSERT INTO subs VALUES ($1, $2, $3, $4) ON CONFLICT (owner, type, value) DO UPDATE SET channel = $2;",
+                    text: "INSERT INTO subs VALUES ($1, $2, $3, $4)",
                     values: [role.id, ctx.channel.id, "player", id.toString()]
                 })));
 

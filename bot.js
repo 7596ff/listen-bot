@@ -258,6 +258,7 @@ client.on("guildMemberUpdate", async function(guild, member) {
             text: "SELECT * FROM subs WHERE owner = $1 AND value = '1';",
             values: [gcfg.subrole]
         });
+        if (!channel.rowCount) return;
         channel = channel.rows[0].channel;
 
         if (member.roles.includes(gcfg.subrole)) {
@@ -277,7 +278,7 @@ client.on("guildMemberUpdate", async function(guild, member) {
                 values: [gcfg.subrole, dota_id]
             });
 
-            if (res.rowCount) {
+            if (res.rowCount > 0) {
                 client.redis.publish("listen:matches:new", JSON.stringify({
                     action: "refresh"
                 }));

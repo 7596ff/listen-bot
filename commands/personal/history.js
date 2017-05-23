@@ -13,7 +13,7 @@ function findPlayerTeam(match, account_id) {
     return slot < 5;
 }
 
-async function historyWith(ctx, _with) {
+async function historyWith(ctx, _with, _of) {
     if (!_with.found) {
         return ctx.failure(ctx.strings.get("bot_no_member"));
     }
@@ -22,7 +22,7 @@ async function historyWith(ctx, _with) {
         return ctx.failure(ctx.strings.get("history_with_wrong_data"));
     }
 
-    _with.all.push(ctx.author.id);
+    _with.all.push(_of || ctx.author.id);
 
     let results;
     try {
@@ -142,7 +142,7 @@ async function exec(ctx) {
         return ctx.failure(ctx.strings.get("bot_wrong_data"));
     }
 
-    if (response.with) return historyWith(ctx, response.with);
+    if (response.with) return historyWith(ctx, response.with, ((response.of && response.of.found) && ctx.client.users.get(response.of.all[0]).id));
     if (response.as) return historyAs(ctx, response.as, ((response.of && response.of.found) && ctx.client.users.get(response.of.all[0]).id));
 }
 

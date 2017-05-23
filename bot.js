@@ -336,7 +336,7 @@ client.on("guildRoleDelete", async function(guild, role) {
             values: [role.id]
         });
 
-        console.log(`${new Date().toJSON()} SUBS: deleted rolesub on ${guild.id}/${guild.name} (${res.rowCount})`);
+        res.rowCount && console.log(`${new Date().toJSON()} SUBS: deleted rolesub on ${guild.id}/${guild.name} (${res.rowCount})`);
     } catch (err) {
         console.error(err);
         console.error(`guild: ${guild.id}, role: ${role.id}`);

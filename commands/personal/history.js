@@ -143,7 +143,7 @@ async function exec(ctx) {
     }
 
     if (response.with) return historyWith(ctx, response.with);
-    if (response.as) return historyAs(ctx, response.as, response.of && response.of.found ? ctx.client.users.get(response.of.all[0]).id : false);
+    if (response.as) return historyAs(ctx, response.as, ((response.of && response.of.found) && ctx.client.users.get(response.of.all[0]).id));
 }
 
 module.exports = {

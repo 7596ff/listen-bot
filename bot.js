@@ -246,17 +246,77 @@ client.on("guildMemberAdd", async function(guild, member) {
     }
 });
 
-client.on("guildMemberRemove", async function(guild, member) {
+client.on("guildMemberUpdate", async function(guild, member) {
     try {
         let dota_id = await checkDiscordID(client.pg, member.id);
         if (!dota_id) return;
+
+        let gcfg = await cacheGcfg(guild.id);
+        if (!gcfg.subrole) return;
+
+        let channel = await client.pg.query({
+            text: "SELECT * FROM subs WHERE owner = $1 AND value = '1';",
+            values: [gcfg.subrole]
+        });
+        channel = channel.rows[0].channel;
+
+        if (member.roles.includes(gcfg.subrole)) {
+            await client.pg.query({
+                text: "INSERT INTO subs VALUES ($1, $2, $3, $4) ON CONFLICT DO NOTHING;",
+                values: [gcfg.subrole, channel, "player", dota_id]
+            });
+
+            client.redis.publish("listen:matches:new", JSON.stringify({
+                action: "refresh"
+            }));
+
+            console.log(`${new Date().toJSON()} SUBS: added ${member.username} to ${guild.name} role stacks`);
+        } else {
+            let res = await client.pg.query({
+                text: "DELETE FROM subs WHERE owner = $1 AND value = $2;",
+                values: [gcfg.subrole, dota_id]
+            });
+
+            if (res.rowCount) {
+                client.redis.publish("listen:matches:new", JSON.stringify({
+                    action: "refresh"
+                }));
+
+                console.log(`${new Date().toJSON()} SUBS: removed ${member.username} from ${guild.name} role stacks`);
+            }
+        }
+    } catch (err) {
+        console.error(err);
+        console.error(`guild: ${guild.id}, member: ${member.id}`);
+    }
+});
+
+client.on("guildMemberRemove", async function(guild, member) {
+    try {
+        let gcfg = await cacheGcfg(guild.id);
+
+        let dota_id = await checkDiscordID(client.pg, member.id);
+        if (!dota_id) return;
+
+        let count = 0;
 
         let res = await client.pg.query({
             text: "DELETE FROM subs WHERE owner = $1 AND value = $2;",
             values: [guild.id, dota_id.toString()]
         });
 
-        if (res.rowCount) {
+        count += res.rowCount;
+
+        if (gcfg.subrole) {
+            let res = await client.pg.query({
+                text: "DELETE FROM subs WHERE owner = $1 AND value = $2;",
+                values: [gcfg.subrole, dota_id.toString()]
+            });
+
+            count += res.rowCount;
+        }
+
+        if (count) {
             client.redis.publish("listen:matches:new", JSON.stringify({
                 action: "refresh"
             }));
@@ -265,6 +325,20 @@ client.on("guildMemberRemove", async function(guild, member) {
         }
     } catch (err) {
         console.error(err);
+    }
+});
+
+client.on("guildRoleDelete", async function(guild, role) {
+    try {
+        let res = await client.pg.query({
+            text: "DELETE FROM subs WHERE owner = $1;",
+            values: [role.id]
+        });
+
+        console.log(`${new Date().toJSON()} SUBS: deleted rolesub on ${guild.id}/${guild.name} (${res.rowCount})`);
+    } catch (err) {
+        console.error(err);
+        console.error(`guild: ${guild.id}, role: ${role.id}`);
     }
 });
 

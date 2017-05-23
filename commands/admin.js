@@ -1,3 +1,6 @@
+const FuzzySet = require("fuzzyset.js")
+const checkDiscordID = require("../util/checkDiscordID")
+
 async function edit_trivia(pg, channel, ctx) {
     if (ctx.client.trivia.channels.includes(ctx.gcfg.trivia)) ctx.client.trivia.channels.splice(ctx.client.trivia.channels.indexOf(ctx.gcfg.trivia), 1);
 
@@ -213,6 +216,68 @@ const subcommands = {
             return ctx.success("Stack threshold updated.");
         } else {
             return ctx.failure("Please provide a threshold between 1 and 5.");
+        }
+    },
+    subrole: async function(ctx) {
+        let roles = FuzzySet(ctx.guild.roles.map((role) => role.name));
+        let match = roles.get(ctx.options.join(" "));
+        if (match && match[0][0] > 0.8) {
+            try {
+                let role = ctx.guild.roles.find((role) => role.name == match[0][1]);
+
+                await ctx.client.pg.query({
+                    text: "UPDATE public.guilds SET subrole = $1 WHERE id = $2;",
+                    values: [role.id, ctx.guild.id]
+                });
+
+                let ids = ctx.guild.members
+                    .filter((member) => member.roles.includes(role.id))
+                    .map((member) => member.id);
+
+                let results = await Promise.all(ids.map((id) => checkDiscordID(ctx.client.pg, id)));
+                results = results.filter((a) => a);
+                results.unshift(1);
+
+                await Promise.all(results.map((id) => ctx.client.pg.query({
+                    text: "INSERT INTO subs VALUES ($1, $2, $3, $4) ON CONFLICT (owner, value) DO UPDATE SET channel = $2;",
+                    values: [role.id, ctx.channel.id, "player", id.toString()]
+                })));
+
+                return ctx.embed({
+                    description: `Subscription role set to ${role.name} (<@&${role.id}>) in channel ${ctx.channel.name} (<#${ctx.channel.id}>).`
+                });
+            } catch (err) {
+                console.error(err);
+                return ctx.failure(ctx.strings.get("bot_generic_error"));
+            }
+        } else if (ctx.options.join(" ") == "none") {
+            try {
+                let res = await ctx.client.pg.query({
+                    text: "SELECT subrole FROM public.guilds WHERE id = $1;",
+                    values: [ctx.guild.id]
+                });
+
+                if (!res.rows[0].subrole) {
+                    return ctx.failure("There was no sub role to begin with!");
+                }
+
+                await ctx.client.pg.query({
+                    text: "DELETE FROM subs WHERE owner = $1;",
+                    values: [res.rows[0].subrole]
+                });
+
+                await ctx.client.pg.query({
+                    text: "UPDATE public.guilds SET subrole = 0 WHERE id = $1;",
+                    values: [ctx.guild.id]
+                });
+
+                return ctx.success("Subscription role removed.");
+            } catch (err) {
+                console.error(err);
+                return ctx.failure(ctx.strings.get("bot_generic_error"));
+            }
+        } else {
+            return ctx.failure("Couldn't find a role.");
         }
     }
 }

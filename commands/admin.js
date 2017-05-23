@@ -239,7 +239,7 @@ const subcommands = {
                 results.unshift(1);
 
                 await Promise.all(results.map((id) => ctx.client.pg.query({
-                    text: "INSERT INTO subs VALUES ($1, $2, $3, $4) ON CONFLICT (owner, value) DO UPDATE SET channel = $2;",
+                    text: "INSERT INTO subs VALUES ($1, $2, $3, $4) ON CONFLICT (owner, type, value) DO UPDATE SET channel = $2;",
                     values: [role.id, ctx.channel.id, "player", id.toString()]
                 })));
 

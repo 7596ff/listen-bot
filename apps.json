@@ -1,0 +1,24 @@
+{
+    "services": [{
+        "name": "feeds",
+        "script": "services/feeds.js",
+        "instances": 1,
+        "exec_mode": "fork"
+    }, {
+        "name": "matches",
+        "script": "services/matches.js",
+        "instances": 1,
+        "exec_mode": "fork"
+    }, {
+        "name": "steam",
+        "script": "services/steam.js",
+        "instances": 1,
+        "exec_mode": "fork"
+    }],
+    "bot": {
+        "name": "listen",
+        "script": "./bot.js",
+        "instances": 1,
+        "exec_mode": "fork"
+    }
+}

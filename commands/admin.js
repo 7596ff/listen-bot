@@ -316,7 +316,7 @@ async function exec(ctx) {
                     ctx.strings.get("admin_display_channel_specific_cooldowns", ctx.gcfg.climit),
                     ctx.strings.get("admin_display_member_specific_cooldowns", ctx.gcfg.mlimit),
                     ctx.strings.get("admin_display_custom_prefix", ctx.gcfg.prefix),
-                    ctx.strings.get("admin_display_trivia_channel", ctx.gcfg.trivia == 0 ? "none" : `<#${ctx.gcfg.trivia}>`),
+                    ctx.strings.get("admin_display_trivia_channel", ctx.gcfg.trivia ? `<#${ctx.gcfg.trivia}>` : "none"),
                     prettylist
                 ].join("\n")
             }

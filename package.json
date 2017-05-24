@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/bippum/listen-bot#readme",
   "dependencies": {
+    "async": "^2.4.1",
     "bignumber.js": "4.0.0",
     "bluebird": "3.5.0",
     "canvas": "1.6.4",
@@ -35,6 +36,7 @@
     "node-schedule": "1.2.0",
     "pad": "1.1.0",
     "pg": "6.1.2",
+    "pm2": "^2.4.6",
     "pretty-ms": "2.1.0",
     "randomstring": "1.1.5",
     "redis": "2.6.5",

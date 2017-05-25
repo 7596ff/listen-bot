@@ -5,9 +5,9 @@ const subcommands = {
         if (ctx.gcfg.trivia == ctx.channel.id && !ctx.client.trivia.channels.includes(ctx.channel.id)) {
             ctx.client.trivia.init(ctx.client, ctx.channel.id);
             return Promise.resolve();
-        } else if (ctx.gcfg.trivia != 0 && ctx.gcfg.gtrivia != ctx.channel.id) {
+        } else if (ctx.gcfg.trivia != 0 && ctx.channel.id != ctx.gcfg.trivia) {
             return ctx.send(ctx.strings.get("trivia_wrong_channel", ctx.gcfg.trivia));
-        } else if (ctx.gcfg.trivia == 0 || ctx.gcfg.trivia == undefined) {
+        } else {
             return ctx.send(ctx.strings.get("trivia_no_channel", ctx.gcfg.prefix));
         }
 

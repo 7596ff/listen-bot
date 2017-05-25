@@ -143,7 +143,7 @@ async function exec(ctx) {
         const item = ctx.options[1];
         return subcommands[type](ctx, type, item);
     } else {
-        return ctx.failure(ctx.strings.get("sub_wrong_type"));
+        return ctx.failure(ctx.strings.get("sub_wrong_type", map));
     }
 }
 

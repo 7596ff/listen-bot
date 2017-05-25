@@ -8,7 +8,8 @@ async function exec(ctx) {
     let result = await eat(ctx.content, {
         of: "member",
         as: "string",
-        with: "member"
+        with: "member",
+        in: "string"
     }, ctx.guild.members);
 
     // here we do a whole bunch of bullshit
@@ -77,6 +78,14 @@ async function exec(ctx) {
 
     if (results.length > 1) {
         mikaOpts.included_account_id = results.map((result) => result.dotaID).slice(1);
+    }
+
+    if (result.in) {
+        if (result.in == "ranked") {
+            mikaOpts.lobby_type = 7;
+        } else if (result.in == "normal") {
+            mikaOpts.lobby_type = 0;
+        }
     }
 
     let matches;

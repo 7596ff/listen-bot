@@ -13,7 +13,7 @@ function findPlayerTeam(match, account_id) {
     return slot < 5;
 }
 
-async function historyWith(ctx, _with, _of) {
+async function historyWith(ctx, _with, _of, _in) {
     if (!_with.found) {
         return ctx.failure(ctx.strings.get("bot_no_member"));
     }
@@ -40,6 +40,14 @@ async function historyWith(ctx, _with, _of) {
     let constraints = results.length == 2 ? {
         "included_account_id": results[1]
     } : {};
+
+    if (_in) {
+        if (_in == "ranked") {
+            constraints.lobby_type = 7;
+        } else if (_in == "normal") {
+            constraints.lobby_type = 0;
+        }
+    }
 
     let matches;
     try {
@@ -84,12 +92,15 @@ async function historyWith(ctx, _with, _of) {
     return ctx.embed(embed);
 }
 
-async function historyAs(ctx, _as, _of) {
+async function historyAs(ctx, _as, _of, _in) {
     if (!_of) _of = ctx.author.id;
 
-    let hero = findHero(_as);
-    if (!hero) {
-        return ctx.failure(ctx.strings.get("bot_no_hero_error"));
+    let hero;
+    if (_as) {
+        hero = findHero(_as);
+        if (!hero) {
+            return ctx.failure(ctx.strings.get("bot_no_hero_error"));
+        }
     }
 
     let result;
@@ -104,11 +115,23 @@ async function historyAs(ctx, _as, _of) {
         return ctx.failure(ctx.strings.get("bot_not_registered", ctx.client.users.get(_of).username, ctx.gcfg.prefix));
     }
 
+    let mikaOpts = {};
+
+    if (_as) {
+        mikaOpts.hero_id = hero.id;
+    }
+
+    if (_in) {
+        if (_in == "ranked") {
+            mikaOpts.lobby_type = 7;
+        } else if (_in == "normal") {
+            mikaOpts.lobby_type = 0;
+        }
+    }
+
     let matches;
     try {
-        matches = await ctx.client.mika.getPlayerMatches(result, {
-            hero_id: hero.id
-        });
+        matches = await ctx.client.mika.getPlayerMatches(result, mikaOpts);
     } catch (err) {
         console.error(err);
         return ctx.failure(ctx.strings.get("bot_mika_error"));
@@ -117,16 +140,23 @@ async function historyAs(ctx, _as, _of) {
     let wins = matches.filter(match => match.radiant_win == (match.player_slot < 5));
 
     let embed = {
-        "author": {
-            "icon_url": `http://cdn.dota2.com/apps/dota2/images/heroes/${hero.name}_icon.png`,
-            "name": `${ctx.guild.members.get(_of).username} as ${hero.local}`
-        }, 
         "description": [
             `**${ctx.strings.get("history_as_wins")}:** ${wins.length}`,
             `**${ctx.strings.get("history_as_games")}:** ${matches.length}`,
             `**${ctx.strings.get("history_as_winrate")}:** ${Math.round(wins.length / matches.length * 10000) / 100}%`
         ].join("\n")
     };
+
+    if (hero) {
+        embed.author = {
+            "icon_url": `http://cdn.dota2.com/apps/dota2/images/heroes/${hero.name}_icon.png`,
+            "name": `${ctx.guild.members.get(_of).username} as ${hero.local}`
+        };
+    } else {
+        embed.author = {
+            "name": `${ctx.guild.members.get(_of).username} in ${_in}`
+        };
+    }
 
     return ctx.embed(embed);
 }
@@ -136,14 +166,16 @@ async function exec(ctx) {
         of: "member",
         with: "member",
         as: "string",
+        in: "string"
     }, ctx.guild.members);
 
     if (!Object.keys(response).length) {
         return ctx.failure(ctx.strings.get("bot_wrong_data"));
     }
 
-    if (response.with) return historyWith(ctx, response.with, ((response.of && response.of.found) && ctx.client.users.get(response.of.all[0]).id));
-    if (response.as) return historyAs(ctx, response.as, ((response.of && response.of.found) && ctx.client.users.get(response.of.all[0]).id));
+    if (response.with) return historyWith(ctx, response.with, ((response.of && response.of.found) && ctx.client.users.get(response.of.all[0]).id), response.in);
+    if (response.as) return historyAs(ctx, response.as, ((response.of && response.of.found) && ctx.client.users.get(response.of.all[0]).id), response.in);
+    if (response.in) return historyAs(ctx, null, ((response.of && response.of.found) && ctx.client.users.get(response.of.all[0].id)), response.in);
 }
 
 module.exports = {

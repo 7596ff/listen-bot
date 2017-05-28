@@ -7,7 +7,7 @@ async function edit_trivia(pg, channel, ctx) {
     try {
         let res = await pg.query({
             "text": "UPDATE public.guilds SET trivia = $1 WHERE id = $2",
-            "values": [channel || 0, ctx.guild.id]
+            "values": [channel, ctx.guild.id]
         });
 
         let msg = channel ? ctx.strings.get("admin_trivia_enable", channel) : ctx.strings.get("admin_trivia_disable");
@@ -195,9 +195,9 @@ const subcommands = {
         } else if (ctx.options.join(" ").trim() == "here") {
             return edit_trivia(ctx.client.pg, ctx.channel.id, ctx);
         } else if (ctx.options.join(" ").trim() == "none") {
-            return edit_trivia(ctx.client.pg, null, ctx);
+            return edit_trivia(ctx.client.pg, 0, ctx);
         } else {
-            return ctx.failure(ctx.strings.get("admin_trivia_bad_syntax"))
+            return ctx.failure(ctx.strings.get("bot_bad_syntax"))
         }
     },
     threshold: async function(ctx) {
@@ -256,6 +256,10 @@ const subcommands = {
                     values: [role.id, ctx.channel.id, "player", id.toString()]
                 })));
 
+                ctx.client.redis.publish("listen:matches:new", JSON.stringify({
+                    action: "refresh"
+                }));
+
                 return ctx.embed({
                     description: `Subscription role set to ${role.name} (<@&${role.id}>) in channel ${ctx.channel.name} (<#${ctx.channel.id}>).`
                 });
@@ -283,6 +287,10 @@ const subcommands = {
                     text: "UPDATE public.guilds SET subrole = 0 WHERE id = $1;",
                     values: [ctx.guild.id]
                 });
+
+                ctx.client.redis.publish("listen:matches:new", JSON.stringify({
+                    action: "refresh"
+                }));
 
                 return ctx.success("Subscription role removed.");
             } catch (err) {
@@ -316,7 +324,11 @@ async function exec(ctx) {
                     ctx.strings.get("admin_display_channel_specific_cooldowns", ctx.gcfg.climit),
                     ctx.strings.get("admin_display_member_specific_cooldowns", ctx.gcfg.mlimit),
                     ctx.strings.get("admin_display_custom_prefix", ctx.gcfg.prefix),
-                    ctx.strings.get("admin_display_trivia_channel", ctx.gcfg.trivia ? `<#${ctx.gcfg.trivia}>` : "none"),
+                    ctx.strings.get("admin_display_trivia_channel", ctx.gcfg.trivia > 0 ? `<#${ctx.gcfg.trivia}>` : "none"),
+                    "Bot spam channel: " + (ctx.gcfg.botspam > 0 ? `<#${ctx.gcfg.botspam}>` : "none"),
+                    "Subscription role: " + (ctx.gcfg.subrole > 0 ? `<@&${ctx.gcfg.subrole}>` : "none"),
+                    `Stack threshold: ${ctx.gcfg.threshold}`,
+                    `Locale: ${ctx.gcfg.locale}`,
                     prettylist
                 ].join("\n")
             }

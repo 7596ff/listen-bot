@@ -106,8 +106,8 @@ client.on("ready", () => {
             if (!pg_guilds.includes(guild.id)) {
                 client.helper.log("bot", "found new guild, inserting...");
                 client.pg.query({
-                    "text": "INSERT INTO public.guilds (id, name, prefix, climit, mlimit, locale, botspam) VALUES ($1, $2, $3, $4, $5, $6, $7);",
-                    "values": [guild.id, guild.name, "--", 0, 0, "en", 0]
+                    "text": "INSERT INTO public.guilds (id, name) VALUES ($1, $2);",
+                    "values": [guild.id, guild.name]
                 }).then(() => {
                     client.helper.log("bot", "  inserted.");
                 }).catch(err => {
@@ -158,9 +158,9 @@ client.on("guildCreate", guild => {
 
             client.helper.log("bot", "  inserting into database");
             client.pg.query({
-                "text": "INSERT INTO public.guilds (id, name, prefix, climit, mlimit, locale, botspam) VALUES ($1, $2, $3, $4, $5, $6, $7);",
-                "values": [guild.id, guild.name, "--", 0, 0, "en", 0]
-            }).then(() => {
+                    "text": "INSERT INTO public.guilds (id, name) VALUES ($1, $2);",
+                    "values": [guild.id, guild.name]
+                }).then(() => {
                 client.helper.log("bot", "  inserted");
             }).catch(err => {
                 client.helper.log("bot", "  something went wrong inserting", "error");
@@ -330,13 +330,25 @@ client.on("guildMemberRemove", async function(guild, member) {
 });
 
 client.on("guildRoleDelete", async function(guild, role) {
+    let roleid = role.id;
     try {
         let res = await client.pg.query({
             text: "DELETE FROM subs WHERE owner = $1;",
-            values: [role.id]
+            values: [roleid]
         });
 
-        res.rowCount && console.log(`${new Date().toJSON()} SUBS: deleted rolesub on ${guild.id}/${guild.name} (${res.rowCount})`);
+        await client.pg.query({
+            text: "UPDATE guilds SET subrole = 0 WHERE id = $1;",
+            values: [guild.id]
+        });
+
+        if (res.rowCount > 0) {
+            client.redis.publish("listen:matches:new", JSON.stringify({
+                action: "refresh"
+            }));
+
+            console.log(`${new Date().toJSON()} SUBS: deleted rolesub on ${guild.id}/${guild.name} (${res.rowCount})`);
+        }
     } catch (err) {
         console.error(err);
         console.error(`guild: ${guild.id}, role: ${role.id}`);

@@ -21,10 +21,9 @@ async function exec(ctx) {
     }
 
     let hero_obj = heroes.find((hero) => hero.name == `npc_dota_hero_${res.name}`);
-    console.log(hero_obj)
+    hero_obj = JSON.parse(JSON.stringify(hero_obj));
     hero_obj.abilities = hero_obj.abilities
         .map((ability) => {
-            console.log(ability)
             ability = abilities.find((a) => a.name == ability);
             return ability.key && `${ability.key.toUpperCase()} - ${ability.dname}`;
         })

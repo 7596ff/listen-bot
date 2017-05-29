@@ -668,7 +668,7 @@
     "name": "arc_warden",
     "id": 113,
     "local": "Arc Warden",
-    "aliases": ["arc warden", "arc", "aw", "arc_warden"],
+    "aliases": ["arc warden", "arc", "aw", "arc_warden", "warden", "zet", "zett"],
     "oldname": "Zet"
 }, {
     "name": "monkey_king",

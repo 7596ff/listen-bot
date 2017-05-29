@@ -6,24 +6,24 @@
     };
 
     let val1 = [
-        `Lv.1 Damage: oops lol`,
-        `Lv.1 HP: oops lol`,
-        `Lv.1 Mana: oops lol`,
-        `Lv.1 Magic Amp: oops lol`
+        `Lv1. Health: ${hero.base_health + (20 * hero.base_str)}`,
+        `Lv1. Armor: ${Math.round(100 * (hero.base_armor + (0.14 * hero.base_agi))) / 100}`,
+        `Lv1. Mana: ${hero.base_mana + 11 * hero.base_int}`,
+        `Lv1. Spell Amp: ${Math.round(100 * (0.07 * hero.base_int)) / 100}%`
     ];
 
     let val2 = [
-        `Base Damage: oops lol`,
-        `Base MS: ${hero.move_speed}`,
-        `Base Armor: ${hero.base_armor}`,
-        `Base AT: oops lol`
+        `Lv1. Damage: ${hero.base_attack_min + hero[`base_${hero.primary_attr}`]} - ${hero.base_attack_max + hero[`base_${hero.primary_attr}`]}`,
+        `BAT: ${hero.attack_rate}`,
+        `Attack Range: ${hero.attack_range} (${hero.attack_type})`,
+        `Projectile Speed: ${hero.projectile_speed}`
     ];
 
     let val3 = [
-        `Vision (Day): oops lol`,
-        `Vision (Night): oops lol`,
-        `Attack Range: ${hero.attack_range} (${hero.attack_type})`,
-        `Base MR: ${hero.base_mr}`
+        `Move Speed: ${hero.move_speed}`,
+        `Turn Rate: ${hero.turn_rate}`,
+        `In Captains mode: ${hero.cm_enabled ? "Yes" : "No"}`,
+        `Legs: ${hero.legs}`
     ];
 
     attrs[hero.primary_attr] = `__${attrs[hero.primary_attr]}__`;

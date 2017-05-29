@@ -1,40 +1,38 @@
-module.exports = (client, hero) => {
+    module.exports = (client, hero) => {
     let attrs = {
-        str: `${hero.basestr} + ${hero.strgain}`,
-        agi: `${hero.baseagi} + ${hero.agigain}`,
-        int: `${hero.baseint} + ${hero.intgain}`
+        str: `${hero.base_str} + ${Number(hero.str_gain)}`,
+        agi: `${hero.base_agi} + ${Number(hero.agi_gain)}`,
+        int: `${hero.base_int} + ${Number(hero.int_gain)}`
     };
 
     let val1 = [
-        `Lv.1 Damage: ${hero.damage1}`,
-        `Lv.1 HP: ${hero.hp1}`,
-        `Lv.1 Mana: ${hero.mana1}`,
-        `Lv.1 Magic Amp: ${hero.amp1}`
+        `Lv.1 Damage: oops lol`,
+        `Lv.1 HP: oops lol`,
+        `Lv.1 Mana: oops lol`,
+        `Lv.1 Magic Amp: oops lol`
     ];
 
     let val2 = [
-        `Base Damage: ${hero.basedmg}`,
-        `Base MS: ${hero.basespeed}`,
-        `Base Armor: ${hero.basearmor}`,
-        `Base AT: ${hero.attacktime}`
+        `Base Damage: oops lol`,
+        `Base MS: ${hero.move_speed}`,
+        `Base Armor: ${hero.base_armor}`,
+        `Base AT: oops lol`
     ];
 
     let val3 = [
-        `Vision (Day): ${hero.sightrange.Day}`,
-        `Vision (Night): ${hero.sightrange.Night}`,
-        `Attack Range: ${hero.attackrange.Ranged || hero.attackrange.Melee}`,
-        `Base MR: ${hero.magicres}`
+        `Vision (Day): oops lol`,
+        `Vision (Night): oops lol`,
+        `Attack Range: ${hero.attack_range} (${hero.attack_type})`,
+        `Base MR: ${hero.base_mr}`
     ];
 
-    if (hero.attackrange.Melee && hero.attackrange.Ranged) val3[2] = `Attack Range: ${hero.attackrange.Melee}/${hero.attackrange.Ranged}`;
-
-    attrs[hero.mainattribute] = `__${attrs[hero.mainattribute]}__`;
+    attrs[hero.primary_attr] = `__${attrs[hero.primary_attr]}__`;
 
     return {
         "author": {
-            "name": hero.format_name,
-            "url": `http://dota2.gamepedia.com/${hero.format_name.replace(/ /g, "_")}`,
-            "icon_url": `http://cdn.dota2.com/apps/dota2/images/heroes/${hero.true_name}_vert.jpg`
+            "name": hero.localized_name,
+            "url": `http://dota2.gamepedia.com/${hero.url}`,
+            "icon_url": `http://cdn.dota2.com${hero.icon}`
         },
         "fields": [{
             "name": `${attrs.str} <:strength:281578819721363457>`,

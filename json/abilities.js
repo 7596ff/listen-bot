@@ -8,7 +8,8 @@ for (akey in akeys) {
 
 let keys = Object.keys(abilities);
 for (hero of heroes) {
-    let filtered = keys.filter((key) => key.startsWith(hero.name));
+    let searchstr = hero.name == "sand_king" ? "sandking" : hero.name; // valve
+    let filtered = keys.filter((key) => key.startsWith(searchstr));
     filtered.forEach((key) => {
         abilities[key].hero = hero;
     });

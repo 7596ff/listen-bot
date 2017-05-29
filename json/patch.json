@@ -1,5 +1,207 @@
 [{
     "heroes": {
+        "ancient_apparition": {
+            "changes": [
+                "• Cold Feet stun duration rescaled from 1.25/2/2.75/3.5 to 2/2.5/3/3.5"
+            ],
+            "true_name": "ancient_apparition",
+            "format_name": "Ancient Apparition"
+        },
+        "bloodseeker": {
+            "changes": [
+                "• Base damage increased by 4"
+            ],
+            "true_name": "bloodseeker",
+            "format_name": "Bloodseeker"
+        },
+        "clinkz": {
+            "changes": [
+                "• Skeleton Walk movement speed increased from 11/22/33/44 to 15/25/35/45%",
+                "• Death Pact health gain increased from 50/65/80% to 50/70/90%",
+                "• Death Pact damage gain increased from 5/6.5/8% to 5/7/9%"
+            ],
+            "true_name": "clinkz",
+            "format_name": "Clinkz"
+        },
+        "crystal_maiden": {
+            "changes": [
+                "• Base movement speed reduced from 280 to 275"
+            ],
+            "format_name": "Crystal Maiden",
+            "true_name": "crystal_maiden"
+        },
+        "doom_bringer": {
+            "changes": [
+                "• Infernal Blade stun duration increased from 0.4 to 0.6"
+            ],
+            "format_name": "Doom",
+            "true_name": "doom_bringer"
+        },
+        "ember_spirit": {
+            "changes": [
+                "• Level 10 Spell Amplification reduced from 10% to 8%",
+                "• Level 10 Attack Damage increased from +25 to +30"
+            ],
+            "format_name": "Ember Spirit",
+            "true_name": "ember_spirit"
+        },
+        "gyrocopter": {
+            "changes": [
+                "• Flak Cannon radius increased from 1000 to 1250",
+                "• Homing Missile stun duration from 2.2/2.4/2.6/2.8 to 2.25/2.5/2.75/3.0"
+            ],
+            "format_name": "Gyrocopter",
+            "true_name": "gyrocopter"
+        },
+        "wisp": {
+            "changes": [
+                "• Overcharge Health/Mana drain from 4.5% to 6%"
+            ],
+            "format_name": "io",
+            "true_name": "wisp"
+        },
+        "lich": {
+            "changes": [
+                "• Sacrifice cooldown reduced from 60/48/36/24 to 60/46/32/18"
+            ],
+            "format_name": "Lich",
+            "true_name": "lich"
+        },
+        "lone_druid": {
+            "changes": [
+                "• Spirit Bear base attack time improved from 1.75/1.65/1.55/1.45 to 1.65/1.55/1.45/1.35"
+            ],
+            "format_name": "Lone Druid",
+            "true_name": "lone_druid"
+        },
+        "mirana": {
+            "changes": [
+                "• Leap movement speed from 4/8/12/16% to 8/12/16/20%"
+            ],
+            "true_name": "mirana",
+            "format_name": "Mirana"
+        },
+        "monkey_king": {
+            "changes": [
+                "• Tree Dance cooldown reduced from 1.4 to 1.2",
+                "• Base HP regen increased from 0.75 to 1.5",
+                "• Level 10 Talent from +5 Armor to +10% Evasion"
+            ],
+            "true_name": "monkey_king",
+            "format_name": "Monkey King"
+        },
+        "necrolyte": {
+            "changes": [
+                "• Ghost Shroud AoE increased from 600 to 750"
+            ],
+            "format_name": "Necrophos",
+            "true_name": "necrolyte"
+        },
+        "nyx_assassin": {
+            "changes": [
+                "• Impale cooldown increased from 13 to 14 (Scepter is unaffected, still 7)"
+            ],
+            "format_name": "Nyx Assassin",
+            "true_name": "nyx_assassin"
+        },
+        "oracle": {
+            "changes": [
+                "• False Promise duration increased from 7/8/9 to 8/9/10"
+            ],
+            "format_name": "Oracle",
+            "true_name": "oracle"
+        },
+        "pugna": {
+            "changes": [
+                "• Life Drain break range from 900 to 1000",
+                "• Level 20 Talent from +0.5 Netherward Damage to +0.75"
+            ],
+            "format_name": "Pugna",
+            "true_name": "pugna"
+        },
+        "shadow_demon": {
+            "changes": [
+                "• Level 10 Talent from +10 MS to +20",
+                "• Level 10 Talent from +6 Strength to +10",
+                "• Level 15 Talent from +6% Spell Amp to +8%",
+                "• Level 20 Talent from +10% Magic Resistance to +15%",
+                "• Shadow Poison cast point improved from 0.3 to 0.25"
+            ],
+            "format_name": "Shadow Demon",
+            "true_name": "shadow_demon"
+        },
+        "skywrath_mage": {
+            "changes": [
+                "• Arcane Bolt cast range increased from 800 to 875",
+                "• Level 20 Talent from +20 Movement Speed to +40",
+                "• Level 20 Talent from +15% Magic Resistance to +20%"
+            ],
+            "format_name": "Skywrath Mage",
+            "true_name": "skywrath_mage"
+        },
+        "treant": {
+            "changes": [
+                "• Movement Speed reduced from 290 to 280"
+            ],
+            "format_name": "Treant Protector",
+            "true_name": "treant"
+        },
+        "troll_warlord": {
+            "changes": [
+                "• Battle Trance cooldown increased from 30 to 35"
+            ],
+            "format_name": "Troll Warlord",
+            "true_name": "troll_warlord"
+        },
+        "abyssal_underlord": {
+            "changes": [
+                "• Firestorm Max Health damage from 0.75/1.5/2.25/3% to 0.8/1.6/2.4/3.2%"
+            ],
+            "true_name": "abyssal_underlord",
+            "format_name": "Underlord"
+        },
+        "venomancer": {
+            "changes": [
+                "• Poison Sting damage per second increased from 6/12/18/24 to 6/14/22/30",
+                "• Agility gain increased from 2.6 to 2.8"
+            ],
+            "format_name": "Venomancer",
+            "true_name": "venomancer"
+        },
+        "viper": {
+            "changes": [
+                "• Level 15 Talent from +10 Strength to +15"
+            ],
+            "format_name": "Viper",
+            "true_name": "viper"
+        },
+        "warlock": {
+            "changes": [
+                "• Chaotic Offering manacost increased from 250/350/450 to 250/375/500",
+                "• Chaotic Offering cooldown increased from 165 to 170"
+            ],
+            "format_name": "Warlock",
+            "true_name": "warlock"
+        },
+        "winter_wyvern": {
+            "changes": [
+                "• Arctic Burn flight duration from 6 to 8 seconds"
+            ],
+            "format_name": "Winter Wyvern",
+            "true_name": "winter_wyvern"
+        },
+        "zuus": {
+            "changes": [
+                "• Movement Speed increased from 295 to 300"
+            ],
+            "true_name": "zuus",
+            "format_name": "Zeus"
+        }
+    },
+    "items": {},
+    "version": "7.06c"
+}, {
+    "heroes": {
         "sven": {
             "changes": [
                 "• God's Strength bonus strength reduced from 16/28/40 to 12/24/36",

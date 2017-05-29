@@ -1,6 +1,6 @@
 const dc = require("dotaconstants");
 const aliases = require("../json/aliases.json");
-const heroes = require("../json/heroes.json")
+const heroes = require("../json/heroes");
 
 const fullnames = {
     "str": "Strength",
@@ -108,17 +108,17 @@ for (hero_name in dc.hero_abilities) {
         if (talent.dname) questions.push(...formatTalent(ahero.local, talent.dname));
     });
 
-    let oldname = heroes.find((hero) => hero.true_name == ahero.name).dota_name;
+    let oldHero = aliases.find((h) => h.name == hero_name);
 
-    if (oldname) {
+    if (oldHero) {
         questions.push({
-            question: `Names/Titles: ${oldname}?`,
-            answer: ahero.local,
+            question: `Names/Titles: ${oldHero.local}?`,
+            answer: oldHero.oldname,
             category: "hero_names"
         });
         questions.push({
-            question: `Names/Titles: ${ahero.local}?`,
-            answer: oldname,
+            question: `Names/Titles: ${oldHero.oldname}?`,
+            answer: oldHero.local,
             category: "hero_names"
         });
     }

@@ -1,5 +1,5 @@
 const abilities = require("../../json/abilities");
-const heroes = require("../../json/heroes.json");
+const heroes = require("../../json/heroes");
 
 const findHero = require("../../util/findHero");
 const heroEmbed = require("../../embeds/hero");
@@ -20,17 +20,16 @@ async function exec(ctx) {
         return ctx.failure(ctx.strings.get("bot_no_hero_error"));
     }
 
-    let hero_obj = heroes.find((hero) => hero.true_name == res.name);
-    hero_obj.abilities = abilities
-        .filter((ability) => ability.dname && ability.hero.name == hero_obj.true_name)
-        .map((ability) => `${(ability.key || "?").toUpperCase()} - ${ability.dname}`)
+    let hero_obj = heroes.find((hero) => hero.name == `npc_dota_hero_${res.name}`);
+    console.log(hero_obj)
+    hero_obj.abilities = hero_obj.abilities
+        .map((ability) => {
+            console.log(ability)
+            ability = abilities.find((a) => a.name == ability);
+            return ability.key && `${ability.key.toUpperCase()} - ${ability.dname}`;
+        })
+        .filter((a) => a)
         .sort((a, b) => qwedfr[a.charAt(0)] - qwedfr[b.charAt(0)]);
-
-    if (res.name == "troll_warlord") {
-        hero_obj.abilities.splice(1, 1);
-        hero_obj.abilities[1] = "W - Whirling Axes";
-        hero_obj.abilities[2] = "E - Fervor";
-    }
 
     return ctx.embed(heroEmbed(ctx.client, hero_obj));
 }

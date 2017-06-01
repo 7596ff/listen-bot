@@ -49,29 +49,35 @@ class LeagueUtils {
 
         if (!abilities) return player;
 
-        for (let ability of abilities) {
-            let name = dc.ability_ids[Object.keys(ability)[0]];
-            if (!name) continue;
+        try {
+            for (let ability of abilities) {
+                let name = dc.ability_ids[Object.keys(ability)[0]];
+                if (!name) continue;
 
-            let hero = Object.values(dc.hero_abilities).find((h) => {
-                if (h.abilities.includes(name)) return true;
-                if (h.talents.find((talent) => talent.name == name)) return true;
-                return false;
-            });
-            if (!hero) continue;
+                let hero = Object.values(dc.hero_abilities).find((h) => {
+                    if (h.abilities.includes(name)) return true;
+                    if (h.talents.find((talent) => talent.name == name)) return true;
+                    return false;
+                });
+                if (!hero) continue;
 
-            let hero_name = Object.keys(dc.hero_abilities)[Object.values(dc.hero_abilities).indexOf(hero)];
-            if (!hero_name) continue;
+                let hero_name = Object.keys(dc.hero_abilities)[Object.values(dc.hero_abilities).indexOf(hero)];
+                if (!hero_name) continue;
 
-            let id = dc.hero_names[hero_name].id;
+                let id = dc.hero_names[hero_name].id;
 
-            if (player.hero_id == id) {
-                player.abilities = ability;
-                break;
+                if (player.hero_id == id) {
+                    player.abilities = ability;
+                    break;
+                }
             }
-        }
 
-        return player;
+            return player;
+        } catch (err) {
+            console.error(err);
+            console.error("what the fuck");
+            console.error(abilities);
+        }
     }
 
     _formatTeam(team) {

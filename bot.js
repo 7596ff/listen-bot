@@ -18,6 +18,7 @@ const Trivia = require("./classes/trivia");
 const Usage = require("./classes/usage");
 const Strings = require("./classes/strings");
 const questions = require("./util/genQuestions");
+const LeagueUtils = require("./classes/LeagueUtils");
 
 const schedule = require("node-schedule");
 const Mika = require("mika");
@@ -36,6 +37,7 @@ client.cooldowns = {};
 client.locale = {};
 client.strings = {};
 client.mika = new Mika();
+client.leagues = new LeagueUtils(config.steam_key);
 client.redis = redis.createClient(config.redisconfig);
 client.pg = new pg.Client(config.pgconfig);
 client.config = config;

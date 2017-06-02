@@ -156,10 +156,8 @@ class LeagueUtils {
                 if (body.result.status !== "200") return cb(new Error(body.result.status));
                 let matches = body.result.games.game.map((game) => this._formatGame(game));
 
-                let toDelete = [];
-                for (let match in this.matches.values()) {
-                    if (!matches.find((m) => m.match_id == match.match_id)) toDelete.push(match.match_id);
-                }
+                let oldMatches = Array.from(this.matches.keys());
+                let toDelete = oldMatches.filter((matchID) => matches.indexOf(matchID) == -1);
 
                 toDelete.forEach((item) => {
                     this.matches.set(item, {

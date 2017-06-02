@@ -200,7 +200,7 @@ class LeagueUtils {
                             dire_team: match.dire_team,
                             spectators: match.spectators,
                             league_id: match.league_id,
-                            duration: match.scoreboard.duration
+                            duration: match.scoreboard && match.scoreboard.duration
                         };
                     })
                     .sort((a, b) => b.spectators - a.spectators);

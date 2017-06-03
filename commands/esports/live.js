@@ -102,7 +102,7 @@ const subcommands = {
             embed = Object.assign(embed, {
                 title: `Talents of ${match.players.find((player) => player.account_id == theirHero.account_id).name}`,
                 footer: {
-                    text: `as of ${prettyms(Math.floor(match.scoreboard.duration) * 1000)}`
+                    text: `level ${theirHero.level} as of ${prettyms(Math.floor(match.scoreboard.duration) * 1000)}`
                 }
             });
 
@@ -152,7 +152,7 @@ const subcommands = {
                     ].join("\n"),
                     inline: true
                 }, {
-                    name: "\u200b",
+                    name: `Level ${theirHero.level}`,
                     value: [
                         `**GPM/XPM:** ${theirHero.gold_per_min}/${theirHero.xp_per_min}`,
                         `**Net Worth (Current Gold):** ${theirHero.net_worth} (${theirHero.gold})`,

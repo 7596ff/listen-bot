@@ -193,6 +193,7 @@ class LeagueUtils {
                 if (err) return reject(err);
 
                 let list = Array.from(this.matches.values())
+                    .filter((match) => !match.completed)
                     .map((match) => {
                         return {
                             match_id: match.match_id,

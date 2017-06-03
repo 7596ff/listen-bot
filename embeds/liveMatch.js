@@ -1,5 +1,12 @@
+const tnhConfig = require("../config.json").thinknohands;
 const prettyms = require("pretty-ms");
 const heroes = require("dotaconstants").heroes;
+
+const types = {
+    "0": "Best of 1",
+    "1": "Best of 3",
+    "2": "Best of 5"
+};
 
 function liveMatchEmbed(match) {
     let embed = {
@@ -26,28 +33,32 @@ function liveMatchEmbed(match) {
             name: "Stats",
             value: [
                 `**Radiant:** ${match.scoreboard.radiant.score}`,
-                `**Dire:** ${match.scoreboard.dire.score}`,
                 `**In Game Time:** ${prettyms(Math.floor(match.scoreboard.duration) * 1000)}`,
-                match.scoreboard.roshan_respawn_timer > 0 ? `**Roshan respawns in:** ${prettyms(match.scoreboard.roshan_respawn_timer * 1000)}` : "Roshan is **alive**",
+                `**Spectators:** ${match.spectators}`,
+                `**Series Type:** ${types[match.series_type]}`,
             ].join("\n"),
-            inline: false
+            inline: true
+        }, {
+            name: "\u200b",
+            value: [
+                `**Dire:** ${match.scoreboard.dire.score}`,
+                match.scoreboard.roshan_respawn_timer > 0 ? `**Roshan respawns in:** ${prettyms(match.scoreboard.roshan_respawn_timer * 1000)}` : "Roshan is **alive**",
+                `**Stream Delay:** ${match.stream_delay_s}`,
+                match.series_type && `**Radiant Score:** ${match.radiant_series_wins}, **Dire Score:** ${match.dire_series_wins}`
+            ].join("\n"),
+            inline: true
         });
     } else if (match.scoreboard.radiant && match.scoreboard.dire) {
-        embed.fields.push({
-            name: "Radiant",
-            value: [
-                `**Picks**: ${match.scoreboard.radiant.picks.map((id) => heroes[id].localized_name).join(", ")} (${match.scoreboard.radiant.picks.length})`,
-                `**Bans**: ${match.scoreboard.radiant.bans.map((id) => heroes[id].localized_name).join(", ")} (${match.scoreboard.radiant.bans.length})`
-            ].join("\n"),
-            inline: false
-        }, {
-            name: "Dire",
-            value: [
-                `**Picks**: ${match.scoreboard.dire.picks.map((id) => heroes[id].localized_name).join(", ")} (${match.scoreboard.dire.picks.length})`,
-                `**Bans**: ${match.scoreboard.dire.bans.map((id) => heroes[id].localized_name).join(", ")} (${match.scoreboard.dire.bans.length})`
-            ].join("\n"),
-            inline: false
-        });
+        let url = `${tnhConfig.url}/draft?key=${tnhConfig.key}&`;
+        let queries = [];
+        if (match.scoreboard.radiant.picks.length) queries.push(`radiant_picks=${match.scoreboard.radiant.picks.join(",")}`);
+        if (match.scoreboard.dire.picks.length) queries.push(`radiant_picks=${match.scoreboard.dire.picks.join(",")}`);
+        if (match.scoreboard.radiant.bans.length) queries.push(`radiant_picks=${match.scoreboard.radiant.bans.join(",")}`);
+        if (match.scoreboard.dire.bans.length) queries.push(`radiant_picks=${match.scoreboard.dire.bans.join(",")}`);
+        url += queries.join("&");
+        embed.image = { url };
+    } else {
+        embed.description = "Nothing has happened yet!";
     }
 
     return embed;

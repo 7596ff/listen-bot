@@ -7,7 +7,7 @@ const talentsEmbed = require("../../embeds/talents");
 
 async function checkMatchStatus(ctx, match) {
     if (!match) return `You aren't watching a match in this channel! Please try \`${ctx.gcfg.prefix}live list\`.`;
-    if (match.completed) return `This match is completed! You can look at its details with \`${ctx.gcfg.prefix}matchinfo ${match.match_id}.`;
+    if (match.completed) return `This match is completed! You can look at its details with \`${ctx.gcfg.prefix}matchinfo ${match.match_id}\`.`;
 
     return false;
 }

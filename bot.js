@@ -476,6 +476,7 @@ async function publishMatches(data) {
     }
 
     finished.length && console.log(`${new Date().toJSON()} FEED: published ${data.id} to ${finished.length} channel(s)`);
+    return;
 }
 
 async function checkIfStacks(guildID) {

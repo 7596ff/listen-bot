@@ -26,7 +26,7 @@ class LeagueUtils {
         } else {
             if (Array.isArray(abilities.ability)) {
                 let ret = {};
-                for (let item of ability.ability) { // valve
+                for (let item of abilities.ability) { // valve
                     ret[item.ability_id] = item.ability_level;
                 }
                 console.log(ret)

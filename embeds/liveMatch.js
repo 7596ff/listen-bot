@@ -52,9 +52,9 @@ function liveMatchEmbed(match) {
         let url = `${tnhConfig.url}/draft?key=${tnhConfig.key}&`;
         let queries = [];
         if (match.scoreboard.radiant.picks.length) queries.push(`radiant_picks=${match.scoreboard.radiant.picks.join(",")}`);
-        if (match.scoreboard.dire.picks.length) queries.push(`radiant_picks=${match.scoreboard.dire.picks.join(",")}`);
-        if (match.scoreboard.radiant.bans.length) queries.push(`radiant_picks=${match.scoreboard.radiant.bans.join(",")}`);
-        if (match.scoreboard.dire.bans.length) queries.push(`radiant_picks=${match.scoreboard.dire.bans.join(",")}`);
+        if (match.scoreboard.dire.picks.length) queries.push(`dire_picks=${match.scoreboard.dire.picks.join(",")}`);
+        if (match.scoreboard.radiant.bans.length) queries.push(`radiant_bans=${match.scoreboard.radiant.bans.join(",")}`);
+        if (match.scoreboard.dire.bans.length) queries.push(`dire_bans=${match.scoreboard.dire.bans.join(",")}`);
         url += queries.join("&");
         embed.image = { url };
     } else {

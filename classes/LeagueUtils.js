@@ -24,16 +24,17 @@ class LeagueUtils {
                 }
             });
         } else {
-            if (Array.isArray(abilities)) {
+            if (Array.isArray(abilities.ability)) {
                 let ret = {};
-                for (let item of abilities) { 
+                for (let item of ability.ability) { // valve
                     ret[item.ability_id] = item.ability_level;
                 }
-                return ret;
+                console.log(ret)
+                return [ret];
             } else {
                 let ret = {};
                 ret[abilities.ability.ability_id] = abilities.ability.ability_level;
-                return ret;
+                return [ret];
             }
         }
     }

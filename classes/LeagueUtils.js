@@ -29,7 +29,6 @@ class LeagueUtils {
                 for (let item of abilities.ability) { // valve
                     ret[item.ability_id] = item.ability_level;
                 }
-                console.log(ret)
                 return [ret];
             } else {
                 let ret = {};

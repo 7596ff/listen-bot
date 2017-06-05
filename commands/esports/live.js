@@ -60,8 +60,8 @@ const subcommands = {
             let message = await checkMatchStatus(ctx, match);
             if (message) return ctx.failure(message);
 
-            let embed = liveMatchEmbed(match);
-            return ctx.embed(embed);
+            let msg = liveMatchEmbed(match);
+            return ctx.embed(msg);
         } catch (err) {
             console.error(err);
             return ctx.failure(ctx.strings.get("bot_generic_error"));

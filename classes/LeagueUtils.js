@@ -153,26 +153,30 @@ class LeagueUtils {
             if (err) {
                 return cb(err);
             } else {
-                if (body.result.status !== "200") return cb(new Error(body.result.status));
-                let matches = body.result.games.game.map((game) => this._formatGame(game));
+                try {
+                    if (body.result.status !== "200") return cb(new Error(body.result.status));
+                    let matches = body.result.games.game.map((game) => this._formatGame(game));
 
-                let oldMatches = Array.from(this.matches.keys());
-                let toDelete = oldMatches.filter((matchID) => matches.indexOf(matchID) == -1);
+                    let oldMatches = Array.from(this.matches.keys());
+                    let toDelete = oldMatches.filter((matchID) => matches.indexOf(matchID) == -1);
 
-                toDelete.forEach((item) => {
-                    this.matches.set(item, {
-                        match_id: item,
-                        completed: true
+                    toDelete.forEach((item) => {
+                        this.matches.set(item, {
+                            match_id: item,
+                            completed: true
+                        });
                     });
-                });
 
-                for (let match of matches) {
-                    this.matches.set(match.match_id, match);
+                    for (let match of matches) {
+                        this.matches.set(match.match_id, match);
+                    }
+
+                    this.expires = Date.now() + 60000;
+
+                    return cb();
+                } catch (err) {
+                    return cb(err);
                 }
-
-                this.expires = Date.now() + 60000;
-
-                return cb();
             }
         });
     }

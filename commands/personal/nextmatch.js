@@ -18,7 +18,7 @@ async function exec(ctx) {
             return ctx.failure(ctx.strings.get("bot_not_registered", ctx.guild.members.get(ID).username, ctx.gcfg.prefix));
         }
 
-        await ctx.client.redis.setAsync(`listen:nextmatch:${member}`, ctx.channel.id);
+        await ctx.client.redis.rpushAsync(`listen:nextmatch:${member}`, ctx.channel.id);
         ctx.client.redis.publish("listen:matches:new", JSON.stringify({
             action: "refresh"
         }));

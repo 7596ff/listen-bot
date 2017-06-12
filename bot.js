@@ -455,18 +455,20 @@ async function publishMatches(data) {
         }
     }
 
-    for (let playerID in data.found.player) {
+    for (let playerID of data.found.player) {
         let key = `listen:nextmatch:${playerID}`;
-        let next = await client.redis.getAsync(key);
+        let length = await client.redis.llenAsync(key);
 
-        if (next) {
-            allChannels.push(next);
-            await client.redis.delAsync(key);
+        if (!length) continue;
 
-            client.redis.publish("listen:matches:new", JSON.stringify({
-                action: "refresh"
-            }));
+        for (let i = 0; i < length; i++) {
+            let channel = await client.redis.lpopAsync(key);
+            allChannels.push(channel);
         }
+
+        client.redis.publish("listen:matches:new", JSON.stringify({
+            action: "refresh"
+        }));
     }
 
     allChannels = allChannels.filter((item, index, array) => array.indexOf(item) === index);

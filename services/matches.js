@@ -22,6 +22,17 @@ function log(str) {
     }
 }
 
+function getNextMatchPlayers() {
+    return new Promise((resolve, reject) => {
+        redis.keys("listen:nextmatch:*", (err, reply) => {
+            if (err) return reject(err);
+
+            let map = reply.map((str) => str.split(":")[2]);
+            return resolve(map);
+        });
+    });
+}
+
 async function refresh() {
     try {
         let subs = await client.getSubs();
@@ -29,6 +40,9 @@ async function refresh() {
 
         let oldplayers = subs.player;
         let newplayers = res.rows.filter((row) => row.value != "1").map((row) => parseInt(row.value)).filter((item, index, array) => array.indexOf(item) === index);
+
+        let nmplayers = await getNextMatchPlayers();
+        newplayers.push(...nmplayers);
 
         let toAdd = newplayers.filter((player) => !~oldplayers.indexOf(player));
         let toRemove = oldplayers.filter((player) => !~newplayers.indexOf(player));

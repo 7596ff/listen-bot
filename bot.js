@@ -408,7 +408,7 @@ async function publishMatch(channel, match) {
 
 async function publishMatches(data) {
     if (!client.isReady) return;
-    await sleep(10); // lol
+    await sleep(5); // lol
 
     let match;
     try {
@@ -452,6 +452,20 @@ async function publishMatches(data) {
 
         if (idsInGuild.length >= (gcfg.threshold || 5)) {
             allChannels.push(allRows.find((row) => row.owner === guildID).channel);
+        }
+    }
+
+    for (let playerID in data.found.player) {
+        let key = `listen:nextmatch:${playerID}`;
+        let next = await client.redis.getAsync(key);
+
+        if (next) {
+            allChannels.push(next);
+            await client.redis.delAsync(key);
+
+            client.redis.publish("listen:matches:new", JSON.stringify({
+                action: "refresh"
+            }));
         }
     }
 

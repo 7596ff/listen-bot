@@ -27,7 +27,7 @@ function getNextMatchPlayers() {
         redis.keys("listen:nextmatch:*", (err, reply) => {
             if (err) return reject(err);
 
-            let map = reply.map((str) => str.split(":")[2]);
+            let map = reply.map((str) => Number(str.split(":")[2]));
             return resolve(map);
         });
     });
@@ -43,6 +43,7 @@ async function refresh() {
 
         let nmplayers = await getNextMatchPlayers();
         newplayers.push(...nmplayers);
+        newplayers = newplayers.filter((item, index, array) => array.indexOf(item) === index);
 
         let toAdd = newplayers.filter((player) => !~oldplayers.indexOf(player));
         let toRemove = oldplayers.filter((player) => !~newplayers.indexOf(player));

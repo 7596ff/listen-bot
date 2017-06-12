@@ -250,5 +250,7 @@
     "help_cmd_history_filters_3": "`in <lobby>`: *optional* either \"ranked\" or \"normal\"",
     "help_cmd_lastmatch_filters_3": "`in <lobby>`: *optional* either \"ranked\" or \"normal\"",
     "help_cmd_matches_filters_3": "`in <lobby>`: *optional* either \"ranked\" or \"normal\"",
-    "help_footer": "**Note**: Do not include `[]` or `<>` when using commands. They are there to differ between actual text and things you should replace."
+    "help_footer": "**Note**: Do not include `[]` or `<>` when using commands. They are there to differ between actual text and things you should replace.",
+    "help_cmd_nextmatch_usage": "nextmatch <member>",
+    "help_cmd_nextmatch_desc": "Waits for the registered user you mention to finish their game, then posts it."
 }

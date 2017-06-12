@@ -20,7 +20,10 @@ async function all(ctx) {
             .slice(0, 15);
 
         let embed = allMmrEmbed.call(ctx.strings, results, ctx.guild.members, ctx.guild.name);
-        return msg.edit({ embed });
+        return msg.edit({
+            content: "",
+            embed
+        });
     } catch (err) {
         console.error(err);
         if (msg) return msg.edit(":x: " + ctx.strings.get("bot_generic_error"));

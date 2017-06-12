@@ -6,8 +6,8 @@ const liveMatchEmbed = require("../../embeds/liveMatch");
 const talentsEmbed = require("../../embeds/talents");
 
 async function checkMatchStatus(ctx, match) {
-    if (!match) return `You aren't watching a match in this channel! Please try \`${ctx.gcfg.prefix}live list\`.`;
-    if (match.completed) return `This match is completed! You can look at its details with \`${ctx.gcfg.prefix}matchinfo ${match.match_id}\`.`;
+    if (!match) return ctx.strings.get("live_no_match", ctx.gcfg.prefix);
+    if (match.completed) return ctx.strings.get("live_match_finished", ctx.gcfg.prefix, match.match_id);
 
     return false;
 }
@@ -23,10 +23,10 @@ const subcommands = {
             let list = await ctx.client.leagues.getList();
             list = list
                 .slice(0, 5)
-                .map((match) => `\`${match.match_id}\`: **${match.radiant_team.team_name}** vs **${match.dire_team.team_name}**, with ${match.spectators} spectators`);
+                .map((match) => ctx.strings.get("live_list_format", match.match_id, match.radiant_team.team_name, match.dire_team.team_name, match.spectators));
 
-            list.splice(0, 0, "List of top 5 live games:", "");
-            list.push("", `Use \`${ctx.gcfg.prefix}live watch <match_id>\` to start watching a game in this channel.`);
+            list.splice(0, 0, ctx.strings.get("live_list_heading"), "");
+            list.push("", ctx.strings.get("live_list_footer", ctx.gcfg.prefix));
 
             return ctx.send(list.join("\n"));
         } catch (err) {
@@ -37,7 +37,7 @@ const subcommands = {
     watch: async function(ctx) {
         try {
             if (isNaN(ctx.options[0])) {
-                return ctx.failure("Please provide a proper match ID!");
+                return ctx.failure(ctx.strings.get("matches_bad_matchid"));
             }
 
             let match = await ctx.client.leagues.getMatch(null, ctx.options[0]);
@@ -79,7 +79,7 @@ const subcommands = {
 
             let heroes = await ctx.client.leagues.getMatchHeroes(match);
             let theirHero = heroes.find((hero) => hero.hero_id == ourHero.id);
-            if (!theirHero) return ctx.failure("That hero isn't in this game!");
+            if (!theirHero) return ctx.failure(ctx.strings.get("live_no_hero"));
 
             let embedData = {};
             embedData.hero = ourHero;
@@ -100,7 +100,7 @@ const subcommands = {
 
             let embed = talentsEmbed(embedData);
             embed = Object.assign(embed, {
-                title: `Talents of ${match.players.find((player) => player.account_id == theirHero.account_id).name}`,
+                title: match.players.find((player) => player.account_id == theirHero.account_id).name,
                 footer: {
                     text: `level ${theirHero.level} as of ${prettyms(Math.floor(match.scoreboard.duration) * 1000)}`
                 }
@@ -125,7 +125,7 @@ const subcommands = {
 
             let heroes = await ctx.client.leagues.getMatchHeroes(match);
             let theirHero = heroes.find((hero) => hero.hero_id == ourHero.id);
-            if (!theirHero) return ctx.failure("That hero isn't in this game!");
+            if (!theirHero) return ctx.failure(ctx.strings.get("live_no_hero"));
 
             let theirSkills = {};
 

@@ -23,7 +23,7 @@ async function exec(ctx) {
             action: "refresh"
         }));
 
-        return ctx.send(`Watching for ${ctx.client.users.get(ID).username}'s next match, and posting it to this channel.`);
+        return ctx.send(ctx.strings.get("nextmatch_success", ctx.client.users.get(ID).username));
     } catch (err) {
         console.error(err);
         return ctx.failure(ctx.strings.get("bot_generic_error"));

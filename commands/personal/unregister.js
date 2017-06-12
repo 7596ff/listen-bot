@@ -22,7 +22,7 @@ async function exec(ctx) {
         }
     } catch (err) {
         console.error(err);
-        return ctx.send("Something went wrong.");
+        ctx.failure(ctx.strings.get("bot_generic_error"));
     }
 }
 

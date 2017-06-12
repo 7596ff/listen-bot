@@ -46,7 +46,7 @@ async function exec(ctx) {
         let reduced = conflicts.filter((item, inc, newlist) => newlist.indexOf(item) === inc);
         if (reduced.length > 1) {
             let map = reduced.map((item, index) => `${index}\u20e3 ${item.dname}`);
-            map.unshift("Multiple conflicts found. React with a number to choose an ability.", "");
+            map.unshift(ctx.strings.get("item_multiple_conflicts"), "");
             let msg = await ctx.embed({
                 description: map.join("\n")
             });

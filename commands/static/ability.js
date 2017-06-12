@@ -47,7 +47,7 @@ async function exec(ctx) {
             return ctx.embed(abilityEmbed(conflicts[0]));
         } else if (conflicts.length) {
             let map = conflicts.map((item, index) => `${index}\u20e3 ${item.dname}`);
-            map.unshift("Multiple conflicts found. React with a number to choose an ability.", "");
+            map.unshift(ctx.strings.get("ability_multiple_conflicts"), "");
             let msg = await ctx.embed({
                 description: map.join("\n")
             });

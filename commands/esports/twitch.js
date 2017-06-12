@@ -30,7 +30,7 @@ const subcommands = {
                 localstreams = streams.filter((stream) => stream.channel.language == "en");
             }
 
-            let embed = streamsEmbed(localstreams.slice(0, 5));
+            let embed = streamsEmbed.call(ctx.strings, localstreams.slice(0, 5));
             return ctx.embed(embed);
         } catch (err) {
             console.error(err);

@@ -325,10 +325,10 @@ async function exec(ctx) {
                     ctx.strings.get("admin_display_member_specific_cooldowns", ctx.gcfg.mlimit),
                     ctx.strings.get("admin_display_custom_prefix", ctx.gcfg.prefix),
                     ctx.strings.get("admin_display_trivia_channel", ctx.gcfg.trivia > 0 ? `<#${ctx.gcfg.trivia}>` : "none"),
-                    "Bot spam channel: " + (ctx.gcfg.botspam > 0 ? `<#${ctx.gcfg.botspam}>` : "none"),
-                    "Subscription role: " + (ctx.gcfg.subrole > 0 ? `<@&${ctx.gcfg.subrole}>` : "none"),
-                    `Stack threshold: ${ctx.gcfg.threshold}`,
-                    `Locale: ${ctx.gcfg.locale}`,
+                    ctx.strings.get("admin_display_botspam", (ctx.gcfg.botspam > 0 ? `<#${ctx.gcfg.botspam}>` : "none")),
+                    ctx.strings.get("admin_display_subrole", (ctx.gcfg.subrole > 0 ? `<@&${ctx.gcfg.subrole}>` : "none")),
+                    ctx.strings.get("admin_display_stack_threshold", ctx.gcfg.threshold),
+                    ctx.strings.get("admin_display_locale", ctx.gcfg.locale),
                     prettylist
                 ].join("\n")
             }

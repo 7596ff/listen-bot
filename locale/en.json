@@ -219,5 +219,22 @@
     "help_cmd_patch_usage": "%spatch <hero name>",
     "help_cmd_patch_desc": "Returns an interactive list of patch notes for a hero.",
     "help_cmd_talents_usage": "%stalents <hero name>",
-    "help_cmd_talents_desc": "Returns the talents for a specific hero."
+    "help_cmd_talents_desc": "Returns the talents for a specific hero.",
+    "live_no_match": "You aren't watching a match in this channel! Please try `%slive list`.",
+    "live_match_finished": "This match is completed! You can look at its details with `%smatchinfo %s`.",
+    "live_list_format": "`%s`: **%s** vs **%s**, with %s spectators",
+    "live_list_heading": "List of top 5 league games:",
+    "live_list_footer": "Use `%slive watch <match_id>` to start watching a game in this channel.",
+    "live_no_hero": "That hero isn't in this game!",
+    "nextmatch_success": "Watching for %s's next match, and posting it to this channel.",
+    "ability_multiple_conflicts": "Multiple conflicts found. React with a number to choose an ability.",
+    "item_multiple_conflicts": "Multiple conflicts found. React with a number to choose an item.",
+    "admin_display_botspam": "Bot spam channel: %s",
+    "admin_display_subrole": "Subscription role: %s",
+    "admin_display_stack_threshold": "Stack threshold: `%s`",
+    "admin_display_locale": "Locale: `%s`",
+    "twitch_streams_heading": "Top 5 streams of Dota 2 in %s",
+    "twitch_streams_title": "Title",
+    "twitch_streams_streamer": "Streamer",
+    "twitch_streams_viewers": "Viewers"
 }

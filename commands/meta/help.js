@@ -34,6 +34,8 @@ async function formatHelp(ctx, command) {
         rows.push("", `**${ctx.strings.get("help_args")}:**`, ...args);
     }
 
+    if (Math.floor(Math.random() * 5) == 0) rows.push("", ctx.strings.get("help_footer"));
+
     return ctx.send(rows.join("\n"));
 }
 
@@ -104,7 +106,8 @@ async function exec(ctx) {
             ctx.strings.get("help_list_of_commands") + "```",
             grid,
             "```",
-            ctx.strings.get("help_instruction", ctx.gcfg.prefix)
+            ctx.strings.get("help_instruction", ctx.gcfg.prefix),
+            ctx.strings.get("help_footer")
         ].join("\n");
 
         return ctx.send(msg);

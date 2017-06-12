@@ -2,7 +2,7 @@ const pad = require("pad");
 const aliases = require("../json/aliases.json");
 
 function matchesEmbed(ctx, matches) {
-    let matchlist = [["Match ID", " ", "Hero", "K/D/A", "Time", "\u200b"]];
+    let matchlist = [["Match ID", " ", "Hero", "K/D/A", "Time", "Date"]];
     let fmatchlist = [];
     let highest = new Array(6).fill(0);
 
@@ -32,15 +32,14 @@ function matchesEmbed(ctx, matches) {
         fmatchlist.push(row);
     });
 
-    fmatchlist = fmatchlist
-        .map((row) => `\`${row.slice(0, -1).join(" ")}\` ${row[row.length - 1]}`)
-        .join("\n");
-
-    return [
+    let content = [
         ctx.strings.get("matches_embed_title", ctx.gcfg.prefix),
-        "",
-        fmatchlist
-    ].join("\n");
+        ""
+    ];
+
+    content.push(...fmatchlist.map((row) => `\`${row.join(" ")}\``));
+
+    return content.join("\n");
 }
 
 module.exports = matchesEmbed;

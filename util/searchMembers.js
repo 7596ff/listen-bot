@@ -1,6 +1,9 @@
 const FuzzySet = require("fuzzyset.js");
 
 function decideMatch(nick, user) {
+    if (!nick) return false;
+    if (!user) return true;
+
     return nick[0][0] > user[0][0];
 }
 

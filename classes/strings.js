@@ -14,6 +14,7 @@ class Strings {
                 return this._strings[str];
             }
         } else {
+            console.error(`BAD STRING: ${str}`);
             return str;
         }
     }

@@ -55,12 +55,7 @@ async function matchEmbed(ctx, match_data) {
         queries.push(checkDotaID(ctx.client.pg, player.account_id));
     });
 
-    let results;
-    try {
-        results = await Promise.all(queries);
-    } catch (err) {
-        return Promise.reject(err);
-    }
+    let results = await Promise.all(queries);
 
     match_data.players.forEach((player, index) => {
         if (results[index] !== null && ctx.guild.members.get(results[index])) {
@@ -68,13 +63,14 @@ async function matchEmbed(ctx, match_data) {
         }
     });
 
-    let heading = ["Hero", "K/D/A", "LH/D", "HD", "TD", "GPM", "XPM", "\u200b"];
+    let heading = ["L.", "Hero", "K/D/A", "LH/D", "HD", "TD", "GPM", "XPM", "\u200b"];
     let table = [];
     let ftable = [];
     let highest = new Array(9).fill(0);
 
     match_data.players.forEach(player => {
         let row = [
+            player.level.toString(),
             aliases.find((hero) => hero.id == player.hero_id).local,
             `${player.kills}/${player.deaths}/${player.assists}`,
             `${player.last_hits}/${player.denies}`,
@@ -111,7 +107,7 @@ async function matchEmbed(ctx, match_data) {
     let od_link = `https://www.opendota.com/matches/${match_data.match_id}`;
     let db_link = `https://www.dotabuff.com/matches/${match_data.match_id}`;
 
-    return Promise.resolve({
+    return {
         "title": victory,
         "footer": {
             "text": ctx.strings.get("matchinfo_match_completed")
@@ -122,8 +118,8 @@ async function matchEmbed(ctx, match_data) {
             "value": match_data.match_id,
             "inline": true
         }, {
-            "name": lobby_types[match_data.lobby_type],
-            "value": game_modes[match_data.game_mode],
+            "name": lobby_types[match_data.lobby_type] || "Unknown Lobby",
+            "value": game_modes[match_data.game_mode] || "Unknown Game Mode",
             "inline": true
         }, {
             "name": `${skill} Skill`,
@@ -138,7 +134,7 @@ async function matchEmbed(ctx, match_data) {
             "value": ftable.slice(6, 12).join("\n"),
             "inline": false
         }]
-    });
+    };
 }
 
 module.exports = matchEmbed;

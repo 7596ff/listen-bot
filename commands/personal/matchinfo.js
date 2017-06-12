@@ -3,7 +3,7 @@ const matchEmbed = require("../../embeds/match");
 async function exec(ctx) {
     let match_id = String(ctx.match_id || ctx.options[0]);
     if (!match_id) {
-        return ctx.failure(ctx.strings.get("matchinfo_no_matchid"));
+        return ctx.failure(ctx.strings.get("matches_no_matchid"));
     }
 
     if (match_id.includes("dotabuff") || match_id.includes("opendota")) {
@@ -11,7 +11,7 @@ async function exec(ctx) {
     }
 
     if (isNaN(match_id)) {
-        return ctx.failure(ctx.strings.get("matchinfo_bad_matchid"));
+        return ctx.failure(ctx.strings.get("matches_bad_matchid"));
     }
 
     try {
@@ -23,6 +23,11 @@ async function exec(ctx) {
         } else {
             match = await ctx.client.mika.getMatch(match_id);
             await ctx.client.redis.setexAsync(key, 604800, JSON.stringify(match));
+        }
+
+        // check if opendota is giving us a real match
+        if (match.match_seq_num === null) {
+            return ctx.failure(ctx.strings.get("matches_bad_matchid"));
         }
 
         // sometimes the scores are broken

@@ -244,7 +244,7 @@
     "help_cmd_live_args_1": "`watch <match_id>`: ser et pågående spill i denne kanalen.",
     "help_cmd_live_args_2": "`info`: viser en oppsummering av det pågående spillet.",
     "help_cmd_live_args_3": "`talents <helt>`: viser talentvalgene til en helt i det pågående spillet.",
-    "help_cmd_live_args_4": "`hero <helt>`: viser en oppsummering av den gitte helten, i tillegg til  shows a summary of the provided hero, as well as elementvalg og evnebygging.",
+    "help_cmd_live_args_4": "`hero <helt>`: viser en oppsummering av den gitte helten, i tillegg til elementvalg og evnebygging.",
     "help_cmd_cleanup_usage": "cleanup",
     "help_cmd_cleanup_desc": "Sletter en haug med meldinger sendt av botten i kanalen. Ikke garantert å funke.",
     "help_cmd_history_filters_3": "`in <lobby>`: *valgfritt* enten \"ranked\" eller \"normal\"",

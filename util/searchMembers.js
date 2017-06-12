@@ -1,5 +1,9 @@
 const FuzzySet = require("fuzzyset.js");
 
+function decideMatch(nick, user) {
+    return nick[0][0] > user[0][0];
+}
+
 async function searchMembers(members, terms, exact) {
     let res = {
         "all": [],
@@ -39,16 +43,20 @@ async function searchMembers(members, terms, exact) {
         }
 
         let matchedUsername = usernames.get(terms.join(" "));
-        if (matchedUsername && matchedUsername[0][0] >= threshold && matchedUsername[0][1]) {
-            let member = members.find((member) => member.username == matchedUsername[0][1]);
-            res.all.push(member.id);
-            res.terms[terms.join(" ")] = member.id;
-            res.found = true;
-        }
-
         let matchedNickname = nicknames.get(terms.join(" "));
-        if (matchedNickname && matchedNickname[0][0] >= threshold && matchedNickname[0][1]) {
-            let member = members.find((member) => member.nick == matchedNickname[0][1]);
+
+        let nickOrUser = decideMatch(matchedNickname, matchedUsername);
+        let matched = nickOrUser ? matchedNickname : matchedUsername;
+
+        if (matched && matched[0][0] >= threshold && matched[0][1]) {
+            let member = members.find((member) => {
+                if (nickOrUser) {
+                    return member.nick === matched[0][1];
+                } else {
+                    return member.username === matched[0][1];
+                }
+            });
+
             res.all.push(member.id);
             res.terms[terms.join(" ")] = member.id;
             res.found = true;

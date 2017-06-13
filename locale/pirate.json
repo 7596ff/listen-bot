@@ -1,4 +1,4 @@
-{
+{ 
     "bot_no_permission": "Ye do not be havin' permission t' use this command",
     "bot_botspam": "This command be scuttled here!",
     "bot_botspam_redirect": "This command be scuttled here! Please 'ave a go using it in <#%s>.",

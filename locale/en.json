@@ -1,4 +1,4 @@
-{
+{ 
     "bot_no_permission": "You do not have permission to use this command.",
     "bot_botspam": "This command is disabled here!",
     "bot_botspam_redirect": "This command is disabled here! Please try using it in <#%s>.",

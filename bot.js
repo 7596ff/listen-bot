@@ -581,7 +581,21 @@ sub.on("message", (channel, message) => {
                 `<${message.link}>`
             ].join("\n");
             res.rows.forEach((row) => {
-                client.createMessage(row.channel, msg).catch((err) => console.error(err));
+                client.createMessage(row.channel, msg).catch((err) => {
+                    if (err.message) {
+                        let msg = JSON.parse(err.message);
+                        if (msg.code == 10003) {
+                            console.error(`channel ${row.channel} is unknown`);
+                        } else if (msg.code == 50013) {
+                            console.error(`no permission for channel ${row.channel}`);
+                        } else {
+                            console.error(row.channel);
+                            console.error(msg);
+                        }
+                    } else {
+                        console.error(err);
+                    }
+                });
             });
         });
     }

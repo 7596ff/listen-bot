@@ -582,8 +582,8 @@ sub.on("message", (channel, message) => {
             ].join("\n");
             res.rows.forEach((row) => {
                 client.createMessage(row.channel, msg).catch((err) => {
-                    if (err.message) {
-                        let msg = JSON.parse(err.message);
+                    if (err.response) {
+                        let msg = JSON.parse(err.response);
                         if (msg.code == 10003) {
                             console.error(`channel ${row.channel} is unknown`);
                         } else if (msg.code == 50013) {

@@ -1,6 +1,7 @@
 const tnhConfig = require("../config.json").thinknohands;
 const prettyms = require("pretty-ms");
 const heroes = require("dotaconstants").heroes;
+const snekfetch = require("snekfetch");
 
 const types = {
     "0": "Best of 1",
@@ -8,7 +9,9 @@ const types = {
     "2": "Best of 5"
 };
 
-function liveMatchEmbed(match) {
+async function liveMatchEmbed(match) {
+    let response = {};
+
     let embed = {
         title: `\`${match.match_id}\`: ${match.radiant_team.team_name} vs. ${match.dire_team.team_name}`,
         fields: []
@@ -49,6 +52,8 @@ function liveMatchEmbed(match) {
             inline: true
         });
     } else if (match.scoreboard.radiant && match.scoreboard.dire) {
+        embed.image = { url: "attachment://draft.png" };
+
         let url = `${tnhConfig.url}/draft?key=${tnhConfig.key}&`;
         let queries = [];
         if (match.scoreboard.radiant.picks.length) queries.push(`radiant_picks=${match.scoreboard.radiant.picks.join(",")}`);
@@ -56,12 +61,19 @@ function liveMatchEmbed(match) {
         if (match.scoreboard.radiant.bans.length) queries.push(`radiant_bans=${match.scoreboard.radiant.bans.join(",")}`);
         if (match.scoreboard.dire.bans.length) queries.push(`dire_bans=${match.scoreboard.dire.bans.join(",")}`);
         url += queries.join("&");
-        embed.image = { url };
+
+        let img = await snekfetch.get(url);
+        response.file = {
+            name: "draft.png",
+            file: img.body
+        };
     } else {
         embed.description = "Nothing has happened yet!";
     }
 
-    return embed;
+    response.content = { embed };
+
+    return response;
 }
 
 module.exports = liveMatchEmbed;

@@ -156,7 +156,7 @@
     "help_cmd_courage_desc": "Returns a random item build. See <http://web.archive.org/web/20161219221614/http://divinecourage.dy.fi//> for rules, or make your own!",
     "help_cmd_mike_usage": "%smike",
     "help_cmd_mike_desc": "Returns a random ixmike88 quote.",
-    "help_cmd_mike_usage": "%sping",
+    "help_cmd_ping_usage": "%sping",
     "help_cmd_ping_desc": "Returns the time between when the bot received your message and the bot's message being sent.",
     "help_cmd_pong_usage": "%spong",
     "help_cmd_pong_desc": "Returns the last heartbeat latency measure.",

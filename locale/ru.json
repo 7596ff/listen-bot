@@ -156,7 +156,7 @@
     "help_cmd_courage_desc": "Возвращает случайный набор вещей. Посмотрите <http://web.archive.org/web/20161219221614/http://divinecourage.dy.fi//> для правил или чтобы создать свой!",
     "help_cmd_mike_usage": "%smike",
     "help_cmd_mike_desc": "Возвращает случайную цитату ixmike88.",
-    "help_cmd_mike_usage": "%sping",
+    "help_cmd_ping_usage": "%sping",
     "help_cmd_ping_desc": "Возвращает время за которое бот увидел Ваше сообщение и ответил.",
     "help_cmd_pong_usage": "%spong",
     "help_cmd_pong_desc": "Возвращает задержку сердцебиения Websocket Gateway.",

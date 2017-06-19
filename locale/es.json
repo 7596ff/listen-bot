@@ -156,7 +156,7 @@
     "help_cmd_courage_desc": "Lista un equipamiento de items aleatorio. Visita <http://web.archive.org/web/20161219221614/http://divinecourage.dy.fi//> para las reglas.¡ O crea el propio!",
     "help_cmd_mike_usage": "%smike",
     "help_cmd_mike_desc": "Lista una cita de ixmike88 aleatoria.",
-    "help_cmd_mike_usage": "%sping",
+    "help_cmd_ping_usage": "%sping",
     "help_cmd_ping_desc": "Lista el tiempo entre cuando el Bot recibió tu mensaje y el momento en que se envía el mensaje del Bot.",
     "help_cmd_pong_usage": "%spong",
     "help_cmd_pong_desc": "Lista la última medida de latencia.",

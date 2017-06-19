@@ -156,7 +156,7 @@
     "help_cmd_courage_desc": "Mostra uma item build aletória. Veja <http://web.archive.org/web/20161219221614/http://divinecourage.dy.fi//> para regras, ou faça suas próprias builds!",
     "help_cmd_mike_usage": "%smike",
     "help_cmd_mike_desc": "Mostra uma frase aletória do ixmike88.",
-    "help_cmd_mike_usage": "%sping",
+    "help_cmd_ping_usage": "%sping",
     "help_cmd_ping_desc": "Mostra o tempo entre o momento em que o bot recebeu sua mensagem e a mensagem do bot sendo enviada.",
     "help_cmd_pong_usage": "%spong",
     "help_cmd_pong_desc": "Mostra a última medida de latência de pulsação.",

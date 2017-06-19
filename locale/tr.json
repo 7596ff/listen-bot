@@ -156,7 +156,7 @@
     "help_cmd_courage_desc": "Rastgele bir eşya seçimi getirir. Kurallar veya kendiniz yapmak için <http://web.archive.org/web/20161219221614/http://divinecourage.dy.fi//> linkine bakın!",
     "help_cmd_mike_usage": "%smike",
     "help_cmd_mike_desc": "Rastgele ixmike88 alıntısı getirir.",
-    "help_cmd_mike_usage": "%sping",
+    "help_cmd_ping_usage": "%sping",
     "help_cmd_ping_desc": "Botun mesajınızı aldığı zaman ile cevapladığı zaman aralığındaki farkı getirir.",
     "help_cmd_pong_usage": "%spong",
     "help_cmd_pong_desc": "Son kalp atışı gecikme ölçümünü getirir.",

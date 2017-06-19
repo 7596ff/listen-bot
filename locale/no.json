@@ -156,7 +156,7 @@
     "help_cmd_courage_desc": "Returnerer en tilfeldig gjenstandsbuild. se <http://web.archive.org/web/20161219221614/http://divinecourage.dy.fi//> for regler, eller lag dine egne!",
     "help_cmd_mike_usage": "%smike",
     "help_cmd_mike_desc": "Returnerer et tilfeldig ixmike88-sitat.",
-    "help_cmd_mike_usage": "%sping",
+    "help_cmd_ping_usage": "%sping",
     "help_cmd_ping_desc": "Returnerer tiden mellom når botten fikk meldingen din og når bottens melding ble sendt.",
     "help_cmd_pong_usage": "%spong",
     "help_cmd_pong_desc": "Returnerer det siste hjerteslagsventetidsmålet.",

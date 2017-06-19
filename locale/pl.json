@@ -156,7 +156,7 @@
     "help_cmd_courage_desc": "Zwraca losowy build dla bohatera. Odwiedź <http://web.archive.org/web/20161219221614/http://divinecourage.dy.fi//> (strona w języku angielskim) żeby uzyskać informacje o zasadach, lub ustal własne!",
     "help_cmd_mike_usage": "%smike",
     "help_cmd_mike_desc": "Zwraca losowy cytat z ixmike88.",
-    "help_cmd_mike_usage": "%sping",
+    "help_cmd_ping_usage": "%sping",
     "help_cmd_ping_desc": "Zwraca czas pomiędzy otrzymaniem twojej wiadomości, a wysłaniem wiadomości bota.",
     "help_cmd_pong_usage": "%spong",
     "help_cmd_pong_desc": "Zwraca ostatni pomiar opóźnienia połączenia z Discordem.",

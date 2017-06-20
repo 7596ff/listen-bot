@@ -149,26 +149,17 @@ client.on("ready", () => {
 });
 
 client.on("guildCreate", guild => {
-    client.redis.get(`${client.user.id}:blacklist:${guild.id}`, (err, reply) => {
-        if (reply) {
-            client.helper.log("bot", `${guild.id}/${guild.name}: joined blacklisted guild`);
-            guild.leave().then(() => {
-                client.helper.log("bot", "left guild");
-            });
-        } else {
-            client.helper.log("bot", `${guild.id}/${guild.name}: joined guild on shard ${guild.shard.id}`);
+    client.helper.log("bot", `${guild.id}/${guild.name}: joined guild on shard ${guild.shard.id}`);
 
-            client.helper.log("bot", "  inserting into database");
-            client.pg.query({
-                    "text": "INSERT INTO public.guilds (id, name) VALUES ($1, $2);",
-                    "values": [guild.id, guild.name]
-                }).then(() => {
-                client.helper.log("bot", "  inserted");
-            }).catch(err => {
-                client.helper.log("bot", "  something went wrong inserting", "error");
-                client.helper.log("bot", err, "error");
-            });
-        }
+    client.helper.log("bot", "  inserting into database");
+    client.pg.query({
+            "text": "INSERT INTO public.guilds (id, name) VALUES ($1, $2);",
+            "values": [guild.id, guild.name]
+        }).then(() => {
+        client.helper.log("bot", "  inserted");
+    }).catch(err => {
+        client.helper.log("bot", "  something went wrong inserting", "error");
+        client.helper.log("bot", err, "error");
     });
 });
 

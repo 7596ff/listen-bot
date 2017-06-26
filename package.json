@@ -44,7 +44,7 @@
     "redis": "2.6.5",
     "snekfetch": "^3.1.11",
     "sprintf-js": "1.0.3",
-    "steam": "1.4.0",
+    "steam": "^1.4.0",
     "xml2js": "0.4.17"
   },
   "devDependencies": {

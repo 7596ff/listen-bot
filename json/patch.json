@@ -2,6 +2,300 @@
     "heroes": {
         "alchemist": {
             "changes": [
+                "• Base Agility increased from 11 to 16",
+                "• Greevil's Greed Bounty Rune multiplier increased from 2x to 2.5x"
+            ],
+            "true_name": "alchemist",
+            "format_name": "Alchemist"
+        },
+        "arc_warden": {
+            "changes": [
+                "• Turn rate improved from 0.4 to 0.6"
+            ],
+            "true_name": "arc_warden",
+            "format_name": "Arc Warden"
+        },
+        "batrider": {
+            "changes": [
+                "• Flaming Lasso cooldown increased from 90/75/60 to 100/80/60"
+            ],
+            "format_name": "Batrider",
+            "true_name": "batrider"
+        },
+        "brewmaster": {
+            "changes": [
+                "• Fire brewling health increased from 1200 to 1300",
+                "• Level 10 Talent changed from +30 Attack Speed to +30 Damage",
+                "• Level 25 Talent changed from +120 Damage to +140 Attack Speed"
+            ],
+            "true_name": "brewmaster",
+            "format_name": "Brewmaster"
+        },
+        "broodmother": {
+            "changes": [
+                "• Level 20 Talent from +12 Spiders Attack Damage to +14"
+            ],
+            "format_name": "Broodmother",
+            "true_name": "broodmother"
+        },
+        "bristleback": {
+            "changes": [
+                "• Base damage reduced by 4"
+            ],
+            "true_name": "bristleback",
+            "format_name": "Bristleback"
+        },
+        "chen": {
+            "changes": [
+                "• Hand of God Heal increased from 225/325/425 to 225/350/475",
+                "• Level 20 Talent increased from +90 Gold/Min to +120"
+            ],
+            "true_name": "chen",
+            "format_name": "Chen"
+        },
+        "rattletrap": {
+            "changes": [
+                "• Battery Assault manacost increased from 75 to 100",
+                "• Base damage reduced by 3"
+            ],
+            "format_name": "Clockwerk",
+            "true_name": "rattletrap"
+        },
+        "dark_seer": {
+            "changes": [
+                "• Surge cooldown increased from 12/11/10/9 to 13/12/11/10"
+            ],
+            "format_name": "Dark Seer",
+            "true_name": "dark_seer"
+        },
+        "enchantress": {
+            "changes": [
+                "• Nature's Attendants manacost reduced from 125/140/155/170 to 125"
+            ],
+            "format_name": "Enchantress",
+            "true_name": "enchantress"
+        },
+        "wisp": {
+            "changes": [
+                "• Spirits manacost increased from 120/130/140/150 to 150"
+            ],
+            "format_name": "io",
+            "true_name": "wisp"
+        },
+        "legion_commander": {
+            "changes": [
+                "• Press The Attack cast range reduced from 800 to 700"
+            ],
+            "format_name": "Legion Commander",
+            "true_name": "legion_commander"
+        },
+        "leshrac": {
+            "changes": [
+                "• Level 15 Talent increased from +10% Magic Resistance to +15%",
+                "• Pulse Nova damage increased from 100/130/160 to 100/140/180"
+            ],
+            "format_name": "Leshrac",
+            "true_name": "leshrac"
+        },
+        "life_stealer": {
+            "changes": [
+                "• Strength gain reduced from 3.3 to 3.1"
+            ],
+            "format_name": "Lifestealer",
+            "true_name": "life_stealer"
+        },
+        "lina": {
+            "changes": [
+                "• Dragon Slave damage reduced from 110/180/250/320 to 85/160/235/310",
+                "• Level 25 Talent from +40/4% Fiery Soul to +35/3%"
+            ],
+            "format_name": "Lina",
+            "true_name": "lina"
+        },
+        "luna": {
+            "changes": [
+                "• Level 10 Talent from +15 Movement Speed to +20",
+                "• Level 20 Talent from +10% Magic Resistance to +15%"
+            ],
+            "true_name": "luna",
+            "format_name": "Luna"
+        },
+        "lycan": {
+            "changes": [
+                "• Howl cooldown increased from 55/50/45/40 to 60/55/50/45"
+            ],
+            "format_name": "Lycan",
+            "true_name": "lycan"
+        },
+        "monkey_king": {
+            "changes": [
+                "• Boundless Strike cooldown reduced from 25 to 22",
+                "• Wukong's Command Attack Interval improved from 1.6 to 1.4"
+            ],
+            "true_name": "monkey_king",
+            "format_name": "Monkey King"
+        },
+        "morphling": {
+            "changes": [
+                "• Base Attack Time improved from 1.55 to 1.5"
+            ],
+            "format_name": "Morphling",
+            "true_name": "morphling"
+        },
+        "naga_siren": {
+            "changes": [
+                "• Base health regen increased from 0.5 to 1.5"
+            ],
+            "true_name": "naga_siren",
+            "format_name": "Naga Siren"
+        },
+        "night_stalker": {
+            "changes": [
+                "• Base Intelligence reduced from 16 to 13",
+                "• Hunter In The Night cooldown increased from 26/22/18/14 to 30/26/22/18"
+            ],
+            "format_name": "Night Stalker",
+            "true_name": "night_stalker"
+        },
+        "nyx_assassin": {
+            "changes": [
+                "• Movement Speed reduced from 305 to 300"
+            ],
+            "format_name": "Nyx Assassin",
+            "true_name": "nyx_assassin"
+        },
+        "ogre_magi": {
+            "changes": [
+                "• Level 15 Talent increased from +8% Magic Resistance to +12%",
+                "• Level 20 Talent increased from +250 Health to +350",
+                "• Level 20 Talent increased from +25 Movement Speed to +30"
+            ],
+            "format_name": "Ogre Magi",
+            "true_name": "ogre_magi"
+        },
+        "phantom_lancer": {
+            "changes": [
+                "• Agility gain increased from 2.6 to 2.8"
+            ],
+            "format_name": "Phantom Lancer",
+            "true_name": "phantom_lancer"
+        },
+        "phoenix": {
+            "changes": [
+                "• Level 10 Talent from +175 Health to +200"
+            ],
+            "format_name": "Phoenix",
+            "true_name": "phoenix"
+        },
+        "puck": {
+            "changes": [
+                "• Base Armor reduced by 1"
+            ],
+            "format_name": "Puck",
+            "true_name": "puck"
+        },
+        "pugna": {
+            "changes": [
+                "• Level 25 Talent increased from +150 Nether Blast Damage to +200"
+            ],
+            "format_name": "Pugna",
+            "true_name": "pugna"
+        },
+        "queenofpain": {
+            "changes": [
+                "• Base Damage reduced by 4",
+                "• Level 25 Spell Lifesteal reduced from 70% to 60%"
+            ],
+            "format_name": "Queen of Pain",
+            "true_name": "queenofpain"
+        },
+        "razor": {
+            "changes": [
+                "• Agility gain reduced from 2.0 to 1.8"
+            ],
+            "format_name": "Razor",
+            "true_name": "razor"
+        },
+        "sand_king": {
+            "changes": [
+                "• Caustic Finale timer damage from 45/65/85/110 to 20/50/80/110"
+            ],
+            "true_name": "sand_king",
+            "format_name": "Sand King"
+        },
+        "shadow_demon": {
+            "changes": [
+                "• Base Strength increased from 19 to 21",
+                "• Demonic Purge cooldown reduced from 50 to 40"
+            ],
+            "format_name": "Shadow Demon",
+            "true_name": "shadow_demon"
+        },
+        "sniper": {
+            "changes": [
+                "• Agility gain increased from 2.5 to 2.7"
+            ],
+            "format_name": "Sniper",
+            "true_name": "sniper"
+        },
+        "spectre": {
+            "changes": [
+                "• Base Strength increased from 19 to 20",
+                "• Level 15 Talent from +20 Movement Speed to +25"
+            ],
+            "format_name": "Spectre",
+            "true_name": "spectre"
+        },
+        "sven": {
+            "changes": [
+                "• Warcry cooldown increased from 32/26/20/14 to 34/28/22/16"
+            ],
+            "format_name": "Sven",
+            "true_name": "sven"
+        },
+        "tiny": {
+            "changes": [
+                "• Toss can now throw units to Spell Immune enemies"
+            ],
+            "true_name": "tiny",
+            "format_name": "Tiny"
+        },
+        "venomancer": {
+            "changes": [
+                "• Strength gain reduced from 2.15 to 1.9"
+            ],
+            "format_name": "Venomancer",
+            "true_name": "venomancer"
+        },
+        "visage": {
+            "changes": [
+                "• Grave Chill mana cost reduced from 100 to 90"
+            ],
+            "format_name": "Visage",
+            "true_name": "visage"
+        },
+        "windrunner": {
+            "changes": [
+                "• Windrun manacost reduced from 75 to 60"
+            ],
+            "true_name": "windrunner",
+            "format_name": "Windranger"
+        },
+        "winter_wyvern": {
+            "changes": [
+                "• Cold Embrace base health regen increased from 20 to 25",
+                "• Arctic Burn slow increased from 19/26/33/40% to 22/28/34/40%"
+            ],
+            "format_name": "Winter Wyvern",
+            "true_name": "winter_wyvern"
+        }
+    },
+    "items": {},
+    "version": "7.06e"
+} ,{
+    "heroes": {
+        "alchemist": {
+            "changes": [
                 "• Chemical Rage movement speed increased from 30/40/60 to 40/50/60",
                 "• Level 15 Talent increased from +80 Unstable Concoction Damage to +100"
             ],
@@ -3759,7 +4053,7 @@
         },
         "naga_siren": {
             "changes": [
-                "• ixed Rip Tide treating Naga as the damage source rather than her illusions when the illusions apply Rip Tide. Fixes interactions with things like Spiked Carapace."
+                "• Fixed Rip Tide treating Naga as the damage source rather than her illusions when the illusions apply Rip Tide. Fixes interactions with things like Spiked Carapace."
             ],
             "true_name": "naga_siren",
             "format_name": "Naga Siren"

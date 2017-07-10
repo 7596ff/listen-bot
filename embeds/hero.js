@@ -39,7 +39,7 @@
             "value": val1.map(item => `**${item.split(": ")[0]}**: ${item.split(": ")[1]}`).join("\n"),
             "inline": true
         }, {
-            "name": `${attrs.agi} <:agility:281578883264806915>`,
+            "name": `${attrs.agi} <:agility:333769662515118080>`,
             "value": val2.map(item => `**${item.split(": ")[0]}**: ${item.split(": ")[1]}`).join("\n"),
             "inline": true
         }, {

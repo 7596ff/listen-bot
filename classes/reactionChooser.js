@@ -25,7 +25,7 @@ class ReactionChooser {
         if (isNaN(emoji = parseInt(emoji[0]))) return;
 
         if (this.options[emoji]) {
-            this.msg.edit({ embed: this.options[emoji] }).catch((err) => ctx.helper.log(this.ctx.message, "cant edit in reaction chooser"));
+            this.msg.edit({ embed: this.options[emoji] }).catch((err) => this.ctx.helper.log(this.ctx.message, "cant edit in reaction chooser"));
             this.msg.removeReactions().catch((err) => this.ctx.helper.log(this.ctx.message, "cant remove reactions in reaction chooser"));
             this.ctx.helper.log(this.ctx.message, `stopped watching ${this.msg.id}`);
             delete this.ctx.client.watchers[this.msg.id];

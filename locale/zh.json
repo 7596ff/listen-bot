@@ -9,7 +9,7 @@
 	"bot_available_subcommands": "可用的子命令: %s",
 	"bot_no_member": "找不到玩家.",
 	"bot_no_hero_error": "找不到英雄.",
-	"bot_mika_error": "從OpednDota抓取數據發生錯誤, 請稍後再試一次.",
+	"bot_mika_error": "從OpenDota抓取數據發生錯誤, 請稍後再試一次.",
 	"bot_wrong_data": "資料不足無法執行!",
 	"admin_display_channel_specific_cooldowns": "頻道冷卻時間： `%s`",
 	"admin_display_member_specific_cooldowns": "成員冷卻時間： `%s`",

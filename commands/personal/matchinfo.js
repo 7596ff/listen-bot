@@ -22,7 +22,7 @@ async function exec(ctx) {
             match = JSON.parse(match);
         } else {
             match = await ctx.client.mika.getMatch(match_id);
-            await ctx.client.redis.setexAsync(key, 604800, JSON.stringify(match));
+            await ctx.client.redis.setexAsync(key, 86400, JSON.stringify(match));
         }
 
         // check if opendota is giving us a real match

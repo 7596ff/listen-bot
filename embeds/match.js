@@ -106,6 +106,7 @@ async function matchEmbed(ctx, match_data) {
 
     let od_link = `https://www.opendota.com/matches/${match_data.match_id}`;
     let db_link = `https://www.dotabuff.com/matches/${match_data.match_id}`;
+    let stratz_link = `https://stratz.com/match/${match_data.match_id}`;
 
     return {
         "title": victory,
@@ -123,7 +124,7 @@ async function matchEmbed(ctx, match_data) {
             "inline": true
         }, {
             "name": `${skill} Skill`,
-            "value": `[OD](${od_link}) / [DB](${db_link})`,
+            "value": `[OD](${od_link}) / [DB](${db_link}) / [STRATZ](${stratz_link})`,
             "inline": true
         }, {
             "name": "Radiant",

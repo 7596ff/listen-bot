@@ -127,7 +127,8 @@ client.on("ready", () => {
 
     client.shards.forEach(shard => {
         shard.editStatus("online", {
-            "name": `${config.default_prefix}info | ${config.default_prefix}help [${shard.id + 1}/${client.shards.size}]`
+            "name": `${config.default_prefix}info | ${config.default_prefix}help [${shard.id + 1}/${client.shards.size}]`,
+            "type": 0
         });
     });
 

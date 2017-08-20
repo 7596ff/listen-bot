@@ -187,11 +187,11 @@
             ],
             "format_name": "Wraith King",
             "true_name": "skeleton_king"
-        },
+        }
     },
     "items": {},
     "version": "7.06f"
-},{
+}, {
     "heroes": {
         "alchemist": {
             "changes": [

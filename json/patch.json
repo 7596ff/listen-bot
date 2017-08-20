@@ -1,5 +1,198 @@
 [{
     "heroes": {
+        "ancient_apparition": {
+            "changes": [
+                "• Ice Blast manacost increased from 100/125/150 to 150"
+            ],
+            "true_name": "ancient_apparition",
+            "format_name": "Ancient Apparition"
+        },
+        "bane": {
+            "changes": [
+                "• Base Strength, Agility and Intelligence increased by 1",
+                "• Nightmare cast point reduced from 0.5 to 0.4"
+            ],
+            "format_name": "Bane",
+            "true_name": "bane"
+        },
+        "batrider": {
+            "changes": [
+                "• Firefly manacost increased from 100 to 125"
+            ],
+            "format_name": "Batrider",
+            "true_name": "batrider"
+        },
+        "bloodseeker": {
+            "changes": [
+                "• Rupture manacost increased from 150/200/250 to 200/225/250"
+            ],
+            "true_name": "bloodseeker",
+            "format_name": "Bloodseeker"
+        },
+        "chen": {
+            "changes": [
+                "• Hand of God heal increased from 225/350/475 to 250/375/500"
+            ],
+            "true_name": "chen",
+            "format_name": "Chen"
+        },
+        "earthshaker": {
+            "changes": [
+                "• Fissure cooldown increased from 15 to 18/17/16/15",
+                "• Enchant Totem manacost increased from 20/30/40/50 to 35/40/45/50"
+            ],
+            "format_name": "Earthshaker",
+            "true_name": "earthshaker"
+        },
+        "lich": {
+            "changes": [
+                "• Chain Frost no longer applies a ministun",
+                "• Ice Armor slow from 30% to 24/26/28/30%"
+            ],
+            "format_name": "Lich",
+            "true_name": "lich"
+        },
+        "lion": {
+            "changes": [
+                "• Earth Spike stun duration increased from 1.1/1.6/2.1/2.6 to 1.4/1.8/2.2/2.6",
+                "• Level 20 Talent changed from +8% Spell Amplification to +300 Finger of Death Damage"
+            ],
+            "true_name": "lion",
+            "format_name": "Lion"
+        },
+        "lycan": {
+            "changes": [
+                "• Howl no longer provides a net heal on buff application/loss (always maintains the same HP percentage now)"
+            ],
+            "format_name": "Lycan",
+            "true_name": "lycan"
+        },
+        "furion": {
+            "changes": [
+                "• Base movement speed reduced from 295 to 290",
+                "• Sprout flying vision reduced from 750 to 500"
+            ],
+            "true_name": "furion",
+            "format_name": "Nature's Prophet"
+        },
+        "necrolyte": {
+            "changes": [
+                "• Reaper's Scythe cooldown increased from 90/80/70 to 100",
+                "• Ghost Shroud magic resistance penalty increased from -20% to -25%"
+            ],
+            "format_name": "Necrophos",
+            "true_name": "necrolyte"
+        },
+        "night_stalker": {
+            "changes": [
+                "• Darkness duration reduced from 50 to 40"
+            ],
+            "format_name": "Night Stalker",
+            "true_name": "night_stalker"
+        },
+        "nyx_assassin": {
+            "changes": [
+                "• Base damage reduced by 3"
+            ],
+            "format_name": "Nyx Assassin",
+            "true_name": "nyx_assassin"
+        },
+        "puck": {
+            "changes": [
+                "• Illusory Orb flying vision reduced from 550 to 450"
+            ],
+            "format_name": "Puck",
+            "true_name": "puck"
+        },
+        "shadow_demon": {
+            "changes": [
+                "• Level 15 Talent from +8% Spell Amplification to +10%",
+                "• Level 15 Talent from +75 Cast Range to +100"
+            ],
+            "format_name": "Shadow Demon",
+            "true_name": "shadow_demon"
+        },
+        "skywrath_mage": {
+            "changes": [
+                "• Mystic Flare manacost reduced from 350/575/800 to 300/550/800",
+                "• Level 15 Talent increased from +10% Spell Lifesteal to +15%"
+            ],
+            "format_name": "Skywrath Mage",
+            "true_name": "skywrath_mage"
+        },
+        "spectre": {
+            "changes": [
+                "• Haunt illusion damage increased from 30% to 40%"
+            ],
+            "format_name": "Spectre",
+            "true_name": "spectre"
+        },
+        "spirit_breaker": {
+            "changes": [
+                "• Base movement speed reduced from 290 to 285"
+            ],
+            "format_name": "Spirit Breaker",
+            "true_name": "spirit_breaker"
+        },
+        "sven": {
+            "changes": [
+                "• Stormbolt stun duration reduced from 2 to 1.7/1.8/1.9/2.0",
+                "• Warcry cooldown increased from 34/28/22/16 to 35/30/25/20"
+            ],
+            "format_name": "Sven",
+            "true_name": "sven"
+        },
+        "tiny": {
+            "changes": [
+                "• Toss manacost reduced from 120 to 90/100/110/120",
+                "• Grow Scepter attack range bonus increased from 85 to 150"
+            ],
+            "true_name": "tiny",
+            "format_name": "Tiny"
+        },
+        "undying": {
+            "changes": [
+                "• Tombstone attacks required increased from 3/4/5/7 to 4/5/6/8"
+            ],
+            "true_name": "undying",
+            "format_name": "Undying"
+        },
+        "venomancer": {
+            "changes": [
+                "• Plague Wards vision reduced from 1200/800 to 800/800"
+            ],
+            "format_name": "Venomancer",
+            "true_name": "venomancer"
+        },
+        "windrunner": {
+            "changes": [
+                "• Shackles duration increased from 1.5/2.25/3/3.75 to 2.0/2.6/3.2/3.8",
+                "• Shackles cooldown increased from 12 to 18/16/14/12"
+            ],
+            "true_name": "windrunner",
+            "format_name": "Windranger"
+        },
+        "winter_wyvern": {
+            "changes": [
+                "• Level 15 Talent increased from +20 Movement Speed to +35",
+                "• Level 15 Talent increased from +50 Damage to +75"
+            ],
+            "format_name": "Winter Wyvern",
+            "true_name": "winter_wyvern"
+        },
+        "skeleton_king": {
+            "changes": [
+                "• Reincarnation cooldown reduced from 240/140/40 to 200/120/40",
+                "• Level 15 Talent increased from +15 Movement Speed to +30"
+            ],
+            "format_name": "Wraith King",
+            "true_name": "skeleton_king"
+        },
+    },
+    "items": {},
+    "version": "7.06f"
+},{
+    "heroes": {
         "alchemist": {
             "changes": [
                 "• Base Agility increased from 11 to 16",

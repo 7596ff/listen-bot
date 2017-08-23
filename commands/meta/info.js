@@ -38,7 +38,7 @@ async function exec(ctx) {
                 "inline": false
             }, {
                 "name": ctx.strings.get("info_links_3"),
-                "value": `${ctx.client.config.discord_invite}`,
+                "value": ctx.strings.get("info_help_server_text", ctx.client.config.discord_invite),
                 "inline": false
             }]
         });

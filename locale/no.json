@@ -253,6 +253,6 @@
     "help_footer": "**Notér**: Ikke inkluder `[]` eller `<>` når du bruker kommandoene. De er der for å skille mellom tekst og ting som burde erstatte.",
     "help_cmd_nextmatch_usage": "nextmatch <medlem>",
     "help_cmd_nextmatch_desc": "Venter for at den registrerte brukeren som du mentioner blir ferdig med spillet, og poster det etterpå.",
-    "bot_register_error": "I can't send you direct messages! Please enable direct messaging from this server so I can complete the registration process.",
-    "info_help_server_text": "Visit the support server if you have any questions about listen-bot. There is also a FAQ channel that might answer your question. %s"
+    "bot_register_error": "Jeg kan ikke sende deg direktemeldinger! Vennligst slå på direktemeldinger for denne serveren så jeg kan fullføre registreringsprosessen.",
+    "info_help_server_text": "Besøk supportserveren hvis du har noen spørsmål angående listen-bot. Det er også en FAQ-kanal som kan svare på spørsmålet ditt. %s"
 }

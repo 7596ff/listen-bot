@@ -252,5 +252,6 @@
     "help_cmd_matches_filters_3": "`dans un <lobby>`: *optional* ou \"ranked\" ou  \"normal\"",
     "help_footer": "**Note**: N'includez pas `[]` ou `<>` quand vous utilisez une commande. Ils sont pour differer entre le texte actuelle et les choses que vous devez remplacer!",
     "help_cmd_nextmatch_usage": "Prochain match <member>",
-    "help_cmd_nextmatch_desc": "Attendra le prochain match de l'utilisateur mentionné afin d'ensuite poster les resultats!"
+    "help_cmd_nextmatch_desc": "Attendra le prochain match de l'utilisateur mentionné afin d'ensuite poster les resultats!",
+    "bot_register_error": "I can't send you direct messages! Please enable direct messaging from this server so I can complete the registration process."
 }

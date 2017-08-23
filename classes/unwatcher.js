@@ -15,7 +15,7 @@ class Unwatcher {
             this._ctx.client.pg.query({
                 "text": "DELETE FROM subs WHERE owner = $1 AND type = $2 AND value = $3;",
                 "values": [this._ctx.author.id, split[0], split[1]]
-            }).catch((err) => console.error(err)).then((res) => {
+            }).catch(this._ctx.error).then((res) => {
                 let gone = this._list.splice(index)[0];
                 this._ctx.client.redis.publish("listen:matches:new", JSON.stringify({
                     "action": "remove",
@@ -23,14 +23,14 @@ class Unwatcher {
                     "ids": gone.split(":")[1]
                 }));
                 this._ctx.success(this._ctx.strings.get("unsub_success", gone))
-                    .catch((err) => console.log(err))
+                    .catch(this._ctx.error)
                     .then(() => {
                         clearTimeout(this.timeout);
                         delete this._ctx.client.unwatchers[`${this._ctx.channel.id}:${this._ctx.author.id}`];
                     });
             });
         } else {
-            this._ctx.faliure(this._ctx.strings.get("unsub_out_of_range")).catch((err) => console.error(err));
+            this._ctx.faliure(this._ctx.strings.get("unsub_out_of_range")).catch(this._ctx.error);
         }
     }
 }

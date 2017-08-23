@@ -70,7 +70,7 @@
     "info_links_0": "📄 [GitHub](%s)",
     "info_links_1": "🤖 [Pomoc online](%s)",
     "info_links_2": "🔗 [Link do zaproszeń](%s)",
-    "info_links_3": "ℹ [Serwer pomocy](%s)",
+    "info_links_3": "Serwer pomocy",
     "info_alpha_testers": "Testerzy Alpha",
     "info_translators": "Tłumacze",
     "info_github_log": "Log GitHub",
@@ -253,5 +253,6 @@
     "help_footer": "**Uwaga**: Nie wpisuj `[]` lub `<>` używając komend. Służa one do rozróżnienia aktualnych komend od niewymaganych argumentów.",
     "help_cmd_nextmatch_usage": "nextmatch <użytkownik>",
     "help_cmd_nextmatch_desc": "Czeka aż oznaczony zarejestrowany gracz skończy grę, a następnie wysyła ją na ten kanał.",
-    "bot_register_error": "I can't send you direct messages! Please enable direct messaging from this server so I can complete the registration process."
+    "bot_register_error": "I can't send you direct messages! Please enable direct messaging from this server so I can complete the registration process.",
+    "info_help_server_text": "Visit the support server if you have any questions about listen-bot. There is also a FAQ channel that might answer your question. %s"
 }

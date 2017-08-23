@@ -70,7 +70,7 @@
 	"info_links_0": "📄 [GitHub](%s)",
 	"info_links_1": "🤖 [Online Help](%s)",
 	"info_links_2": "🔗 [邀請連結](%s)",
-	"info_links_3": "ℹ [線上支援](%s)",
+	"info_links_3": "線上支援",
 	"info_alpha_testers": "Alpha 測試員",
 	"info_translators": "翻譯",
 	"info_github_log": "GitHub Log",
@@ -253,5 +253,6 @@
 	"help_footer": "**Note**: 指令參數中不需要加入 `[]` 或是 `<>` . 他們只是方便辨識可變參數.",
 	"help_cmd_nextmatch_usage": "nextmatch <member>",
 	"help_cmd_nextmatch_desc": "當已註冊會員結束當前遊戲, 貼出遊戲結果.",
-    "bot_register_error": "I can't send you direct messages! Please enable direct messaging from this server so I can complete the registration process."
+    "bot_register_error": "I can't send you direct messages! Please enable direct messaging from this server so I can complete the registration process.",
+    "info_help_server_text": "Visit the support server if you have any questions about listen-bot. There is also a FAQ channel that might answer your question. %s"
 }

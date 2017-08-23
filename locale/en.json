@@ -70,7 +70,7 @@
     "info_links_0": "📄 [GitHub](%s)",
     "info_links_1": "🤖 [Online Help](%s)",
     "info_links_2": "🔗 [Invite Link](%s)",
-    "info_links_3": "ℹ [Help Server](%s)",
+    "info_links_3": "Help Server",
     "info_alpha_testers": "Alpha Testers",
     "info_translators": "Translators",
     "info_github_log": "GitHub Log",
@@ -253,5 +253,6 @@
     "help_footer": "**Note**: Do not include `[]` or `<>` when using commands. They are there to differ between actual text and things you should replace.",
     "help_cmd_nextmatch_usage": "nextmatch <member>",
     "help_cmd_nextmatch_desc": "Waits for the registered user you mention to finish their game, then posts it.",
-    "bot_register_error": "I can't send you direct messages! Please enable direct messaging from this server so I can complete the registration process."
+    "bot_register_error": "I can't send you direct messages! Please enable direct messaging from this server so I can complete the registration process.",
+    "info_help_server_text": "Visit the support server if you have any questions about listen-bot. There is also a FAQ channel that might answer your question. %s"
 }

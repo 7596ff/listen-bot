@@ -182,6 +182,6 @@ module.exports = {
     name: "history",
     category: "personal",
     typing: true,
-    aliases: ["h"],
+    aliases: ["h", "winrate"],
     exec
 };

@@ -70,7 +70,7 @@
     "info_links_0": "📄 [GitHub](%s)",
     "info_links_1": "🤖 [Aide en Ligne](%s)",
     "info_links_2": "🔗 [Lien d'invitation](%s)",
-    "info_links_3": "ℹ [Serveur d'aide](%s)",
+    "info_links_3": "Serveur d'aide",
     "info_alpha_testers": "Testeurs Alpha",
     "info_translators": "Traducteurs",
     "info_github_log": "GitHub Log",
@@ -253,5 +253,6 @@
     "help_footer": "**Note**: N'includez pas `[]` ou `<>` quand vous utilisez une commande. Ils sont pour differer entre le texte actuelle et les choses que vous devez remplacer!",
     "help_cmd_nextmatch_usage": "Prochain match <member>",
     "help_cmd_nextmatch_desc": "Attendra le prochain match de l'utilisateur mentionné afin d'ensuite poster les resultats!",
-    "bot_register_error": "I can't send you direct messages! Please enable direct messaging from this server so I can complete the registration process."
+    "bot_register_error": "I can't send you direct messages! Please enable direct messaging from this server so I can complete the registration process.",
+    "info_help_server_text": "Visit the support server if you have any questions about listen-bot. There is also a FAQ channel that might answer your question. %s"
 }

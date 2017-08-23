@@ -70,7 +70,7 @@
     "info_links_0": "📄 [GitHub](%s)",
     "info_links_1": "🤖 [Помощь Онлайн (Англ.)](%s)",
     "info_links_2": "🔗 [Добавить бота](%s)",
-    "info_links_3": "ℹ [Сервер для Поддержки (Англ.)](%s)",
+    "info_links_3": "Сервер для Поддержки (Англ.)",
     "info_alpha_testers": "Альфа-тестировщики",
     "info_translators": "Переводчики",
     "info_github_log": "GitHub История",
@@ -253,5 +253,6 @@
     "help_footer": "**Note**: Не включайте `[]` или `<>` при использовании каналов. Они помогают различить текст и аргументы, которые должны быть заполнены.",
     "help_cmd_nextmatch_usage": "nextmatch <участник>",
     "help_cmd_nextmatch_desc": "Ожидает того, когда игрок которого Вы упомянете закончит свою игру, после этого отправит её сюда.",
-    "bot_register_error": "I can't send you direct messages! Please enable direct messaging from this server so I can complete the registration process."
+    "bot_register_error": "I can't send you direct messages! Please enable direct messaging from this server so I can complete the registration process.",
+    "info_help_server_text": "Visit the support server if you have any questions about listen-bot. There is also a FAQ channel that might answer your question. %s"
 }

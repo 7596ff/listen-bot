@@ -630,6 +630,8 @@ async function invoke(message, client, helper, cmd) {
 
         ctx.strings = client.strings[ctx.gcfg.locale || "en"];
 
+        ctx.name = cmd.name;
+
         ctx.send = async function() {
             return this.message.channel.createMessage(...arguments);
         }.bind(ctx);
@@ -653,6 +655,11 @@ async function invoke(message, client, helper, cmd) {
                     msg.delete();
                 }, args[0]);
             });
+        }.bind(ctx);
+
+        ctx.error = async function(err) {
+            this.helper.print(`error in command ${this.name}`, "error");
+            console.error(err);
         }.bind(ctx);
 
         ctx.helper.log(message, `${cmd.name} (${ctx.options.join(" ")})`);

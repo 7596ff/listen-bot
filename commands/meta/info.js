@@ -11,8 +11,7 @@ async function exec(ctx) {
         let links = [
             "https://github.com/bippum/listen-bot",
             "https://bots.discord.pw/bots/240209888771309568",
-            `https://discordapp.com/oauth2/authorize?permissions=${ctx.client.config.permissions}&scope=bot&client_id=${ctx.client.user.id}`,
-            ctx.client.config.discord_invite
+            `https://discordapp.com/oauth2/authorize?permissions=${ctx.client.config.permissions}&scope=bot&client_id=${ctx.client.user.id}`
         ].map((item, index) => ctx.strings.get(`info_links_${index}`, item));
 
         let gitlinks = err ? ["rip github"] : response.body.slice(0, 4).map((commit) => {
@@ -36,7 +35,11 @@ async function exec(ctx) {
             }, {
                 "name": ctx.strings.get("info_special_thanks"),
                 "value": contribs.join("\n"),
-                "inline": "false"
+                "inline": false
+            }, {
+                "name": ctx.strings.get("info_links_3"),
+                "value": `${ctx.client.config.discord_invite}`,
+                "inline": false
             }]
         });
     });

@@ -107,5 +107,6 @@ module.exports = {
     name: "matches",
     category: "personal",
     typing: true,
+    aliases: ["games", "m"],
     exec
 };

@@ -66,9 +66,9 @@ async function exec(ctx) {
 }
 
 module.exports = {
-    name: "playerinfo",
+    name: "profile",
     category: "personal",
-    aliases: ["profile"],
+    aliases: ["playerinfo"],
     typing: true,
     exec
 };

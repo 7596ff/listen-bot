@@ -87,21 +87,11 @@ async function exec(ctx) {
 
         let padlength = Object.values(aliases).sort((a, b) => b.length - a.length)[0].length;
 
-        let rows = [
-            Object.keys(cmds).map((item) => pad(item.toUpperCase(), padlength)),
-            Object.keys(cmds).map(() => Array(padlength + 1).join("-"))
-        ];
+        let rows = Object.keys(cmds).map((item) => pad(padlength, item.toUpperCase()) + ":");
+        rows = rows.map((row, index) => `${row} ${Object.values(cmds)[index].join(", ")}`)
 
-        for (i = 0; i < longest; i++) {
-            let row = [];
-            Object.values(cmds).forEach((value) => {
-                let item = value[i] || "";
-                row.push(pad(item, padlength));
-            });
-            rows.push(row);
-        }
+        let grid = rows.join("\n");
 
-        let grid = rows.map((row) => row.join(" | ")).join("\n");
         let msg = [
             ctx.strings.get("help_list_of_commands") + "```",
             grid,

@@ -63,19 +63,25 @@ async function exec(ctx) {
         let rand = randomstring.generate(6);
         await ctx.client.redis.setexAsync(`register:${res.profile.steamid}`, 900, `${rand}:${ctx.author.id}`);
 
+        let channel = await ctx.author.getDMChannel();
+        await channel.createMessage(ctx.strings.all("register_dm", "\n", rand, ctx.client.config.steam_acc_url));
+
         ctx.client.redis.publish("discord", JSON.stringify({
             code: 3,
             message: "registering a user",
             steam_id: res.profile.steamid
         }));
 
-        let channel = await ctx.author.getDMChannel();
-        await channel.createMessage(ctx.strings.all("register_dm", "\n", rand, ctx.client.config.steam_acc_url));
         try { await ctx.message.addReaction("✅") } catch (err) {}
+
         return Promise.resolve();
     } catch (err) {
-        console.error(err);
-        return ctx.failure(ctx.strings.get("bot_generic_error"));
+        if (err.response && JSON.parse(err.response).code === 50007) {
+            return ctx.failure(ctx.strings.get("bot_register_error"));
+        } else {
+            console.error(err);
+            return ctx.failure(ctx.strings.get("bot_generic_error"));
+        }
     }
 }
 

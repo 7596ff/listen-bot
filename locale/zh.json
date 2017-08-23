@@ -252,5 +252,6 @@
 	"help_cmd_matches_filters_3": "`in <lobby>`: *optional* 選擇 \"ranked\" 或 \"normal\"",
 	"help_footer": "**Note**: 指令參數中不需要加入 `[]` 或是 `<>` . 他們只是方便辨識可變參數.",
 	"help_cmd_nextmatch_usage": "nextmatch <member>",
-	"help_cmd_nextmatch_desc": "當已註冊會員結束當前遊戲, 貼出遊戲結果."
+	"help_cmd_nextmatch_desc": "當已註冊會員結束當前遊戲, 貼出遊戲結果.",
+    "bot_register_error": "I can't send you direct messages! Please enable direct messaging from this server so I can complete the registration process."
 }

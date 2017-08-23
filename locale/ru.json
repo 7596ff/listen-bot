@@ -252,5 +252,6 @@
     "help_cmd_matches_filters_3": "`in <лобби>`: *необязательно* либо \"ranked\" или \"normal\"",
     "help_footer": "**Note**: Не включайте `[]` или `<>` при использовании каналов. Они помогают различить текст и аргументы, которые должны быть заполнены.",
     "help_cmd_nextmatch_usage": "nextmatch <участник>",
-    "help_cmd_nextmatch_desc": "Ожидает того, когда игрок которого Вы упомянете закончит свою игру, после этого отправит её сюда."
+    "help_cmd_nextmatch_desc": "Ожидает того, когда игрок которого Вы упомянете закончит свою игру, после этого отправит её сюда.",
+    "bot_register_error": "I can't send you direct messages! Please enable direct messaging from this server so I can complete the registration process."
 }

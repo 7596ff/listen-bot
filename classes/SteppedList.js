@@ -33,7 +33,8 @@ class SteppedList {
                         .join("\n"),
                     inline: true
                 };
-            })
+            }),
+            description: `Page ${this.step + 1}`
         };
 
         embed = Object.assign(embed, this.template);

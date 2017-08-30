@@ -4,6 +4,6 @@ async function exec(ctx) {
 
 module.exports = {
     name: "pong",
-    category: "fun",
+    category: "utility",
     exec
 };

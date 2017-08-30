@@ -15,6 +15,6 @@ async function exec(ctx) {
 
 module.exports = {
     name: "cleanup",
-    category: "owner",
+    category: "utility",
     exec
 };

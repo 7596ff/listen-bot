@@ -89,7 +89,7 @@ function executeJob(feed) {
         if (err || (response && response.statusCode !== 200)) {
             console.error(`something wrong with ${feed.name}.`);
             console.error(err);
-            console.error(`status code: ${response.statusCode}`);
+            console.error(`status code: ${response ? response.statusCode : "0"}`);
         } else {
             consumeResponse(feed, body);
         }

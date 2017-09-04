@@ -3,677 +3,790 @@
     "id": 1,
     "local": "Anti-Mage",
     "aliases": ["anti-mage", "antimage", "anti mage", "am", "magina"],
-    "oldname": "Magina"
+    "oldname": "Magina",
+    "emoji": "333770466735161345"
 }, {
     "name": "axe",
     "id": 2,
     "local": "Axe",
     "aliases": ["axe"],
-    "oldname": "Mogul Khan"
+    "oldname": "Mogul Khan",
+    "emoji": "333770466743287810"
 }, {
     "name": "bane",
     "id": 3,
     "local": "Bane",
     "aliases": ["bane", "bane elemental"],
-    "oldname": "Atropos"
+    "oldname": "Atropos",
+    "emoji": "333770466982625280"
 }, {
     "name": "bloodseeker",
     "id": 4,
     "local": "Bloodseeker",
     "aliases": ["bloodseeker", "bs", "strygwyr"],
-    "oldname": "Strygwyr"
+    "oldname": "Strygwyr",
+    "emoji": "333770494950113290"
 }, {
     "name": "crystal_maiden",
     "id": 5,
     "local": "Crystal Maiden",
     "aliases": ["crystal maiden", "maiden", "cm", "crystal_maiden", "rylai"],
-    "oldname": "Rylai"
+    "oldname": "Rylai",
+    "emoji": "333770513270833152"
 }, {
     "name": "drow_ranger",
     "id": 6,
     "local": "Drow Ranger",
     "aliases": ["drow ranger", "drow", "traxex", "ranged creep", "drow_ranger"],
-    "oldname": "Traxex"
+    "oldname": "Traxex",
+    "emoji": "333770528714260481"
 }, {
     "name": "earthshaker",
     "id": 7,
     "local": "Earthshaker",
     "aliases": ["earthshaker", "shaker"],
-    "oldname": "Raigor Stonehoof"
+    "oldname": "Raigor Stonehoof",
+    "emoji": "333770528403750914"
 }, {
     "name": "juggernaut",
     "id": 8,
     "local": "Juggernaut",
     "aliases": ["juggernaut", "jugg", "jug", "yurnero"],
-    "oldname": "Yurnero"
+    "oldname": "Yurnero",
+    "emoji": "333770548960296970"
 }, {
     "name": "mirana",
     "id": 9,
     "local": "Mirana",
     "aliases": ["mirana", "potm"],
-    "oldname": "Princess of the Moon"
+    "oldname": "Princess of the Moon",
+    "emoji": "333771113739845633"
 }, {
     "name": "morphling",
     "id": 10,
     "local": "Morphling",
     "aliases": ["morphling", "morph", "waterman"],
-    "oldname": "Morphling"
+    "oldname": "Morphling",
+    "emoji": "333771113685319681"
 }, {
     "name": "nevermore",
     "id": 11,
     "local": "Shadow Fiend",
     "aliases": ["shadow fiend", "sf", "nevermore"],
-    "oldname": "Nevermore"
+    "oldname": "Nevermore",
+    "emoji": "333771113832251395"
 }, {
     "name": "phantom_lancer",
     "id": 12,
     "local": "Phantom Lancer",
     "aliases": ["phantom lancer", "pl", "cancer lancer", "phantom_lancer"],
-    "oldname": "Azwraith"
+    "oldname": "Azwraith",
+    "emoji": "333771114125852674"
 }, {
     "name": "puck",
     "id": 13,
     "local": "Puck",
     "aliases": ["puck"],
-    "oldname": "Faerie Dragon"
+    "oldname": "Faerie Dragon",
+    "emoji": "333771114461528065"
 }, {
     "name": "pudge",
     "id": 14,
     "local": "Pudge",
     "aliases": ["pudge", "butcher"],
-    "oldname": "Butcher"
+    "oldname": "Butcher",
+    "emoji": "333771114603872256"
 }, {
     "name": "razor",
     "id": 15,
     "local": "Razor",
     "aliases": ["razor"],
-    "oldname": "Lightning Revenant"
+    "oldname": "Lightning Revenant",
+    "emoji": "333771116315148308"
 }, {
     "name": "sand_king",
     "id": 16,
     "local": "Sand King",
     "aliases": ["sand king", "sand_king", "sk"],
-    "oldname": "Crixalis"
+    "oldname": "Crixalis",
+    "emoji": "333771116172541954"
 }, {
     "name": "storm_spirit",
     "id": 17,
     "local": "Storm Spirit",
     "aliases": ["storm spirit", "storm", "storm_spirit"],
-    "oldname": "Raijin Thunderkeg"
+    "oldname": "Raijin Thunderkeg",
+    "emoji": "333771536328687618"
 }, {
     "name": "sven",
     "id": 18,
     "local": "Sven",
     "aliases": ["sven", "rogue knight"],
-    "oldname": "Rogue Knight"
+    "oldname": "Rogue Knight",
+    "emoji": "333771536676945920"
 }, {
     "name": "tiny",
     "id": 19,
     "local": "Tiny",
     "aliases": ["tiny", "tony"],
-    "oldname": "Stone Giant"
+    "oldname": "Stone Giant",
+    "emoji": "333771536731340801"
 }, {
     "name": "vengefulspirit",
     "id": 20,
     "local": "Vengeful Spirit",
     "aliases": ["vengeful spirit", "venge", "vengeful", "vengefulspirit"],
-    "oldname": "Shendelzare"
+    "oldname": "Shendelzare",
+    "emoji": "333771536756637699"
 }, {
     "name": "windrunner",
     "id": 21,
     "local": "Windranger",
     "aliases": ["windranger", "windrunner", "wr", "windrunger"],
-    "oldname": "Lyralei"
+    "oldname": "Lyralei",
+    "emoji": "333771536324624389"
 }, {
     "name": "zuus",
     "id": 22,
     "local": "Zeus",
     "aliases": ["zeus", "zuus"],
-    "oldname": "Lord of Heaven"
+    "oldname": "Lord of Heaven",
+    "emoji": "333771537222205440"
 }, {
     "name": "kunkka",
     "id": 23,
     "local": "Kunkka",
     "aliases": ["kunkka", "admiral"],
-    "oldname": "Admiral"
+    "oldname": "Admiral",
+    "emoji": "333770596595007490"
 }, {
     "name": "lina",
     "id": 25,
     "local": "Lina",
     "aliases": ["lina"],
-    "oldname": "Slayer"
+    "oldname": "Slayer",
+    "emoji": "333771114100817920"
 }, {
     "name": "lion",
     "id": 26,
     "local": "Lion",
     "aliases": ["lion"],
-    "oldname": "Demon Witch"
+    "oldname": "Demon Witch",
+    "emoji": "333771113756622848"
 }, {
     "name": "shadow_shaman",
     "id": 27,
     "local": "Shadow Shaman",
     "aliases": ["shadow shaman", "shaman", "rhasta", "shadow_shaman"],
-    "oldname": "Rhasta"
+    "oldname": "Rhasta",
+    "emoji": "333771116218941452"
 }, {
     "name": "slardar",
     "id": 28,
     "local": "Slardar",
     "aliases": ["slardar"],
-    "oldname": "Slithereen Guard"
+    "oldname": "Slithereen Guard",
+    "emoji": "333771116365742080"
 }, {
     "name": "tidehunter",
     "id": 29,
     "local": "Tidehunter",
     "aliases": ["tidehunter", "tide"],
-    "oldname": "Leviathan"
+    "oldname": "Leviathan",
+    "emoji": "333771536714563595"
 }, {
     "name": "witch_doctor",
     "id": 30,
     "local": "Witch Doctor",
     "aliases": ["witch doctor", "wd", "capri sun and gun", "witch_doctor"],
-    "oldname": "Zharvakko"
+    "oldname": "Zharvakko",
+    "emoji": "333771537263886336"
 }, {
     "name": "lich",
     "id": 31,
     "local": "Lich",
     "aliases": ["lich", "kt", "kelthuzad"],
-    "oldname": "Ethreain"
+    "oldname": "Ethreain",
+    "emoji": "333771113517547531"
 }, {
     "name": "riki",
     "id": 32,
     "local": "Riki",
     "aliases": ["riki"],
-    "oldname": "Stealth Assassin"
+    "oldname": "Stealth Assassin",
+    "emoji": "333771116000575499"
 }, {
     "name": "enigma",
     "id": 33,
     "local": "Enigma",
     "aliases": ["enigma"],
-    "oldname": "Enigma"
+    "oldname": "Enigma",
+    "emoji": "333770548687536139"
 }, {
     "name": "tinker",
     "id": 34,
     "local": "Tinker",
     "aliases": ["tinker"],
-    "oldname": "Boush"
+    "oldname": "Boush",
+    "emoji": "333771536840523776"
 }, {
     "name": "sniper",
     "id": 35,
     "local": "Sniper",
     "aliases": ["sniper", "kardel", "kardel sharpeye"],
-    "oldname": "Kardel Sharpeye"
+    "oldname": "Kardel Sharpeye",
+    "emoji": "333771536563568640"
 }, {
     "name": "necrolyte",
     "id": 36,
     "local": "Necrophos",
     "aliases": ["necrophos", "necrolyte", "necro", "rotund'jere"],
-    "oldname": "Rotund'jere"
+    "oldname": "Rotund'jere",
+    "emoji": "333771114004086794"
 }, {
     "name": "warlock",
     "id": 37,
     "local": "Warlock",
     "aliases": ["warlock"],
-    "oldname": "Demnok Lannik"
+    "oldname": "Demnok Lannik",
+    "emoji": "333771537100308481"
 }, {
     "name": "beastmaster",
     "id": 38,
     "local": "Beastmaster",
     "aliases": ["beastmaster", "bm", "rexxar"],
-    "oldname": "Karroch"
+    "oldname": "Karroch",
+    "emoji": "333770494991925259"
 }, {
     "name": "queenofpain",
     "id": 39,
     "local": "Queen of Pain",
     "aliases": ["queen of pain", "queen", "qop", "queenofpain"],
-    "oldname": "Akasha"
+    "oldname": "Akasha",
+    "emoji": "333771115790991361"
 }, {
     "name": "venomancer",
     "id": 40,
     "local": "Venomancer",
     "aliases": ["venomancer", "veno", "lesale deathbringer"],
-    "oldname": "Lesale Deathbringer"
+    "oldname": "Lesale Deathbringer",
+    "emoji": "333771536966352897"
 }, {
     "name": "faceless_void",
     "id": 41,
     "local": "Faceless Void",
     "aliases": ["faceless void", "fv", "void", "faceless_void", "darkterror"],
-    "oldname": "Darkterror"
+    "oldname": "Darkterror",
+    "emoji": "333770548754513941"
 }, {
     "name": "skeleton_king",
     "id": 42,
     "local": "Wraith King",
     "aliases": ["wraith king", "wk", "leoric", "skeleton_king"],
-    "oldname": "Ostarion"
+    "oldname": "Ostarion",
+    "emoji": "333771116130729995"
 }, {
     "name": "death_prophet",
     "id": 43,
     "local": "Death Prophet",
     "aliases": ["death prophet", "dp", "death_prophet", "krob", "krobelus"],
-    "oldname": "Krobelus"
+    "oldname": "Krobelus",
+    "emoji": "333770513321164800"
 }, {
     "name": "phantom_assassin",
     "id": 44,
     "local": "Phantom Assassin",
     "aliases": ["phantom assassin", "pa", "phantom_assassin"],
-    "oldname": "Mortred"
+    "oldname": "Mortred",
+    "emoji": "333771114524442624"
 }, {
     "name": "pugna",
     "id": 45,
     "local": "Pugna",
     "aliases": ["pugna", "loli"],
-    "oldname": "Oblivion"
+    "oldname": "Oblivion",
+    "emoji": "333771114188898325"
 }, {
     "name": "templar_assassin",
     "id": 46,
     "local": "Templar Assassin",
     "aliases": ["templar assassin", "ta", "templar", "templar_assassin", "lanaya"],
-    "oldname": "Lanaya"
+    "oldname": "Lanaya",
+    "emoji": "333771536806969344"
 }, {
     "name": "viper",
     "id": 47,
     "local": "Viper",
     "aliases": ["viper", "netherdrake"],
-    "oldname": "Netherdrake"
+    "oldname": "Netherdrake",
+    "emoji": "333771537117216778"
 }, {
     "name": "luna",
     "id": 48,
     "local": "Luna",
     "aliases": ["luna"],
-    "oldname": "Moon Rider"
+    "oldname": "Moon Rider",
+    "emoji": "333771113865674752"
 }, {
     "name": "dragon_knight",
     "id": 49,
     "local": "Dragon Knight",
     "aliases": ["dragon knight", "dk", "dragon_knight"],
-    "oldname": "Davion"
+    "oldname": "Davion",
+    "emoji": "333770528362070018"
 }, {
     "name": "dazzle",
     "id": 50,
     "local": "Dazzle",
     "aliases": ["dazzle", "shadow priest"],
-    "oldname": "Shadow Priest"
+    "oldname": "Shadow Priest",
+    "emoji": "333770512956129281"
 }, {
     "name": "rattletrap",
     "id": 51,
     "local": "Clockwerk",
     "aliases": ["clockwerk", "clock", "rattletrap", "rt"],
-    "oldname": "Rattletrap"
+    "oldname": "Rattletrap",
+    "emoji": "333771116088918017"
 }, {
     "name": "leshrac",
     "id": 52,
     "local": "Leshrac",
     "aliases": ["leshrac", "lesh"],
-    "oldname": "Tormented Soul"
+    "oldname": "Tormented Soul",
+    "emoji": "333771114188636170"
 }, {
     "name": "furion",
     "id": 53,
     "local": "Nature's Prophet",
     "aliases": ["nature's prophet", "furion", "np", "tequoia"],
-    "oldname": "Furion"
+    "oldname": "Furion",
+    "emoji": "333770548842856448"
 }, {
     "name": "life_stealer",
     "id": 54,
     "local": "Lifestealer",
     "aliases": ["lifestealer", "ls", "naix", "life_stealer"],
-    "oldname": "N'aix"
+    "oldname": "N'aix",
+    "emoji": "333771113614016513"
 }, {
     "name": "dark_seer",
     "id": 55,
     "local": "Dark Seer",
     "aliases": ["dark seer", "seer", "dark_seer"],
-    "oldname": "Ish'kafel"
+    "oldname": "Ish'kafel",
+    "emoji": "333770512989683714"
 }, {
     "name": "clinkz",
     "id": 56,
     "local": "Clinkz",
     "aliases": ["clinkz"],
-    "oldname": "Bone Fletcher"
+    "oldname": "Bone Fletcher",
+    "emoji": "333770513237409792"
 }, {
     "name": "omniknight",
     "id": 57,
     "local": "Omniknight",
     "aliases": ["omniknight", "omni"],
-    "oldname": "Purist Thunderwrath"
+    "oldname": "Purist Thunderwrath",
+    "emoji": "333771114348150785"
 }, {
     "name": "enchantress",
     "id": 58,
     "local": "Enchantress",
     "aliases": ["enchantress", "ench", "bambi"],
-    "oldname": "Aiushtha"
+    "oldname": "Aiushtha",
+    "emoji": "333770528856866816"
 }, {
     "name": "huskar",
     "id": 59,
     "local": "Huskar",
     "aliases": ["huskar"],
-    "oldname": "Sacred Warrior"
+    "oldname": "Sacred Warrior",
+    "emoji": "333770548892925972"
 }, {
     "name": "night_stalker",
     "id": 60,
     "local": "Night Stalker",
     "aliases": ["night stalker", "ns", "night_stalker", "balanar"],
-    "oldname": "Balanar"
+    "oldname": "Balanar",
+    "emoji": "333771113794502667"
 }, {
     "name": "broodmother",
     "id": 61,
     "local": "Broodmother",
     "aliases": ["broodmother", "brood"],
-    "oldname": "Black Arachnia"
+    "oldname": "Black Arachnia",
+    "emoji": "333770494782341123"
 }, {
     "name": "bounty_hunter",
     "id": 62,
     "local": "Bounty Hunter",
     "aliases": ["bounty hunter", "bh", "bounty", "bounty_hunter", "gondar"],
-    "oldname": "Gondar"
+    "oldname": "Gondar",
+    "emoji": "333770494815764481"
 }, {
     "name": "weaver",
     "id": 63,
     "local": "Weaver",
     "aliases": ["weaver", "mtn"],
-    "oldname": "Skitskurr"
+    "oldname": "Skitskurr",
+    "emoji": "333771537129668608"
 }, {
     "name": "jakiro",
     "id": 64,
     "local": "Jakiro",
     "aliases": ["jakiro"],
-    "oldname": "Twin Head Dragon"
+    "oldname": "Twin Head Dragon",
+    "emoji": "333770548712701953"
 }, {
     "name": "batrider",
     "id": 65,
     "local": "Batrider",
     "aliases": ["batrider", "bat"],
-    "oldname": "Batrider"
+    "oldname": "Batrider",
+    "emoji": "333770494610243595"
 }, {
     "name": "chen",
     "id": 66,
     "local": "Chen",
     "aliases": ["chen"],
-    "oldname": "Holy Knight"
+    "oldname": "Holy Knight",
+    "emoji": "333770512838688780"
 }, {
     "name": "spectre",
     "id": 67,
     "local": "Spectre",
     "aliases": ["spectre"],
-    "oldname": "Mercurial"
+    "oldname": "Mercurial",
+    "emoji": "333771536681140257"
 }, {
     "name": "ancient_apparition",
     "id": 68,
     "local": "Ancient Apparition",
     "aliases": ["ancient apparition", "aa", "ancient_apparition"],
-    "oldname": "Kaldr"
+    "oldname": "Kaldr",
+    "emoji": "333770466844082176"
 }, {
     "name": "doom_bringer",
     "id": 69,
     "local": "Doom",
     "aliases": ["doom", "doom_bringer", "lucifer"],
-    "oldname": "Lucifer"
+    "oldname": "Lucifer",
+    "emoji": "333770513178427404"
 }, {
     "name": "ursa",
     "id": 70,
     "local": "Ursa",
     "aliases": ["ursa"],
-    "oldname": "Ulfsaar"
+    "oldname": "Ulfsaar",
+    "emoji": "333771537054302208"
 }, {
     "name": "spirit_breaker",
     "id": 71,
     "local": "Spirit Breaker",
     "aliases": ["spirit breaker", "sb", "borked", "bara", "spirit_breaker", "cow", "space cow"],
-    "oldname": "Barathrum"
+    "oldname": "Barathrum",
+    "emoji": "333771536521625612"
 }, {
     "name": "gyrocopter",
     "id": 72,
     "local": "Gyrocopter",
     "aliases": ["gyrocopter", "gyro"],
-    "oldname": "Aurel Vlaicu"
+    "oldname": "Aurel Vlaicu",
+    "emoji": "333770548859371520"
 }, {
     "name": "alchemist",
     "id": 73,
     "local": "Alchemist",
     "aliases": ["alchemist", "alch", "aghs machine", "gambler"],
-    "oldname": "Razzil Darkbrew"
+    "oldname": "Razzil Darkbrew",
+    "emoji": "333770466533834753"
 }, {
     "name": "invoker",
     "id": 74,
     "local": "Invoker",
     "aliases": ["invoker", "kael"],
-    "oldname": "Carl"
+    "oldname": "Carl",
+    "emoji": "333770548595261442"
 }, {
     "name": "silencer",
     "id": 75,
     "local": "Silencer",
     "aliases": ["silencer"],
-    "oldname": "Nortrom"
+    "oldname": "Nortrom",
+    "emoji": "333771116323667978"
 }, {
     "name": "obsidian_destroyer",
     "id": 76,
     "local": "Outworld Devourer",
     "aliases": ["od", "outworld devourer", "obsidian_destroyer"],
-    "oldname": "Harbinger"
+    "oldname": "Harbinger",
+    "emoji": "333771114478305281"
 }, {
     "name": "lycan",
     "id": 77,
     "local": "Lycan",
     "aliases": ["lycan", "dog", "banehallow"],
-    "oldname": "Banehallow"
+    "oldname": "Banehallow",
+    "emoji": "333771113492512770"
 }, {
     "name": "brewmaster",
     "id": 78,
     "local": "Brewmaster",
     "aliases": ["brewmaster", "brew", "mangix", "panda", "pandaren"],
-    "oldname": "Mangix"
+    "oldname": "Mangix",
+    "emoji": "333770495004770305"
 }, {
     "name": "shadow_demon",
     "id": 79,
     "local": "Shadow Demon",
     "aliases": ["shadow demon", "sd", "shadow_demon"],
-    "oldname": "Shadow Demon"
+    "oldname": "Shadow Demon",
+    "emoji": "333771115962826753"
 }, {
     "name": "lone_druid",
     "id": 80,
     "local": "Lone Druid",
     "aliases": ["lone druid", "ld", "druid", "sylla", "syllabear", "lone_druid"],
-    "oldname": "Sylla"
+    "oldname": "Sylla",
+    "emoji": "333771113798565888"
 }, {
     "name": "chaos_knight",
     "id": 81,
     "local": "Chaos Knight",
     "aliases": ["chaos knight", "ck", "chaos_knight"],
-    "oldname": "Chaos Knight"
+    "oldname": "Chaos Knight",
+    "emoji": "333770495218679808"
 }, {
     "name": "meepo",
     "id": 82,
     "local": "Meepo",
     "aliases": ["meepo"],
-    "oldname": "Geomancer"
+    "oldname": "Geomancer",
+    "emoji": "333771113589112833"
 }, {
     "name": "treant",
     "id": 83,
     "local": "Treant Protector",
     "aliases": ["treant protector", "treant", "tree"],
-    "oldname": "Rooftrellen"
+    "oldname": "Rooftrellen",
+    "emoji": "333771536550985730"
 }, {
     "name": "ogre_magi",
     "id": 84,
     "local": "Ogre Magi",
     "aliases": ["ogre magi", "ogre", "bloodlust", "ogre_magi", "aggron stonebreak"],
-    "oldname": "Aggron Stonebreak"
+    "oldname": "Aggron Stonebreak",
+    "emoji": "333771114436362240"
 }, {
     "name": "undying",
     "id": 85,
     "local": "Undying",
     "aliases": ["undying", "zombie", "dirge"],
-    "oldname": "Almighty Dirge"
+    "oldname": "Almighty Dirge",
+    "emoji": "333771536706043907"
 }, {
     "name": "rubick",
     "id": 86,
     "local": "Rubick",
     "aliases": ["rubick", "grand magus"],
-    "oldname": "Grand Magus"
+    "oldname": "Grand Magus",
+    "emoji": "333771115946049539"
 }, {
     "name": "disruptor",
     "id": 87,
     "local": "Disruptor",
     "aliases": ["disruptor", "thrall"],
-    "oldname": "Stormcrafter"
+    "oldname": "Stormcrafter",
+    "emoji": "333770513258119170"
 }, {
     "name": "nyx_assassin",
     "id": 88,
     "local": "Nyx Assassin",
     "aliases": ["nyx assassin", "nyx", "nyx_assassin"],
-    "oldname": "Nyx Assassin"
+    "oldname": "Nyx Assassin",
+    "emoji": "333771113907748876"
 }, {
     "name": "naga_siren",
     "id": 89,
     "local": "Naga Siren",
     "aliases": ["naga siren", "naga", "naga_siren", "slithice"],
-    "oldname": "Slithice"
+    "oldname": "Slithice",
+    "emoji": "333771114184704004"
 }, {
     "name": "keeper_of_the_light",
     "id": 90,
     "local": "Keeper of the Light",
     "aliases": ["keeper of the light", "keeper", "kotl", "ezalor", "keeper_of_the_light", "ezavor"],
-    "oldname": "Ezalor"
+    "oldname": "Ezalor",
+    "emoji": "333770596754128896"
 }, {
     "name": "wisp",
     "id": 91,
     "local": "Io",
     "aliases": ["io", "wisp", "cube"],
-    "oldname": "Wisp"
+    "oldname": "Wisp",
+    "emoji": "333771537251303424"
 }, {
     "name": "visage",
     "id": 92,
     "local": "Visage",
     "aliases": ["visage"],
-    "oldname": "Bound Form of Necro'lic"
+    "oldname": "Bound Form of Necro'lic",
+    "emoji": "333771537117085706"
 }, {
     "name": "slark",
     "id": 93,
     "local": "Slark",
     "aliases": ["slark"],
-    "oldname": "Nightcrawler"
+    "oldname": "Nightcrawler",
+    "emoji": "333771116227067905"
 }, {
     "name": "medusa",
     "id": 94,
     "local": "Medusa",
     "aliases": ["medusa", "dusa"],
-    "oldname": "Gorgon"
+    "oldname": "Gorgon",
+    "emoji": "333771113903554570"
 }, {
     "name": "troll_warlord",
     "id": 95,
     "local": "Troll Warlord",
     "aliases": ["troll warlord", "troll", "troll_warlord"],
-    "oldname": "Jah'rakal"
+    "oldname": "Jah'rakal",
+    "emoji": "333771536936992768"
 }, {
     "name": "centaur",
     "id": 96,
     "local": "Centaur Warrunner",
     "aliases": ["centaur warrunner", "centaur", "cent", "bradwarden", "tauren chieftan", "tc"],
-    "oldname": "Bradwarden"
+    "oldname": "Bradwarden",
+    "emoji": "333770494857969675"
 }, {
     "name": "magnataur",
     "id": 97,
     "local": "Magnus",
     "aliases": ["magnus", "mag", "magnataur"],
-    "oldname": "Magnoceros"
+    "oldname": "Magnoceros",
+    "emoji": "333771113849159680"
 }, {
     "name": "shredder",
     "id": 98,
     "local": "Timbersaw",
     "aliases": ["timbersaw", "timber", "shredder"],
-    "oldname": "Rizzrack"
+    "oldname": "Rizzrack",
+    "emoji": "333771116344639488"
 }, {
     "name": "bristleback",
     "id": 99,
     "local": "Bristleback",
     "aliases": ["bristleback", "bristle"],
-    "oldname": "Rigwarl"
+    "oldname": "Rigwarl",
+    "emoji": "333770495021416448"
 }, {
     "name": "tusk",
     "id": 100,
     "local": "Tusk",
     "aliases": ["tusk", "tuskarr", "ymir"],
-    "oldname": "Ymir"
+    "oldname": "Ymir",
+    "emoji": "333771537305960448"
 }, {
     "name": "skywrath_mage",
     "id": 101,
     "local": "Skywrath Mage",
     "aliases": ["skywrath mage", "skywrath", "bird person", "skywrath_mage", "sky"],
-    "oldname": "Dragonus"
+    "oldname": "Dragonus",
+    "emoji": "333771116336381952"
 }, {
     "name": "abaddon",
     "id": 102,
     "local": "Abaddon",
     "aliases": ["abaddon", "abba"],
-    "oldname": "Lord of Avernus"
+    "oldname": "Lord of Avernus",
+    "emoji": "333770466835824650"
 }, {
     "name": "elder_titan",
     "id": 103,
     "local": "Elder Titan",
     "aliases": ["elder titan", "et", "elder_titan"],
-    "oldname": "Worldsmith"
+    "oldname": "Worldsmith",
+    "emoji": "333770528882032650"
 }, {
     "name": "legion_commander",
     "id": 104,
     "local": "Legion Commander",
     "aliases": ["legion commander", "lc", "legion", "legion_commander", "tresdin"],
-    "oldname": "Tresdin"
+    "oldname": "Tresdin",
+    "emoji": "333770596812849162"
 }, {
     "name": "techies",
     "id": 105,
     "local": "Techies",
     "aliases": ["techies"],
-    "oldname": "Squee, Spleen, and Spoon"
+    "oldname": "Squee, Spleen, and Spoon",
+    "emoji": "333771536517431298"
 }, {
     "name": "ember_spirit",
     "id": 106,
     "local": "Ember Spirit",
     "aliases": ["ember spirit", "ember", "yasuo", "ember_spirit"],
-    "oldname": "Xin"
+    "oldname": "Xin",
+    "emoji": "333770528626049027"
 }, {
     "name": "earth_spirit",
     "id": 107,
     "local": "Earth Spirit",
     "aliases": ["earth spirit", "earth_spirit"],
-    "oldname": "Kaolin"
+    "oldname": "Kaolin",
+    "emoji": "333770528546619393"
 }, {
     "name": "abyssal_underlord",
     "id": 108,
     "local": "Underlord",
     "aliases": ["underlord", "azgalor", "pitlord", "abyssal_underlord"],
-    "oldname": "Vrogros"
+    "oldname": "Vrogros",
+    "emoji": "333770466835562496"
 }, {
     "name": "terrorblade",
     "id": 109,
     "local": "Terrorblade",
     "aliases": ["terrorblade", "terribleblade", "tb"],
-    "oldname": "Demon Marauder"
+    "oldname": "Demon Marauder",
+    "emoji": "333771536764764160"
 }, {
     "name": "phoenix",
     "id": 110,
     "local": "Phoenix",
     "aliases": ["phoenix", "pidge", "bird"],
-    "oldname": "Phoenix"
+    "oldname": "Phoenix",
+    "emoji": "333771114532700160"
 }, {
     "name": "oracle",
     "id": 111,
     "local": "Oracle",
     "aliases": ["oracle"],
-    "oldname": "Nerif"
+    "oldname": "Nerif",
+    "emoji": "333771114499276800"
 }, {
     "name": "winter_wyvern",
     "id": 112,
     "local": "Winter Wyvern",
     "aliases": ["winter wyvern", "wyvern", "ww", "winter_wyvern", "auroth"],
-    "oldname": "Auroth"
+    "oldname": "Auroth",
+    "emoji": "333771537083531265"
 }, {
     "name": "arc_warden",
     "id": 113,
     "local": "Arc Warden",
     "aliases": ["arc warden", "arc", "aw", "arc_warden", "warden", "zet", "zett"],
-    "oldname": "Zet"
+    "oldname": "Zet",
+    "emoji": "333770466747482113"
 }, {
     "name": "monkey_king",
     "id": 114,
     "local": "Monkey King",
     "aliases": ["monkey king", "mk", "moo", "monkey_king"],
-    "oldname": "Sun Wukong"
+    "oldname": "Sun Wukong",
+    "emoji": "333771113920200704"
 }]

@@ -86,10 +86,10 @@ function executeJob(feed) {
     }
 
     needle.get(url, { headers }, (err, response, body) => {
-        if (err || response.statusCode !== 200) {
+        if (err || (response && response.statusCode !== 200)) {
             console.error(`something wrong with ${feed.name}.`);
             console.error(err);
-            console.error(`status code: ${response.statusCode}`);
+            console.error(`status code: ${response ? response.statusCode : "0"}`);
         } else {
             consumeResponse(feed, body);
         }

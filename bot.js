@@ -798,5 +798,3 @@ sub.on("ready", () => {
     sub.subscribe("listen:rss:belvedere");
     sub.subscribe("listen:rss:cyborgmatt");
 });
-
-client.on("error", console.error);

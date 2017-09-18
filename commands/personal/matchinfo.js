@@ -37,7 +37,7 @@ async function exec(ctx) {
         let embed = await matchEmbed.call(ctx.strings, ctx, match);
         return ctx.embed(embed);
     } catch (err) {
-        console.error(err);
+        ctx.error(err);
         return ctx.failure(ctx.strings.get("bot_generic_error"));
     }
 }

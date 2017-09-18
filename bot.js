@@ -658,8 +658,8 @@ async function invoke(message, client, helper, cmd) {
         }.bind(ctx);
 
         ctx.error = async function(err) {
-            this.helper.print(`error in command ${this.name}`, "error");
             console.error(err);
+            this.helper.print(`error in command ${this.name}`, "error");
         }.bind(ctx);
 
         ctx.helper.log(message, `${cmd.name} (${ctx.options.join(" ")})`);

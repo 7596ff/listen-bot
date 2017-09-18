@@ -30,7 +30,7 @@ const subcommands = {
 
             return ctx.send(list.join("\n"));
         } catch (err) {
-            console.error(err);
+            ctx.error(err);
             return ctx.failure(ctx.strings.get("bot_generic_error"));
         }
     },
@@ -49,7 +49,7 @@ const subcommands = {
 
             return this.info(ctx);
         } catch (err) {
-            console.error(err);
+            ctx.error(err);
             return ctx.failure(ctx.strings.get("bot_generic_error"));
         }
     },
@@ -63,7 +63,7 @@ const subcommands = {
             let msg = await liveMatchEmbed(match);
             return ctx.send(msg.content, msg.file);
         } catch (err) {
-            console.error(err);
+            ctx.error(err);
             return ctx.failure(ctx.strings.get("bot_generic_error"));
         }
     },
@@ -108,7 +108,7 @@ const subcommands = {
 
             return ctx.embed(embed);
         } catch (err) {
-            console.error(err);
+            ctx.error(err);
             return ctx.failure(ctx.strings.get("bot_generic_error"));
         }
     },
@@ -180,7 +180,7 @@ const subcommands = {
 
             return ctx.embed(embed);
         } catch (err) {
-            console.error(err);
+            ctx.error(err);
             return ctx.failure(ctx.strings.get("bot_generic_error"));
         }
     }

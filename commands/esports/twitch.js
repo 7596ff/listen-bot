@@ -13,7 +13,7 @@ const subcommands = {
                 clip.url
             ].join("\n"));
         } catch (err) {
-            console.error(err);
+            ctx.error(err);
             return ctx.failure(ctx.strings.get("bot_generic_error"));
         }
     },
@@ -33,7 +33,7 @@ const subcommands = {
             let embed = streamsEmbed.call(ctx.strings, localstreams.slice(0, 5));
             return ctx.embed(embed);
         } catch (err) {
-            console.error(err);
+            ctx.error(err);
             return ctx.failure(ctx.strings.get("bot_generic_error"));
         }
     }

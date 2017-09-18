@@ -28,7 +28,7 @@ async function historyWith(ctx, _with, _of, _in) {
     try {
         results = await Promise.all(_with.all.map((id) => checkDiscordID(ctx.client.pg, id)));
     } catch (err) {
-        console.error(err);
+        ctx.error(err);
         return ctx.failure(ctx.strings.get("bot_generic_error"));
     }
 
@@ -53,7 +53,7 @@ async function historyWith(ctx, _with, _of, _in) {
     try {
         matches = await ctx.client.mika.getPlayerMatches(results[0], constraints);
     } catch (err) {
-        console.error(err);
+        ctx.error(err);
         return ctx.failure(ctx.strings.get("bot_mika_error"));
     }
 
@@ -107,7 +107,7 @@ async function historyAs(ctx, _as, _of, _in) {
     try {
         result = await checkDiscordID(ctx.client.pg, _of);
     } catch (err) {
-        console.error(err);
+        ctx.error(err);
         return ctx.failure(ctx.strings.get("bot_generic_error"));
     }
 
@@ -133,7 +133,7 @@ async function historyAs(ctx, _as, _of, _in) {
     try {
         matches = await ctx.client.mika.getPlayerMatches(result, mikaOpts);
     } catch (err) {
-        console.error(err);
+        ctx.error(err);
         return ctx.failure(ctx.strings.get("bot_mika_error"));
     }
 

@@ -13,7 +13,7 @@ async function edit_trivia(pg, channel, ctx) {
         let msg = channel ? ctx.strings.get("admin_trivia_enable", channel) : ctx.strings.get("admin_trivia_disable");
         return ctx.success(msg);
     } catch (err) {
-        console.error(err);
+        ctx.error(err);
         return ctx.failure(ctx.strings.get("bot_generic_error"));
     }
 }
@@ -32,7 +32,7 @@ const subcommands = {
                 channel = channel == 0 ? "`none`" : `<#${channel}>`;
                 return ctx.success(ctx.strings.get("admin_botspam_change", channel));
             } catch (err) {
-                console.error(err);
+                ctx.error(err);
                 return ctx.failure(ctx.strings.get("bot_generic_error"));
             }
         } else {
@@ -63,7 +63,7 @@ const subcommands = {
 
                     return ctx.success(ctx.strings.get("admin_cooldowns_set", options[0], options[1]))
                 } catch (err) {
-                    console.error(err);
+                    ctx.error(err);
                     return ctx.failure(ctx.strings.get("bot_generic_error"));
                 }
             }  else {
@@ -109,7 +109,7 @@ const subcommands = {
                 return ctx.success(ctx.strings.get("admin_disable_none"));
             }
         } catch (err) {
-            console.error(err);
+            ctx.error(err);
             return ctx.failure(ctx.strings.get("bot_generic_error"));
         }
     },
@@ -146,7 +146,7 @@ const subcommands = {
                 return ctx.success(ctx.strings.get("admin_disable_none"));
             }
         } catch (err) {
-            console.error(err);
+            ctx.error(err);
             return ctx.failure(ctx.strings.get("bot_generic_error"));
         }
     },
@@ -162,7 +162,7 @@ const subcommands = {
 
                     return ctx.success(ctx.strings.get("admin_locale_change", ctx.content));
                 } catch (err) {
-                    console.error(err);
+                    ctx.error(err);
                     return ctx.failure(ctx.strings.get("bot_generic_error"));
                 }
             } else {
@@ -182,7 +182,7 @@ const subcommands = {
 
                 return ctx.success(ctx.strings.get("admin_prefix_change", ctx.content));
             } catch (err) {
-                console.error(err);
+                ctx.error(err);
                 return ctx.failure(ctx.strings.get("bot_generic_error"));
             }
         } else {
@@ -209,7 +209,7 @@ const subcommands = {
                     values: [count, ctx.guild.id]
                 });
             } catch (err) {
-                console.error(err);
+                ctx.error(err);
                 return ctx.failure(ctx.strings.get("bot_generic_error"));
             }
 
@@ -264,7 +264,7 @@ const subcommands = {
                     description: `Subscription role set to ${role.name} (<@&${role.id}>) in channel ${ctx.channel.name} (<#${ctx.channel.id}>).`
                 });
             } catch (err) {
-                console.error(err);
+                ctx.error(err);
                 return ctx.failure(ctx.strings.get("bot_generic_error"));
             }
         } else if (ctx.options.join(" ") == "none") {
@@ -294,7 +294,7 @@ const subcommands = {
 
                 return ctx.success("Subscription role removed.");
             } catch (err) {
-                console.error(err);
+                ctx.error(err);
                 return ctx.failure(ctx.strings.get("bot_generic_error"));
             }
         } else {

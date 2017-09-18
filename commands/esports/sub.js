@@ -23,7 +23,7 @@ const subcommands = {
         try {
             dotaID = await checkDiscordID(ctx.client.pg, ctx.message.mentions[0].id);
         } catch (err) {
-            console.error(err);
+            ctx.error(err);
             return ctx.failure(ctx.strings.get("sub_failure"));
         }
 
@@ -42,7 +42,7 @@ const subcommands = {
 
             return ctx.success(ctx.strings.get("sub_success"));
         } catch (err) {
-            console.error(err);
+            ctx.error(err);
             return ctx.failure(ctx.strings.get("sub_failure"));
         }
     },
@@ -62,7 +62,7 @@ const subcommands = {
 
             return ctx.success(ctx.strings.get("sub_success"));
         } catch (err) {
-            console.error(err);
+            ctx.error(err);
             return ctx.failure(ctx.strings.get("sub_failure"));
         }
     },
@@ -82,7 +82,7 @@ const subcommands = {
 
             return ctx.success(ctx.strings.get("sub_success"));
         } catch (err) {
-            console.error(err);
+            ctx.error(err);
             return ctx.failure(ctx.strings.get("sub_failure"));
         }
     },
@@ -95,7 +95,7 @@ const subcommands = {
 
                 return ctx.success(ctx.strings.get("sub_success"));
             } catch (err) {
-                console.error(err);
+                ctx.error(err);
                 return ctx.failure(ctx.strings.get("sub_failure"));
             }
         }
@@ -120,7 +120,7 @@ const subcommands = {
 
             return ctx.success(ctx.strings.get("sub_success"));
         } catch (err) {
-            console.error(err);
+            ctx.error(err);
             return ctx.failure(ctx.strings.get("sub_failure"));
         }
     }

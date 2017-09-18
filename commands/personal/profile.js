@@ -60,7 +60,7 @@ async function exec(ctx) {
         let embed = playerinfoEmbed(profile);
         return ctx.embed(embed);
     } catch (err) {
-        console.error(err);
+        ctx.error(err);
         return ctx.failure(ctx.strings.get("bot_generic_error"));
     }
 }

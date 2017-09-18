@@ -8,7 +8,7 @@ async function exec(ctx) {
         await Promise.all(promises);
         return ctx.delete(5000, ":white_check_mark:");
     } catch (err) {
-        console.error(err);
+        ctx.error(err);
         return ctx.failure(ctx.trings.get("bot_generic_error"));
     }
 }

@@ -5,7 +5,7 @@ async function exec(ctx) {
         let embed = await statsEmbed(ctx.client);
         return ctx.embed(embed);
     } catch (err) {
-        console.error(err);
+        ctx.error(err);
         return ctx.send("Something went horribly wrong.");
     }
 }

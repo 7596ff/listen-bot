@@ -18,7 +18,7 @@ async function exec(ctx) {
 
             return ctx.success(ctx.strings.get("unsub_nuke_success", res.rowCount, ctx.channel.mention));
         } catch (err) {
-            console.error(err);
+            ctx.error(err);
             return ctx.failure(ctx.strings.get("bot_generic_error"));
         }
     }
@@ -36,7 +36,7 @@ async function exec(ctx) {
 
             return ctx.success(ctx.strings.get("unsub_success", "stacks"));
         } catch (err) {
-            console.error(err);
+            ctx.error(err);
             return ctx.failure(ctx.strings.get("bot_generic_error"));
         }
     }
@@ -73,7 +73,7 @@ async function exec(ctx) {
             return ctx.failure(ctx.strings.get("unsub_no_feeds", ctx.author.mention));
         }
     } catch (err) {
-        console.error(err);
+        ctx.error(err);
         return ctx.failure(ctx.strings.get("bot_generic_error"));
     }
 }

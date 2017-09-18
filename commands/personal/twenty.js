@@ -64,7 +64,7 @@ async function exec(ctx) {
             return ctx.failure(ctx.strings.get("bot_not_registered", ctx.guild.members.get(ID).username, ctx.gcfg.prefix));
         }
     } catch (err) {
-        console.error(err);
+        ctx.error(err);
         return ctx.failure(ctx.strings.get("bot_generic_error"));
     }
 
@@ -102,7 +102,7 @@ async function exec(ctx) {
 
         return ctx.send(msg.join("\n"));
     } catch (err) {
-        console.error(err);
+        ctx.error(err);
         return ctx.failure(ctx.strings.get("bot_mika_error"));
     }
 }

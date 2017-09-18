@@ -254,5 +254,12 @@
     "help_cmd_nextmatch_usage": "nextmatch <member>",
     "help_cmd_nextmatch_desc": "Waits for the registered user you mention to finish their game, then posts it.",
     "bot_register_error": "I can't send you direct messages! Please enable direct messaging from this server so I can complete the registration process.",
-    "info_help_server_text": "Visit the support server if you have any questions about listen-bot. There is also a FAQ channel that might answer your question. %s"
+    "info_help_server_text": "Visit the support server if you have any questions about listen-bot. There is also a FAQ channel that might answer your question. %s",
+    "help_cmd_twenty_desc": "Shows some statistics from your last twenty matches.",
+    "help_cmd_twenty_usage": "%stwenty [<member>]",
+    "help_cmd_twenty_args_0": "`member`: *optional* A registered member.",
+    "help_cmd_leaderboard_usage": "leaderboard [<filter>]",
+    "help_cmd_leaderboard_desc": "Shows a leaderboard of winrates with certain optional filters.",
+    "help_cmd_leaderboard_filters_0": "`as <hero>`: shows everyone's winrate with a hero",
+    "help_cmd_leaderboard_filters_1": "`with <member>`: shows everyone's winrate with a member"
 }

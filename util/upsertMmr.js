@@ -10,11 +10,11 @@ function doStuff(pg, mika, row, resolve, reject) {
             row.sat = now;
             resolve(row);
         }).catch(err => {
-            err._origin = "postgres";
+            (err || {})._origin = "postgres";
             reject(err);
         });
     }).catch(err => {
-        err._origin = "mika";
+        (err || {})._origin = "mika";
         reject(err);
     });
 }

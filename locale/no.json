@@ -254,5 +254,12 @@
     "help_cmd_nextmatch_usage": "nextmatch <medlem>",
     "help_cmd_nextmatch_desc": "Venter for at den registrerte brukeren som du mentioner blir ferdig med spillet, og poster det etterpå.",
     "bot_register_error": "Jeg kan ikke sende deg direktemeldinger! Vennligst slå på direktemeldinger for denne serveren så jeg kan fullføre registreringsprosessen.",
-    "info_help_server_text": "Besøk supportserveren hvis du har noen spørsmål angående listen-bot. Det er også en FAQ-kanal som kan svare på spørsmålet ditt. %s"
+    "info_help_server_text": "Besøk supportserveren hvis du har noen spørsmål angående listen-bot. Det er også en FAQ-kanal som kan svare på spørsmålet ditt. %s",
+    "help_cmd_twenty_desc": "Shows some statistics from your last twenty matches.",
+    "help_cmd_twenty_usage": "%stwenty [<member>]",
+    "help_cmd_twenty_args_0": "`member`: *optional* A registered member.",
+    "help_cmd_leaderboard_usage": "leaderboard [<filter>]",
+    "help_cmd_leaderboard_desc": "Shows a leaderboard of winrates with certain optional filters.",
+    "help_cmd_leaderboard_filters_0": "`as <hero>`: shows everyone's winrate with a hero",
+    "help_cmd_leaderboard_filters_1": "`with <member>`: shows everyone's winrate with a member"
 }

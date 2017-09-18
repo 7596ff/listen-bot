@@ -257,5 +257,9 @@
     "info_help_server_text": "Visit the support server if you have any questions about listen-bot. There is also a FAQ channel that might answer your question. %s",
     "help_cmd_twenty_desc": "Shows some statistics from your last twenty matches.",
     "help_cmd_twenty_usage": "%stwenty [<member>]",
-    "help_cmd_twenty_args_0": "`member`: *optional* A registered member."
+    "help_cmd_twenty_args_0": "`member`: *optional* A registered member.",
+    "help_cmd_leaderboard_usage": "leaderboard [<filter>]",
+    "help_cmd_leaderboard_desc": "Shows a leaderboard of winrates with certain optional filters.",
+    "help_cmd_leaderboard_filters_0": "`as <hero>`: shows everyone's winrate with a hero",
+    "help_cmd_leaderboard_filters_1": "`with <member>`: shows everyone's winrate with a member"
 }

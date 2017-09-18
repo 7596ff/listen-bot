@@ -25,9 +25,9 @@
     "cron": "*/5 * *  *",
     "action": "publish"
 }, {
-    "name": "Cyborgmatt Updates",
-    "key": "listen:rss:cyborgmatt",
-    "url": "https://www.reddit.com/user/Cyborgmatt/submitted/.rss",
+    "name": "Wykrhm Updates",
+    "key": "listen:rss:wykrhm",
+    "url": "https://www.reddit.com/user/wykrhm/submitted/.rss",
     "type": "rss",
     "cron": "*/5 * * * *",
     "action": "publish"

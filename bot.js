@@ -796,5 +796,5 @@ sub.on("ready", () => {
     sub.subscribe("listen:rss:blog");
     sub.subscribe("listen:rss:steamnews");
     sub.subscribe("listen:rss:belvedere");
-    sub.subscribe("listen:rss:cyborgmatt");
+    sub.subscribe("listen:rss:wykrhm");
 });

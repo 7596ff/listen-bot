@@ -46,7 +46,7 @@ async function consumeResponse(feed, body) {
             }
         }
 
-        if (feed.key === "listen:rss:belvedere" || feed.key === "listen:rss:cyborgmatt") {
+        if (feed.key === "listen:rss:belvedere" || feed.key === "listen:rss:wykrhm") {
             post.title = body.feed.entry[0].title;
             post.link = body.feed.entry[0].link.$.href;
             post.guid = body.feed.entry[0].id;

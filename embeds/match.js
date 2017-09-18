@@ -19,7 +19,7 @@ const game_modes = [
     "Limited Heroes",
     "Compendium Ranked",
     "Custom", 
-    "Captian's Draft",
+    "Captain's Draft",
     "Balanced Draft",
     "Ability Draft",
     "Event",

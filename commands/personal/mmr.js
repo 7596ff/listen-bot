@@ -11,7 +11,7 @@ async function all(ctx) {
         let res = await ctx.client.pg.query("SELECT * FROM public.users;");
         let rows = res.rows.filter((row) => ctx.guild.members.get(row.id));
 
-        msg = await ctx.send(ctx.strings.get("mmr_in_progress", prettyMs(rows.length * 1000, { verbose: true })));
+        msg = await ctx.send(ctx.strings.get("mmr_in_progress", prettyMs(rows.length * 500, { verbose: true })));
 
         let queries = rows.map((row) => upsertMmr(ctx.client.pg, ctx.client.mika, row, false));
         let results = await Promise.all(queries);

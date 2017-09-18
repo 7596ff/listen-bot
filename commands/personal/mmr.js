@@ -34,7 +34,7 @@ async function all(ctx) {
         ctx.client.watchers[msg.id] = watcher;
         return Promise.resolve();
     } catch (err) {
-        console.error(err);
+        ctx.error(err);
         if (msg) return msg.edit(":x: " + ctx.strings.get("bot_generic_error"));
         return ctx.failure(ctx.strings.get("bot_generic_error"));
     }
@@ -67,7 +67,7 @@ async function exec(ctx) {
         let embed = singleMmrEmbed.call(ctx.strings, upserted);
         return ctx.embed(embed);
     } catch (err) {
-        console.error(err);
+        ctx.error(err);
         return ctx.failure(ctx.strings.get("bot_generic_error"));
     }
 }

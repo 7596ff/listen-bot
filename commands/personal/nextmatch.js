@@ -25,7 +25,7 @@ async function exec(ctx) {
 
         return ctx.send(ctx.strings.get("nextmatch_success", ctx.client.users.get(ID).username));
     } catch (err) {
-        console.error(err);
+        ctx.error(err);
         return ctx.failure(ctx.strings.get("bot_generic_error"));
     }
 }

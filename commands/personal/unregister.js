@@ -21,7 +21,7 @@ async function exec(ctx) {
             return ctx.failure(ctx.strings.get("unregister_no_account"));
         }
     } catch (err) {
-        console.error(err);
+        ctx.error(err);
         ctx.failure(ctx.strings.get("bot_generic_error"));
     }
 }

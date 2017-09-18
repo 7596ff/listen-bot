@@ -59,7 +59,7 @@ async function exec(ctx) {
         let promises = discordIDs.map((id) => checkDiscordID(ctx.client.pg, id));
         results = await Promise.all(promises);
     } catch (err) {
-        console.error(err);
+        ctx.error(err);
         return ctx.failure(ctx.strings.get("bot_generic_error"));
     }
 
@@ -95,7 +95,7 @@ async function exec(ctx) {
             return ctx.failure(ctx.strings.get("lastmatch_no_match"));
         }
     } catch (err) {
-        console.error(err);
+        ctx.error(err);
         return ctx.failure(ctx.strings.get("bot_mika_error"));
     }
 

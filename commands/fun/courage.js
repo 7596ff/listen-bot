@@ -51,8 +51,8 @@ async function exec(ctx) {
         let promises = to_download.map((uri) => getBuffer(`http://cdn.dota2.com/apps/dota2${uri}`, `${__dirname}/../..${uri}`));
         res = await Promise.all(promises);
     } catch (err) {
-        console.error(err);
-        return ctx.send("Something went wrong.");
+        ctx.error(err);
+        return ctx.failure(ctx.strings.get("bot_generic_error"));
     }
 
     var canvas = new Canvas(365, 128);

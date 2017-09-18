@@ -24,7 +24,7 @@ const subcommands = {
         try {
             res = await ctx.client.pg.query("SELECT * FROM scores ORDER BY score DESC;");
         } catch (err) {
-            console.error(err);
+            ctx.error(err);
             return ctx.failure(ctx.strings.get("bot_generic_error"));
         }
 
@@ -51,7 +51,7 @@ const subcommands = {
         try {
             res = await ctx.client.pg.query("SELECT * FROM scores ORDER BY score DESC LIMIT 1;")
         } catch (err) {
-            console.error(err);
+            ctx.error(err);
             return ctx.failure(ctx.strings.get("bot_generic_error"));
         }
 
@@ -75,7 +75,7 @@ const subcommands = {
         try {
             res = await ctx.client.pg.query("SELECT * FROM scores ORDER BY score DESC;");
         } catch (err) {
-            console.error(err);
+            ctx.error(err);
             return ctx.failure(ctx.strings.get("bot_generic_error"));
         }
 

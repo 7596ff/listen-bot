@@ -27,7 +27,7 @@ async function exec(ctx) {
             try {
                 ID = await resolveVanityURL(ID);
             } catch (err) {
-                console.error(err);
+                ctx.error(err);
                 return ctx.failure(ctx.strings.get("register_bad_vanity"));
             }
         }
@@ -47,7 +47,7 @@ async function exec(ctx) {
     try {
         res = await ctx.client.mika.getPlayer(ID);
     } catch (err) {
-        console.error(err);
+        ctx.error(err);
         return ctx.failure(ctx.strings.get("bot_generic_error"));
     }
 
@@ -79,7 +79,7 @@ async function exec(ctx) {
         if (err.response && JSON.parse(err.response).code === 50007) {
             return ctx.failure(ctx.strings.get("bot_register_error"));
         } else {
-            console.error(err);
+            ctx.error(err);
             return ctx.failure(ctx.strings.get("bot_generic_error"));
         }
     }

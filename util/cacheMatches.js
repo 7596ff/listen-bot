@@ -9,7 +9,7 @@ async function cacheMatches(redis, mika, row) {
     };
 
     let matches = await mika.getPlayerMatches(row.dotaid, { included_account_id: row.dotaid });
-    await redis.setexAsync(key, 3600, JSON.stringify(matches));
+    // await redis.setexAsync(key, 3600, JSON.stringify(matches)); // we can't hold this much data in our redis instance
     return {
         id: row.id,
         dotaid: row.dotaid,

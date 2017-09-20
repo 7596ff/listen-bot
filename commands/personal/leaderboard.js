@@ -15,6 +15,8 @@ function findPlayerTeam(match, account_id) {
 }
 
 async function exec(ctx) {
+    return ctx.delete(20000, "This command is disabled until further notice. Sorry for the inconvenience.");
+
     let rows;
     let msg = false;
     try {

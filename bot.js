@@ -475,7 +475,7 @@ async function publishMatches(data) {
             if (posted) continue;
 
             await publishMatch(channel, JSON.parse(JSON.stringify(match)));
-            await client.redis.setAsync(key, true);
+            await client.redis.setexAsync(key, 3600, true);
             finished.push(channel);
         } catch (err) {
             console.error(err.message || err);
@@ -752,13 +752,6 @@ client.on("messageCreate", async function(message) {
     if (message.member && message.member.bot) return;
     if (message.author && message.author.id == client.user.id) return;
     if (!message.author) return;
-
-    try {
-        let ban_status = await client.redis.getAsync(`listen:banned:${message.author.id}`);
-        if (ban_status) return;
-    } catch (err) {
-        client.helper.log(message, `couldnt check if ${message.author.id}/${message.author.username} is banned`);
-    }
 
     if (message.channel.guild.id == "137589613312081920" && message.content.match("<:ixmikeW:256896118380691466>")) message.content = `${config.default_prefix}mike`;
     if (message.channel.guild.id == "137589613312081920" && message.content.match("<:rtzW:302222677991620608>")) message.content = `${config.default_prefix}arteezy`;

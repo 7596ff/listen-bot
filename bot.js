@@ -526,7 +526,62 @@ async function addUser(discord_id, dota_id) {
     }
 }
 
+async function publishFeed(channel, message) {
+    let feed = channel.split(":")[2];
+    let res, content;
+
+    try {
+        res = await client.pg.query({
+            "text": "SELECT channel FROM subs WHERE value = $1;",
+            "values": [feed]
+        });
+
+        content = `New feed post from ${message.author}: **${message.title}**\n<${message.link}>`;
+    } catch (err) {
+        console.error(err);
+    }
+
+    for (let row of res.rows) {
+        console.log(row)
+        try {
+            let msg = { content: content.slice() };
+
+            let guild = client.channelGuildMap[row.channel]
+            if (guild) {
+                let config = await cacheGcfg(guild);
+
+                if (config.announce && config.announce == guild) {
+                    msg.disableEveryone = false;
+                    msg.content = `@everyone ${msg.content}`
+                } else if (config.announce != 0) {
+                    msg.content = `<@&${config.announce}> ${msg.content}`;
+                }
+            }
+
+            await client.createMessage(row.channel, msg);
+        } catch (err) {
+            if (!err.response) return;
+
+            let msg = JSON.parse(err.response);
+            if (msg.code == 10003 || msg.code == 50001) { // channel is deleted or bot left server
+                client.pg.query({
+                    "text": "DELETE FROM subs WHERE channel = $1 RETURNING channel;",
+                    "values": [row.channel]
+                }).then((res) => {
+                    console.log(`deleted channel ${res.rows[0].channel}`);
+                });
+            } else if (msg.code == 50013) {
+                console.error(`no permission for channel ${row.channel}`);
+            } else {
+                console.error(row.channel);
+                console.error(msg);
+            }
+        }
+    }
+}
+
 sub.on("message", (channel, message) => {
+    console.log(channel)
     try {
         message = JSON.parse(message);
     } catch (err) {
@@ -562,40 +617,9 @@ sub.on("message", (channel, message) => {
 
     if (channel == "listen:matches:out") publishMatches(message);
 
-    if (channel.includes("listen:rss")) {
-        let feed = channel.split(":")[2];
-        client.pg.query({
-            "text": "SELECT channel FROM subs WHERE value = $1;",
-            "values": [feed]
-        }).catch((err) => console.error(err)).then((res) => {
-            let msg = [
-                `New feed post from ${message.author}: **${message.title}**`,
-                `<${message.link}>`
-            ].join("\n");
-            res.rows.forEach((row) => {
-                client.createMessage(row.channel, msg).catch((err) => {
-                    if (err.response) {
-                        let msg = JSON.parse(err.response);
-                        if (msg.code == 10003 || msg.code == 50001) { // channel is deleted or bot left server
-                            client.pg.query({
-                                "text": "DELETE FROM subs WHERE channel = $1 RETURNING channel;",
-                                "values": [row.channel]
-                            }).then((res) => {
-                                console.log(`deleted channel ${res.rows[0].channel}`);
-                            });
-                        } else if (msg.code == 50013) {
-                            console.error(`no permission for channel ${row.channel}`);
-                        } else {
-                            console.error(row.channel);
-                            console.error(msg);
-                        }
-                    } else {
-                        console.error(err);
-                    }
-                });
-            });
-        });
-    }
+    if (channel.includes("listen:rss")) publishFeed(channel, message);
+
+    console.log(message)
 });
 
 async function invoke(message, client, helper, cmd) {

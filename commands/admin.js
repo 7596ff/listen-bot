@@ -267,7 +267,7 @@ const subcommands = {
                 ctx.error(err);
                 return ctx.failure(ctx.strings.get("bot_generic_error"));
             }
-        } else if (ctx.options.join(" ") == "none") {
+        } else if (ctx.options[0] == "none") {
             try {
                 let res = await ctx.client.pg.query({
                     text: "SELECT subrole FROM public.guilds WHERE id = $1;",
@@ -298,6 +298,49 @@ const subcommands = {
                 return ctx.failure(ctx.strings.get("bot_generic_error"));
             }
         } else {
+            return ctx.failure("Couldn't find a role.");
+        }
+    },
+    announce: async function(ctx) {
+        let roles = FuzzySet(ctx.guild.roles.map((role) => role.name));
+        let match = roles.get(ctx.options.join(" "));
+        if (match && match[0][0] > 0.8 && !(ctx.options[0] == "everyone" || ctx.options[0] == "@everyone")) {
+            try {
+                let role = ctx.guild.roles.find((role) => role.name == match[0][1]);
+
+                await ctx.client.pg.query({
+                    "text": "UPDATE guilds SET announce = $1 WHERE id = $2;",
+                    "values": [role.id, ctx.guild.id]
+                });
+
+                return ctx.embed({
+                    description: `Updated subscription announce role to ${role.mention}. Make sure this role is mentionable in it's settings!`
+                });
+            } catch (err) {
+                ctx.error(err);
+                return ctx.failure(ctx.strings.get("bot_generic_error"));
+            }
+        } else if (ctx.options[0] == "everyone" || ctx.options[0] == "@everyone") {
+            await ctx.client.pg.query({
+                "text": "UPDATE guilds SET announce = $1 WHERE id = $1;",
+                "values": [ctx.guild.id]
+            });
+
+            return ctx.success("Updated subscription announce role to @everyone.\nMake sure I have the permission to use *Mention Everyone* in this server or channel!");
+        } else if (ctx.options[0] == "none") {
+            try {
+                await ctx.client.pg.query({
+                    text: "UPDATE public.guilds SET announce = 0 WHERE id = $1;",
+                    values: [ctx.guild.id]
+                });
+
+                return ctx.success("Subscription announce role removed.");
+            } catch (err) {
+                ctx.error(err);
+                return ctx.failure(ctx.strings.get("bot_generic_error"));
+            }
+        } else {
+            console.log(ctx.options)
             return ctx.failure("Couldn't find a role.");
         }
     }

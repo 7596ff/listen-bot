@@ -542,7 +542,6 @@ async function publishFeed(channel, message) {
     }
 
     for (let row of res.rows) {
-        console.log(row)
         try {
             let msg = { content: content.slice() };
 
@@ -581,7 +580,6 @@ async function publishFeed(channel, message) {
 }
 
 sub.on("message", (channel, message) => {
-    console.log(channel)
     try {
         message = JSON.parse(message);
     } catch (err) {
@@ -618,8 +616,6 @@ sub.on("message", (channel, message) => {
     if (channel == "listen:matches:out") publishMatches(message);
 
     if (channel.includes("listen:rss")) publishFeed(channel, message);
-
-    console.log(message)
 });
 
 async function invoke(message, client, helper, cmd) {

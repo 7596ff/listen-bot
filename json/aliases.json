@@ -789,4 +789,18 @@
     "aliases": ["monkey king", "mk", "moo", "monkey_king"],
     "oldname": "Sun Wukong",
     "emoji": "333771113920200704"
+}, {
+    "name": "dark_willow",
+    "id": 119,
+    "local": "Dark Willow",
+    "aliases": ["sylph"],
+    "oldname": "Dark Willow",
+    "emoji": "316235646555652096"
+}, {
+    "name": "pangolier",
+    "id": 120,
+    "local": "Pangolier",
+    "aliases": ["pangolin"],
+    "oldname": "Pangolier",
+    "emoji": "316235646555652096"
 }]

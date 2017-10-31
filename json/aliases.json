@@ -793,14 +793,14 @@
     "name": "dark_willow",
     "id": 119,
     "local": "Dark Willow",
-    "aliases": ["sylph"],
+    "aliases": ["dark willow", "sylph"],
     "oldname": "Dark Willow",
     "emoji": "316235646555652096"
 }, {
     "name": "pangolier",
     "id": 120,
     "local": "Pangolier",
-    "aliases": ["pangolin"],
+    "aliases": ["pangolier", "pangolin"],
     "oldname": "Pangolier",
     "emoji": "316235646555652096"
 }]

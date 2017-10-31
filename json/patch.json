@@ -2,6 +2,537 @@
     "heroes": {
         "ancient_apparition": {
             "changes": [
+                "• Chilling Touch duration rescaled from 30 to 20/24/28/32",
+                "• Chilling Touch no longer reduces allies attack speed.",
+                "• Chilling Touch magic damage reduced from 50/60/70/80 to 30/45/60/75",
+                "• Chilling Touch now applies a stacking 30% slow for 0.3 seconds."
+            ],
+            "true_name": "ancient_apparition",
+            "format_name": "Ancient Apparition"
+        },
+        "bane": {
+            "changes": [
+                "• Bane can attack nightmared units without waking them.",
+                "• All cast points reduced from 0.5 to 0.4",
+                "• Nightmare no longer deals 20 damage per second."
+            ],
+            "format_name": "Bane",
+            "true_name": "bane"
+        },
+        "batrider": {
+            "changes": [
+                "• Flamebreak projectile now visually flies on an arc."
+            ],
+            "format_name": "Batrider",
+            "true_name": "batrider"
+        },
+        "beastmaster": {
+            "changes": [
+                "• Hero Reworked: <http://www.dota2.com/duelingfates> CTRL+F Beastmaster"
+            ],
+            "format_name": "Beastmaster",
+            "true_name": "beastmaster"
+        },
+        "bloodseeker": {
+            "changes": [
+                "• Rupture cast range reduced from 1000 to 800"
+            ],
+            "true_name": "bloodseeker",
+            "format_name": "Bloodseeker"
+        },
+        "bounty_hunter": {
+            "changes": [
+                "• Track can now be alt-clicked to alert your team to how much gold the target has (this information is already available in the track debuff tooltip)."
+            ],
+            "true_name": "bounty_hunter",
+            "format_name": "Bounty Hunter"
+        },
+        "broodmother": {
+            "changes": [
+                "• Hero Reworked: <http://www.dota2.com/duelingfates> CTRL+F Broodmother"
+            ],
+            "format_name": "Broodmother",
+            "true_name": "broodmother"
+        },
+        "chen": {
+            "changes": [
+                "• Attack range increased from 600 to 650",
+                "• Removed Test of Faith (Teleport)",
+                "• Holy Persuasion can be cast on allied units to send them home after a 6/5/4/3 second delay and on yourself to teleport your creeps to you.",
+                "• Holy Persuasion mana cost rescaled from 100 to 100/110/120/130",
+                "• Test of Faith can now target allies, healing for half of the damage values. Always applies max values to yourself.",
+                "• Test of Faith mana cost rescaled from 90/100/110/120 to 60/80/100/120"
+            ],
+            "true_name": "chen",
+            "format_name": "Chen"
+        },
+        "clinkz": {
+            "changes": [
+                "• Agility growth reduced from 3.3 to 2.6",
+                "• Death Pact HP reduced from 50/70/90 to 40/60/80%",
+                "• Death Pact damage reduced from 5/7/9% to 4/6/8%",
+                "• Reworked Strafe. Now gives you +80/140/200/260 Attack Speed for 3 seconds. During this time you will automatically dodge up to 3 projectiles (ranged attacks or spells), stepping to the side slightly upon impact. Strafe ends if you lose the 3 stacks. CD: 45/35/25/15."
+            ],
+            "true_name": "clinkz",
+            "format_name": "Clinkz"
+        },
+        "dazzle": {
+            "changes": [
+                "• Reworked Poison Touch. Targets a unit and releases a poison that splashes on nearby targets (like Ethershock targeting). Applies a DPS and a slow to the targeted enemies. Anytime a poisoned target gets attacked, the debuff duration gets refreshed. Deals 10/20/30/40 DPS and slows for 14/16/18/20%. Lasts 4/5/6/7 seconds. Affects up to 4/5/6/7 targets. Cooldown: 35/30/25/20. Mana cost: 80. Cast Range: 600/700/800/900. Physical damage type. Gets refreshed by the same target rules as Blink (player-controlled units and Roshan)."
+            ],
+            "format_name": "Dazzle",
+            "true_name": "dazzle"
+        },
+        "dragon_knight": {
+            "changes": [
+                "• Breathe Fire now reduces total attack damage and not just base damage.",
+                "• Breathe Fire attack damage reduction reduced from 35% to 25%",
+                "• Breathe Fire cast point increased from 0 to 0.2",
+                "• Breathe Fire distance increased from 650 to 750"
+            ],
+            "format_name": "Dragon Knight",
+            "true_name": "dragon_knight"
+        },
+        "drow_ranger": {
+            "changes": [
+                "• Added a visual effect on creeps when Precision Aura is cast"
+            ],
+            "format_name": "Drow Ranger",
+            "true_name": "drow_ranger"
+        },
+        "earthshaker": {
+            "changes": [
+                "• Echo Slam initial damage removed",
+                "• Echo Slam Echo Damage increased from 40/55/70 to 60/85/110",
+                "• Echo Slam bounces twice off of non-illusion heroes"
+            ],
+            "format_name": "Earthshaker",
+            "true_name": "earthshaker"
+        },
+        "elder_titan": {
+            "changes": [
+                "• Echo Stomp now wakes up if the target takes more than 50/100/150/200 cumulative damage (no longer has exception for player owned damage source or not).",
+                "• Added visual effects for Natural Order"
+            ],
+            "true_name": "elder_titan",
+            "format_name": "Elder Titan"
+        },
+        "enchantress": {
+            "changes": [
+                "• Enchant now removes positive buffs on enemy heroes."
+            ],
+            "format_name": "Enchantress",
+            "true_name": "enchantress"
+        },
+        "gyrocopter": {
+            "changes": [
+                "• Removed Homing Missile cast point",
+                "• Homing Missile will find a new target if its primary target dies. Prioritizes heroes.",
+                "• Homing Missile speed increased from 340 to 500",
+                "• Homing Missile launch delay increased from 2 to 3 seconds",
+                "• Homing Missile now does a fixed amount of damage, rescaled from a max of 125/250/375/500 to a fixed 100/175/250/325",
+                "• Homing Missile hits to destroy from 3/3/4/5 to 3/3/4/4"
+            ],
+            "format_name": "Gyrocopter",
+            "true_name": "gyrocopter"
+        },
+        "wisp": {
+            "changes": [
+                "• Relocate cooldown increased from 100/80/60 to 120/100/80",
+                "• Max Spirits range reduced from 875 to 700"
+            ],
+            "format_name": "io",
+            "true_name": "wisp"
+        },
+        "jakiro": {
+            "changes": [
+                "• Juggernaut is no longer silenced while using Blade Fury (but still cannot cast Omnislash; can cast ward)."
+            ],
+            "format_name": "Jakiro",
+            "true_name": "jakiro"
+        },
+        "juggernaut": {
+            "changes": [
+                "• Base movement speed reduced by 5"
+            ],
+            "format_name": "Juggernaut",
+            "true_name": "juggernaut"
+        },
+        "keeper_of_the_light": {
+            "changes": [
+                "• Mana Leak cast range reduced from 550/700/850/1000 to 400/500/600/700"
+            ],
+            "format_name": "Keeper of the Light",
+            "true_name": "keeper_of_the_light"
+        },
+        "kunkka": {
+            "changes": [
+                "• Kunkka is no longer restricted from using Quelling Blade."
+            ],
+            "format_name": "Kunkka",
+            "true_name": "kunkka"
+        },
+        "lich": {
+            "changes": [
+                "• Chainfrost is now reflected on initial projectile impact, rather than on cast time.",
+                "• Ice Armor slow rescaled from 24/26/28/30% to 8/16/24/32%"
+            ],
+            "format_name": "Lich",
+            "true_name": "lich"
+        },
+        "lone_druid": {
+            "changes": [
+                "• Battle Cry cooldown reduced from 60 to 45",
+                "• Battle Cry duration reduced from 6 to 5"
+            ],
+            "format_name": "Lone Druid",
+            "true_name": "lone_druid"
+        },
+        "lycan": {
+            "changes": [
+                "• Fixed Break not disabling Feral Impulse"
+            ],
+            "format_name": "Lycan",
+            "true_name": "lycan"
+        },
+        "magnataur": {
+            "changes": [
+                "• Shockwave Scepter speed increased from 1575 to 1700"
+            ],
+            "format_name": "Magnus",
+            "true_name": "magnataur"
+        },
+        "medusa": {
+            "changes": [
+                "• Stone Gaze slow no longer continues to affect targets after they turn away from Medusa.",
+                "• Stone Gaze can now be reapplied after it wears off if the target continues to face Medusa (timer on facing direction is reset after a Stone debuff is over).",
+                "• Split Shot is now a passive.",
+                "• Split Shot projectiles rescaled from 1/2/3/4 to 3",
+                "• Split Shot rescaled from -20% damage to -65/50/35/20%",
+                "• Split Shot no longer reduces damage for the primary target.",
+                "• Split Shot range now uses your attack range +100, rather than a fixed 700.",
+                "• Split Shot does not fire when attacking allied units."
+            ],
+            "format_name": "Medusa",
+            "true_name": "medusa"
+        },
+        "mirana": {
+            "changes": [
+                "• Reworked Leap. Has 3 charges. Leaps a distance of 550 per charge. Grants you movement and attack speed for 2 seconds. Replenish Time: 60/50/40/30. Mana cost: 40. Movement Speed: 8/16/24/32%. Attack Speed: 25/50/75/100. Leap bonus affects only Mirana."
+            ],
+            "true_name": "mirana",
+            "format_name": "Mirana"
+        },
+        "monkey_king": {
+            "changes": [
+                "• Base damage reduced by 3",
+                "• Jingu Mastery bonus damage rescaled from 75/100/125/150 to 60/90/120/150",
+                "• Monkey King no longer destroys trees he is standing on during Scepter Stampede."
+            ],
+            "true_name": "monkey_king",
+            "format_name": "Monkey King"
+        },
+        "morphling": {
+            "changes": [
+                "• Hero Reworked: <http://www.dota2.com/duelingfates> CTRL+F Morphling"
+            ],
+            "format_name": "Morphling",
+            "true_name": "morphling"
+        },
+        "naga_siren": {
+            "changes": [
+                "• Ensnare mana cost rescaled from 100 to 70/80/90/100"
+            ],
+            "true_name": "naga_siren",
+            "format_name": "Naga Siren"
+        },
+        "necrolyte": {
+            "changes": [
+                "• Ghost Shroud slow reduced from 12/20/28/36 to 6/12/18/24",
+                "• Ghost Shroud bonus magic damage taken increased from 25% to 30%",
+                "• Heartstopper Aura range reduced from 900 to 700",
+                "• Heartstopper Aura rescaled from 0.6/1.0/1.4/1.8 to 0.5/1.0/1.5/2.0",
+                "• Reaper's Scythe cooldown increased from 100 to 120",
+                "• Reaper's Scythe mana cost from 175/340/500 to 200/350/500"
+            ],
+            "format_name": "Necrophos",
+            "true_name": "necrolyte"
+        },
+        "night_stalker": {
+            "changes": [
+                "• Daytime vision reduced from 1200 to 800"
+            ],
+            "format_name": "Night Stalker",
+            "true_name": "night_stalker"
+        },
+        "nyx_assassin": {
+            "changes": [
+                "• Spiked Carapace damage return mechanics now work like Blademail (still returns only once per enemy, does not stun the Spell Immune)."
+            ],
+            "format_name": "Nyx Assassin",
+            "true_name": "nyx_assassin"
+        },
+        "omniknight": {
+            "changes": [
+                "• Guardian Angel cast point reduced from 0.5 to 0.4"
+            ],
+            "format_name": "Omniknight",
+            "true_name": "omniknight"
+        },
+        "oracle": {
+            "changes": [
+                "• False Promise visual effects now show if the hero will die or not."
+            ],
+            "format_name": "Oracle",
+            "true_name": "oracle"
+        },
+        "phantom_lancer": {
+            "changes": [
+                "• Phantom Rush can now be toggled to disable it (default state is enabled).",
+                "• Doppelganger now adds 2 seconds duration to all your illusions."
+            ],
+            "format_name": "Phantom Lancer",
+            "true_name": "phantom_lancer"
+        },
+        "puck": {
+            "changes": [
+                "• Dreamcoil no longer deals 100/150/200 damage on cast.",
+                "• Dreamcoil link break damage increased from 100/150/200 to 300/400/500 (Scepter damage increased from 200/250/300 to 400/550/700)"
+            ],
+            "format_name": "Puck",
+            "true_name": "puck"
+        },
+        "pudge": {
+            "changes": [
+                "• Meat Hook can pull Runes back to you. Mana cost is refunded if successful.",
+                "• Dismember now pulls the target closer to Pudge."
+            ],
+            "format_name": "Pudge",
+            "true_name": "pudge"
+        },
+        "pugna": {
+            "changes": [
+                "• Life Drain range reduced by 100",
+                "• Decrepify can now target Tombstone."
+            ],
+            "format_name": "Pugna",
+            "true_name": "pugna"
+        },
+        "razor": {
+            "changes": [
+                "• Base movement speed reduced by 5",
+                "• Reworked Unstable Current",
+                "  - Passive: 4/8/12/16% Movement Bonus (like before)",
+                "  - Every 5 seconds, a random enemy within 350 AoE will be shocked, taking 100/130/160/190 damage and getting purged (40% slow for 0.5/1/1.5/2 seconds, dispells positive buffs)."
+            ],
+            "format_name": "Razor",
+            "true_name": "razor"
+        },
+        "riki": {
+            "changes": [
+                "• Base movement speed reduced by 5",
+                "• Enemy units in Smoke Screen have no vision.",
+                "• Backstab damage can now be used in procs like Critical Strike, Cleave, etc.",
+                "• Backstab damage reduced from 0.5/0.75/1.0/1.25 to 0.4/0.6/0.8/1.0"
+            ],
+            "format_name": "Riki",
+            "true_name": "riki"
+        },
+        "rubick": {
+            "changes": [
+                "• Null Field can now be toggled between defensive and offensive forms. Has a 30 second cooldown once toggled. Offensive form reduces enemy magic resistance.",
+                "• Null Field AoE increased from 900 to 1200"
+            ],
+            "format_name": "Rubick",
+            "true_name": "rubick"
+        },
+        "shadow_demon": {
+            "changes": [
+                "• Demonic Purge now works on cycloned units.",
+                "• Soul Catcher no longer splits its effect, it only affects one unit in the area.",
+                "• Shadow Poison radius increased from 190 to 200",
+                "• When an enemy dies under Soul Catcher, an illusion of them is created under your control. Lasts until they respawn or it is killed. Deals 30/45/60/75% damage and takes 200% damage."
+            ],
+            "format_name": "Shadow Demon",
+            "true_name": "shadow_demon"
+        },
+        "nevermore": {
+            "changes": [
+                "• Shadow Raze damage reduced from 100/175/250/325 to 90/160/230/300",
+                "• Shadow Raze now has a stack counter for each time an enemy gets hit. Causes the enemy to take 60 more Shadow Raze damage per stack. Lasts 8 seconds, gets refreshed on stack gain. (First hit does 0 bonus, next does 60, 120, etc.)"
+            ],
+            "format_name": "Shadow Fiend",
+            "true_name": "nevermore"
+        },
+        "silencer": {
+            "changes": [
+                "• Glaives of Wisdom damage from 35/50/65/80% to 15/30/45/60%"
+            ],
+            "format_name": "Silencer",
+            "true_name": "silencer"
+        },
+        "slardar": {
+            "changes": [
+                "• Guardian Sprint moves at 700 Speed along the river at ability-level 4"
+            ],
+            "format_name": "Slardar",
+            "true_name": "slardar"
+        },
+        "slark": {
+            "changes": [
+                "• Fixed a bug with Pounce where you could sometimes force yourself out if you were not moving on pounce impact."
+            ],
+            "true_name": "slark",
+            "format_name": "Slark"
+        },
+        "spectre": {
+            "changes": [
+                "• Desolate now applies a debuff that reduces the unit's vision by 40/50/60/70% for 5 seconds."
+            ],
+            "format_name": "Spectre",
+            "true_name": "spectre"
+        },
+        "spirit_breaker": {
+            "changes": [
+                "• Charge of Darkness no longer goes into cooldown when you die.",
+                "• Spirit Breaker base HP regen reduced by 1",
+                "• Greater Bash damage rescaled from 22/30/38/46 to 12/24/36/48%"
+            ],
+            "format_name": "Spirit Breaker",
+            "true_name": "spirit_breaker"
+        },
+        "techies": {
+            "changes": [
+                "• Proximity Mines bounty reduced from 50 to 25",
+                "• Proximity Mines damage increased from 150/350/550/750 to 200/400/600/800"
+            ],
+            "format_name": "Techies",
+            "true_name": "techies"
+        },
+        "templar_assassin": {
+            "changes": [
+                "• Psionic Traps now deal 100/125/150 damage when fully charged (dealt over the duration of the debuff rather than instantly)."
+            ],
+            "format_name": "Templar Assassin",
+            "true_name": "templar_assassin"
+        },
+        "tidehunter": {
+            "changes": [
+                "• Ravage AoE increased from 1025 to 1250",
+                "• Ravage speed reduced from 775 to 725"
+            ],
+            "format_name": "Tidehunter",
+            "true_name": "tidehunter"
+        },
+        "tinker": {
+            "changes": [
+                "• Rearm now affects items in the backpack.",
+                "• Heat Seeking Missiles travel speed reduced from 900 to 700",
+                "• Heat Seeking Missiles mana cost reduced from 120/140/160/180 to 80/100/120/140"
+            ],
+            "format_name": "Tinker",
+            "true_name": "tinker"
+        },
+        "tiny": {
+            "changes": [
+                "• Hero Reworked: <http://www.dota2.com/duelingfates> CTRL+F Tiny"
+            ],
+            "true_name": "tiny",
+            "format_name": "Tiny"
+        },
+        "troll_warlord": {
+            "changes": [
+                "• Whirling Axes ability icons are always visible on the UI, but disabled when unavailable due to melee/range form.",
+                "• Whirling Axes (ranged) cooldown reduced from 19/16/13/10 to 9",
+                "• Whirling Axes (ranged) slow reduced from 3/3.75/4.5/5.25 to 2.5/3/3.5/4",
+                "• Whirling Axes (ranged) slow amount increased from 30% to 40%",
+                "• Whirling Axes (melee) cooldown reduced from 12 to 9",
+                "• Whirling Axes (melee) blind duration rescaled from 4/5/6/7 to 5"
+            ],
+            "format_name": "Troll Warlord",
+            "true_name": "troll_warlord"
+        },
+        "undying": {
+            "changes": [
+                "• Tombstone duration rescaled from 15/20/25/30 to 30",
+                "• Tombstone AoE rescaled from 600/800/1000/1200 to 1200",
+                "• Tombstone spawn rate rescaled from 3 to 4.5/4/3.5/3",
+                "• Tombstone cooldown rescaled from 70 to 85/80/75/70",
+                "• Reduced Tombstone zombie collision size",
+                "• Decay mana cost rescaled from 70/90/110/130 to 70/85/100/115",
+                "• Decay damage from 20/60/100/140 to 20/50/80/110"
+            ],
+            "true_name": "undying",
+            "format_name": "Undying"
+        },
+        "vengefulspirit": {
+            "changes": [
+                "• Wave of Terror vision AoE reduced from 500 to 300 (same as impact radius)",
+                "• Wave of Terror cooldown reduced from 22/20/18/16 to 10",
+                "• Wave of Terror debuff duration reduced from 15 to 8",
+                "• Scepter Illusion damage increased from 50% to 100%",
+                "• Vengeance Aura AoE increased from 900 to 1200",
+                "• Vengeance Aura no longer applied to enemies when you die",
+                "• Whenever an allied hero dies under your damage aura, an illusion of that hero will be created, attacking the enemy that killed him for 7 seconds. Illusions deal 100% Damage. Illusions are ghosts/not targetable and are visible/known to the enemy."
+            ],
+            "true_name": "vengefulspirit",
+            "format_name": "Vengeful Spirit"
+        },
+        "venomancer": {
+            "changes": [
+                "• Base movement speed reduced by 5",
+                "• Base damage reduced by 3",
+                "• Venomous Gale can now be dispelled."
+            ],
+            "format_name": "Venomancer",
+            "true_name": "venomancer"
+        },
+        "viper": {
+            "changes": [
+                "• Hero Reworked: <http://www.dota2.com/duelingfates> CTRL+F Viper"
+            ],
+            "format_name": "Viper",
+            "true_name": "viper"
+        },
+        "visage": {
+            "changes": [
+                "• Familiar's attack is now a constant 25/40/55 rather than damage charges.",
+                "• Casting Grave Chill now gives the buff to Familiars within 900 AoE at cast time."
+            ],
+            "format_name": "Visage",
+            "true_name": "visage"
+        },
+        "windrunner": {
+            "changes": [
+                "• Focus Fire now allows Windranger to move while attacking the Focus Fire target.",
+                "• Focus Fire attack speed bonus reduced from 500 to 350",
+                "• Focus Fire cooldown increased from 60 to 70",
+                "• Shackleshot now shows an indicator for the missed area if it fails to latch onto a target."
+            ],
+            "true_name": "windrunner",
+            "format_name": "Windranger"
+        },
+        "witch_doctor": {
+            "changes": [
+                "• Death Ward now attacks the enemy hero nearest to the ward on creation"
+            ],
+            "format_name": "Witch Doctor",
+            "true_name": "witch_doctor"
+        },
+        "skeleton_king": {
+            "changes": [
+                "• Hero Reworked: <http://www.dota2.com/duelingfates> CTRL+F Wraith King"
+            ],
+            "format_name": "Wraith King",
+            "true_name": "skeleton_king"
+        }
+    },
+    "items": {},
+    "version": "7.07"
+},{
+    "heroes": {
+        "ancient_apparition": {
+            "changes": [
                 "• Ice Blast manacost increased from 100/125/150 to 150"
             ],
             "true_name": "ancient_apparition",

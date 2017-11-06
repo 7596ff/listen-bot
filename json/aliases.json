@@ -464,7 +464,7 @@
     "name": "ancient_apparition",
     "id": 68,
     "local": "Ancient Apparition",
-    "aliases": ["ancient apparition", "aa", "ancient_apparition"],
+    "aliases": ["ancient apparition", "aa", "ancient_apparition", "apparat"],
     "oldname": "Kaldr",
     "emoji": "333770466844082176"
 }, {
@@ -795,12 +795,12 @@
     "local": "Dark Willow",
     "aliases": ["dark willow", "sylph"],
     "oldname": "Dark Willow",
-    "emoji": "316235646555652096"
+    "emoji": "377022760318140416"
 }, {
     "name": "pangolier",
     "id": 120,
     "local": "Pangolier",
     "aliases": ["pangolier", "pangolin"],
     "oldname": "Pangolier",
-    "emoji": "316235646555652096"
+    "emoji": "377022760377122816"
 }]

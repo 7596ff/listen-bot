@@ -1,5 +1,188 @@
 [{
     "heroes": {
+        "antimage": {
+            "changes": [
+                "• Strength gain reduced from 1.5 to 1.3",
+                "• Base Intelligence reduced from 15 to 12",
+                "• Spell Shield reduced from 26/34/42/50% to 20/30/40/50%",
+                "• Level 15 changed from Blink Uncontrollable Illusion to +15 Agility",
+                "• Level 20 changed from +10 All Stats to Blink Uncontrollable Illusion",
+                "• Level 25 reduced from +30% Spell Shield to +25%",
+                "• Illusion talent incoming damage increased from 250% to 300%",
+                "• Fixed the illusion talent being able to be placed inside of your hero"
+            ],
+            "true_name": "antimage",
+            "format_name": "Anti-Mage"
+        },
+        "bane": {
+            "changes": [
+                "• Level 10 Talent changed from Enfeeble Steals Damage to +100 Cast Range",
+                "• Level 15 `Talent changed from +150 Cast Range to Enfeeble Steals Damage"
+            ],
+            "format_name": "Bane",
+            "true_name": "bane"
+        },
+        "beastmaster": {
+            "changes": [
+                "• Wild Axes manacost increased from 60/65/70/75 to 80",
+                "• Level 20 Talent reduced from +120 Wild Axes Damage to +100",
+                "• Boar damage reduced from 20/30/40/50 to 16/24/32/40"
+            ],
+            "format_name": "Beastmaster",
+            "true_name": "beastmaster"
+        },
+        "dark_willow": {
+            "changes": [
+                "• Bramble maze now does its damage over time (on 0.5 second intervals)",
+                "• Bedlam cooldown rescaled from 20 to 40/30/20",
+                "• Bedlam damage reduced from 75/150/225 to 60/140/220",
+                "• Cursed Crown cast range reduced from 800 to 600"
+            ],
+            "format_name": "Dark Willow",
+            "true_name": "dark_willow"
+        },
+        "dragon_knight": {
+            "changes": [
+                "• Level 15 Talent changed from +40% XP Gain to +35 Damage"
+            ],
+            "format_name": "Dragon Knight",
+            "true_name": "dragon_knight"
+        },
+        "drow_ranger": {
+            "changes": [
+                "• Level 20 Talent increased from +1.5s Gust Duration to +2s",
+                "• Precision Aura reduced from 20/26/32/38% to 16/22/28/34%"
+            ],
+            "format_name": "Drow Ranger",
+            "true_name": "drow_ranger"
+        },
+        "lone_druid": {
+            "changes": [
+                "• Spirit Bear HP regen increased from 2/3/4/5 to 4/5/6/7"
+            ],
+            "format_name": "Lone Druid",
+            "true_name": "lone_druid"
+        },
+        "medusa": {
+            "changes": [
+                "• Strength gain reduced from 1.95 to 1.5",
+                "• Level 10 Talent increased from 10% Evasion to +12%",
+                "• Level 15 Talent increased from 10% Mystic Snake Mana Steal to +15%",
+                "• Level 20 Talent increased from +2s Stone Gaze Duration to +2.5s",
+                "• Split Shot damage from 35/50/65/80% to 30/45/60/75%"
+            ],
+            "format_name": "Medusa",
+            "true_name": "medusa"
+        },
+        "mirana": {
+            "changes": [
+                "• Agility from 20 + 3.6 to 18 + 3.2"
+            ],
+            "true_name": "mirana",
+            "format_name": "Mirana"
+        },
+        "morphling": {
+            "changes": [
+                "• Restored in Captain's Mode",
+                "• Adaptive Strike (Agility) min damage multiplier increased from 0.25 to 0.5",
+                "• Adaptive Strike (Agility) max damage multiplier increased from 0.5/1.0/1.5/2.0 to 1.0/1.5/2.0/2.5",
+                "• Adaptive Strike (Strength) min stun increased from 0.25 to 0.5",
+                "• Attribute Shift Bonus Agility and Strength increased from 3/4/5/6 to 4/5/6/7",
+                "• Level 10 Talent changed from +20 Movement Speed to +300 Waveform Range",
+                "• Level 25 Talent changed from +800 Waveform Range to 2 Waveform Charges"
+            ],
+            "format_name": "Morphling",
+            "true_name": "morphling"
+        },
+        "kunkka": {
+            "changes": [
+                "• Level 25 Talent reduced from 4 Ghost Ships to 3"
+            ],
+            "format_name": "Kunkka",
+            "true_name": "kunkka"
+        },
+        "pangolier": {
+            "changes": [
+                "• Swashbuckle now changes your attack damage to 24/42/60/78 rather than just dealing physical damage as an independent nuke (this means the listed amount can now proc for lifesteal, crit, etc)",
+                "• Shield Crash damage reduction increased from 8/10/12/14 to 9/12/15/18%",
+                "• Shield Crash now causes you to move forward 225 units (can traverse terrain with it)",
+                "• Rolling Thunder now has a 1.2s cast time rather than a 1.2s channel period",
+                "• Rolling Thunder turn rate increased from 105/110/115 to 120",
+                "• Rolling Thunder speed increased from 550/575/600 to 600",
+                "• Rolling Thunder speed is now fixed",
+                "• Rolling Thunder damage increased from 200/250/300 to 200/275/350",
+                "• Fixed Swashbuckle attacks not affecting Spell Immune units",
+                "• Level 25 Talent increased from -12s Rolling Thunder to -16s"
+            ],
+            "format_name": "Pangolier",
+            "true_name": "pangolier"
+        },
+        "riki": {
+            "changes": [
+                "• Level 15 Talent increased from -4s Smokescreen Cooldown to -5s",
+                "• Base agility reduced from 34 to 30"
+            ],
+            "format_name": "Riki",
+            "true_name": "riki"
+        },
+        "spirit_breaker": {
+            "changes": [
+                "• Netherstrike cooldown rescaled from 80/70/60 to 100/80/60"
+            ],
+            "format_name": "Spirit Breaker",
+            "true_name": "spirit_breaker"
+        },
+        "sven": {
+            "changes": [
+                "• God's Strength bonus strength reduced from 12/24/36 to 10/20/30",
+                "• Level 25 Talent increased from -8s Stormhammer Cooldown to -9s"
+            ],
+            "format_name": "Sven",
+            "true_name": "sven"
+        },
+        "templar_assassin": {
+            "changes": [
+                "• Level 10 Talent increased from +200 Health to +250",
+                "• Psionic Traps bonus damage increased from 100/125/150 to 175/250/325"
+            ],
+            "format_name": "Templar Assassin",
+            "true_name": "templar_assassin"
+        },
+        "tiny": {
+            "changes": [
+                "• Base strength increased by 4",
+                "• Tree Grab cooldown from 40/32/24/16 to 15",
+                "• Tree Grab splash damage from 70% to 100%",
+                "• Tree Grab unit bonus damage increased from 25% to 30%",
+                "• Tree Grab attack count increased from 2/3/4/5 to 2/3/4/6",
+                "• Grow attack speed reduction rescaled from -30 to -20/25/30",
+                "• Tossed unit bonus damage increased from 20% to 30%",
+                "• Level 10 Talent increased from +25 Damage to +30",
+                "• Level 10 Talent increased from +15% Magic Resistance to +20%"
+            ],
+            "true_name": "tiny",
+            "format_name": "Tiny"
+        },
+        "vengefulspirit": {
+            "changes": [
+                "• Allied Death Illusion duration reduced from 7 to 6",
+                "• Base damage reduced by 3"
+            ],
+            "true_name": "vengefulspirit",
+            "format_name": "Vengeful Spirit"
+        },
+        "visage": {
+            "changes": [
+                "• Familiar attack damage increased from 25/40/55 to 30/45/60"
+            ],
+            "format_name": "Visage",
+            "true_name": "visage"
+        }
+    },
+    "items": {},
+    "version": "7.07b"
+},{
+    "heroes": {
         "ancient_apparition": {
             "changes": [
                 "• Chilling Touch duration rescaled from 30 to 20/24/28/32",

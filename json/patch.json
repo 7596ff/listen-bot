@@ -1,5 +1,306 @@
 [{
     "heroes": {
+        "alchemist": {
+            "changes": [
+                "• Level 10 Talent changed from +5 Armor to -5s Unstable Concoction Cooldown",
+                "• Level 15 Talent increased from +250 Health to +350 Health",
+                "• Level 20 Talent increased from +200 Unstable Concoction Damage to +360",
+                "• Level 25 Talent changed from -8s Unstable Concoction Cooldown to +30 Chemical Rage Regeneration"
+            ],
+            "true_name": "alchemist",
+            "format_name": "Alchemist"
+        },
+        "antimage": {
+            "changes": [
+                "• Mana Break damage reduced from 60% to 50%",
+                "• Blink cooldown increased from 12/9/7/5 to 15/12/9/6",
+                "• Level 15 Talent increased from -1s Blink Cooldown to -2s",
+                "• Level 20 Talent illusion incoming damage increased from 300% to 350%"
+            ],
+            "true_name": "antimage",
+            "format_name": "Anti-Mage"
+        },
+        "bane": {
+            "changes": [
+                "• Nightmare cast range reduced from 500/550/600/650 to 425/500/575/650"
+            ],
+            "format_name": "Bane",
+            "true_name": "bane"
+        },
+        "beastmaster": {
+            "changes": [
+                "• Wild Axes damage reduced from 40/70/100/130 to 30/60/90/120",
+                "• Hawk movement speed reduced from 450 to 430"
+            ],
+            "format_name": "Beastmaster",
+            "true_name": "beastmaster"
+        },
+        "brewmaster": {
+            "changes": [
+                "• Earth Brewling armor reduced from 5 to 3"
+            ],
+            "true_name": "brewmaster",
+            "format_name": "Brewmaster"
+        },
+        "broodmother": {
+            "changes": [
+                "• Level 10 Talent increased from +60 Spawn Spiderling Damage to +75",
+                "• Level 20 Talent reduced from +60 Attack Speed to +50",
+                "• Level 25 Talent reduced from +75 Insatiable Hunger Damage/Lifesteal to +60"
+            ],
+            "format_name": "Broodmother",
+            "true_name": "broodmother"
+        },
+        "centaur": {
+            "changes": [
+                "• Agility gain reduced from 1.6 to 1.0"
+            ],
+            "true_name": "centaur",
+            "format_name": "Centaur Warrunner"
+        },
+        "chaos_knight": {
+            "changes": [
+                "• Phantasm cooldown increased from 130 to 145"
+            ],
+            "true_name": "chaos_knight",
+            "format_name": "Chaos Knight"
+        },
+        "chen": {
+            "changes": [
+                "• Holy Persuasion manacost reduced from 100/110/120/130 to 70/90/110/130",
+                "• Level 10 Talent increased from +20% XP Gain to +35%",
+                "• Level 10 Talent increased from +125 Cast Range to +200"
+            ],
+            "true_name": "chen",
+            "format_name": "Chen"
+        },
+        "rattletrap": {
+            "changes": [
+                "• Power Cogs attacks to kill rescaled from 2/2/2/3 to 2"
+            ],
+            "format_name": "Clockwerk",
+            "true_name": "rattletrap"
+        },
+        "drow_ranger": {
+            "changes": [
+                "• Precision Aura reduced damage from 16/22/28/34% to 10/18/26/34%",
+                "• Level 15 Talent increased from +300 Gust Distance/Knockback to +400"
+            ],
+            "format_name": "Drow Ranger",
+            "true_name": "drow_ranger"
+        },
+        "earth_spirit": {
+            "changes": [
+                "• Geomagnetic Grip silence duration reduced from 2.5/3/3.5/4 to 2/2.5/3/3.5"
+            ],
+            "format_name": "Earth Spirit",
+            "true_name": "earth_spirit"
+        },
+        "ember_spirit": {
+            "changes": [
+                "• Level 10 Talent increased from +150 Flame Guard Absorption to +200",
+                "• Level 10 Talent increased from +20 Damage to +25",
+                "• Level 15 Talent increased from +30 Flame Guard DPS to +50"
+            ],
+            "format_name": "Ember Spirit",
+            "true_name": "ember_spirit"
+        },
+        "huskar": {
+            "changes": [
+                "• Base movement speed reduced by 5"
+            ],
+            "format_name": "Huskar",
+            "true_name": "huskar"
+        },
+        "lone_druid": {
+            "changes": [
+                "• Spirit Bear Health increased from 1400/1800/2300/2700 to 1500/2000/2500/3000"
+            ],
+            "format_name": "Lone Druid",
+            "true_name": "lone_druid"
+        },
+        "luna": {
+            "changes": [
+                "• Strength gain reduced from 2.5 to 2.2",
+                "• Lucent Beam cast point reduced from 0.5 to 0.4",
+                "• Level 10 Talent increased from +150 Cast Range to +200",
+                "• Level 15 Talent increased from -2s Lucent Beam cooldown to -3s"
+            ],
+            "true_name": "luna",
+            "format_name": "Luna"
+        },
+        "meepo": {
+            "changes": [
+                "• Base magic resistance reduced from 35% to 25%",
+                "• Level 10 Talent changed from +10% Lifesteal to +7 Strength",
+                "• Level 10 Talent changed from +30 Movement Speed to +20 Damage",
+                "• Level 15 Talent changed from +10 Strength to +10% Lifesteal",
+                "• Level 20 Talent changed from +40 Damage to -4s Earthbind Cooldown",
+                "• Level 25 Talent increased from -4s Poof Cooldown to -5s",
+                "• Level 25 Talent reduced from +700 Health to +600"
+            ],
+            "format_name": "Meepo",
+            "true_name": "meepo"
+        },
+        "morphling": {
+            "changes": [
+                "• Morphing back to your hero sets you back to the same percentage Health and Mana you originally had before you morphed (so if you are low health after taking damage in a Morph, morphing back effectively heals you)",
+                "• Morph now changes your primary attribute to the target's one",
+                "• Morph duration reduced from 30 to 20 seconds",
+                "• Level 20 Talent changed from -25s Morph Cooldown to +15s Morph Duration"
+            ],
+            "format_name": "Morphling",
+            "true_name": "morphling"
+        },
+        "naga_siren": {
+            "changes": [
+                "• Agility gain increased from 2.75 to 3.2",
+                "• Level 10 Talent changed from +175 Health to +10% Mirror Image Damage"
+            ],
+            "true_name": "naga_siren",
+            "format_name": "Naga Siren"
+        },
+        "night_stalker": {
+            "changes": [
+                "• Darkness vision limit against buildings and wards changed from 675 to 800",
+                "• Hunter in the Night Flight Vision reduced from 1200 to 1000"
+            ],
+            "format_name": "Night Stalker",
+            "true_name": "night_stalker"
+        },
+        "omniknight": {
+            "changes": [
+                "• Base intelligence reduced by 2",
+                "• Degen Aura AoE reduced from 350 to 300",
+                "• Level 20 Talent reduced from +6 Mana Regen to +4"
+            ],
+            "format_name": "Omniknight",
+            "true_name": "omniknight"
+        },
+        "nevermore": {
+            "changes": [
+                "• Shadow Raze bonus stacking damage increased from 60 to 80"
+            ],
+            "format_name": "Shadow Fiend",
+            "true_name": "nevermore"
+        },
+        "sniper": {
+            "changes": [
+                "• Strength gain reduced from 2.0 to 1.7",
+                "• Level 10 Talent increased from +12% Cooldown Reduction to +15%",
+                "• Level 15 Talent increased from +20 Shrapnel DPS to +25"
+            ],
+            "format_name": "Sniper",
+            "true_name": "sniper"
+        },
+        "spectre": {
+            "changes": [
+                "• Desolate damage reduced from 20/35/50/65 to 20/30/40/50",
+                "• Desolate now pierces Spell Immunity"
+            ],
+            "format_name": "Spectre",
+            "true_name": "spectre"
+        },
+        "spirit_breaker": {
+            "changes": [
+                "• Level 15 Talent increased from +30 to +40 Damage",
+                "• Empowering Haste now has seperate values for your hero and your team",
+                "• Empowering Haste on self increased from 6/10/14/18% to 8/12/16/20%",
+                "• Empowering Haste on allies reduced from 6/10/14/18% to 4/6/8/10%"
+            ],
+            "format_name": "Spirit Breaker",
+            "true_name": "spirit_breaker"
+        },
+        "storm_spirit": {
+            "changes": [
+                "• Agility gain reduced from 1.8 to 1.5",
+                "• Level 20 Talent reduced from +40 Attack Speed to +30"
+            ],
+            "format_name": "Storm Spirit",
+            "true_name": "storm_spirit"
+        },
+        "templar_assassin": {
+            "changes": [
+                "• Level 10 Talent changed from +250 Health to +3 Psionic Traps",
+                "• Psionic Trap damage increased from 175/250/325 to 250/350/450",
+                "• Psionic Trap max charge time reduced from 6s to 4s"
+            ],
+            "format_name": "Templar Assassin",
+            "true_name": "templar_assassin"
+        },
+        "terrorblade": {
+            "changes": [
+                "• Intelligence gain from 1.75 to 1.6",
+                "• Metamorphosis cooldown increased from 140 to 155",
+                "• Metamorphosis movement speed reduction from -30 to -25",
+                "• Level 20 Talent increased from -8s Reflection Cooldown to -10s"
+            ],
+            "true_name": "terrorblade",
+            "format_name": "Terrorblade"
+        },
+        "tiny": {
+            "changes": [
+                "• Grow now grants +5/10/15 Armor",
+                "• Grow no longer increases movement speed",
+                "• Tree Grab bonus building damage rescaled from 75% to 60/80/100/120%",
+                "• Tree Grab unit damage rescaled from 30% to 10/20/30/40%",
+                "• Tree Grab attack count rescaled from 2/3/4/6 to 5",
+                "• Tree Grab cooldown rescaled from 15 to 18/16/14/12",
+                "• Level 20 Talent reduced from -10s Tree Grab Cooldown to -7s",
+                "• Toss no longer throws Spell Immune enemies"
+            ],
+            "true_name": "tiny",
+            "format_name": "Tiny"
+        },
+        "tusk": {
+            "changes": [
+                "• Strength gain increased from 2.6 to 3.0"
+            ],
+            "format_name": "Tusk",
+            "true_name": "tusk"
+        },
+        "abyssal_underlord": {
+            "changes": [
+                "• Level 20 Talent reduced from +30 Health Regen to +20"
+            ],
+            "true_name": "abyssal_underlord",
+            "format_name": "Underlord"
+        },
+        "vengefulspirit": {
+            "changes": [
+                "• Level 20 Talent increased from -4s Magic Missile Cooldown to -5s",
+                "• Vengeance Aura attack damage rescaled from 10/18/25/34% to 12/18/24/30%"
+            ],
+            "true_name": "vengefulspirit",
+            "format_name": "Vengeful Spirit"
+        },
+        "windrunner": {
+            "changes": [
+                "• Turn rate improved from 0.6 to 0.8",
+                "• Windrun movement speed bonus increased from 50% to 60%",
+                "• Level 15 increased from +75 Attack Range to +100",
+                "• Level 15 increased from +90 Powershot Damage to +100",
+                "• Level 20 changed from +25% Cooldown Reduction to +1 Shackleshot Target",
+                "• Level 25 changed from +1 Shackleshot Target to +30% Cooldown Reduction",
+                "• Level 25 increased from +20% Ministun Focus Fire to +30%"
+            ],
+            "true_name": "windrunner",
+            "format_name": "Windranger"
+        },
+        "winter_wyvern": {
+            "changes": [
+                "• Arctic Burn damage reduced from 9% to 7.5/8/8.5/9%",
+                "• Base damage reduced by 3",
+                "• Level 15 Talent reduced from +600 Night Vision to +500"
+            ],
+            "format_name": "Winter Wyvern",
+            "true_name": "winter_wyvern"
+        }
+    },
+    "items": {},
+    "version": "7.07c"
+},{
+    "heroes": {
         "antimage": {
             "changes": [
                 "• Strength gain reduced from 1.5 to 1.3",

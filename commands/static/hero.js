@@ -25,6 +25,7 @@ async function exec(ctx) {
     hero_obj.abilities = hero_obj.abilities
         .map((ability) => {
             ability = abilities.find((a) => a.name == ability);
+            if (!ability) return null;
             return ability.key && `${ability.key.toUpperCase()} - ${ability.dname}`;
         })
         .filter((a) => a)

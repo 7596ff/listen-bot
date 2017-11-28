@@ -2,7 +2,7 @@ const snekfetch = require("snekfetch");
 const tnhConfig = require("../config.json").thinknohands;
 
 const ranks = {
-    "00": "Uncalibrated",
+    "0": "Uncalibrated",
 
     "10": "Herald",
     "11": "Herald [1]",

@@ -240,7 +240,7 @@ client.on("guildMemberAdd", async function(guild, member) {
     }
 });
 
-client.on("guildMemberUpdate", async function(guild, member) {
+client.on("guildMemberUpdate", async function(guild, member, oldMember) {
     try {
         let dota_id = await checkDiscordID(client.pg, member.id);
         if (!dota_id) return;
@@ -255,7 +255,7 @@ client.on("guildMemberUpdate", async function(guild, member) {
         if (!channel.rowCount) return;
         channel = channel.rows[0].channel;
 
-        if (member.roles.includes(gcfg.subrole)) {
+        if (member.roles.includes(gcfg.subrole) && !oldMember.roles.includes(gcfg.subrole)) {
             await client.pg.query({
                 text: "INSERT INTO subs VALUES ($1, $2, $3, $4) ON CONFLICT DO NOTHING;",
                 values: [gcfg.subrole, channel, "player", dota_id]
@@ -266,7 +266,7 @@ client.on("guildMemberUpdate", async function(guild, member) {
             }));
 
             console.log(`${new Date().toJSON()} SUBS: added ${member.username} to ${guild.name} role stacks`);
-        } else {
+        } else if (!member.roles.includes(gcfg.subrole) && oldMember.roles.includes(gcfg.subrole)) {
             let res = await client.pg.query({
                 text: "DELETE FROM subs WHERE owner = $1 AND value = $2;",
                 values: [gcfg.subrole, dota_id]

@@ -63,7 +63,7 @@ async function exec(ctx) {
         let profile = await ctx.client.mika.getPlayer(res.rows[0].dotaid);
         let winlose = await ctx.client.mika.getPlayerWL(res.rows[0].dotaid);
 
-        let msg = await singleMmrEmbed.call(ctx.strings, { profile, winlose, member, rank: profile.rank_tier });
+        let msg = await singleMmrEmbed.call(ctx.strings, { profile, winlose, member, rank: profile.rank_tier || 00 });
         return ctx.send({ embed: msg.embed }, msg.file);
     } catch (err) {
         ctx.error(err);

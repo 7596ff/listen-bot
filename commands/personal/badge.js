@@ -1,4 +1,3 @@
-const upsertMmr = require("../../util/upsertMmr");
 const searchMembers = require("../../util/searchMembers");
 const allMmrEmbed = require("../../embeds/allMmr");
 const singleMmrEmbed = require("../../embeds/singleMmr");
@@ -41,7 +40,7 @@ async function all(ctx) {
 }
 
 async function exec(ctx) {
-    if (ctx.options[0] === "all") return all(ctx);
+    if (ctx.options[0] === "all") return ctx.send("all disabled for now sorry"); // return all(ctx);
 
     try {
         let ID = ctx.author.id;
@@ -61,11 +60,11 @@ async function exec(ctx) {
             return ctx.failure(ctx.strings.get("bot_not_registered", member.username, ctx.gcfg.prefix));
         }
 
-        let upserted = await upsertMmr(ctx.client.pg, ctx.client.mika, res.rows[0], true);
-        upserted.member = member;
+        let profile = await ctx.client.mika.getPlayer(res.rows[0].dotaid);
+        let winlose = await ctx.client.mika.getPlayerWL(res.rows[0].dotaid);
 
-        let embed = singleMmrEmbed.call(ctx.strings, upserted);
-        return ctx.embed(embed);
+        let msg = await singleMmrEmbed.call(ctx.strings, { profile, winlose, member: ctx.author, rank: profile.rank_tier });
+        return ctx.send({ embed: msg.embed }, msg.file);
     } catch (err) {
         ctx.error(err);
         return ctx.failure(ctx.strings.get("bot_generic_error"));
@@ -73,8 +72,9 @@ async function exec(ctx) {
 }
 
 module.exports = {
-    name: "mmr",
+    name: "badge",
     category: "personal",
+    aliases: ["mmr"],
     typing: true,
     exec
 };

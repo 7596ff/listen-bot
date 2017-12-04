@@ -56,7 +56,7 @@ const ranks = {
 }
 
 async function singleMmr(data) {
-    let url = `${tnhConfig.url}/rank?key=${tnhConfig.key}&rank=${data.rank}`;
+    let url = `${tnhConfig.url}/rank?key=${tnhConfig.key}&rank=${data.tier}`;
     let image = await snekfetch.get(url);
 
     return {
@@ -67,7 +67,7 @@ async function singleMmr(data) {
         "embed": {
             "author": {
                 "icon_url": data.member.avatarURL,
-                "name": `${data.member.username} is ${ranks[data.rank]}`
+                "name": `${data.member.username} is ${data.rank ? "Rank " + data.rank : ranks[data.tier]}`
             },
             "description": [
                 `**${this.get("history_with_winloss")}:** ${data.winlose.win}/${data.winlose.lose}`,

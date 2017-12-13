@@ -22,7 +22,7 @@ class Watcher {
                 this.client.addMessageReaction(this.channelID, this.messageID, this.previousEmoji),
                 this.client.addMessageReaction(this.channelID, this.messageID, this.nextEmoji)
             ]).catch((err) => {
-                this.client.helper.log(`couldn't add reaction to ${this.messageID}`);
+                this.client.helper.log(`couldn't add reaction to ${this.messageID}`, err);
                 this.working = false;
             });
         }

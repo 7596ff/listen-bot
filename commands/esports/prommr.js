@@ -6,6 +6,10 @@ async function exec(ctx) {
         try {
             let reply = await ctx.client.redis.getAsync(`prommr:${ctx.options[0]}`);
             reply = JSON.parse(reply);
+            reply.leaderboard = reply.leaderboard.map((item, index) => {
+                item.solo_mmr = index + 1;
+                return item;
+            });
 
             reply.region = ctx.options[0];
             reply.regions = regions;
@@ -30,13 +34,17 @@ async function exec(ctx) {
         let leaderboard = [];
 
         replies.forEach((reply) => {
-            leaderboard = leaderboard.concat(reply.leaderboard);
+            reply.leaderboard.forEach((item, index) => {
+                item.solo_mmr = index + 1;
+                leaderboard.push(item);
+            });
+
             if (all.time_posted === 0 || all.time_posted > reply.time_posted) {
                 all.time_posted = reply.time_posted;
             }
         });
 
-        leaderboard.sort((a, b) => b.solo_mmr - a.solo_mmr);
+        leaderboard.sort((a, b) => a.solo_mmr - b.solo_mmr);
 
         let filtered;
         if (ctx.options[0]) {
@@ -59,7 +67,7 @@ async function exec(ctx) {
 
             let rows = [];
 
-            while (countries.length) {
+            while (countries.length && rows.map((row) => row.join(" ")).join("\n").length < 1750) {
                 rows.push(countries.splice(0, 8));
             }
 

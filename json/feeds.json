@@ -39,7 +39,7 @@
         "division": "americas"
     },
     "type": "json",
-    "cron": "30 18 * * *",
+    "cron": "15 * * * *",
     "action": "store"
 }, {
     "name": "Pro MMR: Europe",
@@ -49,7 +49,7 @@
         "division": "europe"
     },
     "type": "json",
-    "cron": "30 18 * * *",
+    "cron": "15 * * * *",
     "action": "store"
 }, {
     "name": "Pro MMR: South East Asia",
@@ -59,7 +59,7 @@
         "division": "se_asia"
     },
     "type": "json",
-    "cron": "30 18 * * *",
+    "cron": "15 * * * *",
     "action": "store"
 }, {
     "name": "Pro MMR: China",
@@ -69,7 +69,7 @@
         "division": "china"
     },
     "type": "json",
-    "cron": "30 18 * * *",
+    "cron": "15 * * * *",
     "action": "store"
 }, {
     "name": "Twitch Clips",

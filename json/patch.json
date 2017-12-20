@@ -2,6 +2,164 @@
     "heroes": {
         "alchemist": {
             "changes": [
+                "• Unstable Concoction damage increased from 150/220/290/360 to 160/240/320/400"
+            ],
+            "true_name": "alchemist",
+            "format_name": "Alchemist"
+        },
+        "bane": {
+            "changes": [
+                "• Enfeeble duration reduced from 20 to 14/16/18/20",
+                "• Brain Sap damage rescaled from 90/160/230/300 to 75/150/225/300"
+            ],
+            "format_name": "Bane",
+            "true_name": "bane"
+        },
+        "brewmaster": {
+            "changes": [
+                "• Drunken Haze cooldown increased from 8/7/6/5 to 11/9/7/5"
+            ],
+            "true_name": "brewmaster",
+            "format_name": "Brewmaster"
+        },
+        "broodmother": {
+            "changes": [
+                "• Spiders vision reduced from 1100/800 to 700/700"
+            ],
+            "format_name": "Broodmother",
+            "true_name": "broodmother"
+        },
+        "chen": {
+            "changes": [
+                "• Base damage increased by 5",
+                "• Movement speed increased from 300 to 310"
+            ],
+            "true_name": "chen",
+            "format_name": "Chen"
+        },
+        "dazzle": {
+            "changes": [
+                "• Level 10 Talent from +175 Health to +200",
+                "• Level 10 Talent from +60 Damage to +75"
+            ],
+            "format_name": "Dazzle",
+            "true_name": "dazzle"
+        },
+        "earth_spirit": {
+            "changes": [
+                "• Boulder Smash stun duration from 0.75/1.25/1.75/2.25 to 0.5/1.0/1.5/2.0"
+            ],
+            "format_name": "Earth Spirit",
+            "true_name": "earth_spirit"
+        },
+        "enigma": {
+            "changes": [
+                "• Base strength increased from 17 to 19",
+                "• Eidolons movement speed increased from 280/300/320/340 to 280/310/340/370"
+            ],
+            "format_name": "Enigma",
+            "true_name": "enigma"
+        },
+        "medusa": {
+            "changes": [
+                "• Strength gain reduced from 1.5 to 1.3",
+                "• Movement speed reduced from 285 to 275",
+                "• Level 10 Talent reduced from +25 Damage to +20"
+            ],
+            "format_name": "Medusa",
+            "true_name": "medusa"
+        },
+        "morphling": {
+            "changes": [
+                "• Attribute Shift can no longer be activated while stunned (but will continue if activated in advance)",
+                "• Waveform damage reduced from 100/175/250/325 to 75/150/225/300",
+                "• Level 15 Talent from Waveform Attacks Targets to +15s Morph Duration",
+                "• Level 20 Talent from +15s Morph Duration to Waveform Attacks Targets"
+            ],
+            "format_name": "Morphling",
+            "true_name": "morphling"
+        },
+        "night_stalker": {
+            "changes": [
+                "• Hunter in the Night attack speed rescaled from 45/60/75/90 to 30/50/70/90"
+            ],
+            "format_name": "Night Stalker",
+            "true_name": "night_stalker"
+        },
+        "omniknight": {
+            "changes": [
+                "• Purification cast range reduced from 575 to 450",
+                "• Level 20 Talent from +4 Mana Regen to +3",
+                "• Guardian Angel cooldown rescaled from 160 to 180/170/160"
+            ],
+            "format_name": "Omniknight",
+            "true_name": "omniknight"
+        },
+        "pudge": {
+            "changes": [
+                "• Meat Hook manacost increased from 110/120/130/140 to 140"
+            ],
+            "format_name": "Pudge",
+            "true_name": "pudge"
+        },
+        "razor": {
+            "changes": [
+                "• Static Link cooldown rescaled increased from 32/30/28/26 to 40/35/30/25"
+            ],
+            "format_name": "Razor",
+            "true_name": "razor"
+        },
+        "sand_king": {
+            "changes": [
+                "• Burrowstrike damage reduced from 100/160/220/280 to 85/150/215/280"
+            ],
+            "true_name": "sand_king",
+            "format_name": "Sand King"
+        },
+        "shadow_demon": {
+            "changes": [
+                "• Level 10 Talent changed from +10 Strength to Soul Catcher Creates Illusion On Death"
+            ],
+            "format_name": "Shadow Demon",
+            "true_name": "shadow_demon"
+        },
+        "storm_spirit": {
+            "changes": [
+                "• Ball Lightning AoE rescaled from 125/200/275 to 200",
+                "• Level 10 Talent reduced from +2.0 Mana Regen to 1.75"
+            ],
+            "format_name": "Storm Spirit",
+            "true_name": "storm_spirit"
+        },
+        "tinker": {
+            "changes": [
+                "• Laser cooldown increased from 14 to 20/18/16/14"
+            ],
+            "format_name": "Tinker",
+            "true_name": "tinker"
+        },
+        "tiny": {
+            "changes": [
+                "• Grow attack speed reduction increased from 20/30/40 to 20/35/50 "
+            ],
+            "true_name": "tiny",
+            "format_name": "Tiny"
+        },
+        "winter_wyvern": {
+            "changes": [
+                "• Cold Embrace base heal reduced from 15 to 10",
+                "• Arctic Burn damage reduced from 7.5/8/8.5/9% to 6/7/8/9%"
+            ],
+            "format_name": "Winter Wyvern",
+            "true_name": "winter_wyvern"
+        }
+    },
+    "items": {},
+    "version": "7.07d"
+},{
+    "heroes": {
+        "alchemist": {
+            "changes": [
                 "• Level 10 Talent changed from +5 Armor to -5s Unstable Concoction Cooldown",
                 "• Level 15 Talent increased from +250 Health to +350 Health",
                 "• Level 20 Talent increased from +200 Unstable Concoction Damage to +360",

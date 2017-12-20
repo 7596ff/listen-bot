@@ -52,11 +52,12 @@ const ranks = {
     "73": "Divine [3]",
     "74": "Divine [4]",
     "75": "Divine [5]",
-    "76": "Divine [5]"
+    "76": "Divine Elite"
 }
 
 async function singleMmr(data) {
-    let url = `${tnhConfig.url}/rank?key=${tnhConfig.key}&rank=${data.tier}`;
+    let url = `${tnhConfig.url}/rank?key=${tnhConfig.key}&badge=${data.tier}`;
+    if (data.rank) url += `&rank=${data.rank}`;
     let image = await snekfetch.get(url);
 
     return {

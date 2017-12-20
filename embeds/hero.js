@@ -7,8 +7,8 @@
 
     let val1 = [
         `Lv1. Health: ${hero.base_health + (20 * hero.base_str)}`,
-        `Lv1. Armor: ${Math.round(100 * (hero.base_armor + (0.14 * hero.base_agi))) / 100}`,
-        `Lv1. Mana: ${hero.base_mana + 11 * hero.base_int}`,
+        `Lv1. Armor: ${Math.round(100 * (hero.base_armor + ((1 / 6) * hero.base_agi))) / 100}`,
+        `Lv1. Mana: ${hero.base_mana + 12 * hero.base_int}`,
         `Lv1. Spell Amp: ${Math.round(100 * (0.07 * hero.base_int)) / 100}%`
     ];
 

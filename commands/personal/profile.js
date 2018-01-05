@@ -57,8 +57,8 @@ async function exec(ctx) {
 
         let profile = await cacheProfile(ctx, member);
 
-        let embed = playerinfoEmbed(profile);
-        return ctx.embed(embed);
+        let embed = await playerinfoEmbed(profile);
+        return ctx.send({ embed: embed.embed }, embed.file);
     } catch (err) {
         ctx.error(err);
         return ctx.failure(ctx.strings.get("bot_generic_error"));

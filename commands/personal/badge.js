@@ -74,7 +74,7 @@ async function exec(ctx) {
 module.exports = {
     name: "badge",
     category: "personal",
-    aliases: ["mmr"],
+    aliases: ["mmr", "rank", "medal"],
     typing: true,
     exec
 };

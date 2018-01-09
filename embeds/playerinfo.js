@@ -58,6 +58,7 @@ const ranks = {
 }
 
 async function playerinfoEmbed(player) {
+    if (!player.rank_tier) player.rank_tier = 0;
     let url = `${tnhConfig.url}/rank?key=${tnhConfig.key}&badge=${player.rank_tier}`;
     if (player.leaderboard_rank) url += `&rank=${player.leaderboard_rank}`;
     let image = await snekfetch.get(url);

@@ -2,6 +2,187 @@
     "heroes": {
         "alchemist": {
             "changes": [
+                "• Chemical Rage base attack time improved from 1.4/1.2/1.0 to 1.3/1.15/1.0",
+                "• Level 10 Talent increased from -5s Unstable Concoction Cooldown to -8s",
+                "• Level 15 Talent increased from +350 Health to +400",
+                "• Level 20 Talent increased from +360 Unstable Concoction to +400"
+            ],
+            "true_name": "alchemist",
+            "format_name": "Alchemist"
+        },
+        "ember_spirit": {
+            "changes": [
+                "• Sleight of Fist Hero Damage increased from 20/40/60/80 to 25/50/75/100"
+            ],
+            "format_name": "Ember Spirit",
+            "true_name": "ember_spirit"
+        },
+        "enchantress": {
+            "changes": [
+                "• Base damage reduced by 3"
+            ],
+            "format_name": "Enchantress",
+            "true_name": "enchantress"
+        },
+        "jakiro": {
+            "changes": [
+                "• Reduced attack backswing from 0.5 to 0.3"
+            ],
+            "format_name": "Jakiro",
+            "true_name": "jakiro"
+        },
+        "juggernaut": {
+            "changes": [
+                "• Blade Dance damage reduced from 200% to 180%"
+            ],
+            "format_name": "Juggernaut",
+            "true_name": "juggernaut"
+        },
+        "leshrac": {
+            "changes": [
+                "• Split Earth manacost reduced from 100/125/140/160 to 80/100/120/140"
+            ],
+            "format_name": "Leshrac",
+            "true_name": "leshrac"
+        },
+        "lina": {
+            "changes": [
+                "• Base intelligence increased by 3",
+                "• Base damage random variance reduced from 18 min/max damage spread to 12"
+            ],
+            "format_name": "Lina",
+            "true_name": "lina"
+        },
+        "lion": {
+            "changes": [
+                "• Mana Drain now slows the target by 14/16/18/20%"
+            ],
+            "true_name": "lion",
+            "format_name": "Lion"
+        },
+        "lycan": {
+            "changes": [
+                "• Shapeshift cooldown increased from 120/90/60 to 130/105/80",
+                "• Base armor reduced by 1"
+            ],
+            "format_name": "Lycan",
+            "true_name": "lycan"
+        },
+        "medusa": {
+            "changes": [
+                "• Mystic Snake cast range reduced from 800 to 700",
+                "• Level 10 Talent increased from 12% Evasion to 15%",
+                "• Level 15 Talent increased from +15% Mystic Snake Mana Steal to +20%",
+                "• Level 20 Talent reduced from +800 Mana to +700"
+            ],
+            "format_name": "Medusa",
+            "true_name": "medusa"
+        },
+        "morphling": {
+            "changes": [
+                "• Morph cast range increased from 600 to 1000",
+                "• Morph manacost reduced from 75/100/125 to 50",
+                "• Morph Replicate cast point removed"
+            ],
+            "format_name": "Morphling",
+            "true_name": "morphling"
+        },
+        "furion": {
+            "changes": [
+                "• Wrath of Nature cooldown reduced from 90/75/60 to 70/65/60"
+            ],
+            "true_name": "furion",
+            "format_name": "Nature's Prophet"
+        },
+        "omniknight": {
+            "changes": [
+                "• Degen Aura range reduced from 300 to 275",
+                "• Purification cast range reduced from 450 to 400"
+            ],
+            "format_name": "Omniknight",
+            "true_name": "omniknight"
+        },
+        "oracle": {
+            "changes": [
+                "• Fortune's End manacost reduced from 110 to 75"
+            ],
+            "format_name": "Oracle",
+            "true_name": "oracle"
+        },
+        "pangolier": {
+            "changes": [
+                "• Rolling Thunder cooldown increased from 50/45/40 to 70/65/60"
+            ],
+            "format_name": "Pangolier",
+            "true_name": "pangolier"
+        },
+        "pudge": {
+            "changes": [
+                "• Rot slow rescaled from 30% to 20/24/28/32%"
+            ],
+            "format_name": "Pudge",
+            "true_name": "pudge"
+        },
+        "pugna": {
+            "changes": [
+                "• Level 15 Talent increased from +1 Nether Ward Health to +2",
+                "• Life Drain damage increased from 150/200/250 to 150/225/300 (Scepter now only removes cooldown)"
+            ],
+            "format_name": "Pugna",
+            "true_name": "pugna"
+        },
+        "nevermore": {
+            "changes": [
+                "• Necromastry max souls reduced from 18/24/30/36 to 12/20/28/36"
+            ],
+            "format_name": "Shadow Fiend",
+            "true_name": "nevermore"
+        },
+        "shadow_shaman": {
+            "changes": [
+                "• Ether Shock cooldown increased from 8 to 14/12/10/8",
+                "• Shackles total damage reduced from 120/200/280/360 to 60/160/260/360"
+            ],
+            "format_name": "Shadow Shaman",
+            "true_name": "shadow_shaman"
+        },
+        "tinker": {
+            "changes": [
+                "• Base movement speed reduced from 305 to 290"
+            ],
+            "format_name": "Tinker",
+            "true_name": "tinker"
+        },
+        "tiny": {
+            "changes": [
+                "• Toss cooldown increased from 8 to 11"
+            ],
+            "true_name": "tiny",
+            "format_name": "Tiny"
+        },
+        "tusk": {
+            "changes": [
+                "• Snowball can no longer be cast while rooted"
+            ],
+            "format_name": "Tusk",
+            "true_name": "tusk"
+        },
+        "windrunner": {
+            "changes": [
+                "• Windrun manacost reduced from 60 to 50",
+                "• Level 20 Talent changed from +1 Shackleshot Target to +0.5s Shackleshot Duration",
+                "• Level 25 Talent from +30% Ministun Focus Fire to +35%"
+            ],
+            "true_name": "windrunner",
+            "format_name": "Windranger"
+        }
+    },
+    "items": {},
+    "version": "7.08"
+},{
+    "heroes": {
+        "alchemist": {
+            "changes": [
                 "• Unstable Concoction damage increased from 150/220/290/360 to 160/240/320/400"
             ],
             "true_name": "alchemist",
@@ -788,14 +969,15 @@
         },
         "jakiro": {
             "changes": [
-                "• Juggernaut is no longer silenced while using Blade Fury (but still cannot cast Omnislash; can cast ward)."
+                "• Dual Breath cast point reduced from 0.65 to 0.55",
+                "• Macropyre cast point reduced from 0.65 to 0.55"
             ],
             "format_name": "Jakiro",
             "true_name": "jakiro"
         },
         "juggernaut": {
             "changes": [
-                "• Base movement speed reduced by 5"
+                "• Juggernaut is no longer silenced while using Blade Fury (but still cannot cast Omnislash; can cast ward)."
             ],
             "format_name": "Juggernaut",
             "true_name": "juggernaut"

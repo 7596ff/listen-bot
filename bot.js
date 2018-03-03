@@ -552,7 +552,7 @@ async function publishFeed(channel, message) {
                 if (config.announce && config.announce == guild) {
                     msg.disableEveryone = false;
                     msg.content = `@everyone ${msg.content}`
-                } else if (config.announce != 0) {
+                } else if (config.announce !== 0 && config.announce !== null) {
                     msg.content = `<@&${config.announce}> ${msg.content}`;
                 }
             }

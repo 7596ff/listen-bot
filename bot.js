@@ -549,10 +549,10 @@ async function publishFeed(channel, message) {
             if (guild) {
                 let config = await cacheGcfg(guild);
 
-                if (config.announce && config.announce == guild) {
+                if (config.announce === guild) {
                     msg.disableEveryone = false;
                     msg.content = `@everyone ${msg.content}`
-                } else if (config.announce !== 0 && config.announce !== null) {
+                } else if (config.announce !== 0 || config.announce !== null) {
                     msg.content = `<@&${config.announce}> ${msg.content}`;
                 }
             }
@@ -561,7 +561,13 @@ async function publishFeed(channel, message) {
         } catch (err) {
             if (!err.response) return;
 
-            let msg = JSON.parse(err.response);
+            let msg;
+            try {
+                msg = JSON.parse(err.response)
+            } catch (err) {
+                msg = err.response;
+            }
+
             if (msg.code == 10003 || msg.code == 50001) { // channel is deleted or bot left server
                 client.pg.query({
                     "text": "DELETE FROM subs WHERE channel = $1 RETURNING channel;",
@@ -691,7 +697,7 @@ async function invoke(message, client, helper, cmd) {
         if (cmd.typing) await message.channel.sendTyping();
         await cmd.exec(ctx);
     } catch (err) {
-        console.error(err.response ? JSON.parse(err.response) : (err.message || err));
+        console.error(err.response || err.message || err);
         console.error(`content: ${message.content}`);
     }
 }

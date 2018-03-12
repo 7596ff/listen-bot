@@ -1,6 +1,6 @@
-#listen-bot
+# listen-bot
 
-A bot with various dota 2 related commands. 
+A bot with various Dota 2 related commands. 
 
 [Invite the bot to your server](https://discordapp.com/oauth2/authorize?permissions=19456&scope=bot&client_id=240209888771309568)
 

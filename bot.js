@@ -559,27 +559,18 @@ async function publishFeed(channel, message) {
 
             await client.createMessage(row.channel, msg);
         } catch (err) {
-            if (!err.response) return;
-
-            let msg;
-            try {
-                msg = JSON.parse(err.response)
-            } catch (err) {
-                msg = err.response;
-            }
-
-            if (msg.code == 10003 || msg.code == 50001) { // channel is deleted or bot left server
+            if (err.code == 10003 || err.code == 50001) { // channel is deleted or bot left server
                 client.pg.query({
                     "text": "DELETE FROM subs WHERE channel = $1 RETURNING channel;",
                     "values": [row.channel]
                 }).then((res) => {
                     console.log(`deleted channel ${res.rows[0].channel}`);
                 });
-            } else if (msg.code == 50013) {
+            } else if (err.code == 50013) {
                 console.error(`no permission for channel ${row.channel}`);
             } else {
                 console.error(row.channel);
-                console.error(msg);
+                console.error(err);
             }
         }
     }

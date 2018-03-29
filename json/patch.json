@@ -1,5 +1,417 @@
 [{
     "heroes": {
+        "antimage": {
+            "changes": [
+                "• Mana Void damage increased from 0.6/0.85/1.1 to 0.8/0.95/1.1"
+            ],
+            "true_name": "antimage",
+            "format_name": "Anti-Mage"
+        },
+        "arc_warden": {
+            "changes": [
+                "• Flux cooldown reduced from 18 to 16",
+                "• Magnetic Field AoE increased from 275 to 300"
+            ],
+            "true_name": "arc_warden",
+            "format_name": "Arc Warden"
+        },
+        "axe": {
+            "changes": [
+                "• Battle Hunger duration increased from 10 to 12"
+            ],
+            "format_name": "Axe",
+            "true_name": "axe"
+        },
+        "bounty_hunter": {
+            "changes": [
+                "• Shuriken Toss manacost increased from 120/130/140/150 to 150"
+            ],
+            "true_name": "bounty_hunter",
+            "format_name": "Bounty Hunter"
+        },
+        "bloodseeker": {
+            "changes": [
+                "• Thirst linger bonus duration increased from 2 to 4"
+            ],
+            "true_name": "bloodseeker",
+            "format_name": "Bloodseeker"
+        },
+        "chen": {
+            "changes": [
+                "• Holy Persuasion can no longer target non-player allied creeps"
+            ],
+            "true_name": "chen",
+            "format_name": "Chen"
+        },
+        "clinkz": {
+            "changes": [
+                "• Strafe duration increased from 3 to 3.5 seconds"
+            ],
+            "true_name": "clinkz",
+            "format_name": "Clinkz"
+        },
+        "crystal_maiden": {
+            "changes": [
+                "• Base damage increased by 3",
+                "• Arcane Aura self mana regen increased from 1/2/3/4 to 1.3/2.2/3.1/4"
+            ],
+            "format_name": "Crystal Maiden",
+            "true_name": "crystal_maiden"
+        },
+        "dark_seer": {
+            "changes": [
+                "• Vacuum AoE increased from 250/350/450/550 to 400/450/500/550",
+                "• Vacuum cooldown rescaled from 32 to 60/50/40/30",
+                "• Vacuum cast range rescaled from 500 to 450/500/550/600",
+                "• Vacuum Pull duration increased from 0.5 to 0.3/0.4/0.5/0.6",
+                "• Vacuum damage rescaled from 40/80/120/160 to 25/50/100/200",
+                "• Wall of Replica incoming illusion damage reduced from 400% to 300%",
+                "• Wall of Replica width increased from 1000 to 1300"
+            ],
+            "format_name": "Dark Seer",
+            "true_name": "dark_seer"
+        },
+        "dark_willow": {
+            "changes": [
+                "• Terrorize cast time increased from 0.8 to 1.0",
+                "• Bedlam cooldown increased from 40/30/20 to 40/35/30"
+            ],
+            "format_name": "Dark Willow",
+            "true_name": "dark_willow"
+        },
+        "dazzle": {
+            "changes": [
+                "• Poison Touch damage increased from 10/20/30/40 to 10/24/38/52"
+            ],
+            "format_name": "Dazzle",
+            "true_name": "dazzle"
+        },
+        "death_prophet": {
+            "changes": [
+                "• Spirit Siphon charge restore time increased from 45 to 60/55/50/45",
+                "• Silence manacost increased from 80 to 80/90/100/110"
+            ],
+            "format_name": "Death Prophet",
+            "true_name": "death_prophet"
+        },
+        "disruptor": {
+            "changes": [
+                "• Static Storm no longer lingers on your hero for 0.5 seconds after walking away from the AoE (it already ends immediately once the spell is over)",
+                "• Kinetic Field cooldown increased from 13/12/11/10 to 19/16/13/10"
+            ],
+            "format_name": "Disruptor",
+            "true_name": "disruptor"
+        },
+        "drow_ranger": {
+            "changes": [
+                "• Precision Aura attack damage bonus increased from 10/18/26/34% to 10/20/30/40%"
+            ],
+            "format_name": "Drow Ranger",
+            "true_name": "drow_ranger"
+        },
+        "elder_titan": {
+            "changes": [
+                "• Echo Stomp Initial Stun duration reduced from 0.8 to 0.2"
+            ],
+            "true_name": "elder_titan",
+            "format_name": "Elder Titan"
+        },
+        "ember_spirit": {
+            "changes": [
+                "• Base armor increased by 1"
+            ],
+            "format_name": "Ember Spirit",
+            "true_name": "ember_spirit"
+        },
+        "enchantress": {
+            "changes": [
+                "• Untouchable slow rescaled from 40/70/100/130 to 20/60/100/140",
+                "• Enchant cooldown rescaled from 30/24/18/12 to 55/40/25/10",
+                "• Enchant slow increased from 2.25/3.5/4.75/6 to 3/4/5/6",
+                "• Enchant dominate duration rescaled from 80 to 50/60/70/80",
+                "• Impetus manacost rescaled from 55/60/65 to 40/55/70"
+            ],
+            "format_name": "Enchantress",
+            "true_name": "enchantress"
+        },
+        "gyrocopter": {
+            "changes": [
+                "• Flak Cannon cooldown increased from 30 to 40",
+                "• Homing Missile hits to destroy reduced from 3/3/4/4 to 3"
+            ],
+            "format_name": "Gyrocopter",
+            "true_name": "gyrocopter"
+        },
+        "wisp": {
+            "changes": [
+                "• Tether now sets your movement speed to match the tethered target's speed",
+                "• Relocate cooldown increased from 120/100/80 to 130/110/90",
+                "• Tether no longer has a duration",
+                "• Tether movement speed rescaled from 10/12/14/16% to 7/10/13/16%",
+                "• Tether regen sharing rescaled from 1.5x to 1.2/1.3/1.4/1.5",
+                "• Base damage reduced by 4"
+            ],
+            "format_name": "io",
+            "true_name": "wisp"
+        },
+        "leshrac": {
+            "changes": [
+                "• Base movement speed increased from 325 to 330",
+                "• Lightning Storm damage rescaled from 50/100/150/200 to 80/120/160/200",
+                "• Lightning Storm slow duration rescaled from 0.7/0.8/0.9/1.0 to 0.4/0.6/0.8/1.0",
+                "• Lightning Storm cast point reduced from 0.45 to 0.4"
+            ],
+            "format_name": "Leshrac",
+            "true_name": "leshrac"
+        },
+        "lich": {
+            "changes": [
+                "• Sacrifice mana conversion increased from 30/50/70/90 to 55/70/85/100"
+            ],
+            "format_name": "Lich",
+            "true_name": "lich"
+        },
+        "life_stealer": {
+            "changes": [
+                "• Open Wounds manacost increased from 140/130/120/110 to 140"
+            ],
+            "format_name": "Lifestealer",
+            "true_name": "life_stealer"
+        },
+        "lion": {
+            "changes": [
+                "• Earth Spike manacost rescaled from 100/120/140/160 to 70/100/130/160"
+            ],
+            "true_name": "lion",
+            "format_name": "Lion"
+        },
+        "magnataur": {
+            "changes": [
+                "• Skewer AoE increased from 125 to 135",
+                "• Reverse Polarity stun duration increased from 2.25/3/3.75 to 2.75/3.25/3.75"
+            ],
+            "format_name": "Magnus",
+            "true_name": "magnataur"
+        },
+        "mirana": {
+            "changes": [
+                "• Base attack damage range from 39-50 to 43-48"
+            ],
+            "true_name": "mirana",
+            "format_name": "Mirana"
+        },
+        "monkey_king": {
+            "changes": [
+                "• Wukong's Command soldier attack rate improved from 1.4 to 1.3"
+            ],
+            "true_name": "monkey_king",
+            "format_name": "Monkey King"
+        },
+        "necrolyte": {
+            "changes": [
+                "• Heartstopper Aura increased from 0.5/1/1.5/2% to 0.5/1.1/1.7/2.3%",
+                "• Death Pulse manacost rescaled from 125/145/165/185 to 100/130/160/190"
+            ],
+            "format_name": "Necrophos",
+            "true_name": "necrolyte"
+        },
+        "ogre_magi": {
+            "changes": [
+                "• Multicast no longer increases Fire Blast manacost"
+            ],
+            "format_name": "Ogre Magi",
+            "true_name": "ogre_magi"
+        },
+        "omniknight": {
+            "changes": [
+                "• Repel manacost increased from 50 to 85"
+            ],
+            "format_name": "Omniknight",
+            "true_name": "omniknight"
+        },
+        "phantom_assassin": {
+            "changes": [
+                "• Stifling Dagger can be targeted on Spell Immune (the slow won't have any effect, but the physical damage will go through)"
+            ],
+            "format_name": "Phantom Assassin",
+            "true_name": "phantom_assassin"
+        },
+        "phoenix": {
+            "changes": [
+                "• Supernova radius increased from 1000 to 1300",
+                "• Supernova now turns night into day for the duration (has highest priority)"
+            ],
+            "format_name": "Phoenix",
+            "true_name": "phoenix"
+        },
+        "razor": {
+            "changes": [
+                "• Static Link cast range reduced from 600 to 550 (break range still 800)",
+                "• Unstable Current damage reduced from 100/130/160/190 to 60/100/140/180"
+            ],
+            "format_name": "Razor",
+            "true_name": "razor"
+        },
+        "riki": {
+            "changes": [
+                "• Tricks of the Trade reworked. Instead of hitting every hero in the AoE once per second, it hits a random hero once per 0.5/0.45/0.4 seconds.",
+                "• Tricks of the Trade will hit creeps if there are no heroes available",
+                "• Tricks of the Trade duration increased from 3/4/5 to 4/5/6"
+            ],
+            "format_name": "Riki",
+            "true_name": "riki"
+        },
+        "rubick": {
+            "changes": [
+                "• Telekinesis cooldown increased from 22 to 28/26/24/22"
+            ],
+            "format_name": "Rubick",
+            "true_name": "rubick"
+        },
+        "sand_king": {
+            "changes": [
+                "• Burrowstrike stun duration rescaled from 2.17 to 1.9/2.0/2.1/2.2",
+                "• Base movement speed reduced from 295 to 290"
+            ],
+            "true_name": "sand_king",
+            "format_name": "Sand King"
+        },
+        "shadow_demon": {
+            "changes": [
+                "• Demonic Purge slow now always scales linearly with time from 100% to 20%",
+                "• Demonic Purge cooldown increased from 40 to 60 (affects charge replenish)",
+                "• Demonic Purge duration increased from 5 to 7 seconds",
+                "• Demonic Purge no longer roots non-hero units for 3 seconds",
+                "• Demonic Purge now continuously dispels the target"
+            ],
+            "format_name": "Shadow Demon",
+            "true_name": "shadow_demon"
+        },
+        "slark": {
+            "changes": [
+                "• Base HP regen increased from 1.5 to 2.75",
+                "• Turn rate improved from 0.5 to 0.6"
+            ],
+            "true_name": "slark",
+            "format_name": "Slark"
+        },
+        "slardar": {
+            "changes": [
+                "• Guardian Sprint no longer has a 15% damage amplification",
+                "• Guardian Sprint duration reduced from 12 to 10"
+            ],
+            "format_name": "Slardar",
+            "true_name": "slardar"
+        },
+        "sniper": {
+            "changes": [
+                "• Assassinate manacost reduced from 175/275/375 to 175/225/275"
+            ],
+            "format_name": "Sniper",
+            "true_name": "sniper"
+        },
+        "spectre": {
+            "changes": [
+                "• Spectral Dagger damage increased from 50/100/150/200 to 90/140/190/240"
+            ],
+            "format_name": "Spectre",
+            "true_name": "spectre"
+        },
+        "spirit_breaker": {
+            "changes": [
+                "• Empowering Haste active no longer reduces your movement speed afterwards",
+                "• Empowering Haste cooldown increased from 12 to 20"
+            ],
+            "format_name": "Spirit Breaker",
+            "true_name": "spirit_breaker"
+        },
+        "templar_assassin": {
+            "changes": [
+                "• Movement speed increased from 300 to 310"
+            ],
+            "format_name": "Templar Assassin",
+            "true_name": "templar_assassin"
+        },
+        "shredder": {
+            "changes": [
+                "• Chakram manacost per second reduced from 20/25/30 to 16/23/30",
+                "• Chakram initial manacost reduced from 100/150/200 to 80/140/200"
+            ],
+            "format_name": "Timbersaw",
+            "true_name": "shredder"
+        },
+        "tiny": {
+            "changes": [
+                "• Base Health Regen reduced from 2.5 to 1.5",
+                "• Avalanche cooldown increased from 17 to 20/19/18/17"
+            ],
+            "true_name": "tiny",
+            "format_name": "Tiny"
+        },
+        "treant": {
+            "changes": [
+                "• Base intelligence increased by 3"
+            ],
+            "format_name": "Treant Protector",
+            "true_name": "treant"
+        },
+        "troll_warlord": {
+            "changes": [
+                "• Berserker's Rage base attack time improved from 1.5 to 1.45"
+            ],
+            "format_name": "Troll Warlord",
+            "true_name": "troll_warlord"
+        },
+        "tusk": {
+            "changes": [
+                "• Ice Shards cooldown increased from 19/16/13/10 to 21/18/15/12"
+            ],
+            "format_name": "Tusk",
+            "true_name": "tusk"
+        },
+        "undying": {
+            "changes": [
+                "• Undying Zombie critical health attack speed boost increased from 50 to 75",
+                "• Flesh Golem hero kill heal increased from 10% to 15/20/25%"
+            ],
+            "true_name": "undying",
+            "format_name": "Undying"
+        },
+        "warlock": {
+            "changes": [
+                "• Golem's attack damage increased from 75/100/125 to 75/125/175"
+            ],
+            "format_name": "Warlock",
+            "true_name": "warlock"
+        },
+        "windrunner": {
+            "changes": [
+                "• Fixed some clunkiness with how Windranger attacks the target during Focus Fire"
+            ],
+            "true_name": "windrunner",
+            "format_name": "Windranger"
+        },
+        "winter_wyvern": {
+            "changes": [
+                "• Arctic Burn attack range changed from 275/375/475/575 to 350/425/500/575",
+                "• Base intelligence increased by 1"
+            ],
+            "format_name": "Winter Wyvern",
+            "true_name": "winter_wyvern"
+        },
+        "zuus": {
+            "changes": [
+                "• Attack range increased from 350 to 380",
+                "• Base damage increased by 5"
+            ],
+            "true_name": "zuus",
+            "format_name": "Zeus"
+        }
+    },
+    "items": {},
+    "version": "7.12"
+},{
+    "heroes": {
         "abaddon": {
             "changes": [
                 "• Level 15 Talent increased from +50 Mist Coil Heal/Damage to +60",

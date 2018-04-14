@@ -1,4 +1,4 @@
-    module.exports = (client, hero) => {
+module.exports = (client, hero) => {
     let attrs = {
         str: `${hero.base_str} + ${Number(hero.str_gain)}`,
         agi: `${hero.base_agi} + ${Number(hero.agi_gain)}`,
@@ -6,9 +6,9 @@
     };
 
     let val1 = [
-        `Lv1. Health: ${hero.base_health + (20 * hero.base_str)}`,
-        `Lv1. Armor: ${Math.round(100 * (hero.base_armor + ((1 / 6) * hero.base_agi))) / 100}`,
-        `Lv1. Mana: ${hero.base_mana + 12 * hero.base_int}`,
+        `Lv1. Health: ${hero.base_health + Math.round((hero.primary_attr === "str" ? 22.5 : 17) * hero.base_str)}`,
+        `Lv1. Armor: ${hero.base_armor + Math.round((hero.primary_attr === "agi" ? 0.2 : 0.16) * hero.base_agi)}`,
+        `Lv1. Mana: ${hero.base_mana + ((hero.primary_attr === "int" ? 15 : 12) * hero.base_int)}`,
         `Lv1. Spell Amp: ${Math.round(100 * (0.07 * hero.base_int)) / 100}%`
     ];
 

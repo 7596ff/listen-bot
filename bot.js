@@ -783,9 +783,8 @@ client.on("messageCreate", async function(message) {
     handle(message, client);
 });
 
-process.on("unhandledRejection", (reason, p) => {
-    console.log(reason);
-    console.log(p);
+client.on("error", (error) => {
+    console.error(`${new Date().toJSON()} - ERROR: ${error.code}`);
 });
 
 // connect to everything in order 

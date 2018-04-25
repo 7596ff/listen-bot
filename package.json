@@ -33,7 +33,7 @@
     "erlpack": "0.1.2",
     "fuzzyset.js": "0.0.1",
     "gosugamers-api": "0.1.2",
-    "mika": "^1.4.1",
+    "mika": "^1.5.0",
     "needle": "1.4.5",
     "node-schedule": "1.2.0",
     "pad": "1.1.0",

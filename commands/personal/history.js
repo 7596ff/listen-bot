@@ -115,7 +115,9 @@ async function historyAs(ctx, _as, _of, _in) {
         return ctx.failure(ctx.strings.get("bot_not_registered", ctx.client.users.get(_of).username, ctx.gcfg.prefix));
     }
 
-    let mikaOpts = {};
+    let mikaOpts = {
+        significant: 0
+    };
 
     if (_as) {
         mikaOpts.hero_id = hero.id;

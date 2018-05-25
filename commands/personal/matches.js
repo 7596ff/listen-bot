@@ -15,7 +15,8 @@ async function exec(ctx) {
     // here we do a whole bunch of bullshit
     let discordIDs = [];
     let mikaOpts = {
-        limit: 12
+        limit: 12,
+        significant: 0
     };
 
     // if no match assume its a member

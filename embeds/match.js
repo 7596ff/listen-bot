@@ -25,7 +25,8 @@ const game_modes = [
     "Event",
     "ARDM", 
     "1v1 Mid", 
-    "All Pick" // ranked all pick
+    "All Pick", // ranked all pick
+    "Turbo"
 ];
 
 const lobby_types = [

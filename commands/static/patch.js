@@ -1,7 +1,10 @@
 const findHero = require("../../util/findHero");
-const patch = require("../../json/patch.json");
 const patchEmbed = require("../../embeds/patch");
 const Watcher = require("../../classes/watcher");
+
+const dc = require("dotaconstants");
+const versions = Object.keys(dc.patchnotes);
+const heroChanges = Object.values(dc.patchnotes).map((version) => version.heroes);
 
 async function exec(ctx) {
     let hero = findHero(ctx.options.join(" "));
@@ -9,16 +12,22 @@ async function exec(ctx) {
         return ctx.failure(ctx.strings.get("bot_no_hero_error"));
     }
 
-    let changes = patch.filter((v) => v.heroes[hero.name]);
-    let versions = changes.map((v) => v.version);
-    let notes = changes
-        .map((v) => v.heroes[hero.name])
-        .map((notes, index) => {
+    let changes = heroChanges
+        .map((change, index) => {
             return {
-                content: ctx.strings.all("patch_message", "\n", hero.local, versions.join(", ")),
-                embed: patchEmbed(notes, versions[index])
+                version: versions[index].replace("_", "."),
+                changes: change[hero.name]
             };
-        });
+        })
+        .filter((change) => change.changes)
+        .reverse();
+
+    let notes = changes.map((change) => {
+        return {
+            content: ctx.strings.all("patch_message", "\n", hero.local, changes.map((change => change.version)).join(" ")),
+            embed: patchEmbed(change.changes, hero, change.version)
+        }
+    });
 
     let msg = await ctx.send(notes[0]);
     ctx.client.watchers[msg.id] = new Watcher(ctx.client, msg, ctx.author.id, "p/n", notes, 0);

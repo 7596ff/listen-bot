@@ -5,7 +5,7 @@ async function checkDiscordID(pg, id) {
             "values": [id]
         });
 
-        if (res.rows.length) {
+        if (res.rows.length && res.rows[0].dotaid) {
             return Promise.resolve(res.rows[0].dotaid);
         } else {
             return Promise.resolve(null);

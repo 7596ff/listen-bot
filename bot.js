@@ -811,4 +811,5 @@ sub.on("ready", () => {
     sub.subscribe("listen:rss:steamnews");
     sub.subscribe("listen:rss:belvedere");
     sub.subscribe("listen:rss:wykrhm");
+    sub.subscribe("listen:rss:magesunite");
 });

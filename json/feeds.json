@@ -20,14 +20,21 @@
 }, {
     "name": "Sir Belvedere Updates",
     "key": "listen:rss:belvedere",
-    "url": "https://www.reddit.com/user/SirBelvedere/submitted/.rss",
+    "url": "https://old.reddit.com/user/SirBelvedere/submitted/.rss",
+    "type": "rss",
+    "cron": "*/5 * *  *",
+    "action": "publish"
+}, {
+    "name": "Magesunite Updates",
+    "key": "listen:rss:magesunite",
+    "url": "https://old.reddit.com/user/Magesunite/submitted/.rss",
     "type": "rss",
     "cron": "*/5 * *  *",
     "action": "publish"
 }, {
     "name": "Wykrhm Updates",
     "key": "listen:rss:wykrhm",
-    "url": "https://www.reddit.com/user/wykrhm/submitted/.rss",
+    "url": "https://old.reddit.com/user/wykrhm/submitted/.rss",
     "type": "rss",
     "cron": "*/5 * * * *",
     "action": "publish"

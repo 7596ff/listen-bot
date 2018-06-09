@@ -1,6 +1,6 @@
 const checkDiscordID = require("../../util/checkDiscordID");
 
-const newsfeeds = ["belvedere", "wykrhm", "blog", "steamnews"];
+const newsfeeds = ["belvedere", "wykrhm", "blog", "steamnews", "magesunite"];
 const newsmap = newsfeeds.map((type) => `\`${type}\``).join(", ");
 
 async function query(pg, values) {

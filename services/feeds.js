@@ -46,10 +46,14 @@ async function consumeResponse(feed, body) {
             }
         }
 
-        if (feed.key === "listen:rss:belvedere" || feed.key === "listen:rss:wykrhm") {
+        if (feed.key === "listen:rss:belvedere" || feed.key === "listen:rss:wykrhm" || feed.key === "listen:rss:magesunite") {
             post.title = body.feed.entry[0].title;
             post.link = body.feed.entry[0].link.$.href;
             post.guid = body.feed.entry[0].id;
+        }
+
+        if (feed.key === "listen:rss:magesunite" && !post.title.includes("Update")) {
+            post.guid = false;
         }
 
         if (post.guid) {
@@ -60,7 +64,7 @@ async function consumeResponse(feed, body) {
                     log(`new post found for ${feed.name}, publishing`);
                     redis.publish(feed.key, JSON.stringify(post));
                     redis.set(`${feed.key}:last`, post.guid, (err) => {
-                        if (err) console.error(err);
+                        if (err) console.log(require("util").inspect(err));
                     });
                 }
             });

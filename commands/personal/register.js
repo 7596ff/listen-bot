@@ -4,10 +4,6 @@ const steamconst = "76561197960265728";
 const resolveVanityURL = require("../../util/resolveVanityURL");
 
 async function exec(ctx) {
-    if (!ctx.client.steam_connected) {
-        return ctx.failure(ctx.strings.get("register_steam_down"));
-    }
-
     let search = ctx.options.join(" ");
     let ID = false;
 
@@ -60,16 +56,9 @@ async function exec(ctx) {
     }
 
     try {
-        let rand = randomstring.generate(6);
-        await ctx.client.redis.setexAsync(`register:${res.profile.steamid}`, 900, `${rand}:${ctx.author.id}`);
-
-        let channel = await ctx.author.getDMChannel();
-        await channel.createMessage(ctx.strings.all("register_dm", "\n", rand, ctx.client.config.steam_acc_url));
-
-        ctx.client.redis.publish("discord", JSON.stringify({
-            code: 3,
-            message: "registering a user",
-            steam_id: res.profile.steamid
+        ctx.client.redis.publish("steam", JSON.stringify({
+            discord_id: ctx.author.id,
+            dota_id: res.profile.account_id
         }));
 
         try { await ctx.message.addReaction("✅") } catch (err) {}

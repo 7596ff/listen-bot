@@ -23,6 +23,7 @@ const LeagueUtils = require("./classes/LeagueUtils");
 const schedule = require("node-schedule");
 const Mika = require("mika");
 const prettyms = require("pretty-ms");
+const bignumber = require("bignumber.js");
 
 const types = ["player", "team", "league"];
 
@@ -501,6 +502,17 @@ async function checkIfStacks(guildID) {
 }
 
 async function addUser(discord_id, dota_id) {
+    let steam_id = new bignumber(dota_id).plus("76561197960265728").toString();
+
+    try {
+        await client.pg.query({
+            text: "INSERT INTO users (id, steamid, dotaid) VALUES ($1, $2, $3) ON CONFLICT (id) DO UPDATE SET steamid = $2, dotaid = $3",
+            values: [discord_id, steam_id, dota_id]
+        });
+    } catch (error) {
+        console.error(error);
+    }
+
     let mutualIDs = client.guilds.filter((guild) => guild.members.get(discord_id) ? true : false).map((guild) => guild.id);
 
     try {
@@ -583,30 +595,7 @@ sub.on("message", (channel, message) => {
         // heck;
     }
 
-    if (channel == "steam") {
-        if (!client.config.steam_enabled) return;
-        client.helper.log("REDIS", message.message);
-
-        switch(message.code) {
-        case 0:
-            client.steam_connected = true;
-            break;
-        case 1:
-            client.steam_connected = false;
-            break;
-        case 3:
-            client.users.get(message.discord_id).getDMChannel().then(dm_channel => {
-                let dm = `All set! Dota ID ${message.dota_id} associated with Discord ID ${message.discord_id} (<@${message.discord_id}>).`;
-                dm_channel.createMessage(dm);
-                client.redis.expire(`register:${message.steam_id}`, 0);
-                addUser(message.discord_id, message.dota_id);
-            });
-            break;
-        case 4:
-            client.steam_connected = true;
-            break;
-        }
-    }
+    if (channel === "steam") addUser(message.discord_id, message.dota_id);
 
     if (channel == "__keyevent@0__:expired" && message.startsWith("trivia") && client.trivia) client.trivia.keyevent(message, client);
 

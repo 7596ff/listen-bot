@@ -691,7 +691,7 @@ function checkDisabed(gcfg, channel, command) {
 }
 
 function handle(message, client) {
-    let prefixes = [message.gcfg.prefix, config.default_prefix, "—", "––", "——"]; // haha yes this code is gone soon anyway
+    let prefixes = [config.default_prefix, message.gcfg.prefix, "—", "––", "——"]; // haha yes this code is gone soon anyway
     let matched_prefix = prefixes.find((p) => message.content.startsWith(p));
 
     if (matched_prefix) {

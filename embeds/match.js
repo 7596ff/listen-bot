@@ -96,9 +96,11 @@ async function matchEmbed(ctx, match_data) {
 
     table.forEach(row => {
         for (let item in row) {
-            row[item] = pad(row[item], highest[item]);
+            if (item != row.length - 1) {
+                row[item] = pad(row[item], highest[item], " ");
+            };
         }
-        ftable.push(`\`${row.slice(0, row.length - 1).join(" ")}\`  ${row[row.length - 1]}`);
+        ftable.push(`\`${row.slice(0, row.length - 1).join(" ")}\`  ${row[row.length - 1]}`);
     });
 
     let victory = match_data.radiant_win ? ctx.strings.get("matchinfo_match_radiant_victory") : ctx.strings.get("matchinfo_match_dire_victory");

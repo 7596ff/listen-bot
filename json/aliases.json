@@ -803,4 +803,11 @@
     "aliases": ["pangolier", "pangolin"],
     "oldname": "Pangolier",
     "emoji": "377022760377122816"
+}, {
+    "name": "grimstroke",
+    "id": 121,
+    "local": "Grimstroke",
+    "aliases": ["grimstroke", "bob ross"],
+    "oldname": "Grimstroke",
+    "emoji": "484758360323915779"
 }]

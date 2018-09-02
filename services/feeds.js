@@ -52,7 +52,7 @@ async function consumeResponse(feed, body) {
             post.guid = body.feed.entry[0].id;
         }
 
-        if (feed.key === "listen:rss:magesunite" && !post.title.includes("Update")) {
+        if ((feed.key === "listen:rss:magesunite" || feed.key === "listen:rss:belvedere") && (!post.title.includes("Update")) || !post.link.includes("dota2")) {
             post.guid = false;
         }
 

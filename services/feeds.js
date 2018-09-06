@@ -50,10 +50,10 @@ async function consumeResponse(feed, body) {
             post.title = body.feed.entry[0].title;
             post.link = body.feed.entry[0].link.$.href;
             post.guid = body.feed.entry[0].id;
-        }
 
-        if ((feed.key === "listen:rss:magesunite" || feed.key === "listen:rss:belvedere") && (!post.title.includes("Update")) || !post.link.includes("dota2")) {
-            post.guid = false;
+            if ((feed.key === "listen:rss:magesunite" || feed.key === "listen:rss:belvedere") && (!post.title.includes("Update")) || !post.link.includes("DotA2")) {
+                post.guid = false;
+            }
         }
 
         if (post.guid) {

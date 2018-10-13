@@ -23,7 +23,7 @@
     "async": "^2.6.0",
     "bignumber.js": "4.0.0",
     "bluebird": "3.5.0",
-    "canvas": "^1.6.11",
+    "canvas": "^1.6.12",
     "cheerio": "^0.22.0",
     "d": "1.0.0",
     "dnode": "^1.2.2",

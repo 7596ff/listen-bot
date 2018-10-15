@@ -13,13 +13,17 @@ function findPlayerTeam(match, account_id) {
     return slot < 5;
 }
 
-async function historyWith(ctx, _with, _of, _in) {
+async function historyWith(ctx, _with, _of, _in, _last) {
     if (!_with.found) {
         return ctx.failure(ctx.strings.get("bot_no_member"));
     }
 
     if (_with.all.length !== 1) {
         return ctx.failure(ctx.strings.get("history_with_wrong_data"));
+    }
+
+    if (parseInt(_last) == NaN) {
+        _last = 0;
     }
 
     _with.all.push(_of || ctx.author.id);
@@ -36,10 +40,14 @@ async function historyWith(ctx, _with, _of, _in) {
     if (~nullcheck) {
         return ctx.failure(ctx.strings.get("bot_not_registered", ctx.client.users.get(_with.all[nullcheck]).username, ctx.gcfg.prefix));
     }
+    
+    let constraints = {
+        limit: _last,
+    };
 
-    let constraints = results.length == 2 ? {
-        "included_account_id": results[1]
-    } : {};
+    if (results.length == 2) {
+        constraints.included_account_id = results[1];
+    }
 
     if (_in) {
         if (_in == "ranked") {
@@ -92,7 +100,7 @@ async function historyWith(ctx, _with, _of, _in) {
     return ctx.embed(embed);
 }
 
-async function historyAs(ctx, _as, _of, _in) {
+async function historyAs(ctx, _as, _of, _in, _last) {
     if (!_of) _of = ctx.author.id;
 
     let hero;
@@ -114,9 +122,14 @@ async function historyAs(ctx, _as, _of, _in) {
     if (result === null) {
         return ctx.failure(ctx.strings.get("bot_not_registered", ctx.client.users.get(_of).username, ctx.gcfg.prefix));
     }
+    
+    if (parseInt(_last) == NaN) {
+        _last = 0;
+    }
 
     let mikaOpts = {
-        significant: 0
+        significant: 0,
+        limit: _last
     };
 
     if (_as) {
@@ -168,16 +181,17 @@ async function exec(ctx) {
         of: "member",
         with: "member",
         as: "string",
-        in: "string"
+        in: "string",
+        last: "string"
     }, ctx.guild.members);
 
     if (!Object.keys(response).length) {
         return ctx.failure(ctx.strings.get("bot_wrong_data"));
     }
 
-    if (response.with) return historyWith(ctx, response.with, ((response.of && response.of.found) && ctx.client.users.get(response.of.all[0]).id), response.in);
-    if (response.as) return historyAs(ctx, response.as, ((response.of && response.of.found) && ctx.client.users.get(response.of.all[0]).id), response.in);
-    if (response.in) return historyAs(ctx, null, ((response.of && response.of.found) && ctx.client.users.get(response.of.all[0]).id), response.in);
+    if (response.with) return historyWith(ctx, response.with, ((response.of && response.of.found) && ctx.client.users.get(response.of.all[0]).id), response.in, response.last);
+    if (response.as) return historyAs(ctx, response.as, ((response.of && response.of.found) && ctx.client.users.get(response.of.all[0]).id), response.in, response.last);
+    if (response.in) return historyAs(ctx, null, ((response.of && response.of.found) && ctx.client.users.get(response.of.all[0]).id), response.in, response.last);
 }
 
 module.exports = {

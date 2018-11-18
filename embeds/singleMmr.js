@@ -52,7 +52,10 @@ const ranks = {
     "73": "Divine [3]",
     "74": "Divine [4]",
     "75": "Divine [5]",
-    "76": "Divine Elite"
+
+    "80": "Immortal",
+    "81": "Immortal",
+    "82": "Immortal",
 }
 
 async function singleMmr(data) {

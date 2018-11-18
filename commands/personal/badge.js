@@ -4,44 +4,7 @@ const singleMmrEmbed = require("../../embeds/singleMmr");
 const SteppedList = require("../../classes/SteppedList");
 const prettyMs = require("pretty-ms");
 
-async function all(ctx) {
-    let msg = false;
-    try {
-        let res = await ctx.client.pg.query("SELECT * FROM public.users;");
-        let rows = res.rows.filter((row) => ctx.guild.members.get(row.id));
-
-        msg = await ctx.send(ctx.strings.get("mmr_in_progress", prettyMs(rows.length * 500, { verbose: true })));
-
-        let queries = rows.map((row) => upsertMmr(ctx.client.pg, ctx.client.mika, row, false));
-        let results = await Promise.all(queries);
-
-        results = results.sort((a, b) => (b.scr || 0) - (a.scr || 0));
-
-        let list = [
-            results.map((r) => ctx.guild.members.get(r.id).username.slice(0, 16)),
-            results.map((r) => r.scr || ctx.strings.get("matches_match_unknown_player")),
-            results.map((r) => r.cr || ctx.strings.get("matches_match_unknown_player"))
-        ];
-
-        let embed = allMmrEmbed.call(ctx.strings, results, ctx.guild.members, ctx.guild.name);
-        let watcher = new SteppedList(ctx, msg, 15, embed, [ctx.strings.get("mmr_all_players"), "Solo", "Party"], list);
-        let newEmbed = watcher.embed(0);
-        newEmbed.content = "";
-
-        await msg.edit(newEmbed);
-
-        ctx.client.watchers[msg.id] = watcher;
-        return Promise.resolve();
-    } catch (err) {
-        ctx.error(err);
-        if (msg) return msg.edit(":x: " + ctx.strings.get("bot_generic_error"));
-        return ctx.failure(ctx.strings.get("bot_generic_error"));
-    }
-}
-
 async function exec(ctx) {
-    if (ctx.options[0] === "all") return ctx.send("all disabled for now sorry"); // return all(ctx);
-
     try {
         let ID = ctx.author.id;
         if (ctx.options.length) {

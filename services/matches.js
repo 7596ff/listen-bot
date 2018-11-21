@@ -104,11 +104,6 @@ client.on("error", (err) => {
     process.exit(1);
 });
 
-client.on("error", (err) => {
-    console.error(err);
-    process.exit(1);
-});
-
 client.on("ready", () => {
     log("feed client ready");
     pg.query("SELECT * FROM subs;").catch((err) => console.error(err)).then((res) => {
@@ -132,3 +127,4 @@ client.on("ready", () => {
 
 redis.on("ready", () => log("redis ready"));
 sub.on("ready", () => log("redis sub ready"));
+

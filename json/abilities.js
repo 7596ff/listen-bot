@@ -1,5 +1,5 @@
 var abilities = require("dotaconstants").abilities;
-const akeys = require("./keys.json");
+const akeys = require("./keys.js");
 const heroes = require("./aliases.json");
 
 for (akey in akeys) {

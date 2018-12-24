@@ -70,6 +70,8 @@ async function exec(ctx) {
 
     try {
         let data = await ctx.client.mika.getPlayerRecentMatches(member);
+        data = data.filter((match) => !!match.version);
+
         let groomed = {};
 
         for (let key of keys) {

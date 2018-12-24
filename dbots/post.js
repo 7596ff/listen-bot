@@ -2,8 +2,8 @@ const needle = require("needle");
 const util = require("util");
 
 module.exports = client => {
-    needle.post(`https://bots.discord.pw/api/bots/${client.config.master_id}/stats`,
-        JSON.stringify({ "server_count": client.guilds.size }), 
+    needle.post("https://discord.bots.gg/api/v1/bots/240209888771309568/stats",
+	JSON.stringify({ serverCount: client.guilds.size, shardCount: client.shards.size }),
         { "headers": { "Authorization": client.config.dbots_token, "Content-Type": "application/json" }},
         (err, resp) => {
             if (err) {
